@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 
 * `GUID_CREATION` (value: `"ERR_GUID_CREATION"`)
 
+* `ENTITY_NOT_FOUND` (value: `"ERR_ENTITY_NOT_FOUND"`)
+
 * `HTTP` (value: `"ERR_HTTP"`)
 
 * `INTERNAL` (value: `"ERR_INTERNAL"`)

@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/AppInfoPresentation', 'model/CreateGuidsRequest', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'api/AccountcontrollerApi', 'api/AppinfocontrollerApi', 'api/DefaultApi', 'api/GuidcontrollerApi', 'api/Id4ierrorcontrollerApi', 'api/RoutingcontrollerApi', 'api/UsercontrollerApi'], factory);
+    define(['ApiClient', 'model/AccountCredentials', 'model/AddGuidsToCollectionRequest', 'model/ApiError', 'model/AppInfoPresentation', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/Organization', 'model/OrganizationAddress', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegisterObjectsRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'api/AccountcontrollerApi', 'api/AppinfocontrollerApi', 'api/DefaultApi', 'api/Id4ierrorcontrollerApi', 'api/LabelledcollectioncontrollerApi', 'api/LogisticcollectioncontrollerApi', 'api/OrganizationaddresscontrollerApi', 'api/OrganizationcontrollerApi', 'api/RegisteredobjectcontrollerApi', 'api/RoutingcollectioncontrollerApi', 'api/RoutingcontrollerApi', 'api/UsercontrollerApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/ApiError'), require('./model/AppInfoPresentation'), require('./model/CreateGuidsRequest'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/ResponseEntity'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./api/AccountcontrollerApi'), require('./api/AppinfocontrollerApi'), require('./api/DefaultApi'), require('./api/GuidcontrollerApi'), require('./api/Id4ierrorcontrollerApi'), require('./api/RoutingcontrollerApi'), require('./api/UsercontrollerApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/AddGuidsToCollectionRequest'), require('./model/ApiError'), require('./model/AppInfoPresentation'), require('./model/CreateLabelledCollectionRequest'), require('./model/CreateLogisticCollectionRequest'), require('./model/CreateRoutingCollectionRequest'), require('./model/Organization'), require('./model/OrganizationAddress'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegisterObjectsRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/ResponseEntity'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./api/AccountcontrollerApi'), require('./api/AppinfocontrollerApi'), require('./api/DefaultApi'), require('./api/Id4ierrorcontrollerApi'), require('./api/LabelledcollectioncontrollerApi'), require('./api/LogisticcollectioncontrollerApi'), require('./api/OrganizationaddresscontrollerApi'), require('./api/OrganizationcontrollerApi'), require('./api/RegisteredobjectcontrollerApi'), require('./api/RoutingcollectioncontrollerApi'), require('./api/RoutingcontrollerApi'), require('./api/UsercontrollerApi'));
   }
-}(function(ApiClient, AccountCredentials, ApiError, AppInfoPresentation, CreateGuidsRequest, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, ResponseEntity, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, AccountcontrollerApi, AppinfocontrollerApi, DefaultApi, GuidcontrollerApi, Id4ierrorcontrollerApi, RoutingcontrollerApi, UsercontrollerApi) {
+}(function(ApiClient, AccountCredentials, AddGuidsToCollectionRequest, ApiError, AppInfoPresentation, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, Organization, OrganizationAddress, PasswordResetRequest, PasswordResetVerificationRequest, RegisterObjectsRequest, RegistrationVerificationTokenPresentation, ResponseEntity, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, AccountcontrollerApi, AppinfocontrollerApi, DefaultApi, Id4ierrorcontrollerApi, LabelledcollectioncontrollerApi, LogisticcollectioncontrollerApi, OrganizationaddresscontrollerApi, OrganizationcontrollerApi, RegisteredobjectcontrollerApi, RoutingcollectioncontrollerApi, RoutingcontrollerApi, UsercontrollerApi) {
   'use strict';
 
   /**
@@ -68,6 +68,11 @@
      */
     AccountCredentials: AccountCredentials,
     /**
+     * The AddGuidsToCollectionRequest model constructor.
+     * @property {module:model/AddGuidsToCollectionRequest}
+     */
+    AddGuidsToCollectionRequest: AddGuidsToCollectionRequest,
+    /**
      * The ApiError model constructor.
      * @property {module:model/ApiError}
      */
@@ -78,10 +83,30 @@
      */
     AppInfoPresentation: AppInfoPresentation,
     /**
-     * The CreateGuidsRequest model constructor.
-     * @property {module:model/CreateGuidsRequest}
+     * The CreateLabelledCollectionRequest model constructor.
+     * @property {module:model/CreateLabelledCollectionRequest}
      */
-    CreateGuidsRequest: CreateGuidsRequest,
+    CreateLabelledCollectionRequest: CreateLabelledCollectionRequest,
+    /**
+     * The CreateLogisticCollectionRequest model constructor.
+     * @property {module:model/CreateLogisticCollectionRequest}
+     */
+    CreateLogisticCollectionRequest: CreateLogisticCollectionRequest,
+    /**
+     * The CreateRoutingCollectionRequest model constructor.
+     * @property {module:model/CreateRoutingCollectionRequest}
+     */
+    CreateRoutingCollectionRequest: CreateRoutingCollectionRequest,
+    /**
+     * The Organization model constructor.
+     * @property {module:model/Organization}
+     */
+    Organization: Organization,
+    /**
+     * The OrganizationAddress model constructor.
+     * @property {module:model/OrganizationAddress}
+     */
+    OrganizationAddress: OrganizationAddress,
     /**
      * The PasswordResetRequest model constructor.
      * @property {module:model/PasswordResetRequest}
@@ -92,6 +117,11 @@
      * @property {module:model/PasswordResetVerificationRequest}
      */
     PasswordResetVerificationRequest: PasswordResetVerificationRequest,
+    /**
+     * The RegisterObjectsRequest model constructor.
+     * @property {module:model/RegisterObjectsRequest}
+     */
+    RegisterObjectsRequest: RegisterObjectsRequest,
     /**
      * The RegistrationVerificationTokenPresentation model constructor.
      * @property {module:model/RegistrationVerificationTokenPresentation}
@@ -158,15 +188,40 @@
      */
     DefaultApi: DefaultApi,
     /**
-     * The GuidcontrollerApi service constructor.
-     * @property {module:api/GuidcontrollerApi}
-     */
-    GuidcontrollerApi: GuidcontrollerApi,
-    /**
      * The Id4ierrorcontrollerApi service constructor.
      * @property {module:api/Id4ierrorcontrollerApi}
      */
     Id4ierrorcontrollerApi: Id4ierrorcontrollerApi,
+    /**
+     * The LabelledcollectioncontrollerApi service constructor.
+     * @property {module:api/LabelledcollectioncontrollerApi}
+     */
+    LabelledcollectioncontrollerApi: LabelledcollectioncontrollerApi,
+    /**
+     * The LogisticcollectioncontrollerApi service constructor.
+     * @property {module:api/LogisticcollectioncontrollerApi}
+     */
+    LogisticcollectioncontrollerApi: LogisticcollectioncontrollerApi,
+    /**
+     * The OrganizationaddresscontrollerApi service constructor.
+     * @property {module:api/OrganizationaddresscontrollerApi}
+     */
+    OrganizationaddresscontrollerApi: OrganizationaddresscontrollerApi,
+    /**
+     * The OrganizationcontrollerApi service constructor.
+     * @property {module:api/OrganizationcontrollerApi}
+     */
+    OrganizationcontrollerApi: OrganizationcontrollerApi,
+    /**
+     * The RegisteredobjectcontrollerApi service constructor.
+     * @property {module:api/RegisteredobjectcontrollerApi}
+     */
+    RegisteredobjectcontrollerApi: RegisteredobjectcontrollerApi,
+    /**
+     * The RoutingcollectioncontrollerApi service constructor.
+     * @property {module:api/RoutingcollectioncontrollerApi}
+     */
+    RoutingcollectioncontrollerApi: RoutingcollectioncontrollerApi,
     /**
      * The RoutingcontrollerApi service constructor.
      * @property {module:api/RoutingcontrollerApi}

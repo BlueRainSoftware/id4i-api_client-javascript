@@ -125,10 +125,9 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountcontrollerApi* | [**registerUserUsingPOST**](docs/AccountcontrollerApi.md#registerUserUsingPOST) | **POST** /account/registration | registerUser
 *Id4iApi.AccountcontrollerApi* | [**requestPasswordResetUsingPOST**](docs/AccountcontrollerApi.md#requestPasswordResetUsingPOST) | **POST** /account/password | requestPasswordReset
 *Id4iApi.AccountcontrollerApi* | [**verifyPasswordResetUsingPUT**](docs/AccountcontrollerApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | verifyPasswordReset
-*Id4iApi.AccountcontrollerApi* | [**verifyRegistrationUsingPOST**](docs/AccountcontrollerApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification/{username} | verifyRegistration
+*Id4iApi.AccountcontrollerApi* | [**verifyRegistrationUsingPOST**](docs/AccountcontrollerApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | verifyRegistration
 *Id4iApi.AppinfocontrollerApi* | [**infoUsingGET**](docs/AppinfocontrollerApi.md#infoUsingGET) | **GET** /api/v1/info | info
 *Id4iApi.DefaultApi* | [**loginPOST**](docs/DefaultApi.md#loginPOST) | **POST** /login | 
-*Id4iApi.GuidcontrollerApi* | [**createGuidsUsingPOST**](docs/GuidcontrollerApi.md#createGuidsUsingPOST) | **POST** /api/v1/guid | createGuids
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingDELETE**](docs/Id4ierrorcontrollerApi.md#errorUsingDELETE) | **DELETE** /error | error
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingGET**](docs/Id4ierrorcontrollerApi.md#errorUsingGET) | **GET** /error | error
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingHEAD**](docs/Id4ierrorcontrollerApi.md#errorUsingHEAD) | **HEAD** /error | error
@@ -136,6 +135,21 @@ Class | Method | HTTP request | Description
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingPATCH**](docs/Id4ierrorcontrollerApi.md#errorUsingPATCH) | **PATCH** /error | error
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingPOST**](docs/Id4ierrorcontrollerApi.md#errorUsingPOST) | **POST** /error | error
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingPUT**](docs/Id4ierrorcontrollerApi.md#errorUsingPUT) | **PUT** /error | error
+*Id4iApi.LabelledcollectioncontrollerApi* | [**createUsingPOST**](docs/LabelledcollectioncontrollerApi.md#createUsingPOST) | **POST** /api/v1/collection/labelled | create
+*Id4iApi.LabelledcollectioncontrollerApi* | [**renameUsingPUT**](docs/LabelledcollectioncontrollerApi.md#renameUsingPUT) | **PUT** /api/v1/collection/labelled | rename
+*Id4iApi.LogisticcollectioncontrollerApi* | [**createUsingPOST1**](docs/LogisticcollectioncontrollerApi.md#createUsingPOST1) | **POST** /api/v1/collection/logistic | create
+*Id4iApi.OrganizationaddresscontrollerApi* | [**getAddressUsingGET**](docs/OrganizationaddresscontrollerApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | getAddress
+*Id4iApi.OrganizationaddresscontrollerApi* | [**getBillingAddressUsingGET**](docs/OrganizationaddresscontrollerApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | getBillingAddress
+*Id4iApi.OrganizationaddresscontrollerApi* | [**removeBillingAddressUsingDELETE**](docs/OrganizationaddresscontrollerApi.md#removeBillingAddressUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/addresses/billing | removeBillingAddress
+*Id4iApi.OrganizationaddresscontrollerApi* | [**storeAddressUsingPOST**](docs/OrganizationaddresscontrollerApi.md#storeAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/default | storeAddress
+*Id4iApi.OrganizationaddresscontrollerApi* | [**storeBillingAddressUsingPOST**](docs/OrganizationaddresscontrollerApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | storeBillingAddress
+*Id4iApi.OrganizationcontrollerApi* | [**createOrganzationUsingPOST**](docs/OrganizationcontrollerApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
+*Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
+*Id4iApi.OrganizationcontrollerApi* | [**getOrganizationUsingGET**](docs/OrganizationcontrollerApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
+*Id4iApi.OrganizationcontrollerApi* | [**updateOrganizationUsingPUT**](docs/OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
+*Id4iApi.RegisteredobjectcontrollerApi* | [**createUsingPOST2**](docs/RegisteredobjectcontrollerApi.md#createUsingPOST2) | **POST** /api/v1/registered-object | create
+*Id4iApi.RoutingcollectioncontrollerApi* | [**createUsingPOST3**](docs/RoutingcollectioncontrollerApi.md#createUsingPOST3) | **POST** /api/v1/collection/routing | create
+*Id4iApi.RoutingcollectioncontrollerApi* | [**createUsingPUT**](docs/RoutingcollectioncontrollerApi.md#createUsingPUT) | **PUT** /api/v1/collection/routing/elements | create
 *Id4iApi.RoutingcontrollerApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routing/get/{guid}/{type} | retrieveCurrentParamsByType
 *Id4iApi.RoutingcontrollerApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routing/file/{guid} | retrieveRoutingFile
 *Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPOST**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPOST) | **POST** /api/v1/routing/file | storeRoutingFile
@@ -146,11 +160,17 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Id4iApi.AccountCredentials](docs/AccountCredentials.md)
+ - [Id4iApi.AddGuidsToCollectionRequest](docs/AddGuidsToCollectionRequest.md)
  - [Id4iApi.ApiError](docs/ApiError.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
- - [Id4iApi.CreateGuidsRequest](docs/CreateGuidsRequest.md)
+ - [Id4iApi.CreateLabelledCollectionRequest](docs/CreateLabelledCollectionRequest.md)
+ - [Id4iApi.CreateLogisticCollectionRequest](docs/CreateLogisticCollectionRequest.md)
+ - [Id4iApi.CreateRoutingCollectionRequest](docs/CreateRoutingCollectionRequest.md)
+ - [Id4iApi.Organization](docs/Organization.md)
+ - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
  - [Id4iApi.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
+ - [Id4iApi.RegisterObjectsRequest](docs/RegisterObjectsRequest.md)
  - [Id4iApi.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
  - [Id4iApi.ResponseEntity](docs/ResponseEntity.md)
  - [Id4iApi.Route](docs/Route.md)

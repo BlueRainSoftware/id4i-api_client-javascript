@@ -1,28 +1,28 @@
-# Id4iApi.AccountcontrollerApi
+# Id4iApi.OrganizationcontrollerApi
 
 All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**registerUserUsingPOST**](AccountcontrollerApi.md#registerUserUsingPOST) | **POST** /account/registration | registerUser
-[**requestPasswordResetUsingPOST**](AccountcontrollerApi.md#requestPasswordResetUsingPOST) | **POST** /account/password | requestPasswordReset
-[**verifyPasswordResetUsingPUT**](AccountcontrollerApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | verifyPasswordReset
-[**verifyRegistrationUsingPOST**](AccountcontrollerApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | verifyRegistration
+[**createOrganzationUsingPOST**](OrganizationcontrollerApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
+[**deleteOrganizationUsingDELETE**](OrganizationcontrollerApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
+[**getOrganizationUsingGET**](OrganizationcontrollerApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
+[**updateOrganizationUsingPUT**](OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
 
 
-<a name="registerUserUsingPOST"></a>
-# **registerUserUsingPOST**
-> UserRegistrationResponse registerUserUsingPOST(userRegistration, opts)
+<a name="createOrganzationUsingPOST"></a>
+# **createOrganzationUsingPOST**
+> ResponseEntity createOrganzationUsingPOST(organization, opts)
 
-registerUser
+createOrganzation
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.AccountcontrollerApi();
+var apiInstance = new Id4iApi.OrganizationcontrollerApi();
 
-var userRegistration = new Id4iApi.UserRegistrationRequest(); // UserRegistrationRequest | userRegistration
+var organization = new Id4iApi.Organization(); // Organization | organization
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -36,170 +36,173 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.registerUserUsingPOST(userRegistration, opts, callback);
+apiInstance.createOrganzationUsingPOST(organization, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userRegistration** | [**UserRegistrationRequest**](UserRegistrationRequest.md)| userRegistration | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**UserRegistrationResponse**](UserRegistrationResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="requestPasswordResetUsingPOST"></a>
-# **requestPasswordResetUsingPOST**
-> SimpleMessageResponse requestPasswordResetUsingPOST(resetRequest, opts)
-
-requestPasswordReset
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.AccountcontrollerApi();
-
-var resetRequest = new Id4iApi.PasswordResetRequest(); // PasswordResetRequest | resetRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.requestPasswordResetUsingPOST(resetRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resetRequest** | [**PasswordResetRequest**](PasswordResetRequest.md)| resetRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**SimpleMessageResponse**](SimpleMessageResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="verifyPasswordResetUsingPUT"></a>
-# **verifyPasswordResetUsingPUT**
-> SimpleMessageResponse verifyPasswordResetUsingPUT(verificationRequest, opts)
-
-verifyPasswordReset
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.AccountcontrollerApi();
-
-var verificationRequest = new Id4iApi.PasswordResetVerificationRequest(); // PasswordResetVerificationRequest | verificationRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.verifyPasswordResetUsingPUT(verificationRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **verificationRequest** | [**PasswordResetVerificationRequest**](PasswordResetVerificationRequest.md)| verificationRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**SimpleMessageResponse**](SimpleMessageResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="verifyRegistrationUsingPOST"></a>
-# **verifyRegistrationUsingPOST**
-> ResponseEntity verifyRegistrationUsingPOST(token, opts)
-
-verifyRegistration
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.AccountcontrollerApi();
-
-var token = new Id4iApi.RegistrationVerificationTokenPresentation(); // RegistrationVerificationTokenPresentation | token
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.verifyRegistrationUsingPOST(token, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | [**RegistrationVerificationTokenPresentation**](RegistrationVerificationTokenPresentation.md)| token | 
+ **organization** | [**Organization**](Organization.md)| organization | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
 [**ResponseEntity**](ResponseEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="deleteOrganizationUsingDELETE"></a>
+# **deleteOrganizationUsingDELETE**
+> ResponseEntity deleteOrganizationUsingDELETE(organizationId, opts)
+
+deleteOrganization
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationcontrollerApi();
+
+var organizationId = 789; // Number | organizationId
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.deleteOrganizationUsingDELETE(organizationId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ResponseEntity**](ResponseEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getOrganizationUsingGET"></a>
+# **getOrganizationUsingGET**
+> Organization getOrganizationUsingGET(organizationId, opts)
+
+getOrganization
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationcontrollerApi();
+
+var organizationId = 789; // Number | organizationId
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getOrganizationUsingGET(organizationId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**Organization**](Organization.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="updateOrganizationUsingPUT"></a>
+# **updateOrganizationUsingPUT**
+> Organization updateOrganizationUsingPUT(organizationId, organization, opts)
+
+updateOrganization
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationcontrollerApi();
+
+var organizationId = 789; // Number | organizationId
+
+var organization = new Id4iApi.Organization(); // Organization | organization
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateOrganizationUsingPUT(organizationId, organization, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **organization** | [**Organization**](Organization.md)| organization | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**Organization**](Organization.md)
 
 ### Authorization
 

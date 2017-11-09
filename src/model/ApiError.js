@@ -136,6 +136,11 @@
      */
     "GUID_CREATION": "ERR_GUID_CREATION",
     /**
+     * value: "ERR_ENTITY_NOT_FOUND"
+     * @const
+     */
+    "ENTITY_NOT_FOUND": "ERR_ENTITY_NOT_FOUND",
+    /**
      * value: "ERR_HTTP"
      * @const
      */
