@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateLabelledCollectionRequest'], factory);
+    define(['ApiClient', 'model/AddGuidsToCollectionRequest', 'model/CreateLabelledCollectionRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateLabelledCollectionRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/AddGuidsToCollectionRequest'), require('../model/CreateLabelledCollectionRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.LabelledcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.CreateLabelledCollectionRequest);
+    root.Id4iApi.LabelledcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AddGuidsToCollectionRequest, root.Id4iApi.CreateLabelledCollectionRequest);
   }
-}(this, function(ApiClient, CreateLabelledCollectionRequest) {
+}(this, function(ApiClient, AddGuidsToCollectionRequest, CreateLabelledCollectionRequest) {
   'use strict';
 
   /**
@@ -99,26 +99,30 @@
     }
 
     /**
-     * Callback function to receive the result of the renameUsingPUT operation.
-     * @callback module:api/LabelledcollectioncontrollerApi~renameUsingPUTCallback
+     * Callback function to receive the result of the createUsingPUT1 operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~createUsingPUT1Callback
      * @param {String} error Error message, if any.
-     * @param {Array.<'String'>} data The data returned by the service call.
+     * @param {'Number'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * rename
+     * create
+     * @param {module:model/AddGuidsToCollectionRequest} info info
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {String} opts.label label
-     * @param {String} opts.newName newName
-     * @param {module:api/LabelledcollectioncontrollerApi~renameUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<'String'>}
+     * @param {module:api/LabelledcollectioncontrollerApi~createUsingPUT1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'Number'}
      */
-    this.renameUsingPUT = function(opts, callback) {
+    this.createUsingPUT1 = function(info, opts, callback) {
       opts = opts || {};
-      var postBody = opts['newName'];
+      var postBody = info;
+
+      // verify the required parameter 'info' is set
+      if (info === undefined || info === null) {
+        throw new Error("Missing the required parameter 'info' when calling createUsingPUT1");
+      }
 
 
       var pathParams = {
@@ -135,10 +139,10 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ['String'];
+      var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled', 'PUT',
+        '/api/v1/collection/labelled/elements', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

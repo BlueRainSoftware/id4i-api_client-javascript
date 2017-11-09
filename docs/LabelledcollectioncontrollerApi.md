@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createUsingPOST**](LabelledcollectioncontrollerApi.md#createUsingPOST) | **POST** /api/v1/collection/labelled | create
-[**renameUsingPUT**](LabelledcollectioncontrollerApi.md#renameUsingPUT) | **PUT** /api/v1/collection/labelled | rename
+[**createUsingPUT1**](LabelledcollectioncontrollerApi.md#createUsingPUT1) | **PUT** /api/v1/collection/labelled/elements | create
 
 
 <a name="createUsingPOST"></a>
@@ -58,11 +58,11 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="renameUsingPUT"></a>
-# **renameUsingPUT**
-> [&#39;String&#39;] renameUsingPUT(opts)
+<a name="createUsingPUT1"></a>
+# **createUsingPUT1**
+> &#39;Number&#39; createUsingPUT1(info, opts)
 
-rename
+create
 
 ### Example
 ```javascript
@@ -70,11 +70,11 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.LabelledcollectioncontrollerApi();
 
+var info = new Id4iApi.AddGuidsToCollectionRequest(); // AddGuidsToCollectionRequest | info
+
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'label': "label_example", // String | label
-  'newName': "newName_example" // String | newName
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
 var callback = function(error, data, response) {
@@ -84,21 +84,20 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.renameUsingPUT(opts, callback);
+apiInstance.createUsingPUT1(info, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **info** | [**AddGuidsToCollectionRequest**](AddGuidsToCollectionRequest.md)| info | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **label** | **String**| label | [optional] 
- **newName** | **String**| newName | [optional] 
 
 ### Return type
 
-**[&#39;String&#39;]**
+**&#39;Number&#39;**
 
 ### Authorization
 

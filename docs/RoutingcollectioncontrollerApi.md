@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createUsingPOST3**](RoutingcollectioncontrollerApi.md#createUsingPOST3) | **POST** /api/v1/collection/routing | create
-[**createUsingPUT**](RoutingcollectioncontrollerApi.md#createUsingPUT) | **PUT** /api/v1/collection/routing/elements | create
+[**createUsingPUT3**](RoutingcollectioncontrollerApi.md#createUsingPUT3) | **PUT** /api/v1/collection/routing/elements | create
 
 
 <a name="createUsingPOST3"></a>
@@ -58,9 +58,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="createUsingPUT"></a>
-# **createUsingPUT**
-> &#39;Number&#39; createUsingPUT(info, opts)
+<a name="createUsingPUT3"></a>
+# **createUsingPUT3**
+> &#39;Number&#39; createUsingPUT3(info, opts)
 
 create
 
@@ -84,7 +84,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createUsingPUT(info, opts, callback);
+apiInstance.createUsingPUT3(info, opts, callback);
 ```
 
 ### Parameters

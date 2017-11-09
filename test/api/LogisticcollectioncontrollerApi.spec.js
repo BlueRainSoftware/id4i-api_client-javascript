@@ -61,6 +61,16 @@
         done();
       });
     });
+    describe('createUsingPUT2', function() {
+      it('should call createUsingPUT2 successfully', function(done) {
+        //uncomment below and update the code to test createUsingPUT2
+        //instance.createUsingPUT2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

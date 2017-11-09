@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.LabelledcollectioncontrollerApi();
+    instance = new Id4iApi.CollectioncontrollerApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,21 +50,11 @@
       object[property] = value;
   }
 
-  describe('LabelledcollectioncontrollerApi', function() {
-    describe('createUsingPOST', function() {
-      it('should call createUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createUsingPOST
-        //instance.createUsingPOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createUsingPUT1', function() {
-      it('should call createUsingPUT1 successfully', function(done) {
-        //uncomment below and update the code to test createUsingPUT1
-        //instance.createUsingPUT1(function(error) {
+  describe('CollectioncontrollerApi', function() {
+    describe('createUsingPUT', function() {
+      it('should call createUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test createUsingPUT
+        //instance.createUsingPUT(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

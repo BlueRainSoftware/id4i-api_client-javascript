@@ -127,6 +127,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountcontrollerApi* | [**verifyPasswordResetUsingPUT**](docs/AccountcontrollerApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | verifyPasswordReset
 *Id4iApi.AccountcontrollerApi* | [**verifyRegistrationUsingPOST**](docs/AccountcontrollerApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | verifyRegistration
 *Id4iApi.AppinfocontrollerApi* | [**infoUsingGET**](docs/AppinfocontrollerApi.md#infoUsingGET) | **GET** /api/v1/info | info
+*Id4iApi.CollectioncontrollerApi* | [**createUsingPUT**](docs/CollectioncontrollerApi.md#createUsingPUT) | **PUT** /api/v1/collection/elements | create
 *Id4iApi.DefaultApi* | [**loginPOST**](docs/DefaultApi.md#loginPOST) | **POST** /login | 
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingDELETE**](docs/Id4ierrorcontrollerApi.md#errorUsingDELETE) | **DELETE** /error | error
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingGET**](docs/Id4ierrorcontrollerApi.md#errorUsingGET) | **GET** /error | error
@@ -136,8 +137,9 @@ Class | Method | HTTP request | Description
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingPOST**](docs/Id4ierrorcontrollerApi.md#errorUsingPOST) | **POST** /error | error
 *Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingPUT**](docs/Id4ierrorcontrollerApi.md#errorUsingPUT) | **PUT** /error | error
 *Id4iApi.LabelledcollectioncontrollerApi* | [**createUsingPOST**](docs/LabelledcollectioncontrollerApi.md#createUsingPOST) | **POST** /api/v1/collection/labelled | create
-*Id4iApi.LabelledcollectioncontrollerApi* | [**renameUsingPUT**](docs/LabelledcollectioncontrollerApi.md#renameUsingPUT) | **PUT** /api/v1/collection/labelled | rename
+*Id4iApi.LabelledcollectioncontrollerApi* | [**createUsingPUT1**](docs/LabelledcollectioncontrollerApi.md#createUsingPUT1) | **PUT** /api/v1/collection/labelled/elements | create
 *Id4iApi.LogisticcollectioncontrollerApi* | [**createUsingPOST1**](docs/LogisticcollectioncontrollerApi.md#createUsingPOST1) | **POST** /api/v1/collection/logistic | create
+*Id4iApi.LogisticcollectioncontrollerApi* | [**createUsingPUT2**](docs/LogisticcollectioncontrollerApi.md#createUsingPUT2) | **PUT** /api/v1/collection/logistic/elements | create
 *Id4iApi.OrganizationaddresscontrollerApi* | [**getAddressUsingGET**](docs/OrganizationaddresscontrollerApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | getAddress
 *Id4iApi.OrganizationaddresscontrollerApi* | [**getBillingAddressUsingGET**](docs/OrganizationaddresscontrollerApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | getBillingAddress
 *Id4iApi.OrganizationaddresscontrollerApi* | [**removeBillingAddressUsingDELETE**](docs/OrganizationaddresscontrollerApi.md#removeBillingAddressUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/addresses/billing | removeBillingAddress
@@ -149,7 +151,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationcontrollerApi* | [**updateOrganizationUsingPUT**](docs/OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
 *Id4iApi.RegisteredobjectcontrollerApi* | [**createUsingPOST2**](docs/RegisteredobjectcontrollerApi.md#createUsingPOST2) | **POST** /api/v1/registered-object | create
 *Id4iApi.RoutingcollectioncontrollerApi* | [**createUsingPOST3**](docs/RoutingcollectioncontrollerApi.md#createUsingPOST3) | **POST** /api/v1/collection/routing | create
-*Id4iApi.RoutingcollectioncontrollerApi* | [**createUsingPUT**](docs/RoutingcollectioncontrollerApi.md#createUsingPUT) | **PUT** /api/v1/collection/routing/elements | create
+*Id4iApi.RoutingcollectioncontrollerApi* | [**createUsingPUT3**](docs/RoutingcollectioncontrollerApi.md#createUsingPUT3) | **PUT** /api/v1/collection/routing/elements | create
 *Id4iApi.RoutingcontrollerApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routing/get/{guid}/{type} | retrieveCurrentParamsByType
 *Id4iApi.RoutingcontrollerApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routing/file/{guid} | retrieveRoutingFile
 *Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPOST**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPOST) | **POST** /api/v1/routing/file | storeRoutingFile

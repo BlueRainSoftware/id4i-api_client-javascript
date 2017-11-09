@@ -61,10 +61,10 @@
         done();
       });
     });
-    describe('createUsingPUT', function() {
-      it('should call createUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test createUsingPUT
-        //instance.createUsingPUT(function(error) {
+    describe('createUsingPUT3', function() {
+      it('should call createUsingPUT3 successfully', function(done) {
+        //uncomment below and update the code to test createUsingPUT3
+        //instance.createUsingPUT3(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

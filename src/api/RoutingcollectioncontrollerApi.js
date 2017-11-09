@@ -99,8 +99,8 @@
     }
 
     /**
-     * Callback function to receive the result of the createUsingPUT operation.
-     * @callback module:api/RoutingcollectioncontrollerApi~createUsingPUTCallback
+     * Callback function to receive the result of the createUsingPUT3 operation.
+     * @callback module:api/RoutingcollectioncontrollerApi~createUsingPUT3Callback
      * @param {String} error Error message, if any.
      * @param {'Number'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -112,16 +112,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/RoutingcollectioncontrollerApi~createUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/RoutingcollectioncontrollerApi~createUsingPUT3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Number'}
      */
-    this.createUsingPUT = function(info, opts, callback) {
+    this.createUsingPUT3 = function(info, opts, callback) {
       opts = opts || {};
       var postBody = info;
 
       // verify the required parameter 'info' is set
       if (info === undefined || info === null) {
-        throw new Error("Missing the required parameter 'info' when calling createUsingPUT");
+        throw new Error("Missing the required parameter 'info' when calling createUsingPUT3");
       }
 
 
