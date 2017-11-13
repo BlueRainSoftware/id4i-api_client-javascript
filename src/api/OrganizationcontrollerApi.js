@@ -99,6 +99,57 @@
     }
 
     /**
+     * Callback function to receive the result of the deleteOrganizationLogoUsingDELETE operation.
+     * @callback module:api/OrganizationcontrollerApi~deleteOrganizationLogoUsingDELETECallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * deleteOrganizationLogo
+     * @param {Number} organizationId organizationId
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationcontrollerApi~deleteOrganizationLogoUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.deleteOrganizationLogoUsingDELETE = function(organizationId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling deleteOrganizationLogoUsingDELETE");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/organization/{organizationId}/logo', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteOrganizationUsingDELETE operation.
      * @callback module:api/OrganizationcontrollerApi~deleteOrganizationUsingDELETECallback
      * @param {String} error Error message, if any.
@@ -195,6 +246,64 @@
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the setOrganizationLogoUsingPOST operation.
+     * @callback module:api/OrganizationcontrollerApi~setOrganizationLogoUsingPOSTCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * setOrganizationLogo
+     * @param {Number} organizationId organizationId
+     * @param {File} file file
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationcontrollerApi~setOrganizationLogoUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.setOrganizationLogoUsingPOST = function(organizationId, file, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling setOrganizationLogoUsingPOST");
+      }
+
+      // verify the required parameter 'file' is set
+      if (file === undefined || file === null) {
+        throw new Error("Missing the required parameter 'file' when calling setOrganizationLogoUsingPOST");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+        'file': file
+      };
+
+      var authNames = [];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/organization/{organizationId}/logo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

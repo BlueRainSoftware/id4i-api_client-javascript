@@ -61,6 +61,16 @@
         done();
       });
     });
+    describe('deleteOrganizationLogoUsingDELETE', function() {
+      it('should call deleteOrganizationLogoUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test deleteOrganizationLogoUsingDELETE
+        //instance.deleteOrganizationLogoUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteOrganizationUsingDELETE', function() {
       it('should call deleteOrganizationUsingDELETE successfully', function(done) {
         //uncomment below and update the code to test deleteOrganizationUsingDELETE
@@ -75,6 +85,16 @@
       it('should call getOrganizationUsingGET successfully', function(done) {
         //uncomment below and update the code to test getOrganizationUsingGET
         //instance.getOrganizationUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('setOrganizationLogoUsingPOST', function() {
+      it('should call setOrganizationLogoUsingPOST successfully', function(done) {
+        //uncomment below and update the code to test setOrganizationLogoUsingPOST
+        //instance.setOrganizationLogoUsingPOST(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

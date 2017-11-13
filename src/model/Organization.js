@@ -51,6 +51,7 @@
 
 
     _this['name'] = name;
+
   };
 
   /**
@@ -70,6 +71,9 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('logoURL')) {
+        obj['logoURL'] = ApiClient.convertToType(data['logoURL'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +86,10 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * @member {String} logoURL
+   */
+  exports.prototype['logoURL'] = undefined;
 
 
 

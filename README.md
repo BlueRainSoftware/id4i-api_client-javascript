@@ -146,9 +146,12 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationaddresscontrollerApi* | [**storeAddressUsingPOST**](docs/OrganizationaddresscontrollerApi.md#storeAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/default | storeAddress
 *Id4iApi.OrganizationaddresscontrollerApi* | [**storeBillingAddressUsingPOST**](docs/OrganizationaddresscontrollerApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | storeBillingAddress
 *Id4iApi.OrganizationcontrollerApi* | [**createOrganzationUsingPOST**](docs/OrganizationcontrollerApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
+*Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationLogoUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
 *Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
 *Id4iApi.OrganizationcontrollerApi* | [**getOrganizationUsingGET**](docs/OrganizationcontrollerApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
+*Id4iApi.OrganizationcontrollerApi* | [**setOrganizationLogoUsingPOST**](docs/OrganizationcontrollerApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
 *Id4iApi.OrganizationcontrollerApi* | [**updateOrganizationUsingPUT**](docs/OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
+*Id4iApi.PublicimagecontrollerApi* | [**resolveImageUsingGET**](docs/PublicimagecontrollerApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
 *Id4iApi.RegisteredobjectcontrollerApi* | [**createUsingPOST2**](docs/RegisteredobjectcontrollerApi.md#createUsingPOST2) | **POST** /api/v1/registered-object | create
 *Id4iApi.RoutingcollectioncontrollerApi* | [**createUsingPOST3**](docs/RoutingcollectioncontrollerApi.md#createUsingPOST3) | **POST** /api/v1/collection/routing | create
 *Id4iApi.RoutingcollectioncontrollerApi* | [**createUsingPUT3**](docs/RoutingcollectioncontrollerApi.md#createUsingPUT3) | **PUT** /api/v1/collection/routing/elements | create
