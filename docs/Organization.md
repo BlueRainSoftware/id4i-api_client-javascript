@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
-**name** | **String** |  | 
 **logoURL** | **String** |  | [optional] 
+**name** | **String** |  | 
 
 

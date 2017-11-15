@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.Organization();
+    instance = new Id4iApi.UserscontrollerApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,17 @@
       object[property] = value;
   }
 
-  describe('Organization', function() {
-    it('should create an instance of Organization', function() {
-      // uncomment below and update the code to test Organization
-      //var instane = new Id4iApi.Organization();
-      //expect(instance).to.be.a(Id4iApi.Organization);
+  describe('UserscontrollerApi', function() {
+    describe('findUserByUsernameUsingGET', function() {
+      it('should call findUserByUsernameUsingGET successfully', function(done) {
+        //uncomment below and update the code to test findUserByUsernameUsingGET
+        //instance.findUserByUsernameUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new Id4iApi.Organization();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property logoURL (base name: "logoURL")', function() {
-      // uncomment below and update the code to test the property logoURL
-      //var instane = new Id4iApi.Organization();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Id4iApi.Organization();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

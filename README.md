@@ -177,8 +177,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.RoutingcontrollerApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routing/get/{guid}/{type} | retrieveCurrentParamsByType
 *Id4iApi.RoutingcontrollerApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routing/file/{guid} | retrieveRoutingFile
 *Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPOST**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPOST) | **POST** /api/v1/routing/file | storeRoutingFile
-*Id4iApi.UsercontrollerApi* | [**findUserByUsernameUsingGET**](docs/UsercontrollerApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
-*Id4iApi.UsercontrollerApi* | [**usersUsingGET**](docs/UsercontrollerApi.md#usersUsingGET) | **GET** /api/v1/users | users
+*Id4iApi.UserorganizationscontrollerApi* | [**getOrganizationsUsingGET**](docs/UserorganizationscontrollerApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
+*Id4iApi.UserscontrollerApi* | [**findUserByUsernameUsingGET**](docs/UserscontrollerApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
 
 
 ## Documentation for Models
@@ -193,6 +193,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.ListOfGuids](docs/ListOfGuids.md)
  - [Id4iApi.Organization](docs/Organization.md)
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
+ - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
  - [Id4iApi.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [Id4iApi.RegisterObjectsRequest](docs/RegisterObjectsRequest.md)

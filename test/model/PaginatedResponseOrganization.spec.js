@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.Organization();
+    instance = new Id4iApi.PaginatedResponseOrganization();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,34 @@
       object[property] = value;
   }
 
-  describe('Organization', function() {
-    it('should create an instance of Organization', function() {
-      // uncomment below and update the code to test Organization
-      //var instane = new Id4iApi.Organization();
-      //expect(instance).to.be.a(Id4iApi.Organization);
+  describe('PaginatedResponseOrganization', function() {
+    it('should create an instance of PaginatedResponseOrganization', function() {
+      // uncomment below and update the code to test PaginatedResponseOrganization
+      //var instane = new Id4iApi.PaginatedResponseOrganization();
+      //expect(instance).to.be.a(Id4iApi.PaginatedResponseOrganization);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new Id4iApi.Organization();
+    it('should have the property elements (base name: "elements")', function() {
+      // uncomment below and update the code to test the property elements
+      //var instane = new Id4iApi.PaginatedResponseOrganization();
       //expect(instance).to.be();
     });
 
-    it('should have the property logoURL (base name: "logoURL")', function() {
-      // uncomment below and update the code to test the property logoURL
-      //var instane = new Id4iApi.Organization();
+    it('should have the property limit (base name: "limit")', function() {
+      // uncomment below and update the code to test the property limit
+      //var instane = new Id4iApi.PaginatedResponseOrganization();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Id4iApi.Organization();
+    it('should have the property offset (base name: "offset")', function() {
+      // uncomment below and update the code to test the property offset
+      //var instane = new Id4iApi.PaginatedResponseOrganization();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property total (base name: "total")', function() {
+      // uncomment below and update the code to test the property total
+      //var instane = new Id4iApi.PaginatedResponseOrganization();
       //expect(instance).to.be();
     });
 

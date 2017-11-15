@@ -50,8 +50,8 @@
     var _this = this;
 
 
-    _this['name'] = name;
 
+    _this['name'] = name;
   };
 
   /**
@@ -68,11 +68,11 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
       if (data.hasOwnProperty('logoURL')) {
         obj['logoURL'] = ApiClient.convertToType(data['logoURL'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
     }
     return obj;
@@ -83,13 +83,13 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
    * @member {String} logoURL
    */
   exports.prototype['logoURL'] = undefined;
+  /**
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
 
 
 
