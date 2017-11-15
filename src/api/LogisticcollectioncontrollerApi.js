@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddGuidsToCollectionRequest', 'model/CreateLogisticCollectionRequest'], factory);
+    define(['ApiClient', 'model/CreateLogisticCollectionRequest', 'model/ListOfGuids', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AddGuidsToCollectionRequest'), require('../model/CreateLogisticCollectionRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateLogisticCollectionRequest'), require('../model/ListOfGuids'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.LogisticcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AddGuidsToCollectionRequest, root.Id4iApi.CreateLogisticCollectionRequest);
+    root.Id4iApi.LogisticcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.ListOfGuids, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, AddGuidsToCollectionRequest, CreateLogisticCollectionRequest) {
+}(this, function(ApiClient, CreateLogisticCollectionRequest, ListOfGuids, ResponseEntity) {
   'use strict';
 
   /**
@@ -49,29 +49,144 @@
 
 
     /**
-     * Callback function to receive the result of the createUsingPOST1 operation.
-     * @callback module:api/LogisticcollectioncontrollerApi~createUsingPOST1Callback
+     * Callback function to receive the result of the addElementsToLogisticCollectionUsingPUT operation.
+     * @callback module:api/LogisticcollectioncontrollerApi~addElementsToLogisticCollectionUsingPUTCallback
+     * @param {String} error Error message, if any.
+     * @param {'Number'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * addElementsToLogisticCollection
+     * @param {String} collectionGuid collectionGuid
+     * @param {module:model/ListOfGuids} guids guids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LogisticcollectioncontrollerApi~addElementsToLogisticCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'Number'}
+     */
+    this.addElementsToLogisticCollectionUsingPUT = function(collectionGuid, guids, opts, callback) {
+      opts = opts || {};
+      var postBody = guids;
+
+      // verify the required parameter 'collectionGuid' is set
+      if (collectionGuid === undefined || collectionGuid === null) {
+        throw new Error("Missing the required parameter 'collectionGuid' when calling addElementsToLogisticCollectionUsingPUT");
+      }
+
+      // verify the required parameter 'guids' is set
+      if (guids === undefined || guids === null) {
+        throw new Error("Missing the required parameter 'guids' when calling addElementsToLogisticCollectionUsingPUT");
+      }
+
+
+      var pathParams = {
+        'collectionGuid': collectionGuid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = 'Number';
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/logistic/{collectionGuid}/elements', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addSingleElementToLogisticCollectionUsingPUT operation.
+     * @callback module:api/LogisticcollectioncontrollerApi~addSingleElementToLogisticCollectionUsingPUTCallback
+     * @param {String} error Error message, if any.
+     * @param {'Number'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * addSingleElementToLogisticCollection
+     * @param {String} collectionGuid collectionGuid
+     * @param {String} elementGuid elementGuid
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LogisticcollectioncontrollerApi~addSingleElementToLogisticCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'Number'}
+     */
+    this.addSingleElementToLogisticCollectionUsingPUT = function(collectionGuid, elementGuid, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'collectionGuid' is set
+      if (collectionGuid === undefined || collectionGuid === null) {
+        throw new Error("Missing the required parameter 'collectionGuid' when calling addSingleElementToLogisticCollectionUsingPUT");
+      }
+
+      // verify the required parameter 'elementGuid' is set
+      if (elementGuid === undefined || elementGuid === null) {
+        throw new Error("Missing the required parameter 'elementGuid' when calling addSingleElementToLogisticCollectionUsingPUT");
+      }
+
+
+      var pathParams = {
+        'collectionGuid': collectionGuid,
+        'elementGuid': elementGuid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = 'Number';
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/logistic/{collectionGuid}/elements/{elementGuid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createLogisticCollectionUsingPOST operation.
+     * @callback module:api/LogisticcollectioncontrollerApi~createLogisticCollectionUsingPOSTCallback
      * @param {String} error Error message, if any.
      * @param {Array.<'String'>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * create
+     * createLogisticCollection
      * @param {module:model/CreateLogisticCollectionRequest} createGUIDInfo createGUIDInfo
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/LogisticcollectioncontrollerApi~createUsingPOST1Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/LogisticcollectioncontrollerApi~createLogisticCollectionUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<'String'>}
      */
-    this.createUsingPOST1 = function(createGUIDInfo, opts, callback) {
+    this.createLogisticCollectionUsingPOST = function(createGUIDInfo, opts, callback) {
       opts = opts || {};
       var postBody = createGUIDInfo;
 
       // verify the required parameter 'createGUIDInfo' is set
       if (createGUIDInfo === undefined || createGUIDInfo === null) {
-        throw new Error("Missing the required parameter 'createGUIDInfo' when calling createUsingPOST1");
+        throw new Error("Missing the required parameter 'createGUIDInfo' when calling createLogisticCollectionUsingPOST");
       }
 
 
@@ -99,33 +214,91 @@
     }
 
     /**
-     * Callback function to receive the result of the createUsingPUT2 operation.
-     * @callback module:api/LogisticcollectioncontrollerApi~createUsingPUT2Callback
+     * Callback function to receive the result of the deleteLogisticCollectionUsingDELETE operation.
+     * @callback module:api/LogisticcollectioncontrollerApi~deleteLogisticCollectionUsingDELETECallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * deleteLogisticCollection
+     * @param {String} guid guid
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LogisticcollectioncontrollerApi~deleteLogisticCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.deleteLogisticCollectionUsingDELETE = function(guid, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling deleteLogisticCollectionUsingDELETE");
+      }
+
+
+      var pathParams = {
+        'guid': guid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/logistic/{guid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeElementsFromLogisticCollectionUsingDELETE operation.
+     * @callback module:api/LogisticcollectioncontrollerApi~removeElementsFromLogisticCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
      * @param {'Number'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * create
-     * @param {module:model/AddGuidsToCollectionRequest} info info
+     * removeElementsFromLogisticCollection
+     * @param {String} collectionGuid collectionGuid
+     * @param {module:model/ListOfGuids} guids guids
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/LogisticcollectioncontrollerApi~createUsingPUT2Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/LogisticcollectioncontrollerApi~removeElementsFromLogisticCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Number'}
      */
-    this.createUsingPUT2 = function(info, opts, callback) {
+    this.removeElementsFromLogisticCollectionUsingDELETE = function(collectionGuid, guids, opts, callback) {
       opts = opts || {};
-      var postBody = info;
+      var postBody = guids;
 
-      // verify the required parameter 'info' is set
-      if (info === undefined || info === null) {
-        throw new Error("Missing the required parameter 'info' when calling createUsingPUT2");
+      // verify the required parameter 'collectionGuid' is set
+      if (collectionGuid === undefined || collectionGuid === null) {
+        throw new Error("Missing the required parameter 'collectionGuid' when calling removeElementsFromLogisticCollectionUsingDELETE");
+      }
+
+      // verify the required parameter 'guids' is set
+      if (guids === undefined || guids === null) {
+        throw new Error("Missing the required parameter 'guids' when calling removeElementsFromLogisticCollectionUsingDELETE");
       }
 
 
       var pathParams = {
+        'collectionGuid': collectionGuid
       };
       var queryParams = {
       };
@@ -142,7 +315,65 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/logistic/elements', 'PUT',
+        '/api/v1/collection/logistic/{collectionGuid}/elements', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeSingleElementFromLogisticCollectionUsingDELETE operation.
+     * @callback module:api/LogisticcollectioncontrollerApi~removeSingleElementFromLogisticCollectionUsingDELETECallback
+     * @param {String} error Error message, if any.
+     * @param {'Number'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * removeSingleElementFromLogisticCollection
+     * @param {String} collectionGuid collectionGuid
+     * @param {String} elementGuid elementGuid
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LogisticcollectioncontrollerApi~removeSingleElementFromLogisticCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'Number'}
+     */
+    this.removeSingleElementFromLogisticCollectionUsingDELETE = function(collectionGuid, elementGuid, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'collectionGuid' is set
+      if (collectionGuid === undefined || collectionGuid === null) {
+        throw new Error("Missing the required parameter 'collectionGuid' when calling removeSingleElementFromLogisticCollectionUsingDELETE");
+      }
+
+      // verify the required parameter 'elementGuid' is set
+      if (elementGuid === undefined || elementGuid === null) {
+        throw new Error("Missing the required parameter 'elementGuid' when calling removeSingleElementFromLogisticCollectionUsingDELETE");
+      }
+
+
+      var pathParams = {
+        'collectionGuid': collectionGuid,
+        'elementGuid': elementGuid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = 'Number';
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/logistic/{collectionGuid}/elements/{elementGuid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

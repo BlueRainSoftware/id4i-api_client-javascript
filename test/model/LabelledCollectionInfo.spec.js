@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RegisteredobjectcontrollerApi();
+    instance = new Id4iApi.LabelledCollectionInfo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,17 +50,31 @@
       object[property] = value;
   }
 
-  describe('RegisteredobjectcontrollerApi', function() {
-    describe('createUsingPOST', function() {
-      it('should call createUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createUsingPOST
-        //instance.createUsingPOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('LabelledCollectionInfo', function() {
+    it('should create an instance of LabelledCollectionInfo', function() {
+      // uncomment below and update the code to test LabelledCollectionInfo
+      //var instane = new Id4iApi.LabelledCollectionInfo();
+      //expect(instance).to.be.a(Id4iApi.LabelledCollectionInfo);
     });
+
+    it('should have the property guid (base name: "guid")', function() {
+      // uncomment below and update the code to test the property guid
+      //var instane = new Id4iApi.LabelledCollectionInfo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property label (base name: "label")', function() {
+      // uncomment below and update the code to test the property label
+      //var instane = new Id4iApi.LabelledCollectionInfo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property organizationId (base name: "organizationId")', function() {
+      // uncomment below and update the code to test the property organizationId
+      //var instane = new Id4iApi.LabelledCollectionInfo();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

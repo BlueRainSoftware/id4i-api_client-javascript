@@ -51,20 +51,90 @@
   }
 
   describe('LabelledcollectioncontrollerApi', function() {
-    describe('createUsingPOST', function() {
-      it('should call createUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createUsingPOST
-        //instance.createUsingPOST(function(error) {
+    describe('addElementsToLabelledCollectionUsingPUT', function() {
+      it('should call addElementsToLabelledCollectionUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test addElementsToLabelledCollectionUsingPUT
+        //instance.addElementsToLabelledCollectionUsingPUT(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createUsingPUT1', function() {
-      it('should call createUsingPUT1 successfully', function(done) {
-        //uncomment below and update the code to test createUsingPUT1
-        //instance.createUsingPUT1(function(error) {
+    describe('addSingleElementToLabelledCollectionUsingPUT', function() {
+      it('should call addSingleElementToLabelledCollectionUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test addSingleElementToLabelledCollectionUsingPUT
+        //instance.addSingleElementToLabelledCollectionUsingPUT(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createLabelledCollectionUsingPOST', function() {
+      it('should call createLabelledCollectionUsingPOST successfully', function(done) {
+        //uncomment below and update the code to test createLabelledCollectionUsingPOST
+        //instance.createLabelledCollectionUsingPOST(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteLabelledCollectionUsingDELETE', function() {
+      it('should call deleteLabelledCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test deleteLabelledCollectionUsingDELETE
+        //instance.deleteLabelledCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('findByGuidUsingGET', function() {
+      it('should call findByGuidUsingGET successfully', function(done) {
+        //uncomment below and update the code to test findByGuidUsingGET
+        //instance.findByGuidUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('findByLabelUsingGET', function() {
+      it('should call findByLabelUsingGET successfully', function(done) {
+        //uncomment below and update the code to test findByLabelUsingGET
+        //instance.findByLabelUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeElementsFromLabelledCollectionUsingDELETE', function() {
+      it('should call removeElementsFromLabelledCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeElementsFromLabelledCollectionUsingDELETE
+        //instance.removeElementsFromLabelledCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeSingleElementFromLabelledCollectionUsingDELETE', function() {
+      it('should call removeSingleElementFromLabelledCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeSingleElementFromLabelledCollectionUsingDELETE
+        //instance.removeSingleElementFromLabelledCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('renameUsingPUT', function() {
+      it('should call renameUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test renameUsingPUT
+        //instance.renameUsingPUT(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

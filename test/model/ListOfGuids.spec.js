@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RegisteredobjectcontrollerApi();
+    instance = new Id4iApi.ListOfGuids();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,17 +50,19 @@
       object[property] = value;
   }
 
-  describe('RegisteredobjectcontrollerApi', function() {
-    describe('createUsingPOST', function() {
-      it('should call createUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createUsingPOST
-        //instance.createUsingPOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('ListOfGuids', function() {
+    it('should create an instance of ListOfGuids', function() {
+      // uncomment below and update the code to test ListOfGuids
+      //var instane = new Id4iApi.ListOfGuids();
+      //expect(instance).to.be.a(Id4iApi.ListOfGuids);
     });
+
+    it('should have the property guids (base name: "guids")', function() {
+      // uncomment below and update the code to test the property guids
+      //var instane = new Id4iApi.ListOfGuids();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

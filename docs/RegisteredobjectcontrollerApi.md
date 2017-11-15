@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUsingPOST2**](RegisteredobjectcontrollerApi.md#createUsingPOST2) | **POST** /api/v1/registered-object | create
+[**createUsingPOST**](RegisteredobjectcontrollerApi.md#createUsingPOST) | **POST** /api/v1/registered-object | create
 
 
-<a name="createUsingPOST2"></a>
-# **createUsingPOST2**
-> [&#39;String&#39;] createUsingPOST2(createGUIDInfo, opts)
+<a name="createUsingPOST"></a>
+# **createUsingPOST**
+> [&#39;String&#39;] createUsingPOST(createGUIDInfo, opts)
 
 create
 
@@ -33,7 +33,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createUsingPOST2(createGUIDInfo, opts, callback);
+apiInstance.createUsingPOST(createGUIDInfo, opts, callback);
 ```
 
 ### Parameters

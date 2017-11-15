@@ -51,10 +51,50 @@
   }
 
   describe('CollectioncontrollerApi', function() {
-    describe('createUsingPUT', function() {
-      it('should call createUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test createUsingPUT
-        //instance.createUsingPUT(function(error) {
+    describe('addElementsToCollectionUsingPUT', function() {
+      it('should call addElementsToCollectionUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test addElementsToCollectionUsingPUT
+        //instance.addElementsToCollectionUsingPUT(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('addSingleElementToCollectionUsingPUT', function() {
+      it('should call addSingleElementToCollectionUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test addSingleElementToCollectionUsingPUT
+        //instance.addSingleElementToCollectionUsingPUT(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteCollectionUsingDELETE', function() {
+      it('should call deleteCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test deleteCollectionUsingDELETE
+        //instance.deleteCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeElementsFromCollectionUsingDELETE', function() {
+      it('should call removeElementsFromCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeElementsFromCollectionUsingDELETE
+        //instance.removeElementsFromCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeSingleElementFromCollectionUsingDELETE', function() {
+      it('should call removeSingleElementFromCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeSingleElementFromCollectionUsingDELETE
+        //instance.removeSingleElementFromCollectionUsingDELETE(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

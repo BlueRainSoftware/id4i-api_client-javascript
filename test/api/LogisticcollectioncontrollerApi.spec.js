@@ -51,20 +51,60 @@
   }
 
   describe('LogisticcollectioncontrollerApi', function() {
-    describe('createUsingPOST1', function() {
-      it('should call createUsingPOST1 successfully', function(done) {
-        //uncomment below and update the code to test createUsingPOST1
-        //instance.createUsingPOST1(function(error) {
+    describe('addElementsToLogisticCollectionUsingPUT', function() {
+      it('should call addElementsToLogisticCollectionUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test addElementsToLogisticCollectionUsingPUT
+        //instance.addElementsToLogisticCollectionUsingPUT(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createUsingPUT2', function() {
-      it('should call createUsingPUT2 successfully', function(done) {
-        //uncomment below and update the code to test createUsingPUT2
-        //instance.createUsingPUT2(function(error) {
+    describe('addSingleElementToLogisticCollectionUsingPUT', function() {
+      it('should call addSingleElementToLogisticCollectionUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test addSingleElementToLogisticCollectionUsingPUT
+        //instance.addSingleElementToLogisticCollectionUsingPUT(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createLogisticCollectionUsingPOST', function() {
+      it('should call createLogisticCollectionUsingPOST successfully', function(done) {
+        //uncomment below and update the code to test createLogisticCollectionUsingPOST
+        //instance.createLogisticCollectionUsingPOST(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteLogisticCollectionUsingDELETE', function() {
+      it('should call deleteLogisticCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test deleteLogisticCollectionUsingDELETE
+        //instance.deleteLogisticCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeElementsFromLogisticCollectionUsingDELETE', function() {
+      it('should call removeElementsFromLogisticCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeElementsFromLogisticCollectionUsingDELETE
+        //instance.removeElementsFromLogisticCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeSingleElementFromLogisticCollectionUsingDELETE', function() {
+      it('should call removeSingleElementFromLogisticCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeSingleElementFromLogisticCollectionUsingDELETE
+        //instance.removeSingleElementFromLogisticCollectionUsingDELETE(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

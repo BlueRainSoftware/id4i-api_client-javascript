@@ -51,20 +51,60 @@
   }
 
   describe('RoutingcollectioncontrollerApi', function() {
-    describe('createUsingPOST3', function() {
-      it('should call createUsingPOST3 successfully', function(done) {
-        //uncomment below and update the code to test createUsingPOST3
-        //instance.createUsingPOST3(function(error) {
+    describe('addElementsToRoutingCollectionUsingPUT', function() {
+      it('should call addElementsToRoutingCollectionUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test addElementsToRoutingCollectionUsingPUT
+        //instance.addElementsToRoutingCollectionUsingPUT(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createUsingPUT3', function() {
-      it('should call createUsingPUT3 successfully', function(done) {
-        //uncomment below and update the code to test createUsingPUT3
-        //instance.createUsingPUT3(function(error) {
+    describe('addSingleElementToRoutingCollectionUsingPUT', function() {
+      it('should call addSingleElementToRoutingCollectionUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test addSingleElementToRoutingCollectionUsingPUT
+        //instance.addSingleElementToRoutingCollectionUsingPUT(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createRoutingCollectionUsingPOST', function() {
+      it('should call createRoutingCollectionUsingPOST successfully', function(done) {
+        //uncomment below and update the code to test createRoutingCollectionUsingPOST
+        //instance.createRoutingCollectionUsingPOST(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteRoutingCollectionUsingDELETE', function() {
+      it('should call deleteRoutingCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test deleteRoutingCollectionUsingDELETE
+        //instance.deleteRoutingCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeElementsFromRoutingCollectionUsingDELETE', function() {
+      it('should call removeElementsFromRoutingCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeElementsFromRoutingCollectionUsingDELETE
+        //instance.removeElementsFromRoutingCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeSingleElementFromRoutingCollectionUsingDELETE', function() {
+      it('should call removeSingleElementFromRoutingCollectionUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeSingleElementFromRoutingCollectionUsingDELETE
+        //instance.removeSingleElementFromRoutingCollectionUsingDELETE(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

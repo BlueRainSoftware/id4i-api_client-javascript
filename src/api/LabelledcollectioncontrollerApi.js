@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddGuidsToCollectionRequest', 'model/CreateLabelledCollectionRequest'], factory);
+    define(['ApiClient', 'model/CreateLabelledCollectionRequest', 'model/LabelledCollectionInfo', 'model/ListOfGuids', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AddGuidsToCollectionRequest'), require('../model/CreateLabelledCollectionRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateLabelledCollectionRequest'), require('../model/LabelledCollectionInfo'), require('../model/ListOfGuids'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.LabelledcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AddGuidsToCollectionRequest, root.Id4iApi.CreateLabelledCollectionRequest);
+    root.Id4iApi.LabelledcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.LabelledCollectionInfo, root.Id4iApi.ListOfGuids, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, AddGuidsToCollectionRequest, CreateLabelledCollectionRequest) {
+}(this, function(ApiClient, CreateLabelledCollectionRequest, LabelledCollectionInfo, ListOfGuids, ResponseEntity) {
   'use strict';
 
   /**
@@ -49,29 +49,144 @@
 
 
     /**
-     * Callback function to receive the result of the createUsingPOST operation.
-     * @callback module:api/LabelledcollectioncontrollerApi~createUsingPOSTCallback
+     * Callback function to receive the result of the addElementsToLabelledCollectionUsingPUT operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~addElementsToLabelledCollectionUsingPUTCallback
+     * @param {String} error Error message, if any.
+     * @param {'Number'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * addElementsToLabelledCollection
+     * @param {String} collectionGuid collectionGuid
+     * @param {module:model/ListOfGuids} guids guids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LabelledcollectioncontrollerApi~addElementsToLabelledCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'Number'}
+     */
+    this.addElementsToLabelledCollectionUsingPUT = function(collectionGuid, guids, opts, callback) {
+      opts = opts || {};
+      var postBody = guids;
+
+      // verify the required parameter 'collectionGuid' is set
+      if (collectionGuid === undefined || collectionGuid === null) {
+        throw new Error("Missing the required parameter 'collectionGuid' when calling addElementsToLabelledCollectionUsingPUT");
+      }
+
+      // verify the required parameter 'guids' is set
+      if (guids === undefined || guids === null) {
+        throw new Error("Missing the required parameter 'guids' when calling addElementsToLabelledCollectionUsingPUT");
+      }
+
+
+      var pathParams = {
+        'collectionGuid': collectionGuid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = 'Number';
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/labelled/{collectionGuid}/elements', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addSingleElementToLabelledCollectionUsingPUT operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~addSingleElementToLabelledCollectionUsingPUTCallback
+     * @param {String} error Error message, if any.
+     * @param {'Number'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * addSingleElementToLabelledCollection
+     * @param {String} collectionGuid collectionGuid
+     * @param {String} elementGuid elementGuid
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LabelledcollectioncontrollerApi~addSingleElementToLabelledCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'Number'}
+     */
+    this.addSingleElementToLabelledCollectionUsingPUT = function(collectionGuid, elementGuid, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'collectionGuid' is set
+      if (collectionGuid === undefined || collectionGuid === null) {
+        throw new Error("Missing the required parameter 'collectionGuid' when calling addSingleElementToLabelledCollectionUsingPUT");
+      }
+
+      // verify the required parameter 'elementGuid' is set
+      if (elementGuid === undefined || elementGuid === null) {
+        throw new Error("Missing the required parameter 'elementGuid' when calling addSingleElementToLabelledCollectionUsingPUT");
+      }
+
+
+      var pathParams = {
+        'collectionGuid': collectionGuid,
+        'elementGuid': elementGuid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = 'Number';
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/labelled/{collectionGuid}/elements/{elementGuid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createLabelledCollectionUsingPOST operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~createLabelledCollectionUsingPOSTCallback
      * @param {String} error Error message, if any.
      * @param {'String'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * create
+     * createLabelledCollection
      * @param {module:model/CreateLabelledCollectionRequest} createGUIDInfo createGUIDInfo
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/LabelledcollectioncontrollerApi~createUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/LabelledcollectioncontrollerApi~createLabelledCollectionUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
      */
-    this.createUsingPOST = function(createGUIDInfo, opts, callback) {
+    this.createLabelledCollectionUsingPOST = function(createGUIDInfo, opts, callback) {
       opts = opts || {};
       var postBody = createGUIDInfo;
 
       // verify the required parameter 'createGUIDInfo' is set
       if (createGUIDInfo === undefined || createGUIDInfo === null) {
-        throw new Error("Missing the required parameter 'createGUIDInfo' when calling createUsingPOST");
+        throw new Error("Missing the required parameter 'createGUIDInfo' when calling createLabelledCollectionUsingPOST");
       }
 
 
@@ -99,33 +214,200 @@
     }
 
     /**
-     * Callback function to receive the result of the createUsingPUT1 operation.
-     * @callback module:api/LabelledcollectioncontrollerApi~createUsingPUT1Callback
+     * Callback function to receive the result of the deleteLabelledCollectionUsingDELETE operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~deleteLabelledCollectionUsingDELETECallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * deleteLabelledCollection
+     * @param {String} guid guid
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LabelledcollectioncontrollerApi~deleteLabelledCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.deleteLabelledCollectionUsingDELETE = function(guid, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling deleteLabelledCollectionUsingDELETE");
+      }
+
+
+      var pathParams = {
+        'guid': guid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/labelled/{guid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the findByGuidUsingGET operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~findByGuidUsingGETCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LabelledCollectionInfo} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * findByGuid
+     * @param {String} guid guid
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LabelledcollectioncontrollerApi~findByGuidUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LabelledCollectionInfo}
+     */
+    this.findByGuidUsingGET = function(guid, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling findByGuidUsingGET");
+      }
+
+
+      var pathParams = {
+        'guid': guid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = LabelledCollectionInfo;
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/labelled/{guid}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the findByLabelUsingGET operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~findByLabelUsingGETCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LabelledCollectionInfo} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * findByLabel
+     * @param {Number} organizationId organizationId
+     * @param {String} label label
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LabelledcollectioncontrollerApi~findByLabelUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LabelledCollectionInfo}
+     */
+    this.findByLabelUsingGET = function(organizationId, label, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling findByLabelUsingGET");
+      }
+
+      // verify the required parameter 'label' is set
+      if (label === undefined || label === null) {
+        throw new Error("Missing the required parameter 'label' when calling findByLabelUsingGET");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId,
+        'label': label
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = LabelledCollectionInfo;
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/labelled/{organizationId}/{label}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeElementsFromLabelledCollectionUsingDELETE operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~removeElementsFromLabelledCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
      * @param {'Number'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * create
-     * @param {module:model/AddGuidsToCollectionRequest} info info
+     * removeElementsFromLabelledCollection
+     * @param {String} collectionGuid collectionGuid
+     * @param {module:model/ListOfGuids} guids guids
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/LabelledcollectioncontrollerApi~createUsingPUT1Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/LabelledcollectioncontrollerApi~removeElementsFromLabelledCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Number'}
      */
-    this.createUsingPUT1 = function(info, opts, callback) {
+    this.removeElementsFromLabelledCollectionUsingDELETE = function(collectionGuid, guids, opts, callback) {
       opts = opts || {};
-      var postBody = info;
+      var postBody = guids;
 
-      // verify the required parameter 'info' is set
-      if (info === undefined || info === null) {
-        throw new Error("Missing the required parameter 'info' when calling createUsingPUT1");
+      // verify the required parameter 'collectionGuid' is set
+      if (collectionGuid === undefined || collectionGuid === null) {
+        throw new Error("Missing the required parameter 'collectionGuid' when calling removeElementsFromLabelledCollectionUsingDELETE");
+      }
+
+      // verify the required parameter 'guids' is set
+      if (guids === undefined || guids === null) {
+        throw new Error("Missing the required parameter 'guids' when calling removeElementsFromLabelledCollectionUsingDELETE");
       }
 
 
       var pathParams = {
+        'collectionGuid': collectionGuid
       };
       var queryParams = {
       };
@@ -142,7 +424,122 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/elements', 'PUT',
+        '/api/v1/collection/labelled/{collectionGuid}/elements', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeSingleElementFromLabelledCollectionUsingDELETE operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~removeSingleElementFromLabelledCollectionUsingDELETECallback
+     * @param {String} error Error message, if any.
+     * @param {'Number'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * removeSingleElementFromLabelledCollection
+     * @param {String} collectionGuid collectionGuid
+     * @param {String} elementGuid elementGuid
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LabelledcollectioncontrollerApi~removeSingleElementFromLabelledCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'Number'}
+     */
+    this.removeSingleElementFromLabelledCollectionUsingDELETE = function(collectionGuid, elementGuid, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'collectionGuid' is set
+      if (collectionGuid === undefined || collectionGuid === null) {
+        throw new Error("Missing the required parameter 'collectionGuid' when calling removeSingleElementFromLabelledCollectionUsingDELETE");
+      }
+
+      // verify the required parameter 'elementGuid' is set
+      if (elementGuid === undefined || elementGuid === null) {
+        throw new Error("Missing the required parameter 'elementGuid' when calling removeSingleElementFromLabelledCollectionUsingDELETE");
+      }
+
+
+      var pathParams = {
+        'collectionGuid': collectionGuid,
+        'elementGuid': elementGuid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = 'Number';
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/labelled/{collectionGuid}/elements/{elementGuid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the renameUsingPUT operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~renameUsingPUTCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * rename
+     * @param {String} guid guid
+     * @param {module:model/LabelledCollectionInfo} request request
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/LabelledcollectioncontrollerApi~renameUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.renameUsingPUT = function(guid, request, opts, callback) {
+      opts = opts || {};
+      var postBody = request;
+
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling renameUsingPUT");
+      }
+
+      // verify the required parameter 'request' is set
+      if (request === undefined || request === null) {
+        throw new Error("Missing the required parameter 'request' when calling renameUsingPUT");
+      }
+
+
+      var pathParams = {
+        'guid': guid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/collection/labelled/{guid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
