@@ -223,7 +223,7 @@ No authorization required
 
 <a name="findByGuidUsingGET"></a>
 # **findByGuidUsingGET**
-> LabelledCollectionInfo findByGuidUsingGET(guid, opts)
+> GuidCollection findByGuidUsingGET(guid, opts)
 
 findByGuid
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LabelledCollectionInfo**](LabelledCollectionInfo.md)
+[**GuidCollection**](GuidCollection.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ No authorization required
 
 <a name="findByLabelUsingGET"></a>
 # **findByLabelUsingGET**
-> LabelledCollectionInfo findByLabelUsingGET(organizationId, label, opts)
+> GuidCollection findByLabelUsingGET(organizationId, label, opts)
 
 findByLabel
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LabelledCollectionInfo**](LabelledCollectionInfo.md)
+[**GuidCollection**](GuidCollection.md)
 
 ### Authorization
 
@@ -444,7 +444,7 @@ var apiInstance = new Id4iApi.LabelledcollectioncontrollerApi();
 
 var guid = "guid_example"; // String | guid
 
-var request = new Id4iApi.LabelledCollectionInfo(); // LabelledCollectionInfo | request
+var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -466,7 +466,7 @@ apiInstance.renameUsingPUT(guid, request, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **String**| guid | 
- **request** | [**LabelledCollectionInfo**](LabelledCollectionInfo.md)| request | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 

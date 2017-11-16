@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateLabelledCollectionRequest', 'model/LabelledCollectionInfo', 'model/ListOfGuids', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/CreateLabelledCollectionRequest', 'model/GuidCollection', 'model/ListOfGuids', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateLabelledCollectionRequest'), require('../model/LabelledCollectionInfo'), require('../model/ListOfGuids'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateLabelledCollectionRequest'), require('../model/GuidCollection'), require('../model/ListOfGuids'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.LabelledcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.LabelledCollectionInfo, root.Id4iApi.ListOfGuids, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.LabelledcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.ListOfGuids, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, CreateLabelledCollectionRequest, LabelledCollectionInfo, ListOfGuids, ResponseEntity) {
+}(this, function(ApiClient, CreateLabelledCollectionRequest, GuidCollection, ListOfGuids, ResponseEntity) {
   'use strict';
 
   /**
@@ -268,7 +268,7 @@
      * Callback function to receive the result of the findByGuidUsingGET operation.
      * @callback module:api/LabelledcollectioncontrollerApi~findByGuidUsingGETCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/LabelledCollectionInfo} data The data returned by the service call.
+     * @param {module:model/GuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -279,7 +279,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/LabelledcollectioncontrollerApi~findByGuidUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LabelledCollectionInfo}
+     * data is of type: {@link module:model/GuidCollection}
      */
     this.findByGuidUsingGET = function(guid, opts, callback) {
       opts = opts || {};
@@ -306,7 +306,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = LabelledCollectionInfo;
+      var returnType = GuidCollection;
 
       return this.apiClient.callApi(
         '/api/v1/collection/labelled/{guid}', 'GET',
@@ -319,7 +319,7 @@
      * Callback function to receive the result of the findByLabelUsingGET operation.
      * @callback module:api/LabelledcollectioncontrollerApi~findByLabelUsingGETCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/LabelledCollectionInfo} data The data returned by the service call.
+     * @param {module:model/GuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -331,7 +331,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/LabelledcollectioncontrollerApi~findByLabelUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LabelledCollectionInfo}
+     * data is of type: {@link module:model/GuidCollection}
      */
     this.findByLabelUsingGET = function(organizationId, label, opts, callback) {
       opts = opts || {};
@@ -364,7 +364,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = LabelledCollectionInfo;
+      var returnType = GuidCollection;
 
       return this.apiClient.callApi(
         '/api/v1/collection/labelled/{organizationId}/{label}', 'GET',
@@ -499,7 +499,7 @@
     /**
      * rename
      * @param {String} guid guid
-     * @param {module:model/LabelledCollectionInfo} request request
+     * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
