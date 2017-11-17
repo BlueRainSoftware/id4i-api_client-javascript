@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
       }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
     }
     return obj;
   }
@@ -89,7 +93,33 @@
    * @member {Number} organizationId
    */
   exports.prototype['organizationId'] = undefined;
+  /**
+   * @member {module:model/GuidCollection.TypeEnum} type
+   */
+  exports.prototype['type'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>type</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.TypeEnum = {
+    /**
+     * value: "ROUTING_COLLECTION"
+     * @const
+     */
+    "ROUTING_COLLECTION": "ROUTING_COLLECTION",
+    /**
+     * value: "LOGISTIC_COLLECTION"
+     * @const
+     */
+    "LOGISTIC_COLLECTION": "LOGISTIC_COLLECTION",
+    /**
+     * value: "LABELLED_COLLECTION"
+     * @const
+     */
+    "LABELLED_COLLECTION": "LABELLED_COLLECTION"  };
 
 
   return exports;
