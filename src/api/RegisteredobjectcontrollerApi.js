@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RegisterObjectsRequest'], factory);
+    define(['ApiClient', 'model/ListOfGuids', 'model/RegisterObjectsRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/RegisterObjectsRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/ListOfGuids'), require('../model/RegisterObjectsRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.RegisteredobjectcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.RegisterObjectsRequest);
+    root.Id4iApi.RegisteredobjectcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ListOfGuids, root.Id4iApi.RegisterObjectsRequest);
   }
-}(this, function(ApiClient, RegisterObjectsRequest) {
+}(this, function(ApiClient, ListOfGuids, RegisterObjectsRequest) {
   'use strict';
 
   /**
@@ -52,7 +52,7 @@
      * Callback function to receive the result of the createUsingPOST operation.
      * @callback module:api/RegisteredobjectcontrollerApi~createUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<'String'>} data The data returned by the service call.
+     * @param {module:model/ListOfGuids} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -63,7 +63,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RegisteredobjectcontrollerApi~createUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<'String'>}
+     * data is of type: {@link module:model/ListOfGuids}
      */
     this.createUsingPOST = function(createGUIDInfo, opts, callback) {
       opts = opts || {};
@@ -89,7 +89,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ['String'];
+      var returnType = ListOfGuids;
 
       return this.apiClient.callApi(
         '/api/v1/registered-object', 'POST',

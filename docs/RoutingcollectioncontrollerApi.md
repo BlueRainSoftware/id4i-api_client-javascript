@@ -120,7 +120,7 @@ No authorization required
 
 <a name="createRoutingCollectionUsingPOST"></a>
 # **createRoutingCollectionUsingPOST**
-> [&#39;String&#39;] createRoutingCollectionUsingPOST(createGUIDInfo, opts)
+> ListOfGuids createRoutingCollectionUsingPOST(createGUIDInfo, opts)
 
 createRoutingCollection
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**ListOfGuids**](ListOfGuids.md)
 
 ### Authorization
 

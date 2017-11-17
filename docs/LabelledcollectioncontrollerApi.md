@@ -123,7 +123,7 @@ No authorization required
 
 <a name="createLabelledCollectionUsingPOST"></a>
 # **createLabelledCollectionUsingPOST**
-> &#39;String&#39; createLabelledCollectionUsingPOST(createGUIDInfo, opts)
+> ListOfGuids createLabelledCollectionUsingPOST(createGUIDInfo, opts)
 
 createLabelledCollection
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**ListOfGuids**](ListOfGuids.md)
 
 ### Authorization
 

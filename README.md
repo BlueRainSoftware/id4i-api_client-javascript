@@ -167,6 +167,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationcontrollerApi* | [**setOrganizationLogoUsingPOST**](docs/OrganizationcontrollerApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
 *Id4iApi.OrganizationcontrollerApi* | [**updateOrganizationUsingPUT**](docs/OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
 *Id4iApi.OrganizationscollectioncontrollerApi* | [**getAllUsingGET**](docs/OrganizationscollectioncontrollerApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
+*Id4iApi.OrganizationusercontrollerApi* | [**getUserRolesUsingGET**](docs/OrganizationusercontrollerApi.md#getUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/userroles | getUserRoles
+*Id4iApi.OrganizationusercontrollerApi* | [**getUsersUsingGET**](docs/OrganizationusercontrollerApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
 *Id4iApi.PublicimagecontrollerApi* | [**resolveImageUsingGET**](docs/PublicimagecontrollerApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
 *Id4iApi.RegisteredobjectcontrollerApi* | [**createUsingPOST**](docs/RegisteredobjectcontrollerApi.md#createUsingPOST) | **POST** /api/v1/registered-object | create
 *Id4iApi.RoutingcollectioncontrollerApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingcollectioncontrollerApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collection/routing/{collectionGuid}/elements | addElementsToRoutingCollection
@@ -196,6 +198,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
  - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
+ - [Id4iApi.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
+ - [Id4iApi.PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
  - [Id4iApi.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [Id4iApi.RegisterObjectsRequest](docs/RegisterObjectsRequest.md)
@@ -209,6 +213,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.UserPresentation](docs/UserPresentation.md)
  - [Id4iApi.UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [Id4iApi.UserRegistrationResponse](docs/UserRegistrationResponse.md)
+ - [Id4iApi.UserRoles](docs/UserRoles.md)
 
 
 ## Documentation for Authorization

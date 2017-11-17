@@ -120,7 +120,7 @@ No authorization required
 
 <a name="createLogisticCollectionUsingPOST"></a>
 # **createLogisticCollectionUsingPOST**
-> [&#39;String&#39;] createLogisticCollectionUsingPOST(createGUIDInfo, opts)
+> ListOfGuids createLogisticCollectionUsingPOST(createGUIDInfo, opts)
 
 createLogisticCollection
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**ListOfGuids**](ListOfGuids.md)
 
 ### Authorization
 

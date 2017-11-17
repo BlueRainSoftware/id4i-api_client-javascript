@@ -167,7 +167,7 @@
      * Callback function to receive the result of the createRoutingCollectionUsingPOST operation.
      * @callback module:api/RoutingcollectioncontrollerApi~createRoutingCollectionUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<'String'>} data The data returned by the service call.
+     * @param {module:model/ListOfGuids} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -178,7 +178,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingcollectioncontrollerApi~createRoutingCollectionUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<'String'>}
+     * data is of type: {@link module:model/ListOfGuids}
      */
     this.createRoutingCollectionUsingPOST = function(createGUIDInfo, opts, callback) {
       opts = opts || {};
@@ -204,7 +204,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ['String'];
+      var returnType = ListOfGuids;
 
       return this.apiClient.callApi(
         '/api/v1/collection/routing', 'POST',

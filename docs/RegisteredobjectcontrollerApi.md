@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createUsingPOST"></a>
 # **createUsingPOST**
-> [&#39;String&#39;] createUsingPOST(createGUIDInfo, opts)
+> ListOfGuids createUsingPOST(createGUIDInfo, opts)
 
 create
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**ListOfGuids**](ListOfGuids.md)
 
 ### Authorization
 
