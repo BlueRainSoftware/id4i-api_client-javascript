@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateLogisticCollectionRequest', 'model/ListOfGuids', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateLogisticCollectionRequest', 'model/ListOfGuids', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateLogisticCollectionRequest'), require('../model/ListOfGuids'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateLogisticCollectionRequest'), require('../model/ListOfGuids'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.LogisticcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.ListOfGuids, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.LogisticcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.ListOfGuids, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, CreateLogisticCollectionRequest, ListOfGuids, ResponseEntity) {
+}(this, function(ApiClient, ApiError, CreateLogisticCollectionRequest, ListOfGuids, ResponseEntity) {
   'use strict';
 
   /**

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaginatedResponseGuidCollection'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/PaginatedResponseGuidCollection'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PaginatedResponseGuidCollection'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/PaginatedResponseGuidCollection'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationscollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.PaginatedResponseGuidCollection);
+    root.Id4iApi.OrganizationscollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.PaginatedResponseGuidCollection);
   }
-}(this, function(ApiClient, PaginatedResponseGuidCollection) {
+}(this, function(ApiClient, ApiError, PaginatedResponseGuidCollection) {
   'use strict';
 
   /**

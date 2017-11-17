@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaginatedResponseOrganization'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/PaginatedResponseOrganization'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PaginatedResponseOrganization'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/PaginatedResponseOrganization'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.UserorganizationscontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.PaginatedResponseOrganization);
+    root.Id4iApi.UserorganizationscontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.PaginatedResponseOrganization);
   }
-}(this, function(ApiClient, PaginatedResponseOrganization) {
+}(this, function(ApiClient, ApiError, PaginatedResponseOrganization) {
   'use strict';
 
   /**

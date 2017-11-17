@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Organization', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/Organization', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Organization'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/Organization'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.Organization, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.OrganizationcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.Organization, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, Organization, ResponseEntity) {
+}(this, function(ApiClient, ApiError, Organization, ResponseEntity) {
   'use strict';
 
   /**

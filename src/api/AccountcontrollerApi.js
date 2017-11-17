@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/SimpleMessageResponse', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/SimpleMessageResponse', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PasswordResetRequest'), require('../model/PasswordResetVerificationRequest'), require('../model/RegistrationVerificationTokenPresentation'), require('../model/ResponseEntity'), require('../model/SimpleMessageResponse'), require('../model/UserRegistrationRequest'), require('../model/UserRegistrationResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/PasswordResetRequest'), require('../model/PasswordResetVerificationRequest'), require('../model/RegistrationVerificationTokenPresentation'), require('../model/ResponseEntity'), require('../model/SimpleMessageResponse'), require('../model/UserRegistrationRequest'), require('../model/UserRegistrationResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.AccountcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.PasswordResetRequest, root.Id4iApi.PasswordResetVerificationRequest, root.Id4iApi.RegistrationVerificationTokenPresentation, root.Id4iApi.ResponseEntity, root.Id4iApi.SimpleMessageResponse, root.Id4iApi.UserRegistrationRequest, root.Id4iApi.UserRegistrationResponse);
+    root.Id4iApi.AccountcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.PasswordResetRequest, root.Id4iApi.PasswordResetVerificationRequest, root.Id4iApi.RegistrationVerificationTokenPresentation, root.Id4iApi.ResponseEntity, root.Id4iApi.SimpleMessageResponse, root.Id4iApi.UserRegistrationRequest, root.Id4iApi.UserRegistrationResponse);
   }
-}(this, function(ApiClient, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, ResponseEntity, SimpleMessageResponse, UserRegistrationRequest, UserRegistrationResponse) {
+}(this, function(ApiClient, ApiError, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, ResponseEntity, SimpleMessageResponse, UserRegistrationRequest, UserRegistrationResponse) {
   'use strict';
 
   /**

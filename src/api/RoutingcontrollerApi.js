@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ResponseEntity', 'model/RoutingFile', 'model/RoutingFileRequest'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ResponseEntity', 'model/RoutingFile', 'model/RoutingFileRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ResponseEntity'), require('../model/RoutingFile'), require('../model/RoutingFileRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ResponseEntity'), require('../model/RoutingFile'), require('../model/RoutingFileRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.RoutingcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ResponseEntity, root.Id4iApi.RoutingFile, root.Id4iApi.RoutingFileRequest);
+    root.Id4iApi.RoutingcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ResponseEntity, root.Id4iApi.RoutingFile, root.Id4iApi.RoutingFileRequest);
   }
-}(this, function(ApiClient, ResponseEntity, RoutingFile, RoutingFileRequest) {
+}(this, function(ApiClient, ApiError, ResponseEntity, RoutingFile, RoutingFileRequest) {
   'use strict';
 
   /**

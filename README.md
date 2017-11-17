@@ -133,13 +133,6 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectioncontrollerApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectioncontrollerApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collection/{collectionGuid}/elements | removeElementsFromCollection
 *Id4iApi.CollectioncontrollerApi* | [**removeSingleElementFromCollectionUsingDELETE**](docs/CollectioncontrollerApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collection/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
 *Id4iApi.DefaultApi* | [**loginPOST**](docs/DefaultApi.md#loginPOST) | **POST** /login | 
-*Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingDELETE**](docs/Id4ierrorcontrollerApi.md#errorUsingDELETE) | **DELETE** /error | error
-*Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingGET**](docs/Id4ierrorcontrollerApi.md#errorUsingGET) | **GET** /error | error
-*Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingHEAD**](docs/Id4ierrorcontrollerApi.md#errorUsingHEAD) | **HEAD** /error | error
-*Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingOPTIONS**](docs/Id4ierrorcontrollerApi.md#errorUsingOPTIONS) | **OPTIONS** /error | error
-*Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingPATCH**](docs/Id4ierrorcontrollerApi.md#errorUsingPATCH) | **PATCH** /error | error
-*Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingPOST**](docs/Id4ierrorcontrollerApi.md#errorUsingPOST) | **POST** /error | error
-*Id4iApi.Id4ierrorcontrollerApi* | [**errorUsingPUT**](docs/Id4ierrorcontrollerApi.md#errorUsingPUT) | **PUT** /error | error
 *Id4iApi.LabelledcollectioncontrollerApi* | [**addElementsToLabelledCollectionUsingPUT**](docs/LabelledcollectioncontrollerApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collection/labelled/{collectionGuid}/elements | addElementsToLabelledCollection
 *Id4iApi.LabelledcollectioncontrollerApi* | [**addSingleElementToLabelledCollectionUsingPUT**](docs/LabelledcollectioncontrollerApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collection/labelled/{collectionGuid}/elements/{elementGuid} | addSingleElementToLabelledCollection
 *Id4iApi.LabelledcollectioncontrollerApi* | [**createLabelledCollectionUsingPOST**](docs/LabelledcollectioncontrollerApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collection/labelled | createLabelledCollection

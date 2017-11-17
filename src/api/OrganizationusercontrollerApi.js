@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaginatedResponseUserPresentation', 'model/PaginatedResponseUserRoles'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/PaginatedResponseUserPresentation', 'model/PaginatedResponseUserRoles'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PaginatedResponseUserPresentation'), require('../model/PaginatedResponseUserRoles'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/PaginatedResponseUserPresentation'), require('../model/PaginatedResponseUserRoles'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationusercontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.PaginatedResponseUserPresentation, root.Id4iApi.PaginatedResponseUserRoles);
+    root.Id4iApi.OrganizationusercontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.PaginatedResponseUserPresentation, root.Id4iApi.PaginatedResponseUserRoles);
   }
-}(this, function(ApiClient, PaginatedResponseUserPresentation, PaginatedResponseUserRoles) {
+}(this, function(ApiClient, ApiError, PaginatedResponseUserPresentation, PaginatedResponseUserRoles) {
   'use strict';
 
   /**

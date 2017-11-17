@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateRoutingCollectionRequest', 'model/ListOfGuids', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateRoutingCollectionRequest', 'model/ListOfGuids', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateRoutingCollectionRequest'), require('../model/ListOfGuids'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateRoutingCollectionRequest'), require('../model/ListOfGuids'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.RoutingcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.ListOfGuids, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.RoutingcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.ListOfGuids, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, CreateRoutingCollectionRequest, ListOfGuids, ResponseEntity) {
+}(this, function(ApiClient, ApiError, CreateRoutingCollectionRequest, ListOfGuids, ResponseEntity) {
   'use strict';
 
   /**
