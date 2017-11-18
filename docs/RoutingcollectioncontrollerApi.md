@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addElementsToRoutingCollectionUsingPUT**](RoutingcollectioncontrollerApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collection/routing/{collectionGuid}/elements | addElementsToRoutingCollection
-[**addSingleElementToRoutingCollectionUsingPUT**](RoutingcollectioncontrollerApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collection/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
-[**createRoutingCollectionUsingPOST**](RoutingcollectioncontrollerApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collection/routing | createRoutingCollection
-[**deleteRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collection/routing/{guid} | deleteRoutingCollection
-[**removeElementsFromRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collection/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
-[**removeSingleElementFromRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collection/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
+[**addElementsToRoutingCollectionUsingPUT**](RoutingcollectioncontrollerApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
+[**addSingleElementToRoutingCollectionUsingPUT**](RoutingcollectioncontrollerApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
+[**createRoutingCollectionUsingPOST**](RoutingcollectioncontrollerApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
+[**deleteRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{guid} | deleteRoutingCollection
+[**removeElementsFromRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
+[**removeSingleElementFromRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
 
 
 <a name="addElementsToRoutingCollectionUsingPUT"></a>

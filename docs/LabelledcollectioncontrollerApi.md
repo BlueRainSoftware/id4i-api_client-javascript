@@ -4,15 +4,15 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addElementsToLabelledCollectionUsingPUT**](LabelledcollectioncontrollerApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collection/labelled/{collectionGuid}/elements | addElementsToLabelledCollection
-[**addSingleElementToLabelledCollectionUsingPUT**](LabelledcollectioncontrollerApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collection/labelled/{collectionGuid}/elements/{elementGuid} | addSingleElementToLabelledCollection
-[**createLabelledCollectionUsingPOST**](LabelledcollectioncontrollerApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collection/labelled | createLabelledCollection
-[**deleteLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#deleteLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collection/labelled/{guid} | deleteLabelledCollection
-[**findByGuidUsingGET**](LabelledcollectioncontrollerApi.md#findByGuidUsingGET) | **GET** /api/v1/collection/labelled/{guid} | findByGuid
-[**findByLabelUsingGET**](LabelledcollectioncontrollerApi.md#findByLabelUsingGET) | **GET** /api/v1/collection/labelled/{organizationId}/{label} | findByLabel
-[**removeElementsFromLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collection/labelled/{collectionGuid}/elements | removeElementsFromLabelledCollection
-[**removeSingleElementFromLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collection/labelled/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromLabelledCollection
-[**renameUsingPUT**](LabelledcollectioncontrollerApi.md#renameUsingPUT) | **PUT** /api/v1/collection/labelled/{guid} | rename
+[**addElementsToLabelledCollectionUsingPUT**](LabelledcollectioncontrollerApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements | addElementsToLabelledCollection
+[**addSingleElementToLabelledCollectionUsingPUT**](LabelledcollectioncontrollerApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | addSingleElementToLabelledCollection
+[**createLabelledCollectionUsingPOST**](LabelledcollectioncontrollerApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | createLabelledCollection
+[**deleteLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#deleteLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{guid} | deleteLabelledCollection
+[**findByGuidUsingGET**](LabelledcollectioncontrollerApi.md#findByGuidUsingGET) | **GET** /api/v1/collections/labelled/{guid} | findByGuid
+[**findByLabelUsingGET**](LabelledcollectioncontrollerApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | findByLabel
+[**removeElementsFromLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | removeElementsFromLabelledCollection
+[**removeSingleElementFromLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromLabelledCollection
+[**renameUsingPUT**](LabelledcollectioncontrollerApi.md#renameUsingPUT) | **PUT** /api/v1/collections/labelled/{guid} | rename
 
 
 <a name="addElementsToLabelledCollectionUsingPUT"></a>

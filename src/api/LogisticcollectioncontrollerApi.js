@@ -99,7 +99,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/logistic/{collectionGuid}/elements', 'PUT',
+        '/api/v1/collections/logistic/{collectionGuid}/elements', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -157,7 +157,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/logistic/{collectionGuid}/elements/{elementGuid}', 'PUT',
+        '/api/v1/collections/logistic/{collectionGuid}/elements/{elementGuid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -207,7 +207,7 @@
       var returnType = ListOfGuids;
 
       return this.apiClient.callApi(
-        '/api/v1/collection/logistic', 'POST',
+        '/api/v1/collections/logistic', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -258,7 +258,7 @@
       var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
-        '/api/v1/collection/logistic/{guid}', 'DELETE',
+        '/api/v1/collections/logistic/{guid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -315,7 +315,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/logistic/{collectionGuid}/elements', 'DELETE',
+        '/api/v1/collections/logistic/{collectionGuid}/elements', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -373,7 +373,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/logistic/{collectionGuid}/elements/{elementGuid}', 'DELETE',
+        '/api/v1/collections/logistic/{collectionGuid}/elements/{elementGuid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

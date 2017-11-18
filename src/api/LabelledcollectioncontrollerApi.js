@@ -99,7 +99,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/{collectionGuid}/elements', 'PUT',
+        '/api/v1/collections/labelled/{collectionGuid}/elements', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -157,7 +157,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/{collectionGuid}/elements/{elementGuid}', 'PUT',
+        '/api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -207,7 +207,7 @@
       var returnType = ListOfGuids;
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled', 'POST',
+        '/api/v1/collections/labelled', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -258,7 +258,7 @@
       var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/{guid}', 'DELETE',
+        '/api/v1/collections/labelled/{guid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -309,7 +309,7 @@
       var returnType = GuidCollection;
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/{guid}', 'GET',
+        '/api/v1/collections/labelled/{guid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +367,7 @@
       var returnType = GuidCollection;
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/{organizationId}/{label}', 'GET',
+        '/api/v1/collections/labelled/{organizationId}/{label}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -424,7 +424,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/{collectionGuid}/elements', 'DELETE',
+        '/api/v1/collections/labelled/{collectionGuid}/elements', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -482,7 +482,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/{collectionGuid}/elements/{elementGuid}', 'DELETE',
+        '/api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -539,7 +539,7 @@
       var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
-        '/api/v1/collection/labelled/{guid}', 'PUT',
+        '/api/v1/collections/labelled/{guid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

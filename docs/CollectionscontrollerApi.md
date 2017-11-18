@@ -1,28 +1,28 @@
-# Id4iApi.LogisticcollectioncontrollerApi
+# Id4iApi.CollectionscontrollerApi
 
 All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addElementsToLogisticCollectionUsingPUT**](LogisticcollectioncontrollerApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements | addElementsToLogisticCollection
-[**addSingleElementToLogisticCollectionUsingPUT**](LogisticcollectioncontrollerApi.md#addSingleElementToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements/{elementGuid} | addSingleElementToLogisticCollection
-[**createLogisticCollectionUsingPOST**](LogisticcollectioncontrollerApi.md#createLogisticCollectionUsingPOST) | **POST** /api/v1/collections/logistic | createLogisticCollection
-[**deleteLogisticCollectionUsingDELETE**](LogisticcollectioncontrollerApi.md#deleteLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{guid} | deleteLogisticCollection
-[**removeElementsFromLogisticCollectionUsingDELETE**](LogisticcollectioncontrollerApi.md#removeElementsFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements | removeElementsFromLogisticCollection
-[**removeSingleElementFromLogisticCollectionUsingDELETE**](LogisticcollectioncontrollerApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromLogisticCollection
+[**addElementsToCollectionUsingPUT**](CollectionscontrollerApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
+[**addSingleElementToCollectionUsingPUT**](CollectionscontrollerApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | addSingleElementToCollection
+[**deleteCollectionUsingDELETE**](CollectionscontrollerApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{guid} | deleteCollection
+[**listContentsUsingGET**](CollectionscontrollerApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{guid}/elements | listContents
+[**removeElementsFromCollectionUsingDELETE**](CollectionscontrollerApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
+[**removeSingleElementFromCollectionUsingDELETE**](CollectionscontrollerApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
 
 
-<a name="addElementsToLogisticCollectionUsingPUT"></a>
-# **addElementsToLogisticCollectionUsingPUT**
-> &#39;Number&#39; addElementsToLogisticCollectionUsingPUT(collectionGuid, guids, opts)
+<a name="addElementsToCollectionUsingPUT"></a>
+# **addElementsToCollectionUsingPUT**
+> &#39;Number&#39; addElementsToCollectionUsingPUT(collectionGuid, guids, opts)
 
-addElementsToLogisticCollection
+addElementsToCollection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.LogisticcollectioncontrollerApi();
+var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
 var collectionGuid = "collectionGuid_example"; // String | collectionGuid
 
@@ -40,7 +40,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToLogisticCollectionUsingPUT(collectionGuid, guids, opts, callback);
+apiInstance.addElementsToCollectionUsingPUT(collectionGuid, guids, opts, callback);
 ```
 
 ### Parameters
@@ -65,17 +65,17 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="addSingleElementToLogisticCollectionUsingPUT"></a>
-# **addSingleElementToLogisticCollectionUsingPUT**
-> &#39;Number&#39; addSingleElementToLogisticCollectionUsingPUT(collectionGuid, elementGuid, opts)
+<a name="addSingleElementToCollectionUsingPUT"></a>
+# **addSingleElementToCollectionUsingPUT**
+> &#39;Number&#39; addSingleElementToCollectionUsingPUT(collectionGuid, elementGuid, opts)
 
-addSingleElementToLogisticCollection
+addSingleElementToCollection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.LogisticcollectioncontrollerApi();
+var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
 var collectionGuid = "collectionGuid_example"; // String | collectionGuid
 
@@ -93,7 +93,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addSingleElementToLogisticCollectionUsingPUT(collectionGuid, elementGuid, opts, callback);
+apiInstance.addSingleElementToCollectionUsingPUT(collectionGuid, elementGuid, opts, callback);
 ```
 
 ### Parameters
@@ -118,67 +118,17 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="createLogisticCollectionUsingPOST"></a>
-# **createLogisticCollectionUsingPOST**
-> ListOfGuids createLogisticCollectionUsingPOST(createGUIDInfo, opts)
+<a name="deleteCollectionUsingDELETE"></a>
+# **deleteCollectionUsingDELETE**
+> ResponseEntity deleteCollectionUsingDELETE(guid, opts)
 
-createLogisticCollection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.LogisticcollectioncontrollerApi();
-
-var createGUIDInfo = new Id4iApi.CreateLogisticCollectionRequest(); // CreateLogisticCollectionRequest | createGUIDInfo
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createLogisticCollectionUsingPOST(createGUIDInfo, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createGUIDInfo** | [**CreateLogisticCollectionRequest**](CreateLogisticCollectionRequest.md)| createGUIDInfo | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ListOfGuids**](ListOfGuids.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="deleteLogisticCollectionUsingDELETE"></a>
-# **deleteLogisticCollectionUsingDELETE**
-> ResponseEntity deleteLogisticCollectionUsingDELETE(guid, opts)
-
-deleteLogisticCollection
+deleteCollection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.LogisticcollectioncontrollerApi();
+var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
 var guid = "guid_example"; // String | guid
 
@@ -194,7 +144,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteLogisticCollectionUsingDELETE(guid, opts, callback);
+apiInstance.deleteCollectionUsingDELETE(guid, opts, callback);
 ```
 
 ### Parameters
@@ -218,17 +168,71 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeElementsFromLogisticCollectionUsingDELETE"></a>
-# **removeElementsFromLogisticCollectionUsingDELETE**
-> &#39;Number&#39; removeElementsFromLogisticCollectionUsingDELETE(collectionGuid, guids, opts)
+<a name="listContentsUsingGET"></a>
+# **listContentsUsingGET**
+> PaginatedResponsestring listContentsUsingGET(guid, opts)
 
-removeElementsFromLogisticCollection
+listContents
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.LogisticcollectioncontrollerApi();
+var apiInstance = new Id4iApi.CollectionscontrollerApi();
+
+var guid = "guid_example"; // String | guid
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'offset': 56, // Number | 
+  'limit': 56 // Number | 
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listContentsUsingGET(guid, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**| guid | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+ **offset** | **Number**|  | [optional] 
+ **limit** | **Number**|  | [optional] 
+
+### Return type
+
+[**PaginatedResponsestring**](PaginatedResponsestring.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="removeElementsFromCollectionUsingDELETE"></a>
+# **removeElementsFromCollectionUsingDELETE**
+> &#39;Number&#39; removeElementsFromCollectionUsingDELETE(collectionGuid, guids, opts)
+
+removeElementsFromCollection
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
 var collectionGuid = "collectionGuid_example"; // String | collectionGuid
 
@@ -246,7 +250,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromLogisticCollectionUsingDELETE(collectionGuid, guids, opts, callback);
+apiInstance.removeElementsFromCollectionUsingDELETE(collectionGuid, guids, opts, callback);
 ```
 
 ### Parameters
@@ -271,17 +275,17 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeSingleElementFromLogisticCollectionUsingDELETE"></a>
-# **removeSingleElementFromLogisticCollectionUsingDELETE**
-> &#39;Number&#39; removeSingleElementFromLogisticCollectionUsingDELETE(collectionGuid, elementGuid, opts)
+<a name="removeSingleElementFromCollectionUsingDELETE"></a>
+# **removeSingleElementFromCollectionUsingDELETE**
+> &#39;Number&#39; removeSingleElementFromCollectionUsingDELETE(collectionGuid, elementGuid, opts)
 
-removeSingleElementFromLogisticCollection
+removeSingleElementFromCollection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.LogisticcollectioncontrollerApi();
+var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
 var collectionGuid = "collectionGuid_example"; // String | collectionGuid
 
@@ -299,7 +303,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeSingleElementFromLogisticCollectionUsingDELETE(collectionGuid, elementGuid, opts, callback);
+apiInstance.removeSingleElementFromCollectionUsingDELETE(collectionGuid, elementGuid, opts, callback);
 ```
 
 ### Parameters
