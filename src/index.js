@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/AppInfoPresentation', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/ListOfGuids', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedResponseUserPresentation', 'model/PaginatedResponseUserRoles', 'model/PaginatedResponsestring', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegisterObjectsRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles', 'api/AccountcontrollerApi', 'api/AppinfocontrollerApi', 'api/CollectionscontrollerApi', 'api/DefaultApi', 'api/LabelledcollectioncontrollerApi', 'api/LogisticcollectioncontrollerApi', 'api/OrganizationaddresscontrollerApi', 'api/OrganizationcontrollerApi', 'api/OrganizationscollectioncontrollerApi', 'api/OrganizationusercontrollerApi', 'api/PublicimagecontrollerApi', 'api/RegisteredobjectcontrollerApi', 'api/RoutingcollectioncontrollerApi', 'api/RoutingcontrollerApi', 'api/UserorganizationscontrollerApi', 'api/UserscontrollerApi'], factory);
+    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/AppInfoPresentation', 'model/ChangeRoleRequest', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/ListOfGuids', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedResponsestring', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegisterObjectsRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/UserOrganizationRoleSet', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles', 'api/AccountcontrollerApi', 'api/AppinfocontrollerApi', 'api/CollectionscontrollerApi', 'api/DefaultApi', 'api/LabelledcollectioncontrollerApi', 'api/LogisticcollectioncontrollerApi', 'api/OrganizationaddresscontrollerApi', 'api/OrganizationcontrollerApi', 'api/OrganizationscollectioncontrollerApi', 'api/OrganizationusercontrollerApi', 'api/PublicimagecontrollerApi', 'api/RegisteredobjectcontrollerApi', 'api/RoutingcollectioncontrollerApi', 'api/RoutingcontrollerApi', 'api/UserorganizationscontrollerApi', 'api/UserscontrollerApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/ApiError'), require('./model/AppInfoPresentation'), require('./model/CreateLabelledCollectionRequest'), require('./model/CreateLogisticCollectionRequest'), require('./model/CreateRoutingCollectionRequest'), require('./model/GuidCollection'), require('./model/ListOfGuids'), require('./model/Organization'), require('./model/OrganizationAddress'), require('./model/PaginatedResponseGuidCollection'), require('./model/PaginatedResponseOrganization'), require('./model/PaginatedResponseUserPresentation'), require('./model/PaginatedResponseUserRoles'), require('./model/PaginatedResponsestring'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegisterObjectsRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/ResponseEntity'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./model/UserRoles'), require('./api/AccountcontrollerApi'), require('./api/AppinfocontrollerApi'), require('./api/CollectionscontrollerApi'), require('./api/DefaultApi'), require('./api/LabelledcollectioncontrollerApi'), require('./api/LogisticcollectioncontrollerApi'), require('./api/OrganizationaddresscontrollerApi'), require('./api/OrganizationcontrollerApi'), require('./api/OrganizationscollectioncontrollerApi'), require('./api/OrganizationusercontrollerApi'), require('./api/PublicimagecontrollerApi'), require('./api/RegisteredobjectcontrollerApi'), require('./api/RoutingcollectioncontrollerApi'), require('./api/RoutingcontrollerApi'), require('./api/UserorganizationscontrollerApi'), require('./api/UserscontrollerApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/ApiError'), require('./model/AppInfoPresentation'), require('./model/ChangeRoleRequest'), require('./model/CreateLabelledCollectionRequest'), require('./model/CreateLogisticCollectionRequest'), require('./model/CreateRoutingCollectionRequest'), require('./model/GuidCollection'), require('./model/ListOfGuids'), require('./model/Organization'), require('./model/OrganizationAddress'), require('./model/PaginatedResponseGuidCollection'), require('./model/PaginatedResponseOrganization'), require('./model/PaginatedResponsestring'), require('./model/PaginatedUserPresentationResponse'), require('./model/PaginatedUserRolesResponse'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegisterObjectsRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/ResponseEntity'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/UserOrganizationRoleSet'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./model/UserRoles'), require('./api/AccountcontrollerApi'), require('./api/AppinfocontrollerApi'), require('./api/CollectionscontrollerApi'), require('./api/DefaultApi'), require('./api/LabelledcollectioncontrollerApi'), require('./api/LogisticcollectioncontrollerApi'), require('./api/OrganizationaddresscontrollerApi'), require('./api/OrganizationcontrollerApi'), require('./api/OrganizationscollectioncontrollerApi'), require('./api/OrganizationusercontrollerApi'), require('./api/PublicimagecontrollerApi'), require('./api/RegisteredobjectcontrollerApi'), require('./api/RoutingcollectioncontrollerApi'), require('./api/RoutingcontrollerApi'), require('./api/UserorganizationscontrollerApi'), require('./api/UserscontrollerApi'));
   }
-}(function(ApiClient, AccountCredentials, ApiError, AppInfoPresentation, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, ListOfGuids, Organization, OrganizationAddress, PaginatedResponseGuidCollection, PaginatedResponseOrganization, PaginatedResponseUserPresentation, PaginatedResponseUserRoles, PaginatedResponsestring, PasswordResetRequest, PasswordResetVerificationRequest, RegisterObjectsRequest, RegistrationVerificationTokenPresentation, ResponseEntity, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles, AccountcontrollerApi, AppinfocontrollerApi, CollectionscontrollerApi, DefaultApi, LabelledcollectioncontrollerApi, LogisticcollectioncontrollerApi, OrganizationaddresscontrollerApi, OrganizationcontrollerApi, OrganizationscollectioncontrollerApi, OrganizationusercontrollerApi, PublicimagecontrollerApi, RegisteredobjectcontrollerApi, RoutingcollectioncontrollerApi, RoutingcontrollerApi, UserorganizationscontrollerApi, UserscontrollerApi) {
+}(function(ApiClient, AccountCredentials, ApiError, AppInfoPresentation, ChangeRoleRequest, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, ListOfGuids, Organization, OrganizationAddress, PaginatedResponseGuidCollection, PaginatedResponseOrganization, PaginatedResponsestring, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegisterObjectsRequest, RegistrationVerificationTokenPresentation, ResponseEntity, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, UserOrganizationRoleSet, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles, AccountcontrollerApi, AppinfocontrollerApi, CollectionscontrollerApi, DefaultApi, LabelledcollectioncontrollerApi, LogisticcollectioncontrollerApi, OrganizationaddresscontrollerApi, OrganizationcontrollerApi, OrganizationscollectioncontrollerApi, OrganizationusercontrollerApi, PublicimagecontrollerApi, RegisteredobjectcontrollerApi, RoutingcollectioncontrollerApi, RoutingcontrollerApi, UserorganizationscontrollerApi, UserscontrollerApi) {
   'use strict';
 
   /**
@@ -78,6 +78,11 @@
      */
     AppInfoPresentation: AppInfoPresentation,
     /**
+     * The ChangeRoleRequest model constructor.
+     * @property {module:model/ChangeRoleRequest}
+     */
+    ChangeRoleRequest: ChangeRoleRequest,
+    /**
      * The CreateLabelledCollectionRequest model constructor.
      * @property {module:model/CreateLabelledCollectionRequest}
      */
@@ -123,20 +128,20 @@
      */
     PaginatedResponseOrganization: PaginatedResponseOrganization,
     /**
-     * The PaginatedResponseUserPresentation model constructor.
-     * @property {module:model/PaginatedResponseUserPresentation}
-     */
-    PaginatedResponseUserPresentation: PaginatedResponseUserPresentation,
-    /**
-     * The PaginatedResponseUserRoles model constructor.
-     * @property {module:model/PaginatedResponseUserRoles}
-     */
-    PaginatedResponseUserRoles: PaginatedResponseUserRoles,
-    /**
      * The PaginatedResponsestring model constructor.
      * @property {module:model/PaginatedResponsestring}
      */
     PaginatedResponsestring: PaginatedResponsestring,
+    /**
+     * The PaginatedUserPresentationResponse model constructor.
+     * @property {module:model/PaginatedUserPresentationResponse}
+     */
+    PaginatedUserPresentationResponse: PaginatedUserPresentationResponse,
+    /**
+     * The PaginatedUserRolesResponse model constructor.
+     * @property {module:model/PaginatedUserRolesResponse}
+     */
+    PaginatedUserRolesResponse: PaginatedUserRolesResponse,
     /**
      * The PasswordResetRequest model constructor.
      * @property {module:model/PasswordResetRequest}
@@ -187,6 +192,11 @@
      * @property {module:model/SimpleMessageResponse}
      */
     SimpleMessageResponse: SimpleMessageResponse,
+    /**
+     * The UserOrganizationRoleSet model constructor.
+     * @property {module:model/UserOrganizationRoleSet}
+     */
+    UserOrganizationRoleSet: UserOrganizationRoleSet,
     /**
      * The UserPresentation model constructor.
      * @property {module:model/UserPresentation}

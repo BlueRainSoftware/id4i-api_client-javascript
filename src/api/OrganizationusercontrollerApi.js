@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/PaginatedResponseUserPresentation', 'model/PaginatedResponseUserRoles'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/ResponseEntity', 'model/UserOrganizationRoleSet', 'model/UserRoles'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/PaginatedResponseUserPresentation'), require('../model/PaginatedResponseUserRoles'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/ResponseEntity'), require('../model/UserOrganizationRoleSet'), require('../model/UserRoles'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationusercontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.PaginatedResponseUserPresentation, root.Id4iApi.PaginatedResponseUserRoles);
+    root.Id4iApi.OrganizationusercontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.ResponseEntity, root.Id4iApi.UserOrganizationRoleSet, root.Id4iApi.UserRoles);
   }
-}(this, function(ApiClient, ApiError, PaginatedResponseUserPresentation, PaginatedResponseUserRoles) {
+}(this, function(ApiClient, ApiError, ChangeRoleRequest, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, ResponseEntity, UserOrganizationRoleSet, UserRoles) {
   'use strict';
 
   /**
@@ -49,31 +49,156 @@
 
 
     /**
-     * Callback function to receive the result of the getUserRolesUsingGET operation.
-     * @callback module:api/OrganizationusercontrollerApi~getUserRolesUsingGETCallback
+     * Callback function to receive the result of the addMultipleUserRolesUsingPOST operation.
+     * @callback module:api/OrganizationusercontrollerApi~addMultipleUserRolesUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedResponseUserRoles} data The data returned by the service call.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * getUserRoles
+     * addMultipleUserRoles
+     * @param {Number} organizationId organizationId
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationusercontrollerApi~addMultipleUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.addMultipleUserRolesUsingPOST = function(organizationId, changeRoleRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = changeRoleRequest;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling addMultipleUserRolesUsingPOST");
+      }
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addMultipleUserRolesUsingPOST");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/organization/{organizationId}/users/role', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addUserRolesUsingPOST operation.
+     * @callback module:api/OrganizationusercontrollerApi~addUserRolesUsingPOSTCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * addUserRoles
+     * @param {Number} organizationId organizationId
+     * @param {String} username username
+     * @param {module:model/UserOrganizationRoleSet} roleSet roleSet
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset 
+     * @param {Number} opts.limit 
+     * @param {module:api/OrganizationusercontrollerApi~addUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.addUserRolesUsingPOST = function(organizationId, username, roleSet, opts, callback) {
+      opts = opts || {};
+      var postBody = roleSet;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling addUserRolesUsingPOST");
+      }
+
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling addUserRolesUsingPOST");
+      }
+
+      // verify the required parameter 'roleSet' is set
+      if (roleSet === undefined || roleSet === null) {
+        throw new Error("Missing the required parameter 'roleSet' when calling addUserRolesUsingPOST");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId,
+        'username': username
+      };
+      var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/organization/{organizationId}/user/{username}/roles', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getMultipleUserRolesUsingGET operation.
+     * @callback module:api/OrganizationusercontrollerApi~getMultipleUserRolesUsingGETCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedUserRolesResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * getMultipleUserRoles
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset 
      * @param {Number} opts.limit 
-     * @param {module:api/OrganizationusercontrollerApi~getUserRolesUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedResponseUserRoles}
+     * @param {module:api/OrganizationusercontrollerApi~getMultipleUserRolesUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedUserRolesResponse}
      */
-    this.getUserRolesUsingGET = function(organizationId, opts, callback) {
+    this.getMultipleUserRolesUsingGET = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getUserRolesUsingGET");
+        throw new Error("Missing the required parameter 'organizationId' when calling getMultipleUserRolesUsingGET");
       }
 
 
@@ -94,10 +219,72 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedResponseUserRoles;
+      var returnType = PaginatedUserRolesResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/userroles', 'GET',
+        '/api/v1/organization/{organizationId}/users/role', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getUserRolesByUsernameUsingGET operation.
+     * @callback module:api/OrganizationusercontrollerApi~getUserRolesByUsernameUsingGETCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserRoles} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * getUserRolesByUsername
+     * @param {Number} organizationId organizationId
+     * @param {String} username username
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset 
+     * @param {Number} opts.limit 
+     * @param {module:api/OrganizationusercontrollerApi~getUserRolesByUsernameUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserRoles}
+     */
+    this.getUserRolesByUsernameUsingGET = function(organizationId, username, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling getUserRolesByUsernameUsingGET");
+      }
+
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling getUserRolesByUsernameUsingGET");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId,
+        'username': username
+      };
+      var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = UserRoles;
+
+      return this.apiClient.callApi(
+        '/api/v1/organization/{organizationId}/user/{username}/roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -107,7 +294,7 @@
      * Callback function to receive the result of the getUsersUsingGET operation.
      * @callback module:api/OrganizationusercontrollerApi~getUsersUsingGETCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedResponseUserPresentation} data The data returned by the service call.
+     * @param {module:model/PaginatedUserPresentationResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -120,7 +307,7 @@
      * @param {Number} opts.offset 
      * @param {Number} opts.limit 
      * @param {module:api/OrganizationusercontrollerApi~getUsersUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedResponseUserPresentation}
+     * data is of type: {@link module:model/PaginatedUserPresentationResponse}
      */
     this.getUsersUsingGET = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -149,10 +336,135 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedResponseUserPresentation;
+      var returnType = PaginatedUserPresentationResponse;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/users', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeMultipleUserRolesUsingDELETE operation.
+     * @callback module:api/OrganizationusercontrollerApi~removeMultipleUserRolesUsingDELETECallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * removeMultipleUserRoles
+     * @param {Number} organizationId organizationId
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationusercontrollerApi~removeMultipleUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.removeMultipleUserRolesUsingDELETE = function(organizationId, changeRoleRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = changeRoleRequest;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling removeMultipleUserRolesUsingDELETE");
+      }
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeMultipleUserRolesUsingDELETE");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/organization/{organizationId}/users/role', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeUserRolesUsingDELETE operation.
+     * @callback module:api/OrganizationusercontrollerApi~removeUserRolesUsingDELETECallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * removeUserRoles
+     * @param {Number} organizationId organizationId
+     * @param {String} username username
+     * @param {module:model/UserOrganizationRoleSet} roleSet roleSet
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset 
+     * @param {Number} opts.limit 
+     * @param {module:api/OrganizationusercontrollerApi~removeUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.removeUserRolesUsingDELETE = function(organizationId, username, roleSet, opts, callback) {
+      opts = opts || {};
+      var postBody = roleSet;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling removeUserRolesUsingDELETE");
+      }
+
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling removeUserRolesUsingDELETE");
+      }
+
+      // verify the required parameter 'roleSet' is set
+      if (roleSet === undefined || roleSet === null) {
+        throw new Error("Missing the required parameter 'roleSet' when calling removeUserRolesUsingDELETE");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId,
+        'username': username
+      };
+      var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/organization/{organizationId}/user/{username}/roles', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

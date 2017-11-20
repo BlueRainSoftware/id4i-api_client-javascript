@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createOrganzationUsingPOST**](OrganizationcontrollerApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
 [**deleteOrganizationLogoUsingDELETE**](OrganizationcontrollerApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
 [**deleteOrganizationUsingDELETE**](OrganizationcontrollerApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
+[**getOrganizationRolesUsingGET**](OrganizationcontrollerApi.md#getOrganizationRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/roles | getOrganizationRoles
 [**getOrganizationUsingGET**](OrganizationcontrollerApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
 [**setOrganizationLogoUsingPOST**](OrganizationcontrollerApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
 [**updateOrganizationUsingPUT**](OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
@@ -152,6 +153,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResponseEntity**](ResponseEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getOrganizationRolesUsingGET"></a>
+# **getOrganizationRolesUsingGET**
+> UserOrganizationRoleSet getOrganizationRolesUsingGET(organizationId, opts)
+
+getOrganizationRoles
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationcontrollerApi();
+
+var organizationId = 789; // Number | organizationId
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getOrganizationRolesUsingGET(organizationId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**UserOrganizationRoleSet**](UserOrganizationRoleSet.md)
 
 ### Authorization
 

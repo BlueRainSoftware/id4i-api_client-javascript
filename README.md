@@ -157,12 +157,18 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationcontrollerApi* | [**createOrganzationUsingPOST**](docs/OrganizationcontrollerApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
 *Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationLogoUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
 *Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
+*Id4iApi.OrganizationcontrollerApi* | [**getOrganizationRolesUsingGET**](docs/OrganizationcontrollerApi.md#getOrganizationRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/roles | getOrganizationRoles
 *Id4iApi.OrganizationcontrollerApi* | [**getOrganizationUsingGET**](docs/OrganizationcontrollerApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
 *Id4iApi.OrganizationcontrollerApi* | [**setOrganizationLogoUsingPOST**](docs/OrganizationcontrollerApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
 *Id4iApi.OrganizationcontrollerApi* | [**updateOrganizationUsingPUT**](docs/OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
 *Id4iApi.OrganizationscollectioncontrollerApi* | [**getAllUsingGET**](docs/OrganizationscollectioncontrollerApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
-*Id4iApi.OrganizationusercontrollerApi* | [**getUserRolesUsingGET**](docs/OrganizationusercontrollerApi.md#getUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/userroles | getUserRoles
+*Id4iApi.OrganizationusercontrollerApi* | [**addMultipleUserRolesUsingPOST**](docs/OrganizationusercontrollerApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | addMultipleUserRoles
+*Id4iApi.OrganizationusercontrollerApi* | [**addUserRolesUsingPOST**](docs/OrganizationusercontrollerApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | addUserRoles
+*Id4iApi.OrganizationusercontrollerApi* | [**getMultipleUserRolesUsingGET**](docs/OrganizationusercontrollerApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
+*Id4iApi.OrganizationusercontrollerApi* | [**getUserRolesByUsernameUsingGET**](docs/OrganizationusercontrollerApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | getUserRolesByUsername
 *Id4iApi.OrganizationusercontrollerApi* | [**getUsersUsingGET**](docs/OrganizationusercontrollerApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
+*Id4iApi.OrganizationusercontrollerApi* | [**removeMultipleUserRolesUsingDELETE**](docs/OrganizationusercontrollerApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | removeMultipleUserRoles
+*Id4iApi.OrganizationusercontrollerApi* | [**removeUserRolesUsingDELETE**](docs/OrganizationusercontrollerApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | removeUserRoles
 *Id4iApi.PublicimagecontrollerApi* | [**resolveImageUsingGET**](docs/PublicimagecontrollerApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
 *Id4iApi.RegisteredobjectcontrollerApi* | [**createUsingPOST**](docs/RegisteredobjectcontrollerApi.md#createUsingPOST) | **POST** /api/v1/registered-object | create
 *Id4iApi.RoutingcollectioncontrollerApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingcollectioncontrollerApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
@@ -183,6 +189,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.AccountCredentials](docs/AccountCredentials.md)
  - [Id4iApi.ApiError](docs/ApiError.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
+ - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
  - [Id4iApi.CreateLabelledCollectionRequest](docs/CreateLabelledCollectionRequest.md)
  - [Id4iApi.CreateLogisticCollectionRequest](docs/CreateLogisticCollectionRequest.md)
  - [Id4iApi.CreateRoutingCollectionRequest](docs/CreateRoutingCollectionRequest.md)
@@ -192,9 +199,9 @@ Class | Method | HTTP request | Description
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
  - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
- - [Id4iApi.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
- - [Id4iApi.PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
  - [Id4iApi.PaginatedResponsestring](docs/PaginatedResponsestring.md)
+ - [Id4iApi.PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
+ - [Id4iApi.PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
  - [Id4iApi.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [Id4iApi.RegisterObjectsRequest](docs/RegisterObjectsRequest.md)
@@ -205,6 +212,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.RoutingFileRequest](docs/RoutingFileRequest.md)
  - [Id4iApi.RoutingOptions](docs/RoutingOptions.md)
  - [Id4iApi.SimpleMessageResponse](docs/SimpleMessageResponse.md)
+ - [Id4iApi.UserOrganizationRoleSet](docs/UserOrganizationRoleSet.md)
  - [Id4iApi.UserPresentation](docs/UserPresentation.md)
  - [Id4iApi.UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [Id4iApi.UserRegistrationResponse](docs/UserRegistrationResponse.md)

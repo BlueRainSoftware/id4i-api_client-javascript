@@ -51,10 +51,40 @@
   }
 
   describe('OrganizationusercontrollerApi', function() {
-    describe('getUserRolesUsingGET', function() {
-      it('should call getUserRolesUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getUserRolesUsingGET
-        //instance.getUserRolesUsingGET(function(error) {
+    describe('addMultipleUserRolesUsingPOST', function() {
+      it('should call addMultipleUserRolesUsingPOST successfully', function(done) {
+        //uncomment below and update the code to test addMultipleUserRolesUsingPOST
+        //instance.addMultipleUserRolesUsingPOST(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('addUserRolesUsingPOST', function() {
+      it('should call addUserRolesUsingPOST successfully', function(done) {
+        //uncomment below and update the code to test addUserRolesUsingPOST
+        //instance.addUserRolesUsingPOST(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getMultipleUserRolesUsingGET', function() {
+      it('should call getMultipleUserRolesUsingGET successfully', function(done) {
+        //uncomment below and update the code to test getMultipleUserRolesUsingGET
+        //instance.getMultipleUserRolesUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserRolesByUsernameUsingGET', function() {
+      it('should call getUserRolesByUsernameUsingGET successfully', function(done) {
+        //uncomment below and update the code to test getUserRolesByUsernameUsingGET
+        //instance.getUserRolesByUsernameUsingGET(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -65,6 +95,26 @@
       it('should call getUsersUsingGET successfully', function(done) {
         //uncomment below and update the code to test getUsersUsingGET
         //instance.getUsersUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeMultipleUserRolesUsingDELETE', function() {
+      it('should call removeMultipleUserRolesUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeMultipleUserRolesUsingDELETE
+        //instance.removeMultipleUserRolesUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeUserRolesUsingDELETE', function() {
+      it('should call removeUserRolesUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test removeUserRolesUsingDELETE
+        //instance.removeUserRolesUsingDELETE(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

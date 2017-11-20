@@ -161,6 +161,16 @@
      */
     "UNKNOWN": "ERR_UNKNOWN",
     /**
+     * value: "ERR_INVALID_ORGANIZATION_USERROLE"
+     * @const
+     */
+    "INVALID_ORGANIZATION_USERROLE": "ERR_INVALID_ORGANIZATION_USERROLE",
+    /**
+     * value: "ERR_ORGANIZATION_ROLE_INCONSISTENCY"
+     * @const
+     */
+    "ORGANIZATION_ROLE_INCONSISTENCY": "ERR_ORGANIZATION_ROLE_INCONSISTENCY",
+    /**
      * value: "ERR_LANGUAGE_NOT_SUPPORTED"
      * @const
      */
