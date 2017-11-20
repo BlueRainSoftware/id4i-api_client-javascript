@@ -44,14 +44,16 @@
    * Constructs a new <code>CreateLogisticCollectionRequest</code>.
    * @alias module:model/CreateLogisticCollectionRequest
    * @class
+   * @param length {Number} 
    * @param count {Number} 
+   * @param organizationId {Number} 
    */
-  var exports = function(count) {
+  var exports = function(length, count, organizationId) {
     var _this = this;
 
-
+    _this['length'] = length;
     _this['count'] = count;
-
+    _this['organizationId'] = organizationId;
   };
 
   /**

@@ -44,13 +44,16 @@
    * Constructs a new <code>CreateLabelledCollectionRequest</code>.
    * @alias module:model/CreateLabelledCollectionRequest
    * @class
+   * @param label {String} 
+   * @param length {Number} 
+   * @param organizationId {Number} 
    */
-  var exports = function() {
+  var exports = function(label, length, organizationId) {
     var _this = this;
 
-
-
-
+    _this['label'] = label;
+    _this['length'] = length;
+    _this['organizationId'] = organizationId;
   };
 
   /**
