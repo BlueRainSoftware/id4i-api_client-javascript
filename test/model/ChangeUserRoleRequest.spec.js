@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.ChangeRoleRequest();
+    instance = new Id4iApi.ChangeUserRoleRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,22 @@
       object[property] = value;
   }
 
-  describe('ChangeRoleRequest', function() {
-    it('should create an instance of ChangeRoleRequest', function() {
-      // uncomment below and update the code to test ChangeRoleRequest
-      //var instane = new Id4iApi.ChangeRoleRequest();
-      //expect(instance).to.be.a(Id4iApi.ChangeRoleRequest);
+  describe('ChangeUserRoleRequest', function() {
+    it('should create an instance of ChangeUserRoleRequest', function() {
+      // uncomment below and update the code to test ChangeUserRoleRequest
+      //var instane = new Id4iApi.ChangeUserRoleRequest();
+      //expect(instance).to.be.a(Id4iApi.ChangeUserRoleRequest);
     });
 
     it('should have the property roles (base name: "roles")', function() {
       // uncomment below and update the code to test the property roles
-      //var instane = new Id4iApi.ChangeRoleRequest();
+      //var instane = new Id4iApi.ChangeUserRoleRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
+      //var instane = new Id4iApi.ChangeUserRoleRequest();
       //expect(instance).to.be();
     });
 

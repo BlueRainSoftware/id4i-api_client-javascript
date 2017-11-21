@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.ChangeRoleRequest = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.ChangeUserRoleRequest = factory(root.Id4iApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,28 +35,29 @@
 
 
   /**
-   * The ChangeRoleRequest model module.
-   * @module model/ChangeRoleRequest
+   * The ChangeUserRoleRequest model module.
+   * @module model/ChangeUserRoleRequest
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new <code>ChangeRoleRequest</code>.
-   * @alias module:model/ChangeRoleRequest
+   * Constructs a new <code>ChangeUserRoleRequest</code>.
+   * @alias module:model/ChangeUserRoleRequest
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
+
   };
 
   /**
-   * Constructs a <code>ChangeRoleRequest</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ChangeUserRoleRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ChangeRoleRequest} obj Optional instance to populate.
-   * @return {module:model/ChangeRoleRequest} The populated <code>ChangeRoleRequest</code> instance.
+   * @param {module:model/ChangeUserRoleRequest} obj Optional instance to populate.
+   * @return {module:model/ChangeUserRoleRequest} The populated <code>ChangeUserRoleRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -64,6 +65,9 @@
 
       if (data.hasOwnProperty('roles')) {
         obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
+      }
+      if (data.hasOwnProperty('username')) {
+        obj['username'] = ApiClient.convertToType(data['username'], 'String');
       }
     }
     return obj;
@@ -73,6 +77,10 @@
    * @member {Array.<String>} roles
    */
   exports.prototype['roles'] = undefined;
+  /**
+   * @member {String} username
+   */
+  exports.prototype['username'] = undefined;
 
 
 

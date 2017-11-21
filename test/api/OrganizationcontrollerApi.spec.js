@@ -81,16 +81,6 @@
         done();
       });
     });
-    describe('getOrganizationRolesUsingGET', function() {
-      it('should call getOrganizationRolesUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getOrganizationRolesUsingGET
-        //instance.getOrganizationRolesUsingGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getOrganizationUsingGET', function() {
       it('should call getOrganizationUsingGET successfully', function(done) {
         //uncomment below and update the code to test getOrganizationUsingGET

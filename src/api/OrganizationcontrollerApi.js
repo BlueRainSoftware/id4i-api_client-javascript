@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/Organization', 'model/ResponseEntity', 'model/UserOrganizationRoleSet'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/Organization', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/Organization'), require('../model/ResponseEntity'), require('../model/UserOrganizationRoleSet'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/Organization'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.Organization, root.Id4iApi.ResponseEntity, root.Id4iApi.UserOrganizationRoleSet);
+    root.Id4iApi.OrganizationcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.Organization, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, ApiError, Organization, ResponseEntity, UserOrganizationRoleSet) {
+}(this, function(ApiClient, ApiError, Organization, ResponseEntity) {
   'use strict';
 
   /**
@@ -195,57 +195,6 @@
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getOrganizationRolesUsingGET operation.
-     * @callback module:api/OrganizationcontrollerApi~getOrganizationRolesUsingGETCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UserOrganizationRoleSet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * getOrganizationRoles
-     * @param {Number} organizationId organizationId
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationcontrollerApi~getOrganizationRolesUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UserOrganizationRoleSet}
-     */
-    this.getOrganizationRolesUsingGET = function(organizationId, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getOrganizationRolesUsingGET");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = UserOrganizationRoleSet;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

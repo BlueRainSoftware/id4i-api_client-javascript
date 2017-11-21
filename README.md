@@ -158,7 +158,6 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationcontrollerApi* | [**createOrganzationUsingPOST**](docs/OrganizationcontrollerApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
 *Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationLogoUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
 *Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
-*Id4iApi.OrganizationcontrollerApi* | [**getOrganizationRolesUsingGET**](docs/OrganizationcontrollerApi.md#getOrganizationRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/roles | getOrganizationRoles
 *Id4iApi.OrganizationcontrollerApi* | [**getOrganizationUsingGET**](docs/OrganizationcontrollerApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
 *Id4iApi.OrganizationcontrollerApi* | [**setOrganizationLogoUsingPOST**](docs/OrganizationcontrollerApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
 *Id4iApi.OrganizationcontrollerApi* | [**updateOrganizationUsingPUT**](docs/OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
@@ -191,6 +190,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.ApiError](docs/ApiError.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
  - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
+ - [Id4iApi.ChangeUserRoleRequest](docs/ChangeUserRoleRequest.md)
  - [Id4iApi.CreateGuidRequest](docs/CreateGuidRequest.md)
  - [Id4iApi.CreateLabelledCollectionRequest](docs/CreateLabelledCollectionRequest.md)
  - [Id4iApi.CreateLogisticCollectionRequest](docs/CreateLogisticCollectionRequest.md)
@@ -217,7 +217,6 @@ Class | Method | HTTP request | Description
  - [Id4iApi.RoutingFileRequest](docs/RoutingFileRequest.md)
  - [Id4iApi.RoutingOptions](docs/RoutingOptions.md)
  - [Id4iApi.SimpleMessageResponse](docs/SimpleMessageResponse.md)
- - [Id4iApi.UserOrganizationRoleSet](docs/UserOrganizationRoleSet.md)
  - [Id4iApi.UserPresentation](docs/UserPresentation.md)
  - [Id4iApi.UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [Id4iApi.UserRegistrationResponse](docs/UserRegistrationResponse.md)

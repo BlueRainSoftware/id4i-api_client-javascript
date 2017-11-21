@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="addMultipleUserRolesUsingPOST"></a>
 # **addMultipleUserRolesUsingPOST**
-> ResponseEntity addMultipleUserRolesUsingPOST(organizationId, changeRoleRequest, opts)
+> ResponseEntity addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts)
 
 addMultipleUserRoles
 
@@ -27,7 +27,7 @@ var apiInstance = new Id4iApi.OrganizationusercontrollerApi();
 
 var organizationId = 789; // Number | organizationId
 
-var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
+var changeUserRoleRequest = new Id4iApi.ChangeUserRoleRequest(); // ChangeUserRoleRequest | changeUserRoleRequest
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -41,7 +41,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addMultipleUserRolesUsingPOST(organizationId, changeRoleRequest, opts, callback);
+apiInstance.addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts, callback);
 ```
 
 ### Parameters
@@ -49,7 +49,7 @@ apiInstance.addMultipleUserRolesUsingPOST(organizationId, changeRoleRequest, opt
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
+ **changeUserRoleRequest** | [**ChangeUserRoleRequest**](ChangeUserRoleRequest.md)| changeUserRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -68,7 +68,7 @@ No authorization required
 
 <a name="addUserRolesUsingPOST"></a>
 # **addUserRolesUsingPOST**
-> ResponseEntity addUserRolesUsingPOST(organizationId, username, roleSet, opts)
+> ResponseEntity addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts)
 
 addUserRoles
 
@@ -82,7 +82,7 @@ var organizationId = 789; // Number | organizationId
 
 var username = "username_example"; // String | username
 
-var roleSet = new Id4iApi.UserOrganizationRoleSet(); // UserOrganizationRoleSet | roleSet
+var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -98,7 +98,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addUserRolesUsingPOST(organizationId, username, roleSet, opts, callback);
+apiInstance.addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts, callback);
 ```
 
 ### Parameters
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **username** | **String**| username | 
- **roleSet** | [**UserOrganizationRoleSet**](UserOrganizationRoleSet.md)| roleSet | 
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**|  | [optional] 
@@ -293,7 +293,7 @@ No authorization required
 
 <a name="removeMultipleUserRolesUsingDELETE"></a>
 # **removeMultipleUserRolesUsingDELETE**
-> ResponseEntity removeMultipleUserRolesUsingDELETE(organizationId, changeRoleRequest, opts)
+> ResponseEntity removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts)
 
 removeMultipleUserRoles
 
@@ -305,7 +305,7 @@ var apiInstance = new Id4iApi.OrganizationusercontrollerApi();
 
 var organizationId = 789; // Number | organizationId
 
-var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
+var changeUserRoleRequest = new Id4iApi.ChangeUserRoleRequest(); // ChangeUserRoleRequest | changeUserRoleRequest
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -319,7 +319,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeMultipleUserRolesUsingDELETE(organizationId, changeRoleRequest, opts, callback);
+apiInstance.removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts, callback);
 ```
 
 ### Parameters
@@ -327,7 +327,7 @@ apiInstance.removeMultipleUserRolesUsingDELETE(organizationId, changeRoleRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
+ **changeUserRoleRequest** | [**ChangeUserRoleRequest**](ChangeUserRoleRequest.md)| changeUserRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -346,7 +346,7 @@ No authorization required
 
 <a name="removeUserRolesUsingDELETE"></a>
 # **removeUserRolesUsingDELETE**
-> ResponseEntity removeUserRolesUsingDELETE(organizationId, username, roleSet, opts)
+> ResponseEntity removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts)
 
 removeUserRoles
 
@@ -360,7 +360,7 @@ var organizationId = 789; // Number | organizationId
 
 var username = "username_example"; // String | username
 
-var roleSet = new Id4iApi.UserOrganizationRoleSet(); // UserOrganizationRoleSet | roleSet
+var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -376,7 +376,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeUserRolesUsingDELETE(organizationId, username, roleSet, opts, callback);
+apiInstance.removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts, callback);
 ```
 
 ### Parameters
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **username** | **String**| username | 
- **roleSet** | [**UserOrganizationRoleSet**](UserOrganizationRoleSet.md)| roleSet | 
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**|  | [optional] 

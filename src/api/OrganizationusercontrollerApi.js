@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/ResponseEntity', 'model/UserOrganizationRoleSet', 'model/UserRoles'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/ResponseEntity', 'model/UserRoles'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/ResponseEntity'), require('../model/UserOrganizationRoleSet'), require('../model/UserRoles'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/ChangeUserRoleRequest'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/ResponseEntity'), require('../model/UserRoles'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationusercontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.ResponseEntity, root.Id4iApi.UserOrganizationRoleSet, root.Id4iApi.UserRoles);
+    root.Id4iApi.OrganizationusercontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.ChangeUserRoleRequest, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.ResponseEntity, root.Id4iApi.UserRoles);
   }
-}(this, function(ApiClient, ApiError, ChangeRoleRequest, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, ResponseEntity, UserOrganizationRoleSet, UserRoles) {
+}(this, function(ApiClient, ApiError, ChangeRoleRequest, ChangeUserRoleRequest, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, ResponseEntity, UserRoles) {
   'use strict';
 
   /**
@@ -59,25 +59,25 @@
     /**
      * addMultipleUserRoles
      * @param {Number} organizationId organizationId
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
+     * @param {module:model/ChangeUserRoleRequest} changeUserRoleRequest changeUserRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationusercontrollerApi~addMultipleUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResponseEntity}
      */
-    this.addMultipleUserRolesUsingPOST = function(organizationId, changeRoleRequest, opts, callback) {
+    this.addMultipleUserRolesUsingPOST = function(organizationId, changeUserRoleRequest, opts, callback) {
       opts = opts || {};
-      var postBody = changeRoleRequest;
+      var postBody = changeUserRoleRequest;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
         throw new Error("Missing the required parameter 'organizationId' when calling addMultipleUserRolesUsingPOST");
       }
 
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addMultipleUserRolesUsingPOST");
+      // verify the required parameter 'changeUserRoleRequest' is set
+      if (changeUserRoleRequest === undefined || changeUserRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeUserRoleRequest' when calling addMultipleUserRolesUsingPOST");
       }
 
 
@@ -117,7 +117,7 @@
      * addUserRoles
      * @param {Number} organizationId organizationId
      * @param {String} username username
-     * @param {module:model/UserOrganizationRoleSet} roleSet roleSet
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
@@ -126,9 +126,9 @@
      * @param {module:api/OrganizationusercontrollerApi~addUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResponseEntity}
      */
-    this.addUserRolesUsingPOST = function(organizationId, username, roleSet, opts, callback) {
+    this.addUserRolesUsingPOST = function(organizationId, username, changeRoleRequest, opts, callback) {
       opts = opts || {};
-      var postBody = roleSet;
+      var postBody = changeRoleRequest;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -140,9 +140,9 @@
         throw new Error("Missing the required parameter 'username' when calling addUserRolesUsingPOST");
       }
 
-      // verify the required parameter 'roleSet' is set
-      if (roleSet === undefined || roleSet === null) {
-        throw new Error("Missing the required parameter 'roleSet' when calling addUserRolesUsingPOST");
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addUserRolesUsingPOST");
       }
 
 
@@ -356,25 +356,25 @@
     /**
      * removeMultipleUserRoles
      * @param {Number} organizationId organizationId
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
+     * @param {module:model/ChangeUserRoleRequest} changeUserRoleRequest changeUserRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationusercontrollerApi~removeMultipleUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResponseEntity}
      */
-    this.removeMultipleUserRolesUsingDELETE = function(organizationId, changeRoleRequest, opts, callback) {
+    this.removeMultipleUserRolesUsingDELETE = function(organizationId, changeUserRoleRequest, opts, callback) {
       opts = opts || {};
-      var postBody = changeRoleRequest;
+      var postBody = changeUserRoleRequest;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
         throw new Error("Missing the required parameter 'organizationId' when calling removeMultipleUserRolesUsingDELETE");
       }
 
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeMultipleUserRolesUsingDELETE");
+      // verify the required parameter 'changeUserRoleRequest' is set
+      if (changeUserRoleRequest === undefined || changeUserRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeUserRoleRequest' when calling removeMultipleUserRolesUsingDELETE");
       }
 
 
@@ -414,7 +414,7 @@
      * removeUserRoles
      * @param {Number} organizationId organizationId
      * @param {String} username username
-     * @param {module:model/UserOrganizationRoleSet} roleSet roleSet
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
@@ -423,9 +423,9 @@
      * @param {module:api/OrganizationusercontrollerApi~removeUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResponseEntity}
      */
-    this.removeUserRolesUsingDELETE = function(organizationId, username, roleSet, opts, callback) {
+    this.removeUserRolesUsingDELETE = function(organizationId, username, changeRoleRequest, opts, callback) {
       opts = opts || {};
-      var postBody = roleSet;
+      var postBody = changeRoleRequest;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -437,9 +437,9 @@
         throw new Error("Missing the required parameter 'username' when calling removeUserRolesUsingDELETE");
       }
 
-      // verify the required parameter 'roleSet' is set
-      if (roleSet === undefined || roleSet === null) {
-        throw new Error("Missing the required parameter 'roleSet' when calling removeUserRolesUsingDELETE");
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeUserRolesUsingDELETE");
       }
 
 
