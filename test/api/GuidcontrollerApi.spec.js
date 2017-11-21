@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.GuidCollection();
+    instance = new Id4iApi.GuidcontrollerApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,17 @@
       object[property] = value;
   }
 
-  describe('GuidCollection', function() {
-    it('should create an instance of GuidCollection', function() {
-      // uncomment below and update the code to test GuidCollection
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be.a(Id4iApi.GuidCollection);
+  describe('GuidcontrollerApi', function() {
+    describe('createUsingPOST', function() {
+      it('should call createUsingPOST successfully', function(done) {
+        //uncomment below and update the code to test createUsingPOST
+        //instance.createUsingPOST(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property id4n (base name: "id4n")', function() {
-      // uncomment below and update the code to test the property id4n
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property label (base name: "label")', function() {
-      // uncomment below and update the code to test the property label
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

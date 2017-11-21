@@ -45,14 +45,12 @@
    * @alias module:model/CreateRoutingCollectionRequest
    * @class
    * @param length {Number} 
-   * @param count {Number} 
    * @param organizationId {Number} 
    */
-  var exports = function(length, count, organizationId) {
+  var exports = function(length, organizationId) {
     var _this = this;
 
     _this['length'] = length;
-    _this['count'] = count;
     _this['organizationId'] = organizationId;
   };
 
@@ -70,9 +68,6 @@
       if (data.hasOwnProperty('length')) {
         obj['length'] = ApiClient.convertToType(data['length'], 'Number');
       }
-      if (data.hasOwnProperty('count')) {
-        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
-      }
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
       }
@@ -84,10 +79,6 @@
    * @member {Number} length
    */
   exports.prototype['length'] = undefined;
-  /**
-   * @member {Number} count
-   */
-  exports.prototype['count'] = undefined;
   /**
    * @member {Number} organizationId
    */

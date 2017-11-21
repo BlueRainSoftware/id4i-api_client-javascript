@@ -63,12 +63,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property count (base name: "count")', function() {
-      // uncomment below and update the code to test the property count
-      //var instane = new Id4iApi.CreateLogisticCollectionRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property organizationId (base name: "organizationId")', function() {
       // uncomment below and update the code to test the property organizationId
       //var instane = new Id4iApi.CreateLogisticCollectionRequest();

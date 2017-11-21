@@ -136,10 +136,10 @@
      */
     "GUID_CREATION": "ERR_GUID_CREATION",
     /**
-     * value: "ERR_INVALID_GUID_TYPE"
+     * value: "ERR_INVALID_ID4N_OBJECT_TYPE"
      * @const
      */
-    "INVALID_GUID_TYPE": "ERR_INVALID_GUID_TYPE",
+    "INVALID_ID4N_OBJECT_TYPE": "ERR_INVALID_ID4N_OBJECT_TYPE",
     /**
      * value: "ERR_ENTITY_NOT_FOUND"
      * @const

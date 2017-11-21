@@ -1,9 +1,8 @@
-# Id4iApi.CreateRoutingCollectionRequest
+# Id4iApi.ListOfId4ns
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**length** | **Number** |  | 
-**organizationId** | **Number** |  | 
+**id4ns** | **[String]** |  | [optional] 
 
 

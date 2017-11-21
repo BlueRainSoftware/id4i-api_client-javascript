@@ -6,15 +6,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addElementsToCollectionUsingPUT**](CollectionscontrollerApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
 [**addSingleElementToCollectionUsingPUT**](CollectionscontrollerApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | addSingleElementToCollection
-[**deleteCollectionUsingDELETE**](CollectionscontrollerApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{guid} | deleteCollection
-[**listContentsUsingGET**](CollectionscontrollerApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{guid}/elements | listContents
+[**deleteCollectionUsingDELETE**](CollectionscontrollerApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | deleteCollection
+[**listContentsUsingGET**](CollectionscontrollerApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
 [**removeElementsFromCollectionUsingDELETE**](CollectionscontrollerApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
 [**removeSingleElementFromCollectionUsingDELETE**](CollectionscontrollerApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
 
 
 <a name="addElementsToCollectionUsingPUT"></a>
 # **addElementsToCollectionUsingPUT**
-> &#39;Number&#39; addElementsToCollectionUsingPUT(collectionGuid, guids, opts)
+> &#39;Number&#39; addElementsToCollectionUsingPUT(collectionGuid, listOfGuids, opts)
 
 addElementsToCollection
 
@@ -26,7 +26,7 @@ var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
 var collectionGuid = "collectionGuid_example"; // String | collectionGuid
 
-var guids = new Id4iApi.ListOfGuids(); // ListOfGuids | guids
+var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -40,7 +40,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToCollectionUsingPUT(collectionGuid, guids, opts, callback);
+apiInstance.addElementsToCollectionUsingPUT(collectionGuid, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -48,7 +48,7 @@ apiInstance.addElementsToCollectionUsingPUT(collectionGuid, guids, opts, callbac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionGuid** | **String**| collectionGuid | 
- **guids** | [**ListOfGuids**](ListOfGuids.md)| guids | 
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -120,7 +120,7 @@ No authorization required
 
 <a name="deleteCollectionUsingDELETE"></a>
 # **deleteCollectionUsingDELETE**
-> ResponseEntity deleteCollectionUsingDELETE(guid, opts)
+> ResponseEntity deleteCollectionUsingDELETE(id4n, opts)
 
 deleteCollection
 
@@ -130,7 +130,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
-var guid = "guid_example"; // String | guid
+var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -144,14 +144,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteCollectionUsingDELETE(guid, opts, callback);
+apiInstance.deleteCollectionUsingDELETE(id4n, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | **String**| guid | 
+ **id4n** | **String**| id4n | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -170,7 +170,7 @@ No authorization required
 
 <a name="listContentsUsingGET"></a>
 # **listContentsUsingGET**
-> PaginatedResponsestring listContentsUsingGET(guid, opts)
+> PaginatedResponsestring listContentsUsingGET(id4n, opts)
 
 listContents
 
@@ -180,7 +180,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
-var guid = "guid_example"; // String | guid
+var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -196,14 +196,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listContentsUsingGET(guid, opts, callback);
+apiInstance.listContentsUsingGET(id4n, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | **String**| guid | 
+ **id4n** | **String**| id4n | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**|  | [optional] 
@@ -224,7 +224,7 @@ No authorization required
 
 <a name="removeElementsFromCollectionUsingDELETE"></a>
 # **removeElementsFromCollectionUsingDELETE**
-> &#39;Number&#39; removeElementsFromCollectionUsingDELETE(collectionGuid, guids, opts)
+> &#39;Number&#39; removeElementsFromCollectionUsingDELETE(collectionGuid, listOfGuids, opts)
 
 removeElementsFromCollection
 
@@ -236,7 +236,7 @@ var apiInstance = new Id4iApi.CollectionscontrollerApi();
 
 var collectionGuid = "collectionGuid_example"; // String | collectionGuid
 
-var guids = new Id4iApi.ListOfGuids(); // ListOfGuids | guids
+var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -250,7 +250,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromCollectionUsingDELETE(collectionGuid, guids, opts, callback);
+apiInstance.removeElementsFromCollectionUsingDELETE(collectionGuid, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -258,7 +258,7 @@ apiInstance.removeElementsFromCollectionUsingDELETE(collectionGuid, guids, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionGuid** | **String**| collectionGuid | 
- **guids** | [**ListOfGuids**](ListOfGuids.md)| guids | 
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 

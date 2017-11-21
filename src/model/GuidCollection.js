@@ -65,8 +65,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('guid')) {
-        obj['guid'] = ApiClient.convertToType(data['guid'], 'String');
+      if (data.hasOwnProperty('id4n')) {
+        obj['id4n'] = ApiClient.convertToType(data['id4n'], 'String');
       }
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
@@ -82,9 +82,9 @@
   }
 
   /**
-   * @member {String} guid
+   * @member {String} id4n
    */
-  exports.prototype['guid'] = undefined;
+  exports.prototype['id4n'] = undefined;
   /**
    * @member {String} label
    */

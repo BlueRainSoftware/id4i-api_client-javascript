@@ -7,14 +7,14 @@ Method | HTTP request | Description
 [**addElementsToRoutingCollectionUsingPUT**](RoutingcollectioncontrollerApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
 [**addSingleElementToRoutingCollectionUsingPUT**](RoutingcollectioncontrollerApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
 [**createRoutingCollectionUsingPOST**](RoutingcollectioncontrollerApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
-[**deleteRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{guid} | deleteRoutingCollection
+[**deleteRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | deleteRoutingCollection
 [**removeElementsFromRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
 [**removeSingleElementFromRoutingCollectionUsingDELETE**](RoutingcollectioncontrollerApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
 
 
 <a name="addElementsToRoutingCollectionUsingPUT"></a>
 # **addElementsToRoutingCollectionUsingPUT**
-> &#39;Number&#39; addElementsToRoutingCollectionUsingPUT(collectionGuid, guids, opts)
+> &#39;Number&#39; addElementsToRoutingCollectionUsingPUT(collectionGuid, listOfGuids, opts)
 
 addElementsToRoutingCollection
 
@@ -26,7 +26,7 @@ var apiInstance = new Id4iApi.RoutingcollectioncontrollerApi();
 
 var collectionGuid = "collectionGuid_example"; // String | collectionGuid
 
-var guids = new Id4iApi.ListOfGuids(); // ListOfGuids | guids
+var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -40,7 +40,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToRoutingCollectionUsingPUT(collectionGuid, guids, opts, callback);
+apiInstance.addElementsToRoutingCollectionUsingPUT(collectionGuid, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -48,7 +48,7 @@ apiInstance.addElementsToRoutingCollectionUsingPUT(collectionGuid, guids, opts, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionGuid** | **String**| collectionGuid | 
- **guids** | [**ListOfGuids**](ListOfGuids.md)| guids | 
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -120,7 +120,7 @@ No authorization required
 
 <a name="createRoutingCollectionUsingPOST"></a>
 # **createRoutingCollectionUsingPOST**
-> ListOfGuids createRoutingCollectionUsingPOST(createGUIDInfo, opts)
+> Id4n createRoutingCollectionUsingPOST(createInfo, opts)
 
 createRoutingCollection
 
@@ -130,7 +130,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.RoutingcollectioncontrollerApi();
 
-var createGUIDInfo = new Id4iApi.CreateRoutingCollectionRequest(); // CreateRoutingCollectionRequest | createGUIDInfo
+var createInfo = new Id4iApi.CreateRoutingCollectionRequest(); // CreateRoutingCollectionRequest | createInfo
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -144,20 +144,20 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createRoutingCollectionUsingPOST(createGUIDInfo, opts, callback);
+apiInstance.createRoutingCollectionUsingPOST(createInfo, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createGUIDInfo** | [**CreateRoutingCollectionRequest**](CreateRoutingCollectionRequest.md)| createGUIDInfo | 
+ **createInfo** | [**CreateRoutingCollectionRequest**](CreateRoutingCollectionRequest.md)| createInfo | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ListOfGuids**](ListOfGuids.md)
+[**Id4n**](Id4n.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ No authorization required
 
 <a name="deleteRoutingCollectionUsingDELETE"></a>
 # **deleteRoutingCollectionUsingDELETE**
-> ResponseEntity deleteRoutingCollectionUsingDELETE(guid, opts)
+> ResponseEntity deleteRoutingCollectionUsingDELETE(id4n, opts)
 
 deleteRoutingCollection
 
@@ -180,7 +180,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.RoutingcollectioncontrollerApi();
 
-var guid = "guid_example"; // String | guid
+var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -194,14 +194,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteRoutingCollectionUsingDELETE(guid, opts, callback);
+apiInstance.deleteRoutingCollectionUsingDELETE(id4n, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | **String**| guid | 
+ **id4n** | **String**| id4n | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -220,7 +220,7 @@ No authorization required
 
 <a name="removeElementsFromRoutingCollectionUsingDELETE"></a>
 # **removeElementsFromRoutingCollectionUsingDELETE**
-> &#39;Number&#39; removeElementsFromRoutingCollectionUsingDELETE(collectionGuid, guids, opts)
+> &#39;Number&#39; removeElementsFromRoutingCollectionUsingDELETE(collectionGuid, listOfGuids, opts)
 
 removeElementsFromRoutingCollection
 
@@ -232,7 +232,7 @@ var apiInstance = new Id4iApi.RoutingcollectioncontrollerApi();
 
 var collectionGuid = "collectionGuid_example"; // String | collectionGuid
 
-var guids = new Id4iApi.ListOfGuids(); // ListOfGuids | guids
+var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -246,7 +246,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromRoutingCollectionUsingDELETE(collectionGuid, guids, opts, callback);
+apiInstance.removeElementsFromRoutingCollectionUsingDELETE(collectionGuid, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -254,7 +254,7 @@ apiInstance.removeElementsFromRoutingCollectionUsingDELETE(collectionGuid, guids
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionGuid** | **String**| collectionGuid | 
- **guids** | [**ListOfGuids**](ListOfGuids.md)| guids | 
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 

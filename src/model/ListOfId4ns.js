@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.CreateLogisticCollectionRequest = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.ListOfId4ns = factory(root.Id4iApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,54 +35,44 @@
 
 
   /**
-   * The CreateLogisticCollectionRequest model module.
-   * @module model/CreateLogisticCollectionRequest
+   * The ListOfId4ns model module.
+   * @module model/ListOfId4ns
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new <code>CreateLogisticCollectionRequest</code>.
-   * @alias module:model/CreateLogisticCollectionRequest
+   * Constructs a new <code>ListOfId4ns</code>.
+   * @alias module:model/ListOfId4ns
    * @class
-   * @param length {Number} 
-   * @param organizationId {Number} 
    */
-  var exports = function(length, organizationId) {
+  var exports = function() {
     var _this = this;
 
-    _this['length'] = length;
-    _this['organizationId'] = organizationId;
+
   };
 
   /**
-   * Constructs a <code>CreateLogisticCollectionRequest</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ListOfId4ns</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CreateLogisticCollectionRequest} obj Optional instance to populate.
-   * @return {module:model/CreateLogisticCollectionRequest} The populated <code>CreateLogisticCollectionRequest</code> instance.
+   * @param {module:model/ListOfId4ns} obj Optional instance to populate.
+   * @return {module:model/ListOfId4ns} The populated <code>ListOfId4ns</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('length')) {
-        obj['length'] = ApiClient.convertToType(data['length'], 'Number');
-      }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
+      if (data.hasOwnProperty('id4ns')) {
+        obj['id4ns'] = ApiClient.convertToType(data['id4ns'], ['String']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} length
+   * @member {Array.<String>} id4ns
    */
-  exports.prototype['length'] = undefined;
-  /**
-   * @member {Number} organizationId
-   */
-  exports.prototype['organizationId'] = undefined;
+  exports.prototype['id4ns'] = undefined;
 
 
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**guid** | **String** |  | [optional] 
+**id4n** | **String** |  | [optional] 
 **label** | **String** |  | [optional] 
 **organizationId** | **Number** |  | [optional] 
 **type** | **String** |  | [optional] 
