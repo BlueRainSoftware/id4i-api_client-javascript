@@ -134,6 +134,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectionscontrollerApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectionscontrollerApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
 *Id4iApi.CollectionscontrollerApi* | [**removeSingleElementFromCollectionUsingDELETE**](docs/CollectionscontrollerApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
 *Id4iApi.DefaultApi* | [**loginPOST**](docs/DefaultApi.md#loginPOST) | **POST** /login | 
+*Id4iApi.GocontrollerApi* | [**forwardUsingGET**](docs/GocontrollerApi.md#forwardUsingGET) | **GET** /go/{guid} | forward
 *Id4iApi.GuidcontrollerApi* | [**createUsingPOST**](docs/GuidcontrollerApi.md#createUsingPOST) | **POST** /api/v1/guids | create
 *Id4iApi.LabelledcollectioncontrollerApi* | [**addElementsToLabelledCollectionUsingPUT**](docs/LabelledcollectioncontrollerApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements | addElementsToLabelledCollection
 *Id4iApi.LabelledcollectioncontrollerApi* | [**addSingleElementToLabelledCollectionUsingPUT**](docs/LabelledcollectioncontrollerApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | addSingleElementToLabelledCollection
@@ -177,9 +178,9 @@ Class | Method | HTTP request | Description
 *Id4iApi.RoutingcollectioncontrollerApi* | [**deleteRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | deleteRoutingCollection
 *Id4iApi.RoutingcollectioncontrollerApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
 *Id4iApi.RoutingcollectioncontrollerApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
-*Id4iApi.RoutingcontrollerApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routing/get/{guid}/{type} | retrieveCurrentParamsByType
-*Id4iApi.RoutingcontrollerApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routing/file/{guid} | retrieveRoutingFile
-*Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPOST**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPOST) | **POST** /api/v1/routing/file | storeRoutingFile
+*Id4iApi.RoutingcontrollerApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{guid}/route/{type} | retrieveCurrentParamsByType
+*Id4iApi.RoutingcontrollerApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{guid} | retrieveRoutingFile
+*Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPOST**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPOST) | **POST** /api/v1/routingfiles | storeRoutingFile
 *Id4iApi.UserorganizationscontrollerApi* | [**getOrganizationsUsingGET**](docs/UserorganizationscontrollerApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
 *Id4iApi.UserscontrollerApi* | [**findUserByUsernameUsingGET**](docs/UserscontrollerApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
 

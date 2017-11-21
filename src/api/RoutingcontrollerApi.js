@@ -100,7 +100,7 @@
       var returnType = {'String': 'String'};
 
       return this.apiClient.callApi(
-        '/api/v1/routing/get/{guid}/{type}', 'GET',
+        '/api/v1/routingfiles/{guid}/route/{type}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -152,7 +152,7 @@
       var returnType = RoutingFile;
 
       return this.apiClient.callApi(
-        '/api/v1/routing/file/{guid}', 'GET',
+        '/api/v1/routingfiles/{guid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -202,7 +202,7 @@
       var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
-        '/api/v1/routing/file', 'POST',
+        '/api/v1/routingfiles', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

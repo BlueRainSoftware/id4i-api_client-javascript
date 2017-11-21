@@ -4,9 +4,9 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieveCurrentParamsByTypeUsingGET**](RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routing/get/{guid}/{type} | retrieveCurrentParamsByType
-[**retrieveRoutingFileUsingGET**](RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routing/file/{guid} | retrieveRoutingFile
-[**storeRoutingFileUsingPOST**](RoutingcontrollerApi.md#storeRoutingFileUsingPOST) | **POST** /api/v1/routing/file | storeRoutingFile
+[**retrieveCurrentParamsByTypeUsingGET**](RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{guid}/route/{type} | retrieveCurrentParamsByType
+[**retrieveRoutingFileUsingGET**](RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{guid} | retrieveRoutingFile
+[**storeRoutingFileUsingPOST**](RoutingcontrollerApi.md#storeRoutingFileUsingPOST) | **POST** /api/v1/routingfiles | storeRoutingFile
 
 
 <a name="retrieveCurrentParamsByTypeUsingGET"></a>
