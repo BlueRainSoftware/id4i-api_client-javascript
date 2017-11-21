@@ -171,6 +171,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationusercontrollerApi* | [**removeUserRolesUsingDELETE**](docs/OrganizationusercontrollerApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | removeUserRoles
 *Id4iApi.PublicimagecontrollerApi* | [**resolveImageUsingGET**](docs/PublicimagecontrollerApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
 *Id4iApi.RegisteredobjectcontrollerApi* | [**createUsingPOST**](docs/RegisteredobjectcontrollerApi.md#createUsingPOST) | **POST** /api/v1/registered-object | create
+*Id4iApi.RolecontrollerApi* | [**listUsingGET**](docs/RolecontrollerApi.md#listUsingGET) | **GET** /api/v1/roles | list
 *Id4iApi.RoutingcollectioncontrollerApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingcollectioncontrollerApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
 *Id4iApi.RoutingcollectioncontrollerApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/RoutingcollectioncontrollerApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
 *Id4iApi.RoutingcollectioncontrollerApi* | [**createRoutingCollectionUsingPOST**](docs/RoutingcollectioncontrollerApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
@@ -199,6 +200,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
  - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
+ - [Id4iApi.PaginatedResponseRole](docs/PaginatedResponseRole.md)
  - [Id4iApi.PaginatedResponsestring](docs/PaginatedResponsestring.md)
  - [Id4iApi.PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
  - [Id4iApi.PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
@@ -207,6 +209,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.RegisterObjectsRequest](docs/RegisterObjectsRequest.md)
  - [Id4iApi.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
  - [Id4iApi.ResponseEntity](docs/ResponseEntity.md)
+ - [Id4iApi.Role](docs/Role.md)
+ - [Id4iApi.RoleResponse](docs/RoleResponse.md)
  - [Id4iApi.Route](docs/Route.md)
  - [Id4iApi.RoutingFile](docs/RoutingFile.md)
  - [Id4iApi.RoutingFileRequest](docs/RoutingFileRequest.md)
