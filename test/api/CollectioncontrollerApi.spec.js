@@ -81,6 +81,16 @@
         done();
       });
     });
+    describe('listContentsUsingGET', function() {
+      it('should call listContentsUsingGET successfully', function(done) {
+        //uncomment below and update the code to test listContentsUsingGET
+        //instance.listContentsUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeElementsFromCollectionUsingDELETE', function() {
       it('should call removeElementsFromCollectionUsingDELETE successfully', function(done) {
         //uncomment below and update the code to test removeElementsFromCollectionUsingDELETE

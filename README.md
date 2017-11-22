@@ -127,12 +127,12 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountcontrollerApi* | [**verifyPasswordResetUsingPUT**](docs/AccountcontrollerApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | verifyPasswordReset
 *Id4iApi.AccountcontrollerApi* | [**verifyRegistrationUsingPOST**](docs/AccountcontrollerApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | verifyRegistration
 *Id4iApi.AppinfocontrollerApi* | [**infoUsingGET**](docs/AppinfocontrollerApi.md#infoUsingGET) | **GET** /api/v1/info | info
-*Id4iApi.CollectionscontrollerApi* | [**addElementsToCollectionUsingPUT**](docs/CollectionscontrollerApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
-*Id4iApi.CollectionscontrollerApi* | [**addSingleElementToCollectionUsingPUT**](docs/CollectionscontrollerApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | addSingleElementToCollection
-*Id4iApi.CollectionscontrollerApi* | [**deleteCollectionUsingDELETE**](docs/CollectionscontrollerApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | deleteCollection
-*Id4iApi.CollectionscontrollerApi* | [**listContentsUsingGET**](docs/CollectionscontrollerApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
-*Id4iApi.CollectionscontrollerApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectionscontrollerApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
-*Id4iApi.CollectionscontrollerApi* | [**removeSingleElementFromCollectionUsingDELETE**](docs/CollectionscontrollerApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
+*Id4iApi.CollectioncontrollerApi* | [**addElementsToCollectionUsingPUT**](docs/CollectioncontrollerApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
+*Id4iApi.CollectioncontrollerApi* | [**addSingleElementToCollectionUsingPUT**](docs/CollectioncontrollerApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | addSingleElementToCollection
+*Id4iApi.CollectioncontrollerApi* | [**deleteCollectionUsingDELETE**](docs/CollectioncontrollerApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | deleteCollection
+*Id4iApi.CollectioncontrollerApi* | [**listContentsUsingGET**](docs/CollectioncontrollerApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
+*Id4iApi.CollectioncontrollerApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectioncontrollerApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
+*Id4iApi.CollectioncontrollerApi* | [**removeSingleElementFromCollectionUsingDELETE**](docs/CollectioncontrollerApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
 *Id4iApi.DefaultApi* | [**loginPOST**](docs/DefaultApi.md#loginPOST) | **POST** /login | 
 *Id4iApi.GocontrollerApi* | [**forwardUsingGET**](docs/GocontrollerApi.md#forwardUsingGET) | **GET** /go/{guid} | forward
 *Id4iApi.GuidcontrollerApi* | [**createUsingPOST**](docs/GuidcontrollerApi.md#createUsingPOST) | **POST** /api/v1/guids | create
