@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateRoutingCollectionRequest', 'model/Id4n', 'model/ListOfId4ns', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateRoutingCollectionRequest'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.RoutingcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.RoutingcollectioncontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, ApiError, CreateRoutingCollectionRequest, Id4n, ListOfId4ns, ResponseEntity) {
+}(this, function(ApiClient, ApiError, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, ResponseEntity) {
   'use strict';
 
   /**
@@ -259,6 +259,57 @@
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{id4n}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the findById4nUsingGET3 operation.
+     * @callback module:api/RoutingcollectioncontrollerApi~findById4nUsingGET3Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GuidCollection} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * findById4n
+     * @param {String} id4n id4n
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/RoutingcollectioncontrollerApi~findById4nUsingGET3Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GuidCollection}
+     */
+    this.findById4nUsingGET3 = function(id4n, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling findById4nUsingGET3");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = GuidCollection;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/routing/{id4n}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

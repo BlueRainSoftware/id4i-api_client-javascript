@@ -81,6 +81,16 @@
         done();
       });
     });
+    describe('findById4nUsingGET', function() {
+      it('should call findById4nUsingGET successfully', function(done) {
+        //uncomment below and update the code to test findById4nUsingGET
+        //instance.findById4nUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listContentsUsingGET', function() {
       it('should call listContentsUsingGET successfully', function(done) {
         //uncomment below and update the code to test listContentsUsingGET

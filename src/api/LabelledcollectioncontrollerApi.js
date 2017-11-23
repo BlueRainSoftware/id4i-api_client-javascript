@@ -265,29 +265,29 @@
     }
 
     /**
-     * Callback function to receive the result of the findByGuidUsingGET operation.
-     * @callback module:api/LabelledcollectioncontrollerApi~findByGuidUsingGETCallback
+     * Callback function to receive the result of the findById4nUsingGET1 operation.
+     * @callback module:api/LabelledcollectioncontrollerApi~findById4nUsingGET1Callback
      * @param {String} error Error message, if any.
      * @param {module:model/GuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * findByGuid
+     * findById4n
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/LabelledcollectioncontrollerApi~findByGuidUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/LabelledcollectioncontrollerApi~findById4nUsingGET1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GuidCollection}
      */
-    this.findByGuidUsingGET = function(id4n, opts, callback) {
+    this.findById4nUsingGET1 = function(id4n, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling findByGuidUsingGET");
+        throw new Error("Missing the required parameter 'id4n' when calling findById4nUsingGET1");
       }
 
 

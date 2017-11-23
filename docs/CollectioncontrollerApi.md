@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**addElementsToCollectionUsingPUT**](CollectioncontrollerApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
 [**addSingleElementToCollectionUsingPUT**](CollectioncontrollerApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | addSingleElementToCollection
 [**deleteCollectionUsingDELETE**](CollectioncontrollerApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | deleteCollection
+[**findById4nUsingGET**](CollectioncontrollerApi.md#findById4nUsingGET) | **GET** /api/v1/collections/{id4n} | findById4n
 [**listContentsUsingGET**](CollectioncontrollerApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
 [**removeElementsFromCollectionUsingDELETE**](CollectioncontrollerApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
 [**removeSingleElementFromCollectionUsingDELETE**](CollectioncontrollerApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
@@ -158,6 +159,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResponseEntity**](ResponseEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="findById4nUsingGET"></a>
+# **findById4nUsingGET**
+> GuidCollection findById4nUsingGET(id4n, opts)
+
+findById4n
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectioncontrollerApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.findById4nUsingGET(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**GuidCollection**](GuidCollection.md)
 
 ### Authorization
 

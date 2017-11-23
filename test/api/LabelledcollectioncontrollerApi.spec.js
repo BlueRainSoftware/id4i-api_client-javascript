@@ -91,10 +91,10 @@
         done();
       });
     });
-    describe('findByGuidUsingGET', function() {
-      it('should call findByGuidUsingGET successfully', function(done) {
-        //uncomment below and update the code to test findByGuidUsingGET
-        //instance.findByGuidUsingGET(function(error) {
+    describe('findById4nUsingGET1', function() {
+      it('should call findById4nUsingGET1 successfully', function(done) {
+        //uncomment below and update the code to test findById4nUsingGET1
+        //instance.findById4nUsingGET1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

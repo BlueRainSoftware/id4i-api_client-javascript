@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**addSingleElementToLabelledCollectionUsingPUT**](LabelledcollectioncontrollerApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | addSingleElementToLabelledCollection
 [**createLabelledCollectionUsingPOST**](LabelledcollectioncontrollerApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | createLabelledCollection
 [**deleteLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#deleteLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{id4n} | deleteLabelledCollection
-[**findByGuidUsingGET**](LabelledcollectioncontrollerApi.md#findByGuidUsingGET) | **GET** /api/v1/collections/labelled/{id4n} | findByGuid
+[**findById4nUsingGET1**](LabelledcollectioncontrollerApi.md#findById4nUsingGET1) | **GET** /api/v1/collections/labelled/{id4n} | findById4n
 [**findByLabelUsingGET**](LabelledcollectioncontrollerApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | findByLabel
 [**removeElementsFromLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | removeElementsFromLabelledCollection
 [**removeSingleElementFromLabelledCollectionUsingDELETE**](LabelledcollectioncontrollerApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromLabelledCollection
@@ -221,11 +221,11 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="findByGuidUsingGET"></a>
-# **findByGuidUsingGET**
-> GuidCollection findByGuidUsingGET(id4n, opts)
+<a name="findById4nUsingGET1"></a>
+# **findById4nUsingGET1**
+> GuidCollection findById4nUsingGET1(id4n, opts)
 
-findByGuid
+findById4n
 
 ### Example
 ```javascript
@@ -247,7 +247,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findByGuidUsingGET(id4n, opts, callback);
+apiInstance.findById4nUsingGET1(id4n, opts, callback);
 ```
 
 ### Parameters

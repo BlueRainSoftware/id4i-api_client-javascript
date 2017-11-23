@@ -91,6 +91,16 @@
         done();
       });
     });
+    describe('findById4nUsingGET3', function() {
+      it('should call findById4nUsingGET3 successfully', function(done) {
+        //uncomment below and update the code to test findById4nUsingGET3
+        //instance.findById4nUsingGET3(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeElementsFromRoutingCollectionUsingDELETE', function() {
       it('should call removeElementsFromRoutingCollectionUsingDELETE successfully', function(done) {
         //uncomment below and update the code to test removeElementsFromRoutingCollectionUsingDELETE
