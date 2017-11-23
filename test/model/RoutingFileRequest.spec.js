@@ -57,12 +57,6 @@
       //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
     });
 
-    it('should have the property guid (base name: "guid")', function() {
-      // uncomment below and update the code to test the property guid
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property routing (base name: "routing")', function() {
       // uncomment below and update the code to test the property routing
       //var instane = new Id4iApi.RoutingFileRequest();

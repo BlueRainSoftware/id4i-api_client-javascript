@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**guid** | **String** |  | 
 **routing** | [**RoutingFile**](RoutingFile.md) |  | 
 **organizationId** | **Number** |  | [optional] 
 

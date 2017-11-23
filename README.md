@@ -178,9 +178,9 @@ Class | Method | HTTP request | Description
 *Id4iApi.RoutingcollectioncontrollerApi* | [**deleteRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | deleteRoutingCollection
 *Id4iApi.RoutingcollectioncontrollerApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
 *Id4iApi.RoutingcollectioncontrollerApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
-*Id4iApi.RoutingcontrollerApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{guid}/route/{type} | retrieveCurrentParamsByType
-*Id4iApi.RoutingcontrollerApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{guid} | retrieveRoutingFile
-*Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPOST**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPOST) | **POST** /api/v1/routingfiles | storeRoutingFile
+*Id4iApi.RoutingcontrollerApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | retrieveCurrentParamsByType
+*Id4iApi.RoutingcontrollerApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | retrieveRoutingFile
+*Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPUT**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | storeRoutingFile
 *Id4iApi.UserorganizationscontrollerApi* | [**getOrganizationsUsingGET**](docs/UserorganizationscontrollerApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
 *Id4iApi.UserscontrollerApi* | [**findUserByUsernameUsingGET**](docs/UserscontrollerApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
 

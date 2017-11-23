@@ -44,13 +44,11 @@
    * Constructs a new <code>RoutingFileRequest</code>.
    * @alias module:model/RoutingFileRequest
    * @class
-   * @param guid {String} 
    * @param routing {module:model/RoutingFile} 
    */
-  var exports = function(guid, routing) {
+  var exports = function(routing) {
     var _this = this;
 
-    _this['guid'] = guid;
     _this['routing'] = routing;
 
   };
@@ -66,9 +64,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('guid')) {
-        obj['guid'] = ApiClient.convertToType(data['guid'], 'String');
-      }
       if (data.hasOwnProperty('routing')) {
         obj['routing'] = RoutingFile.constructFromObject(data['routing']);
       }
@@ -79,10 +74,6 @@
     return obj;
   }
 
-  /**
-   * @member {String} guid
-   */
-  exports.prototype['guid'] = undefined;
   /**
    * @member {module:model/RoutingFile} routing
    */

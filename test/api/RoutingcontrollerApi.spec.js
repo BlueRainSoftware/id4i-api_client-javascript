@@ -71,10 +71,10 @@
         done();
       });
     });
-    describe('storeRoutingFileUsingPOST', function() {
-      it('should call storeRoutingFileUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test storeRoutingFileUsingPOST
-        //instance.storeRoutingFileUsingPOST(function(error) {
+    describe('storeRoutingFileUsingPUT', function() {
+      it('should call storeRoutingFileUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test storeRoutingFileUsingPUT
+        //instance.storeRoutingFileUsingPUT(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

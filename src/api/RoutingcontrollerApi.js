@@ -58,7 +58,7 @@
 
     /**
      * retrieveCurrentParamsByType
-     * @param {String} guid guid
+     * @param {String} id4n id4n
      * @param {String} type type
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -66,13 +66,13 @@
      * @param {module:api/RoutingcontrollerApi~retrieveCurrentParamsByTypeUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object.<String, {'String': 'String'}>}
      */
-    this.retrieveCurrentParamsByTypeUsingGET = function(guid, type, opts, callback) {
+    this.retrieveCurrentParamsByTypeUsingGET = function(id4n, type, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'guid' is set
-      if (guid === undefined || guid === null) {
-        throw new Error("Missing the required parameter 'guid' when calling retrieveCurrentParamsByTypeUsingGET");
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling retrieveCurrentParamsByTypeUsingGET");
       }
 
       // verify the required parameter 'type' is set
@@ -82,7 +82,7 @@
 
 
       var pathParams = {
-        'guid': guid,
+        'id4n': id4n,
         'type': type
       };
       var queryParams = {
@@ -100,7 +100,7 @@
       var returnType = {'String': 'String'};
 
       return this.apiClient.callApi(
-        '/api/v1/routingfiles/{guid}/route/{type}', 'GET',
+        '/api/v1/routingfiles/{id4n}/route/{type}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
 
     /**
      * retrieveRoutingFile
-     * @param {String} guid guid
+     * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
@@ -124,18 +124,18 @@
      * @param {module:api/RoutingcontrollerApi~retrieveRoutingFileUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RoutingFile}
      */
-    this.retrieveRoutingFileUsingGET = function(guid, opts, callback) {
+    this.retrieveRoutingFileUsingGET = function(id4n, opts, callback) {
       opts = opts || {};
       var postBody = opts['organizationId'];
 
-      // verify the required parameter 'guid' is set
-      if (guid === undefined || guid === null) {
-        throw new Error("Missing the required parameter 'guid' when calling retrieveRoutingFileUsingGET");
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling retrieveRoutingFileUsingGET");
       }
 
 
       var pathParams = {
-        'guid': guid
+        'id4n': id4n
       };
       var queryParams = {
       };
@@ -152,15 +152,15 @@
       var returnType = RoutingFile;
 
       return this.apiClient.callApi(
-        '/api/v1/routingfiles/{guid}', 'GET',
+        '/api/v1/routingfiles/{id4n}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the storeRoutingFileUsingPOST operation.
-     * @callback module:api/RoutingcontrollerApi~storeRoutingFileUsingPOSTCallback
+     * Callback function to receive the result of the storeRoutingFileUsingPUT operation.
+     * @callback module:api/RoutingcontrollerApi~storeRoutingFileUsingPUTCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ResponseEntity} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -169,23 +169,30 @@
     /**
      * storeRoutingFile
      * @param {module:model/RoutingFileRequest} rfr rfr
+     * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/RoutingcontrollerApi~storeRoutingFileUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/RoutingcontrollerApi~storeRoutingFileUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResponseEntity}
      */
-    this.storeRoutingFileUsingPOST = function(rfr, opts, callback) {
+    this.storeRoutingFileUsingPUT = function(rfr, id4n, opts, callback) {
       opts = opts || {};
       var postBody = rfr;
 
       // verify the required parameter 'rfr' is set
       if (rfr === undefined || rfr === null) {
-        throw new Error("Missing the required parameter 'rfr' when calling storeRoutingFileUsingPOST");
+        throw new Error("Missing the required parameter 'rfr' when calling storeRoutingFileUsingPUT");
+      }
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling storeRoutingFileUsingPUT");
       }
 
 
       var pathParams = {
+        'id4n': id4n
       };
       var queryParams = {
       };
@@ -202,7 +209,7 @@
       var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
-        '/api/v1/routingfiles', 'POST',
+        '/api/v1/routingfiles/{id4n}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
