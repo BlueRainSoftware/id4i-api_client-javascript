@@ -186,6 +186,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPUT**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | storeRoutingFile
 *Id4iApi.UserorganizationscontrollerApi* | [**getOrganizationsUsingGET**](docs/UserorganizationscontrollerApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
 *Id4iApi.UserscontrollerApi* | [**findUserByUsernameUsingGET**](docs/UserscontrollerApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
+*Id4iApi.WhoiscontrollerApi* | [**resolveWhoIsEntryUsingGET**](docs/WhoiscontrollerApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | resolveWhoIsEntry
 
 
 ## Documentation for Models
@@ -225,6 +226,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [Id4iApi.UserRegistrationResponse](docs/UserRegistrationResponse.md)
  - [Id4iApi.UserRoles](docs/UserRoles.md)
+ - [Id4iApi.WhoIsResponse](docs/WhoIsResponse.md)
 
 
 ## Documentation for Authorization
