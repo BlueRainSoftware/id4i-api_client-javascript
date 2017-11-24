@@ -186,7 +186,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPUT**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | storeRoutingFile
 *Id4iApi.UserorganizationscontrollerApi* | [**getOrganizationsUsingGET**](docs/UserorganizationscontrollerApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
 *Id4iApi.UserscontrollerApi* | [**findUserByUsernameUsingGET**](docs/UserscontrollerApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
-*Id4iApi.WhoiscontrollerApi* | [**resolveHTMLUsingGET**](docs/WhoiscontrollerApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
+*Id4iApi.WhoiscontrollerApi* | [**resolveWhoIsEntryUsingGET**](docs/WhoiscontrollerApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | resolveWhoIsEntry
 
 
 ## Documentation for Models
