@@ -51,10 +51,10 @@
   }
 
   describe('WhoiscontrollerApi', function() {
-    describe('resolveWhoIsEntryUsingGET', function() {
-      it('should call resolveWhoIsEntryUsingGET successfully', function(done) {
-        //uncomment below and update the code to test resolveWhoIsEntryUsingGET
-        //instance.resolveWhoIsEntryUsingGET(function(error) {
+    describe('resolveHTMLUsingGET', function() {
+      it('should call resolveHTMLUsingGET successfully', function(done) {
+        //uncomment below and update the code to test resolveHTMLUsingGET
+        //instance.resolveHTMLUsingGET(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
