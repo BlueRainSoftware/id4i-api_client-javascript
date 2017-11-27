@@ -121,10 +121,10 @@
         done();
       });
     });
-    describe('listUsingGET1', function() {
-      it('should call listUsingGET1 successfully', function(done) {
-        //uncomment below and update the code to test listUsingGET1
-        //instance.listUsingGET1(function(error) {
+    describe('listUsingGET2', function() {
+      it('should call listUsingGET2 successfully', function(done) {
+        //uncomment below and update the code to test listUsingGET2
+        //instance.listUsingGET2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

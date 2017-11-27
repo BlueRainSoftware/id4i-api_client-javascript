@@ -131,7 +131,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**getOrganizationsUsingGET**](docs/AccountsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
 *Id4iApi.AccountsApi* | [**getUserRolesByUsernameUsingGET**](docs/AccountsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | getUserRolesByUsername
 *Id4iApi.AccountsApi* | [**getUsersUsingGET**](docs/AccountsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
-*Id4iApi.AccountsApi* | [**listUsingGET1**](docs/AccountsApi.md#listUsingGET1) | **GET** /api/v1/roles | list
+*Id4iApi.AccountsApi* | [**listUsingGET2**](docs/AccountsApi.md#listUsingGET2) | **GET** /api/v1/roles | list
 *Id4iApi.AccountsApi* | [**login**](docs/AccountsApi.md#login) | **POST** /login | 
 *Id4iApi.AccountsApi* | [**registerUserUsingPOST**](docs/AccountsApi.md#registerUserUsingPOST) | **POST** /account/registration | registerUser
 *Id4iApi.AccountsApi* | [**removeMultipleUserRolesUsingDELETE**](docs/AccountsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | removeMultipleUserRoles
@@ -144,6 +144,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.ApikeycontrollerApi* | [**removeKeyUsingDELETE**](docs/ApikeycontrollerApi.md#removeKeyUsingDELETE) | **DELETE** /api/v1/apikeys/{key} | removeKey
 *Id4iApi.ApikeycontrollerApi* | [**setKeyActivationStatusUsingPUT**](docs/ApikeycontrollerApi.md#setKeyActivationStatusUsingPUT) | **PUT** /api/v1/apikeys/{key} | setKeyActivationStatus
 *Id4iApi.ApikeycontrollerApi* | [**showKeyUsingGET**](docs/ApikeycontrollerApi.md#showKeyUsingGET) | **GET** /api/v1/apikeys/{key} | showKey
+*Id4iApi.ApikeyprivilegecontrollerApi* | [**listUsingGET1**](docs/ApikeyprivilegecontrollerApi.md#listUsingGET1) | **GET** /api/v1/apikeys/privileges | list
 *Id4iApi.CollectionsApi* | [**addElementsToCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
 *Id4iApi.CollectionsApi* | [**addElementsToLabelledCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements | addElementsToLabelledCollection
 *Id4iApi.CollectionsApi* | [**addElementsToLogisticCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements | addElementsToLogisticCollection
@@ -221,6 +222,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.ApiError](docs/ApiError.md)
  - [Id4iApi.ApiKeyCreationRequest](docs/ApiKeyCreationRequest.md)
  - [Id4iApi.ApiKeyPresentation](docs/ApiKeyPresentation.md)
+ - [Id4iApi.ApiKeyPrivilegeInfo](docs/ApiKeyPrivilegeInfo.md)
+ - [Id4iApi.ApiKeyPrivilegeResponse](docs/ApiKeyPrivilegeResponse.md)
  - [Id4iApi.ApiKeyStatus](docs/ApiKeyStatus.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
  - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
@@ -236,6 +239,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
  - [Id4iApi.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
  - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
+ - [Id4iApi.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
  - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
  - [Id4iApi.PaginatedResponseRole](docs/PaginatedResponseRole.md)

@@ -447,8 +447,8 @@
     }
 
     /**
-     * Callback function to receive the result of the listUsingGET1 operation.
-     * @callback module:api/AccountsApi~listUsingGET1Callback
+     * Callback function to receive the result of the listUsingGET2 operation.
+     * @callback module:api/AccountsApi~listUsingGET2Callback
      * @param {String} error Error message, if any.
      * @param {module:model/RoleResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -462,10 +462,10 @@
      * @param {String} opts.privilege privilege
      * @param {Number} opts.offset 
      * @param {Number} opts.limit 
-     * @param {module:api/AccountsApi~listUsingGET1Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/AccountsApi~listUsingGET2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RoleResponse}
      */
-    this.listUsingGET1 = function(opts, callback) {
+    this.listUsingGET2 = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
 
