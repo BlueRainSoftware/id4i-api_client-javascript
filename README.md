@@ -96,9 +96,11 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var api = new Id4iApi.AccountcontrollerApi()
+var api = new Id4iApi.AccountsApi()
 
-var userRegistration = new Id4iApi.UserRegistrationRequest(); // {UserRegistrationRequest} userRegistration
+var organizationId = 789; // {Number} organizationId
+
+var changeUserRoleRequest = new Id4iApi.ChangeUserRoleRequest(); // {ChangeUserRoleRequest} changeUserRoleRequest
 
 var opts = { 
   'authorization': "authorization_example", // {String} Authorization JWT Bearer Token as returned from /login
@@ -112,7 +114,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.registerUserUsingPOST(userRegistration, opts, callback);
+api.addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts, callback);
 
 ```
 
@@ -122,77 +124,104 @@ All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*Id4iApi.AccountcontrollerApi* | [**registerUserUsingPOST**](docs/AccountcontrollerApi.md#registerUserUsingPOST) | **POST** /account/registration | registerUser
-*Id4iApi.AccountcontrollerApi* | [**requestPasswordResetUsingPOST**](docs/AccountcontrollerApi.md#requestPasswordResetUsingPOST) | **POST** /account/password | requestPasswordReset
-*Id4iApi.AccountcontrollerApi* | [**verifyPasswordResetUsingPUT**](docs/AccountcontrollerApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | verifyPasswordReset
-*Id4iApi.AccountcontrollerApi* | [**verifyRegistrationUsingPOST**](docs/AccountcontrollerApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | verifyRegistration
-*Id4iApi.AppinfocontrollerApi* | [**infoUsingGET**](docs/AppinfocontrollerApi.md#infoUsingGET) | **GET** /api/v1/info | info
-*Id4iApi.CollectioncontrollerApi* | [**addElementsToCollectionUsingPUT**](docs/CollectioncontrollerApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
-*Id4iApi.CollectioncontrollerApi* | [**addSingleElementToCollectionUsingPUT**](docs/CollectioncontrollerApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | addSingleElementToCollection
-*Id4iApi.CollectioncontrollerApi* | [**deleteCollectionUsingDELETE**](docs/CollectioncontrollerApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | deleteCollection
-*Id4iApi.CollectioncontrollerApi* | [**findById4nUsingGET**](docs/CollectioncontrollerApi.md#findById4nUsingGET) | **GET** /api/v1/collections/{id4n} | findById4n
-*Id4iApi.CollectioncontrollerApi* | [**listContentsUsingGET**](docs/CollectioncontrollerApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
-*Id4iApi.CollectioncontrollerApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectioncontrollerApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
-*Id4iApi.CollectioncontrollerApi* | [**removeSingleElementFromCollectionUsingDELETE**](docs/CollectioncontrollerApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
-*Id4iApi.DefaultApi* | [**loginPOST**](docs/DefaultApi.md#loginPOST) | **POST** /login | 
-*Id4iApi.GocontrollerApi* | [**forwardUsingGET**](docs/GocontrollerApi.md#forwardUsingGET) | **GET** /go/{guid} | forward
-*Id4iApi.GuidcontrollerApi* | [**createUsingPOST**](docs/GuidcontrollerApi.md#createUsingPOST) | **POST** /api/v1/guids | create
-*Id4iApi.LabelledcollectioncontrollerApi* | [**addElementsToLabelledCollectionUsingPUT**](docs/LabelledcollectioncontrollerApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements | addElementsToLabelledCollection
-*Id4iApi.LabelledcollectioncontrollerApi* | [**addSingleElementToLabelledCollectionUsingPUT**](docs/LabelledcollectioncontrollerApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | addSingleElementToLabelledCollection
-*Id4iApi.LabelledcollectioncontrollerApi* | [**createLabelledCollectionUsingPOST**](docs/LabelledcollectioncontrollerApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | createLabelledCollection
-*Id4iApi.LabelledcollectioncontrollerApi* | [**deleteLabelledCollectionUsingDELETE**](docs/LabelledcollectioncontrollerApi.md#deleteLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{id4n} | deleteLabelledCollection
-*Id4iApi.LabelledcollectioncontrollerApi* | [**findById4nUsingGET1**](docs/LabelledcollectioncontrollerApi.md#findById4nUsingGET1) | **GET** /api/v1/collections/labelled/{id4n} | findById4n
-*Id4iApi.LabelledcollectioncontrollerApi* | [**findByLabelUsingGET**](docs/LabelledcollectioncontrollerApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | findByLabel
-*Id4iApi.LabelledcollectioncontrollerApi* | [**removeElementsFromLabelledCollectionUsingDELETE**](docs/LabelledcollectioncontrollerApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | removeElementsFromLabelledCollection
-*Id4iApi.LabelledcollectioncontrollerApi* | [**removeSingleElementFromLabelledCollectionUsingDELETE**](docs/LabelledcollectioncontrollerApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromLabelledCollection
-*Id4iApi.LabelledcollectioncontrollerApi* | [**renameUsingPUT**](docs/LabelledcollectioncontrollerApi.md#renameUsingPUT) | **PUT** /api/v1/collections/labelled/{id4n} | rename
-*Id4iApi.LogisticcollectioncontrollerApi* | [**addElementsToLogisticCollectionUsingPUT**](docs/LogisticcollectioncontrollerApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements | addElementsToLogisticCollection
-*Id4iApi.LogisticcollectioncontrollerApi* | [**addSingleElementToLogisticCollectionUsingPUT**](docs/LogisticcollectioncontrollerApi.md#addSingleElementToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | addSingleElementToLogisticCollection
-*Id4iApi.LogisticcollectioncontrollerApi* | [**createLogisticCollectionUsingPOST**](docs/LogisticcollectioncontrollerApi.md#createLogisticCollectionUsingPOST) | **POST** /api/v1/collections/logistic | createLogisticCollection
-*Id4iApi.LogisticcollectioncontrollerApi* | [**deleteLogisticCollectionUsingDELETE**](docs/LogisticcollectioncontrollerApi.md#deleteLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{id4n} | deleteLogisticCollection
-*Id4iApi.LogisticcollectioncontrollerApi* | [**findById4nUsingGET2**](docs/LogisticcollectioncontrollerApi.md#findById4nUsingGET2) | **GET** /api/v1/collections/logistic/{id4n} | findById4n
-*Id4iApi.LogisticcollectioncontrollerApi* | [**removeElementsFromLogisticCollectionUsingDELETE**](docs/LogisticcollectioncontrollerApi.md#removeElementsFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements | removeElementsFromLogisticCollection
-*Id4iApi.LogisticcollectioncontrollerApi* | [**removeSingleElementFromLogisticCollectionUsingDELETE**](docs/LogisticcollectioncontrollerApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | removeSingleElementFromLogisticCollection
-*Id4iApi.OrganizationaddresscontrollerApi* | [**getAddressUsingGET**](docs/OrganizationaddresscontrollerApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | getAddress
-*Id4iApi.OrganizationaddresscontrollerApi* | [**getBillingAddressUsingGET**](docs/OrganizationaddresscontrollerApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | getBillingAddress
-*Id4iApi.OrganizationaddresscontrollerApi* | [**removeBillingAddressUsingDELETE**](docs/OrganizationaddresscontrollerApi.md#removeBillingAddressUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/addresses/billing | removeBillingAddress
-*Id4iApi.OrganizationaddresscontrollerApi* | [**storeAddressUsingPOST**](docs/OrganizationaddresscontrollerApi.md#storeAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/default | storeAddress
-*Id4iApi.OrganizationaddresscontrollerApi* | [**storeBillingAddressUsingPOST**](docs/OrganizationaddresscontrollerApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | storeBillingAddress
-*Id4iApi.OrganizationcontrollerApi* | [**createOrganzationUsingPOST**](docs/OrganizationcontrollerApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
-*Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationLogoUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
-*Id4iApi.OrganizationcontrollerApi* | [**deleteOrganizationUsingDELETE**](docs/OrganizationcontrollerApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
-*Id4iApi.OrganizationcontrollerApi* | [**getOrganizationUsingGET**](docs/OrganizationcontrollerApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
-*Id4iApi.OrganizationcontrollerApi* | [**setOrganizationLogoUsingPOST**](docs/OrganizationcontrollerApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
-*Id4iApi.OrganizationcontrollerApi* | [**updateOrganizationUsingPUT**](docs/OrganizationcontrollerApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
-*Id4iApi.OrganizationscollectioncontrollerApi* | [**getAllUsingGET**](docs/OrganizationscollectioncontrollerApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
-*Id4iApi.OrganizationusercontrollerApi* | [**addMultipleUserRolesUsingPOST**](docs/OrganizationusercontrollerApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | addMultipleUserRoles
-*Id4iApi.OrganizationusercontrollerApi* | [**addUserRolesUsingPOST**](docs/OrganizationusercontrollerApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | addUserRoles
-*Id4iApi.OrganizationusercontrollerApi* | [**getMultipleUserRolesUsingGET**](docs/OrganizationusercontrollerApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
-*Id4iApi.OrganizationusercontrollerApi* | [**getUserRolesByUsernameUsingGET**](docs/OrganizationusercontrollerApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | getUserRolesByUsername
-*Id4iApi.OrganizationusercontrollerApi* | [**getUsersUsingGET**](docs/OrganizationusercontrollerApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
-*Id4iApi.OrganizationusercontrollerApi* | [**removeMultipleUserRolesUsingDELETE**](docs/OrganizationusercontrollerApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | removeMultipleUserRoles
-*Id4iApi.OrganizationusercontrollerApi* | [**removeUserRolesUsingDELETE**](docs/OrganizationusercontrollerApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | removeUserRoles
-*Id4iApi.PublicimagecontrollerApi* | [**resolveImageUsingGET**](docs/PublicimagecontrollerApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
-*Id4iApi.RolecontrollerApi* | [**listUsingGET**](docs/RolecontrollerApi.md#listUsingGET) | **GET** /api/v1/roles | list
-*Id4iApi.RoutingcollectioncontrollerApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingcollectioncontrollerApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
-*Id4iApi.RoutingcollectioncontrollerApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/RoutingcollectioncontrollerApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
-*Id4iApi.RoutingcollectioncontrollerApi* | [**createRoutingCollectionUsingPOST**](docs/RoutingcollectioncontrollerApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
-*Id4iApi.RoutingcollectioncontrollerApi* | [**deleteRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | deleteRoutingCollection
-*Id4iApi.RoutingcollectioncontrollerApi* | [**findById4nUsingGET3**](docs/RoutingcollectioncontrollerApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | findById4n
-*Id4iApi.RoutingcollectioncontrollerApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
-*Id4iApi.RoutingcollectioncontrollerApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/RoutingcollectioncontrollerApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
-*Id4iApi.RoutingcontrollerApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingcontrollerApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | retrieveCurrentParamsByType
-*Id4iApi.RoutingcontrollerApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingcontrollerApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | retrieveRoutingFile
-*Id4iApi.RoutingcontrollerApi* | [**storeRoutingFileUsingPUT**](docs/RoutingcontrollerApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | storeRoutingFile
-*Id4iApi.UserorganizationscontrollerApi* | [**getOrganizationsUsingGET**](docs/UserorganizationscontrollerApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
-*Id4iApi.UserscontrollerApi* | [**findUserByUsernameUsingGET**](docs/UserscontrollerApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
-*Id4iApi.WhoiscontrollerApi* | [**resolveWhoIsEntryUsingGET**](docs/WhoiscontrollerApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | resolveWhoIsEntry
+*Id4iApi.AccountsApi* | [**addMultipleUserRolesUsingPOST**](docs/AccountsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | addMultipleUserRoles
+*Id4iApi.AccountsApi* | [**addUserRolesUsingPOST**](docs/AccountsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | addUserRoles
+*Id4iApi.AccountsApi* | [**findUserByUsernameUsingGET**](docs/AccountsApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
+*Id4iApi.AccountsApi* | [**getMultipleUserRolesUsingGET**](docs/AccountsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
+*Id4iApi.AccountsApi* | [**getOrganizationsUsingGET**](docs/AccountsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
+*Id4iApi.AccountsApi* | [**getUserRolesByUsernameUsingGET**](docs/AccountsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | getUserRolesByUsername
+*Id4iApi.AccountsApi* | [**getUsersUsingGET**](docs/AccountsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
+*Id4iApi.AccountsApi* | [**listUsingGET1**](docs/AccountsApi.md#listUsingGET1) | **GET** /api/v1/roles | list
+*Id4iApi.AccountsApi* | [**login**](docs/AccountsApi.md#login) | **POST** /login | 
+*Id4iApi.AccountsApi* | [**registerUserUsingPOST**](docs/AccountsApi.md#registerUserUsingPOST) | **POST** /account/registration | registerUser
+*Id4iApi.AccountsApi* | [**removeMultipleUserRolesUsingDELETE**](docs/AccountsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | removeMultipleUserRoles
+*Id4iApi.AccountsApi* | [**removeUserRolesUsingDELETE**](docs/AccountsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | removeUserRoles
+*Id4iApi.AccountsApi* | [**requestPasswordResetUsingPOST**](docs/AccountsApi.md#requestPasswordResetUsingPOST) | **POST** /account/password | requestPasswordReset
+*Id4iApi.AccountsApi* | [**verifyPasswordResetUsingPUT**](docs/AccountsApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | verifyPasswordReset
+*Id4iApi.AccountsApi* | [**verifyRegistrationUsingPOST**](docs/AccountsApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | verifyRegistration
+*Id4iApi.ApikeycontrollerApi* | [**createUsingPOST**](docs/ApikeycontrollerApi.md#createUsingPOST) | **POST** /api/v1/apikeys | create
+*Id4iApi.ApikeycontrollerApi* | [**listUsingGET**](docs/ApikeycontrollerApi.md#listUsingGET) | **GET** /api/v1/apikeys | list
+*Id4iApi.ApikeycontrollerApi* | [**removeKeyUsingDELETE**](docs/ApikeycontrollerApi.md#removeKeyUsingDELETE) | **DELETE** /api/v1/apikeys/{key} | removeKey
+*Id4iApi.ApikeycontrollerApi* | [**setKeyActivationStatusUsingPUT**](docs/ApikeycontrollerApi.md#setKeyActivationStatusUsingPUT) | **PUT** /api/v1/apikeys/{key} | setKeyActivationStatus
+*Id4iApi.ApikeycontrollerApi* | [**showKeyUsingGET**](docs/ApikeycontrollerApi.md#showKeyUsingGET) | **GET** /api/v1/apikeys/{key} | showKey
+*Id4iApi.CollectionsApi* | [**addElementsToCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
+*Id4iApi.CollectionsApi* | [**addElementsToLabelledCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements | addElementsToLabelledCollection
+*Id4iApi.CollectionsApi* | [**addElementsToLogisticCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements | addElementsToLogisticCollection
+*Id4iApi.CollectionsApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
+*Id4iApi.CollectionsApi* | [**addSingleElementToCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | addSingleElementToCollection
+*Id4iApi.CollectionsApi* | [**addSingleElementToLabelledCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | addSingleElementToLabelledCollection
+*Id4iApi.CollectionsApi* | [**addSingleElementToLogisticCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | addSingleElementToLogisticCollection
+*Id4iApi.CollectionsApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
+*Id4iApi.CollectionsApi* | [**createLabelledCollectionUsingPOST**](docs/CollectionsApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | createLabelledCollection
+*Id4iApi.CollectionsApi* | [**createLogisticCollectionUsingPOST**](docs/CollectionsApi.md#createLogisticCollectionUsingPOST) | **POST** /api/v1/collections/logistic | createLogisticCollection
+*Id4iApi.CollectionsApi* | [**createRoutingCollectionUsingPOST**](docs/CollectionsApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
+*Id4iApi.CollectionsApi* | [**deleteCollectionUsingDELETE**](docs/CollectionsApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | deleteCollection
+*Id4iApi.CollectionsApi* | [**deleteLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#deleteLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{id4n} | deleteLabelledCollection
+*Id4iApi.CollectionsApi* | [**deleteLogisticCollectionUsingDELETE**](docs/CollectionsApi.md#deleteLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{id4n} | deleteLogisticCollection
+*Id4iApi.CollectionsApi* | [**deleteRoutingCollectionUsingDELETE**](docs/CollectionsApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | deleteRoutingCollection
+*Id4iApi.CollectionsApi* | [**findById4nUsingGET**](docs/CollectionsApi.md#findById4nUsingGET) | **GET** /api/v1/collections/{id4n} | findById4n
+*Id4iApi.CollectionsApi* | [**findById4nUsingGET1**](docs/CollectionsApi.md#findById4nUsingGET1) | **GET** /api/v1/collections/labelled/{id4n} | findById4n
+*Id4iApi.CollectionsApi* | [**findById4nUsingGET2**](docs/CollectionsApi.md#findById4nUsingGET2) | **GET** /api/v1/collections/logistic/{id4n} | findById4n
+*Id4iApi.CollectionsApi* | [**findById4nUsingGET3**](docs/CollectionsApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | findById4n
+*Id4iApi.CollectionsApi* | [**findByLabelUsingGET**](docs/CollectionsApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | findByLabel
+*Id4iApi.CollectionsApi* | [**getAllUsingGET**](docs/CollectionsApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
+*Id4iApi.CollectionsApi* | [**listContentsUsingGET**](docs/CollectionsApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
+*Id4iApi.CollectionsApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
+*Id4iApi.CollectionsApi* | [**removeElementsFromLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | removeElementsFromLabelledCollection
+*Id4iApi.CollectionsApi* | [**removeElementsFromLogisticCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements | removeElementsFromLogisticCollection
+*Id4iApi.CollectionsApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
+*Id4iApi.CollectionsApi* | [**removeSingleElementFromCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
+*Id4iApi.CollectionsApi* | [**removeSingleElementFromLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromLabelledCollection
+*Id4iApi.CollectionsApi* | [**removeSingleElementFromLogisticCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | removeSingleElementFromLogisticCollection
+*Id4iApi.CollectionsApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
+*Id4iApi.CollectionsApi* | [**renameUsingPUT**](docs/CollectionsApi.md#renameUsingPUT) | **PUT** /api/v1/collections/labelled/{id4n} | rename
+*Id4iApi.GUIDsApi* | [**createUsingPOST1**](docs/GUIDsApi.md#createUsingPOST1) | **POST** /api/v1/guids | create
+*Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
+*Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about Id4i.
+*Id4iApi.OrganizationsApi* | [**addMultipleUserRolesUsingPOST**](docs/OrganizationsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | addMultipleUserRoles
+*Id4iApi.OrganizationsApi* | [**addUserRolesUsingPOST**](docs/OrganizationsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | addUserRoles
+*Id4iApi.OrganizationsApi* | [**createOrganzationUsingPOST**](docs/OrganizationsApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
+*Id4iApi.OrganizationsApi* | [**deleteOrganizationLogoUsingDELETE**](docs/OrganizationsApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
+*Id4iApi.OrganizationsApi* | [**deleteOrganizationUsingDELETE**](docs/OrganizationsApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
+*Id4iApi.OrganizationsApi* | [**getAddressUsingGET**](docs/OrganizationsApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | getAddress
+*Id4iApi.OrganizationsApi* | [**getAllUsingGET**](docs/OrganizationsApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
+*Id4iApi.OrganizationsApi* | [**getBillingAddressUsingGET**](docs/OrganizationsApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | getBillingAddress
+*Id4iApi.OrganizationsApi* | [**getMultipleUserRolesUsingGET**](docs/OrganizationsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
+*Id4iApi.OrganizationsApi* | [**getOrganizationUsingGET**](docs/OrganizationsApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
+*Id4iApi.OrganizationsApi* | [**getOrganizationsUsingGET**](docs/OrganizationsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
+*Id4iApi.OrganizationsApi* | [**getUserRolesByUsernameUsingGET**](docs/OrganizationsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | getUserRolesByUsername
+*Id4iApi.OrganizationsApi* | [**getUsersUsingGET**](docs/OrganizationsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
+*Id4iApi.OrganizationsApi* | [**removeBillingAddressUsingDELETE**](docs/OrganizationsApi.md#removeBillingAddressUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/addresses/billing | removeBillingAddress
+*Id4iApi.OrganizationsApi* | [**removeMultipleUserRolesUsingDELETE**](docs/OrganizationsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | removeMultipleUserRoles
+*Id4iApi.OrganizationsApi* | [**removeUserRolesUsingDELETE**](docs/OrganizationsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | removeUserRoles
+*Id4iApi.OrganizationsApi* | [**setOrganizationLogoUsingPOST**](docs/OrganizationsApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
+*Id4iApi.OrganizationsApi* | [**storeAddressUsingPOST**](docs/OrganizationsApi.md#storeAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/default | storeAddress
+*Id4iApi.OrganizationsApi* | [**storeBillingAddressUsingPOST**](docs/OrganizationsApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | storeBillingAddress
+*Id4iApi.OrganizationsApi* | [**updateOrganizationUsingPUT**](docs/OrganizationsApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
+*Id4iApi.PublicServicesApi* | [**forwardUsingGET**](docs/PublicServicesApi.md#forwardUsingGET) | **GET** /go/{guid} | forward
+*Id4iApi.PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
+*Id4iApi.PublicServicesApi* | [**resolveWhoIsEntryUsingGET**](docs/PublicServicesApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | resolveWhoIsEntry
+*Id4iApi.RoutingApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
+*Id4iApi.RoutingApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
+*Id4iApi.RoutingApi* | [**createRoutingCollectionUsingPOST**](docs/RoutingApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
+*Id4iApi.RoutingApi* | [**deleteRoutingCollectionUsingDELETE**](docs/RoutingApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | deleteRoutingCollection
+*Id4iApi.RoutingApi* | [**findById4nUsingGET3**](docs/RoutingApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | findById4n
+*Id4iApi.RoutingApi* | [**forwardUsingGET**](docs/RoutingApi.md#forwardUsingGET) | **GET** /go/{guid} | forward
+*Id4iApi.RoutingApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/RoutingApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
+*Id4iApi.RoutingApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/RoutingApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
+*Id4iApi.RoutingApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | retrieveCurrentParamsByType
+*Id4iApi.RoutingApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | retrieveRoutingFile
+*Id4iApi.RoutingApi* | [**storeRoutingFileUsingPUT**](docs/RoutingApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | storeRoutingFile
+*Id4iApi.WhoIsApi* | [**resolveWhoIsEntryUsingGET**](docs/WhoIsApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | resolveWhoIsEntry
 
 
 ## Documentation for Models
 
  - [Id4iApi.AccountCredentials](docs/AccountCredentials.md)
  - [Id4iApi.ApiError](docs/ApiError.md)
+ - [Id4iApi.ApiKeyCreationRequest](docs/ApiKeyCreationRequest.md)
+ - [Id4iApi.ApiKeyPresentation](docs/ApiKeyPresentation.md)
+ - [Id4iApi.ApiKeyStatus](docs/ApiKeyStatus.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
  - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
  - [Id4iApi.ChangeUserRoleRequest](docs/ChangeUserRoleRequest.md)
@@ -205,6 +234,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.ListOfId4ns](docs/ListOfId4ns.md)
  - [Id4iApi.Organization](docs/Organization.md)
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
+ - [Id4iApi.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
+ - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
  - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
  - [Id4iApi.PaginatedResponseRole](docs/PaginatedResponseRole.md)

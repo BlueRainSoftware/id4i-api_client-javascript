@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/AppInfoPresentation', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/CreateGuidRequest', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedResponseRole', 'model/PaginatedResponsestring', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/Role', 'model/RoleResponse', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles', 'model/WhoIsResponse', 'api/AccountcontrollerApi', 'api/AppinfocontrollerApi', 'api/CollectioncontrollerApi', 'api/DefaultApi', 'api/GocontrollerApi', 'api/GuidcontrollerApi', 'api/LabelledcollectioncontrollerApi', 'api/LogisticcollectioncontrollerApi', 'api/OrganizationaddresscontrollerApi', 'api/OrganizationcontrollerApi', 'api/OrganizationscollectioncontrollerApi', 'api/OrganizationusercontrollerApi', 'api/PublicimagecontrollerApi', 'api/RolecontrollerApi', 'api/RoutingcollectioncontrollerApi', 'api/RoutingcontrollerApi', 'api/UserorganizationscontrollerApi', 'api/UserscontrollerApi', 'api/WhoiscontrollerApi'], factory);
+    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyStatus', 'model/AppInfoPresentation', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/CreateGuidRequest', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedApiKeyResponse', 'model/PaginatedResponseApiKeyPresentation', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedResponseRole', 'model/PaginatedResponsestring', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/Role', 'model/RoleResponse', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles', 'model/WhoIsResponse', 'api/AccountsApi', 'api/ApikeycontrollerApi', 'api/CollectionsApi', 'api/GUIDsApi', 'api/ImagesApi', 'api/MetaInformationApi', 'api/OrganizationsApi', 'api/PublicServicesApi', 'api/RoutingApi', 'api/WhoIsApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/ApiError'), require('./model/AppInfoPresentation'), require('./model/ChangeRoleRequest'), require('./model/ChangeUserRoleRequest'), require('./model/CreateGuidRequest'), require('./model/CreateLabelledCollectionRequest'), require('./model/CreateLogisticCollectionRequest'), require('./model/CreateRoutingCollectionRequest'), require('./model/GuidCollection'), require('./model/Id4n'), require('./model/ListOfId4ns'), require('./model/Organization'), require('./model/OrganizationAddress'), require('./model/PaginatedResponseGuidCollection'), require('./model/PaginatedResponseOrganization'), require('./model/PaginatedResponseRole'), require('./model/PaginatedResponsestring'), require('./model/PaginatedUserPresentationResponse'), require('./model/PaginatedUserRolesResponse'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/ResponseEntity'), require('./model/Role'), require('./model/RoleResponse'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./model/UserRoles'), require('./model/WhoIsResponse'), require('./api/AccountcontrollerApi'), require('./api/AppinfocontrollerApi'), require('./api/CollectioncontrollerApi'), require('./api/DefaultApi'), require('./api/GocontrollerApi'), require('./api/GuidcontrollerApi'), require('./api/LabelledcollectioncontrollerApi'), require('./api/LogisticcollectioncontrollerApi'), require('./api/OrganizationaddresscontrollerApi'), require('./api/OrganizationcontrollerApi'), require('./api/OrganizationscollectioncontrollerApi'), require('./api/OrganizationusercontrollerApi'), require('./api/PublicimagecontrollerApi'), require('./api/RolecontrollerApi'), require('./api/RoutingcollectioncontrollerApi'), require('./api/RoutingcontrollerApi'), require('./api/UserorganizationscontrollerApi'), require('./api/UserscontrollerApi'), require('./api/WhoiscontrollerApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/ApiError'), require('./model/ApiKeyCreationRequest'), require('./model/ApiKeyPresentation'), require('./model/ApiKeyStatus'), require('./model/AppInfoPresentation'), require('./model/ChangeRoleRequest'), require('./model/ChangeUserRoleRequest'), require('./model/CreateGuidRequest'), require('./model/CreateLabelledCollectionRequest'), require('./model/CreateLogisticCollectionRequest'), require('./model/CreateRoutingCollectionRequest'), require('./model/GuidCollection'), require('./model/Id4n'), require('./model/ListOfId4ns'), require('./model/Organization'), require('./model/OrganizationAddress'), require('./model/PaginatedApiKeyResponse'), require('./model/PaginatedResponseApiKeyPresentation'), require('./model/PaginatedResponseGuidCollection'), require('./model/PaginatedResponseOrganization'), require('./model/PaginatedResponseRole'), require('./model/PaginatedResponsestring'), require('./model/PaginatedUserPresentationResponse'), require('./model/PaginatedUserRolesResponse'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/ResponseEntity'), require('./model/Role'), require('./model/RoleResponse'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./model/UserRoles'), require('./model/WhoIsResponse'), require('./api/AccountsApi'), require('./api/ApikeycontrollerApi'), require('./api/CollectionsApi'), require('./api/GUIDsApi'), require('./api/ImagesApi'), require('./api/MetaInformationApi'), require('./api/OrganizationsApi'), require('./api/PublicServicesApi'), require('./api/RoutingApi'), require('./api/WhoIsApi'));
   }
-}(function(ApiClient, AccountCredentials, ApiError, AppInfoPresentation, ChangeRoleRequest, ChangeUserRoleRequest, CreateGuidRequest, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, Organization, OrganizationAddress, PaginatedResponseGuidCollection, PaginatedResponseOrganization, PaginatedResponseRole, PaginatedResponsestring, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, ResponseEntity, Role, RoleResponse, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles, WhoIsResponse, AccountcontrollerApi, AppinfocontrollerApi, CollectioncontrollerApi, DefaultApi, GocontrollerApi, GuidcontrollerApi, LabelledcollectioncontrollerApi, LogisticcollectioncontrollerApi, OrganizationaddresscontrollerApi, OrganizationcontrollerApi, OrganizationscollectioncontrollerApi, OrganizationusercontrollerApi, PublicimagecontrollerApi, RolecontrollerApi, RoutingcollectioncontrollerApi, RoutingcontrollerApi, UserorganizationscontrollerApi, UserscontrollerApi, WhoiscontrollerApi) {
+}(function(ApiClient, AccountCredentials, ApiError, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyStatus, AppInfoPresentation, ChangeRoleRequest, ChangeUserRoleRequest, CreateGuidRequest, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, Organization, OrganizationAddress, PaginatedApiKeyResponse, PaginatedResponseApiKeyPresentation, PaginatedResponseGuidCollection, PaginatedResponseOrganization, PaginatedResponseRole, PaginatedResponsestring, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, ResponseEntity, Role, RoleResponse, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles, WhoIsResponse, AccountsApi, ApikeycontrollerApi, CollectionsApi, GUIDsApi, ImagesApi, MetaInformationApi, OrganizationsApi, PublicServicesApi, RoutingApi, WhoIsApi) {
   'use strict';
 
   /**
@@ -72,6 +72,21 @@
      * @property {module:model/ApiError}
      */
     ApiError: ApiError,
+    /**
+     * The ApiKeyCreationRequest model constructor.
+     * @property {module:model/ApiKeyCreationRequest}
+     */
+    ApiKeyCreationRequest: ApiKeyCreationRequest,
+    /**
+     * The ApiKeyPresentation model constructor.
+     * @property {module:model/ApiKeyPresentation}
+     */
+    ApiKeyPresentation: ApiKeyPresentation,
+    /**
+     * The ApiKeyStatus model constructor.
+     * @property {module:model/ApiKeyStatus}
+     */
+    ApiKeyStatus: ApiKeyStatus,
     /**
      * The AppInfoPresentation model constructor.
      * @property {module:model/AppInfoPresentation}
@@ -132,6 +147,16 @@
      * @property {module:model/OrganizationAddress}
      */
     OrganizationAddress: OrganizationAddress,
+    /**
+     * The PaginatedApiKeyResponse model constructor.
+     * @property {module:model/PaginatedApiKeyResponse}
+     */
+    PaginatedApiKeyResponse: PaginatedApiKeyResponse,
+    /**
+     * The PaginatedResponseApiKeyPresentation model constructor.
+     * @property {module:model/PaginatedResponseApiKeyPresentation}
+     */
+    PaginatedResponseApiKeyPresentation: PaginatedResponseApiKeyPresentation,
     /**
      * The PaginatedResponseGuidCollection model constructor.
      * @property {module:model/PaginatedResponseGuidCollection}
@@ -243,100 +268,55 @@
      */
     WhoIsResponse: WhoIsResponse,
     /**
-     * The AccountcontrollerApi service constructor.
-     * @property {module:api/AccountcontrollerApi}
+     * The AccountsApi service constructor.
+     * @property {module:api/AccountsApi}
      */
-    AccountcontrollerApi: AccountcontrollerApi,
+    AccountsApi: AccountsApi,
     /**
-     * The AppinfocontrollerApi service constructor.
-     * @property {module:api/AppinfocontrollerApi}
+     * The ApikeycontrollerApi service constructor.
+     * @property {module:api/ApikeycontrollerApi}
      */
-    AppinfocontrollerApi: AppinfocontrollerApi,
+    ApikeycontrollerApi: ApikeycontrollerApi,
     /**
-     * The CollectioncontrollerApi service constructor.
-     * @property {module:api/CollectioncontrollerApi}
+     * The CollectionsApi service constructor.
+     * @property {module:api/CollectionsApi}
      */
-    CollectioncontrollerApi: CollectioncontrollerApi,
+    CollectionsApi: CollectionsApi,
     /**
-     * The DefaultApi service constructor.
-     * @property {module:api/DefaultApi}
+     * The GUIDsApi service constructor.
+     * @property {module:api/GUIDsApi}
      */
-    DefaultApi: DefaultApi,
+    GUIDsApi: GUIDsApi,
     /**
-     * The GocontrollerApi service constructor.
-     * @property {module:api/GocontrollerApi}
+     * The ImagesApi service constructor.
+     * @property {module:api/ImagesApi}
      */
-    GocontrollerApi: GocontrollerApi,
+    ImagesApi: ImagesApi,
     /**
-     * The GuidcontrollerApi service constructor.
-     * @property {module:api/GuidcontrollerApi}
+     * The MetaInformationApi service constructor.
+     * @property {module:api/MetaInformationApi}
      */
-    GuidcontrollerApi: GuidcontrollerApi,
+    MetaInformationApi: MetaInformationApi,
     /**
-     * The LabelledcollectioncontrollerApi service constructor.
-     * @property {module:api/LabelledcollectioncontrollerApi}
+     * The OrganizationsApi service constructor.
+     * @property {module:api/OrganizationsApi}
      */
-    LabelledcollectioncontrollerApi: LabelledcollectioncontrollerApi,
+    OrganizationsApi: OrganizationsApi,
     /**
-     * The LogisticcollectioncontrollerApi service constructor.
-     * @property {module:api/LogisticcollectioncontrollerApi}
+     * The PublicServicesApi service constructor.
+     * @property {module:api/PublicServicesApi}
      */
-    LogisticcollectioncontrollerApi: LogisticcollectioncontrollerApi,
+    PublicServicesApi: PublicServicesApi,
     /**
-     * The OrganizationaddresscontrollerApi service constructor.
-     * @property {module:api/OrganizationaddresscontrollerApi}
+     * The RoutingApi service constructor.
+     * @property {module:api/RoutingApi}
      */
-    OrganizationaddresscontrollerApi: OrganizationaddresscontrollerApi,
+    RoutingApi: RoutingApi,
     /**
-     * The OrganizationcontrollerApi service constructor.
-     * @property {module:api/OrganizationcontrollerApi}
+     * The WhoIsApi service constructor.
+     * @property {module:api/WhoIsApi}
      */
-    OrganizationcontrollerApi: OrganizationcontrollerApi,
-    /**
-     * The OrganizationscollectioncontrollerApi service constructor.
-     * @property {module:api/OrganizationscollectioncontrollerApi}
-     */
-    OrganizationscollectioncontrollerApi: OrganizationscollectioncontrollerApi,
-    /**
-     * The OrganizationusercontrollerApi service constructor.
-     * @property {module:api/OrganizationusercontrollerApi}
-     */
-    OrganizationusercontrollerApi: OrganizationusercontrollerApi,
-    /**
-     * The PublicimagecontrollerApi service constructor.
-     * @property {module:api/PublicimagecontrollerApi}
-     */
-    PublicimagecontrollerApi: PublicimagecontrollerApi,
-    /**
-     * The RolecontrollerApi service constructor.
-     * @property {module:api/RolecontrollerApi}
-     */
-    RolecontrollerApi: RolecontrollerApi,
-    /**
-     * The RoutingcollectioncontrollerApi service constructor.
-     * @property {module:api/RoutingcollectioncontrollerApi}
-     */
-    RoutingcollectioncontrollerApi: RoutingcollectioncontrollerApi,
-    /**
-     * The RoutingcontrollerApi service constructor.
-     * @property {module:api/RoutingcontrollerApi}
-     */
-    RoutingcontrollerApi: RoutingcontrollerApi,
-    /**
-     * The UserorganizationscontrollerApi service constructor.
-     * @property {module:api/UserorganizationscontrollerApi}
-     */
-    UserorganizationscontrollerApi: UserorganizationscontrollerApi,
-    /**
-     * The UserscontrollerApi service constructor.
-     * @property {module:api/UserscontrollerApi}
-     */
-    UserscontrollerApi: UserscontrollerApi,
-    /**
-     * The WhoiscontrollerApi service constructor.
-     * @property {module:api/WhoiscontrollerApi}
-     */
-    WhoiscontrollerApi: WhoiscontrollerApi
+    WhoIsApi: WhoIsApi
   };
 
   return exports;
