@@ -165,7 +165,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectionsApi* | [**findById4nUsingGET2**](docs/CollectionsApi.md#findById4nUsingGET2) | **GET** /api/v1/collections/logistic/{id4n} | findById4n
 *Id4iApi.CollectionsApi* | [**findById4nUsingGET3**](docs/CollectionsApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | findById4n
 *Id4iApi.CollectionsApi* | [**findByLabelUsingGET**](docs/CollectionsApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | findByLabel
-*Id4iApi.CollectionsApi* | [**getAllUsingGET**](docs/CollectionsApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
+*Id4iApi.CollectionsApi* | [**getAllCollectionsOfOrganization**](docs/CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
 *Id4iApi.CollectionsApi* | [**listContentsUsingGET**](docs/CollectionsApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
 *Id4iApi.CollectionsApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
 *Id4iApi.CollectionsApi* | [**removeElementsFromLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | removeElementsFromLabelledCollection
@@ -185,7 +185,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationsApi* | [**deleteOrganizationLogoUsingDELETE**](docs/OrganizationsApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
 *Id4iApi.OrganizationsApi* | [**deleteOrganizationUsingDELETE**](docs/OrganizationsApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
 *Id4iApi.OrganizationsApi* | [**getAddressUsingGET**](docs/OrganizationsApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | getAddress
-*Id4iApi.OrganizationsApi* | [**getAllUsingGET**](docs/OrganizationsApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
+*Id4iApi.OrganizationsApi* | [**getAllCollectionsOfOrganization**](docs/OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
 *Id4iApi.OrganizationsApi* | [**getBillingAddressUsingGET**](docs/OrganizationsApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | getBillingAddress
 *Id4iApi.OrganizationsApi* | [**getMultipleUserRolesUsingGET**](docs/OrganizationsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
 *Id4iApi.OrganizationsApi* | [**getOrganizationUsingGET**](docs/OrganizationsApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
@@ -200,8 +200,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationsApi* | [**storeBillingAddressUsingPOST**](docs/OrganizationsApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | storeBillingAddress
 *Id4iApi.OrganizationsApi* | [**updateOrganizationUsingPUT**](docs/OrganizationsApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
 *Id4iApi.PublicServicesApi* | [**forwardUsingGET**](docs/PublicServicesApi.md#forwardUsingGET) | **GET** /go/{guid} | forward
-*Id4iApi.PublicServicesApi* | [**resolveHTMLUsingGET**](docs/PublicServicesApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
 *Id4iApi.PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
+*Id4iApi.PublicServicesApi* | [**resolveWhoIsEntryUsingGET**](docs/PublicServicesApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | resolveWhoIsEntry
 *Id4iApi.RoutingApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
 *Id4iApi.RoutingApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
 *Id4iApi.RoutingApi* | [**createRoutingCollectionUsingPOST**](docs/RoutingApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
@@ -213,7 +213,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.RoutingApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | retrieveCurrentParamsByType
 *Id4iApi.RoutingApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | retrieveRoutingFile
 *Id4iApi.RoutingApi* | [**storeRoutingFileUsingPUT**](docs/RoutingApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | storeRoutingFile
-*Id4iApi.WhoIsApi* | [**resolveHTMLUsingGET**](docs/WhoIsApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
+*Id4iApi.WhoIsApi* | [**resolveWhoIsEntryUsingGET**](docs/WhoIsApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | resolveWhoIsEntry
 
 
 ## Documentation for Models

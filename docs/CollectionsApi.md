@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**findById4nUsingGET2**](CollectionsApi.md#findById4nUsingGET2) | **GET** /api/v1/collections/logistic/{id4n} | findById4n
 [**findById4nUsingGET3**](CollectionsApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | findById4n
 [**findByLabelUsingGET**](CollectionsApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | findByLabel
-[**getAllUsingGET**](CollectionsApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
+[**getAllCollectionsOfOrganization**](CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
 [**listContentsUsingGET**](CollectionsApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
 [**removeElementsFromCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
 [**removeElementsFromLabelledCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | removeElementsFromLabelledCollection
@@ -1064,11 +1064,13 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getAllUsingGET"></a>
-# **getAllUsingGET**
-> PaginatedResponseGuidCollection getAllUsingGET(organizationId, opts)
+<a name="getAllCollectionsOfOrganization"></a>
+# **getAllCollectionsOfOrganization**
+> PaginatedResponseGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
 
-getAll
+Get collections of organization
+
+Retrieving all collections of an organization in a paginated manner.
 
 ### Example
 ```javascript
@@ -1093,7 +1095,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllUsingGET(organizationId, opts, callback);
+apiInstance.getAllCollectionsOfOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters

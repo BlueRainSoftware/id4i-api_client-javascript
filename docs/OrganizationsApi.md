@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**deleteOrganizationLogoUsingDELETE**](OrganizationsApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
 [**deleteOrganizationUsingDELETE**](OrganizationsApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
 [**getAddressUsingGET**](OrganizationsApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | getAddress
-[**getAllUsingGET**](OrganizationsApi.md#getAllUsingGET) | **GET** /api/v1/organization/{organizationId}/collections | getAll
+[**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
 [**getBillingAddressUsingGET**](OrganizationsApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | getBillingAddress
 [**getMultipleUserRolesUsingGET**](OrganizationsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
 [**getOrganizationUsingGET**](OrganizationsApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
@@ -339,11 +339,13 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getAllUsingGET"></a>
-# **getAllUsingGET**
-> PaginatedResponseGuidCollection getAllUsingGET(organizationId, opts)
+<a name="getAllCollectionsOfOrganization"></a>
+# **getAllCollectionsOfOrganization**
+> PaginatedResponseGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
 
-getAll
+Get collections of organization
+
+Retrieving all collections of an organization in a paginated manner.
 
 ### Example
 ```javascript
@@ -368,7 +370,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllUsingGET(organizationId, opts, callback);
+apiInstance.getAllCollectionsOfOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters

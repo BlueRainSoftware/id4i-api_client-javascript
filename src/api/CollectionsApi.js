@@ -1125,15 +1125,16 @@
     }
 
     /**
-     * Callback function to receive the result of the getAllUsingGET operation.
-     * @callback module:api/CollectionsApi~getAllUsingGETCallback
+     * Callback function to receive the result of the getAllCollectionsOfOrganization operation.
+     * @callback module:api/CollectionsApi~getAllCollectionsOfOrganizationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedResponseGuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * getAll
+     * Get collections of organization
+     * Retrieving all collections of an organization in a paginated manner.
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -1141,16 +1142,16 @@
      * @param {Number} opts.offset 
      * @param {Number} opts.limit 
      * @param {module:model/String} opts.type type
-     * @param {module:api/CollectionsApi~getAllUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponseGuidCollection}
      */
-    this.getAllUsingGET = function(organizationId, opts, callback) {
+    this.getAllCollectionsOfOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getAllUsingGET");
+        throw new Error("Missing the required parameter 'organizationId' when calling getAllCollectionsOfOrganization");
       }
 
 

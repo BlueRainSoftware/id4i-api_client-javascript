@@ -251,10 +251,10 @@
         done();
       });
     });
-    describe('getAllUsingGET', function() {
-      it('should call getAllUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getAllUsingGET
-        //instance.getAllUsingGET(function(error) {
+    describe('getAllCollectionsOfOrganization', function() {
+      it('should call getAllCollectionsOfOrganization successfully', function(done) {
+        //uncomment below and update the code to test getAllCollectionsOfOrganization
+        //instance.getAllCollectionsOfOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
