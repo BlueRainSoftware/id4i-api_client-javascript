@@ -200,8 +200,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationsApi* | [**storeBillingAddressUsingPOST**](docs/OrganizationsApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | Store billing address
 *Id4iApi.OrganizationsApi* | [**updateOrganizationUsingPUT**](docs/OrganizationsApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | Update organization
 *Id4iApi.PublicServicesApi* | [**forwardUsingGET**](docs/PublicServicesApi.md#forwardUsingGET) | **GET** /go/{guid} | Forward
+*Id4iApi.PublicServicesApi* | [**resolveHTMLUsingGET**](docs/PublicServicesApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
 *Id4iApi.PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
-*Id4iApi.PublicServicesApi* | [**resolveWhoIsEntryUsingGET**](docs/PublicServicesApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | Resolve owner of id4n
 *Id4iApi.RoutingApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | Add element to routing collection
 *Id4iApi.RoutingApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Add element to routing collection
 *Id4iApi.RoutingApi* | [**createRoutingCollectionUsingPOST**](docs/RoutingApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | Create routing collecton
@@ -213,7 +213,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.RoutingApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current params by type
 *Id4iApi.RoutingApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *Id4iApi.RoutingApi* | [**storeRoutingFileUsingPUT**](docs/RoutingApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
-*Id4iApi.WhoIsApi* | [**resolveWhoIsEntryUsingGET**](docs/WhoIsApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | Resolve owner of id4n
+*Id4iApi.WhoIsApi* | [**resolveHTMLUsingGET**](docs/WhoIsApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
 
 
 ## Documentation for Models
