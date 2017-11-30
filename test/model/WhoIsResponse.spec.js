@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RoutingFileRequest();
+    instance = new Id4iApi.WhoIsResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,22 @@
       object[property] = value;
   }
 
-  describe('RoutingFileRequest', function() {
-    it('should create an instance of RoutingFileRequest', function() {
-      // uncomment below and update the code to test RoutingFileRequest
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
+  describe('WhoIsResponse', function() {
+    it('should create an instance of WhoIsResponse', function() {
+      // uncomment below and update the code to test WhoIsResponse
+      //var instane = new Id4iApi.WhoIsResponse();
+      //expect(instance).to.be.a(Id4iApi.WhoIsResponse);
     });
 
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property organization (base name: "organization")', function() {
+      // uncomment below and update the code to test the property organization
+      //var instane = new Id4iApi.WhoIsResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property organizationAddress (base name: "organizationAddress")', function() {
+      // uncomment below and update the code to test the property organizationAddress
+      //var instane = new Id4iApi.WhoIsResponse();
       //expect(instance).to.be();
     });
 

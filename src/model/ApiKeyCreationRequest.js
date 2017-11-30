@@ -17,55 +17,61 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RoutingFile'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RoutingFile'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.RoutingFileRequest = factory(root.Id4iApi.ApiClient, root.Id4iApi.RoutingFile);
+    root.Id4iApi.ApiKeyCreationRequest = factory(root.Id4iApi.ApiClient);
   }
-}(this, function(ApiClient, RoutingFile) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The RoutingFileRequest model module.
-   * @module model/RoutingFileRequest
+   * The ApiKeyCreationRequest model module.
+   * @module model/ApiKeyCreationRequest
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new <code>RoutingFileRequest</code>.
-   * @alias module:model/RoutingFileRequest
+   * Constructs a new <code>ApiKeyCreationRequest</code>.
+   * @alias module:model/ApiKeyCreationRequest
    * @class
-   * @param routing {module:model/RoutingFile} 
+   * @param label {String} 
+   * @param secret {String} 
+   * @param organizationId {Number} 
    */
-  var exports = function(routing) {
+  var exports = function(label, secret, organizationId) {
     var _this = this;
 
-    _this['routing'] = routing;
-
+    _this['label'] = label;
+    _this['secret'] = secret;
+    _this['organizationId'] = organizationId;
   };
 
   /**
-   * Constructs a <code>RoutingFileRequest</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ApiKeyCreationRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/RoutingFileRequest} obj Optional instance to populate.
-   * @return {module:model/RoutingFileRequest} The populated <code>RoutingFileRequest</code> instance.
+   * @param {module:model/ApiKeyCreationRequest} obj Optional instance to populate.
+   * @return {module:model/ApiKeyCreationRequest} The populated <code>ApiKeyCreationRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('routing')) {
-        obj['routing'] = RoutingFile.constructFromObject(data['routing']);
+      if (data.hasOwnProperty('label')) {
+        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      }
+      if (data.hasOwnProperty('secret')) {
+        obj['secret'] = ApiClient.convertToType(data['secret'], 'String');
       }
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
@@ -75,9 +81,13 @@
   }
 
   /**
-   * @member {module:model/RoutingFile} routing
+   * @member {String} label
    */
-  exports.prototype['routing'] = undefined;
+  exports.prototype['label'] = undefined;
+  /**
+   * @member {String} secret
+   */
+  exports.prototype['secret'] = undefined;
   /**
    * @member {Number} organizationId
    */

@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RoutingFileRequest();
+    instance = new Id4iApi.ApiKeyPrivilegeInfo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,22 @@
       object[property] = value;
   }
 
-  describe('RoutingFileRequest', function() {
-    it('should create an instance of RoutingFileRequest', function() {
-      // uncomment below and update the code to test RoutingFileRequest
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
+  describe('ApiKeyPrivilegeInfo', function() {
+    it('should create an instance of ApiKeyPrivilegeInfo', function() {
+      // uncomment below and update the code to test ApiKeyPrivilegeInfo
+      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
+      //expect(instance).to.be.a(Id4iApi.ApiKeyPrivilegeInfo);
     });
 
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property id4nAssociated (base name: "id4nAssociated")', function() {
+      // uncomment below and update the code to test the property id4nAssociated
+      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
       //expect(instance).to.be();
     });
 

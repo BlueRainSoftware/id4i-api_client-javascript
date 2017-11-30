@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RoutingFileRequest();
+    instance = new Id4iApi.MetaInformationApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,17 @@
       object[property] = value;
   }
 
-  describe('RoutingFileRequest', function() {
-    it('should create an instance of RoutingFileRequest', function() {
-      // uncomment below and update the code to test RoutingFileRequest
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
+  describe('MetaInformationApi', function() {
+    describe('applicationInfo', function() {
+      it('should call applicationInfo successfully', function(done) {
+        //uncomment below and update the code to test applicationInfo
+        //instance.applicationInfo(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

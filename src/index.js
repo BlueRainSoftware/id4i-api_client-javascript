@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/AppInfoPresentation', 'model/CreateGuidsRequest', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'api/AccountcontrollerApi', 'api/AppinfocontrollerApi', 'api/DefaultApi', 'api/GuidcontrollerApi', 'api/Id4ierrorcontrollerApi', 'api/RoutingcontrollerApi', 'api/UsercontrollerApi'], factory);
+    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyPrivilegeInfo', 'model/ApiKeyPrivilegeResponse', 'model/ApiKeyStatus', 'model/AppInfoPresentation', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/CreateGuidRequest', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedApiKeyResponse', 'model/PaginatedGuidCollection', 'model/PaginatedResponseApiKeyPresentation', 'model/PaginatedResponseApiKeyPrivilegeInfo', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedResponseRole', 'model/PaginatedResponseUserPresentation', 'model/PaginatedResponseUserRoles', 'model/PaginatedResponsestring', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/Role', 'model/RoleResponse', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/Timestamp', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles', 'model/WhoIsResponse', 'api/AccountsApi', 'api/ApikeycontrollerApi', 'api/ApikeyprivilegecontrollerApi', 'api/CollectionsApi', 'api/GUIDsApi', 'api/ImagesApi', 'api/MetaInformationApi', 'api/OrganizationsApi', 'api/PublicServicesApi', 'api/RoutingApi', 'api/WhoIsApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/ApiError'), require('./model/AppInfoPresentation'), require('./model/CreateGuidsRequest'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/ResponseEntity'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./api/AccountcontrollerApi'), require('./api/AppinfocontrollerApi'), require('./api/DefaultApi'), require('./api/GuidcontrollerApi'), require('./api/Id4ierrorcontrollerApi'), require('./api/RoutingcontrollerApi'), require('./api/UsercontrollerApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/ApiError'), require('./model/ApiKeyCreationRequest'), require('./model/ApiKeyPresentation'), require('./model/ApiKeyPrivilegeInfo'), require('./model/ApiKeyPrivilegeResponse'), require('./model/ApiKeyStatus'), require('./model/AppInfoPresentation'), require('./model/ChangeRoleRequest'), require('./model/ChangeUserRoleRequest'), require('./model/CreateGuidRequest'), require('./model/CreateLabelledCollectionRequest'), require('./model/CreateLogisticCollectionRequest'), require('./model/CreateRoutingCollectionRequest'), require('./model/GuidCollection'), require('./model/Id4n'), require('./model/ListOfId4ns'), require('./model/Organization'), require('./model/OrganizationAddress'), require('./model/PaginatedApiKeyResponse'), require('./model/PaginatedGuidCollection'), require('./model/PaginatedResponseApiKeyPresentation'), require('./model/PaginatedResponseApiKeyPrivilegeInfo'), require('./model/PaginatedResponseGuidCollection'), require('./model/PaginatedResponseOrganization'), require('./model/PaginatedResponseRole'), require('./model/PaginatedResponseUserPresentation'), require('./model/PaginatedResponseUserRoles'), require('./model/PaginatedResponsestring'), require('./model/PaginatedUserPresentationResponse'), require('./model/PaginatedUserRolesResponse'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/Role'), require('./model/RoleResponse'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/Timestamp'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./model/UserRoles'), require('./model/WhoIsResponse'), require('./api/AccountsApi'), require('./api/ApikeycontrollerApi'), require('./api/ApikeyprivilegecontrollerApi'), require('./api/CollectionsApi'), require('./api/GUIDsApi'), require('./api/ImagesApi'), require('./api/MetaInformationApi'), require('./api/OrganizationsApi'), require('./api/PublicServicesApi'), require('./api/RoutingApi'), require('./api/WhoIsApi'));
   }
-}(function(ApiClient, AccountCredentials, ApiError, AppInfoPresentation, CreateGuidsRequest, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, ResponseEntity, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, AccountcontrollerApi, AppinfocontrollerApi, DefaultApi, GuidcontrollerApi, Id4ierrorcontrollerApi, RoutingcontrollerApi, UsercontrollerApi) {
+}(function(ApiClient, AccountCredentials, ApiError, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyPrivilegeInfo, ApiKeyPrivilegeResponse, ApiKeyStatus, AppInfoPresentation, ChangeRoleRequest, ChangeUserRoleRequest, CreateGuidRequest, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, Organization, OrganizationAddress, PaginatedApiKeyResponse, PaginatedGuidCollection, PaginatedResponseApiKeyPresentation, PaginatedResponseApiKeyPrivilegeInfo, PaginatedResponseGuidCollection, PaginatedResponseOrganization, PaginatedResponseRole, PaginatedResponseUserPresentation, PaginatedResponseUserRoles, PaginatedResponsestring, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, Role, RoleResponse, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, Timestamp, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles, WhoIsResponse, AccountsApi, ApikeycontrollerApi, ApikeyprivilegecontrollerApi, CollectionsApi, GUIDsApi, ImagesApi, MetaInformationApi, OrganizationsApi, PublicServicesApi, RoutingApi, WhoIsApi) {
   'use strict';
 
   /**
@@ -73,15 +73,150 @@
      */
     ApiError: ApiError,
     /**
+     * The ApiKeyCreationRequest model constructor.
+     * @property {module:model/ApiKeyCreationRequest}
+     */
+    ApiKeyCreationRequest: ApiKeyCreationRequest,
+    /**
+     * The ApiKeyPresentation model constructor.
+     * @property {module:model/ApiKeyPresentation}
+     */
+    ApiKeyPresentation: ApiKeyPresentation,
+    /**
+     * The ApiKeyPrivilegeInfo model constructor.
+     * @property {module:model/ApiKeyPrivilegeInfo}
+     */
+    ApiKeyPrivilegeInfo: ApiKeyPrivilegeInfo,
+    /**
+     * The ApiKeyPrivilegeResponse model constructor.
+     * @property {module:model/ApiKeyPrivilegeResponse}
+     */
+    ApiKeyPrivilegeResponse: ApiKeyPrivilegeResponse,
+    /**
+     * The ApiKeyStatus model constructor.
+     * @property {module:model/ApiKeyStatus}
+     */
+    ApiKeyStatus: ApiKeyStatus,
+    /**
      * The AppInfoPresentation model constructor.
      * @property {module:model/AppInfoPresentation}
      */
     AppInfoPresentation: AppInfoPresentation,
     /**
-     * The CreateGuidsRequest model constructor.
-     * @property {module:model/CreateGuidsRequest}
+     * The ChangeRoleRequest model constructor.
+     * @property {module:model/ChangeRoleRequest}
      */
-    CreateGuidsRequest: CreateGuidsRequest,
+    ChangeRoleRequest: ChangeRoleRequest,
+    /**
+     * The ChangeUserRoleRequest model constructor.
+     * @property {module:model/ChangeUserRoleRequest}
+     */
+    ChangeUserRoleRequest: ChangeUserRoleRequest,
+    /**
+     * The CreateGuidRequest model constructor.
+     * @property {module:model/CreateGuidRequest}
+     */
+    CreateGuidRequest: CreateGuidRequest,
+    /**
+     * The CreateLabelledCollectionRequest model constructor.
+     * @property {module:model/CreateLabelledCollectionRequest}
+     */
+    CreateLabelledCollectionRequest: CreateLabelledCollectionRequest,
+    /**
+     * The CreateLogisticCollectionRequest model constructor.
+     * @property {module:model/CreateLogisticCollectionRequest}
+     */
+    CreateLogisticCollectionRequest: CreateLogisticCollectionRequest,
+    /**
+     * The CreateRoutingCollectionRequest model constructor.
+     * @property {module:model/CreateRoutingCollectionRequest}
+     */
+    CreateRoutingCollectionRequest: CreateRoutingCollectionRequest,
+    /**
+     * The GuidCollection model constructor.
+     * @property {module:model/GuidCollection}
+     */
+    GuidCollection: GuidCollection,
+    /**
+     * The Id4n model constructor.
+     * @property {module:model/Id4n}
+     */
+    Id4n: Id4n,
+    /**
+     * The ListOfId4ns model constructor.
+     * @property {module:model/ListOfId4ns}
+     */
+    ListOfId4ns: ListOfId4ns,
+    /**
+     * The Organization model constructor.
+     * @property {module:model/Organization}
+     */
+    Organization: Organization,
+    /**
+     * The OrganizationAddress model constructor.
+     * @property {module:model/OrganizationAddress}
+     */
+    OrganizationAddress: OrganizationAddress,
+    /**
+     * The PaginatedApiKeyResponse model constructor.
+     * @property {module:model/PaginatedApiKeyResponse}
+     */
+    PaginatedApiKeyResponse: PaginatedApiKeyResponse,
+    /**
+     * The PaginatedGuidCollection model constructor.
+     * @property {module:model/PaginatedGuidCollection}
+     */
+    PaginatedGuidCollection: PaginatedGuidCollection,
+    /**
+     * The PaginatedResponseApiKeyPresentation model constructor.
+     * @property {module:model/PaginatedResponseApiKeyPresentation}
+     */
+    PaginatedResponseApiKeyPresentation: PaginatedResponseApiKeyPresentation,
+    /**
+     * The PaginatedResponseApiKeyPrivilegeInfo model constructor.
+     * @property {module:model/PaginatedResponseApiKeyPrivilegeInfo}
+     */
+    PaginatedResponseApiKeyPrivilegeInfo: PaginatedResponseApiKeyPrivilegeInfo,
+    /**
+     * The PaginatedResponseGuidCollection model constructor.
+     * @property {module:model/PaginatedResponseGuidCollection}
+     */
+    PaginatedResponseGuidCollection: PaginatedResponseGuidCollection,
+    /**
+     * The PaginatedResponseOrganization model constructor.
+     * @property {module:model/PaginatedResponseOrganization}
+     */
+    PaginatedResponseOrganization: PaginatedResponseOrganization,
+    /**
+     * The PaginatedResponseRole model constructor.
+     * @property {module:model/PaginatedResponseRole}
+     */
+    PaginatedResponseRole: PaginatedResponseRole,
+    /**
+     * The PaginatedResponseUserPresentation model constructor.
+     * @property {module:model/PaginatedResponseUserPresentation}
+     */
+    PaginatedResponseUserPresentation: PaginatedResponseUserPresentation,
+    /**
+     * The PaginatedResponseUserRoles model constructor.
+     * @property {module:model/PaginatedResponseUserRoles}
+     */
+    PaginatedResponseUserRoles: PaginatedResponseUserRoles,
+    /**
+     * The PaginatedResponsestring model constructor.
+     * @property {module:model/PaginatedResponsestring}
+     */
+    PaginatedResponsestring: PaginatedResponsestring,
+    /**
+     * The PaginatedUserPresentationResponse model constructor.
+     * @property {module:model/PaginatedUserPresentationResponse}
+     */
+    PaginatedUserPresentationResponse: PaginatedUserPresentationResponse,
+    /**
+     * The PaginatedUserRolesResponse model constructor.
+     * @property {module:model/PaginatedUserRolesResponse}
+     */
+    PaginatedUserRolesResponse: PaginatedUserRolesResponse,
     /**
      * The PasswordResetRequest model constructor.
      * @property {module:model/PasswordResetRequest}
@@ -98,10 +233,15 @@
      */
     RegistrationVerificationTokenPresentation: RegistrationVerificationTokenPresentation,
     /**
-     * The ResponseEntity model constructor.
-     * @property {module:model/ResponseEntity}
+     * The Role model constructor.
+     * @property {module:model/Role}
      */
-    ResponseEntity: ResponseEntity,
+    Role: Role,
+    /**
+     * The RoleResponse model constructor.
+     * @property {module:model/RoleResponse}
+     */
+    RoleResponse: RoleResponse,
     /**
      * The Route model constructor.
      * @property {module:model/Route}
@@ -128,6 +268,11 @@
      */
     SimpleMessageResponse: SimpleMessageResponse,
     /**
+     * The Timestamp model constructor.
+     * @property {module:model/Timestamp}
+     */
+    Timestamp: Timestamp,
+    /**
      * The UserPresentation model constructor.
      * @property {module:model/UserPresentation}
      */
@@ -143,40 +288,70 @@
      */
     UserRegistrationResponse: UserRegistrationResponse,
     /**
-     * The AccountcontrollerApi service constructor.
-     * @property {module:api/AccountcontrollerApi}
+     * The UserRoles model constructor.
+     * @property {module:model/UserRoles}
      */
-    AccountcontrollerApi: AccountcontrollerApi,
+    UserRoles: UserRoles,
     /**
-     * The AppinfocontrollerApi service constructor.
-     * @property {module:api/AppinfocontrollerApi}
+     * The WhoIsResponse model constructor.
+     * @property {module:model/WhoIsResponse}
      */
-    AppinfocontrollerApi: AppinfocontrollerApi,
+    WhoIsResponse: WhoIsResponse,
     /**
-     * The DefaultApi service constructor.
-     * @property {module:api/DefaultApi}
+     * The AccountsApi service constructor.
+     * @property {module:api/AccountsApi}
      */
-    DefaultApi: DefaultApi,
+    AccountsApi: AccountsApi,
     /**
-     * The GuidcontrollerApi service constructor.
-     * @property {module:api/GuidcontrollerApi}
+     * The ApikeycontrollerApi service constructor.
+     * @property {module:api/ApikeycontrollerApi}
      */
-    GuidcontrollerApi: GuidcontrollerApi,
+    ApikeycontrollerApi: ApikeycontrollerApi,
     /**
-     * The Id4ierrorcontrollerApi service constructor.
-     * @property {module:api/Id4ierrorcontrollerApi}
+     * The ApikeyprivilegecontrollerApi service constructor.
+     * @property {module:api/ApikeyprivilegecontrollerApi}
      */
-    Id4ierrorcontrollerApi: Id4ierrorcontrollerApi,
+    ApikeyprivilegecontrollerApi: ApikeyprivilegecontrollerApi,
     /**
-     * The RoutingcontrollerApi service constructor.
-     * @property {module:api/RoutingcontrollerApi}
+     * The CollectionsApi service constructor.
+     * @property {module:api/CollectionsApi}
      */
-    RoutingcontrollerApi: RoutingcontrollerApi,
+    CollectionsApi: CollectionsApi,
     /**
-     * The UsercontrollerApi service constructor.
-     * @property {module:api/UsercontrollerApi}
+     * The GUIDsApi service constructor.
+     * @property {module:api/GUIDsApi}
      */
-    UsercontrollerApi: UsercontrollerApi
+    GUIDsApi: GUIDsApi,
+    /**
+     * The ImagesApi service constructor.
+     * @property {module:api/ImagesApi}
+     */
+    ImagesApi: ImagesApi,
+    /**
+     * The MetaInformationApi service constructor.
+     * @property {module:api/MetaInformationApi}
+     */
+    MetaInformationApi: MetaInformationApi,
+    /**
+     * The OrganizationsApi service constructor.
+     * @property {module:api/OrganizationsApi}
+     */
+    OrganizationsApi: OrganizationsApi,
+    /**
+     * The PublicServicesApi service constructor.
+     * @property {module:api/PublicServicesApi}
+     */
+    PublicServicesApi: PublicServicesApi,
+    /**
+     * The RoutingApi service constructor.
+     * @property {module:api/RoutingApi}
+     */
+    RoutingApi: RoutingApi,
+    /**
+     * The WhoIsApi service constructor.
+     * @property {module:api/WhoIsApi}
+     */
+    WhoIsApi: WhoIsApi
   };
 
   return exports;

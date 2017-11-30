@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RoutingFileRequest();
+    instance = new Id4iApi.PublicServicesApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,37 @@
       object[property] = value;
   }
 
-  describe('RoutingFileRequest', function() {
-    it('should create an instance of RoutingFileRequest', function() {
-      // uncomment below and update the code to test RoutingFileRequest
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
+  describe('PublicServicesApi', function() {
+    describe('forwardUsingGET', function() {
+      it('should call forwardUsingGET successfully', function(done) {
+        //uncomment below and update the code to test forwardUsingGET
+        //instance.forwardUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be();
+    describe('resolveImageUsingGET', function() {
+      it('should call resolveImageUsingGET successfully', function(done) {
+        //uncomment below and update the code to test resolveImageUsingGET
+        //instance.resolveImageUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be();
+    describe('resolveWhoIsEntryUsingGET', function() {
+      it('should call resolveWhoIsEntryUsingGET successfully', function(done) {
+        //uncomment below and update the code to test resolveWhoIsEntryUsingGET
+        //instance.resolveWhoIsEntryUsingGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
   });
 
 }));

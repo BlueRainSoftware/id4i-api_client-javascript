@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RoutingFileRequest();
+    instance = new Id4iApi.GuidCollection();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,34 @@
       object[property] = value;
   }
 
-  describe('RoutingFileRequest', function() {
-    it('should create an instance of RoutingFileRequest', function() {
-      // uncomment below and update the code to test RoutingFileRequest
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
+  describe('GuidCollection', function() {
+    it('should create an instance of GuidCollection', function() {
+      // uncomment below and update the code to test GuidCollection
+      //var instane = new Id4iApi.GuidCollection();
+      //expect(instance).to.be.a(Id4iApi.GuidCollection);
     });
 
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property id4n (base name: "id4n")', function() {
+      // uncomment below and update the code to test the property id4n
+      //var instane = new Id4iApi.GuidCollection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property label (base name: "label")', function() {
+      // uncomment below and update the code to test the property label
+      //var instane = new Id4iApi.GuidCollection();
       //expect(instance).to.be();
     });
 
     it('should have the property organizationId (base name: "organizationId")', function() {
       // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.RoutingFileRequest();
+      //var instane = new Id4iApi.GuidCollection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new Id4iApi.GuidCollection();
       //expect(instance).to.be();
     });
 

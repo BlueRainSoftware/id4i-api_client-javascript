@@ -121,6 +121,21 @@
      */
     "REGISTRATION_VERIFICATION_EXPIRED_TOKEN": "ERR_REGISTRATION_VERIFICATION_EXPIRED_TOKEN",
     /**
+     * value: "ERR_AUTHENTICATION_NO_TOKEN"
+     * @const
+     */
+    "AUTHENTICATION_NO_TOKEN": "ERR_AUTHENTICATION_NO_TOKEN",
+    /**
+     * value: "ERR_AUTHENTICATION_INVALID_TOKEN"
+     * @const
+     */
+    "AUTHENTICATION_INVALID_TOKEN": "ERR_AUTHENTICATION_INVALID_TOKEN",
+    /**
+     * value: "ERR_AUTHENTICATION_EXPIRED_TOKEN"
+     * @const
+     */
+    "AUTHENTICATION_EXPIRED_TOKEN": "ERR_AUTHENTICATION_EXPIRED_TOKEN",
+    /**
      * value: "ERR_INPUT_VALIDATION_FAILED"
      * @const
      */
@@ -135,6 +150,16 @@
      * @const
      */
     "GUID_CREATION": "ERR_GUID_CREATION",
+    /**
+     * value: "ERR_INVALID_ID4N_OBJECT_TYPE"
+     * @const
+     */
+    "INVALID_ID4N_OBJECT_TYPE": "ERR_INVALID_ID4N_OBJECT_TYPE",
+    /**
+     * value: "ERR_ENTITY_NOT_FOUND"
+     * @const
+     */
+    "ENTITY_NOT_FOUND": "ERR_ENTITY_NOT_FOUND",
     /**
      * value: "ERR_HTTP"
      * @const
@@ -151,6 +176,16 @@
      */
     "UNKNOWN": "ERR_UNKNOWN",
     /**
+     * value: "ERR_INVALID_ORGANIZATION_USERROLE"
+     * @const
+     */
+    "INVALID_ORGANIZATION_USERROLE": "ERR_INVALID_ORGANIZATION_USERROLE",
+    /**
+     * value: "ERR_ORGANIZATION_ROLE_INCONSISTENCY"
+     * @const
+     */
+    "ORGANIZATION_ROLE_INCONSISTENCY": "ERR_ORGANIZATION_ROLE_INCONSISTENCY",
+    /**
      * value: "ERR_LANGUAGE_NOT_SUPPORTED"
      * @const
      */
@@ -165,6 +200,11 @@
      * @const
      */
     "EMAIL_TEMPLATE_NOT_AVAILABLE": "ERR_EMAIL_TEMPLATE_NOT_AVAILABLE",
+    /**
+     * value: "ERR_DUPLICATE"
+     * @const
+     */
+    "DUPLICATE": "ERR_DUPLICATE",
     /**
      * value: "ERR_EMAIL_PREPARATION_FAILED"
      * @const

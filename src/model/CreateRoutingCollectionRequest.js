@@ -17,55 +17,56 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RoutingFile'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RoutingFile'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.RoutingFileRequest = factory(root.Id4iApi.ApiClient, root.Id4iApi.RoutingFile);
+    root.Id4iApi.CreateRoutingCollectionRequest = factory(root.Id4iApi.ApiClient);
   }
-}(this, function(ApiClient, RoutingFile) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The RoutingFileRequest model module.
-   * @module model/RoutingFileRequest
+   * The CreateRoutingCollectionRequest model module.
+   * @module model/CreateRoutingCollectionRequest
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new <code>RoutingFileRequest</code>.
-   * @alias module:model/RoutingFileRequest
+   * Constructs a new <code>CreateRoutingCollectionRequest</code>.
+   * @alias module:model/CreateRoutingCollectionRequest
    * @class
-   * @param routing {module:model/RoutingFile} 
+   * @param length {Number} 
+   * @param organizationId {Number} 
    */
-  var exports = function(routing) {
+  var exports = function(length, organizationId) {
     var _this = this;
 
-    _this['routing'] = routing;
-
+    _this['length'] = length;
+    _this['organizationId'] = organizationId;
   };
 
   /**
-   * Constructs a <code>RoutingFileRequest</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CreateRoutingCollectionRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/RoutingFileRequest} obj Optional instance to populate.
-   * @return {module:model/RoutingFileRequest} The populated <code>RoutingFileRequest</code> instance.
+   * @param {module:model/CreateRoutingCollectionRequest} obj Optional instance to populate.
+   * @return {module:model/CreateRoutingCollectionRequest} The populated <code>CreateRoutingCollectionRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('routing')) {
-        obj['routing'] = RoutingFile.constructFromObject(data['routing']);
+      if (data.hasOwnProperty('length')) {
+        obj['length'] = ApiClient.convertToType(data['length'], 'Number');
       }
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
@@ -75,9 +76,9 @@
   }
 
   /**
-   * @member {module:model/RoutingFile} routing
+   * @member {Number} length
    */
-  exports.prototype['routing'] = undefined;
+  exports.prototype['length'] = undefined;
   /**
    * @member {Number} organizationId
    */

@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RoutingFileRequest();
+    instance = new Id4iApi.ChangeUserRoleRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,22 @@
       object[property] = value;
   }
 
-  describe('RoutingFileRequest', function() {
-    it('should create an instance of RoutingFileRequest', function() {
-      // uncomment below and update the code to test RoutingFileRequest
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
+  describe('ChangeUserRoleRequest', function() {
+    it('should create an instance of ChangeUserRoleRequest', function() {
+      // uncomment below and update the code to test ChangeUserRoleRequest
+      //var instane = new Id4iApi.ChangeUserRoleRequest();
+      //expect(instance).to.be.a(Id4iApi.ChangeUserRoleRequest);
     });
 
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
+      //var instane = new Id4iApi.ChangeUserRoleRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
+      //var instane = new Id4iApi.ChangeUserRoleRequest();
       //expect(instance).to.be();
     });
 

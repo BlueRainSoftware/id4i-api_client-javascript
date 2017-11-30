@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RoutingFileRequest();
+    instance = new Id4iApi.PaginatedUserPresentationResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,34 @@
       object[property] = value;
   }
 
-  describe('RoutingFileRequest', function() {
-    it('should create an instance of RoutingFileRequest', function() {
-      // uncomment below and update the code to test RoutingFileRequest
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
+  describe('PaginatedUserPresentationResponse', function() {
+    it('should create an instance of PaginatedUserPresentationResponse', function() {
+      // uncomment below and update the code to test PaginatedUserPresentationResponse
+      //var instane = new Id4iApi.PaginatedUserPresentationResponse();
+      //expect(instance).to.be.a(Id4iApi.PaginatedUserPresentationResponse);
     });
 
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property elements (base name: "elements")', function() {
+      // uncomment below and update the code to test the property elements
+      //var instane = new Id4iApi.PaginatedUserPresentationResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property limit (base name: "limit")', function() {
+      // uncomment below and update the code to test the property limit
+      //var instane = new Id4iApi.PaginatedUserPresentationResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property offset (base name: "offset")', function() {
+      // uncomment below and update the code to test the property offset
+      //var instane = new Id4iApi.PaginatedUserPresentationResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property total (base name: "total")', function() {
+      // uncomment below and update the code to test the property total
+      //var instane = new Id4iApi.PaginatedUserPresentationResponse();
       //expect(instance).to.be();
     });
 

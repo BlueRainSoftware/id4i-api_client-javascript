@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.RoutingFileRequest();
+    instance = new Id4iApi.CreateLabelledCollectionRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,28 @@
       object[property] = value;
   }
 
-  describe('RoutingFileRequest', function() {
-    it('should create an instance of RoutingFileRequest', function() {
-      // uncomment below and update the code to test RoutingFileRequest
-      //var instane = new Id4iApi.RoutingFileRequest();
-      //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
+  describe('CreateLabelledCollectionRequest', function() {
+    it('should create an instance of CreateLabelledCollectionRequest', function() {
+      // uncomment below and update the code to test CreateLabelledCollectionRequest
+      //var instane = new Id4iApi.CreateLabelledCollectionRequest();
+      //expect(instance).to.be.a(Id4iApi.CreateLabelledCollectionRequest);
     });
 
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
-      //var instane = new Id4iApi.RoutingFileRequest();
+    it('should have the property label (base name: "label")', function() {
+      // uncomment below and update the code to test the property label
+      //var instane = new Id4iApi.CreateLabelledCollectionRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property length (base name: "length")', function() {
+      // uncomment below and update the code to test the property length
+      //var instane = new Id4iApi.CreateLabelledCollectionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property organizationId (base name: "organizationId")', function() {
       // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.RoutingFileRequest();
+      //var instane = new Id4iApi.CreateLabelledCollectionRequest();
       //expect(instance).to.be();
     });
 
