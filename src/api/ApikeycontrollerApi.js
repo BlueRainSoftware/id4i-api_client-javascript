@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyStatus', 'model/PaginatedApiKeyResponse', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyStatus', 'model/PaginatedApiKeyResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ApiKeyCreationRequest'), require('../model/ApiKeyPresentation'), require('../model/ApiKeyStatus'), require('../model/PaginatedApiKeyResponse'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ApiKeyCreationRequest'), require('../model/ApiKeyPresentation'), require('../model/ApiKeyStatus'), require('../model/PaginatedApiKeyResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.ApikeycontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ApiKeyCreationRequest, root.Id4iApi.ApiKeyPresentation, root.Id4iApi.ApiKeyStatus, root.Id4iApi.PaginatedApiKeyResponse, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.ApikeycontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ApiKeyCreationRequest, root.Id4iApi.ApiKeyPresentation, root.Id4iApi.ApiKeyStatus, root.Id4iApi.PaginatedApiKeyResponse);
   }
-}(this, function(ApiClient, ApiError, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyStatus, PaginatedApiKeyResponse, ResponseEntity) {
+}(this, function(ApiClient, ApiError, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyStatus, PaginatedApiKeyResponse) {
   'use strict';
 
   /**
@@ -57,8 +57,9 @@
      */
 
     /**
-     * create
-     * @param {module:model/ApiKeyCreationRequest} creationRequest creationRequest
+     * Create apiKey
+     * Creation of a new apiKey.
+     * @param {module:model/ApiKeyCreationRequest} creationRequest ApiKey to be created.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
@@ -107,25 +108,31 @@
      */
 
     /**
-     * list
+     * Find apiKeys by organization
+     * Finding all apiKeys assigned to the specified organization in a paginated manner.
+     * @param {Number} organizationId The id of the organization to search in.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.organizationId organizationId
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/ApikeycontrollerApi~listUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedApiKeyResponse}
      */
-    this.listUsingGET = function(opts, callback) {
+    this.listUsingGET = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling listUsingGET");
+      }
 
 
       var pathParams = {
       };
       var queryParams = {
-        'organizationId': opts['organizationId'],
+        'organizationId': organizationId,
         'offset': opts['offset'],
         'limit': opts['limit']
       };
@@ -152,18 +159,19 @@
      * Callback function to receive the result of the removeKeyUsingDELETE operation.
      * @callback module:api/ApikeycontrollerApi~removeKeyUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * removeKey
-     * @param {String} key key
+     * Delete apiKey
+     * Deletion of an apiKey.
+     * @param {String} key The apiKey to delete.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApikeycontrollerApi~removeKeyUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.removeKeyUsingDELETE = function(key, opts, callback) {
       opts = opts || {};
@@ -190,7 +198,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/apikeys/{key}', 'DELETE',
@@ -203,19 +211,20 @@
      * Callback function to receive the result of the setKeyActivationStatusUsingPUT operation.
      * @callback module:api/ApikeycontrollerApi~setKeyActivationStatusUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * setKeyActivationStatus
-     * @param {String} key key
-     * @param {module:model/ApiKeyStatus} apiKeyStatus apiKeyStatus
+     * Set apiKey activation state
+     * Setting the apiKey activation state.
+     * @param {String} key The apiKey to change the activation state.
+     * @param {module:model/ApiKeyStatus} apiKeyStatus Activation state to set.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApikeycontrollerApi~setKeyActivationStatusUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.setKeyActivationStatusUsingPUT = function(key, apiKeyStatus, opts, callback) {
       opts = opts || {};
@@ -247,7 +256,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/apikeys/{key}', 'PUT',
@@ -265,8 +274,9 @@
      */
 
     /**
-     * showKey
-     * @param {String} key key
+     * Show apiKey
+     * Showing the details of an apiKey.
+     * @param {String} key The apiKey to show.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language

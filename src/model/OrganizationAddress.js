@@ -44,21 +44,16 @@
    * Constructs a new <code>OrganizationAddress</code>.
    * @alias module:model/OrganizationAddress
    * @class
-   * @param city {String} 
-   * @param firstname {String} 
-   * @param lastname {String} 
-   * @param postCode {String} 
-   * @param street {String} 
    */
-  var exports = function(city, firstname, lastname, postCode, street) {
+  var exports = function() {
     var _this = this;
 
-    _this['city'] = city;
 
-    _this['firstname'] = firstname;
-    _this['lastname'] = lastname;
-    _this['postCode'] = postCode;
-    _this['street'] = street;
+
+
+
+
+
 
   };
 
@@ -73,9 +68,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('city')) {
-        obj['city'] = ApiClient.convertToType(data['city'], 'String');
-      }
       if (data.hasOwnProperty('companyName')) {
         obj['companyName'] = ApiClient.convertToType(data['companyName'], 'String');
       }
@@ -85,11 +77,14 @@
       if (data.hasOwnProperty('lastname')) {
         obj['lastname'] = ApiClient.convertToType(data['lastname'], 'String');
       }
+      if (data.hasOwnProperty('street')) {
+        obj['street'] = ApiClient.convertToType(data['street'], 'String');
+      }
       if (data.hasOwnProperty('postCode')) {
         obj['postCode'] = ApiClient.convertToType(data['postCode'], 'String');
       }
-      if (data.hasOwnProperty('street')) {
-        obj['street'] = ApiClient.convertToType(data['street'], 'String');
+      if (data.hasOwnProperty('city')) {
+        obj['city'] = ApiClient.convertToType(data['city'], 'String');
       }
       if (data.hasOwnProperty('telephone')) {
         obj['telephone'] = ApiClient.convertToType(data['telephone'], 'String');
@@ -98,10 +93,6 @@
     return obj;
   }
 
-  /**
-   * @member {String} city
-   */
-  exports.prototype['city'] = undefined;
   /**
    * @member {String} companyName
    */
@@ -115,14 +106,19 @@
    */
   exports.prototype['lastname'] = undefined;
   /**
-   * @member {String} postCode
-   */
-  exports.prototype['postCode'] = undefined;
-  /**
    * @member {String} street
    */
   exports.prototype['street'] = undefined;
   /**
+   * @member {String} postCode
+   */
+  exports.prototype['postCode'] = undefined;
+  /**
+   * @member {String} city
+   */
+  exports.prototype['city'] = undefined;
+  /**
+   * The telephone number e.g.
    * @member {String} telephone
    */
   exports.prototype['telephone'] = undefined;

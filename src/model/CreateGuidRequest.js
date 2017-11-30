@@ -42,6 +42,7 @@
 
   /**
    * Constructs a new <code>CreateGuidRequest</code>.
+   * GUID creation information
    * @alias module:model/CreateGuidRequest
    * @class
    */
@@ -64,11 +65,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('length')) {
-        obj['length'] = ApiClient.convertToType(data['length'], 'Number');
-      }
       if (data.hasOwnProperty('count')) {
         obj['count'] = ApiClient.convertToType(data['count'], 'Number');
+      }
+      if (data.hasOwnProperty('length')) {
+        obj['length'] = ApiClient.convertToType(data['length'], 'Number');
       }
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
@@ -78,14 +79,17 @@
   }
 
   /**
-   * @member {Number} length
-   */
-  exports.prototype['length'] = undefined;
-  /**
+   * The total number of GUIDs to create
    * @member {Number} count
    */
   exports.prototype['count'] = undefined;
   /**
+   * The charactersequence length of the GUID
+   * @member {Number} length
+   */
+  exports.prototype['length'] = undefined;
+  /**
+   * The id of the organization where the generated GUIDs should be assigned.
    * @member {Number} organizationId
    */
   exports.prototype['organizationId'] = undefined;

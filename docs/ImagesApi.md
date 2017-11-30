@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**resolveImageUsingGET**](ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | resolveImage
+[**resolveImageUsingGET**](ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 
 
 <a name="resolveImageUsingGET"></a>
 # **resolveImageUsingGET**
 > &#39;Blob&#39; resolveImageUsingGET(imageID, opts)
 
-resolveImage
+Resolve image
 
 ### Example
 ```javascript
@@ -19,7 +19,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.ImagesApi();
 
-var imageID = "imageID_example"; // String | imageID
+var imageID = "imageID_example"; // String | The id of the image to be resolved.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -40,7 +40,7 @@ apiInstance.resolveImageUsingGET(imageID, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **imageID** | **String**| imageID | 
+ **imageID** | **String**| The id of the image to be resolved. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 

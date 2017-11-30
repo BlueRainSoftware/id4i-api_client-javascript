@@ -4,44 +4,44 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addElementsToCollectionUsingPUT**](CollectionsApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | addElementsToCollection
-[**addElementsToLabelledCollectionUsingPUT**](CollectionsApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements | addElementsToLabelledCollection
-[**addElementsToLogisticCollectionUsingPUT**](CollectionsApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements | addElementsToLogisticCollection
-[**addElementsToRoutingCollectionUsingPUT**](CollectionsApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
-[**addSingleElementToCollectionUsingPUT**](CollectionsApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | addSingleElementToCollection
-[**addSingleElementToLabelledCollectionUsingPUT**](CollectionsApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | addSingleElementToLabelledCollection
-[**addSingleElementToLogisticCollectionUsingPUT**](CollectionsApi.md#addSingleElementToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | addSingleElementToLogisticCollection
-[**addSingleElementToRoutingCollectionUsingPUT**](CollectionsApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
-[**createLabelledCollectionUsingPOST**](CollectionsApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | createLabelledCollection
-[**createLogisticCollectionUsingPOST**](CollectionsApi.md#createLogisticCollectionUsingPOST) | **POST** /api/v1/collections/logistic | createLogisticCollection
-[**createRoutingCollectionUsingPOST**](CollectionsApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
-[**deleteCollectionUsingDELETE**](CollectionsApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | deleteCollection
-[**deleteLabelledCollectionUsingDELETE**](CollectionsApi.md#deleteLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{id4n} | deleteLabelledCollection
-[**deleteLogisticCollectionUsingDELETE**](CollectionsApi.md#deleteLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{id4n} | deleteLogisticCollection
-[**deleteRoutingCollectionUsingDELETE**](CollectionsApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | deleteRoutingCollection
-[**findById4nUsingGET**](CollectionsApi.md#findById4nUsingGET) | **GET** /api/v1/collections/{id4n} | findById4n
-[**findById4nUsingGET1**](CollectionsApi.md#findById4nUsingGET1) | **GET** /api/v1/collections/labelled/{id4n} | findById4n
-[**findById4nUsingGET2**](CollectionsApi.md#findById4nUsingGET2) | **GET** /api/v1/collections/logistic/{id4n} | findById4n
-[**findById4nUsingGET3**](CollectionsApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | findById4n
-[**findByLabelUsingGET**](CollectionsApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | findByLabel
+[**addElementsToCollectionUsingPUT**](CollectionsApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | Add elements to collection
+[**addElementsToLabelledCollectionUsingPUT**](CollectionsApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements | Add elements to labelled collection
+[**addElementsToLogisticCollectionUsingPUT**](CollectionsApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements | Add elements to logistic collection
+[**addElementsToRoutingCollectionUsingPUT**](CollectionsApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | Add element to routing collection
+[**addSingleElementToCollectionUsingPUT**](CollectionsApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | Add element to collection
+[**addSingleElementToLabelledCollectionUsingPUT**](CollectionsApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | Add element to labelled collection
+[**addSingleElementToLogisticCollectionUsingPUT**](CollectionsApi.md#addSingleElementToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | Add element to logistic collection
+[**addSingleElementToRoutingCollectionUsingPUT**](CollectionsApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Add element to routing collection
+[**createLabelledCollectionUsingPOST**](CollectionsApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | Create labelled collection
+[**createLogisticCollectionUsingPOST**](CollectionsApi.md#createLogisticCollectionUsingPOST) | **POST** /api/v1/collections/logistic | Create logistic collection
+[**createRoutingCollectionUsingPOST**](CollectionsApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | Create routing collecton
+[**deleteCollectionUsingDELETE**](CollectionsApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | Delete collection
+[**deleteLabelledCollectionUsingDELETE**](CollectionsApi.md#deleteLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
+[**deleteLogisticCollectionUsingDELETE**](CollectionsApi.md#deleteLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
+[**deleteRoutingCollectionUsingDELETE**](CollectionsApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
+[**findById4nUsingGET**](CollectionsApi.md#findById4nUsingGET) | **GET** /api/v1/collections/{id4n} | Find collection
+[**findById4nUsingGET1**](CollectionsApi.md#findById4nUsingGET1) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
+[**findById4nUsingGET2**](CollectionsApi.md#findById4nUsingGET2) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
+[**findById4nUsingGET3**](CollectionsApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
+[**findByLabelUsingGET**](CollectionsApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | Find labelled collection by label
 [**getAllCollectionsOfOrganization**](CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
-[**listContentsUsingGET**](CollectionsApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | listContents
-[**removeElementsFromCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | removeElementsFromCollection
-[**removeElementsFromLabelledCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | removeElementsFromLabelledCollection
-[**removeElementsFromLogisticCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements | removeElementsFromLogisticCollection
-[**removeElementsFromRoutingCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
-[**removeSingleElementFromCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromCollection
-[**removeSingleElementFromLabelledCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromLabelledCollection
-[**removeSingleElementFromLogisticCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | removeSingleElementFromLogisticCollection
-[**removeSingleElementFromRoutingCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
-[**renameUsingPUT**](CollectionsApi.md#renameUsingPUT) | **PUT** /api/v1/collections/labelled/{id4n} | rename
+[**listContentsUsingGET**](CollectionsApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+[**removeElementsFromCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | Remove elements from collection
+[**removeElementsFromLabelledCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | Remove elements from labelled collection
+[**removeElementsFromLogisticCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements | Remove elements from logistic collection
+[**removeElementsFromRoutingCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | Remove elements from routing collection
+[**removeSingleElementFromCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | Remove element from collection
+[**removeSingleElementFromLabelledCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | Remove element from labelled collection
+[**removeSingleElementFromLogisticCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | Remove element from logistic collection
+[**removeSingleElementFromRoutingCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Remove element from routing collection
+[**renameUsingPUT**](CollectionsApi.md#renameUsingPUT) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
 
 
 <a name="addElementsToCollectionUsingPUT"></a>
 # **addElementsToCollectionUsingPUT**
 > &#39;Number&#39; addElementsToCollectionUsingPUT(collectionGuid, listOfGuids, opts)
 
-addElementsToCollection
+Add elements to collection
 
 ### Example
 ```javascript
@@ -94,7 +94,7 @@ No authorization required
 # **addElementsToLabelledCollectionUsingPUT**
 > &#39;Number&#39; addElementsToLabelledCollectionUsingPUT(collectionGuid, listOfId4ns, opts)
 
-addElementsToLabelledCollection
+Add elements to labelled collection
 
 ### Example
 ```javascript
@@ -147,7 +147,7 @@ No authorization required
 # **addElementsToLogisticCollectionUsingPUT**
 > &#39;Number&#39; addElementsToLogisticCollectionUsingPUT(collectionGuid, id4nList, opts)
 
-addElementsToLogisticCollection
+Add elements to logistic collection
 
 ### Example
 ```javascript
@@ -200,7 +200,7 @@ No authorization required
 # **addElementsToRoutingCollectionUsingPUT**
 > &#39;Number&#39; addElementsToRoutingCollectionUsingPUT(collectionGuid, listOfGuids, opts)
 
-addElementsToRoutingCollection
+Add element to routing collection
 
 ### Example
 ```javascript
@@ -253,7 +253,7 @@ No authorization required
 # **addSingleElementToCollectionUsingPUT**
 > &#39;Number&#39; addSingleElementToCollectionUsingPUT(collectionGuid, elementGuid, opts)
 
-addSingleElementToCollection
+Add element to collection
 
 ### Example
 ```javascript
@@ -306,7 +306,7 @@ No authorization required
 # **addSingleElementToLabelledCollectionUsingPUT**
 > &#39;Number&#39; addSingleElementToLabelledCollectionUsingPUT(collectionGuid, elementGuid, opts)
 
-addSingleElementToLabelledCollection
+Add element to labelled collection
 
 ### Example
 ```javascript
@@ -359,7 +359,7 @@ No authorization required
 # **addSingleElementToLogisticCollectionUsingPUT**
 > &#39;Number&#39; addSingleElementToLogisticCollectionUsingPUT(collectionGuid, elementId4n, opts)
 
-addSingleElementToLogisticCollection
+Add element to logistic collection
 
 ### Example
 ```javascript
@@ -412,7 +412,7 @@ No authorization required
 # **addSingleElementToRoutingCollectionUsingPUT**
 > &#39;Number&#39; addSingleElementToRoutingCollectionUsingPUT(collectionGuid, elementGuid, opts)
 
-addSingleElementToRoutingCollection
+Add element to routing collection
 
 ### Example
 ```javascript
@@ -465,7 +465,7 @@ No authorization required
 # **createLabelledCollectionUsingPOST**
 > Id4n createLabelledCollectionUsingPOST(createInfo, opts)
 
-createLabelledCollection
+Create labelled collection
 
 ### Example
 ```javascript
@@ -515,7 +515,7 @@ No authorization required
 # **createLogisticCollectionUsingPOST**
 > Id4n createLogisticCollectionUsingPOST(createInfo, opts)
 
-createLogisticCollection
+Create logistic collection
 
 ### Example
 ```javascript
@@ -565,7 +565,7 @@ No authorization required
 # **createRoutingCollectionUsingPOST**
 > Id4n createRoutingCollectionUsingPOST(createInfo, opts)
 
-createRoutingCollection
+Create routing collecton
 
 ### Example
 ```javascript
@@ -613,9 +613,9 @@ No authorization required
 
 <a name="deleteCollectionUsingDELETE"></a>
 # **deleteCollectionUsingDELETE**
-> ResponseEntity deleteCollectionUsingDELETE(id4n, opts)
+> ApiError deleteCollectionUsingDELETE(id4n, opts)
 
-deleteCollection
+Delete collection
 
 ### Example
 ```javascript
@@ -650,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -663,9 +663,9 @@ No authorization required
 
 <a name="deleteLabelledCollectionUsingDELETE"></a>
 # **deleteLabelledCollectionUsingDELETE**
-> ResponseEntity deleteLabelledCollectionUsingDELETE(id4n, opts)
+> ApiError deleteLabelledCollectionUsingDELETE(id4n, opts)
 
-deleteLabelledCollection
+Delete labelled collection
 
 ### Example
 ```javascript
@@ -700,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -713,9 +713,9 @@ No authorization required
 
 <a name="deleteLogisticCollectionUsingDELETE"></a>
 # **deleteLogisticCollectionUsingDELETE**
-> ResponseEntity deleteLogisticCollectionUsingDELETE(id4n, opts)
+> ApiError deleteLogisticCollectionUsingDELETE(id4n, opts)
 
-deleteLogisticCollection
+Delete logistic collection
 
 ### Example
 ```javascript
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -763,9 +763,9 @@ No authorization required
 
 <a name="deleteRoutingCollectionUsingDELETE"></a>
 # **deleteRoutingCollectionUsingDELETE**
-> ResponseEntity deleteRoutingCollectionUsingDELETE(id4n, opts)
+> ApiError deleteRoutingCollectionUsingDELETE(id4n, opts)
 
-deleteRoutingCollection
+Delete routing collection
 
 ### Example
 ```javascript
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -815,7 +815,7 @@ No authorization required
 # **findById4nUsingGET**
 > GuidCollection findById4nUsingGET(id4n, opts)
 
-findById4n
+Find collection
 
 ### Example
 ```javascript
@@ -865,7 +865,7 @@ No authorization required
 # **findById4nUsingGET1**
 > GuidCollection findById4nUsingGET1(id4n, opts)
 
-findById4n
+Find labelled collection
 
 ### Example
 ```javascript
@@ -915,7 +915,7 @@ No authorization required
 # **findById4nUsingGET2**
 > GuidCollection findById4nUsingGET2(id4n, opts)
 
-findById4n
+Find logistic collection
 
 ### Example
 ```javascript
@@ -965,7 +965,7 @@ No authorization required
 # **findById4nUsingGET3**
 > GuidCollection findById4nUsingGET3(id4n, opts)
 
-findById4n
+Find routing collection
 
 ### Example
 ```javascript
@@ -1015,7 +1015,7 @@ No authorization required
 # **findByLabelUsingGET**
 > GuidCollection findByLabelUsingGET(organizationId, label, opts)
 
-findByLabel
+Find labelled collection by label
 
 ### Example
 ```javascript
@@ -1066,7 +1066,7 @@ No authorization required
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedResponseGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
+> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
 
 Get collections of organization
 
@@ -1083,8 +1083,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56, // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56, // Number | The maximum count of returned elements.
   'type': "type_example" // String | type
 };
 
@@ -1105,13 +1105,13 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
  **type** | **String**| type | [optional] 
 
 ### Return type
 
-[**PaginatedResponseGuidCollection**](PaginatedResponseGuidCollection.md)
+[**PaginatedGuidCollection**](PaginatedGuidCollection.md)
 
 ### Authorization
 
@@ -1126,7 +1126,7 @@ No authorization required
 # **listContentsUsingGET**
 > PaginatedResponsestring listContentsUsingGET(id4n, opts)
 
-listContents
+List contents of the collection
 
 ### Example
 ```javascript
@@ -1139,8 +1139,8 @@ var id4n = "id4n_example"; // String | id4n
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -1160,8 +1160,8 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
@@ -1180,7 +1180,7 @@ No authorization required
 # **removeElementsFromCollectionUsingDELETE**
 > &#39;Number&#39; removeElementsFromCollectionUsingDELETE(collectionGuid, listOfGuids, opts)
 
-removeElementsFromCollection
+Remove elements from collection
 
 ### Example
 ```javascript
@@ -1233,7 +1233,7 @@ No authorization required
 # **removeElementsFromLabelledCollectionUsingDELETE**
 > &#39;Number&#39; removeElementsFromLabelledCollectionUsingDELETE(collectionGuid, listOfGuids, opts)
 
-removeElementsFromLabelledCollection
+Remove elements from labelled collection
 
 ### Example
 ```javascript
@@ -1286,7 +1286,7 @@ No authorization required
 # **removeElementsFromLogisticCollectionUsingDELETE**
 > &#39;Number&#39; removeElementsFromLogisticCollectionUsingDELETE(collectionGuid, id4nlist, opts)
 
-removeElementsFromLogisticCollection
+Remove elements from logistic collection
 
 ### Example
 ```javascript
@@ -1339,7 +1339,7 @@ No authorization required
 # **removeElementsFromRoutingCollectionUsingDELETE**
 > &#39;Number&#39; removeElementsFromRoutingCollectionUsingDELETE(collectionGuid, listOfGuids, opts)
 
-removeElementsFromRoutingCollection
+Remove elements from routing collection
 
 ### Example
 ```javascript
@@ -1392,7 +1392,7 @@ No authorization required
 # **removeSingleElementFromCollectionUsingDELETE**
 > &#39;Number&#39; removeSingleElementFromCollectionUsingDELETE(collectionGuid, elementGuid, opts)
 
-removeSingleElementFromCollection
+Remove element from collection
 
 ### Example
 ```javascript
@@ -1445,7 +1445,7 @@ No authorization required
 # **removeSingleElementFromLabelledCollectionUsingDELETE**
 > &#39;Number&#39; removeSingleElementFromLabelledCollectionUsingDELETE(collectionGuid, elementGuid, opts)
 
-removeSingleElementFromLabelledCollection
+Remove element from labelled collection
 
 ### Example
 ```javascript
@@ -1498,7 +1498,7 @@ No authorization required
 # **removeSingleElementFromLogisticCollectionUsingDELETE**
 > &#39;Number&#39; removeSingleElementFromLogisticCollectionUsingDELETE(collectionGuid, elementId4n, opts)
 
-removeSingleElementFromLogisticCollection
+Remove element from logistic collection
 
 ### Example
 ```javascript
@@ -1551,7 +1551,7 @@ No authorization required
 # **removeSingleElementFromRoutingCollectionUsingDELETE**
 > &#39;Number&#39; removeSingleElementFromRoutingCollectionUsingDELETE(collectionGuid, elementGuid, opts)
 
-removeSingleElementFromRoutingCollection
+Remove element from routing collection
 
 ### Example
 ```javascript
@@ -1602,9 +1602,9 @@ No authorization required
 
 <a name="renameUsingPUT"></a>
 # **renameUsingPUT**
-> ResponseEntity renameUsingPUT(id4n, request, opts)
+> ApiError renameUsingPUT(id4n, request, opts)
 
-rename
+Rename labelled collection
 
 ### Example
 ```javascript
@@ -1642,7 +1642,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 

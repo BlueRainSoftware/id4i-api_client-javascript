@@ -4,28 +4,28 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMultipleUserRolesUsingPOST**](AccountsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | addMultipleUserRoles
-[**addUserRolesUsingPOST**](AccountsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | addUserRoles
-[**findUserByUsernameUsingGET**](AccountsApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | findUserByUsername
-[**getMultipleUserRolesUsingGET**](AccountsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
-[**getOrganizationsUsingGET**](AccountsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
-[**getUserRolesByUsernameUsingGET**](AccountsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | getUserRolesByUsername
-[**getUsersUsingGET**](AccountsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
-[**listUsingGET2**](AccountsApi.md#listUsingGET2) | **GET** /api/v1/roles | list
+[**addMultipleUserRolesUsingPOST**](AccountsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | Add role(s) to user (model)
+[**addUserRolesUsingPOST**](AccountsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | Add role(s) to user
+[**findUserByUsernameUsingGET**](AccountsApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | Find by username
+[**getMultipleUserRolesUsingGET**](AccountsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | List users and their roles
+[**getOrganizationsUsingGET**](AccountsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+[**getUserRolesByUsernameUsingGET**](AccountsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | Get user roles by username
+[**getUsersUsingGET**](AccountsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | Find users in organization
+[**listUsingGET2**](AccountsApi.md#listUsingGET2) | **GET** /api/v1/roles | List roles
 [**login**](AccountsApi.md#login) | **POST** /login | 
-[**registerUserUsingPOST**](AccountsApi.md#registerUserUsingPOST) | **POST** /account/registration | registerUser
-[**removeMultipleUserRolesUsingDELETE**](AccountsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | removeMultipleUserRoles
-[**removeUserRolesUsingDELETE**](AccountsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | removeUserRoles
-[**requestPasswordResetUsingPOST**](AccountsApi.md#requestPasswordResetUsingPOST) | **POST** /account/password | requestPasswordReset
-[**verifyPasswordResetUsingPUT**](AccountsApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | verifyPasswordReset
-[**verifyRegistrationUsingPOST**](AccountsApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | verifyRegistration
+[**registerUserUsingPOST**](AccountsApi.md#registerUserUsingPOST) | **POST** /account/registration | Register user
+[**removeMultipleUserRolesUsingDELETE**](AccountsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | Remove role(s) from user (model)
+[**removeUserRolesUsingDELETE**](AccountsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | Remove role(s) from user
+[**requestPasswordResetUsingPOST**](AccountsApi.md#requestPasswordResetUsingPOST) | **POST** /account/password | Request password reset
+[**verifyPasswordResetUsingPUT**](AccountsApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | Verify password reset
+[**verifyRegistrationUsingPOST**](AccountsApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | Verify registration
 
 
 <a name="addMultipleUserRolesUsingPOST"></a>
 # **addMultipleUserRolesUsingPOST**
-> ResponseEntity addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts)
+> ApiError addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts)
 
-addMultipleUserRoles
+Add role(s) to user (model)
 
 ### Example
 ```javascript
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -76,9 +76,9 @@ No authorization required
 
 <a name="addUserRolesUsingPOST"></a>
 # **addUserRolesUsingPOST**
-> ResponseEntity addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts)
+> ApiError addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts)
 
-addUserRoles
+Add role(s) to user
 
 ### Example
 ```javascript
@@ -94,9 +94,7 @@ var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | 
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
 var callback = function(error, data, response) {
@@ -118,12 +116,10 @@ Name | Type | Description  | Notes
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -138,7 +134,7 @@ No authorization required
 # **findUserByUsernameUsingGET**
 > UserPresentation findUserByUsernameUsingGET(username, opts)
 
-findUserByUsername
+Find by username
 
 ### Example
 ```javascript
@@ -188,7 +184,9 @@ No authorization required
 # **getMultipleUserRolesUsingGET**
 > PaginatedUserRolesResponse getMultipleUserRolesUsingGET(organizationId, opts)
 
-getMultipleUserRoles
+List users and their roles
+
+Listing users and their roles in a paginated manner.
 
 ### Example
 ```javascript
@@ -201,8 +199,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -222,8 +220,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
@@ -242,7 +240,7 @@ No authorization required
 # **getOrganizationsUsingGET**
 > PaginatedResponseOrganization getOrganizationsUsingGET(opts)
 
-getOrganizations
+Retrieve organizations of user
 
 ### Example
 ```javascript
@@ -254,8 +252,8 @@ var opts = {
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'role': "role_example", // String | role
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -275,8 +273,8 @@ Name | Type | Description  | Notes
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **role** | **String**| role | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
@@ -295,7 +293,7 @@ No authorization required
 # **getUserRolesByUsernameUsingGET**
 > UserRoles getUserRolesByUsernameUsingGET(organizationId, username, opts)
 
-getUserRolesByUsername
+Get user roles by username
 
 ### Example
 ```javascript
@@ -309,9 +307,7 @@ var username = "username_example"; // String | username
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
 var callback = function(error, data, response) {
@@ -332,8 +328,6 @@ Name | Type | Description  | Notes
  **username** | **String**| username | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
 
 ### Return type
 
@@ -352,7 +346,9 @@ No authorization required
 # **getUsersUsingGET**
 > PaginatedUserPresentationResponse getUsersUsingGET(organizationId, opts)
 
-getUsers
+Find users in organization
+
+Finding users in the specified organization in a paginated manner.
 
 ### Example
 ```javascript
@@ -365,8 +361,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -386,8 +382,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
@@ -406,7 +402,9 @@ No authorization required
 # **listUsingGET2**
 > RoleResponse listUsingGET2(opts)
 
-list
+List roles
+
+Listing of roles.
 
 ### Example
 ```javascript
@@ -417,9 +415,9 @@ var apiInstance = new Id4iApi.AccountsApi();
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'privilege': "privilege_example", // String | privilege
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'privilege': "privilege_example", // String | If specified the roles will be filtered containing that privilege.
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -438,9 +436,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **privilege** | **String**| privilege | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **privilege** | **String**| If specified the roles will be filtered containing that privilege. | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
@@ -505,7 +503,9 @@ No authorization required
 # **registerUserUsingPOST**
 > UserRegistrationResponse registerUserUsingPOST(userRegistration, opts)
 
-registerUser
+Register user
+
+Registering a new user.
 
 ### Example
 ```javascript
@@ -513,7 +513,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var userRegistration = new Id4iApi.UserRegistrationRequest(); // UserRegistrationRequest | userRegistration
+var userRegistration = new Id4iApi.UserRegistrationRequest(); // UserRegistrationRequest | The user information about the new created user.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -534,7 +534,7 @@ apiInstance.registerUserUsingPOST(userRegistration, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userRegistration** | [**UserRegistrationRequest**](UserRegistrationRequest.md)| userRegistration | 
+ **userRegistration** | [**UserRegistrationRequest**](UserRegistrationRequest.md)| The user information about the new created user. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -553,9 +553,9 @@ No authorization required
 
 <a name="removeMultipleUserRolesUsingDELETE"></a>
 # **removeMultipleUserRolesUsingDELETE**
-> ResponseEntity removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts)
+> ApiError removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts)
 
-removeMultipleUserRoles
+Remove role(s) from user (model)
 
 ### Example
 ```javascript
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -606,9 +606,9 @@ No authorization required
 
 <a name="removeUserRolesUsingDELETE"></a>
 # **removeUserRolesUsingDELETE**
-> ResponseEntity removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts)
+> ApiError removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts)
 
-removeUserRoles
+Remove role(s) from user
 
 ### Example
 ```javascript
@@ -624,9 +624,7 @@ var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | 
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
 var callback = function(error, data, response) {
@@ -648,12 +646,10 @@ Name | Type | Description  | Notes
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -668,7 +664,9 @@ No authorization required
 # **requestPasswordResetUsingPOST**
 > SimpleMessageResponse requestPasswordResetUsingPOST(resetRequest, opts)
 
-requestPasswordReset
+Request password reset
+
+Requesting a reset for a new password. 
 
 ### Example
 ```javascript
@@ -676,7 +674,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var resetRequest = new Id4iApi.PasswordResetRequest(); // PasswordResetRequest | resetRequest
+var resetRequest = new Id4iApi.PasswordResetRequest(); // PasswordResetRequest | Contains the required information to request a new password.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -697,7 +695,7 @@ apiInstance.requestPasswordResetUsingPOST(resetRequest, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resetRequest** | [**PasswordResetRequest**](PasswordResetRequest.md)| resetRequest | 
+ **resetRequest** | [**PasswordResetRequest**](PasswordResetRequest.md)| Contains the required information to request a new password. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -718,7 +716,9 @@ No authorization required
 # **verifyPasswordResetUsingPUT**
 > SimpleMessageResponse verifyPasswordResetUsingPUT(verificationRequest, opts)
 
-verifyPasswordReset
+Verify password reset
+
+Setting a new password and verifying the request to set the password.
 
 ### Example
 ```javascript
@@ -726,7 +726,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var verificationRequest = new Id4iApi.PasswordResetVerificationRequest(); // PasswordResetVerificationRequest | verificationRequest
+var verificationRequest = new Id4iApi.PasswordResetVerificationRequest(); // PasswordResetVerificationRequest | Contains the new password and the verification token to set the new password.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -747,7 +747,7 @@ apiInstance.verifyPasswordResetUsingPUT(verificationRequest, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **verificationRequest** | [**PasswordResetVerificationRequest**](PasswordResetVerificationRequest.md)| verificationRequest | 
+ **verificationRequest** | [**PasswordResetVerificationRequest**](PasswordResetVerificationRequest.md)| Contains the new password and the verification token to set the new password. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -766,9 +766,11 @@ No authorization required
 
 <a name="verifyRegistrationUsingPOST"></a>
 # **verifyRegistrationUsingPOST**
-> ResponseEntity verifyRegistrationUsingPOST(token, opts)
+> ApiError verifyRegistrationUsingPOST(token, opts)
 
-verifyRegistration
+Verify registration
+
+Verifies a new user registration.
 
 ### Example
 ```javascript
@@ -776,7 +778,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var token = new Id4iApi.RegistrationVerificationTokenPresentation(); // RegistrationVerificationTokenPresentation | token
+var token = new Id4iApi.RegistrationVerificationTokenPresentation(); // RegistrationVerificationTokenPresentation | The token for user verification.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -797,13 +799,13 @@ apiInstance.verifyRegistrationUsingPOST(token, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | [**RegistrationVerificationTokenPresentation**](RegistrationVerificationTokenPresentation.md)| token | 
+ **token** | [**RegistrationVerificationTokenPresentation**](RegistrationVerificationTokenPresentation.md)| The token for user verification. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 

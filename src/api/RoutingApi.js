@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/ResponseEntity', 'model/RoutingFile', 'model/RoutingFileRequest'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/RoutingFile', 'model/RoutingFileRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/ResponseEntity'), require('../model/RoutingFile'), require('../model/RoutingFileRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/RoutingFile'), require('../model/RoutingFileRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.RoutingApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.ResponseEntity, root.Id4iApi.RoutingFile, root.Id4iApi.RoutingFileRequest);
+    root.Id4iApi.RoutingApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.RoutingFile, root.Id4iApi.RoutingFileRequest);
   }
-}(this, function(ApiClient, ApiError, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, ResponseEntity, RoutingFile, RoutingFileRequest) {
+}(this, function(ApiClient, ApiError, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, RoutingFile, RoutingFileRequest) {
   'use strict';
 
   /**
@@ -57,7 +57,7 @@
      */
 
     /**
-     * addElementsToRoutingCollection
+     * Add element to routing collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
@@ -114,7 +114,7 @@
      */
 
     /**
-     * addSingleElementToRoutingCollection
+     * Add element to routing collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
@@ -172,7 +172,7 @@
      */
 
     /**
-     * createRoutingCollection
+     * Create routing collecton
      * @param {module:model/CreateRoutingCollectionRequest} createInfo createInfo
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -217,18 +217,18 @@
      * Callback function to receive the result of the deleteRoutingCollectionUsingDELETE operation.
      * @callback module:api/RoutingApi~deleteRoutingCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * deleteRoutingCollection
+     * Delete routing collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~deleteRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.deleteRoutingCollectionUsingDELETE = function(id4n, opts, callback) {
       opts = opts || {};
@@ -255,7 +255,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{id4n}', 'DELETE',
@@ -273,7 +273,7 @@
      */
 
     /**
-     * findById4n
+     * Find routing collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -319,18 +319,19 @@
      * Callback function to receive the result of the forwardUsingGET operation.
      * @callback module:api/RoutingApi~forwardUsingGETCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * forward
+     * Forward
+     * Forwarding to the designated route defined in the routing,
      * @param {String} guid guid
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~forwardUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.forwardUsingGET = function(guid, opts, callback) {
       opts = opts || {};
@@ -357,7 +358,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/go/{guid}', 'GET',
@@ -375,7 +376,7 @@
      */
 
     /**
-     * removeElementsFromRoutingCollection
+     * Remove elements from routing collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
@@ -432,7 +433,7 @@
      */
 
     /**
-     * removeSingleElementFromRoutingCollection
+     * Remove element from routing collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
@@ -490,7 +491,7 @@
      */
 
     /**
-     * retrieveCurrentParamsByType
+     * Retrieve current params by type
      * @param {String} id4n id4n
      * @param {String} type type
      * @param {Object} opts Optional parameters
@@ -548,7 +549,7 @@
      */
 
     /**
-     * retrieveRoutingFile
+     * Retrieve routing file
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -595,19 +596,19 @@
      * Callback function to receive the result of the storeRoutingFileUsingPUT operation.
      * @callback module:api/RoutingApi~storeRoutingFileUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * storeRoutingFile
+     * Store routing file
      * @param {module:model/RoutingFileRequest} rfr rfr
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~storeRoutingFileUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.storeRoutingFileUsingPUT = function(rfr, id4n, opts, callback) {
       opts = opts || {};
@@ -639,7 +640,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/routingfiles/{id4n}', 'PUT',

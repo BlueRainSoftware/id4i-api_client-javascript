@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponsestring', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/PaginatedGuidCollection', 'model/PaginatedResponsestring'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateLabelledCollectionRequest'), require('../model/CreateLogisticCollectionRequest'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/PaginatedResponseGuidCollection'), require('../model/PaginatedResponsestring'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateLabelledCollectionRequest'), require('../model/CreateLogisticCollectionRequest'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedResponsestring'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.CollectionsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedResponseGuidCollection, root.Id4iApi.PaginatedResponsestring, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.CollectionsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedResponsestring);
   }
-}(this, function(ApiClient, ApiError, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, PaginatedResponseGuidCollection, PaginatedResponsestring, ResponseEntity) {
+}(this, function(ApiClient, ApiError, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, PaginatedGuidCollection, PaginatedResponsestring) {
   'use strict';
 
   /**
@@ -57,7 +57,7 @@
      */
 
     /**
-     * addElementsToCollection
+     * Add elements to collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
@@ -114,7 +114,7 @@
      */
 
     /**
-     * addElementsToLabelledCollection
+     * Add elements to labelled collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} listOfId4ns listOfId4ns
      * @param {Object} opts Optional parameters
@@ -171,7 +171,7 @@
      */
 
     /**
-     * addElementsToLogisticCollection
+     * Add elements to logistic collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} id4nList id4nList
      * @param {Object} opts Optional parameters
@@ -228,7 +228,7 @@
      */
 
     /**
-     * addElementsToRoutingCollection
+     * Add element to routing collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
@@ -285,7 +285,7 @@
      */
 
     /**
-     * addSingleElementToCollection
+     * Add element to collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
@@ -343,7 +343,7 @@
      */
 
     /**
-     * addSingleElementToLabelledCollection
+     * Add element to labelled collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
@@ -401,7 +401,7 @@
      */
 
     /**
-     * addSingleElementToLogisticCollection
+     * Add element to logistic collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementId4n elementId4n
      * @param {Object} opts Optional parameters
@@ -459,7 +459,7 @@
      */
 
     /**
-     * addSingleElementToRoutingCollection
+     * Add element to routing collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
@@ -517,7 +517,7 @@
      */
 
     /**
-     * createLabelledCollection
+     * Create labelled collection
      * @param {module:model/CreateLabelledCollectionRequest} createInfo createInfo
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -567,7 +567,7 @@
      */
 
     /**
-     * createLogisticCollection
+     * Create logistic collection
      * @param {module:model/CreateLogisticCollectionRequest} createInfo createInfo
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -617,7 +617,7 @@
      */
 
     /**
-     * createRoutingCollection
+     * Create routing collecton
      * @param {module:model/CreateRoutingCollectionRequest} createInfo createInfo
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -662,18 +662,18 @@
      * Callback function to receive the result of the deleteCollectionUsingDELETE operation.
      * @callback module:api/CollectionsApi~deleteCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * deleteCollection
+     * Delete collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.deleteCollectionUsingDELETE = function(id4n, opts, callback) {
       opts = opts || {};
@@ -700,7 +700,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/{id4n}', 'DELETE',
@@ -713,18 +713,18 @@
      * Callback function to receive the result of the deleteLabelledCollectionUsingDELETE operation.
      * @callback module:api/CollectionsApi~deleteLabelledCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * deleteLabelledCollection
+     * Delete labelled collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteLabelledCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.deleteLabelledCollectionUsingDELETE = function(id4n, opts, callback) {
       opts = opts || {};
@@ -751,7 +751,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/labelled/{id4n}', 'DELETE',
@@ -764,18 +764,18 @@
      * Callback function to receive the result of the deleteLogisticCollectionUsingDELETE operation.
      * @callback module:api/CollectionsApi~deleteLogisticCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * deleteLogisticCollection
+     * Delete logistic collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteLogisticCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.deleteLogisticCollectionUsingDELETE = function(id4n, opts, callback) {
       opts = opts || {};
@@ -802,7 +802,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/logistic/{id4n}', 'DELETE',
@@ -815,18 +815,18 @@
      * Callback function to receive the result of the deleteRoutingCollectionUsingDELETE operation.
      * @callback module:api/CollectionsApi~deleteRoutingCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * deleteRoutingCollection
+     * Delete routing collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.deleteRoutingCollectionUsingDELETE = function(id4n, opts, callback) {
       opts = opts || {};
@@ -853,7 +853,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{id4n}', 'DELETE',
@@ -871,7 +871,7 @@
      */
 
     /**
-     * findById4n
+     * Find collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -922,7 +922,7 @@
      */
 
     /**
-     * findById4n
+     * Find labelled collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -973,7 +973,7 @@
      */
 
     /**
-     * findById4n
+     * Find logistic collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -1024,7 +1024,7 @@
      */
 
     /**
-     * findById4n
+     * Find routing collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -1075,7 +1075,7 @@
      */
 
     /**
-     * findByLabel
+     * Find labelled collection by label
      * @param {Number} organizationId organizationId
      * @param {String} label label
      * @param {Object} opts Optional parameters
@@ -1128,7 +1128,7 @@
      * Callback function to receive the result of the getAllCollectionsOfOrganization operation.
      * @callback module:api/CollectionsApi~getAllCollectionsOfOrganizationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedResponseGuidCollection} data The data returned by the service call.
+     * @param {module:model/PaginatedGuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1139,11 +1139,11 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:model/String} opts.type type
      * @param {module:api/CollectionsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedResponseGuidCollection}
+     * data is of type: {@link module:model/PaginatedGuidCollection}
      */
     this.getAllCollectionsOfOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -1173,7 +1173,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedResponseGuidCollection;
+      var returnType = PaginatedGuidCollection;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/collections', 'GET',
@@ -1191,13 +1191,13 @@
      */
 
     /**
-     * listContents
+     * List contents of the collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/CollectionsApi~listContentsUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponsestring}
      */
@@ -1246,7 +1246,7 @@
      */
 
     /**
-     * removeElementsFromCollection
+     * Remove elements from collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
@@ -1303,7 +1303,7 @@
      */
 
     /**
-     * removeElementsFromLabelledCollection
+     * Remove elements from labelled collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
@@ -1360,7 +1360,7 @@
      */
 
     /**
-     * removeElementsFromLogisticCollection
+     * Remove elements from logistic collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} id4nlist id4nlist
      * @param {Object} opts Optional parameters
@@ -1417,7 +1417,7 @@
      */
 
     /**
-     * removeElementsFromRoutingCollection
+     * Remove elements from routing collection
      * @param {String} collectionGuid collectionGuid
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
@@ -1474,7 +1474,7 @@
      */
 
     /**
-     * removeSingleElementFromCollection
+     * Remove element from collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
@@ -1532,7 +1532,7 @@
      */
 
     /**
-     * removeSingleElementFromLabelledCollection
+     * Remove element from labelled collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
@@ -1590,7 +1590,7 @@
      */
 
     /**
-     * removeSingleElementFromLogisticCollection
+     * Remove element from logistic collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementId4n elementId4n
      * @param {Object} opts Optional parameters
@@ -1648,7 +1648,7 @@
      */
 
     /**
-     * removeSingleElementFromRoutingCollection
+     * Remove element from routing collection
      * @param {String} collectionGuid collectionGuid
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
@@ -1701,19 +1701,19 @@
      * Callback function to receive the result of the renameUsingPUT operation.
      * @callback module:api/CollectionsApi~renameUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * rename
+     * Rename labelled collection
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~renameUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.renameUsingPUT = function(id4n, request, opts, callback) {
       opts = opts || {};
@@ -1745,7 +1745,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/labelled/{id4n}', 'PUT',

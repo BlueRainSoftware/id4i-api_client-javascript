@@ -42,6 +42,7 @@
 
   /**
    * Constructs a new <code>ListOfId4ns</code>.
+   * A list of id4ns
    * @alias module:model/ListOfId4ns
    * @class
    */
@@ -70,6 +71,7 @@
   }
 
   /**
+   * A list of id4ns.
    * @member {Array.<String>} id4ns
    */
   exports.prototype['id4ns'] = undefined;

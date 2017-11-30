@@ -4,24 +4,24 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addElementsToRoutingCollectionUsingPUT**](RoutingApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | addElementsToRoutingCollection
-[**addSingleElementToRoutingCollectionUsingPUT**](RoutingApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | addSingleElementToRoutingCollection
-[**createRoutingCollectionUsingPOST**](RoutingApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | createRoutingCollection
-[**deleteRoutingCollectionUsingDELETE**](RoutingApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | deleteRoutingCollection
-[**findById4nUsingGET3**](RoutingApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | findById4n
-[**forwardUsingGET**](RoutingApi.md#forwardUsingGET) | **GET** /go/{guid} | forward
-[**removeElementsFromRoutingCollectionUsingDELETE**](RoutingApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | removeElementsFromRoutingCollection
-[**removeSingleElementFromRoutingCollectionUsingDELETE**](RoutingApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | removeSingleElementFromRoutingCollection
-[**retrieveCurrentParamsByTypeUsingGET**](RoutingApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | retrieveCurrentParamsByType
-[**retrieveRoutingFileUsingGET**](RoutingApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | retrieveRoutingFile
-[**storeRoutingFileUsingPUT**](RoutingApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | storeRoutingFile
+[**addElementsToRoutingCollectionUsingPUT**](RoutingApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | Add element to routing collection
+[**addSingleElementToRoutingCollectionUsingPUT**](RoutingApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Add element to routing collection
+[**createRoutingCollectionUsingPOST**](RoutingApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | Create routing collecton
+[**deleteRoutingCollectionUsingDELETE**](RoutingApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
+[**findById4nUsingGET3**](RoutingApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
+[**forwardUsingGET**](RoutingApi.md#forwardUsingGET) | **GET** /go/{guid} | Forward
+[**removeElementsFromRoutingCollectionUsingDELETE**](RoutingApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | Remove elements from routing collection
+[**removeSingleElementFromRoutingCollectionUsingDELETE**](RoutingApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Remove element from routing collection
+[**retrieveCurrentParamsByTypeUsingGET**](RoutingApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current params by type
+[**retrieveRoutingFileUsingGET**](RoutingApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
+[**storeRoutingFileUsingPUT**](RoutingApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
 
 
 <a name="addElementsToRoutingCollectionUsingPUT"></a>
 # **addElementsToRoutingCollectionUsingPUT**
 > &#39;Number&#39; addElementsToRoutingCollectionUsingPUT(collectionGuid, listOfGuids, opts)
 
-addElementsToRoutingCollection
+Add element to routing collection
 
 ### Example
 ```javascript
@@ -74,7 +74,7 @@ No authorization required
 # **addSingleElementToRoutingCollectionUsingPUT**
 > &#39;Number&#39; addSingleElementToRoutingCollectionUsingPUT(collectionGuid, elementGuid, opts)
 
-addSingleElementToRoutingCollection
+Add element to routing collection
 
 ### Example
 ```javascript
@@ -127,7 +127,7 @@ No authorization required
 # **createRoutingCollectionUsingPOST**
 > Id4n createRoutingCollectionUsingPOST(createInfo, opts)
 
-createRoutingCollection
+Create routing collecton
 
 ### Example
 ```javascript
@@ -175,9 +175,9 @@ No authorization required
 
 <a name="deleteRoutingCollectionUsingDELETE"></a>
 # **deleteRoutingCollectionUsingDELETE**
-> ResponseEntity deleteRoutingCollectionUsingDELETE(id4n, opts)
+> ApiError deleteRoutingCollectionUsingDELETE(id4n, opts)
 
-deleteRoutingCollection
+Delete routing collection
 
 ### Example
 ```javascript
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ No authorization required
 # **findById4nUsingGET3**
 > GuidCollection findById4nUsingGET3(id4n, opts)
 
-findById4n
+Find routing collection
 
 ### Example
 ```javascript
@@ -275,9 +275,11 @@ No authorization required
 
 <a name="forwardUsingGET"></a>
 # **forwardUsingGET**
-> ResponseEntity forwardUsingGET(guid, opts)
+> ApiError forwardUsingGET(guid, opts)
 
-forward
+Forward
+
+Forwarding to the designated route defined in the routing,
 
 ### Example
 ```javascript
@@ -312,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -327,7 +329,7 @@ No authorization required
 # **removeElementsFromRoutingCollectionUsingDELETE**
 > &#39;Number&#39; removeElementsFromRoutingCollectionUsingDELETE(collectionGuid, listOfGuids, opts)
 
-removeElementsFromRoutingCollection
+Remove elements from routing collection
 
 ### Example
 ```javascript
@@ -380,7 +382,7 @@ No authorization required
 # **removeSingleElementFromRoutingCollectionUsingDELETE**
 > &#39;Number&#39; removeSingleElementFromRoutingCollectionUsingDELETE(collectionGuid, elementGuid, opts)
 
-removeSingleElementFromRoutingCollection
+Remove element from routing collection
 
 ### Example
 ```javascript
@@ -433,7 +435,7 @@ No authorization required
 # **retrieveCurrentParamsByTypeUsingGET**
 > {&#39;String&#39;: &#39;String&#39;} retrieveCurrentParamsByTypeUsingGET(id4n, type, opts)
 
-retrieveCurrentParamsByType
+Retrieve current params by type
 
 ### Example
 ```javascript
@@ -486,7 +488,7 @@ No authorization required
 # **retrieveRoutingFileUsingGET**
 > RoutingFile retrieveRoutingFileUsingGET(id4n, opts)
 
-retrieveRoutingFile
+Retrieve routing file
 
 ### Example
 ```javascript
@@ -536,9 +538,9 @@ No authorization required
 
 <a name="storeRoutingFileUsingPUT"></a>
 # **storeRoutingFileUsingPUT**
-> ResponseEntity storeRoutingFileUsingPUT(rfr, id4n, opts)
+> ApiError storeRoutingFileUsingPUT(rfr, id4n, opts)
 
-storeRoutingFile
+Store routing file
 
 ### Example
 ```javascript
@@ -576,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 

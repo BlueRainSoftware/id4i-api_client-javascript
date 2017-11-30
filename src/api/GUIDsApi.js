@@ -57,7 +57,8 @@
      */
 
     /**
-     * create
+     * Create GUID(s)
+     * Creating one or more GUIDs with a specified length.
      * @param {module:model/CreateGuidRequest} createGUIDInfo createGUIDInfo
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login

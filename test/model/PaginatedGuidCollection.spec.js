@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.CreateGuidRequest();
+    instance = new Id4iApi.PaginatedGuidCollection();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,34 @@
       object[property] = value;
   }
 
-  describe('CreateGuidRequest', function() {
-    it('should create an instance of CreateGuidRequest', function() {
-      // uncomment below and update the code to test CreateGuidRequest
-      //var instane = new Id4iApi.CreateGuidRequest();
-      //expect(instance).to.be.a(Id4iApi.CreateGuidRequest);
+  describe('PaginatedGuidCollection', function() {
+    it('should create an instance of PaginatedGuidCollection', function() {
+      // uncomment below and update the code to test PaginatedGuidCollection
+      //var instane = new Id4iApi.PaginatedGuidCollection();
+      //expect(instance).to.be.a(Id4iApi.PaginatedGuidCollection);
     });
 
-    it('should have the property count (base name: "count")', function() {
-      // uncomment below and update the code to test the property count
-      //var instane = new Id4iApi.CreateGuidRequest();
+    it('should have the property elements (base name: "elements")', function() {
+      // uncomment below and update the code to test the property elements
+      //var instane = new Id4iApi.PaginatedGuidCollection();
       //expect(instance).to.be();
     });
 
-    it('should have the property length (base name: "length")', function() {
-      // uncomment below and update the code to test the property length
-      //var instane = new Id4iApi.CreateGuidRequest();
+    it('should have the property limit (base name: "limit")', function() {
+      // uncomment below and update the code to test the property limit
+      //var instane = new Id4iApi.PaginatedGuidCollection();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.CreateGuidRequest();
+    it('should have the property offset (base name: "offset")', function() {
+      // uncomment below and update the code to test the property offset
+      //var instane = new Id4iApi.PaginatedGuidCollection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property total (base name: "total")', function() {
+      // uncomment below and update the code to test the property total
+      //var instane = new Id4iApi.PaginatedGuidCollection();
       //expect(instance).to.be();
     });
 

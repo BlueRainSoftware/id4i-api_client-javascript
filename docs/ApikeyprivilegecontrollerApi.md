@@ -4,14 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUsingGET1**](ApikeyprivilegecontrollerApi.md#listUsingGET1) | **GET** /api/v1/apikeys/privileges | list
+[**listUsingGET1**](ApikeyprivilegecontrollerApi.md#listUsingGET1) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
 
 
 <a name="listUsingGET1"></a>
 # **listUsingGET1**
 > ApiKeyPrivilegeResponse listUsingGET1(opts)
 
-list
+List ApiKey privileges
+
+Listing api key privileges.
 
 ### Example
 ```javascript
@@ -23,8 +25,8 @@ var opts = {
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'id4nConcerning': true, // Boolean | id4nConcerning
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -44,8 +46,8 @@ Name | Type | Description  | Notes
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **id4nConcerning** | **Boolean**| id4nConcerning | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 

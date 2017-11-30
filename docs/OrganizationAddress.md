@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**city** | **String** |  | 
 **companyName** | **String** |  | [optional] 
-**firstname** | **String** |  | 
-**lastname** | **String** |  | 
-**postCode** | **String** |  | 
-**street** | **String** |  | 
-**telephone** | **String** |  | [optional] 
+**firstname** | **String** |  | [optional] 
+**lastname** | **String** |  | [optional] 
+**street** | **String** |  | [optional] 
+**postCode** | **String** |  | [optional] 
+**city** | **String** |  | [optional] 
+**telephone** | **String** | The telephone number e.g. | [optional] 
 
 

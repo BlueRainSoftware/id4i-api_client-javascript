@@ -42,16 +42,16 @@
 
   /**
    * Constructs a new <code>Organization</code>.
+   * An organization
    * @alias module:model/Organization
    * @class
-   * @param name {String} 
    */
-  var exports = function(name) {
+  var exports = function() {
     var _this = this;
 
 
 
-    _this['name'] = name;
+
   };
 
   /**
@@ -79,14 +79,17 @@
   }
 
   /**
+   * The id of the organization
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
   /**
+   * URL to a logo of the organization
    * @member {String} logoURL
    */
   exports.prototype['logoURL'] = undefined;
   /**
+   * The name of the organization
    * @member {String} name
    */
   exports.prototype['name'] = undefined;

@@ -57,12 +57,6 @@
       //expect(instance).to.be.a(Id4iApi.OrganizationAddress);
     });
 
-    it('should have the property city (base name: "city")', function() {
-      // uncomment below and update the code to test the property city
-      //var instane = new Id4iApi.OrganizationAddress();
-      //expect(instance).to.be();
-    });
-
     it('should have the property companyName (base name: "companyName")', function() {
       // uncomment below and update the code to test the property companyName
       //var instane = new Id4iApi.OrganizationAddress();
@@ -81,14 +75,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property street (base name: "street")', function() {
+      // uncomment below and update the code to test the property street
+      //var instane = new Id4iApi.OrganizationAddress();
+      //expect(instance).to.be();
+    });
+
     it('should have the property postCode (base name: "postCode")', function() {
       // uncomment below and update the code to test the property postCode
       //var instane = new Id4iApi.OrganizationAddress();
       //expect(instance).to.be();
     });
 
-    it('should have the property street (base name: "street")', function() {
-      // uncomment below and update the code to test the property street
+    it('should have the property city (base name: "city")', function() {
+      // uncomment below and update the code to test the property city
       //var instane = new Id4iApi.OrganizationAddress();
       //expect(instance).to.be();
     });

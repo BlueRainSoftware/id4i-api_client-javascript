@@ -4,33 +4,33 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMultipleUserRolesUsingPOST**](OrganizationsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | addMultipleUserRoles
-[**addUserRolesUsingPOST**](OrganizationsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | addUserRoles
-[**createOrganzationUsingPOST**](OrganizationsApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | createOrganzation
-[**deleteOrganizationLogoUsingDELETE**](OrganizationsApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | deleteOrganizationLogo
-[**deleteOrganizationUsingDELETE**](OrganizationsApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | deleteOrganization
-[**getAddressUsingGET**](OrganizationsApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | getAddress
+[**addMultipleUserRolesUsingPOST**](OrganizationsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | Add role(s) to user (model)
+[**addUserRolesUsingPOST**](OrganizationsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | Add role(s) to user
+[**createOrganzationUsingPOST**](OrganizationsApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | Create organization
+[**deleteOrganizationLogoUsingDELETE**](OrganizationsApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | Delete organization logo
+[**deleteOrganizationUsingDELETE**](OrganizationsApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | Delete organization
+[**getAddressUsingGET**](OrganizationsApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | Retrieve address
 [**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
-[**getBillingAddressUsingGET**](OrganizationsApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | getBillingAddress
-[**getMultipleUserRolesUsingGET**](OrganizationsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | getMultipleUserRoles
-[**getOrganizationUsingGET**](OrganizationsApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | getOrganization
-[**getOrganizationsUsingGET**](OrganizationsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | getOrganizations
-[**getUserRolesByUsernameUsingGET**](OrganizationsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | getUserRolesByUsername
-[**getUsersUsingGET**](OrganizationsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | getUsers
-[**removeBillingAddressUsingDELETE**](OrganizationsApi.md#removeBillingAddressUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/addresses/billing | removeBillingAddress
-[**removeMultipleUserRolesUsingDELETE**](OrganizationsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | removeMultipleUserRoles
-[**removeUserRolesUsingDELETE**](OrganizationsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | removeUserRoles
-[**setOrganizationLogoUsingPOST**](OrganizationsApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | setOrganizationLogo
-[**storeAddressUsingPOST**](OrganizationsApi.md#storeAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/default | storeAddress
-[**storeBillingAddressUsingPOST**](OrganizationsApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | storeBillingAddress
-[**updateOrganizationUsingPUT**](OrganizationsApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | updateOrganization
+[**getBillingAddressUsingGET**](OrganizationsApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | Retrieve billing address
+[**getMultipleUserRolesUsingGET**](OrganizationsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | List users and their roles
+[**getOrganizationUsingGET**](OrganizationsApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | Find organization by id
+[**getOrganizationsUsingGET**](OrganizationsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+[**getUserRolesByUsernameUsingGET**](OrganizationsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | Get user roles by username
+[**getUsersUsingGET**](OrganizationsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | Find users in organization
+[**removeBillingAddressUsingDELETE**](OrganizationsApi.md#removeBillingAddressUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/addresses/billing | Remove billing address
+[**removeMultipleUserRolesUsingDELETE**](OrganizationsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | Remove role(s) from user (model)
+[**removeUserRolesUsingDELETE**](OrganizationsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | Remove role(s) from user
+[**setOrganizationLogoUsingPOST**](OrganizationsApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | Update organization logo
+[**storeAddressUsingPOST**](OrganizationsApi.md#storeAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/default | Store address
+[**storeBillingAddressUsingPOST**](OrganizationsApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | Store billing address
+[**updateOrganizationUsingPUT**](OrganizationsApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | Update organization
 
 
 <a name="addMultipleUserRolesUsingPOST"></a>
 # **addMultipleUserRolesUsingPOST**
-> ResponseEntity addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts)
+> ApiError addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts)
 
-addMultipleUserRoles
+Add role(s) to user (model)
 
 ### Example
 ```javascript
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -81,9 +81,9 @@ No authorization required
 
 <a name="addUserRolesUsingPOST"></a>
 # **addUserRolesUsingPOST**
-> ResponseEntity addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts)
+> ApiError addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts)
 
-addUserRoles
+Add role(s) to user
 
 ### Example
 ```javascript
@@ -99,9 +99,7 @@ var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | 
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
 var callback = function(error, data, response) {
@@ -123,12 +121,10 @@ Name | Type | Description  | Notes
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -141,9 +137,11 @@ No authorization required
 
 <a name="createOrganzationUsingPOST"></a>
 # **createOrganzationUsingPOST**
-> ResponseEntity createOrganzationUsingPOST(organization, opts)
+> Organization createOrganzationUsingPOST(organization, opts)
 
-createOrganzation
+Create organization
+
+Creating a new organization.
 
 ### Example
 ```javascript
@@ -151,7 +149,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organization = new Id4iApi.Organization(); // Organization | organization
+var organization = new Id4iApi.Organization(); // Organization | Organization to be created
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -172,13 +170,13 @@ apiInstance.createOrganzationUsingPOST(organization, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | [**Organization**](Organization.md)| organization | 
+ **organization** | [**Organization**](Organization.md)| Organization to be created | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Organization**](Organization.md)
 
 ### Authorization
 
@@ -191,9 +189,9 @@ No authorization required
 
 <a name="deleteOrganizationLogoUsingDELETE"></a>
 # **deleteOrganizationLogoUsingDELETE**
-> ResponseEntity deleteOrganizationLogoUsingDELETE(organizationId, opts)
+> ApiError deleteOrganizationLogoUsingDELETE(organizationId, opts)
 
-deleteOrganizationLogo
+Delete organization logo
 
 ### Example
 ```javascript
@@ -201,7 +199,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = 789; // Number | The id of the organization where the logo should be deleted.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -222,13 +220,13 @@ apiInstance.deleteOrganizationLogoUsingDELETE(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **Number**| The id of the organization where the logo should be deleted. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -241,9 +239,9 @@ No authorization required
 
 <a name="deleteOrganizationUsingDELETE"></a>
 # **deleteOrganizationUsingDELETE**
-> ResponseEntity deleteOrganizationUsingDELETE(organizationId, opts)
+> ApiError deleteOrganizationUsingDELETE(organizationId, opts)
 
-deleteOrganization
+Delete organization
 
 ### Example
 ```javascript
@@ -251,7 +249,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = 789; // Number | The id of the organization to be deleted.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -272,13 +270,13 @@ apiInstance.deleteOrganizationUsingDELETE(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **Number**| The id of the organization to be deleted. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -293,7 +291,7 @@ No authorization required
 # **getAddressUsingGET**
 > OrganizationAddress getAddressUsingGET(organizationId, opts)
 
-getAddress
+Retrieve address
 
 ### Example
 ```javascript
@@ -341,7 +339,7 @@ No authorization required
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedResponseGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
+> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
 
 Get collections of organization
 
@@ -358,8 +356,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56, // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56, // Number | The maximum count of returned elements.
   'type': "type_example" // String | type
 };
 
@@ -380,13 +378,13 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
  **type** | **String**| type | [optional] 
 
 ### Return type
 
-[**PaginatedResponseGuidCollection**](PaginatedResponseGuidCollection.md)
+[**PaginatedGuidCollection**](PaginatedGuidCollection.md)
 
 ### Authorization
 
@@ -401,7 +399,7 @@ No authorization required
 # **getBillingAddressUsingGET**
 > OrganizationAddress getBillingAddressUsingGET(organizationId, opts)
 
-getBillingAddress
+Retrieve billing address
 
 ### Example
 ```javascript
@@ -451,7 +449,9 @@ No authorization required
 # **getMultipleUserRolesUsingGET**
 > PaginatedUserRolesResponse getMultipleUserRolesUsingGET(organizationId, opts)
 
-getMultipleUserRoles
+List users and their roles
+
+Listing users and their roles in a paginated manner.
 
 ### Example
 ```javascript
@@ -464,8 +464,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -485,8 +485,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
@@ -505,7 +505,9 @@ No authorization required
 # **getOrganizationUsingGET**
 > Organization getOrganizationUsingGET(organizationId, opts)
 
-getOrganization
+Find organization by id
+
+Returns a single organization.
 
 ### Example
 ```javascript
@@ -513,7 +515,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = 789; // Number | The id of the organization to be retrieved.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -534,7 +536,7 @@ apiInstance.getOrganizationUsingGET(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **Number**| The id of the organization to be retrieved. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -555,7 +557,7 @@ No authorization required
 # **getOrganizationsUsingGET**
 > PaginatedResponseOrganization getOrganizationsUsingGET(opts)
 
-getOrganizations
+Retrieve organizations of user
 
 ### Example
 ```javascript
@@ -567,8 +569,8 @@ var opts = {
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'role': "role_example", // String | role
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -588,8 +590,8 @@ Name | Type | Description  | Notes
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **role** | **String**| role | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
@@ -608,7 +610,7 @@ No authorization required
 # **getUserRolesByUsernameUsingGET**
 > UserRoles getUserRolesByUsernameUsingGET(organizationId, username, opts)
 
-getUserRolesByUsername
+Get user roles by username
 
 ### Example
 ```javascript
@@ -622,9 +624,7 @@ var username = "username_example"; // String | username
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
 var callback = function(error, data, response) {
@@ -645,8 +645,6 @@ Name | Type | Description  | Notes
  **username** | **String**| username | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
 
 ### Return type
 
@@ -665,7 +663,9 @@ No authorization required
 # **getUsersUsingGET**
 > PaginatedUserPresentationResponse getUsersUsingGET(organizationId, opts)
 
-getUsers
+Find users in organization
+
+Finding users in the specified organization in a paginated manner.
 
 ### Example
 ```javascript
@@ -678,8 +678,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -699,8 +699,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
@@ -717,9 +717,9 @@ No authorization required
 
 <a name="removeBillingAddressUsingDELETE"></a>
 # **removeBillingAddressUsingDELETE**
-> ResponseEntity removeBillingAddressUsingDELETE(organizationId, opts)
+> ApiError removeBillingAddressUsingDELETE(organizationId, opts)
 
-removeBillingAddress
+Remove billing address
 
 ### Example
 ```javascript
@@ -754,7 +754,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -767,9 +767,9 @@ No authorization required
 
 <a name="removeMultipleUserRolesUsingDELETE"></a>
 # **removeMultipleUserRolesUsingDELETE**
-> ResponseEntity removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts)
+> ApiError removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts)
 
-removeMultipleUserRoles
+Remove role(s) from user (model)
 
 ### Example
 ```javascript
@@ -807,7 +807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -820,9 +820,9 @@ No authorization required
 
 <a name="removeUserRolesUsingDELETE"></a>
 # **removeUserRolesUsingDELETE**
-> ResponseEntity removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts)
+> ApiError removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts)
 
-removeUserRoles
+Remove role(s) from user
 
 ### Example
 ```javascript
@@ -838,9 +838,7 @@ var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | 
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | 
-  'limit': 56 // Number | 
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
 var callback = function(error, data, response) {
@@ -862,12 +860,10 @@ Name | Type | Description  | Notes
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**|  | [optional] 
- **limit** | **Number**|  | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -880,9 +876,11 @@ No authorization required
 
 <a name="setOrganizationLogoUsingPOST"></a>
 # **setOrganizationLogoUsingPOST**
-> ResponseEntity setOrganizationLogoUsingPOST(organizationId, file, opts)
+> ApiError setOrganizationLogoUsingPOST(organizationId, file, opts)
 
-setOrganizationLogo
+Update organization logo
+
+Updating an organization logo using a multipart file upload.
 
 ### Example
 ```javascript
@@ -890,9 +888,9 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = 789; // Number | The id of the organization where the logo should be updated.
 
-var file = "/path/to/file.txt"; // File | file
+var file = "/path/to/file.txt"; // File | An image containing the new logo.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -913,14 +911,14 @@ apiInstance.setOrganizationLogoUsingPOST(organizationId, file, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **file** | **File**| file | 
+ **organizationId** | **Number**| The id of the organization where the logo should be updated. | 
+ **file** | **File**| An image containing the new logo. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -933,9 +931,9 @@ No authorization required
 
 <a name="storeAddressUsingPOST"></a>
 # **storeAddressUsingPOST**
-> ResponseEntity storeAddressUsingPOST(organizationId, addressResource, opts)
+> ApiError storeAddressUsingPOST(organizationId, addressResource, opts)
 
-storeAddress
+Store address
 
 ### Example
 ```javascript
@@ -973,7 +971,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -986,9 +984,9 @@ No authorization required
 
 <a name="storeBillingAddressUsingPOST"></a>
 # **storeBillingAddressUsingPOST**
-> ResponseEntity storeBillingAddressUsingPOST(organizationId, addressResource, opts)
+> ApiError storeBillingAddressUsingPOST(organizationId, addressResource, opts)
 
-storeBillingAddress
+Store billing address
 
 ### Example
 ```javascript
@@ -1026,7 +1024,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1041,7 +1039,7 @@ No authorization required
 # **updateOrganizationUsingPUT**
 > Organization updateOrganizationUsingPUT(organizationId, organization, opts)
 
-updateOrganization
+Update organization
 
 ### Example
 ```javascript
@@ -1049,9 +1047,9 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = 789; // Number | The id of the organization to be updated.
 
-var organization = new Id4iApi.Organization(); // Organization | organization
+var organization = new Id4iApi.Organization(); // Organization | Updated organization object
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -1072,8 +1070,8 @@ apiInstance.updateOrganizationUsingPUT(organizationId, organization, opts, callb
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **organization** | [**Organization**](Organization.md)| organization | 
+ **organizationId** | **Number**| The id of the organization to be updated. | 
+ **organization** | [**Organization**](Organization.md)| Updated organization object | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 

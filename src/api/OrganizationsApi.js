@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/ResponseEntity', 'model/UserRoles'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/UserRoles'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/ChangeUserRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/PaginatedResponseGuidCollection'), require('../model/PaginatedResponseOrganization'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/ResponseEntity'), require('../model/UserRoles'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/ChangeUserRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedResponseOrganization'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/UserRoles'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.ChangeUserRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.PaginatedResponseGuidCollection, root.Id4iApi.PaginatedResponseOrganization, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.ResponseEntity, root.Id4iApi.UserRoles);
+    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.ChangeUserRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedResponseOrganization, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.UserRoles);
   }
-}(this, function(ApiClient, ApiError, ChangeRoleRequest, ChangeUserRoleRequest, Organization, OrganizationAddress, PaginatedResponseGuidCollection, PaginatedResponseOrganization, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, ResponseEntity, UserRoles) {
+}(this, function(ApiClient, ApiError, ChangeRoleRequest, ChangeUserRoleRequest, Organization, OrganizationAddress, PaginatedGuidCollection, PaginatedResponseOrganization, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, UserRoles) {
   'use strict';
 
   /**
@@ -52,19 +52,19 @@
      * Callback function to receive the result of the addMultipleUserRolesUsingPOST operation.
      * @callback module:api/OrganizationsApi~addMultipleUserRolesUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * addMultipleUserRoles
+     * Add role(s) to user (model)
      * @param {Number} organizationId organizationId
      * @param {module:model/ChangeUserRoleRequest} changeUserRoleRequest changeUserRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~addMultipleUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.addMultipleUserRolesUsingPOST = function(organizationId, changeUserRoleRequest, opts, callback) {
       opts = opts || {};
@@ -96,7 +96,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/users/role', 'POST',
@@ -109,22 +109,20 @@
      * Callback function to receive the result of the addUserRolesUsingPOST operation.
      * @callback module:api/OrganizationsApi~addUserRolesUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * addUserRoles
+     * Add role(s) to user
      * @param {Number} organizationId organizationId
      * @param {String} username username
      * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
      * @param {module:api/OrganizationsApi~addUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.addUserRolesUsingPOST = function(organizationId, username, changeRoleRequest, opts, callback) {
       opts = opts || {};
@@ -151,8 +149,6 @@
         'username': username
       };
       var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -164,7 +160,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/user/{username}/roles', 'POST',
@@ -177,18 +173,19 @@
      * Callback function to receive the result of the createOrganzationUsingPOST operation.
      * @callback module:api/OrganizationsApi~createOrganzationUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Organization} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * createOrganzation
-     * @param {module:model/Organization} organization organization
+     * Create organization
+     * Creating a new organization.
+     * @param {module:model/Organization} organization Organization to be created
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~createOrganzationUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/Organization}
      */
     this.createOrganzationUsingPOST = function(organization, opts, callback) {
       opts = opts || {};
@@ -214,7 +211,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = Organization;
 
       return this.apiClient.callApi(
         '/api/v1/organization', 'POST',
@@ -227,18 +224,18 @@
      * Callback function to receive the result of the deleteOrganizationLogoUsingDELETE operation.
      * @callback module:api/OrganizationsApi~deleteOrganizationLogoUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * deleteOrganizationLogo
-     * @param {Number} organizationId organizationId
+     * Delete organization logo
+     * @param {Number} organizationId The id of the organization where the logo should be deleted.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~deleteOrganizationLogoUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.deleteOrganizationLogoUsingDELETE = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -265,7 +262,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/logo', 'DELETE',
@@ -278,18 +275,18 @@
      * Callback function to receive the result of the deleteOrganizationUsingDELETE operation.
      * @callback module:api/OrganizationsApi~deleteOrganizationUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * deleteOrganization
-     * @param {Number} organizationId organizationId
+     * Delete organization
+     * @param {Number} organizationId The id of the organization to be deleted.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~deleteOrganizationUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.deleteOrganizationUsingDELETE = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -316,7 +313,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}', 'DELETE',
@@ -334,7 +331,7 @@
      */
 
     /**
-     * getAddress
+     * Retrieve address
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -380,7 +377,7 @@
      * Callback function to receive the result of the getAllCollectionsOfOrganization operation.
      * @callback module:api/OrganizationsApi~getAllCollectionsOfOrganizationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedResponseGuidCollection} data The data returned by the service call.
+     * @param {module:model/PaginatedGuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -391,11 +388,11 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:model/String} opts.type type
      * @param {module:api/OrganizationsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedResponseGuidCollection}
+     * data is of type: {@link module:model/PaginatedGuidCollection}
      */
     this.getAllCollectionsOfOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -425,7 +422,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedResponseGuidCollection;
+      var returnType = PaginatedGuidCollection;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/collections', 'GET',
@@ -443,7 +440,7 @@
      */
 
     /**
-     * getBillingAddress
+     * Retrieve billing address
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -494,13 +491,14 @@
      */
 
     /**
-     * getMultipleUserRoles
+     * List users and their roles
+     * Listing users and their roles in a paginated manner.
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/OrganizationsApi~getMultipleUserRolesUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserRolesResponse}
      */
@@ -549,8 +547,9 @@
      */
 
     /**
-     * getOrganization
-     * @param {Number} organizationId organizationId
+     * Find organization by id
+     * Returns a single organization.
+     * @param {Number} organizationId The id of the organization to be retrieved.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
@@ -600,13 +599,13 @@
      */
 
     /**
-     * getOrganizations
+     * Retrieve organizations of user
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {String} opts.role role
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/OrganizationsApi~getOrganizationsUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponseOrganization}
      */
@@ -650,14 +649,12 @@
      */
 
     /**
-     * getUserRolesByUsername
+     * Get user roles by username
      * @param {Number} organizationId organizationId
      * @param {String} username username
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
      * @param {module:api/OrganizationsApi~getUserRolesByUsernameUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserRoles}
      */
@@ -681,8 +678,6 @@
         'username': username
       };
       var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -712,13 +707,14 @@
      */
 
     /**
-     * getUsers
+     * Find users in organization
+     * Finding users in the specified organization in a paginated manner.
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/OrganizationsApi~getUsersUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserPresentationResponse}
      */
@@ -762,18 +758,18 @@
      * Callback function to receive the result of the removeBillingAddressUsingDELETE operation.
      * @callback module:api/OrganizationsApi~removeBillingAddressUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * removeBillingAddress
+     * Remove billing address
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~removeBillingAddressUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.removeBillingAddressUsingDELETE = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -800,7 +796,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/addresses/billing', 'DELETE',
@@ -813,19 +809,19 @@
      * Callback function to receive the result of the removeMultipleUserRolesUsingDELETE operation.
      * @callback module:api/OrganizationsApi~removeMultipleUserRolesUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * removeMultipleUserRoles
+     * Remove role(s) from user (model)
      * @param {Number} organizationId organizationId
      * @param {module:model/ChangeUserRoleRequest} changeUserRoleRequest changeUserRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~removeMultipleUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.removeMultipleUserRolesUsingDELETE = function(organizationId, changeUserRoleRequest, opts, callback) {
       opts = opts || {};
@@ -857,7 +853,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/users/role', 'DELETE',
@@ -870,22 +866,20 @@
      * Callback function to receive the result of the removeUserRolesUsingDELETE operation.
      * @callback module:api/OrganizationsApi~removeUserRolesUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * removeUserRoles
+     * Remove role(s) from user
      * @param {Number} organizationId organizationId
      * @param {String} username username
      * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
      * @param {module:api/OrganizationsApi~removeUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.removeUserRolesUsingDELETE = function(organizationId, username, changeRoleRequest, opts, callback) {
       opts = opts || {};
@@ -912,8 +906,6 @@
         'username': username
       };
       var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -925,7 +917,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/user/{username}/roles', 'DELETE',
@@ -938,19 +930,20 @@
      * Callback function to receive the result of the setOrganizationLogoUsingPOST operation.
      * @callback module:api/OrganizationsApi~setOrganizationLogoUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * setOrganizationLogo
-     * @param {Number} organizationId organizationId
-     * @param {File} file file
+     * Update organization logo
+     * Updating an organization logo using a multipart file upload.
+     * @param {Number} organizationId The id of the organization where the logo should be updated.
+     * @param {File} file An image containing the new logo.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~setOrganizationLogoUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.setOrganizationLogoUsingPOST = function(organizationId, file, opts, callback) {
       opts = opts || {};
@@ -983,7 +976,7 @@
       var authNames = [];
       var contentTypes = ['multipart/form-data'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/logo', 'POST',
@@ -996,19 +989,19 @@
      * Callback function to receive the result of the storeAddressUsingPOST operation.
      * @callback module:api/OrganizationsApi~storeAddressUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * storeAddress
+     * Store address
      * @param {Number} organizationId organizationId
      * @param {module:model/OrganizationAddress} addressResource addressResource
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~storeAddressUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.storeAddressUsingPOST = function(organizationId, addressResource, opts, callback) {
       opts = opts || {};
@@ -1040,7 +1033,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/addresses/default', 'POST',
@@ -1053,19 +1046,19 @@
      * Callback function to receive the result of the storeBillingAddressUsingPOST operation.
      * @callback module:api/OrganizationsApi~storeBillingAddressUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * storeBillingAddress
+     * Store billing address
      * @param {Number} organizationId organizationId
      * @param {module:model/OrganizationAddress} addressResource addressResource
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/OrganizationsApi~storeBillingAddressUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.storeBillingAddressUsingPOST = function(organizationId, addressResource, opts, callback) {
       opts = opts || {};
@@ -1097,7 +1090,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/addresses/billing', 'POST',
@@ -1115,9 +1108,9 @@
      */
 
     /**
-     * updateOrganization
-     * @param {Number} organizationId organizationId
-     * @param {module:model/Organization} organization organization
+     * Update organization
+     * @param {Number} organizationId The id of the organization to be updated.
+     * @param {module:model/Organization} organization Updated organization object
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language

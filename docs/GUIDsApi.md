@@ -4,14 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUsingPOST1**](GUIDsApi.md#createUsingPOST1) | **POST** /api/v1/guids | create
+[**createUsingPOST1**](GUIDsApi.md#createUsingPOST1) | **POST** /api/v1/guids | Create GUID(s)
 
 
 <a name="createUsingPOST1"></a>
 # **createUsingPOST1**
 > ListOfId4ns createUsingPOST1(createGUIDInfo, opts)
 
-create
+Create GUID(s)
+
+Creating one or more GUIDs with a specified length.
 
 ### Example
 ```javascript

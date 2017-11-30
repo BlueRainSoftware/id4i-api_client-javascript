@@ -57,8 +57,8 @@
      */
 
     /**
-     * resolveImage
-     * @param {String} imageID imageID
+     * Resolve image
+     * @param {String} imageID The id of the image to be resolved.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language

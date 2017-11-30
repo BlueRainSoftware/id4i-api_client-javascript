@@ -57,13 +57,14 @@
      */
 
     /**
-     * list
+     * List ApiKey privileges
+     * Listing api key privileges.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {Boolean} opts.id4nConcerning id4nConcerning
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/ApikeyprivilegecontrollerApi~listUsingGET1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKeyPrivilegeResponse}
      */

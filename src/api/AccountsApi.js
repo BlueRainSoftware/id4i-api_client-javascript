@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/PaginatedResponseOrganization', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/ResponseEntity', 'model/RoleResponse', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles'], factory);
+    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/PaginatedResponseOrganization', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/RoleResponse', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AccountCredentials'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/ChangeUserRoleRequest'), require('../model/PaginatedResponseOrganization'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/PasswordResetRequest'), require('../model/PasswordResetVerificationRequest'), require('../model/RegistrationVerificationTokenPresentation'), require('../model/ResponseEntity'), require('../model/RoleResponse'), require('../model/SimpleMessageResponse'), require('../model/UserPresentation'), require('../model/UserRegistrationRequest'), require('../model/UserRegistrationResponse'), require('../model/UserRoles'));
+    module.exports = factory(require('../ApiClient'), require('../model/AccountCredentials'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/ChangeUserRoleRequest'), require('../model/PaginatedResponseOrganization'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/PasswordResetRequest'), require('../model/PasswordResetVerificationRequest'), require('../model/RegistrationVerificationTokenPresentation'), require('../model/RoleResponse'), require('../model/SimpleMessageResponse'), require('../model/UserPresentation'), require('../model/UserRegistrationRequest'), require('../model/UserRegistrationResponse'), require('../model/UserRoles'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.AccountsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AccountCredentials, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.ChangeUserRoleRequest, root.Id4iApi.PaginatedResponseOrganization, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.PasswordResetRequest, root.Id4iApi.PasswordResetVerificationRequest, root.Id4iApi.RegistrationVerificationTokenPresentation, root.Id4iApi.ResponseEntity, root.Id4iApi.RoleResponse, root.Id4iApi.SimpleMessageResponse, root.Id4iApi.UserPresentation, root.Id4iApi.UserRegistrationRequest, root.Id4iApi.UserRegistrationResponse, root.Id4iApi.UserRoles);
+    root.Id4iApi.AccountsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AccountCredentials, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.ChangeUserRoleRequest, root.Id4iApi.PaginatedResponseOrganization, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.PasswordResetRequest, root.Id4iApi.PasswordResetVerificationRequest, root.Id4iApi.RegistrationVerificationTokenPresentation, root.Id4iApi.RoleResponse, root.Id4iApi.SimpleMessageResponse, root.Id4iApi.UserPresentation, root.Id4iApi.UserRegistrationRequest, root.Id4iApi.UserRegistrationResponse, root.Id4iApi.UserRoles);
   }
-}(this, function(ApiClient, AccountCredentials, ApiError, ChangeRoleRequest, ChangeUserRoleRequest, PaginatedResponseOrganization, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, ResponseEntity, RoleResponse, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles) {
+}(this, function(ApiClient, AccountCredentials, ApiError, ChangeRoleRequest, ChangeUserRoleRequest, PaginatedResponseOrganization, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, RoleResponse, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles) {
   'use strict';
 
   /**
@@ -52,19 +52,19 @@
      * Callback function to receive the result of the addMultipleUserRolesUsingPOST operation.
      * @callback module:api/AccountsApi~addMultipleUserRolesUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * addMultipleUserRoles
+     * Add role(s) to user (model)
      * @param {Number} organizationId organizationId
      * @param {module:model/ChangeUserRoleRequest} changeUserRoleRequest changeUserRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/AccountsApi~addMultipleUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.addMultipleUserRolesUsingPOST = function(organizationId, changeUserRoleRequest, opts, callback) {
       opts = opts || {};
@@ -96,7 +96,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/users/role', 'POST',
@@ -109,22 +109,20 @@
      * Callback function to receive the result of the addUserRolesUsingPOST operation.
      * @callback module:api/AccountsApi~addUserRolesUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * addUserRoles
+     * Add role(s) to user
      * @param {Number} organizationId organizationId
      * @param {String} username username
      * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
      * @param {module:api/AccountsApi~addUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.addUserRolesUsingPOST = function(organizationId, username, changeRoleRequest, opts, callback) {
       opts = opts || {};
@@ -151,8 +149,6 @@
         'username': username
       };
       var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -164,7 +160,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/user/{username}/roles', 'POST',
@@ -182,7 +178,7 @@
      */
 
     /**
-     * findUserByUsername
+     * Find by username
      * @param {String} username username
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -233,13 +229,14 @@
      */
 
     /**
-     * getMultipleUserRoles
+     * List users and their roles
+     * Listing users and their roles in a paginated manner.
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/AccountsApi~getMultipleUserRolesUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserRolesResponse}
      */
@@ -288,13 +285,13 @@
      */
 
     /**
-     * getOrganizations
+     * Retrieve organizations of user
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {String} opts.role role
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/AccountsApi~getOrganizationsUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponseOrganization}
      */
@@ -338,14 +335,12 @@
      */
 
     /**
-     * getUserRolesByUsername
+     * Get user roles by username
      * @param {Number} organizationId organizationId
      * @param {String} username username
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
      * @param {module:api/AccountsApi~getUserRolesByUsernameUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserRoles}
      */
@@ -369,8 +364,6 @@
         'username': username
       };
       var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -400,13 +393,14 @@
      */
 
     /**
-     * getUsers
+     * Find users in organization
+     * Finding users in the specified organization in a paginated manner.
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/AccountsApi~getUsersUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserPresentationResponse}
      */
@@ -455,13 +449,14 @@
      */
 
     /**
-     * list
+     * List roles
+     * Listing of roles.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {String} opts.privilege privilege
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
+     * @param {String} opts.privilege If specified the roles will be filtered containing that privilege.
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/AccountsApi~listUsingGET2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RoleResponse}
      */
@@ -548,8 +543,9 @@
      */
 
     /**
-     * registerUser
-     * @param {module:model/UserRegistrationRequest} userRegistration userRegistration
+     * Register user
+     * Registering a new user.
+     * @param {module:model/UserRegistrationRequest} userRegistration The user information about the new created user.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
@@ -593,19 +589,19 @@
      * Callback function to receive the result of the removeMultipleUserRolesUsingDELETE operation.
      * @callback module:api/AccountsApi~removeMultipleUserRolesUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * removeMultipleUserRoles
+     * Remove role(s) from user (model)
      * @param {Number} organizationId organizationId
      * @param {module:model/ChangeUserRoleRequest} changeUserRoleRequest changeUserRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/AccountsApi~removeMultipleUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.removeMultipleUserRolesUsingDELETE = function(organizationId, changeUserRoleRequest, opts, callback) {
       opts = opts || {};
@@ -637,7 +633,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/users/role', 'DELETE',
@@ -650,22 +646,20 @@
      * Callback function to receive the result of the removeUserRolesUsingDELETE operation.
      * @callback module:api/AccountsApi~removeUserRolesUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * removeUserRoles
+     * Remove role(s) from user
      * @param {Number} organizationId organizationId
      * @param {String} username username
      * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset 
-     * @param {Number} opts.limit 
      * @param {module:api/AccountsApi~removeUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.removeUserRolesUsingDELETE = function(organizationId, username, changeRoleRequest, opts, callback) {
       opts = opts || {};
@@ -692,8 +686,6 @@
         'username': username
       };
       var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -705,7 +697,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/organization/{organizationId}/user/{username}/roles', 'DELETE',
@@ -723,8 +715,9 @@
      */
 
     /**
-     * requestPasswordReset
-     * @param {module:model/PasswordResetRequest} resetRequest resetRequest
+     * Request password reset
+     * Requesting a reset for a new password. 
+     * @param {module:model/PasswordResetRequest} resetRequest Contains the required information to request a new password.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
@@ -773,8 +766,9 @@
      */
 
     /**
-     * verifyPasswordReset
-     * @param {module:model/PasswordResetVerificationRequest} verificationRequest verificationRequest
+     * Verify password reset
+     * Setting a new password and verifying the request to set the password.
+     * @param {module:model/PasswordResetVerificationRequest} verificationRequest Contains the new password and the verification token to set the new password.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
@@ -818,18 +812,19 @@
      * Callback function to receive the result of the verifyRegistrationUsingPOST operation.
      * @callback module:api/AccountsApi~verifyRegistrationUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * verifyRegistration
-     * @param {module:model/RegistrationVerificationTokenPresentation} token token
+     * Verify registration
+     * Verifies a new user registration.
+     * @param {module:model/RegistrationVerificationTokenPresentation} token The token for user verification.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/AccountsApi~verifyRegistrationUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link module:model/ApiError}
      */
     this.verifyRegistrationUsingPOST = function(token, opts, callback) {
       opts = opts || {};
@@ -855,7 +850,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/account/verification', 'POST',
