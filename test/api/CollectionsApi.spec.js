@@ -171,30 +171,30 @@
         done();
       });
     });
-    describe('deleteLabelledCollectionUsingDELETE', function() {
-      it('should call deleteLabelledCollectionUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteLabelledCollectionUsingDELETE
-        //instance.deleteLabelledCollectionUsingDELETE(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteLogisticCollectionUsingDELETE', function() {
-      it('should call deleteLogisticCollectionUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteLogisticCollectionUsingDELETE
-        //instance.deleteLogisticCollectionUsingDELETE(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteRoutingCollectionUsingDELETE', function() {
       it('should call deleteRoutingCollectionUsingDELETE successfully', function(done) {
         //uncomment below and update the code to test deleteRoutingCollectionUsingDELETE
         //instance.deleteRoutingCollectionUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteUsingDELETE', function() {
+      it('should call deleteUsingDELETE successfully', function(done) {
+        //uncomment below and update the code to test deleteUsingDELETE
+        //instance.deleteUsingDELETE(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteUsingDELETE1', function() {
+      it('should call deleteUsingDELETE1 successfully', function(done) {
+        //uncomment below and update the code to test deleteUsingDELETE1
+        //instance.deleteUsingDELETE1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -235,16 +235,6 @@
       it('should call findById4nUsingGET3 successfully', function(done) {
         //uncomment below and update the code to test findById4nUsingGET3
         //instance.findById4nUsingGET3(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('findByLabelUsingGET', function() {
-      it('should call findByLabelUsingGET successfully', function(done) {
-        //uncomment below and update the code to test findByLabelUsingGET
-        //instance.findByLabelUsingGET(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -351,10 +341,40 @@
         done();
       });
     });
-    describe('renameUsingPUT', function() {
-      it('should call renameUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test renameUsingPUT
-        //instance.renameUsingPUT(function(error) {
+    describe('updateUsingPUT', function() {
+      it('should call updateUsingPUT successfully', function(done) {
+        //uncomment below and update the code to test updateUsingPUT
+        //instance.updateUsingPUT(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateUsingPUT1', function() {
+      it('should call updateUsingPUT1 successfully', function(done) {
+        //uncomment below and update the code to test updateUsingPUT1
+        //instance.updateUsingPUT1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateUsingPUT2', function() {
+      it('should call updateUsingPUT2 successfully', function(done) {
+        //uncomment below and update the code to test updateUsingPUT2
+        //instance.updateUsingPUT2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateUsingPUT3', function() {
+      it('should call updateUsingPUT3 successfully', function(done) {
+        //uncomment below and update the code to test updateUsingPUT3
+        //instance.updateUsingPUT3(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

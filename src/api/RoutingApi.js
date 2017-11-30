@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/RoutingFile', 'model/RoutingFileRequest'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/ResponseEntity', 'model/RoutingFile', 'model/RoutingFileRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/RoutingFile'), require('../model/RoutingFileRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/ResponseEntity'), require('../model/RoutingFile'), require('../model/RoutingFileRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.RoutingApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.RoutingFile, root.Id4iApi.RoutingFileRequest);
+    root.Id4iApi.RoutingApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.ResponseEntity, root.Id4iApi.RoutingFile, root.Id4iApi.RoutingFileRequest);
   }
-}(this, function(ApiClient, ApiError, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, RoutingFile, RoutingFileRequest) {
+}(this, function(ApiClient, ApiError, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, ResponseEntity, RoutingFile, RoutingFileRequest) {
   'use strict';
 
   /**
@@ -58,7 +58,7 @@
 
     /**
      * Add element to routing collection
-     * @param {String} collectionGuid collectionGuid
+     * @param {String} collectionId4n collectionId4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -66,13 +66,13 @@
      * @param {module:api/RoutingApi~addElementsToRoutingCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Number'}
      */
-    this.addElementsToRoutingCollectionUsingPUT = function(collectionGuid, listOfGuids, opts, callback) {
+    this.addElementsToRoutingCollectionUsingPUT = function(collectionId4n, listOfGuids, opts, callback) {
       opts = opts || {};
       var postBody = listOfGuids;
 
-      // verify the required parameter 'collectionGuid' is set
-      if (collectionGuid === undefined || collectionGuid === null) {
-        throw new Error("Missing the required parameter 'collectionGuid' when calling addElementsToRoutingCollectionUsingPUT");
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementsToRoutingCollectionUsingPUT");
       }
 
       // verify the required parameter 'listOfGuids' is set
@@ -82,7 +82,7 @@
 
 
       var pathParams = {
-        'collectionGuid': collectionGuid
+        'collectionId4n': collectionId4n
       };
       var queryParams = {
       };
@@ -99,7 +99,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collections/routing/{collectionGuid}/elements', 'PUT',
+        '/api/v1/collections/routing/{collectionId4n}/elements', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -115,32 +115,32 @@
 
     /**
      * Add element to routing collection
-     * @param {String} collectionGuid collectionGuid
-     * @param {String} elementGuid elementGuid
+     * @param {String} collectionId4n collectionId4n
+     * @param {String} guid guid
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~addSingleElementToRoutingCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Number'}
      */
-    this.addSingleElementToRoutingCollectionUsingPUT = function(collectionGuid, elementGuid, opts, callback) {
+    this.addSingleElementToRoutingCollectionUsingPUT = function(collectionId4n, guid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'collectionGuid' is set
-      if (collectionGuid === undefined || collectionGuid === null) {
-        throw new Error("Missing the required parameter 'collectionGuid' when calling addSingleElementToRoutingCollectionUsingPUT");
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling addSingleElementToRoutingCollectionUsingPUT");
       }
 
-      // verify the required parameter 'elementGuid' is set
-      if (elementGuid === undefined || elementGuid === null) {
-        throw new Error("Missing the required parameter 'elementGuid' when calling addSingleElementToRoutingCollectionUsingPUT");
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling addSingleElementToRoutingCollectionUsingPUT");
       }
 
 
       var pathParams = {
-        'collectionGuid': collectionGuid,
-        'elementGuid': elementGuid
+        'collectionId4n': collectionId4n,
+        'guid': guid
       };
       var queryParams = {
       };
@@ -157,7 +157,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collections/routing/{collectionGuid}/elements/{elementGuid}', 'PUT',
+        '/api/v1/collections/routing/{collectionId4n}/elements/{guid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -377,7 +377,7 @@
 
     /**
      * Remove elements from routing collection
-     * @param {String} collectionGuid collectionGuid
+     * @param {String} collectionId4n collectionId4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -385,13 +385,13 @@
      * @param {module:api/RoutingApi~removeElementsFromRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Number'}
      */
-    this.removeElementsFromRoutingCollectionUsingDELETE = function(collectionGuid, listOfGuids, opts, callback) {
+    this.removeElementsFromRoutingCollectionUsingDELETE = function(collectionId4n, listOfGuids, opts, callback) {
       opts = opts || {};
       var postBody = listOfGuids;
 
-      // verify the required parameter 'collectionGuid' is set
-      if (collectionGuid === undefined || collectionGuid === null) {
-        throw new Error("Missing the required parameter 'collectionGuid' when calling removeElementsFromRoutingCollectionUsingDELETE");
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementsFromRoutingCollectionUsingDELETE");
       }
 
       // verify the required parameter 'listOfGuids' is set
@@ -401,7 +401,7 @@
 
 
       var pathParams = {
-        'collectionGuid': collectionGuid
+        'collectionId4n': collectionId4n
       };
       var queryParams = {
       };
@@ -418,7 +418,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collections/routing/{collectionGuid}/elements', 'DELETE',
+        '/api/v1/collections/routing/{collectionId4n}/elements', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -434,32 +434,32 @@
 
     /**
      * Remove element from routing collection
-     * @param {String} collectionGuid collectionGuid
-     * @param {String} elementGuid elementGuid
+     * @param {String} collectionId4n collectionId4n
+     * @param {String} guid guid
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~removeSingleElementFromRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Number'}
      */
-    this.removeSingleElementFromRoutingCollectionUsingDELETE = function(collectionGuid, elementGuid, opts, callback) {
+    this.removeSingleElementFromRoutingCollectionUsingDELETE = function(collectionId4n, guid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'collectionGuid' is set
-      if (collectionGuid === undefined || collectionGuid === null) {
-        throw new Error("Missing the required parameter 'collectionGuid' when calling removeSingleElementFromRoutingCollectionUsingDELETE");
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling removeSingleElementFromRoutingCollectionUsingDELETE");
       }
 
-      // verify the required parameter 'elementGuid' is set
-      if (elementGuid === undefined || elementGuid === null) {
-        throw new Error("Missing the required parameter 'elementGuid' when calling removeSingleElementFromRoutingCollectionUsingDELETE");
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling removeSingleElementFromRoutingCollectionUsingDELETE");
       }
 
 
       var pathParams = {
-        'collectionGuid': collectionGuid,
-        'elementGuid': elementGuid
+        'collectionId4n': collectionId4n,
+        'guid': guid
       };
       var queryParams = {
       };
@@ -476,7 +476,7 @@
       var returnType = 'Number';
 
       return this.apiClient.callApi(
-        '/api/v1/collections/routing/{collectionGuid}/elements/{elementGuid}', 'DELETE',
+        '/api/v1/collections/routing/{collectionId4n}/elements/{guid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -644,6 +644,63 @@
 
       return this.apiClient.callApi(
         '/api/v1/routingfiles/{id4n}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateUsingPUT3 operation.
+     * @callback module:api/RoutingApi~updateUsingPUT3Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update routing collection
+     * @param {String} id4n id4n
+     * @param {module:model/GuidCollection} request request
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/RoutingApi~updateUsingPUT3Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResponseEntity}
+     */
+    this.updateUsingPUT3 = function(id4n, request, opts, callback) {
+      opts = opts || {};
+      var postBody = request;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling updateUsingPUT3");
+      }
+
+      // verify the required parameter 'request' is set
+      if (request === undefined || request === null) {
+        throw new Error("Missing the required parameter 'request' when calling updateUsingPUT3");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ResponseEntity;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/routing/{id4n}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

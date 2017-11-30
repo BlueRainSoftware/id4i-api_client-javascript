@@ -161,6 +161,16 @@
         done();
       });
     });
+    describe('updateUsingPUT3', function() {
+      it('should call updateUsingPUT3 successfully', function(done) {
+        //uncomment below and update the code to test updateUsingPUT3
+        //instance.updateUsingPUT3(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

@@ -145,37 +145,39 @@ Class | Method | HTTP request | Description
 *Id4iApi.ApikeycontrollerApi* | [**setKeyActivationStatusUsingPUT**](docs/ApikeycontrollerApi.md#setKeyActivationStatusUsingPUT) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
 *Id4iApi.ApikeycontrollerApi* | [**showKeyUsingGET**](docs/ApikeycontrollerApi.md#showKeyUsingGET) | **GET** /api/v1/apikeys/{key} | Show apiKey
 *Id4iApi.ApikeyprivilegecontrollerApi* | [**listUsingGET1**](docs/ApikeyprivilegecontrollerApi.md#listUsingGET1) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
-*Id4iApi.CollectionsApi* | [**addElementsToCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements | Add elements to collection
-*Id4iApi.CollectionsApi* | [**addElementsToLabelledCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements | Add elements to labelled collection
-*Id4iApi.CollectionsApi* | [**addElementsToLogisticCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements | Add elements to logistic collection
-*Id4iApi.CollectionsApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | Add element to routing collection
-*Id4iApi.CollectionsApi* | [**addSingleElementToCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | Add element to collection
-*Id4iApi.CollectionsApi* | [**addSingleElementToLabelledCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | Add element to labelled collection
-*Id4iApi.CollectionsApi* | [**addSingleElementToLogisticCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | Add element to logistic collection
-*Id4iApi.CollectionsApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Add element to routing collection
+*Id4iApi.CollectionsApi* | [**addElementsToCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{id4n}/elements | Add elements to collection
+*Id4iApi.CollectionsApi* | [**addElementsToLabelledCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
+*Id4iApi.CollectionsApi* | [**addElementsToLogisticCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
+*Id4iApi.CollectionsApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
+*Id4iApi.CollectionsApi* | [**addSingleElementToCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
+*Id4iApi.CollectionsApi* | [**addSingleElementToLabelledCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
+*Id4iApi.CollectionsApi* | [**addSingleElementToLogisticCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
+*Id4iApi.CollectionsApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/CollectionsApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Add element to routing collection
 *Id4iApi.CollectionsApi* | [**createLabelledCollectionUsingPOST**](docs/CollectionsApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | Create labelled collection
 *Id4iApi.CollectionsApi* | [**createLogisticCollectionUsingPOST**](docs/CollectionsApi.md#createLogisticCollectionUsingPOST) | **POST** /api/v1/collections/logistic | Create logistic collection
 *Id4iApi.CollectionsApi* | [**createRoutingCollectionUsingPOST**](docs/CollectionsApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | Create routing collecton
 *Id4iApi.CollectionsApi* | [**deleteCollectionUsingDELETE**](docs/CollectionsApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | Delete collection
-*Id4iApi.CollectionsApi* | [**deleteLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#deleteLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
-*Id4iApi.CollectionsApi* | [**deleteLogisticCollectionUsingDELETE**](docs/CollectionsApi.md#deleteLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
 *Id4iApi.CollectionsApi* | [**deleteRoutingCollectionUsingDELETE**](docs/CollectionsApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
+*Id4iApi.CollectionsApi* | [**deleteUsingDELETE**](docs/CollectionsApi.md#deleteUsingDELETE) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
+*Id4iApi.CollectionsApi* | [**deleteUsingDELETE1**](docs/CollectionsApi.md#deleteUsingDELETE1) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
 *Id4iApi.CollectionsApi* | [**findById4nUsingGET**](docs/CollectionsApi.md#findById4nUsingGET) | **GET** /api/v1/collections/{id4n} | Find collection
 *Id4iApi.CollectionsApi* | [**findById4nUsingGET1**](docs/CollectionsApi.md#findById4nUsingGET1) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
 *Id4iApi.CollectionsApi* | [**findById4nUsingGET2**](docs/CollectionsApi.md#findById4nUsingGET2) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
 *Id4iApi.CollectionsApi* | [**findById4nUsingGET3**](docs/CollectionsApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
-*Id4iApi.CollectionsApi* | [**findByLabelUsingGET**](docs/CollectionsApi.md#findByLabelUsingGET) | **GET** /api/v1/collections/labelled/{organizationId}/{label} | Find labelled collection by label
 *Id4iApi.CollectionsApi* | [**getAllCollectionsOfOrganization**](docs/CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
 *Id4iApi.CollectionsApi* | [**listContentsUsingGET**](docs/CollectionsApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
-*Id4iApi.CollectionsApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements | Remove elements from collection
-*Id4iApi.CollectionsApi* | [**removeElementsFromLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements | Remove elements from labelled collection
-*Id4iApi.CollectionsApi* | [**removeElementsFromLogisticCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements | Remove elements from logistic collection
-*Id4iApi.CollectionsApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | Remove elements from routing collection
-*Id4iApi.CollectionsApi* | [**removeSingleElementFromCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{collectionGuid}/elements/{elementGuid} | Remove element from collection
-*Id4iApi.CollectionsApi* | [**removeSingleElementFromLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionGuid}/elements/{elementGuid} | Remove element from labelled collection
-*Id4iApi.CollectionsApi* | [**removeSingleElementFromLogisticCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionGuid}/elements/{elementId4n} | Remove element from logistic collection
-*Id4iApi.CollectionsApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Remove element from routing collection
-*Id4iApi.CollectionsApi* | [**renameUsingPUT**](docs/CollectionsApi.md#renameUsingPUT) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
+*Id4iApi.CollectionsApi* | [**removeElementsFromCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
+*Id4iApi.CollectionsApi* | [**removeElementsFromLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
+*Id4iApi.CollectionsApi* | [**removeElementsFromLogisticCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
+*Id4iApi.CollectionsApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/CollectionsApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
+*Id4iApi.CollectionsApi* | [**removeSingleElementFromCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
+*Id4iApi.CollectionsApi* | [**removeSingleElementFromLabelledCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
+*Id4iApi.CollectionsApi* | [**removeSingleElementFromLogisticCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
+*Id4iApi.CollectionsApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/CollectionsApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Remove element from routing collection
+*Id4iApi.CollectionsApi* | [**updateUsingPUT**](docs/CollectionsApi.md#updateUsingPUT) | **PUT** /api/v1/collections/{id4n} | Alter collection
+*Id4iApi.CollectionsApi* | [**updateUsingPUT1**](docs/CollectionsApi.md#updateUsingPUT1) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
+*Id4iApi.CollectionsApi* | [**updateUsingPUT2**](docs/CollectionsApi.md#updateUsingPUT2) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
+*Id4iApi.CollectionsApi* | [**updateUsingPUT3**](docs/CollectionsApi.md#updateUsingPUT3) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 *Id4iApi.GUIDsApi* | [**createUsingPOST1**](docs/GUIDsApi.md#createUsingPOST1) | **POST** /api/v1/guids | Create GUID(s)
 *Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about Id4i
@@ -202,17 +204,18 @@ Class | Method | HTTP request | Description
 *Id4iApi.PublicServicesApi* | [**forwardUsingGET**](docs/PublicServicesApi.md#forwardUsingGET) | **GET** /go/{guid} | Forward
 *Id4iApi.PublicServicesApi* | [**resolveHTMLUsingGET**](docs/PublicServicesApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
 *Id4iApi.PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
-*Id4iApi.RoutingApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements | Add element to routing collection
-*Id4iApi.RoutingApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Add element to routing collection
+*Id4iApi.RoutingApi* | [**addElementsToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
+*Id4iApi.RoutingApi* | [**addSingleElementToRoutingCollectionUsingPUT**](docs/RoutingApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Add element to routing collection
 *Id4iApi.RoutingApi* | [**createRoutingCollectionUsingPOST**](docs/RoutingApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | Create routing collecton
 *Id4iApi.RoutingApi* | [**deleteRoutingCollectionUsingDELETE**](docs/RoutingApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
 *Id4iApi.RoutingApi* | [**findById4nUsingGET3**](docs/RoutingApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
 *Id4iApi.RoutingApi* | [**forwardUsingGET**](docs/RoutingApi.md#forwardUsingGET) | **GET** /go/{guid} | Forward
-*Id4iApi.RoutingApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/RoutingApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements | Remove elements from routing collection
-*Id4iApi.RoutingApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/RoutingApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionGuid}/elements/{elementGuid} | Remove element from routing collection
+*Id4iApi.RoutingApi* | [**removeElementsFromRoutingCollectionUsingDELETE**](docs/RoutingApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
+*Id4iApi.RoutingApi* | [**removeSingleElementFromRoutingCollectionUsingDELETE**](docs/RoutingApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Remove element from routing collection
 *Id4iApi.RoutingApi* | [**retrieveCurrentParamsByTypeUsingGET**](docs/RoutingApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current params by type
 *Id4iApi.RoutingApi* | [**retrieveRoutingFileUsingGET**](docs/RoutingApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *Id4iApi.RoutingApi* | [**storeRoutingFileUsingPUT**](docs/RoutingApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
+*Id4iApi.RoutingApi* | [**updateUsingPUT3**](docs/RoutingApi.md#updateUsingPUT3) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 *Id4iApi.WhoIsApi* | [**resolveHTMLUsingGET**](docs/WhoIsApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
 
 
@@ -252,6 +255,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
  - [Id4iApi.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [Id4iApi.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
+ - [Id4iApi.ResponseEntity](docs/ResponseEntity.md)
  - [Id4iApi.Role](docs/Role.md)
  - [Id4iApi.RoleResponse](docs/RoleResponse.md)
  - [Id4iApi.Route](docs/Route.md)

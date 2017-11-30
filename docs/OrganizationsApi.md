@@ -358,7 +358,8 @@ var opts = {
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element. 
   'limit': 56, // Number | The maximum count of returned elements.
-  'type': "type_example" // String | type
+  'type': "type_example", // String | Filter by this type
+  'label': "label_example" // String | Filter by this label
 };
 
 var callback = function(error, data, response) {
@@ -380,7 +381,8 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element.  | [optional] 
  **limit** | **Number**| The maximum count of returned elements. | [optional] 
- **type** | **String**| type | [optional] 
+ **type** | **String**| Filter by this type | [optional] 
+ **label** | **String**| Filter by this label | [optional] 
 
 ### Return type
 
