@@ -41,7 +41,7 @@ Method | HTTP request | Description
 
 <a name="addElementsToCollectionUsingPUT"></a>
 # **addElementsToCollectionUsingPUT**
-> &#39;Number&#39; addElementsToCollectionUsingPUT(id4n, listOfGuids, opts)
+> ApiError addElementsToCollectionUsingPUT(id4n, listOfGuids, opts)
 
 Add elements to collection
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ No authorization required
 
 <a name="addElementsToLabelledCollectionUsingPUT"></a>
 # **addElementsToLabelledCollectionUsingPUT**
-> &#39;Number&#39; addElementsToLabelledCollectionUsingPUT(collectionId4n, listOfId4ns, opts)
+> ApiError addElementsToLabelledCollectionUsingPUT(collectionId4n, listOfGuids, opts)
 
 Add elements to labelled collection
 
@@ -106,7 +106,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 
 var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
-var listOfId4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfId4ns
+var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -120,7 +120,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToLabelledCollectionUsingPUT(collectionId4n, listOfId4ns, opts, callback);
+apiInstance.addElementsToLabelledCollectionUsingPUT(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -128,13 +128,13 @@ apiInstance.addElementsToLabelledCollectionUsingPUT(collectionId4n, listOfId4ns,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
- **listOfId4ns** | [**ListOfId4ns**](ListOfId4ns.md)| listOfId4ns | 
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ No authorization required
 
 <a name="addElementsToLogisticCollectionUsingPUT"></a>
 # **addElementsToLogisticCollectionUsingPUT**
-> &#39;Number&#39; addElementsToLogisticCollectionUsingPUT(collectionId4n, id4nList, opts)
+> ApiError addElementsToLogisticCollectionUsingPUT(collectionId4n, listOfGuids, opts)
 
 Add elements to logistic collection
 
@@ -159,7 +159,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 
 var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
-var id4nList = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4nList
+var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -173,7 +173,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToLogisticCollectionUsingPUT(collectionId4n, id4nList, opts, callback);
+apiInstance.addElementsToLogisticCollectionUsingPUT(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -181,13 +181,13 @@ apiInstance.addElementsToLogisticCollectionUsingPUT(collectionId4n, id4nList, op
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
- **id4nList** | [**ListOfId4ns**](ListOfId4ns.md)| id4nList | 
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ No authorization required
 
 <a name="addElementsToRoutingCollectionUsingPUT"></a>
 # **addElementsToRoutingCollectionUsingPUT**
-> &#39;Number&#39; addElementsToRoutingCollectionUsingPUT(collectionId4n, listOfGuids, opts)
+> ApiError addElementsToRoutingCollectionUsingPUT(collectionId4n, listOfGuids, opts)
 
 Add element to routing collection
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ No authorization required
 
 <a name="addSingleElementToCollectionUsingPUT"></a>
 # **addSingleElementToCollectionUsingPUT**
-> &#39;Number&#39; addSingleElementToCollectionUsingPUT(id4n, elementGuid, opts)
+> ApiError addSingleElementToCollectionUsingPUT(id4n, elementGuid, opts)
 
 Add element to collection
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ No authorization required
 
 <a name="addSingleElementToLabelledCollectionUsingPUT"></a>
 # **addSingleElementToLabelledCollectionUsingPUT**
-> &#39;Number&#39; addSingleElementToLabelledCollectionUsingPUT(collectionId4n, elementGuid, opts)
+> ApiError addSingleElementToLabelledCollectionUsingPUT(collectionId4n, elementGuid, opts)
 
 Add element to labelled collection
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -359,7 +359,7 @@ No authorization required
 
 <a name="addSingleElementToLogisticCollectionUsingPUT"></a>
 # **addSingleElementToLogisticCollectionUsingPUT**
-> &#39;Number&#39; addSingleElementToLogisticCollectionUsingPUT(collectionId4n, guid, opts)
+> ApiError addSingleElementToLogisticCollectionUsingPUT(collectionId4n, guid, opts)
 
 Add element to logistic collection
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ No authorization required
 
 <a name="addSingleElementToRoutingCollectionUsingPUT"></a>
 # **addSingleElementToRoutingCollectionUsingPUT**
-> &#39;Number&#39; addSingleElementToRoutingCollectionUsingPUT(collectionId4n, guid, opts)
+> ApiError addSingleElementToRoutingCollectionUsingPUT(collectionId4n, guid, opts)
 
 Add element to routing collection
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1129,7 +1129,7 @@ No authorization required
 
 <a name="removeElementsFromCollectionUsingDELETE"></a>
 # **removeElementsFromCollectionUsingDELETE**
-> &#39;Number&#39; removeElementsFromCollectionUsingDELETE(id4n, listOfGuids, opts)
+> ApiError removeElementsFromCollectionUsingDELETE(id4n, listOfGuids, opts)
 
 Remove elements from collection
 
@@ -1169,7 +1169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1182,7 +1182,7 @@ No authorization required
 
 <a name="removeElementsFromLabelledCollectionUsingDELETE"></a>
 # **removeElementsFromLabelledCollectionUsingDELETE**
-> &#39;Number&#39; removeElementsFromLabelledCollectionUsingDELETE(collectionId4n, listOfGuids, opts)
+> ApiError removeElementsFromLabelledCollectionUsingDELETE(collectionId4n, listOfGuids, opts)
 
 Remove elements from labelled collection
 
@@ -1222,7 +1222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1235,7 +1235,7 @@ No authorization required
 
 <a name="removeElementsFromLogisticCollectionUsingDELETE"></a>
 # **removeElementsFromLogisticCollectionUsingDELETE**
-> &#39;Number&#39; removeElementsFromLogisticCollectionUsingDELETE(collectionId4n, id4nlist, opts)
+> ApiError removeElementsFromLogisticCollectionUsingDELETE(collectionId4n, listofGuids, opts)
 
 Remove elements from logistic collection
 
@@ -1247,7 +1247,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 
 var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
-var id4nlist = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4nlist
+var listofGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listofGuids
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -1261,7 +1261,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromLogisticCollectionUsingDELETE(collectionId4n, id4nlist, opts, callback);
+apiInstance.removeElementsFromLogisticCollectionUsingDELETE(collectionId4n, listofGuids, opts, callback);
 ```
 
 ### Parameters
@@ -1269,13 +1269,13 @@ apiInstance.removeElementsFromLogisticCollectionUsingDELETE(collectionId4n, id4n
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
- **id4nlist** | [**ListOfId4ns**](ListOfId4ns.md)| id4nlist | 
+ **listofGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listofGuids | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1288,7 +1288,7 @@ No authorization required
 
 <a name="removeElementsFromRoutingCollectionUsingDELETE"></a>
 # **removeElementsFromRoutingCollectionUsingDELETE**
-> &#39;Number&#39; removeElementsFromRoutingCollectionUsingDELETE(collectionId4n, listOfGuids, opts)
+> ApiError removeElementsFromRoutingCollectionUsingDELETE(collectionId4n, listOfGuids, opts)
 
 Remove elements from routing collection
 
@@ -1328,7 +1328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1341,7 +1341,7 @@ No authorization required
 
 <a name="removeSingleElementFromCollectionUsingDELETE"></a>
 # **removeSingleElementFromCollectionUsingDELETE**
-> &#39;Number&#39; removeSingleElementFromCollectionUsingDELETE(id4n, elementGuid, opts)
+> ApiError removeSingleElementFromCollectionUsingDELETE(id4n, elementGuid, opts)
 
 Remove element from collection
 
@@ -1381,7 +1381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1394,7 +1394,7 @@ No authorization required
 
 <a name="removeSingleElementFromLabelledCollectionUsingDELETE"></a>
 # **removeSingleElementFromLabelledCollectionUsingDELETE**
-> &#39;Number&#39; removeSingleElementFromLabelledCollectionUsingDELETE(collectionId4n, elementGuid, opts)
+> ApiError removeSingleElementFromLabelledCollectionUsingDELETE(collectionId4n, elementGuid, opts)
 
 Remove element from labelled collection
 
@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1447,7 +1447,7 @@ No authorization required
 
 <a name="removeSingleElementFromLogisticCollectionUsingDELETE"></a>
 # **removeSingleElementFromLogisticCollectionUsingDELETE**
-> &#39;Number&#39; removeSingleElementFromLogisticCollectionUsingDELETE(collectionId4n, guid, opts)
+> ApiError removeSingleElementFromLogisticCollectionUsingDELETE(collectionId4n, guid, opts)
 
 Remove element from logistic collection
 
@@ -1487,7 +1487,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1500,7 +1500,7 @@ No authorization required
 
 <a name="removeSingleElementFromRoutingCollectionUsingDELETE"></a>
 # **removeSingleElementFromRoutingCollectionUsingDELETE**
-> &#39;Number&#39; removeSingleElementFromRoutingCollectionUsingDELETE(collectionId4n, guid, opts)
+> ApiError removeSingleElementFromRoutingCollectionUsingDELETE(collectionId4n, guid, opts)
 
 Remove element from routing collection
 
@@ -1540,7 +1540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 

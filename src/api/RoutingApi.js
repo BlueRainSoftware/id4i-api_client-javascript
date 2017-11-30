@@ -52,7 +52,7 @@
      * Callback function to receive the result of the addElementsToRoutingCollectionUsingPUT operation.
      * @callback module:api/RoutingApi~addElementsToRoutingCollectionUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {'Number'} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -64,7 +64,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~addElementsToRoutingCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'Number'}
+     * data is of type: {@link module:model/ApiError}
      */
     this.addElementsToRoutingCollectionUsingPUT = function(collectionId4n, listOfGuids, opts, callback) {
       opts = opts || {};
@@ -96,7 +96,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = 'Number';
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{collectionId4n}/elements', 'PUT',
@@ -109,7 +109,7 @@
      * Callback function to receive the result of the addSingleElementToRoutingCollectionUsingPUT operation.
      * @callback module:api/RoutingApi~addSingleElementToRoutingCollectionUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {'Number'} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -121,7 +121,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~addSingleElementToRoutingCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'Number'}
+     * data is of type: {@link module:model/ApiError}
      */
     this.addSingleElementToRoutingCollectionUsingPUT = function(collectionId4n, guid, opts, callback) {
       opts = opts || {};
@@ -154,7 +154,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = 'Number';
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{collectionId4n}/elements/{guid}', 'PUT',
@@ -371,7 +371,7 @@
      * Callback function to receive the result of the removeElementsFromRoutingCollectionUsingDELETE operation.
      * @callback module:api/RoutingApi~removeElementsFromRoutingCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {'Number'} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -383,7 +383,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~removeElementsFromRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'Number'}
+     * data is of type: {@link module:model/ApiError}
      */
     this.removeElementsFromRoutingCollectionUsingDELETE = function(collectionId4n, listOfGuids, opts, callback) {
       opts = opts || {};
@@ -415,7 +415,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = 'Number';
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{collectionId4n}/elements', 'DELETE',
@@ -428,7 +428,7 @@
      * Callback function to receive the result of the removeSingleElementFromRoutingCollectionUsingDELETE operation.
      * @callback module:api/RoutingApi~removeSingleElementFromRoutingCollectionUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {'Number'} data The data returned by the service call.
+     * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -440,7 +440,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/RoutingApi~removeSingleElementFromRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'Number'}
+     * data is of type: {@link module:model/ApiError}
      */
     this.removeSingleElementFromRoutingCollectionUsingDELETE = function(collectionId4n, guid, opts, callback) {
       opts = opts || {};
@@ -473,7 +473,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = 'Number';
+      var returnType = ApiError;
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{collectionId4n}/elements/{guid}', 'DELETE',

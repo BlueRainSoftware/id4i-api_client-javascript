@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addElementsToRoutingCollectionUsingPUT"></a>
 # **addElementsToRoutingCollectionUsingPUT**
-> &#39;Number&#39; addElementsToRoutingCollectionUsingPUT(collectionId4n, listOfGuids, opts)
+> ApiError addElementsToRoutingCollectionUsingPUT(collectionId4n, listOfGuids, opts)
 
 Add element to routing collection
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ No authorization required
 
 <a name="addSingleElementToRoutingCollectionUsingPUT"></a>
 # **addSingleElementToRoutingCollectionUsingPUT**
-> &#39;Number&#39; addSingleElementToRoutingCollectionUsingPUT(collectionId4n, guid, opts)
+> ApiError addSingleElementToRoutingCollectionUsingPUT(collectionId4n, guid, opts)
 
 Add element to routing collection
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -328,7 +328,7 @@ No authorization required
 
 <a name="removeElementsFromRoutingCollectionUsingDELETE"></a>
 # **removeElementsFromRoutingCollectionUsingDELETE**
-> &#39;Number&#39; removeElementsFromRoutingCollectionUsingDELETE(collectionId4n, listOfGuids, opts)
+> ApiError removeElementsFromRoutingCollectionUsingDELETE(collectionId4n, listOfGuids, opts)
 
 Remove elements from routing collection
 
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -381,7 +381,7 @@ No authorization required
 
 <a name="removeSingleElementFromRoutingCollectionUsingDELETE"></a>
 # **removeSingleElementFromRoutingCollectionUsingDELETE**
-> &#39;Number&#39; removeSingleElementFromRoutingCollectionUsingDELETE(collectionId4n, guid, opts)
+> ApiError removeSingleElementFromRoutingCollectionUsingDELETE(collectionId4n, guid, opts)
 
 Remove element from routing collection
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
