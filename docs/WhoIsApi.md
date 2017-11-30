@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**resolveHTMLUsingGET**](WhoIsApi.md#resolveHTMLUsingGET) | **GET** /whois/{id4n} | resolveHTML
+[**resolveWhoIsEntryUsingGET**](WhoIsApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
-<a name="resolveHTMLUsingGET"></a>
-# **resolveHTMLUsingGET**
-> &#39;String&#39; resolveHTMLUsingGET(id4n, opts)
+<a name="resolveWhoIsEntryUsingGET"></a>
+# **resolveWhoIsEntryUsingGET**
+> WhoIsResponse resolveWhoIsEntryUsingGET(id4n, opts)
 
-resolveHTML
+Resolve owner of id4n
 
 ### Example
 ```javascript
@@ -33,7 +33,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.resolveHTMLUsingGET(id4n, opts, callback);
+apiInstance.resolveWhoIsEntryUsingGET(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**WhoIsResponse**](WhoIsResponse.md)
 
 ### Authorization
 
@@ -55,5 +55,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, text/html, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
 

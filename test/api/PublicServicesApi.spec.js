@@ -61,20 +61,20 @@
         done();
       });
     });
-    describe('resolveHTMLUsingGET', function() {
-      it('should call resolveHTMLUsingGET successfully', function(done) {
-        //uncomment below and update the code to test resolveHTMLUsingGET
-        //instance.resolveHTMLUsingGET(function(error) {
+    describe('resolveImageUsingGET', function() {
+      it('should call resolveImageUsingGET successfully', function(done) {
+        //uncomment below and update the code to test resolveImageUsingGET
+        //instance.resolveImageUsingGET(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('resolveImageUsingGET', function() {
-      it('should call resolveImageUsingGET successfully', function(done) {
-        //uncomment below and update the code to test resolveImageUsingGET
-        //instance.resolveImageUsingGET(function(error) {
+    describe('resolveWhoIsEntryUsingGET', function() {
+      it('should call resolveWhoIsEntryUsingGET successfully', function(done) {
+        //uncomment below and update the code to test resolveWhoIsEntryUsingGET
+        //instance.resolveWhoIsEntryUsingGET(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
