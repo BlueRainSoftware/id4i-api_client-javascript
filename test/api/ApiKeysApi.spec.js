@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.OrganizationcontrollerApi();
+    instance = new Id4iApi.ApiKeysApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
       object[property] = value;
   }
 
-  describe('OrganizationcontrollerApi', function() {
-    describe('createOrganzationUsingPOST', function() {
-      it('should call createOrganzationUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createOrganzationUsingPOST
-        //instance.createOrganzationUsingPOST(function(error) {
+  describe('ApiKeysApi', function() {
+    describe('createNewApiKey', function() {
+      it('should call createNewApiKey successfully', function(done) {
+        //uncomment below and update the code to test createNewApiKey
+        //instance.createNewApiKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteOrganizationLogoUsingDELETE', function() {
-      it('should call deleteOrganizationLogoUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteOrganizationLogoUsingDELETE
-        //instance.deleteOrganizationLogoUsingDELETE(function(error) {
+    describe('deleteApiKey', function() {
+      it('should call deleteApiKey successfully', function(done) {
+        //uncomment below and update the code to test deleteApiKey
+        //instance.deleteApiKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteOrganizationUsingDELETE', function() {
-      it('should call deleteOrganizationUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteOrganizationUsingDELETE
-        //instance.deleteOrganizationUsingDELETE(function(error) {
+    describe('getApiKey', function() {
+      it('should call getApiKey successfully', function(done) {
+        //uncomment below and update the code to test getApiKey
+        //instance.getApiKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getOrganizationUsingGET', function() {
-      it('should call getOrganizationUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getOrganizationUsingGET
-        //instance.getOrganizationUsingGET(function(error) {
+    describe('listAllApiKeysOfOrganization', function() {
+      it('should call listAllApiKeysOfOrganization successfully', function(done) {
+        //uncomment below and update the code to test listAllApiKeysOfOrganization
+        //instance.listAllApiKeysOfOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('setOrganizationLogoUsingPOST', function() {
-      it('should call setOrganizationLogoUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test setOrganizationLogoUsingPOST
-        //instance.setOrganizationLogoUsingPOST(function(error) {
+    describe('listApiKeyPrivileges', function() {
+      it('should call listApiKeyPrivileges successfully', function(done) {
+        //uncomment below and update the code to test listApiKeyPrivileges
+        //instance.listApiKeyPrivileges(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateOrganizationUsingPUT', function() {
-      it('should call updateOrganizationUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test updateOrganizationUsingPUT
-        //instance.updateOrganizationUsingPUT(function(error) {
+    describe('setApiKeyActivationStatus', function() {
+      it('should call setApiKeyActivationStatus successfully', function(done) {
+        //uncomment below and update the code to test setApiKeyActivationStatus
+        //instance.setApiKeyActivationStatus(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

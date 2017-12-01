@@ -17,29 +17,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyPrivilegeResponse', 'model/ApiKeyStatus', 'model/PaginatedApiKeyResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ApiKeyCreationRequest'), require('../model/ApiKeyPresentation'), require('../model/ApiKeyPrivilegeResponse'), require('../model/ApiKeyStatus'), require('../model/PaginatedApiKeyResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.Id4ierrorcontrollerApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError);
+    root.Id4iApi.ApiKeysApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ApiKeyCreationRequest, root.Id4iApi.ApiKeyPresentation, root.Id4iApi.ApiKeyPrivilegeResponse, root.Id4iApi.ApiKeyStatus, root.Id4iApi.PaginatedApiKeyResponse);
   }
-}(this, function(ApiClient, ApiError) {
+}(this, function(ApiClient, ApiError, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyPrivilegeResponse, ApiKeyStatus, PaginatedApiKeyResponse) {
   'use strict';
 
   /**
-   * Id4ierrorcontroller service.
-   * @module api/Id4ierrorcontrollerApi
+   * ApiKeys service.
+   * @module api/ApiKeysApi
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new Id4ierrorcontrollerApi. 
-   * @alias module:api/Id4ierrorcontrollerApi
+   * Constructs a new ApiKeysApi. 
+   * @alias module:api/ApiKeysApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
@@ -49,24 +49,31 @@
 
 
     /**
-     * Callback function to receive the result of the errorUsingDELETE operation.
-     * @callback module:api/Id4ierrorcontrollerApi~errorUsingDELETECallback
+     * Callback function to receive the result of the createNewApiKey operation.
+     * @callback module:api/ApiKeysApi~createNewApiKeyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {module:model/ApiKeyPresentation} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * error
+     * Create apiKey
+     * Creation of a new apiKey.
+     * @param {module:model/ApiKeyCreationRequest} creationRequest ApiKey to be created.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/Id4ierrorcontrollerApi~errorUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
+     * @param {module:api/ApiKeysApi~createNewApiKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiKeyPresentation}
      */
-    this.errorUsingDELETE = function(opts, callback) {
+    this.createNewApiKey = function(creationRequest, opts, callback) {
       opts = opts || {};
-      var postBody = null;
+      var postBody = creationRequest;
+
+      // verify the required parameter 'creationRequest' is set
+      if (creationRequest === undefined || creationRequest === null) {
+        throw new Error("Missing the required parameter 'creationRequest' when calling createNewApiKey");
+      }
 
 
       var pathParams = {
@@ -83,37 +90,45 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
+      var returnType = ApiKeyPresentation;
 
       return this.apiClient.callApi(
-        '/error', 'DELETE',
+        '/api/v1/apikeys', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the errorUsingGET operation.
-     * @callback module:api/Id4ierrorcontrollerApi~errorUsingGETCallback
+     * Callback function to receive the result of the deleteApiKey operation.
+     * @callback module:api/ApiKeysApi~deleteApiKeyCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * error
+     * Delete apiKey
+     * Deletion of an apiKey.
+     * @param {String} key The apiKey to delete.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/Id4ierrorcontrollerApi~errorUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ApiKeysApi~deleteApiKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.errorUsingGET = function(opts, callback) {
+    this.deleteApiKey = function(key, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling deleteApiKey");
+      }
+
 
       var pathParams = {
+        'key': key
       };
       var queryParams = {
       };
@@ -130,34 +145,42 @@
       var returnType = ApiError;
 
       return this.apiClient.callApi(
-        '/error', 'GET',
+        '/api/v1/apikeys/{key}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the errorUsingHEAD operation.
-     * @callback module:api/Id4ierrorcontrollerApi~errorUsingHEADCallback
+     * Callback function to receive the result of the getApiKey operation.
+     * @callback module:api/ApiKeysApi~getApiKeyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {module:model/ApiKeyPresentation} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * error
+     * Show apiKey
+     * Showing the details of an apiKey.
+     * @param {String} key The apiKey to show.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/Id4ierrorcontrollerApi~errorUsingHEADCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
+     * @param {module:api/ApiKeysApi~getApiKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiKeyPresentation}
      */
-    this.errorUsingHEAD = function(opts, callback) {
+    this.getApiKey = function(key, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling getApiKey");
+      }
+
 
       var pathParams = {
+        'key': key
       };
       var queryParams = {
       };
@@ -171,39 +194,51 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
+      var returnType = ApiKeyPresentation;
 
       return this.apiClient.callApi(
-        '/error', 'HEAD',
+        '/api/v1/apikeys/{key}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the errorUsingOPTIONS operation.
-     * @callback module:api/Id4ierrorcontrollerApi~errorUsingOPTIONSCallback
+     * Callback function to receive the result of the listAllApiKeysOfOrganization operation.
+     * @callback module:api/ApiKeysApi~listAllApiKeysOfOrganizationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {module:model/PaginatedApiKeyResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * error
+     * Find apiKeys by organization
+     * Finding all apiKeys assigned to the specified organization in a paginated manner.
+     * @param {Number} organizationId The id of the organization to search in.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/Id4ierrorcontrollerApi~errorUsingOPTIONSCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/ApiKeysApi~listAllApiKeysOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedApiKeyResponse}
      */
-    this.errorUsingOPTIONS = function(opts, callback) {
+    this.listAllApiKeysOfOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling listAllApiKeysOfOrganization");
+      }
 
 
       var pathParams = {
       };
       var queryParams = {
+        'organizationId': organizationId,
+        'offset': opts['offset'],
+        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -215,32 +250,36 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
+      var returnType = PaginatedApiKeyResponse;
 
       return this.apiClient.callApi(
-        '/error', 'OPTIONS',
+        '/api/v1/apikeys', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the errorUsingPATCH operation.
-     * @callback module:api/Id4ierrorcontrollerApi~errorUsingPATCHCallback
+     * Callback function to receive the result of the listApiKeyPrivileges operation.
+     * @callback module:api/ApiKeysApi~listApiKeyPrivilegesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {module:model/ApiKeyPrivilegeResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * error
+     * List ApiKey privileges
+     * Listing api key privileges.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/Id4ierrorcontrollerApi~errorUsingPATCHCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
+     * @param {Boolean} opts.id4nConcerning id4nConcerning
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/ApiKeysApi~listApiKeyPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiKeyPrivilegeResponse}
      */
-    this.errorUsingPATCH = function(opts, callback) {
+    this.listApiKeyPrivileges = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
 
@@ -248,6 +287,9 @@
       var pathParams = {
       };
       var queryParams = {
+        'id4nConcerning': opts['id4nConcerning'],
+        'offset': opts['offset'],
+        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -259,37 +301,51 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
+      var returnType = ApiKeyPrivilegeResponse;
 
       return this.apiClient.callApi(
-        '/error', 'PATCH',
+        '/api/v1/apikeys/privileges', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the errorUsingPOST operation.
-     * @callback module:api/Id4ierrorcontrollerApi~errorUsingPOSTCallback
+     * Callback function to receive the result of the setApiKeyActivationStatus operation.
+     * @callback module:api/ApiKeysApi~setApiKeyActivationStatusCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * error
+     * Set apiKey activation state
+     * Setting the apiKey activation state.
+     * @param {String} key The apiKey to change the activation state.
+     * @param {module:model/ApiKeyStatus} apiKeyStatus Activation state to set.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/Id4ierrorcontrollerApi~errorUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ApiKeysApi~setApiKeyActivationStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.errorUsingPOST = function(opts, callback) {
+    this.setApiKeyActivationStatus = function(key, apiKeyStatus, opts, callback) {
       opts = opts || {};
-      var postBody = null;
+      var postBody = apiKeyStatus;
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling setApiKeyActivationStatus");
+      }
+
+      // verify the required parameter 'apiKeyStatus' is set
+      if (apiKeyStatus === undefined || apiKeyStatus === null) {
+        throw new Error("Missing the required parameter 'apiKeyStatus' when calling setApiKeyActivationStatus");
+      }
 
 
       var pathParams = {
+        'key': key
       };
       var queryParams = {
       };
@@ -306,51 +362,7 @@
       var returnType = ApiError;
 
       return this.apiClient.callApi(
-        '/error', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the errorUsingPUT operation.
-     * @callback module:api/Id4ierrorcontrollerApi~errorUsingPUTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * error
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/Id4ierrorcontrollerApi~errorUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.errorUsingPUT = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/error', 'PUT',
+        '/api/v1/apikeys/{key}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

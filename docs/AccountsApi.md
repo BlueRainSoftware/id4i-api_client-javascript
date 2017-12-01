@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**getOrganizationsUsingGET**](AccountsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 [**getUserRolesByUsernameUsingGET**](AccountsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | Get user roles by username
 [**getUsersUsingGET**](AccountsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | Find users in organization
-[**listUsingGET2**](AccountsApi.md#listUsingGET2) | **GET** /api/v1/roles | List roles
+[**listUsingGET**](AccountsApi.md#listUsingGET) | **GET** /api/v1/roles | List roles
 [**login**](AccountsApi.md#login) | **POST** /login | 
 [**registerUserUsingPOST**](AccountsApi.md#registerUserUsingPOST) | **POST** /account/registration | Register user
 [**removeMultipleUserRolesUsingDELETE**](AccountsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | Remove role(s) from user (model)
@@ -398,9 +398,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="listUsingGET2"></a>
-# **listUsingGET2**
-> RoleResponse listUsingGET2(opts)
+<a name="listUsingGET"></a>
+# **listUsingGET**
+> RoleResponse listUsingGET(opts)
 
 List roles
 
@@ -427,7 +427,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listUsingGET2(opts, callback);
+apiInstance.listUsingGET(opts, callback);
 ```
 
 ### Parameters

@@ -131,7 +131,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**getOrganizationsUsingGET**](docs/AccountsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 *Id4iApi.AccountsApi* | [**getUserRolesByUsernameUsingGET**](docs/AccountsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | Get user roles by username
 *Id4iApi.AccountsApi* | [**getUsersUsingGET**](docs/AccountsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | Find users in organization
-*Id4iApi.AccountsApi* | [**listUsingGET2**](docs/AccountsApi.md#listUsingGET2) | **GET** /api/v1/roles | List roles
+*Id4iApi.AccountsApi* | [**listUsingGET**](docs/AccountsApi.md#listUsingGET) | **GET** /api/v1/roles | List roles
 *Id4iApi.AccountsApi* | [**login**](docs/AccountsApi.md#login) | **POST** /login | 
 *Id4iApi.AccountsApi* | [**registerUserUsingPOST**](docs/AccountsApi.md#registerUserUsingPOST) | **POST** /account/registration | Register user
 *Id4iApi.AccountsApi* | [**removeMultipleUserRolesUsingDELETE**](docs/AccountsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | Remove role(s) from user (model)
@@ -139,12 +139,12 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**requestPasswordResetUsingPOST**](docs/AccountsApi.md#requestPasswordResetUsingPOST) | **POST** /account/password | Request password reset
 *Id4iApi.AccountsApi* | [**verifyPasswordResetUsingPUT**](docs/AccountsApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | Verify password reset
 *Id4iApi.AccountsApi* | [**verifyRegistrationUsingPOST**](docs/AccountsApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | Verify registration
-*Id4iApi.ApikeycontrollerApi* | [**createUsingPOST**](docs/ApikeycontrollerApi.md#createUsingPOST) | **POST** /api/v1/apikeys | Create apiKey
-*Id4iApi.ApikeycontrollerApi* | [**listUsingGET**](docs/ApikeycontrollerApi.md#listUsingGET) | **GET** /api/v1/apikeys | Find apiKeys by organization
-*Id4iApi.ApikeycontrollerApi* | [**removeKeyUsingDELETE**](docs/ApikeycontrollerApi.md#removeKeyUsingDELETE) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
-*Id4iApi.ApikeycontrollerApi* | [**setKeyActivationStatusUsingPUT**](docs/ApikeycontrollerApi.md#setKeyActivationStatusUsingPUT) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
-*Id4iApi.ApikeycontrollerApi* | [**showKeyUsingGET**](docs/ApikeycontrollerApi.md#showKeyUsingGET) | **GET** /api/v1/apikeys/{key} | Show apiKey
-*Id4iApi.ApikeyprivilegecontrollerApi* | [**listUsingGET1**](docs/ApikeyprivilegecontrollerApi.md#listUsingGET1) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
+*Id4iApi.ApiKeysApi* | [**createNewApiKey**](docs/ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create apiKey
+*Id4iApi.ApiKeysApi* | [**deleteApiKey**](docs/ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
+*Id4iApi.ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show apiKey
+*Id4iApi.ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find apiKeys by organization
+*Id4iApi.ApiKeysApi* | [**listApiKeyPrivileges**](docs/ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
+*Id4iApi.ApiKeysApi* | [**setApiKeyActivationStatus**](docs/ApiKeysApi.md#setApiKeyActivationStatus) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
 *Id4iApi.CollectionsApi* | [**addElementsToCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{id4n}/elements | Add elements to collection
 *Id4iApi.CollectionsApi* | [**addElementsToLabelledCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
 *Id4iApi.CollectionsApi* | [**addElementsToLogisticCollectionUsingPUT**](docs/CollectionsApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
@@ -178,7 +178,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectionsApi* | [**updateLabelledCollection**](docs/CollectionsApi.md#updateLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
 *Id4iApi.CollectionsApi* | [**updateLogisticCollection**](docs/CollectionsApi.md#updateLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *Id4iApi.CollectionsApi* | [**updateRoutingCollection**](docs/CollectionsApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
-*Id4iApi.GUIDsApi* | [**createUsingPOST1**](docs/GUIDsApi.md#createUsingPOST1) | **POST** /api/v1/guids | Create GUID(s)
+*Id4iApi.GUIDsApi* | [**createUsingPOST**](docs/GUIDsApi.md#createUsingPOST) | **POST** /api/v1/guids | Create GUID(s)
 *Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about Id4i
 *Id4iApi.OrganizationsApi* | [**addMultipleUserRolesUsingPOST**](docs/OrganizationsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | Add role(s) to user (model)
