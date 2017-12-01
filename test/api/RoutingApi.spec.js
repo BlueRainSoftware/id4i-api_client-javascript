@@ -91,10 +91,10 @@
         done();
       });
     });
-    describe('findById4nUsingGET3', function() {
-      it('should call findById4nUsingGET3 successfully', function(done) {
-        //uncomment below and update the code to test findById4nUsingGET3
-        //instance.findById4nUsingGET3(function(error) {
+    describe('findRoutingCollection', function() {
+      it('should call findRoutingCollection successfully', function(done) {
+        //uncomment below and update the code to test findRoutingCollection
+        //instance.findRoutingCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -161,10 +161,10 @@
         done();
       });
     });
-    describe('updateUsingPUT3', function() {
-      it('should call updateUsingPUT3 successfully', function(done) {
-        //uncomment below and update the code to test updateUsingPUT3
-        //instance.updateUsingPUT3(function(error) {
+    describe('updateRoutingCollection', function() {
+      it('should call updateRoutingCollection successfully', function(done) {
+        //uncomment below and update the code to test updateRoutingCollection
+        //instance.updateRoutingCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

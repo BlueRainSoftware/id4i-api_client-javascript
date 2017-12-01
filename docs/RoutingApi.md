@@ -8,14 +8,14 @@ Method | HTTP request | Description
 [**addSingleElementToRoutingCollectionUsingPUT**](RoutingApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Add element to routing collection
 [**createRoutingCollectionUsingPOST**](RoutingApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | Create routing collecton
 [**deleteRoutingCollectionUsingDELETE**](RoutingApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
-[**findById4nUsingGET3**](RoutingApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
+[**findRoutingCollection**](RoutingApi.md#findRoutingCollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
 [**forwardUsingGET**](RoutingApi.md#forwardUsingGET) | **GET** /go/{guid} | Forward
 [**removeElementsFromRoutingCollectionUsingDELETE**](RoutingApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
 [**removeSingleElementFromRoutingCollectionUsingDELETE**](RoutingApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Remove element from routing collection
 [**retrieveCurrentParamsByTypeUsingGET**](RoutingApi.md#retrieveCurrentParamsByTypeUsingGET) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current params by type
 [**retrieveRoutingFileUsingGET**](RoutingApi.md#retrieveRoutingFileUsingGET) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 [**storeRoutingFileUsingPUT**](RoutingApi.md#storeRoutingFileUsingPUT) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
-[**updateUsingPUT3**](RoutingApi.md#updateUsingPUT3) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**updateRoutingCollection**](RoutingApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 
 
 <a name="addElementsToRoutingCollectionUsingPUT"></a>
@@ -224,9 +224,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="findById4nUsingGET3"></a>
-# **findById4nUsingGET3**
-> GuidCollection findById4nUsingGET3(id4n, opts)
+<a name="findRoutingCollection"></a>
+# **findRoutingCollection**
+> GuidCollection findRoutingCollection(id4n, opts)
 
 Find routing collection
 
@@ -250,7 +250,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findById4nUsingGET3(id4n, opts, callback);
+apiInstance.findRoutingCollection(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -590,9 +590,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="updateUsingPUT3"></a>
-# **updateUsingPUT3**
-> ResponseEntity updateUsingPUT3(id4n, request, opts)
+<a name="updateRoutingCollection"></a>
+# **updateRoutingCollection**
+> ResponseEntity updateRoutingCollection(id4n, request, opts)
 
 Update routing collection
 
@@ -618,7 +618,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateUsingPUT3(id4n, request, opts, callback);
+apiInstance.updateRoutingCollection(id4n, request, opts, callback);
 ```
 
 ### Parameters

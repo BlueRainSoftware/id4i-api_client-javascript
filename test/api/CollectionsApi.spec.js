@@ -161,10 +161,30 @@
         done();
       });
     });
-    describe('deleteCollectionUsingDELETE', function() {
-      it('should call deleteCollectionUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteCollectionUsingDELETE
-        //instance.deleteCollectionUsingDELETE(function(error) {
+    describe('deleteCollection', function() {
+      it('should call deleteCollection successfully', function(done) {
+        //uncomment below and update the code to test deleteCollection
+        //instance.deleteCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteLabelledCollection', function() {
+      it('should call deleteLabelledCollection successfully', function(done) {
+        //uncomment below and update the code to test deleteLabelledCollection
+        //instance.deleteLabelledCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteLogisticCollection', function() {
+      it('should call deleteLogisticCollection successfully', function(done) {
+        //uncomment below and update the code to test deleteLogisticCollection
+        //instance.deleteLogisticCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -181,60 +201,40 @@
         done();
       });
     });
-    describe('deleteUsingDELETE', function() {
-      it('should call deleteUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteUsingDELETE
-        //instance.deleteUsingDELETE(function(error) {
+    describe('findCollection', function() {
+      it('should call findCollection successfully', function(done) {
+        //uncomment below and update the code to test findCollection
+        //instance.findCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteUsingDELETE1', function() {
-      it('should call deleteUsingDELETE1 successfully', function(done) {
-        //uncomment below and update the code to test deleteUsingDELETE1
-        //instance.deleteUsingDELETE1(function(error) {
+    describe('findLabelledCollection', function() {
+      it('should call findLabelledCollection successfully', function(done) {
+        //uncomment below and update the code to test findLabelledCollection
+        //instance.findLabelledCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('findById4nUsingGET', function() {
-      it('should call findById4nUsingGET successfully', function(done) {
-        //uncomment below and update the code to test findById4nUsingGET
-        //instance.findById4nUsingGET(function(error) {
+    describe('findLogisticCollection', function() {
+      it('should call findLogisticCollection successfully', function(done) {
+        //uncomment below and update the code to test findLogisticCollection
+        //instance.findLogisticCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('findById4nUsingGET1', function() {
-      it('should call findById4nUsingGET1 successfully', function(done) {
-        //uncomment below and update the code to test findById4nUsingGET1
-        //instance.findById4nUsingGET1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('findById4nUsingGET2', function() {
-      it('should call findById4nUsingGET2 successfully', function(done) {
-        //uncomment below and update the code to test findById4nUsingGET2
-        //instance.findById4nUsingGET2(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('findById4nUsingGET3', function() {
-      it('should call findById4nUsingGET3 successfully', function(done) {
-        //uncomment below and update the code to test findById4nUsingGET3
-        //instance.findById4nUsingGET3(function(error) {
+    describe('findRoutingCollection', function() {
+      it('should call findRoutingCollection successfully', function(done) {
+        //uncomment below and update the code to test findRoutingCollection
+        //instance.findRoutingCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -341,40 +341,40 @@
         done();
       });
     });
-    describe('updateUsingPUT', function() {
-      it('should call updateUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test updateUsingPUT
-        //instance.updateUsingPUT(function(error) {
+    describe('updateCollection', function() {
+      it('should call updateCollection successfully', function(done) {
+        //uncomment below and update the code to test updateCollection
+        //instance.updateCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateUsingPUT1', function() {
-      it('should call updateUsingPUT1 successfully', function(done) {
-        //uncomment below and update the code to test updateUsingPUT1
-        //instance.updateUsingPUT1(function(error) {
+    describe('updateLabelledCollection', function() {
+      it('should call updateLabelledCollection successfully', function(done) {
+        //uncomment below and update the code to test updateLabelledCollection
+        //instance.updateLabelledCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateUsingPUT2', function() {
-      it('should call updateUsingPUT2 successfully', function(done) {
-        //uncomment below and update the code to test updateUsingPUT2
-        //instance.updateUsingPUT2(function(error) {
+    describe('updateLogisticCollection', function() {
+      it('should call updateLogisticCollection successfully', function(done) {
+        //uncomment below and update the code to test updateLogisticCollection
+        //instance.updateLogisticCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateUsingPUT3', function() {
-      it('should call updateUsingPUT3 successfully', function(done) {
-        //uncomment below and update the code to test updateUsingPUT3
-        //instance.updateUsingPUT3(function(error) {
+    describe('updateRoutingCollection', function() {
+      it('should call updateRoutingCollection successfully', function(done) {
+        //uncomment below and update the code to test updateRoutingCollection
+        //instance.updateRoutingCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

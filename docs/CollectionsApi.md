@@ -15,14 +15,14 @@ Method | HTTP request | Description
 [**createLabelledCollectionUsingPOST**](CollectionsApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | Create labelled collection
 [**createLogisticCollectionUsingPOST**](CollectionsApi.md#createLogisticCollectionUsingPOST) | **POST** /api/v1/collections/logistic | Create logistic collection
 [**createRoutingCollectionUsingPOST**](CollectionsApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | Create routing collecton
-[**deleteCollectionUsingDELETE**](CollectionsApi.md#deleteCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n} | Delete collection
+[**deleteCollection**](CollectionsApi.md#deleteCollection) | **DELETE** /api/v1/collections/{id4n} | Delete collection
+[**deleteLabelledCollection**](CollectionsApi.md#deleteLabelledCollection) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
+[**deleteLogisticCollection**](CollectionsApi.md#deleteLogisticCollection) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
 [**deleteRoutingCollectionUsingDELETE**](CollectionsApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
-[**deleteUsingDELETE**](CollectionsApi.md#deleteUsingDELETE) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
-[**deleteUsingDELETE1**](CollectionsApi.md#deleteUsingDELETE1) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
-[**findById4nUsingGET**](CollectionsApi.md#findById4nUsingGET) | **GET** /api/v1/collections/{id4n} | Find collection
-[**findById4nUsingGET1**](CollectionsApi.md#findById4nUsingGET1) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
-[**findById4nUsingGET2**](CollectionsApi.md#findById4nUsingGET2) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
-[**findById4nUsingGET3**](CollectionsApi.md#findById4nUsingGET3) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
+[**findCollection**](CollectionsApi.md#findCollection) | **GET** /api/v1/collections/{id4n} | Find collection
+[**findLabelledCollection**](CollectionsApi.md#findLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
+[**findLogisticCollection**](CollectionsApi.md#findLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
+[**findRoutingCollection**](CollectionsApi.md#findRoutingCollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
 [**getAllCollectionsOfOrganization**](CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
 [**listContentsUsingGET**](CollectionsApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
 [**removeElementsFromCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
@@ -33,10 +33,10 @@ Method | HTTP request | Description
 [**removeSingleElementFromLabelledCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
 [**removeSingleElementFromLogisticCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
 [**removeSingleElementFromRoutingCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Remove element from routing collection
-[**updateUsingPUT**](CollectionsApi.md#updateUsingPUT) | **PUT** /api/v1/collections/{id4n} | Alter collection
-[**updateUsingPUT1**](CollectionsApi.md#updateUsingPUT1) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
-[**updateUsingPUT2**](CollectionsApi.md#updateUsingPUT2) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
-[**updateUsingPUT3**](CollectionsApi.md#updateUsingPUT3) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**updateCollection**](CollectionsApi.md#updateCollection) | **PUT** /api/v1/collections/{id4n} | Alter collection
+[**updateLabelledCollection**](CollectionsApi.md#updateLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
+[**updateLogisticCollection**](CollectionsApi.md#updateLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
+[**updateRoutingCollection**](CollectionsApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 
 
 <a name="addElementsToCollectionUsingPUT"></a>
@@ -613,9 +613,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="deleteCollectionUsingDELETE"></a>
-# **deleteCollectionUsingDELETE**
-> ApiError deleteCollectionUsingDELETE(id4n, opts)
+<a name="deleteCollection"></a>
+# **deleteCollection**
+> ApiError deleteCollection(id4n, opts)
 
 Delete collection
 
@@ -639,7 +639,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteCollectionUsingDELETE(id4n, opts, callback);
+apiInstance.deleteCollection(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -653,6 +653,106 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="deleteLabelledCollection"></a>
+# **deleteLabelledCollection**
+> ApiError deleteLabelledCollection(id4n, opts)
+
+Delete labelled collection
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.deleteLabelledCollection(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="deleteLogisticCollection"></a>
+# **deleteLogisticCollection**
+> ResponseEntity deleteLogisticCollection(id4n, opts)
+
+Delete logistic collection
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.deleteLogisticCollection(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -713,109 +813,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="deleteUsingDELETE"></a>
-# **deleteUsingDELETE**
-> ApiError deleteUsingDELETE(id4n, opts)
-
-Delete labelled collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.deleteUsingDELETE(id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="deleteUsingDELETE1"></a>
-# **deleteUsingDELETE1**
-> ResponseEntity deleteUsingDELETE1(id4n, opts)
-
-Delete logistic collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.deleteUsingDELETE1(id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ResponseEntity**](ResponseEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="findById4nUsingGET"></a>
-# **findById4nUsingGET**
-> GuidCollection findById4nUsingGET(id4n, opts)
+<a name="findCollection"></a>
+# **findCollection**
+> GuidCollection findCollection(id4n, opts)
 
 Find collection
 
@@ -839,7 +839,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findById4nUsingGET(id4n, opts, callback);
+apiInstance.findCollection(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -863,9 +863,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="findById4nUsingGET1"></a>
-# **findById4nUsingGET1**
-> GuidCollection findById4nUsingGET1(id4n, opts)
+<a name="findLabelledCollection"></a>
+# **findLabelledCollection**
+> GuidCollection findLabelledCollection(id4n, opts)
 
 Find labelled collection
 
@@ -889,7 +889,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findById4nUsingGET1(id4n, opts, callback);
+apiInstance.findLabelledCollection(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -913,9 +913,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="findById4nUsingGET2"></a>
-# **findById4nUsingGET2**
-> GuidCollection findById4nUsingGET2(id4n, opts)
+<a name="findLogisticCollection"></a>
+# **findLogisticCollection**
+> GuidCollection findLogisticCollection(id4n, opts)
 
 Find logistic collection
 
@@ -939,7 +939,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findById4nUsingGET2(id4n, opts, callback);
+apiInstance.findLogisticCollection(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -963,9 +963,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="findById4nUsingGET3"></a>
-# **findById4nUsingGET3**
-> GuidCollection findById4nUsingGET3(id4n, opts)
+<a name="findRoutingCollection"></a>
+# **findRoutingCollection**
+> GuidCollection findRoutingCollection(id4n, opts)
 
 Find routing collection
 
@@ -989,7 +989,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findById4nUsingGET3(id4n, opts, callback);
+apiInstance.findRoutingCollection(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -1551,9 +1551,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="updateUsingPUT"></a>
-# **updateUsingPUT**
-> ResponseEntity updateUsingPUT(id4n, request, opts)
+<a name="updateCollection"></a>
+# **updateCollection**
+> ResponseEntity updateCollection(id4n, request, opts)
 
 Alter collection
 
@@ -1579,7 +1579,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateUsingPUT(id4n, request, opts, callback);
+apiInstance.updateCollection(id4n, request, opts, callback);
 ```
 
 ### Parameters
@@ -1604,9 +1604,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="updateUsingPUT1"></a>
-# **updateUsingPUT1**
-> ResponseEntity updateUsingPUT1(id4n, request, opts)
+<a name="updateLabelledCollection"></a>
+# **updateLabelledCollection**
+> ResponseEntity updateLabelledCollection(id4n, request, opts)
 
 Rename labelled collection
 
@@ -1632,7 +1632,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateUsingPUT1(id4n, request, opts, callback);
+apiInstance.updateLabelledCollection(id4n, request, opts, callback);
 ```
 
 ### Parameters
@@ -1657,9 +1657,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="updateUsingPUT2"></a>
-# **updateUsingPUT2**
-> ResponseEntity updateUsingPUT2(id4n, request, opts)
+<a name="updateLogisticCollection"></a>
+# **updateLogisticCollection**
+> ResponseEntity updateLogisticCollection(id4n, request, opts)
 
 Update logistic collection
 
@@ -1685,7 +1685,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateUsingPUT2(id4n, request, opts, callback);
+apiInstance.updateLogisticCollection(id4n, request, opts, callback);
 ```
 
 ### Parameters
@@ -1710,9 +1710,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="updateUsingPUT3"></a>
-# **updateUsingPUT3**
-> ResponseEntity updateUsingPUT3(id4n, request, opts)
+<a name="updateRoutingCollection"></a>
+# **updateRoutingCollection**
+> ResponseEntity updateRoutingCollection(id4n, request, opts)
 
 Update routing collection
 
@@ -1738,7 +1738,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateUsingPUT3(id4n, request, opts, callback);
+apiInstance.updateRoutingCollection(id4n, request, opts, callback);
 ```
 
 ### Parameters

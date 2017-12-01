@@ -265,8 +265,8 @@
     }
 
     /**
-     * Callback function to receive the result of the findById4nUsingGET3 operation.
-     * @callback module:api/RoutingApi~findById4nUsingGET3Callback
+     * Callback function to receive the result of the findRoutingCollection operation.
+     * @callback module:api/RoutingApi~findRoutingCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -278,16 +278,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/RoutingApi~findById4nUsingGET3Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/RoutingApi~findRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GuidCollection}
      */
-    this.findById4nUsingGET3 = function(id4n, opts, callback) {
+    this.findRoutingCollection = function(id4n, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling findById4nUsingGET3");
+        throw new Error("Missing the required parameter 'id4n' when calling findRoutingCollection");
       }
 
 
@@ -650,8 +650,8 @@
     }
 
     /**
-     * Callback function to receive the result of the updateUsingPUT3 operation.
-     * @callback module:api/RoutingApi~updateUsingPUT3Callback
+     * Callback function to receive the result of the updateRoutingCollection operation.
+     * @callback module:api/RoutingApi~updateRoutingCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ResponseEntity} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -664,21 +664,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/RoutingApi~updateUsingPUT3Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/RoutingApi~updateRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResponseEntity}
      */
-    this.updateUsingPUT3 = function(id4n, request, opts, callback) {
+    this.updateRoutingCollection = function(id4n, request, opts, callback) {
       opts = opts || {};
       var postBody = request;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling updateUsingPUT3");
+        throw new Error("Missing the required parameter 'id4n' when calling updateRoutingCollection");
       }
 
       // verify the required parameter 'request' is set
       if (request === undefined || request === null) {
-        throw new Error("Missing the required parameter 'request' when calling updateUsingPUT3");
+        throw new Error("Missing the required parameter 'request' when calling updateRoutingCollection");
       }
 
 
