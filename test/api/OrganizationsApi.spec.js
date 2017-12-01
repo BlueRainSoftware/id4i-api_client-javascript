@@ -51,60 +51,70 @@
   }
 
   describe('OrganizationsApi', function() {
-    describe('addMultipleUserRolesUsingPOST', function() {
-      it('should call addMultipleUserRolesUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test addMultipleUserRolesUsingPOST
-        //instance.addMultipleUserRolesUsingPOST(function(error) {
+    describe('createOrganization', function() {
+      it('should call createOrganization successfully', function(done) {
+        //uncomment below and update the code to test createOrganization
+        //instance.createOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('addUserRolesUsingPOST', function() {
-      it('should call addUserRolesUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test addUserRolesUsingPOST
-        //instance.addUserRolesUsingPOST(function(error) {
+    describe('deleteOrganization', function() {
+      it('should call deleteOrganization successfully', function(done) {
+        //uncomment below and update the code to test deleteOrganization
+        //instance.deleteOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createOrganzationUsingPOST', function() {
-      it('should call createOrganzationUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createOrganzationUsingPOST
-        //instance.createOrganzationUsingPOST(function(error) {
+    describe('deleteOrganizationBillingAddress', function() {
+      it('should call deleteOrganizationBillingAddress successfully', function(done) {
+        //uncomment below and update the code to test deleteOrganizationBillingAddress
+        //instance.deleteOrganizationBillingAddress(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteOrganizationLogoUsingDELETE', function() {
-      it('should call deleteOrganizationLogoUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteOrganizationLogoUsingDELETE
-        //instance.deleteOrganizationLogoUsingDELETE(function(error) {
+    describe('deleteOrganizationLogo', function() {
+      it('should call deleteOrganizationLogo successfully', function(done) {
+        //uncomment below and update the code to test deleteOrganizationLogo
+        //instance.deleteOrganizationLogo(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteOrganizationUsingDELETE', function() {
-      it('should call deleteOrganizationUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteOrganizationUsingDELETE
-        //instance.deleteOrganizationUsingDELETE(function(error) {
+    describe('findOrganization', function() {
+      it('should call findOrganization successfully', function(done) {
+        //uncomment below and update the code to test findOrganization
+        //instance.findOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getAddressUsingGET', function() {
-      it('should call getAddressUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getAddressUsingGET
-        //instance.getAddressUsingGET(function(error) {
+    describe('findOrganizationAddress', function() {
+      it('should call findOrganizationAddress successfully', function(done) {
+        //uncomment below and update the code to test findOrganizationAddress
+        //instance.findOrganizationAddress(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('findOrganizationBillingAddress', function() {
+      it('should call findOrganizationBillingAddress successfully', function(done) {
+        //uncomment below and update the code to test findOrganizationBillingAddress
+        //instance.findOrganizationBillingAddress(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -121,130 +131,100 @@
         done();
       });
     });
-    describe('getBillingAddressUsingGET', function() {
-      it('should call getBillingAddressUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getBillingAddressUsingGET
-        //instance.getBillingAddressUsingGET(function(error) {
+    describe('getAllOrganizationRoles', function() {
+      it('should call getAllOrganizationRoles successfully', function(done) {
+        //uncomment below and update the code to test getAllOrganizationRoles
+        //instance.getAllOrganizationRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getMultipleUserRolesUsingGET', function() {
-      it('should call getMultipleUserRolesUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getMultipleUserRolesUsingGET
-        //instance.getMultipleUserRolesUsingGET(function(error) {
+    describe('getOrganizationsOfUser', function() {
+      it('should call getOrganizationsOfUser successfully', function(done) {
+        //uncomment below and update the code to test getOrganizationsOfUser
+        //instance.getOrganizationsOfUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getOrganizationUsingGET', function() {
-      it('should call getOrganizationUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getOrganizationUsingGET
-        //instance.getOrganizationUsingGET(function(error) {
+    describe('getUserRoles', function() {
+      it('should call getUserRoles successfully', function(done) {
+        //uncomment below and update the code to test getUserRoles
+        //instance.getUserRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getOrganizationsUsingGET', function() {
-      it('should call getOrganizationsUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getOrganizationsUsingGET
-        //instance.getOrganizationsUsingGET(function(error) {
+    describe('getUsersOfOrganization', function() {
+      it('should call getUsersOfOrganization successfully', function(done) {
+        //uncomment below and update the code to test getUsersOfOrganization
+        //instance.getUsersOfOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getUserRolesByUsernameUsingGET', function() {
-      it('should call getUserRolesByUsernameUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getUserRolesByUsernameUsingGET
-        //instance.getUserRolesByUsernameUsingGET(function(error) {
+    describe('removeUserRoles', function() {
+      it('should call removeUserRoles successfully', function(done) {
+        //uncomment below and update the code to test removeUserRoles
+        //instance.removeUserRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getUsersUsingGET', function() {
-      it('should call getUsersUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getUsersUsingGET
-        //instance.getUsersUsingGET(function(error) {
+    describe('updateOrganization', function() {
+      it('should call updateOrganization successfully', function(done) {
+        //uncomment below and update the code to test updateOrganization
+        //instance.updateOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeBillingAddressUsingDELETE', function() {
-      it('should call removeBillingAddressUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test removeBillingAddressUsingDELETE
-        //instance.removeBillingAddressUsingDELETE(function(error) {
+    describe('updateOrganizationAddress', function() {
+      it('should call updateOrganizationAddress successfully', function(done) {
+        //uncomment below and update the code to test updateOrganizationAddress
+        //instance.updateOrganizationAddress(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeMultipleUserRolesUsingDELETE', function() {
-      it('should call removeMultipleUserRolesUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test removeMultipleUserRolesUsingDELETE
-        //instance.removeMultipleUserRolesUsingDELETE(function(error) {
+    describe('updateOrganizationBillingAddress', function() {
+      it('should call updateOrganizationBillingAddress successfully', function(done) {
+        //uncomment below and update the code to test updateOrganizationBillingAddress
+        //instance.updateOrganizationBillingAddress(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeUserRolesUsingDELETE', function() {
-      it('should call removeUserRolesUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test removeUserRolesUsingDELETE
-        //instance.removeUserRolesUsingDELETE(function(error) {
+    describe('updateOrganizationLogo', function() {
+      it('should call updateOrganizationLogo successfully', function(done) {
+        //uncomment below and update the code to test updateOrganizationLogo
+        //instance.updateOrganizationLogo(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('setOrganizationLogoUsingPOST', function() {
-      it('should call setOrganizationLogoUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test setOrganizationLogoUsingPOST
-        //instance.setOrganizationLogoUsingPOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('storeAddressUsingPOST', function() {
-      it('should call storeAddressUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test storeAddressUsingPOST
-        //instance.storeAddressUsingPOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('storeBillingAddressUsingPOST', function() {
-      it('should call storeBillingAddressUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test storeBillingAddressUsingPOST
-        //instance.storeBillingAddressUsingPOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateOrganizationUsingPUT', function() {
-      it('should call updateOrganizationUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test updateOrganizationUsingPUT
-        //instance.updateOrganizationUsingPUT(function(error) {
+    describe('updateUserRoles', function() {
+      it('should call updateUserRoles successfully', function(done) {
+        //uncomment below and update the code to test updateUserRoles
+        //instance.updateUserRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

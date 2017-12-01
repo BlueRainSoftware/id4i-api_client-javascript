@@ -49,236 +49,8 @@
 
 
     /**
-     * Callback function to receive the result of the addElementsToCollectionUsingPUT operation.
-     * @callback module:api/CollectionsApi~addElementsToCollectionUsingPUTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add elements to collection
-     * @param {String} id4n id4n
-     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~addElementsToCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.addElementsToCollectionUsingPUT = function(id4n, listOfGuids, opts, callback) {
-      opts = opts || {};
-      var postBody = listOfGuids;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling addElementsToCollectionUsingPUT");
-      }
-
-      // verify the required parameter 'listOfGuids' is set
-      if (listOfGuids === undefined || listOfGuids === null) {
-        throw new Error("Missing the required parameter 'listOfGuids' when calling addElementsToCollectionUsingPUT");
-      }
-
-
-      var pathParams = {
-        'id4n': id4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/elements', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addElementsToLabelledCollectionUsingPUT operation.
-     * @callback module:api/CollectionsApi~addElementsToLabelledCollectionUsingPUTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add elements to labelled collection
-     * @param {String} collectionId4n collectionId4n
-     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~addElementsToLabelledCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.addElementsToLabelledCollectionUsingPUT = function(collectionId4n, listOfGuids, opts, callback) {
-      opts = opts || {};
-      var postBody = listOfGuids;
-
-      // verify the required parameter 'collectionId4n' is set
-      if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementsToLabelledCollectionUsingPUT");
-      }
-
-      // verify the required parameter 'listOfGuids' is set
-      if (listOfGuids === undefined || listOfGuids === null) {
-        throw new Error("Missing the required parameter 'listOfGuids' when calling addElementsToLabelledCollectionUsingPUT");
-      }
-
-
-      var pathParams = {
-        'collectionId4n': collectionId4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/labelled/{collectionId4n}/elements', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addElementsToLogisticCollectionUsingPUT operation.
-     * @callback module:api/CollectionsApi~addElementsToLogisticCollectionUsingPUTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add elements to logistic collection
-     * @param {String} collectionId4n collectionId4n
-     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~addElementsToLogisticCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.addElementsToLogisticCollectionUsingPUT = function(collectionId4n, listOfGuids, opts, callback) {
-      opts = opts || {};
-      var postBody = listOfGuids;
-
-      // verify the required parameter 'collectionId4n' is set
-      if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementsToLogisticCollectionUsingPUT");
-      }
-
-      // verify the required parameter 'listOfGuids' is set
-      if (listOfGuids === undefined || listOfGuids === null) {
-        throw new Error("Missing the required parameter 'listOfGuids' when calling addElementsToLogisticCollectionUsingPUT");
-      }
-
-
-      var pathParams = {
-        'collectionId4n': collectionId4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/logistic/{collectionId4n}/elements', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addElementsToRoutingCollectionUsingPUT operation.
-     * @callback module:api/CollectionsApi~addElementsToRoutingCollectionUsingPUTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add element to routing collection
-     * @param {String} collectionId4n collectionId4n
-     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~addElementsToRoutingCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.addElementsToRoutingCollectionUsingPUT = function(collectionId4n, listOfGuids, opts, callback) {
-      opts = opts || {};
-      var postBody = listOfGuids;
-
-      // verify the required parameter 'collectionId4n' is set
-      if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementsToRoutingCollectionUsingPUT");
-      }
-
-      // verify the required parameter 'listOfGuids' is set
-      if (listOfGuids === undefined || listOfGuids === null) {
-        throw new Error("Missing the required parameter 'listOfGuids' when calling addElementsToRoutingCollectionUsingPUT");
-      }
-
-
-      var pathParams = {
-        'collectionId4n': collectionId4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/routing/{collectionId4n}/elements', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addSingleElementToCollectionUsingPUT operation.
-     * @callback module:api/CollectionsApi~addSingleElementToCollectionUsingPUTCallback
+     * Callback function to receive the result of the addElementToCollection operation.
+     * @callback module:api/CollectionsApi~addElementToCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -291,21 +63,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~addSingleElementToCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~addElementToCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.addSingleElementToCollectionUsingPUT = function(id4n, elementGuid, opts, callback) {
+    this.addElementToCollection = function(id4n, elementGuid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling addSingleElementToCollectionUsingPUT");
+        throw new Error("Missing the required parameter 'id4n' when calling addElementToCollection");
       }
 
       // verify the required parameter 'elementGuid' is set
       if (elementGuid === undefined || elementGuid === null) {
-        throw new Error("Missing the required parameter 'elementGuid' when calling addSingleElementToCollectionUsingPUT");
+        throw new Error("Missing the required parameter 'elementGuid' when calling addElementToCollection");
       }
 
 
@@ -335,8 +107,8 @@
     }
 
     /**
-     * Callback function to receive the result of the addSingleElementToLabelledCollectionUsingPUT operation.
-     * @callback module:api/CollectionsApi~addSingleElementToLabelledCollectionUsingPUTCallback
+     * Callback function to receive the result of the addElementToLabelledCollection operation.
+     * @callback module:api/CollectionsApi~addElementToLabelledCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -349,21 +121,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~addSingleElementToLabelledCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~addElementToLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.addSingleElementToLabelledCollectionUsingPUT = function(collectionId4n, elementGuid, opts, callback) {
+    this.addElementToLabelledCollection = function(collectionId4n, elementGuid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'collectionId4n' is set
       if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling addSingleElementToLabelledCollectionUsingPUT");
+        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementToLabelledCollection");
       }
 
       // verify the required parameter 'elementGuid' is set
       if (elementGuid === undefined || elementGuid === null) {
-        throw new Error("Missing the required parameter 'elementGuid' when calling addSingleElementToLabelledCollectionUsingPUT");
+        throw new Error("Missing the required parameter 'elementGuid' when calling addElementToLabelledCollection");
       }
 
 
@@ -393,8 +165,8 @@
     }
 
     /**
-     * Callback function to receive the result of the addSingleElementToLogisticCollectionUsingPUT operation.
-     * @callback module:api/CollectionsApi~addSingleElementToLogisticCollectionUsingPUTCallback
+     * Callback function to receive the result of the addElementToLogisticCollection operation.
+     * @callback module:api/CollectionsApi~addElementToLogisticCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -407,21 +179,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~addSingleElementToLogisticCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~addElementToLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.addSingleElementToLogisticCollectionUsingPUT = function(collectionId4n, guid, opts, callback) {
+    this.addElementToLogisticCollection = function(collectionId4n, guid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'collectionId4n' is set
       if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling addSingleElementToLogisticCollectionUsingPUT");
+        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementToLogisticCollection");
       }
 
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
-        throw new Error("Missing the required parameter 'guid' when calling addSingleElementToLogisticCollectionUsingPUT");
+        throw new Error("Missing the required parameter 'guid' when calling addElementToLogisticCollection");
       }
 
 
@@ -451,8 +223,8 @@
     }
 
     /**
-     * Callback function to receive the result of the addSingleElementToRoutingCollectionUsingPUT operation.
-     * @callback module:api/CollectionsApi~addSingleElementToRoutingCollectionUsingPUTCallback
+     * Callback function to receive the result of the addElementToRoutingCollection operation.
+     * @callback module:api/CollectionsApi~addElementToRoutingCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -465,21 +237,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~addSingleElementToRoutingCollectionUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~addElementToRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.addSingleElementToRoutingCollectionUsingPUT = function(collectionId4n, guid, opts, callback) {
+    this.addElementToRoutingCollection = function(collectionId4n, guid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'collectionId4n' is set
       if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling addSingleElementToRoutingCollectionUsingPUT");
+        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementToRoutingCollection");
       }
 
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
-        throw new Error("Missing the required parameter 'guid' when calling addSingleElementToRoutingCollectionUsingPUT");
+        throw new Error("Missing the required parameter 'guid' when calling addElementToRoutingCollection");
       }
 
 
@@ -509,8 +281,236 @@
     }
 
     /**
-     * Callback function to receive the result of the createLabelledCollectionUsingPOST operation.
-     * @callback module:api/CollectionsApi~createLabelledCollectionUsingPOSTCallback
+     * Callback function to receive the result of the addElementsToCollection operation.
+     * @callback module:api/CollectionsApi~addElementsToCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add elements to collection
+     * @param {String} id4n id4n
+     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~addElementsToCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addElementsToCollection = function(id4n, listOfGuids, opts, callback) {
+      opts = opts || {};
+      var postBody = listOfGuids;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling addElementsToCollection");
+      }
+
+      // verify the required parameter 'listOfGuids' is set
+      if (listOfGuids === undefined || listOfGuids === null) {
+        throw new Error("Missing the required parameter 'listOfGuids' when calling addElementsToCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/{id4n}/elements', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addElementsToLabelledCollection operation.
+     * @callback module:api/CollectionsApi~addElementsToLabelledCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add elements to labelled collection
+     * @param {String} collectionId4n collectionId4n
+     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~addElementsToLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addElementsToLabelledCollection = function(collectionId4n, listOfGuids, opts, callback) {
+      opts = opts || {};
+      var postBody = listOfGuids;
+
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementsToLabelledCollection");
+      }
+
+      // verify the required parameter 'listOfGuids' is set
+      if (listOfGuids === undefined || listOfGuids === null) {
+        throw new Error("Missing the required parameter 'listOfGuids' when calling addElementsToLabelledCollection");
+      }
+
+
+      var pathParams = {
+        'collectionId4n': collectionId4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/labelled/{collectionId4n}/elements', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addElementsToLogisticCollection operation.
+     * @callback module:api/CollectionsApi~addElementsToLogisticCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add elements to logistic collection
+     * @param {String} collectionId4n collectionId4n
+     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~addElementsToLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addElementsToLogisticCollection = function(collectionId4n, listOfGuids, opts, callback) {
+      opts = opts || {};
+      var postBody = listOfGuids;
+
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementsToLogisticCollection");
+      }
+
+      // verify the required parameter 'listOfGuids' is set
+      if (listOfGuids === undefined || listOfGuids === null) {
+        throw new Error("Missing the required parameter 'listOfGuids' when calling addElementsToLogisticCollection");
+      }
+
+
+      var pathParams = {
+        'collectionId4n': collectionId4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/logistic/{collectionId4n}/elements', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addElementsToRoutingCollection operation.
+     * @callback module:api/CollectionsApi~addElementsToRoutingCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add element to routing collection
+     * @param {String} collectionId4n collectionId4n
+     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~addElementsToRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addElementsToRoutingCollection = function(collectionId4n, listOfGuids, opts, callback) {
+      opts = opts || {};
+      var postBody = listOfGuids;
+
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling addElementsToRoutingCollection");
+      }
+
+      // verify the required parameter 'listOfGuids' is set
+      if (listOfGuids === undefined || listOfGuids === null) {
+        throw new Error("Missing the required parameter 'listOfGuids' when calling addElementsToRoutingCollection");
+      }
+
+
+      var pathParams = {
+        'collectionId4n': collectionId4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/routing/{collectionId4n}/elements', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createLabelledCollection operation.
+     * @callback module:api/CollectionsApi~createLabelledCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Id4n} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -522,16 +522,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~createLabelledCollectionUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~createLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Id4n}
      */
-    this.createLabelledCollectionUsingPOST = function(createInfo, opts, callback) {
+    this.createLabelledCollection = function(createInfo, opts, callback) {
       opts = opts || {};
       var postBody = createInfo;
 
       // verify the required parameter 'createInfo' is set
       if (createInfo === undefined || createInfo === null) {
-        throw new Error("Missing the required parameter 'createInfo' when calling createLabelledCollectionUsingPOST");
+        throw new Error("Missing the required parameter 'createInfo' when calling createLabelledCollection");
       }
 
 
@@ -559,8 +559,8 @@
     }
 
     /**
-     * Callback function to receive the result of the createLogisticCollectionUsingPOST operation.
-     * @callback module:api/CollectionsApi~createLogisticCollectionUsingPOSTCallback
+     * Callback function to receive the result of the createLogisticCollection operation.
+     * @callback module:api/CollectionsApi~createLogisticCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Id4n} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -572,16 +572,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~createLogisticCollectionUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~createLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Id4n}
      */
-    this.createLogisticCollectionUsingPOST = function(createInfo, opts, callback) {
+    this.createLogisticCollection = function(createInfo, opts, callback) {
       opts = opts || {};
       var postBody = createInfo;
 
       // verify the required parameter 'createInfo' is set
       if (createInfo === undefined || createInfo === null) {
-        throw new Error("Missing the required parameter 'createInfo' when calling createLogisticCollectionUsingPOST");
+        throw new Error("Missing the required parameter 'createInfo' when calling createLogisticCollection");
       }
 
 
@@ -609,8 +609,8 @@
     }
 
     /**
-     * Callback function to receive the result of the createRoutingCollectionUsingPOST operation.
-     * @callback module:api/CollectionsApi~createRoutingCollectionUsingPOSTCallback
+     * Callback function to receive the result of the createRoutingCollection operation.
+     * @callback module:api/CollectionsApi~createRoutingCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Id4n} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -622,16 +622,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~createRoutingCollectionUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~createRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Id4n}
      */
-    this.createRoutingCollectionUsingPOST = function(createInfo, opts, callback) {
+    this.createRoutingCollection = function(createInfo, opts, callback) {
       opts = opts || {};
       var postBody = createInfo;
 
       // verify the required parameter 'createInfo' is set
       if (createInfo === undefined || createInfo === null) {
-        throw new Error("Missing the required parameter 'createInfo' when calling createRoutingCollectionUsingPOST");
+        throw new Error("Missing the required parameter 'createInfo' when calling createRoutingCollection");
       }
 
 
@@ -812,8 +812,8 @@
     }
 
     /**
-     * Callback function to receive the result of the deleteRoutingCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~deleteRoutingCollectionUsingDELETECallback
+     * Callback function to receive the result of the deleteRoutingCollection operation.
+     * @callback module:api/CollectionsApi~deleteRoutingCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -825,16 +825,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~deleteRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~deleteRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.deleteRoutingCollectionUsingDELETE = function(id4n, opts, callback) {
+    this.deleteRoutingCollection = function(id4n, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling deleteRoutingCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'id4n' when calling deleteRoutingCollection");
       }
 
 
@@ -1120,15 +1120,15 @@
       var returnType = PaginatedGuidCollection;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/collections', 'GET',
+        '/api/v1/organizations/{organizationId}/collections', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the listContentsUsingGET operation.
-     * @callback module:api/CollectionsApi~listContentsUsingGETCallback
+     * Callback function to receive the result of the listElementsOfCollection operation.
+     * @callback module:api/CollectionsApi~listElementsOfCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedResponsestring} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1142,16 +1142,16 @@
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
-     * @param {module:api/CollectionsApi~listContentsUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~listElementsOfCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponsestring}
      */
-    this.listContentsUsingGET = function(id4n, opts, callback) {
+    this.listElementsOfCollection = function(id4n, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling listContentsUsingGET");
+        throw new Error("Missing the required parameter 'id4n' when calling listElementsOfCollection");
       }
 
 
@@ -1182,236 +1182,8 @@
     }
 
     /**
-     * Callback function to receive the result of the removeElementsFromCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~removeElementsFromCollectionUsingDELETECallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Remove elements from collection
-     * @param {String} id4n id4n
-     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~removeElementsFromCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.removeElementsFromCollectionUsingDELETE = function(id4n, listOfGuids, opts, callback) {
-      opts = opts || {};
-      var postBody = listOfGuids;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling removeElementsFromCollectionUsingDELETE");
-      }
-
-      // verify the required parameter 'listOfGuids' is set
-      if (listOfGuids === undefined || listOfGuids === null) {
-        throw new Error("Missing the required parameter 'listOfGuids' when calling removeElementsFromCollectionUsingDELETE");
-      }
-
-
-      var pathParams = {
-        'id4n': id4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/elements', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the removeElementsFromLabelledCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~removeElementsFromLabelledCollectionUsingDELETECallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Remove elements from labelled collection
-     * @param {String} collectionId4n collectionId4n
-     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~removeElementsFromLabelledCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.removeElementsFromLabelledCollectionUsingDELETE = function(collectionId4n, listOfGuids, opts, callback) {
-      opts = opts || {};
-      var postBody = listOfGuids;
-
-      // verify the required parameter 'collectionId4n' is set
-      if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementsFromLabelledCollectionUsingDELETE");
-      }
-
-      // verify the required parameter 'listOfGuids' is set
-      if (listOfGuids === undefined || listOfGuids === null) {
-        throw new Error("Missing the required parameter 'listOfGuids' when calling removeElementsFromLabelledCollectionUsingDELETE");
-      }
-
-
-      var pathParams = {
-        'collectionId4n': collectionId4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/labelled/{collectionId4n}/elements', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the removeElementsFromLogisticCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~removeElementsFromLogisticCollectionUsingDELETECallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Remove elements from logistic collection
-     * @param {String} collectionId4n collectionId4n
-     * @param {module:model/ListOfId4ns} listofGuids listofGuids
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~removeElementsFromLogisticCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.removeElementsFromLogisticCollectionUsingDELETE = function(collectionId4n, listofGuids, opts, callback) {
-      opts = opts || {};
-      var postBody = listofGuids;
-
-      // verify the required parameter 'collectionId4n' is set
-      if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementsFromLogisticCollectionUsingDELETE");
-      }
-
-      // verify the required parameter 'listofGuids' is set
-      if (listofGuids === undefined || listofGuids === null) {
-        throw new Error("Missing the required parameter 'listofGuids' when calling removeElementsFromLogisticCollectionUsingDELETE");
-      }
-
-
-      var pathParams = {
-        'collectionId4n': collectionId4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/logistic/{collectionId4n}/elements', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the removeElementsFromRoutingCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~removeElementsFromRoutingCollectionUsingDELETECallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Remove elements from routing collection
-     * @param {String} collectionId4n collectionId4n
-     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~removeElementsFromRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.removeElementsFromRoutingCollectionUsingDELETE = function(collectionId4n, listOfGuids, opts, callback) {
-      opts = opts || {};
-      var postBody = listOfGuids;
-
-      // verify the required parameter 'collectionId4n' is set
-      if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementsFromRoutingCollectionUsingDELETE");
-      }
-
-      // verify the required parameter 'listOfGuids' is set
-      if (listOfGuids === undefined || listOfGuids === null) {
-        throw new Error("Missing the required parameter 'listOfGuids' when calling removeElementsFromRoutingCollectionUsingDELETE");
-      }
-
-
-      var pathParams = {
-        'collectionId4n': collectionId4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/routing/{collectionId4n}/elements', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the removeSingleElementFromCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~removeSingleElementFromCollectionUsingDELETECallback
+     * Callback function to receive the result of the removeElementFromCollection operation.
+     * @callback module:api/CollectionsApi~removeElementFromCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1424,21 +1196,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~removeSingleElementFromCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~removeElementFromCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.removeSingleElementFromCollectionUsingDELETE = function(id4n, elementGuid, opts, callback) {
+    this.removeElementFromCollection = function(id4n, elementGuid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling removeSingleElementFromCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'id4n' when calling removeElementFromCollection");
       }
 
       // verify the required parameter 'elementGuid' is set
       if (elementGuid === undefined || elementGuid === null) {
-        throw new Error("Missing the required parameter 'elementGuid' when calling removeSingleElementFromCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'elementGuid' when calling removeElementFromCollection");
       }
 
 
@@ -1468,8 +1240,8 @@
     }
 
     /**
-     * Callback function to receive the result of the removeSingleElementFromLabelledCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~removeSingleElementFromLabelledCollectionUsingDELETECallback
+     * Callback function to receive the result of the removeElementFromLabelledCollection operation.
+     * @callback module:api/CollectionsApi~removeElementFromLabelledCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1482,21 +1254,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~removeSingleElementFromLabelledCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~removeElementFromLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.removeSingleElementFromLabelledCollectionUsingDELETE = function(collectionId4n, elementGuid, opts, callback) {
+    this.removeElementFromLabelledCollection = function(collectionId4n, elementGuid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'collectionId4n' is set
       if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling removeSingleElementFromLabelledCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementFromLabelledCollection");
       }
 
       // verify the required parameter 'elementGuid' is set
       if (elementGuid === undefined || elementGuid === null) {
-        throw new Error("Missing the required parameter 'elementGuid' when calling removeSingleElementFromLabelledCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'elementGuid' when calling removeElementFromLabelledCollection");
       }
 
 
@@ -1526,8 +1298,8 @@
     }
 
     /**
-     * Callback function to receive the result of the removeSingleElementFromLogisticCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~removeSingleElementFromLogisticCollectionUsingDELETECallback
+     * Callback function to receive the result of the removeElementFromLogisticCollection operation.
+     * @callback module:api/CollectionsApi~removeElementFromLogisticCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1540,21 +1312,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~removeSingleElementFromLogisticCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~removeElementFromLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.removeSingleElementFromLogisticCollectionUsingDELETE = function(collectionId4n, guid, opts, callback) {
+    this.removeElementFromLogisticCollection = function(collectionId4n, guid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'collectionId4n' is set
       if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling removeSingleElementFromLogisticCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementFromLogisticCollection");
       }
 
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
-        throw new Error("Missing the required parameter 'guid' when calling removeSingleElementFromLogisticCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'guid' when calling removeElementFromLogisticCollection");
       }
 
 
@@ -1584,8 +1356,8 @@
     }
 
     /**
-     * Callback function to receive the result of the removeSingleElementFromRoutingCollectionUsingDELETE operation.
-     * @callback module:api/CollectionsApi~removeSingleElementFromRoutingCollectionUsingDELETECallback
+     * Callback function to receive the result of the removeElementFromRoutingCollection operation.
+     * @callback module:api/CollectionsApi~removeElementFromRoutingCollectionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1598,21 +1370,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/CollectionsApi~removeSingleElementFromRoutingCollectionUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CollectionsApi~removeElementFromRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.removeSingleElementFromRoutingCollectionUsingDELETE = function(collectionId4n, guid, opts, callback) {
+    this.removeElementFromRoutingCollection = function(collectionId4n, guid, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'collectionId4n' is set
       if (collectionId4n === undefined || collectionId4n === null) {
-        throw new Error("Missing the required parameter 'collectionId4n' when calling removeSingleElementFromRoutingCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementFromRoutingCollection");
       }
 
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
-        throw new Error("Missing the required parameter 'guid' when calling removeSingleElementFromRoutingCollectionUsingDELETE");
+        throw new Error("Missing the required parameter 'guid' when calling removeElementFromRoutingCollection");
       }
 
 
@@ -1636,6 +1408,234 @@
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{collectionId4n}/elements/{guid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeElementsFromCollection operation.
+     * @callback module:api/CollectionsApi~removeElementsFromCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove elements from collection
+     * @param {String} id4n id4n
+     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~removeElementsFromCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.removeElementsFromCollection = function(id4n, listOfGuids, opts, callback) {
+      opts = opts || {};
+      var postBody = listOfGuids;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling removeElementsFromCollection");
+      }
+
+      // verify the required parameter 'listOfGuids' is set
+      if (listOfGuids === undefined || listOfGuids === null) {
+        throw new Error("Missing the required parameter 'listOfGuids' when calling removeElementsFromCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/{id4n}/elements', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeElementsFromLabelledCollection operation.
+     * @callback module:api/CollectionsApi~removeElementsFromLabelledCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove elements from labelled collection
+     * @param {String} collectionId4n collectionId4n
+     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~removeElementsFromLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.removeElementsFromLabelledCollection = function(collectionId4n, listOfGuids, opts, callback) {
+      opts = opts || {};
+      var postBody = listOfGuids;
+
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementsFromLabelledCollection");
+      }
+
+      // verify the required parameter 'listOfGuids' is set
+      if (listOfGuids === undefined || listOfGuids === null) {
+        throw new Error("Missing the required parameter 'listOfGuids' when calling removeElementsFromLabelledCollection");
+      }
+
+
+      var pathParams = {
+        'collectionId4n': collectionId4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/labelled/{collectionId4n}/elements', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeElementsFromLogisticCollection operation.
+     * @callback module:api/CollectionsApi~removeElementsFromLogisticCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove elements from logistic collection
+     * @param {String} collectionId4n collectionId4n
+     * @param {module:model/ListOfId4ns} listofGuids listofGuids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~removeElementsFromLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.removeElementsFromLogisticCollection = function(collectionId4n, listofGuids, opts, callback) {
+      opts = opts || {};
+      var postBody = listofGuids;
+
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementsFromLogisticCollection");
+      }
+
+      // verify the required parameter 'listofGuids' is set
+      if (listofGuids === undefined || listofGuids === null) {
+        throw new Error("Missing the required parameter 'listofGuids' when calling removeElementsFromLogisticCollection");
+      }
+
+
+      var pathParams = {
+        'collectionId4n': collectionId4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/logistic/{collectionId4n}/elements', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeElementsFromRoutingCollection operation.
+     * @callback module:api/CollectionsApi~removeElementsFromRoutingCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove elements from routing collection
+     * @param {String} collectionId4n collectionId4n
+     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~removeElementsFromRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.removeElementsFromRoutingCollection = function(collectionId4n, listOfGuids, opts, callback) {
+      opts = opts || {};
+      var postBody = listOfGuids;
+
+      // verify the required parameter 'collectionId4n' is set
+      if (collectionId4n === undefined || collectionId4n === null) {
+        throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementsFromRoutingCollection");
+      }
+
+      // verify the required parameter 'listOfGuids' is set
+      if (listOfGuids === undefined || listOfGuids === null) {
+        throw new Error("Missing the required parameter 'listOfGuids' when calling removeElementsFromRoutingCollection");
+      }
+
+
+      var pathParams = {
+        'collectionId4n': collectionId4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/routing/{collectionId4n}/elements', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

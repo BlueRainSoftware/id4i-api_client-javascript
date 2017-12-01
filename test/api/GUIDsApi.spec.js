@@ -51,10 +51,10 @@
   }
 
   describe('GUIDsApi', function() {
-    describe('createUsingPOST', function() {
-      it('should call createUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createUsingPOST
-        //instance.createUsingPOST(function(error) {
+    describe('createGuid', function() {
+      it('should call createGuid successfully', function(done) {
+        //uncomment below and update the code to test createGuid
+        //instance.createGuid(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

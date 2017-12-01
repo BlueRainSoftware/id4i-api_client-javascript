@@ -51,80 +51,60 @@
   }
 
   describe('AccountsApi', function() {
-    describe('addMultipleUserRolesUsingPOST', function() {
-      it('should call addMultipleUserRolesUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test addMultipleUserRolesUsingPOST
-        //instance.addMultipleUserRolesUsingPOST(function(error) {
+    describe('findUserByUsername', function() {
+      it('should call findUserByUsername successfully', function(done) {
+        //uncomment below and update the code to test findUserByUsername
+        //instance.findUserByUsername(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('addUserRolesUsingPOST', function() {
-      it('should call addUserRolesUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test addUserRolesUsingPOST
-        //instance.addUserRolesUsingPOST(function(error) {
+    describe('getAllOrganizationRoles', function() {
+      it('should call getAllOrganizationRoles successfully', function(done) {
+        //uncomment below and update the code to test getAllOrganizationRoles
+        //instance.getAllOrganizationRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('findUserByUsernameUsingGET', function() {
-      it('should call findUserByUsernameUsingGET successfully', function(done) {
-        //uncomment below and update the code to test findUserByUsernameUsingGET
-        //instance.findUserByUsernameUsingGET(function(error) {
+    describe('getOrganizationsOfUser', function() {
+      it('should call getOrganizationsOfUser successfully', function(done) {
+        //uncomment below and update the code to test getOrganizationsOfUser
+        //instance.getOrganizationsOfUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getMultipleUserRolesUsingGET', function() {
-      it('should call getMultipleUserRolesUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getMultipleUserRolesUsingGET
-        //instance.getMultipleUserRolesUsingGET(function(error) {
+    describe('getUserRoles', function() {
+      it('should call getUserRoles successfully', function(done) {
+        //uncomment below and update the code to test getUserRoles
+        //instance.getUserRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getOrganizationsUsingGET', function() {
-      it('should call getOrganizationsUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getOrganizationsUsingGET
-        //instance.getOrganizationsUsingGET(function(error) {
+    describe('getUsersOfOrganization', function() {
+      it('should call getUsersOfOrganization successfully', function(done) {
+        //uncomment below and update the code to test getUsersOfOrganization
+        //instance.getUsersOfOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getUserRolesByUsernameUsingGET', function() {
-      it('should call getUserRolesByUsernameUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getUserRolesByUsernameUsingGET
-        //instance.getUserRolesByUsernameUsingGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getUsersUsingGET', function() {
-      it('should call getUsersUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getUsersUsingGET
-        //instance.getUsersUsingGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listUsingGET', function() {
-      it('should call listUsingGET successfully', function(done) {
-        //uncomment below and update the code to test listUsingGET
-        //instance.listUsingGET(function(error) {
+    describe('listAllRoles', function() {
+      it('should call listAllRoles successfully', function(done) {
+        //uncomment below and update the code to test listAllRoles
+        //instance.listAllRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -141,60 +121,60 @@
         done();
       });
     });
-    describe('registerUserUsingPOST', function() {
-      it('should call registerUserUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test registerUserUsingPOST
-        //instance.registerUserUsingPOST(function(error) {
+    describe('registerUser', function() {
+      it('should call registerUser successfully', function(done) {
+        //uncomment below and update the code to test registerUser
+        //instance.registerUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeMultipleUserRolesUsingDELETE', function() {
-      it('should call removeMultipleUserRolesUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test removeMultipleUserRolesUsingDELETE
-        //instance.removeMultipleUserRolesUsingDELETE(function(error) {
+    describe('removeUserRoles', function() {
+      it('should call removeUserRoles successfully', function(done) {
+        //uncomment below and update the code to test removeUserRoles
+        //instance.removeUserRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeUserRolesUsingDELETE', function() {
-      it('should call removeUserRolesUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test removeUserRolesUsingDELETE
-        //instance.removeUserRolesUsingDELETE(function(error) {
+    describe('requestPasswordReset', function() {
+      it('should call requestPasswordReset successfully', function(done) {
+        //uncomment below and update the code to test requestPasswordReset
+        //instance.requestPasswordReset(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('requestPasswordResetUsingPOST', function() {
-      it('should call requestPasswordResetUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test requestPasswordResetUsingPOST
-        //instance.requestPasswordResetUsingPOST(function(error) {
+    describe('updateUserRoles', function() {
+      it('should call updateUserRoles successfully', function(done) {
+        //uncomment below and update the code to test updateUserRoles
+        //instance.updateUserRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('verifyPasswordResetUsingPUT', function() {
-      it('should call verifyPasswordResetUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test verifyPasswordResetUsingPUT
-        //instance.verifyPasswordResetUsingPUT(function(error) {
+    describe('verifyPasswordReset', function() {
+      it('should call verifyPasswordReset successfully', function(done) {
+        //uncomment below and update the code to test verifyPasswordReset
+        //instance.verifyPasswordReset(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('verifyRegistrationUsingPOST', function() {
-      it('should call verifyRegistrationUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test verifyRegistrationUsingPOST
-        //instance.verifyRegistrationUsingPOST(function(error) {
+    describe('verifyUserRegistration', function() {
+      it('should call verifyUserRegistration successfully', function(done) {
+        //uncomment below and update the code to test verifyUserRegistration
+        //instance.verifyUserRegistration(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

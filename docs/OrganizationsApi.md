@@ -4,140 +4,29 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMultipleUserRolesUsingPOST**](OrganizationsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | Add role(s) to user (model)
-[**addUserRolesUsingPOST**](OrganizationsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | Add role(s) to user
-[**createOrganzationUsingPOST**](OrganizationsApi.md#createOrganzationUsingPOST) | **POST** /api/v1/organization | Create organization
-[**deleteOrganizationLogoUsingDELETE**](OrganizationsApi.md#deleteOrganizationLogoUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/logo | Delete organization logo
-[**deleteOrganizationUsingDELETE**](OrganizationsApi.md#deleteOrganizationUsingDELETE) | **DELETE** /api/v1/organization/{organizationId} | Delete organization
-[**getAddressUsingGET**](OrganizationsApi.md#getAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/default | Retrieve address
-[**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
-[**getBillingAddressUsingGET**](OrganizationsApi.md#getBillingAddressUsingGET) | **GET** /api/v1/organization/{organizationId}/addresses/billing | Retrieve billing address
-[**getMultipleUserRolesUsingGET**](OrganizationsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | List users and their roles
-[**getOrganizationUsingGET**](OrganizationsApi.md#getOrganizationUsingGET) | **GET** /api/v1/organization/{organizationId} | Find organization by id
-[**getOrganizationsUsingGET**](OrganizationsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | Retrieve organizations of user
-[**getUserRolesByUsernameUsingGET**](OrganizationsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | Get user roles by username
-[**getUsersUsingGET**](OrganizationsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | Find users in organization
-[**removeBillingAddressUsingDELETE**](OrganizationsApi.md#removeBillingAddressUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/addresses/billing | Remove billing address
-[**removeMultipleUserRolesUsingDELETE**](OrganizationsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | Remove role(s) from user (model)
-[**removeUserRolesUsingDELETE**](OrganizationsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | Remove role(s) from user
-[**setOrganizationLogoUsingPOST**](OrganizationsApi.md#setOrganizationLogoUsingPOST) | **POST** /api/v1/organization/{organizationId}/logo | Update organization logo
-[**storeAddressUsingPOST**](OrganizationsApi.md#storeAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/default | Store address
-[**storeBillingAddressUsingPOST**](OrganizationsApi.md#storeBillingAddressUsingPOST) | **POST** /api/v1/organization/{organizationId}/addresses/billing | Store billing address
-[**updateOrganizationUsingPUT**](OrganizationsApi.md#updateOrganizationUsingPUT) | **PUT** /api/v1/organization/{organizationId} | Update organization
+[**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
+[**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
+[**deleteOrganizationBillingAddress**](OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
+[**deleteOrganizationLogo**](OrganizationsApi.md#deleteOrganizationLogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
+[**findOrganization**](OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+[**findOrganizationAddress**](OrganizationsApi.md#findOrganizationAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
+[**findOrganizationBillingAddress**](OrganizationsApi.md#findOrganizationBillingAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
+[**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
+[**getAllOrganizationRoles**](OrganizationsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
+[**getOrganizationsOfUser**](OrganizationsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+[**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
+[**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+[**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
+[**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
+[**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
+[**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
+[**updateUserRoles**](OrganizationsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 
 
-<a name="addMultipleUserRolesUsingPOST"></a>
-# **addMultipleUserRolesUsingPOST**
-> ApiError addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts)
-
-Add role(s) to user (model)
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var changeUserRoleRequest = new Id4iApi.ChangeUserRoleRequest(); // ChangeUserRoleRequest | changeUserRoleRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **changeUserRoleRequest** | [**ChangeUserRoleRequest**](ChangeUserRoleRequest.md)| changeUserRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addUserRolesUsingPOST"></a>
-# **addUserRolesUsingPOST**
-> ApiError addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts)
-
-Add role(s) to user
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var username = "username_example"; // String | username
-
-var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **username** | **String**| username | 
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="createOrganzationUsingPOST"></a>
-# **createOrganzationUsingPOST**
-> Organization createOrganzationUsingPOST(organization, opts)
+<a name="createOrganization"></a>
+# **createOrganization**
+> Organization createOrganization(organization, opts)
 
 Create organization
 
@@ -163,7 +52,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createOrganzationUsingPOST(organization, opts, callback);
+apiInstance.createOrganization(organization, opts, callback);
 ```
 
 ### Parameters
@@ -187,59 +76,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="deleteOrganizationLogoUsingDELETE"></a>
-# **deleteOrganizationLogoUsingDELETE**
-> ApiError deleteOrganizationLogoUsingDELETE(organizationId, opts)
-
-Delete organization logo
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | The id of the organization where the logo should be deleted.
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.deleteOrganizationLogoUsingDELETE(organizationId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization where the logo should be deleted. | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="deleteOrganizationUsingDELETE"></a>
-# **deleteOrganizationUsingDELETE**
-> ApiError deleteOrganizationUsingDELETE(organizationId, opts)
+<a name="deleteOrganization"></a>
+# **deleteOrganization**
+> ApiError deleteOrganization(organizationId, opts)
 
 Delete organization
 
@@ -263,7 +102,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteOrganizationUsingDELETE(organizationId, opts, callback);
+apiInstance.deleteOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -287,9 +126,161 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getAddressUsingGET"></a>
-# **getAddressUsingGET**
-> OrganizationAddress getAddressUsingGET(organizationId, opts)
+<a name="deleteOrganizationBillingAddress"></a>
+# **deleteOrganizationBillingAddress**
+> ApiError deleteOrganizationBillingAddress(organizationId, opts)
+
+Remove billing address
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | organizationId
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.deleteOrganizationBillingAddress(organizationId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="deleteOrganizationLogo"></a>
+# **deleteOrganizationLogo**
+> ApiError deleteOrganizationLogo(organizationId, opts)
+
+Delete organization logo
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | The id of the organization where the logo should be deleted.
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.deleteOrganizationLogo(organizationId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| The id of the organization where the logo should be deleted. | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="findOrganization"></a>
+# **findOrganization**
+> Organization findOrganization(organizationId, opts)
+
+Find organization by id
+
+Returns a single organization.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | The id of the organization to be retrieved.
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.findOrganization(organizationId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| The id of the organization to be retrieved. | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**Organization**](Organization.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="findOrganizationAddress"></a>
+# **findOrganizationAddress**
+> OrganizationAddress findOrganizationAddress(organizationId, opts)
 
 Retrieve address
 
@@ -313,7 +304,57 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAddressUsingGET(organizationId, opts, callback);
+apiInstance.findOrganizationAddress(organizationId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**OrganizationAddress**](OrganizationAddress.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="findOrganizationBillingAddress"></a>
+# **findOrganizationBillingAddress**
+> OrganizationAddress findOrganizationBillingAddress(organizationId, opts)
+
+Retrieve billing address
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | organizationId
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.findOrganizationBillingAddress(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -397,59 +438,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getBillingAddressUsingGET"></a>
-# **getBillingAddressUsingGET**
-> OrganizationAddress getBillingAddressUsingGET(organizationId, opts)
-
-Retrieve billing address
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBillingAddressUsingGET(organizationId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**OrganizationAddress**](OrganizationAddress.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="getMultipleUserRolesUsingGET"></a>
-# **getMultipleUserRolesUsingGET**
-> PaginatedUserRolesResponse getMultipleUserRolesUsingGET(organizationId, opts)
+<a name="getAllOrganizationRoles"></a>
+# **getAllOrganizationRoles**
+> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, opts)
 
 List users and their roles
 
@@ -477,7 +468,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getMultipleUserRolesUsingGET(organizationId, opts, callback);
+apiInstance.getAllOrganizationRoles(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -503,61 +494,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getOrganizationUsingGET"></a>
-# **getOrganizationUsingGET**
-> Organization getOrganizationUsingGET(organizationId, opts)
-
-Find organization by id
-
-Returns a single organization.
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | The id of the organization to be retrieved.
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getOrganizationUsingGET(organizationId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization to be retrieved. | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**Organization**](Organization.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="getOrganizationsUsingGET"></a>
-# **getOrganizationsUsingGET**
-> PaginatedResponseOrganization getOrganizationsUsingGET(opts)
+<a name="getOrganizationsOfUser"></a>
+# **getOrganizationsOfUser**
+> PaginatedResponseOrganization getOrganizationsOfUser(opts)
 
 Retrieve organizations of user
 
@@ -582,7 +521,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationsUsingGET(opts, callback);
+apiInstance.getOrganizationsOfUser(opts, callback);
 ```
 
 ### Parameters
@@ -608,9 +547,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getUserRolesByUsernameUsingGET"></a>
-# **getUserRolesByUsernameUsingGET**
-> UserRoles getUserRolesByUsernameUsingGET(organizationId, username, opts)
+<a name="getUserRoles"></a>
+# **getUserRoles**
+> UserRoles getUserRoles(organizationId, username, opts)
 
 Get user roles by username
 
@@ -636,7 +575,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getUserRolesByUsernameUsingGET(organizationId, username, opts, callback);
+apiInstance.getUserRoles(organizationId, username, opts, callback);
 ```
 
 ### Parameters
@@ -661,9 +600,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getUsersUsingGET"></a>
-# **getUsersUsingGET**
-> PaginatedUserPresentationResponse getUsersUsingGET(organizationId, opts)
+<a name="getUsersOfOrganization"></a>
+# **getUsersOfOrganization**
+> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, opts)
 
 Find users in organization
 
@@ -691,7 +630,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getUsersUsingGET(organizationId, opts, callback);
+apiInstance.getUsersOfOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -717,112 +656,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeBillingAddressUsingDELETE"></a>
-# **removeBillingAddressUsingDELETE**
-> ApiError removeBillingAddressUsingDELETE(organizationId, opts)
-
-Remove billing address
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.removeBillingAddressUsingDELETE(organizationId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeMultipleUserRolesUsingDELETE"></a>
-# **removeMultipleUserRolesUsingDELETE**
-> ApiError removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts)
-
-Remove role(s) from user (model)
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var changeUserRoleRequest = new Id4iApi.ChangeUserRoleRequest(); // ChangeUserRoleRequest | changeUserRoleRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **changeUserRoleRequest** | [**ChangeUserRoleRequest**](ChangeUserRoleRequest.md)| changeUserRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeUserRolesUsingDELETE"></a>
-# **removeUserRolesUsingDELETE**
-> ApiError removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts)
+<a name="removeUserRoles"></a>
+# **removeUserRoles**
+> ApiError removeUserRoles(organizationId, username, changeRoleRequest, opts)
 
 Remove role(s) from user
 
@@ -850,7 +686,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts, callback);
+apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, opts, callback);
 ```
 
 ### Parameters
@@ -876,9 +712,168 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="setOrganizationLogoUsingPOST"></a>
-# **setOrganizationLogoUsingPOST**
-> ApiError setOrganizationLogoUsingPOST(organizationId, file, opts)
+<a name="updateOrganization"></a>
+# **updateOrganization**
+> Organization updateOrganization(organizationId, organization, opts)
+
+Update organization
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | The id of the organization to be updated.
+
+var organization = new Id4iApi.Organization(); // Organization | Updated organization object
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateOrganization(organizationId, organization, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| The id of the organization to be updated. | 
+ **organization** | [**Organization**](Organization.md)| Updated organization object | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**Organization**](Organization.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="updateOrganizationAddress"></a>
+# **updateOrganizationAddress**
+> ApiError updateOrganizationAddress(organizationId, addressResource, opts)
+
+Store address
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | organizationId
+
+var addressResource = new Id4iApi.OrganizationAddress(); // OrganizationAddress | addressResource
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateOrganizationAddress(organizationId, addressResource, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="updateOrganizationBillingAddress"></a>
+# **updateOrganizationBillingAddress**
+> ApiError updateOrganizationBillingAddress(organizationId, addressResource, opts)
+
+Store billing address
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | organizationId
+
+var addressResource = new Id4iApi.OrganizationAddress(); // OrganizationAddress | addressResource
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="updateOrganizationLogo"></a>
+# **updateOrganizationLogo**
+> ApiError updateOrganizationLogo(organizationId, file, opts)
 
 Update organization logo
 
@@ -906,7 +901,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.setOrganizationLogoUsingPOST(organizationId, file, opts, callback);
+apiInstance.updateOrganizationLogo(organizationId, file, opts, callback);
 ```
 
 ### Parameters
@@ -931,64 +926,11 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="storeAddressUsingPOST"></a>
-# **storeAddressUsingPOST**
-> ApiError storeAddressUsingPOST(organizationId, addressResource, opts)
+<a name="updateUserRoles"></a>
+# **updateUserRoles**
+> ApiError updateUserRoles(organizationId, username, changeRoleRequest, opts)
 
-Store address
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var addressResource = new Id4iApi.OrganizationAddress(); // OrganizationAddress | addressResource
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.storeAddressUsingPOST(organizationId, addressResource, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="storeBillingAddressUsingPOST"></a>
-# **storeBillingAddressUsingPOST**
-> ApiError storeBillingAddressUsingPOST(organizationId, addressResource, opts)
-
-Store billing address
+Add role(s) to user
 
 ### Example
 ```javascript
@@ -998,7 +940,9 @@ var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | organizationId
 
-var addressResource = new Id4iApi.OrganizationAddress(); // OrganizationAddress | addressResource
+var username = "username_example"; // String | username
+
+var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -1012,7 +956,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.storeBillingAddressUsingPOST(organizationId, addressResource, opts, callback);
+apiInstance.updateUserRoles(organizationId, username, changeRoleRequest, opts, callback);
 ```
 
 ### Parameters
@@ -1020,66 +964,14 @@ apiInstance.storeBillingAddressUsingPOST(organizationId, addressResource, opts, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
+ **username** | **String**| username | 
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
 [**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateOrganizationUsingPUT"></a>
-# **updateOrganizationUsingPUT**
-> Organization updateOrganizationUsingPUT(organizationId, organization, opts)
-
-Update organization
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | The id of the organization to be updated.
-
-var organization = new Id4iApi.Organization(); // Organization | Updated organization object
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateOrganizationUsingPUT(organizationId, organization, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization to be updated. | 
- **organization** | [**Organization**](Organization.md)| Updated organization object | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**Organization**](Organization.md)
 
 ### Authorization
 

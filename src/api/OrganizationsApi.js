@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/ChangeUserRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/UserRoles'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/UserRoles'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/ChangeUserRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedResponseOrganization'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/UserRoles'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedResponseOrganization'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/UserRoles'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.ChangeUserRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedResponseOrganization, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.UserRoles);
+    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedResponseOrganization, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.UserRoles);
   }
-}(this, function(ApiClient, ApiError, ChangeRoleRequest, ChangeUserRoleRequest, Organization, OrganizationAddress, PaginatedGuidCollection, PaginatedResponseOrganization, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, UserRoles) {
+}(this, function(ApiClient, ApiError, ChangeRoleRequest, Organization, OrganizationAddress, PaginatedGuidCollection, PaginatedResponseOrganization, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, UserRoles) {
   'use strict';
 
   /**
@@ -49,129 +49,8 @@
 
 
     /**
-     * Callback function to receive the result of the addMultipleUserRolesUsingPOST operation.
-     * @callback module:api/OrganizationsApi~addMultipleUserRolesUsingPOSTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add role(s) to user (model)
-     * @param {Number} organizationId organizationId
-     * @param {module:model/ChangeUserRoleRequest} changeUserRoleRequest changeUserRoleRequest
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~addMultipleUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.addMultipleUserRolesUsingPOST = function(organizationId, changeUserRoleRequest, opts, callback) {
-      opts = opts || {};
-      var postBody = changeUserRoleRequest;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling addMultipleUserRolesUsingPOST");
-      }
-
-      // verify the required parameter 'changeUserRoleRequest' is set
-      if (changeUserRoleRequest === undefined || changeUserRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeUserRoleRequest' when calling addMultipleUserRolesUsingPOST");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/users/role', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addUserRolesUsingPOST operation.
-     * @callback module:api/OrganizationsApi~addUserRolesUsingPOSTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add role(s) to user
-     * @param {Number} organizationId organizationId
-     * @param {String} username username
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~addUserRolesUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.addUserRolesUsingPOST = function(organizationId, username, changeRoleRequest, opts, callback) {
-      opts = opts || {};
-      var postBody = changeRoleRequest;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling addUserRolesUsingPOST");
-      }
-
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling addUserRolesUsingPOST");
-      }
-
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addUserRolesUsingPOST");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'username': username
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/user/{username}/roles', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the createOrganzationUsingPOST operation.
-     * @callback module:api/OrganizationsApi~createOrganzationUsingPOSTCallback
+     * Callback function to receive the result of the createOrganization operation.
+     * @callback module:api/OrganizationsApi~createOrganizationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Organization} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -184,16 +63,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~createOrganzationUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~createOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Organization}
      */
-    this.createOrganzationUsingPOST = function(organization, opts, callback) {
+    this.createOrganization = function(organization, opts, callback) {
       opts = opts || {};
       var postBody = organization;
 
       // verify the required parameter 'organization' is set
       if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling createOrganzationUsingPOST");
+        throw new Error("Missing the required parameter 'organization' when calling createOrganization");
       }
 
 
@@ -214,66 +93,15 @@
       var returnType = Organization;
 
       return this.apiClient.callApi(
-        '/api/v1/organization', 'POST',
+        '/api/v1/organizations', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteOrganizationLogoUsingDELETE operation.
-     * @callback module:api/OrganizationsApi~deleteOrganizationLogoUsingDELETECallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete organization logo
-     * @param {Number} organizationId The id of the organization where the logo should be deleted.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~deleteOrganizationLogoUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.deleteOrganizationLogoUsingDELETE = function(organizationId, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling deleteOrganizationLogoUsingDELETE");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/logo', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteOrganizationUsingDELETE operation.
-     * @callback module:api/OrganizationsApi~deleteOrganizationUsingDELETECallback
+     * Callback function to receive the result of the deleteOrganization operation.
+     * @callback module:api/OrganizationsApi~deleteOrganizationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -285,16 +113,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~deleteOrganizationUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~deleteOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.deleteOrganizationUsingDELETE = function(organizationId, opts, callback) {
+    this.deleteOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling deleteOrganizationUsingDELETE");
+        throw new Error("Missing the required parameter 'organizationId' when calling deleteOrganization");
       }
 
 
@@ -316,15 +144,169 @@
       var returnType = ApiError;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}', 'DELETE',
+        '/api/v1/organizations/{organizationId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the getAddressUsingGET operation.
-     * @callback module:api/OrganizationsApi~getAddressUsingGETCallback
+     * Callback function to receive the result of the deleteOrganizationBillingAddress operation.
+     * @callback module:api/OrganizationsApi~deleteOrganizationBillingAddressCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove billing address
+     * @param {Number} organizationId organizationId
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~deleteOrganizationBillingAddressCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.deleteOrganizationBillingAddress = function(organizationId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling deleteOrganizationBillingAddress");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/addresses/billing', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteOrganizationLogo operation.
+     * @callback module:api/OrganizationsApi~deleteOrganizationLogoCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete organization logo
+     * @param {Number} organizationId The id of the organization where the logo should be deleted.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~deleteOrganizationLogoCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.deleteOrganizationLogo = function(organizationId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling deleteOrganizationLogo");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/logo', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the findOrganization operation.
+     * @callback module:api/OrganizationsApi~findOrganizationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Organization} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Find organization by id
+     * Returns a single organization.
+     * @param {Number} organizationId The id of the organization to be retrieved.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~findOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Organization}
+     */
+    this.findOrganization = function(organizationId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling findOrganization");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = Organization;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the findOrganizationAddress operation.
+     * @callback module:api/OrganizationsApi~findOrganizationAddressCallback
      * @param {String} error Error message, if any.
      * @param {module:model/OrganizationAddress} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -336,16 +318,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~getAddressUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~findOrganizationAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrganizationAddress}
      */
-    this.getAddressUsingGET = function(organizationId, opts, callback) {
+    this.findOrganizationAddress = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getAddressUsingGET");
+        throw new Error("Missing the required parameter 'organizationId' when calling findOrganizationAddress");
       }
 
 
@@ -367,7 +349,58 @@
       var returnType = OrganizationAddress;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/addresses/default', 'GET',
+        '/api/v1/organizations/{organizationId}/addresses/default', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the findOrganizationBillingAddress operation.
+     * @callback module:api/OrganizationsApi~findOrganizationBillingAddressCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/OrganizationAddress} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve billing address
+     * @param {Number} organizationId organizationId
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~findOrganizationBillingAddressCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/OrganizationAddress}
+     */
+    this.findOrganizationBillingAddress = function(organizationId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling findOrganizationBillingAddress");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = OrganizationAddress;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/addresses/billing', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -427,66 +460,15 @@
       var returnType = PaginatedGuidCollection;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/collections', 'GET',
+        '/api/v1/organizations/{organizationId}/collections', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the getBillingAddressUsingGET operation.
-     * @callback module:api/OrganizationsApi~getBillingAddressUsingGETCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/OrganizationAddress} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve billing address
-     * @param {Number} organizationId organizationId
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~getBillingAddressUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrganizationAddress}
-     */
-    this.getBillingAddressUsingGET = function(organizationId, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getBillingAddressUsingGET");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = OrganizationAddress;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/addresses/billing', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getMultipleUserRolesUsingGET operation.
-     * @callback module:api/OrganizationsApi~getMultipleUserRolesUsingGETCallback
+     * Callback function to receive the result of the getAllOrganizationRoles operation.
+     * @callback module:api/OrganizationsApi~getAllOrganizationRolesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedUserRolesResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -501,16 +483,16 @@
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
-     * @param {module:api/OrganizationsApi~getMultipleUserRolesUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~getAllOrganizationRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserRolesResponse}
      */
-    this.getMultipleUserRolesUsingGET = function(organizationId, opts, callback) {
+    this.getAllOrganizationRoles = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getMultipleUserRolesUsingGET");
+        throw new Error("Missing the required parameter 'organizationId' when calling getAllOrganizationRoles");
       }
 
 
@@ -534,67 +516,15 @@
       var returnType = PaginatedUserRolesResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/users/role', 'GET',
+        '/api/v1/organizations/{organizationId}/roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the getOrganizationUsingGET operation.
-     * @callback module:api/OrganizationsApi~getOrganizationUsingGETCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Organization} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Find organization by id
-     * Returns a single organization.
-     * @param {Number} organizationId The id of the organization to be retrieved.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~getOrganizationUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Organization}
-     */
-    this.getOrganizationUsingGET = function(organizationId, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getOrganizationUsingGET");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Organization;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getOrganizationsUsingGET operation.
-     * @callback module:api/OrganizationsApi~getOrganizationsUsingGETCallback
+     * Callback function to receive the result of the getOrganizationsOfUser operation.
+     * @callback module:api/OrganizationsApi~getOrganizationsOfUserCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedResponseOrganization} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -608,10 +538,10 @@
      * @param {String} opts.role role
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
-     * @param {module:api/OrganizationsApi~getOrganizationsUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~getOrganizationsOfUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponseOrganization}
      */
-    this.getOrganizationsUsingGET = function(opts, callback) {
+    this.getOrganizationsOfUser = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
 
@@ -643,8 +573,8 @@
     }
 
     /**
-     * Callback function to receive the result of the getUserRolesByUsernameUsingGET operation.
-     * @callback module:api/OrganizationsApi~getUserRolesByUsernameUsingGETCallback
+     * Callback function to receive the result of the getUserRoles operation.
+     * @callback module:api/OrganizationsApi~getUserRolesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserRoles} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -657,21 +587,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~getUserRolesByUsernameUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~getUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserRoles}
      */
-    this.getUserRolesByUsernameUsingGET = function(organizationId, username, opts, callback) {
+    this.getUserRoles = function(organizationId, username, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getUserRolesByUsernameUsingGET");
+        throw new Error("Missing the required parameter 'organizationId' when calling getUserRoles");
       }
 
       // verify the required parameter 'username' is set
       if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling getUserRolesByUsernameUsingGET");
+        throw new Error("Missing the required parameter 'username' when calling getUserRoles");
       }
 
 
@@ -694,15 +624,15 @@
       var returnType = UserRoles;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/user/{username}/roles', 'GET',
+        '/api/v1/organizations/{organizationId}/users/{username}/roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the getUsersUsingGET operation.
-     * @callback module:api/OrganizationsApi~getUsersUsingGETCallback
+     * Callback function to receive the result of the getUsersOfOrganization operation.
+     * @callback module:api/OrganizationsApi~getUsersOfOrganizationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedUserPresentationResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -717,16 +647,16 @@
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
-     * @param {module:api/OrganizationsApi~getUsersUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~getUsersOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserPresentationResponse}
      */
-    this.getUsersUsingGET = function(organizationId, opts, callback) {
+    this.getUsersOfOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getUsersUsingGET");
+        throw new Error("Missing the required parameter 'organizationId' when calling getUsersOfOrganization");
       }
 
 
@@ -750,123 +680,15 @@
       var returnType = PaginatedUserPresentationResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/users', 'GET',
+        '/api/v1/organizations/{organizationId}/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the removeBillingAddressUsingDELETE operation.
-     * @callback module:api/OrganizationsApi~removeBillingAddressUsingDELETECallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Remove billing address
-     * @param {Number} organizationId organizationId
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~removeBillingAddressUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.removeBillingAddressUsingDELETE = function(organizationId, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling removeBillingAddressUsingDELETE");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/addresses/billing', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the removeMultipleUserRolesUsingDELETE operation.
-     * @callback module:api/OrganizationsApi~removeMultipleUserRolesUsingDELETECallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Remove role(s) from user (model)
-     * @param {Number} organizationId organizationId
-     * @param {module:model/ChangeUserRoleRequest} changeUserRoleRequest changeUserRoleRequest
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~removeMultipleUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.removeMultipleUserRolesUsingDELETE = function(organizationId, changeUserRoleRequest, opts, callback) {
-      opts = opts || {};
-      var postBody = changeUserRoleRequest;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling removeMultipleUserRolesUsingDELETE");
-      }
-
-      // verify the required parameter 'changeUserRoleRequest' is set
-      if (changeUserRoleRequest === undefined || changeUserRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeUserRoleRequest' when calling removeMultipleUserRolesUsingDELETE");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/users/role', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the removeUserRolesUsingDELETE operation.
-     * @callback module:api/OrganizationsApi~removeUserRolesUsingDELETECallback
+     * Callback function to receive the result of the removeUserRoles operation.
+     * @callback module:api/OrganizationsApi~removeUserRolesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -880,26 +702,26 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~removeUserRolesUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~removeUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.removeUserRolesUsingDELETE = function(organizationId, username, changeRoleRequest, opts, callback) {
+    this.removeUserRoles = function(organizationId, username, changeRoleRequest, opts, callback) {
       opts = opts || {};
       var postBody = changeRoleRequest;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling removeUserRolesUsingDELETE");
+        throw new Error("Missing the required parameter 'organizationId' when calling removeUserRoles");
       }
 
       // verify the required parameter 'username' is set
       if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling removeUserRolesUsingDELETE");
+        throw new Error("Missing the required parameter 'username' when calling removeUserRoles");
       }
 
       // verify the required parameter 'changeRoleRequest' is set
       if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeUserRolesUsingDELETE");
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeUserRoles");
       }
 
 
@@ -922,15 +744,186 @@
       var returnType = ApiError;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/user/{username}/roles', 'DELETE',
+        '/api/v1/organizations/{organizationId}/users/{username}/roles', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the setOrganizationLogoUsingPOST operation.
-     * @callback module:api/OrganizationsApi~setOrganizationLogoUsingPOSTCallback
+     * Callback function to receive the result of the updateOrganization operation.
+     * @callback module:api/OrganizationsApi~updateOrganizationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Organization} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update organization
+     * @param {Number} organizationId The id of the organization to be updated.
+     * @param {module:model/Organization} organization Updated organization object
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~updateOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Organization}
+     */
+    this.updateOrganization = function(organizationId, organization, opts, callback) {
+      opts = opts || {};
+      var postBody = organization;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganization");
+      }
+
+      // verify the required parameter 'organization' is set
+      if (organization === undefined || organization === null) {
+        throw new Error("Missing the required parameter 'organization' when calling updateOrganization");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = Organization;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateOrganizationAddress operation.
+     * @callback module:api/OrganizationsApi~updateOrganizationAddressCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Store address
+     * @param {Number} organizationId organizationId
+     * @param {module:model/OrganizationAddress} addressResource addressResource
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~updateOrganizationAddressCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.updateOrganizationAddress = function(organizationId, addressResource, opts, callback) {
+      opts = opts || {};
+      var postBody = addressResource;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationAddress");
+      }
+
+      // verify the required parameter 'addressResource' is set
+      if (addressResource === undefined || addressResource === null) {
+        throw new Error("Missing the required parameter 'addressResource' when calling updateOrganizationAddress");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/addresses/default', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateOrganizationBillingAddress operation.
+     * @callback module:api/OrganizationsApi~updateOrganizationBillingAddressCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Store billing address
+     * @param {Number} organizationId organizationId
+     * @param {module:model/OrganizationAddress} addressResource addressResource
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~updateOrganizationBillingAddressCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.updateOrganizationBillingAddress = function(organizationId, addressResource, opts, callback) {
+      opts = opts || {};
+      var postBody = addressResource;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationBillingAddress");
+      }
+
+      // verify the required parameter 'addressResource' is set
+      if (addressResource === undefined || addressResource === null) {
+        throw new Error("Missing the required parameter 'addressResource' when calling updateOrganizationBillingAddress");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/addresses/billing', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateOrganizationLogo operation.
+     * @callback module:api/OrganizationsApi~updateOrganizationLogoCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -944,21 +937,21 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~setOrganizationLogoUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~updateOrganizationLogoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.setOrganizationLogoUsingPOST = function(organizationId, file, opts, callback) {
+    this.updateOrganizationLogo = function(organizationId, file, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling setOrganizationLogoUsingPOST");
+        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationLogo");
       }
 
       // verify the required parameter 'file' is set
       if (file === undefined || file === null) {
-        throw new Error("Missing the required parameter 'file' when calling setOrganizationLogoUsingPOST");
+        throw new Error("Missing the required parameter 'file' when calling updateOrganizationLogo");
       }
 
 
@@ -981,47 +974,54 @@
       var returnType = ApiError;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/logo', 'POST',
+        '/api/v1/organizations/{organizationId}/logo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the storeAddressUsingPOST operation.
-     * @callback module:api/OrganizationsApi~storeAddressUsingPOSTCallback
+     * Callback function to receive the result of the updateUserRoles operation.
+     * @callback module:api/OrganizationsApi~updateUserRolesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiError} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Store address
+     * Add role(s) to user
      * @param {Number} organizationId organizationId
-     * @param {module:model/OrganizationAddress} addressResource addressResource
+     * @param {String} username username
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~storeAddressUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~updateUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.storeAddressUsingPOST = function(organizationId, addressResource, opts, callback) {
+    this.updateUserRoles = function(organizationId, username, changeRoleRequest, opts, callback) {
       opts = opts || {};
-      var postBody = addressResource;
+      var postBody = changeRoleRequest;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling storeAddressUsingPOST");
+        throw new Error("Missing the required parameter 'organizationId' when calling updateUserRoles");
       }
 
-      // verify the required parameter 'addressResource' is set
-      if (addressResource === undefined || addressResource === null) {
-        throw new Error("Missing the required parameter 'addressResource' when calling storeAddressUsingPOST");
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling updateUserRoles");
+      }
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling updateUserRoles");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId
+        'organizationId': organizationId,
+        'username': username
       };
       var queryParams = {
       };
@@ -1038,121 +1038,7 @@
       var returnType = ApiError;
 
       return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/addresses/default', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the storeBillingAddressUsingPOST operation.
-     * @callback module:api/OrganizationsApi~storeBillingAddressUsingPOSTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Store billing address
-     * @param {Number} organizationId organizationId
-     * @param {module:model/OrganizationAddress} addressResource addressResource
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~storeBillingAddressUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.storeBillingAddressUsingPOST = function(organizationId, addressResource, opts, callback) {
-      opts = opts || {};
-      var postBody = addressResource;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling storeBillingAddressUsingPOST");
-      }
-
-      // verify the required parameter 'addressResource' is set
-      if (addressResource === undefined || addressResource === null) {
-        throw new Error("Missing the required parameter 'addressResource' when calling storeBillingAddressUsingPOST");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}/addresses/billing', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the updateOrganizationUsingPUT operation.
-     * @callback module:api/OrganizationsApi~updateOrganizationUsingPUTCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Organization} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Update organization
-     * @param {Number} organizationId The id of the organization to be updated.
-     * @param {module:model/Organization} organization Updated organization object
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~updateOrganizationUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Organization}
-     */
-    this.updateOrganizationUsingPUT = function(organizationId, organization, opts, callback) {
-      opts = opts || {};
-      var postBody = organization;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationUsingPUT");
-      }
-
-      // verify the required parameter 'organization' is set
-      if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling updateOrganizationUsingPUT");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Organization;
-
-      return this.apiClient.callApi(
-        '/api/v1/organization/{organizationId}', 'PUT',
+        '/api/v1/organizations/{organizationId}/users/{username}/roles', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

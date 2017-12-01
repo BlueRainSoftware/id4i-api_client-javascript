@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**resolveWhoIsEntryUsingGET**](WhoIsApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | Resolve owner of id4n
+[**resolveWhoIsEntry**](WhoIsApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
-<a name="resolveWhoIsEntryUsingGET"></a>
-# **resolveWhoIsEntryUsingGET**
-> WhoIsResponse resolveWhoIsEntryUsingGET(id4n, opts)
+<a name="resolveWhoIsEntry"></a>
+# **resolveWhoIsEntry**
+> WhoIsResponse resolveWhoIsEntry(id4n, opts)
 
 Resolve owner of id4n
 
@@ -33,7 +33,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.resolveWhoIsEntryUsingGET(id4n, opts, callback);
+apiInstance.resolveWhoIsEntry(id4n, opts, callback);
 ```
 
 ### Parameters

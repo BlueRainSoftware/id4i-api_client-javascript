@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUsingPOST**](GUIDsApi.md#createUsingPOST) | **POST** /api/v1/guids | Create GUID(s)
+[**createGuid**](GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 
 
-<a name="createUsingPOST"></a>
-# **createUsingPOST**
-> ListOfId4ns createUsingPOST(createGUIDInfo, opts)
+<a name="createGuid"></a>
+# **createGuid**
+> ListOfId4ns createGuid(createGUIDInfo, opts)
 
 Create GUID(s)
 
@@ -35,7 +35,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createUsingPOST(createGUIDInfo, opts, callback);
+apiInstance.createGuid(createGUIDInfo, opts, callback);
 ```
 
 ### Parameters

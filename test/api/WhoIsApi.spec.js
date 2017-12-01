@@ -51,10 +51,10 @@
   }
 
   describe('WhoIsApi', function() {
-    describe('resolveWhoIsEntryUsingGET', function() {
-      it('should call resolveWhoIsEntryUsingGET successfully', function(done) {
-        //uncomment below and update the code to test resolveWhoIsEntryUsingGET
-        //instance.resolveWhoIsEntryUsingGET(function(error) {
+    describe('resolveWhoIsEntry', function() {
+      it('should call resolveWhoIsEntry successfully', function(done) {
+        //uncomment below and update the code to test resolveWhoIsEntry
+        //instance.resolveWhoIsEntry(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

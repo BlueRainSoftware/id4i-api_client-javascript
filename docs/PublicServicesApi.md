@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**forwardUsingGET**](PublicServicesApi.md#forwardUsingGET) | **GET** /go/{guid} | Forward
+[**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**resolveImageUsingGET**](PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
-[**resolveWhoIsEntryUsingGET**](PublicServicesApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | Resolve owner of id4n
+[**resolveWhoIsEntry**](PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
-<a name="forwardUsingGET"></a>
-# **forwardUsingGET**
-> ApiError forwardUsingGET(guid, opts)
+<a name="go"></a>
+# **go**
+> ApiError go(guid, opts)
 
 Forward
 
@@ -37,7 +37,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.forwardUsingGET(guid, opts, callback);
+apiInstance.go(guid, opts, callback);
 ```
 
 ### Parameters
@@ -111,9 +111,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="resolveWhoIsEntryUsingGET"></a>
-# **resolveWhoIsEntryUsingGET**
-> WhoIsResponse resolveWhoIsEntryUsingGET(id4n, opts)
+<a name="resolveWhoIsEntry"></a>
+# **resolveWhoIsEntry**
+> WhoIsResponse resolveWhoIsEntry(id4n, opts)
 
 Resolve owner of id4n
 
@@ -137,7 +137,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.resolveWhoIsEntryUsingGET(id4n, opts, callback);
+apiInstance.resolveWhoIsEntry(id4n, opts, callback);
 ```
 
 ### Parameters

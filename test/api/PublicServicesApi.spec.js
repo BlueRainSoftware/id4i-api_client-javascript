@@ -51,10 +51,10 @@
   }
 
   describe('PublicServicesApi', function() {
-    describe('forwardUsingGET', function() {
-      it('should call forwardUsingGET successfully', function(done) {
-        //uncomment below and update the code to test forwardUsingGET
-        //instance.forwardUsingGET(function(error) {
+    describe('go', function() {
+      it('should call go successfully', function(done) {
+        //uncomment below and update the code to test go
+        //instance.go(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -71,10 +71,10 @@
         done();
       });
     });
-    describe('resolveWhoIsEntryUsingGET', function() {
-      it('should call resolveWhoIsEntryUsingGET successfully', function(done) {
-        //uncomment below and update the code to test resolveWhoIsEntryUsingGET
-        //instance.resolveWhoIsEntryUsingGET(function(error) {
+    describe('resolveWhoIsEntry', function() {
+      it('should call resolveWhoIsEntry successfully', function(done) {
+        //uncomment below and update the code to test resolveWhoIsEntry
+        //instance.resolveWhoIsEntry(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

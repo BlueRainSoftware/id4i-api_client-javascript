@@ -49,8 +49,8 @@
 
 
     /**
-     * Callback function to receive the result of the resolveWhoIsEntryUsingGET operation.
-     * @callback module:api/WhoIsApi~resolveWhoIsEntryUsingGETCallback
+     * Callback function to receive the result of the resolveWhoIsEntry operation.
+     * @callback module:api/WhoIsApi~resolveWhoIsEntryCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WhoIsResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -62,16 +62,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/WhoIsApi~resolveWhoIsEntryUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/WhoIsApi~resolveWhoIsEntryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WhoIsResponse}
      */
-    this.resolveWhoIsEntryUsingGET = function(id4n, opts, callback) {
+    this.resolveWhoIsEntry = function(id4n, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling resolveWhoIsEntryUsingGET");
+        throw new Error("Missing the required parameter 'id4n' when calling resolveWhoIsEntry");
       }
 
 

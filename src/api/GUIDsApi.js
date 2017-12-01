@@ -49,8 +49,8 @@
 
 
     /**
-     * Callback function to receive the result of the createUsingPOST operation.
-     * @callback module:api/GUIDsApi~createUsingPOSTCallback
+     * Callback function to receive the result of the createGuid operation.
+     * @callback module:api/GUIDsApi~createGuidCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ListOfId4ns} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -63,16 +63,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/GUIDsApi~createUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/GUIDsApi~createGuidCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ListOfId4ns}
      */
-    this.createUsingPOST = function(createGUIDInfo, opts, callback) {
+    this.createGuid = function(createGUIDInfo, opts, callback) {
       opts = opts || {};
       var postBody = createGUIDInfo;
 
       // verify the required parameter 'createGUIDInfo' is set
       if (createGUIDInfo === undefined || createGUIDInfo === null) {
-        throw new Error("Missing the required parameter 'createGUIDInfo' when calling createUsingPOST");
+        throw new Error("Missing the required parameter 'createGUIDInfo' when calling createGuid");
       }
 
 
