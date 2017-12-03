@@ -45,13 +45,16 @@
    * GUID creation information
    * @alias module:model/CreateGuidRequest
    * @class
+   * @param count {Number} The total number of GUIDs to create
+   * @param length {Number} The charactersequence length of the GUID
+   * @param organizationId {Number} The id of the organization where the generated GUIDs should be assigned.
    */
-  var exports = function() {
+  var exports = function(count, length, organizationId) {
     var _this = this;
 
-
-
-
+    _this['count'] = count;
+    _this['length'] = length;
+    _this['organizationId'] = organizationId;
   };
 
   /**
