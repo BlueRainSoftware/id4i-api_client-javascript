@@ -44,16 +44,21 @@
    * Constructs a new <code>OrganizationAddress</code>.
    * @alias module:model/OrganizationAddress
    * @class
+   * @param firstname {String} 
+   * @param lastname {String} 
+   * @param street {String} 
+   * @param postCode {String} 
+   * @param city {String} 
    */
-  var exports = function() {
+  var exports = function(firstname, lastname, street, postCode, city) {
     var _this = this;
 
 
-
-
-
-
-
+    _this['firstname'] = firstname;
+    _this['lastname'] = lastname;
+    _this['street'] = street;
+    _this['postCode'] = postCode;
+    _this['city'] = city;
 
   };
 

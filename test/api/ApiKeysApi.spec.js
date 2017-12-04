@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.ApikeycontrollerApi();
+    instance = new Id4iApi.ApiKeysApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,51 +50,61 @@
       object[property] = value;
   }
 
-  describe('ApikeycontrollerApi', function() {
-    describe('createUsingPOST', function() {
-      it('should call createUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createUsingPOST
-        //instance.createUsingPOST(function(error) {
+  describe('ApiKeysApi', function() {
+    describe('createNewApiKey', function() {
+      it('should call createNewApiKey successfully', function(done) {
+        //uncomment below and update the code to test createNewApiKey
+        //instance.createNewApiKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listUsingGET', function() {
-      it('should call listUsingGET successfully', function(done) {
-        //uncomment below and update the code to test listUsingGET
-        //instance.listUsingGET(function(error) {
+    describe('deleteApiKey', function() {
+      it('should call deleteApiKey successfully', function(done) {
+        //uncomment below and update the code to test deleteApiKey
+        //instance.deleteApiKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeKeyUsingDELETE', function() {
-      it('should call removeKeyUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test removeKeyUsingDELETE
-        //instance.removeKeyUsingDELETE(function(error) {
+    describe('getApiKey', function() {
+      it('should call getApiKey successfully', function(done) {
+        //uncomment below and update the code to test getApiKey
+        //instance.getApiKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('setKeyActivationStatusUsingPUT', function() {
-      it('should call setKeyActivationStatusUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test setKeyActivationStatusUsingPUT
-        //instance.setKeyActivationStatusUsingPUT(function(error) {
+    describe('listAllApiKeysOfOrganization', function() {
+      it('should call listAllApiKeysOfOrganization successfully', function(done) {
+        //uncomment below and update the code to test listAllApiKeysOfOrganization
+        //instance.listAllApiKeysOfOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('showKeyUsingGET', function() {
-      it('should call showKeyUsingGET successfully', function(done) {
-        //uncomment below and update the code to test showKeyUsingGET
-        //instance.showKeyUsingGET(function(error) {
+    describe('listApiKeyPrivileges', function() {
+      it('should call listApiKeyPrivileges successfully', function(done) {
+        //uncomment below and update the code to test listApiKeyPrivileges
+        //instance.listApiKeyPrivileges(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('setApiKeyActivationStatus', function() {
+      it('should call setApiKeyActivationStatus successfully', function(done) {
+        //uncomment below and update the code to test setApiKeyActivationStatus
+        //instance.setApiKeyActivationStatus(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

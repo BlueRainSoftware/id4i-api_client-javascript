@@ -50,6 +50,7 @@
   var exports = function(length, organizationId) {
     var _this = this;
 
+
     _this['length'] = length;
     _this['organizationId'] = organizationId;
   };
@@ -65,6 +66,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('label')) {
+        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      }
       if (data.hasOwnProperty('length')) {
         obj['length'] = ApiClient.convertToType(data['length'], 'Number');
       }
@@ -75,6 +79,10 @@
     return obj;
   }
 
+  /**
+   * @member {String} label
+   */
+  exports.prototype['label'] = undefined;
   /**
    * @member {Number} length
    */

@@ -44,12 +44,14 @@
    * Constructs a new <code>CreateRoutingCollectionRequest</code>.
    * @alias module:model/CreateRoutingCollectionRequest
    * @class
+   * @param label {String} 
    * @param length {Number} 
    * @param organizationId {Number} 
    */
-  var exports = function(length, organizationId) {
+  var exports = function(label, length, organizationId) {
     var _this = this;
 
+    _this['label'] = label;
     _this['length'] = length;
     _this['organizationId'] = organizationId;
   };
@@ -65,6 +67,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('label')) {
+        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      }
       if (data.hasOwnProperty('length')) {
         obj['length'] = ApiClient.convertToType(data['length'], 'Number');
       }
@@ -75,6 +80,10 @@
     return obj;
   }
 
+  /**
+   * @member {String} label
+   */
+  exports.prototype['label'] = undefined;
   /**
    * @member {Number} length
    */

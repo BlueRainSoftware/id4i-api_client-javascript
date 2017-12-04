@@ -51,110 +51,30 @@
   }
 
   describe('RoutingApi', function() {
-    describe('addElementsToRoutingCollectionUsingPUT', function() {
-      it('should call addElementsToRoutingCollectionUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test addElementsToRoutingCollectionUsingPUT
-        //instance.addElementsToRoutingCollectionUsingPUT(function(error) {
+    describe('getRoute', function() {
+      it('should call getRoute successfully', function(done) {
+        //uncomment below and update the code to test getRoute
+        //instance.getRoute(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('addSingleElementToRoutingCollectionUsingPUT', function() {
-      it('should call addSingleElementToRoutingCollectionUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test addSingleElementToRoutingCollectionUsingPUT
-        //instance.addSingleElementToRoutingCollectionUsingPUT(function(error) {
+    describe('getRoutingFile', function() {
+      it('should call getRoutingFile successfully', function(done) {
+        //uncomment below and update the code to test getRoutingFile
+        //instance.getRoutingFile(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createRoutingCollectionUsingPOST', function() {
-      it('should call createRoutingCollectionUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createRoutingCollectionUsingPOST
-        //instance.createRoutingCollectionUsingPOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteRoutingCollectionUsingDELETE', function() {
-      it('should call deleteRoutingCollectionUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteRoutingCollectionUsingDELETE
-        //instance.deleteRoutingCollectionUsingDELETE(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('findById4nUsingGET3', function() {
-      it('should call findById4nUsingGET3 successfully', function(done) {
-        //uncomment below and update the code to test findById4nUsingGET3
-        //instance.findById4nUsingGET3(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('forwardUsingGET', function() {
-      it('should call forwardUsingGET successfully', function(done) {
-        //uncomment below and update the code to test forwardUsingGET
-        //instance.forwardUsingGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('removeElementsFromRoutingCollectionUsingDELETE', function() {
-      it('should call removeElementsFromRoutingCollectionUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test removeElementsFromRoutingCollectionUsingDELETE
-        //instance.removeElementsFromRoutingCollectionUsingDELETE(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('removeSingleElementFromRoutingCollectionUsingDELETE', function() {
-      it('should call removeSingleElementFromRoutingCollectionUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test removeSingleElementFromRoutingCollectionUsingDELETE
-        //instance.removeSingleElementFromRoutingCollectionUsingDELETE(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('retrieveCurrentParamsByTypeUsingGET', function() {
-      it('should call retrieveCurrentParamsByTypeUsingGET successfully', function(done) {
-        //uncomment below and update the code to test retrieveCurrentParamsByTypeUsingGET
-        //instance.retrieveCurrentParamsByTypeUsingGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('retrieveRoutingFileUsingGET', function() {
-      it('should call retrieveRoutingFileUsingGET successfully', function(done) {
-        //uncomment below and update the code to test retrieveRoutingFileUsingGET
-        //instance.retrieveRoutingFileUsingGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('storeRoutingFileUsingPUT', function() {
-      it('should call storeRoutingFileUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test storeRoutingFileUsingPUT
-        //instance.storeRoutingFileUsingPUT(function(error) {
+    describe('updateRoutingFile', function() {
+      it('should call updateRoutingFile successfully', function(done) {
+        //uncomment below and update the code to test updateRoutingFile
+        //instance.updateRoutingFile(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

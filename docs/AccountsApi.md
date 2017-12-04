@@ -4,135 +4,24 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMultipleUserRolesUsingPOST**](AccountsApi.md#addMultipleUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/users/role | Add role(s) to user (model)
-[**addUserRolesUsingPOST**](AccountsApi.md#addUserRolesUsingPOST) | **POST** /api/v1/organization/{organizationId}/user/{username}/roles | Add role(s) to user
-[**findUserByUsernameUsingGET**](AccountsApi.md#findUserByUsernameUsingGET) | **GET** /api/v1/users/{username} | Find by username
-[**getMultipleUserRolesUsingGET**](AccountsApi.md#getMultipleUserRolesUsingGET) | **GET** /api/v1/organization/{organizationId}/users/role | List users and their roles
-[**getOrganizationsUsingGET**](AccountsApi.md#getOrganizationsUsingGET) | **GET** /api/v1/user/organizations | Retrieve organizations of user
-[**getUserRolesByUsernameUsingGET**](AccountsApi.md#getUserRolesByUsernameUsingGET) | **GET** /api/v1/organization/{organizationId}/user/{username}/roles | Get user roles by username
-[**getUsersUsingGET**](AccountsApi.md#getUsersUsingGET) | **GET** /api/v1/organization/{organizationId}/users | Find users in organization
-[**listUsingGET2**](AccountsApi.md#listUsingGET2) | **GET** /api/v1/roles | List roles
+[**findUserByUsername**](AccountsApi.md#findUserByUsername) | **GET** /api/v1/users/{username} | Find by username
+[**getAllOrganizationRoles**](AccountsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
+[**getOrganizationsOfUser**](AccountsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+[**getUserRoles**](AccountsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
+[**getUsersOfOrganization**](AccountsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+[**listAllRoles**](AccountsApi.md#listAllRoles) | **GET** /api/v1/roles | List roles
 [**login**](AccountsApi.md#login) | **POST** /login | 
-[**registerUserUsingPOST**](AccountsApi.md#registerUserUsingPOST) | **POST** /account/registration | Register user
-[**removeMultipleUserRolesUsingDELETE**](AccountsApi.md#removeMultipleUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/users/role | Remove role(s) from user (model)
-[**removeUserRolesUsingDELETE**](AccountsApi.md#removeUserRolesUsingDELETE) | **DELETE** /api/v1/organization/{organizationId}/user/{username}/roles | Remove role(s) from user
-[**requestPasswordResetUsingPOST**](AccountsApi.md#requestPasswordResetUsingPOST) | **POST** /account/password | Request password reset
-[**verifyPasswordResetUsingPUT**](AccountsApi.md#verifyPasswordResetUsingPUT) | **PUT** /account/password | Verify password reset
-[**verifyRegistrationUsingPOST**](AccountsApi.md#verifyRegistrationUsingPOST) | **POST** /account/verification | Verify registration
+[**registerUser**](AccountsApi.md#registerUser) | **POST** /account/registration | Register user
+[**removeUserRoles**](AccountsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**requestPasswordReset**](AccountsApi.md#requestPasswordReset) | **POST** /account/password | Request password reset
+[**updateUserRoles**](AccountsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
+[**verifyPasswordReset**](AccountsApi.md#verifyPasswordReset) | **PUT** /account/password | Verify password reset
+[**verifyUserRegistration**](AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 
 
-<a name="addMultipleUserRolesUsingPOST"></a>
-# **addMultipleUserRolesUsingPOST**
-> ApiError addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts)
-
-Add role(s) to user (model)
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.AccountsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var changeUserRoleRequest = new Id4iApi.ChangeUserRoleRequest(); // ChangeUserRoleRequest | changeUserRoleRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addMultipleUserRolesUsingPOST(organizationId, changeUserRoleRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **changeUserRoleRequest** | [**ChangeUserRoleRequest**](ChangeUserRoleRequest.md)| changeUserRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addUserRolesUsingPOST"></a>
-# **addUserRolesUsingPOST**
-> ApiError addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts)
-
-Add role(s) to user
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.AccountsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var username = "username_example"; // String | username
-
-var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addUserRolesUsingPOST(organizationId, username, changeRoleRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **username** | **String**| username | 
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="findUserByUsernameUsingGET"></a>
-# **findUserByUsernameUsingGET**
-> UserPresentation findUserByUsernameUsingGET(username, opts)
+<a name="findUserByUsername"></a>
+# **findUserByUsername**
+> UserPresentation findUserByUsername(username, opts)
 
 Find by username
 
@@ -156,7 +45,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findUserByUsernameUsingGET(username, opts, callback);
+apiInstance.findUserByUsername(username, opts, callback);
 ```
 
 ### Parameters
@@ -180,9 +69,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getMultipleUserRolesUsingGET"></a>
-# **getMultipleUserRolesUsingGET**
-> PaginatedUserRolesResponse getMultipleUserRolesUsingGET(organizationId, opts)
+<a name="getAllOrganizationRoles"></a>
+# **getAllOrganizationRoles**
+> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, opts)
 
 List users and their roles
 
@@ -210,7 +99,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getMultipleUserRolesUsingGET(organizationId, opts, callback);
+apiInstance.getAllOrganizationRoles(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -236,9 +125,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getOrganizationsUsingGET"></a>
-# **getOrganizationsUsingGET**
-> PaginatedResponseOrganization getOrganizationsUsingGET(opts)
+<a name="getOrganizationsOfUser"></a>
+# **getOrganizationsOfUser**
+> PaginatedResponseOrganization getOrganizationsOfUser(opts)
 
 Retrieve organizations of user
 
@@ -263,7 +152,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getOrganizationsUsingGET(opts, callback);
+apiInstance.getOrganizationsOfUser(opts, callback);
 ```
 
 ### Parameters
@@ -289,9 +178,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getUserRolesByUsernameUsingGET"></a>
-# **getUserRolesByUsernameUsingGET**
-> UserRoles getUserRolesByUsernameUsingGET(organizationId, username, opts)
+<a name="getUserRoles"></a>
+# **getUserRoles**
+> UserRoles getUserRoles(organizationId, username, opts)
 
 Get user roles by username
 
@@ -317,7 +206,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getUserRolesByUsernameUsingGET(organizationId, username, opts, callback);
+apiInstance.getUserRoles(organizationId, username, opts, callback);
 ```
 
 ### Parameters
@@ -342,9 +231,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getUsersUsingGET"></a>
-# **getUsersUsingGET**
-> PaginatedUserPresentationResponse getUsersUsingGET(organizationId, opts)
+<a name="getUsersOfOrganization"></a>
+# **getUsersOfOrganization**
+> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, opts)
 
 Find users in organization
 
@@ -372,7 +261,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getUsersUsingGET(organizationId, opts, callback);
+apiInstance.getUsersOfOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -398,9 +287,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="listUsingGET2"></a>
-# **listUsingGET2**
-> RoleResponse listUsingGET2(opts)
+<a name="listAllRoles"></a>
+# **listAllRoles**
+> RoleResponse listAllRoles(opts)
 
 List roles
 
@@ -427,7 +316,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listUsingGET2(opts, callback);
+apiInstance.listAllRoles(opts, callback);
 ```
 
 ### Parameters
@@ -499,9 +388,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="registerUserUsingPOST"></a>
-# **registerUserUsingPOST**
-> UserRegistrationResponse registerUserUsingPOST(userRegistration, opts)
+<a name="registerUser"></a>
+# **registerUser**
+> UserRegistrationResponse registerUser(userRegistration, opts)
 
 Register user
 
@@ -527,7 +416,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.registerUserUsingPOST(userRegistration, opts, callback);
+apiInstance.registerUser(userRegistration, opts, callback);
 ```
 
 ### Parameters
@@ -551,62 +440,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeMultipleUserRolesUsingDELETE"></a>
-# **removeMultipleUserRolesUsingDELETE**
-> ApiError removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts)
-
-Remove role(s) from user (model)
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.AccountsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var changeUserRoleRequest = new Id4iApi.ChangeUserRoleRequest(); // ChangeUserRoleRequest | changeUserRoleRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.removeMultipleUserRolesUsingDELETE(organizationId, changeUserRoleRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **changeUserRoleRequest** | [**ChangeUserRoleRequest**](ChangeUserRoleRequest.md)| changeUserRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeUserRolesUsingDELETE"></a>
-# **removeUserRolesUsingDELETE**
-> ApiError removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts)
+<a name="removeUserRoles"></a>
+# **removeUserRoles**
+> ApiError removeUserRoles(organizationId, username, changeRoleRequest, opts)
 
 Remove role(s) from user
 
@@ -634,7 +470,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeUserRolesUsingDELETE(organizationId, username, changeRoleRequest, opts, callback);
+apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, opts, callback);
 ```
 
 ### Parameters
@@ -660,9 +496,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="requestPasswordResetUsingPOST"></a>
-# **requestPasswordResetUsingPOST**
-> SimpleMessageResponse requestPasswordResetUsingPOST(resetRequest, opts)
+<a name="requestPasswordReset"></a>
+# **requestPasswordReset**
+> SimpleMessageResponse requestPasswordReset(resetRequest, opts)
 
 Request password reset
 
@@ -688,7 +524,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.requestPasswordResetUsingPOST(resetRequest, opts, callback);
+apiInstance.requestPasswordReset(resetRequest, opts, callback);
 ```
 
 ### Parameters
@@ -712,9 +548,65 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="verifyPasswordResetUsingPUT"></a>
-# **verifyPasswordResetUsingPUT**
-> SimpleMessageResponse verifyPasswordResetUsingPUT(verificationRequest, opts)
+<a name="updateUserRoles"></a>
+# **updateUserRoles**
+> ApiError updateUserRoles(organizationId, username, changeRoleRequest, opts)
+
+Add role(s) to user
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.AccountsApi();
+
+var organizationId = 789; // Number | organizationId
+
+var username = "username_example"; // String | username
+
+var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateUserRoles(organizationId, username, changeRoleRequest, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **username** | **String**| username | 
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="verifyPasswordReset"></a>
+# **verifyPasswordReset**
+> SimpleMessageResponse verifyPasswordReset(verificationRequest, opts)
 
 Verify password reset
 
@@ -740,7 +632,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.verifyPasswordResetUsingPUT(verificationRequest, opts, callback);
+apiInstance.verifyPasswordReset(verificationRequest, opts, callback);
 ```
 
 ### Parameters
@@ -764,9 +656,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="verifyRegistrationUsingPOST"></a>
-# **verifyRegistrationUsingPOST**
-> ApiError verifyRegistrationUsingPOST(token, opts)
+<a name="verifyUserRegistration"></a>
+# **verifyUserRegistration**
+> ApiError verifyUserRegistration(token, opts)
 
 Verify registration
 
@@ -792,7 +684,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.verifyRegistrationUsingPOST(token, opts, callback);
+apiInstance.verifyUserRegistration(token, opts, callback);
 ```
 
 ### Parameters

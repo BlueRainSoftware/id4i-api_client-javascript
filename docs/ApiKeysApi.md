@@ -1,19 +1,20 @@
-# Id4iApi.ApikeycontrollerApi
+# Id4iApi.ApiKeysApi
 
 All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUsingPOST**](ApikeycontrollerApi.md#createUsingPOST) | **POST** /api/v1/apikeys | Create apiKey
-[**listUsingGET**](ApikeycontrollerApi.md#listUsingGET) | **GET** /api/v1/apikeys | Find apiKeys by organization
-[**removeKeyUsingDELETE**](ApikeycontrollerApi.md#removeKeyUsingDELETE) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
-[**setKeyActivationStatusUsingPUT**](ApikeycontrollerApi.md#setKeyActivationStatusUsingPUT) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
-[**showKeyUsingGET**](ApikeycontrollerApi.md#showKeyUsingGET) | **GET** /api/v1/apikeys/{key} | Show apiKey
+[**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create apiKey
+[**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
+[**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show apiKey
+[**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find apiKeys by organization
+[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
+[**setApiKeyActivationStatus**](ApiKeysApi.md#setApiKeyActivationStatus) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
 
 
-<a name="createUsingPOST"></a>
-# **createUsingPOST**
-> ApiKeyPresentation createUsingPOST(creationRequest, opts)
+<a name="createNewApiKey"></a>
+# **createNewApiKey**
+> ApiKeyPresentation createNewApiKey(creationRequest, opts)
 
 Create apiKey
 
@@ -23,7 +24,7 @@ Creation of a new apiKey.
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.ApikeycontrollerApi();
+var apiInstance = new Id4iApi.ApiKeysApi();
 
 var creationRequest = new Id4iApi.ApiKeyCreationRequest(); // ApiKeyCreationRequest | ApiKey to be created.
 
@@ -39,7 +40,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createUsingPOST(creationRequest, opts, callback);
+apiInstance.createNewApiKey(creationRequest, opts, callback);
 ```
 
 ### Parameters
@@ -63,9 +64,113 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="listUsingGET"></a>
-# **listUsingGET**
-> PaginatedApiKeyResponse listUsingGET(organizationId, opts)
+<a name="deleteApiKey"></a>
+# **deleteApiKey**
+> ApiError deleteApiKey(key, opts)
+
+Delete apiKey
+
+Deletion of an apiKey.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var key = "key_example"; // String | The apiKey to delete.
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.deleteApiKey(key, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| The apiKey to delete. | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getApiKey"></a>
+# **getApiKey**
+> ApiKeyPresentation getApiKey(key, opts)
+
+Show apiKey
+
+Showing the details of an apiKey.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var key = "key_example"; // String | The apiKey to show.
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getApiKey(key, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| The apiKey to show. | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiKeyPresentation**](ApiKeyPresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="listAllApiKeysOfOrganization"></a>
+# **listAllApiKeysOfOrganization**
+> PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, opts)
 
 Find apiKeys by organization
 
@@ -75,7 +180,7 @@ Finding all apiKeys assigned to the specified organization in a paginated manner
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.ApikeycontrollerApi();
+var apiInstance = new Id4iApi.ApiKeysApi();
 
 var organizationId = 789; // Number | The id of the organization to search in.
 
@@ -93,7 +198,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listUsingGET(organizationId, opts, callback);
+apiInstance.listAllApiKeysOfOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -119,25 +224,26 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeKeyUsingDELETE"></a>
-# **removeKeyUsingDELETE**
-> ApiError removeKeyUsingDELETE(key, opts)
+<a name="listApiKeyPrivileges"></a>
+# **listApiKeyPrivileges**
+> ApiKeyPrivilegeResponse listApiKeyPrivileges(opts)
 
-Delete apiKey
+List ApiKey privileges
 
-Deletion of an apiKey.
+Listing api key privileges.
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.ApikeycontrollerApi();
-
-var key = "key_example"; // String | The apiKey to delete.
+var apiInstance = new Id4iApi.ApiKeysApi();
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'id4nConcerning': true, // Boolean | id4nConcerning
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -147,20 +253,22 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeKeyUsingDELETE(key, opts, callback);
+apiInstance.listApiKeyPrivileges(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The apiKey to delete. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
+ **id4nConcerning** | **Boolean**| id4nConcerning | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+[**ApiKeyPrivilegeResponse**](ApiKeyPrivilegeResponse.md)
 
 ### Authorization
 
@@ -171,9 +279,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="setKeyActivationStatusUsingPUT"></a>
-# **setKeyActivationStatusUsingPUT**
-> ApiError setKeyActivationStatusUsingPUT(key, apiKeyStatus, opts)
+<a name="setApiKeyActivationStatus"></a>
+# **setApiKeyActivationStatus**
+> ApiError setApiKeyActivationStatus(key, apiKeyStatus, opts)
 
 Set apiKey activation state
 
@@ -183,7 +291,7 @@ Setting the apiKey activation state.
 ```javascript
 var Id4iApi = require('id4i_api');
 
-var apiInstance = new Id4iApi.ApikeycontrollerApi();
+var apiInstance = new Id4iApi.ApiKeysApi();
 
 var key = "key_example"; // String | The apiKey to change the activation state.
 
@@ -201,7 +309,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.setKeyActivationStatusUsingPUT(key, apiKeyStatus, opts, callback);
+apiInstance.setApiKeyActivationStatus(key, apiKeyStatus, opts, callback);
 ```
 
 ### Parameters
@@ -216,58 +324,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="showKeyUsingGET"></a>
-# **showKeyUsingGET**
-> ApiKeyPresentation showKeyUsingGET(key, opts)
-
-Show apiKey
-
-Showing the details of an apiKey.
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.ApikeycontrollerApi();
-
-var key = "key_example"; // String | The apiKey to show.
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showKeyUsingGET(key, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **String**| The apiKey to show. | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiKeyPresentation**](ApiKeyPresentation.md)
 
 ### Authorization
 

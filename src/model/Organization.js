@@ -45,13 +45,14 @@
    * An organization
    * @alias module:model/Organization
    * @class
+   * @param name {String} The name of the organization
    */
-  var exports = function() {
+  var exports = function(name) {
     var _this = this;
 
 
 
-
+    _this['name'] = name;
   };
 
   /**

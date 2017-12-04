@@ -57,6 +57,12 @@
       //expect(instance).to.be.a(Id4iApi.CreateRoutingCollectionRequest);
     });
 
+    it('should have the property label (base name: "label")', function() {
+      // uncomment below and update the code to test the property label
+      //var instane = new Id4iApi.CreateRoutingCollectionRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property length (base name: "length")', function() {
       // uncomment below and update the code to test the property length
       //var instane = new Id4iApi.CreateRoutingCollectionRequest();
