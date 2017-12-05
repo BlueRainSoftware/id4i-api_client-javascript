@@ -4,16 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**applicationInfo**](MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about Id4i
+[**applicationInfo**](MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 
 
 <a name="applicationInfo"></a>
 # **applicationInfo**
 > AppInfoPresentation applicationInfo(opts)
 
-Retrieve version information about Id4i
+Retrieve version information about ID4i
 
-Retrieving version information about Id4i.
+Retrieving version information about ID4i.
 
 ### Example
 ```javascript
