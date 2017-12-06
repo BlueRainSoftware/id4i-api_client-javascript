@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.GuidCollection = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.Guid = factory(root.Id4iApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,33 +35,31 @@
 
 
   /**
-   * The GuidCollection model module.
-   * @module model/GuidCollection
+   * The Guid model module.
+   * @module model/Guid
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new <code>GuidCollection</code>.
-   * @alias module:model/GuidCollection
+   * Constructs a new <code>Guid</code>.
+   * @alias module:model/Guid
    * @class
+   * @param id4n {String} 
    */
-  var exports = function() {
+  var exports = function(id4n) {
     var _this = this;
 
 
-
-
-
-
+    _this['id4n'] = id4n;
 
   };
 
   /**
-   * Constructs a <code>GuidCollection</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Guid</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/GuidCollection} obj Optional instance to populate.
-   * @return {module:model/GuidCollection} The populated <code>GuidCollection</code> instance.
+   * @param {module:model/Guid} obj Optional instance to populate.
+   * @return {module:model/Guid} The populated <code>Guid</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -73,17 +71,8 @@
       if (data.hasOwnProperty('id4n')) {
         obj['id4n'] = ApiClient.convertToType(data['id4n'], 'String');
       }
-      if (data.hasOwnProperty('label')) {
-        obj['label'] = ApiClient.convertToType(data['label'], 'String');
-      }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
-      }
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
-      }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
     }
     return obj;
@@ -98,44 +87,10 @@
    */
   exports.prototype['id4n'] = undefined;
   /**
-   * @member {String} label
-   */
-  exports.prototype['label'] = undefined;
-  /**
-   * @member {Number} organizationId
-   */
-  exports.prototype['organizationId'] = undefined;
-  /**
    * @member {Number} ownerOrganizationId
    */
   exports.prototype['ownerOrganizationId'] = undefined;
-  /**
-   * @member {module:model/GuidCollection.TypeEnum} type
-   */
-  exports.prototype['type'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>type</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.TypeEnum = {
-    /**
-     * value: "ROUTING_COLLECTION"
-     * @const
-     */
-    "ROUTING_COLLECTION": "ROUTING_COLLECTION",
-    /**
-     * value: "LOGISTIC_COLLECTION"
-     * @const
-     */
-    "LOGISTIC_COLLECTION": "LOGISTIC_COLLECTION",
-    /**
-     * value: "LABELLED_COLLECTION"
-     * @const
-     */
-    "LABELLED_COLLECTION": "LABELLED_COLLECTION"  };
 
 
   return exports;

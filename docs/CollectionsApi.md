@@ -1075,7 +1075,7 @@ No authorization required
 
 <a name="listElementsOfCollection"></a>
 # **listElementsOfCollection**
-> PaginatedResponsestring listElementsOfCollection(id4n, opts)
+> PaginatedGuidResponse listElementsOfCollection(id4n, opts)
 
 List contents of the collection
 
@@ -1116,7 +1116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponsestring**](PaginatedResponsestring.md)
+[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
 
 ### Authorization
 

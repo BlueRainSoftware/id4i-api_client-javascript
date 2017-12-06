@@ -17,32 +17,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Guid'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Guid'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.PaginatedResponsestring = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.PaginatedResponseGuid = factory(root.Id4iApi.ApiClient, root.Id4iApi.Guid);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Guid) {
   'use strict';
 
 
 
 
   /**
-   * The PaginatedResponsestring model module.
-   * @module model/PaginatedResponsestring
+   * The PaginatedResponseGuid model module.
+   * @module model/PaginatedResponseGuid
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new <code>PaginatedResponsestring</code>.
-   * @alias module:model/PaginatedResponsestring
+   * Constructs a new <code>PaginatedResponseGuid</code>.
+   * @alias module:model/PaginatedResponseGuid
    * @class
    * @param limit {Number} 
    * @param offset {Number} 
@@ -57,18 +57,18 @@
   };
 
   /**
-   * Constructs a <code>PaginatedResponsestring</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PaginatedResponseGuid</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/PaginatedResponsestring} obj Optional instance to populate.
-   * @return {module:model/PaginatedResponsestring} The populated <code>PaginatedResponsestring</code> instance.
+   * @param {module:model/PaginatedResponseGuid} obj Optional instance to populate.
+   * @return {module:model/PaginatedResponseGuid} The populated <code>PaginatedResponseGuid</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('elements')) {
-        obj['elements'] = ApiClient.convertToType(data['elements'], ['String']);
+        obj['elements'] = ApiClient.convertToType(data['elements'], [Guid]);
       }
       if (data.hasOwnProperty('limit')) {
         obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
@@ -84,7 +84,7 @@
   }
 
   /**
-   * @member {Array.<String>} elements
+   * @member {Array.<module:model/Guid>} elements
    */
   exports.prototype['elements'] = undefined;
   /**

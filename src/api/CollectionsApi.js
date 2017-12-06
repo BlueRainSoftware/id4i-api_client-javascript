@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/PaginatedGuidCollection', 'model/PaginatedResponsestring', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/PaginatedGuidCollection', 'model/PaginatedGuidResponse', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateLabelledCollectionRequest'), require('../model/CreateLogisticCollectionRequest'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedResponsestring'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateLabelledCollectionRequest'), require('../model/CreateLogisticCollectionRequest'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedGuidResponse'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.CollectionsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedResponsestring, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.CollectionsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedGuidResponse, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, ApiError, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, PaginatedGuidCollection, PaginatedResponsestring, ResponseEntity) {
+}(this, function(ApiClient, ApiError, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, PaginatedGuidCollection, PaginatedGuidResponse, ResponseEntity) {
   'use strict';
 
   /**
@@ -1130,7 +1130,7 @@
      * Callback function to receive the result of the listElementsOfCollection operation.
      * @callback module:api/CollectionsApi~listElementsOfCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedResponsestring} data The data returned by the service call.
+     * @param {module:model/PaginatedGuidResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1143,7 +1143,7 @@
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/CollectionsApi~listElementsOfCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedResponsestring}
+     * data is of type: {@link module:model/PaginatedGuidResponse}
      */
     this.listElementsOfCollection = function(id4n, opts, callback) {
       opts = opts || {};
@@ -1172,7 +1172,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedResponsestring;
+      var returnType = PaginatedGuidResponse;
 
       return this.apiClient.callApi(
         '/api/v1/collections/{id4n}/elements', 'GET',

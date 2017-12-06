@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.GuidCollection();
+    instance = new Id4iApi.Guid();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,46 +50,28 @@
       object[property] = value;
   }
 
-  describe('GuidCollection', function() {
-    it('should create an instance of GuidCollection', function() {
-      // uncomment below and update the code to test GuidCollection
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be.a(Id4iApi.GuidCollection);
+  describe('Guid', function() {
+    it('should create an instance of Guid', function() {
+      // uncomment below and update the code to test Guid
+      //var instane = new Id4iApi.Guid();
+      //expect(instance).to.be.a(Id4iApi.Guid);
     });
 
     it('should have the property createdTimestamp (base name: "createdTimestamp")', function() {
       // uncomment below and update the code to test the property createdTimestamp
-      //var instane = new Id4iApi.GuidCollection();
+      //var instane = new Id4iApi.Guid();
       //expect(instance).to.be();
     });
 
     it('should have the property id4n (base name: "id4n")', function() {
       // uncomment below and update the code to test the property id4n
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property label (base name: "label")', function() {
-      // uncomment below and update the code to test the property label
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.GuidCollection();
+      //var instane = new Id4iApi.Guid();
       //expect(instance).to.be();
     });
 
     it('should have the property ownerOrganizationId (base name: "ownerOrganizationId")', function() {
       // uncomment below and update the code to test the property ownerOrganizationId
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new Id4iApi.GuidCollection();
+      //var instane = new Id4iApi.Guid();
       //expect(instance).to.be();
     });
 
