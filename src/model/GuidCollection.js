@@ -76,8 +76,8 @@
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
       }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
+      if (data.hasOwnProperty('nextScanOwnership')) {
+        obj['nextScanOwnership'] = ApiClient.convertToType(data['nextScanOwnership'], 'Boolean');
       }
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
@@ -102,9 +102,9 @@
    */
   exports.prototype['label'] = undefined;
   /**
-   * @member {Number} organizationId
+   * @member {Boolean} nextScanOwnership
    */
-  exports.prototype['organizationId'] = undefined;
+  exports.prototype['nextScanOwnership'] = undefined;
   /**
    * @member {Number} ownerOrganizationId
    */

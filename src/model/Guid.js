@@ -52,6 +52,7 @@
 
     _this['id4n'] = id4n;
 
+
   };
 
   /**
@@ -71,6 +72,9 @@
       if (data.hasOwnProperty('id4n')) {
         obj['id4n'] = ApiClient.convertToType(data['id4n'], 'String');
       }
+      if (data.hasOwnProperty('nextScanOwnership')) {
+        obj['nextScanOwnership'] = ApiClient.convertToType(data['nextScanOwnership'], 'Boolean');
+      }
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
       }
@@ -86,6 +90,10 @@
    * @member {String} id4n
    */
   exports.prototype['id4n'] = undefined;
+  /**
+   * @member {Boolean} nextScanOwnership
+   */
+  exports.prototype['nextScanOwnership'] = undefined;
   /**
    * @member {Number} ownerOrganizationId
    */

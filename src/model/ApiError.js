@@ -161,6 +161,11 @@
      */
     "ENTITY_NOT_FOUND": "ERR_ENTITY_NOT_FOUND",
     /**
+     * value: "ERR_DUPLICATE"
+     * @const
+     */
+    "DUPLICATE": "ERR_DUPLICATE",
+    /**
      * value: "ERR_HTTP"
      * @const
      */
@@ -205,11 +210,6 @@
      * @const
      */
     "EMAIL_TEMPLATE_NOT_AVAILABLE": "ERR_EMAIL_TEMPLATE_NOT_AVAILABLE",
-    /**
-     * value: "ERR_DUPLICATE"
-     * @const
-     */
-    "DUPLICATE": "ERR_DUPLICATE",
     /**
      * value: "ERR_EMAIL_PREPARATION_FAILED"
      * @const

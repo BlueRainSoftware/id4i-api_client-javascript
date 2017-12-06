@@ -69,6 +69,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property nextScanOwnership (base name: "nextScanOwnership")', function() {
+      // uncomment below and update the code to test the property nextScanOwnership
+      //var instane = new Id4iApi.Guid();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ownerOrganizationId (base name: "ownerOrganizationId")', function() {
       // uncomment below and update the code to test the property ownerOrganizationId
       //var instane = new Id4iApi.Guid();

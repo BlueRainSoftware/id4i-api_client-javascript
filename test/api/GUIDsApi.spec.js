@@ -61,6 +61,26 @@
         done();
       });
     });
+    describe('getGuid', function() {
+      it('should call getGuid successfully', function(done) {
+        //uncomment below and update the code to test getGuid
+        //instance.getGuid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateGuid', function() {
+      it('should call updateGuid successfully', function(done) {
+        //uncomment below and update the code to test updateGuid
+        //instance.updateGuid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

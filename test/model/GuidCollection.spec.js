@@ -75,8 +75,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
+    it('should have the property nextScanOwnership (base name: "nextScanOwnership")', function() {
+      // uncomment below and update the code to test the property nextScanOwnership
       //var instane = new Id4iApi.GuidCollection();
       //expect(instance).to.be();
     });
