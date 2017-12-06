@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **Boolean** |  | [optional] 
-**createdAt** | **Date** |  | [optional] 
+**createdAt** | **Number** |  | [optional] 
 **createdBy** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **label** | **String** |  | [optional] 

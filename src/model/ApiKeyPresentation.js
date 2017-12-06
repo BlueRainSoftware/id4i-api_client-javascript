@@ -71,7 +71,7 @@
         obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
       }
       if (data.hasOwnProperty('createdAt')) {
-        obj['createdAt'] = ApiClient.convertToType(data['createdAt'], 'Date');
+        obj['createdAt'] = ApiClient.convertToType(data['createdAt'], 'Number');
       }
       if (data.hasOwnProperty('createdBy')) {
         obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
@@ -94,7 +94,7 @@
    */
   exports.prototype['active'] = undefined;
   /**
-   * @member {Date} createdAt
+   * @member {Number} createdAt
    */
   exports.prototype['createdAt'] = undefined;
   /**
