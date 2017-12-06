@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 
 * `ENTITY_NOT_FOUND` (value: `"ERR_ENTITY_NOT_FOUND"`)
 
+* `DUPLICATE` (value: `"ERR_DUPLICATE"`)
+
 * `HTTP` (value: `"ERR_HTTP"`)
 
 * `INTERNAL` (value: `"ERR_INTERNAL"`)
@@ -52,8 +54,6 @@ Name | Type | Description | Notes
 * `EMAIL_MISSING_TEMPLATE_PARAM` (value: `"ERR_EMAIL_MISSING_TEMPLATE_PARAM"`)
 
 * `EMAIL_TEMPLATE_NOT_AVAILABLE` (value: `"ERR_EMAIL_TEMPLATE_NOT_AVAILABLE"`)
-
-* `DUPLICATE` (value: `"ERR_DUPLICATE"`)
 
 * `EMAIL_PREPARATION_FAILED` (value: `"ERR_EMAIL_PREPARATION_FAILED"`)
 

@@ -1,9 +1,9 @@
-# Id4iApi.PaginatedResponsestring
+# Id4iApi.PaginatedGuidResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | **[String]** |  | [optional] 
+**elements** | [**[Guid]**](Guid.md) |  | [optional] 
 **limit** | **Number** |  | 
 **offset** | **Number** |  | 
 **total** | **Number** |  | [optional] 

@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.PaginatedResponsestring();
+    instance = new Id4iApi.PaginatedGuidResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,34 +50,34 @@
       object[property] = value;
   }
 
-  describe('PaginatedResponsestring', function() {
-    it('should create an instance of PaginatedResponsestring', function() {
-      // uncomment below and update the code to test PaginatedResponsestring
-      //var instane = new Id4iApi.PaginatedResponsestring();
-      //expect(instance).to.be.a(Id4iApi.PaginatedResponsestring);
+  describe('PaginatedGuidResponse', function() {
+    it('should create an instance of PaginatedGuidResponse', function() {
+      // uncomment below and update the code to test PaginatedGuidResponse
+      //var instane = new Id4iApi.PaginatedGuidResponse();
+      //expect(instance).to.be.a(Id4iApi.PaginatedGuidResponse);
     });
 
     it('should have the property elements (base name: "elements")', function() {
       // uncomment below and update the code to test the property elements
-      //var instane = new Id4iApi.PaginatedResponsestring();
+      //var instane = new Id4iApi.PaginatedGuidResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property limit (base name: "limit")', function() {
       // uncomment below and update the code to test the property limit
-      //var instane = new Id4iApi.PaginatedResponsestring();
+      //var instane = new Id4iApi.PaginatedGuidResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property offset (base name: "offset")', function() {
       // uncomment below and update the code to test the property offset
-      //var instane = new Id4iApi.PaginatedResponsestring();
+      //var instane = new Id4iApi.PaginatedGuidResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property total (base name: "total")', function() {
       // uncomment below and update the code to test the property total
-      //var instane = new Id4iApi.PaginatedResponsestring();
+      //var instane = new Id4iApi.PaginatedGuidResponse();
       //expect(instance).to.be();
     });
 

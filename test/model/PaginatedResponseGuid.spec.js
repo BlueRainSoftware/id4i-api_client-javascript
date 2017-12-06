@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.GUIDsApi();
+    instance = new Id4iApi.PaginatedResponseGuid();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
       object[property] = value;
   }
 
-  describe('GUIDsApi', function() {
-    describe('createGuid', function() {
-      it('should call createGuid successfully', function(done) {
-        //uncomment below and update the code to test createGuid
-        //instance.createGuid(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('PaginatedResponseGuid', function() {
+    it('should create an instance of PaginatedResponseGuid', function() {
+      // uncomment below and update the code to test PaginatedResponseGuid
+      //var instane = new Id4iApi.PaginatedResponseGuid();
+      //expect(instance).to.be.a(Id4iApi.PaginatedResponseGuid);
     });
-    describe('getGuid', function() {
-      it('should call getGuid successfully', function(done) {
-        //uncomment below and update the code to test getGuid
-        //instance.getGuid(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property elements (base name: "elements")', function() {
+      // uncomment below and update the code to test the property elements
+      //var instane = new Id4iApi.PaginatedResponseGuid();
+      //expect(instance).to.be();
     });
-    describe('updateGuid', function() {
-      it('should call updateGuid successfully', function(done) {
-        //uncomment below and update the code to test updateGuid
-        //instance.updateGuid(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property limit (base name: "limit")', function() {
+      // uncomment below and update the code to test the property limit
+      //var instane = new Id4iApi.PaginatedResponseGuid();
+      //expect(instance).to.be();
     });
+
+    it('should have the property offset (base name: "offset")', function() {
+      // uncomment below and update the code to test the property offset
+      //var instane = new Id4iApi.PaginatedResponseGuid();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property total (base name: "total")', function() {
+      // uncomment below and update the code to test the property total
+      //var instane = new Id4iApi.PaginatedResponseGuid();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

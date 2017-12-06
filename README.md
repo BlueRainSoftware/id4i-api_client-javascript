@@ -175,6 +175,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectionsApi* | [**updateLogisticCollection**](docs/CollectionsApi.md#updateLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *Id4iApi.CollectionsApi* | [**updateRoutingCollection**](docs/CollectionsApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 *Id4iApi.GUIDsApi* | [**createGuid**](docs/GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+*Id4iApi.GUIDsApi* | [**getGuid**](docs/GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+*Id4iApi.GUIDsApi* | [**updateGuid**](docs/GUIDsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *Id4iApi.OrganizationsApi* | [**createOrganization**](docs/OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
@@ -219,6 +221,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.CreateLabelledCollectionRequest](docs/CreateLabelledCollectionRequest.md)
  - [Id4iApi.CreateLogisticCollectionRequest](docs/CreateLogisticCollectionRequest.md)
  - [Id4iApi.CreateRoutingCollectionRequest](docs/CreateRoutingCollectionRequest.md)
+ - [Id4iApi.Guid](docs/Guid.md)
  - [Id4iApi.GuidCollection](docs/GuidCollection.md)
  - [Id4iApi.Id4n](docs/Id4n.md)
  - [Id4iApi.ListOfId4ns](docs/ListOfId4ns.md)
@@ -226,14 +229,15 @@ Class | Method | HTTP request | Description
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
  - [Id4iApi.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
  - [Id4iApi.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
+ - [Id4iApi.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
  - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
+ - [Id4iApi.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
  - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
  - [Id4iApi.PaginatedResponseRole](docs/PaginatedResponseRole.md)
  - [Id4iApi.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
  - [Id4iApi.PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
- - [Id4iApi.PaginatedResponsestring](docs/PaginatedResponsestring.md)
  - [Id4iApi.PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
  - [Id4iApi.PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
