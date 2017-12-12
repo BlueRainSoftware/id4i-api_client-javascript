@@ -136,6 +136,11 @@
      */
     "AUTHENTICATION_EXPIRED_TOKEN": "ERR_AUTHENTICATION_EXPIRED_TOKEN",
     /**
+     * value: "ERR_AUTHENTICATION_FAILED"
+     * @const
+     */
+    "AUTHENTICATION_FAILED": "ERR_AUTHENTICATION_FAILED",
+    /**
      * value: "ERR_INPUT_VALIDATION_FAILED"
      * @const
      */
