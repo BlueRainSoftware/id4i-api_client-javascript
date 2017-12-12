@@ -37,8 +37,6 @@ Name | Type | Description | Notes
 
 * `DUPLICATE` (value: `"ERR_DUPLICATE"`)
 
-* `HTTP` (value: `"ERR_HTTP"`)
-
 * `INTERNAL` (value: `"ERR_INTERNAL"`)
 
 * `UNKNOWN` (value: `"ERR_UNKNOWN"`)

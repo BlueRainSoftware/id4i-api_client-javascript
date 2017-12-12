@@ -166,11 +166,6 @@
      */
     "DUPLICATE": "ERR_DUPLICATE",
     /**
-     * value: "ERR_HTTP"
-     * @const
-     */
-    "HTTP": "ERR_HTTP",
-    /**
      * value: "ERR_INTERNAL"
      * @const
      */
