@@ -162,6 +162,9 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectionsApi* | [**findRoutingCollection**](docs/CollectionsApi.md#findRoutingCollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
 *Id4iApi.CollectionsApi* | [**getAllCollectionsOfOrganization**](docs/CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 *Id4iApi.CollectionsApi* | [**listElementsOfCollection**](docs/CollectionsApi.md#listElementsOfCollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+*Id4iApi.CollectionsApi* | [**listElementsOfLabelledCollection**](docs/CollectionsApi.md#listElementsOfLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
+*Id4iApi.CollectionsApi* | [**listElementsOfLogisticCollection**](docs/CollectionsApi.md#listElementsOfLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
+*Id4iApi.CollectionsApi* | [**listElementsOfRoutingCollection**](docs/CollectionsApi.md#listElementsOfRoutingCollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
 *Id4iApi.CollectionsApi* | [**removeElementFromCollection**](docs/CollectionsApi.md#removeElementFromCollection) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
 *Id4iApi.CollectionsApi* | [**removeElementFromLabelledCollection**](docs/CollectionsApi.md#removeElementFromLabelledCollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
 *Id4iApi.CollectionsApi* | [**removeElementFromLogisticCollection**](docs/CollectionsApi.md#removeElementFromLogisticCollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
@@ -230,6 +233,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
  - [Id4iApi.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
  - [Id4iApi.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
+ - [Id4iApi.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
  - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
  - [Id4iApi.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
@@ -238,6 +242,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PaginatedResponseRole](docs/PaginatedResponseRole.md)
  - [Id4iApi.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
  - [Id4iApi.PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
+ - [Id4iApi.PaginatedResponsestring](docs/PaginatedResponsestring.md)
+ - [Id4iApi.PaginatedStringResponse](docs/PaginatedStringResponse.md)
  - [Id4iApi.PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
  - [Id4iApi.PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)

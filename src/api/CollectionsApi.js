@@ -1182,6 +1182,171 @@
     }
 
     /**
+     * Callback function to receive the result of the listElementsOfLabelledCollection operation.
+     * @callback module:api/CollectionsApi~listElementsOfLabelledCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedGuidResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List contents of the collection
+     * @param {String} id4n id4n
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/CollectionsApi~listElementsOfLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedGuidResponse}
+     */
+    this.listElementsOfLabelledCollection = function(id4n, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling listElementsOfLabelledCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = PaginatedGuidResponse;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/labelled/{id4n}/elements', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listElementsOfLogisticCollection operation.
+     * @callback module:api/CollectionsApi~listElementsOfLogisticCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedGuidResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List contents of the collection
+     * @param {String} id4n id4n
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/CollectionsApi~listElementsOfLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedGuidResponse}
+     */
+    this.listElementsOfLogisticCollection = function(id4n, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling listElementsOfLogisticCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = PaginatedGuidResponse;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/logistic/{id4n}/elements', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listElementsOfRoutingCollection operation.
+     * @callback module:api/CollectionsApi~listElementsOfRoutingCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedGuidResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List contents of the collection
+     * @param {String} id4n id4n
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/CollectionsApi~listElementsOfRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedGuidResponse}
+     */
+    this.listElementsOfRoutingCollection = function(id4n, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling listElementsOfRoutingCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = PaginatedGuidResponse;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/routing/{id4n}/elements', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the removeElementFromCollection operation.
      * @callback module:api/CollectionsApi~removeElementFromCollectionCallback
      * @param {String} error Error message, if any.
