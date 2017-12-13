@@ -71,6 +71,16 @@
         done();
       });
     });
+    describe('getGuidsWithoutCollection', function() {
+      it('should call getGuidsWithoutCollection successfully', function(done) {
+        //uncomment below and update the code to test getGuidsWithoutCollection
+        //instance.getGuidsWithoutCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateGuid', function() {
       it('should call updateGuid successfully', function(done) {
         //uncomment below and update the code to test updateGuid
