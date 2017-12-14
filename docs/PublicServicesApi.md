@@ -1,6 +1,6 @@
 # Id4iApi.PublicServicesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

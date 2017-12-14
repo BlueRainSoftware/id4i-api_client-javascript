@@ -47,9 +47,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://localhost
+     * @default https://backend.id4i.de
      */
-    this.basePath = 'https://localhost'.replace(/\/+$/, '');
+    this.basePath = 'https://backend.id4i.de'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
