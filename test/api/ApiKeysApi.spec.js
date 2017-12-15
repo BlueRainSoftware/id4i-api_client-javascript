@@ -101,10 +101,10 @@
         done();
       });
     });
-    describe('setApiKeyActivationStatus', function() {
-      it('should call setApiKeyActivationStatus successfully', function(done) {
-        //uncomment below and update the code to test setApiKeyActivationStatus
-        //instance.setApiKeyActivationStatus(function(error) {
+    describe('updateApiKey', function() {
+      it('should call updateApiKey successfully', function(done) {
+        //uncomment below and update the code to test updateApiKey
+        //instance.updateApiKey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

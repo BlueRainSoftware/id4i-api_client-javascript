@@ -4,21 +4,21 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create apiKey
-[**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
-[**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show apiKey
-[**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find apiKeys by organization
-[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
-[**setApiKeyActivationStatus**](ApiKeysApi.md#setApiKeyActivationStatus) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
+[**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
+[**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
+[**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
+[**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find API key by organization
+[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+[**updateApiKey**](ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 
 
 <a name="createNewApiKey"></a>
 # **createNewApiKey**
 > ApiKeyPresentation createNewApiKey(creationRequest, opts)
 
-Create apiKey
+Create API key
 
-Creation of a new apiKey.
+Creation of a new API key.
 
 ### Example
 ```javascript
@@ -26,7 +26,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
-var creationRequest = new Id4iApi.ApiKeyCreationRequest(); // ApiKeyCreationRequest | ApiKey to be created.
+var creationRequest = new Id4iApi.ApiKeyCreationRequest(); // ApiKeyCreationRequest | API key to be created.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -47,7 +47,7 @@ apiInstance.createNewApiKey(creationRequest, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **creationRequest** | [**ApiKeyCreationRequest**](ApiKeyCreationRequest.md)| ApiKey to be created. | 
+ **creationRequest** | [**ApiKeyCreationRequest**](ApiKeyCreationRequest.md)| API key to be created. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -68,9 +68,9 @@ No authorization required
 # **deleteApiKey**
 > ApiError deleteApiKey(key, opts)
 
-Delete apiKey
+Delete API key
 
-Deletion of an apiKey.
+Deletion of an API key.
 
 ### Example
 ```javascript
@@ -78,7 +78,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
-var key = "key_example"; // String | The apiKey to delete.
+var key = "key_example"; // String | The API key to delete.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -99,7 +99,7 @@ apiInstance.deleteApiKey(key, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The apiKey to delete. | 
+ **key** | **String**| The API key to delete. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -120,9 +120,9 @@ No authorization required
 # **getApiKey**
 > ApiKeyPresentation getApiKey(key, opts)
 
-Show apiKey
+Show API key
 
-Showing the details of an apiKey.
+Showing the details of an API key.
 
 ### Example
 ```javascript
@@ -130,7 +130,7 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
-var key = "key_example"; // String | The apiKey to show.
+var key = "key_example"; // String | The API key to show.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -151,7 +151,7 @@ apiInstance.getApiKey(key, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The apiKey to show. | 
+ **key** | **String**| The API key to show. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -172,9 +172,9 @@ No authorization required
 # **listAllApiKeysOfOrganization**
 > PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, opts)
 
-Find apiKeys by organization
+Find API key by organization
 
-Finding all apiKeys assigned to the specified organization in a paginated manner.
+Finding all API key assigned to the specified organization in a paginated manner.
 
 ### Example
 ```javascript
@@ -228,9 +228,9 @@ No authorization required
 # **listApiKeyPrivileges**
 > ApiKeyPrivilegeResponse listApiKeyPrivileges(opts)
 
-List ApiKey privileges
+List API key privileges
 
-Listing api key privileges.
+Listing API key privileges.
 
 ### Example
 ```javascript
@@ -279,13 +279,13 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="setApiKeyActivationStatus"></a>
-# **setApiKeyActivationStatus**
-> ApiError setApiKeyActivationStatus(key, apiKeyStatus, opts)
+<a name="updateApiKey"></a>
+# **updateApiKey**
+> ApiError updateApiKey(key, apiKeyChange, opts)
 
-Set apiKey activation state
+Update API keys
 
-Setting the apiKey activation state.
+API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
 
 ### Example
 ```javascript
@@ -293,9 +293,9 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
-var key = "key_example"; // String | The apiKey to change the activation state.
+var key = "key_example"; // String | The API key to be updated.
 
-var apiKeyStatus = new Id4iApi.ApiKeyStatus(); // ApiKeyStatus | Activation state to set.
+var apiKeyChange = new Id4iApi.ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -309,15 +309,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.setApiKeyActivationStatus(key, apiKeyStatus, opts, callback);
+apiInstance.updateApiKey(key, apiKeyChange, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The apiKey to change the activation state. | 
- **apiKeyStatus** | [**ApiKeyStatus**](ApiKeyStatus.md)| Activation state to set. | 
+ **key** | **String**| The API key to be updated. | 
+ **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 

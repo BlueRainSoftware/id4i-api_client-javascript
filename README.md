@@ -135,12 +135,12 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**updateUserRoles**](docs/AccountsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *Id4iApi.AccountsApi* | [**verifyPasswordReset**](docs/AccountsApi.md#verifyPasswordReset) | **PUT** /account/password | Verify password reset
 *Id4iApi.AccountsApi* | [**verifyUserRegistration**](docs/AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
-*Id4iApi.ApiKeysApi* | [**createNewApiKey**](docs/ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create apiKey
-*Id4iApi.ApiKeysApi* | [**deleteApiKey**](docs/ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
-*Id4iApi.ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show apiKey
-*Id4iApi.ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find apiKeys by organization
-*Id4iApi.ApiKeysApi* | [**listApiKeyPrivileges**](docs/ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
-*Id4iApi.ApiKeysApi* | [**setApiKeyActivationStatus**](docs/ApiKeysApi.md#setApiKeyActivationStatus) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
+*Id4iApi.ApiKeysApi* | [**createNewApiKey**](docs/ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
+*Id4iApi.ApiKeysApi* | [**deleteApiKey**](docs/ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
+*Id4iApi.ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
+*Id4iApi.ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find API key by organization
+*Id4iApi.ApiKeysApi* | [**listApiKeyPrivileges**](docs/ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+*Id4iApi.ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 *Id4iApi.CollectionsApi* | [**addElementToCollection**](docs/CollectionsApi.md#addElementToCollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *Id4iApi.CollectionsApi* | [**addElementToLabelledCollection**](docs/CollectionsApi.md#addElementToLabelledCollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
 *Id4iApi.CollectionsApi* | [**addElementToLogisticCollection**](docs/CollectionsApi.md#addElementToLogisticCollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
@@ -214,11 +214,11 @@ Class | Method | HTTP request | Description
 
  - [Id4iApi.AccountCredentials](docs/AccountCredentials.md)
  - [Id4iApi.ApiError](docs/ApiError.md)
+ - [Id4iApi.ApiKeyChangeRequest](docs/ApiKeyChangeRequest.md)
  - [Id4iApi.ApiKeyCreationRequest](docs/ApiKeyCreationRequest.md)
  - [Id4iApi.ApiKeyPresentation](docs/ApiKeyPresentation.md)
  - [Id4iApi.ApiKeyPrivilegeInfo](docs/ApiKeyPrivilegeInfo.md)
  - [Id4iApi.ApiKeyPrivilegeResponse](docs/ApiKeyPrivilegeResponse.md)
- - [Id4iApi.ApiKeyStatus](docs/ApiKeyStatus.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
  - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
  - [Id4iApi.CreateGuidRequest](docs/CreateGuidRequest.md)
