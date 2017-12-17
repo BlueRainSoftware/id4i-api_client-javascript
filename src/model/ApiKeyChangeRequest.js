@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.ApiKeyStatus = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.ApiKeyChangeRequest = factory(root.Id4iApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,28 +35,30 @@
 
 
   /**
-   * The ApiKeyStatus model module.
-   * @module model/ApiKeyStatus
+   * The ApiKeyChangeRequest model module.
+   * @module model/ApiKeyChangeRequest
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new <code>ApiKeyStatus</code>.
-   * @alias module:model/ApiKeyStatus
+   * Constructs a new <code>ApiKeyChangeRequest</code>.
+   * @alias module:model/ApiKeyChangeRequest
    * @class
+   * @param newLabel {String} 
    */
-  var exports = function() {
+  var exports = function(newLabel) {
     var _this = this;
 
 
+    _this['newLabel'] = newLabel;
   };
 
   /**
-   * Constructs a <code>ApiKeyStatus</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ApiKeyChangeRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ApiKeyStatus} obj Optional instance to populate.
-   * @return {module:model/ApiKeyStatus} The populated <code>ApiKeyStatus</code> instance.
+   * @param {module:model/ApiKeyChangeRequest} obj Optional instance to populate.
+   * @return {module:model/ApiKeyChangeRequest} The populated <code>ApiKeyChangeRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -64,6 +66,9 @@
 
       if (data.hasOwnProperty('active')) {
         obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
+      }
+      if (data.hasOwnProperty('newLabel')) {
+        obj['newLabel'] = ApiClient.convertToType(data['newLabel'], 'String');
       }
     }
     return obj;
@@ -73,6 +78,10 @@
    * @member {Boolean} active
    */
   exports.prototype['active'] = undefined;
+  /**
+   * @member {String} newLabel
+   */
+  exports.prototype['newLabel'] = undefined;
 
 
 

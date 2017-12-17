@@ -1,6 +1,6 @@
 # Id4iApi.OrganizationsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -496,7 +496,7 @@ No authorization required
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
-> PaginatedResponseOrganization getOrganizationsOfUser(opts)
+> PaginatedOrganizationResponse getOrganizationsOfUser(opts)
 
 Retrieve organizations of user
 
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseOrganization**](PaginatedResponseOrganization.md)
+[**PaginatedOrganizationResponse**](PaginatedOrganizationResponse.md)
 
 ### Authorization
 
@@ -549,7 +549,7 @@ No authorization required
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> UserRoles getUserRoles(organizationId, username, opts)
+> PaginatedStringResponse getUserRoles(organizationId, username, opts)
 
 Get user roles by username
 
@@ -565,7 +565,9 @@ var username = "username_example"; // String | username
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
 };
 
 var callback = function(error, data, response) {
@@ -586,10 +588,12 @@ Name | Type | Description  | Notes
  **username** | **String**| username | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
-[**UserRoles**](UserRoles.md)
+[**PaginatedStringResponse**](PaginatedStringResponse.md)
 
 ### Authorization
 

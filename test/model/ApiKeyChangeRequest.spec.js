@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.ApiKeyStatus();
+    instance = new Id4iApi.ApiKeyChangeRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,22 @@
       object[property] = value;
   }
 
-  describe('ApiKeyStatus', function() {
-    it('should create an instance of ApiKeyStatus', function() {
-      // uncomment below and update the code to test ApiKeyStatus
-      //var instane = new Id4iApi.ApiKeyStatus();
-      //expect(instance).to.be.a(Id4iApi.ApiKeyStatus);
+  describe('ApiKeyChangeRequest', function() {
+    it('should create an instance of ApiKeyChangeRequest', function() {
+      // uncomment below and update the code to test ApiKeyChangeRequest
+      //var instane = new Id4iApi.ApiKeyChangeRequest();
+      //expect(instance).to.be.a(Id4iApi.ApiKeyChangeRequest);
     });
 
     it('should have the property active (base name: "active")', function() {
       // uncomment below and update the code to test the property active
-      //var instane = new Id4iApi.ApiKeyStatus();
+      //var instane = new Id4iApi.ApiKeyChangeRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property newLabel (base name: "newLabel")', function() {
+      // uncomment below and update the code to test the property newLabel
+      //var instane = new Id4iApi.ApiKeyChangeRequest();
       //expect(instance).to.be();
     });
 

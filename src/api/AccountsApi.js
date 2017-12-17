@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ChangeRoleRequest', 'model/PaginatedResponseOrganization', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/RoleResponse', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles'], factory);
+    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ChangeRoleRequest', 'model/PaginatedOrganizationResponse', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/RoleResponse', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AccountCredentials'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/PaginatedResponseOrganization'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/PasswordResetRequest'), require('../model/PasswordResetVerificationRequest'), require('../model/RegistrationVerificationTokenPresentation'), require('../model/RoleResponse'), require('../model/SimpleMessageResponse'), require('../model/UserPresentation'), require('../model/UserRegistrationRequest'), require('../model/UserRegistrationResponse'), require('../model/UserRoles'));
+    module.exports = factory(require('../ApiClient'), require('../model/AccountCredentials'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/PaginatedOrganizationResponse'), require('../model/PaginatedStringResponse'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/PasswordResetRequest'), require('../model/PasswordResetVerificationRequest'), require('../model/RegistrationVerificationTokenPresentation'), require('../model/RoleResponse'), require('../model/SimpleMessageResponse'), require('../model/UserPresentation'), require('../model/UserRegistrationRequest'), require('../model/UserRegistrationResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.AccountsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AccountCredentials, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.PaginatedResponseOrganization, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.PasswordResetRequest, root.Id4iApi.PasswordResetVerificationRequest, root.Id4iApi.RegistrationVerificationTokenPresentation, root.Id4iApi.RoleResponse, root.Id4iApi.SimpleMessageResponse, root.Id4iApi.UserPresentation, root.Id4iApi.UserRegistrationRequest, root.Id4iApi.UserRegistrationResponse, root.Id4iApi.UserRoles);
+    root.Id4iApi.AccountsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AccountCredentials, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.PaginatedOrganizationResponse, root.Id4iApi.PaginatedStringResponse, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.PasswordResetRequest, root.Id4iApi.PasswordResetVerificationRequest, root.Id4iApi.RegistrationVerificationTokenPresentation, root.Id4iApi.RoleResponse, root.Id4iApi.SimpleMessageResponse, root.Id4iApi.UserPresentation, root.Id4iApi.UserRegistrationRequest, root.Id4iApi.UserRegistrationResponse);
   }
-}(this, function(ApiClient, AccountCredentials, ApiError, ChangeRoleRequest, PaginatedResponseOrganization, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, RoleResponse, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles) {
+}(this, function(ApiClient, AccountCredentials, ApiError, ChangeRoleRequest, PaginatedOrganizationResponse, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, RoleResponse, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse) {
   'use strict';
 
   /**
@@ -159,7 +159,7 @@
      * Callback function to receive the result of the getOrganizationsOfUser operation.
      * @callback module:api/AccountsApi~getOrganizationsOfUserCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedResponseOrganization} data The data returned by the service call.
+     * @param {module:model/PaginatedOrganizationResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -172,7 +172,7 @@
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/AccountsApi~getOrganizationsOfUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedResponseOrganization}
+     * data is of type: {@link module:model/PaginatedOrganizationResponse}
      */
     this.getOrganizationsOfUser = function(opts, callback) {
       opts = opts || {};
@@ -196,7 +196,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedResponseOrganization;
+      var returnType = PaginatedOrganizationResponse;
 
       return this.apiClient.callApi(
         '/api/v1/user/organizations', 'GET',
@@ -209,7 +209,7 @@
      * Callback function to receive the result of the getUserRoles operation.
      * @callback module:api/AccountsApi~getUserRolesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/UserRoles} data The data returned by the service call.
+     * @param {module:model/PaginatedStringResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -220,8 +220,10 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/AccountsApi~getUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UserRoles}
+     * data is of type: {@link module:model/PaginatedStringResponse}
      */
     this.getUserRoles = function(organizationId, username, opts, callback) {
       opts = opts || {};
@@ -243,6 +245,8 @@
         'username': username
       };
       var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
@@ -254,7 +258,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = UserRoles;
+      var returnType = PaginatedStringResponse;
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/users/{username}/roles', 'GET',

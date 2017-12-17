@@ -261,6 +261,36 @@
         done();
       });
     });
+    describe('listElementsOfLabelledCollection', function() {
+      it('should call listElementsOfLabelledCollection successfully', function(done) {
+        //uncomment below and update the code to test listElementsOfLabelledCollection
+        //instance.listElementsOfLabelledCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listElementsOfLogisticCollection', function() {
+      it('should call listElementsOfLogisticCollection successfully', function(done) {
+        //uncomment below and update the code to test listElementsOfLogisticCollection
+        //instance.listElementsOfLogisticCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listElementsOfRoutingCollection', function() {
+      it('should call listElementsOfRoutingCollection successfully', function(done) {
+        //uncomment below and update the code to test listElementsOfRoutingCollection
+        //instance.listElementsOfRoutingCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeElementFromCollection', function() {
       it('should call removeElementFromCollection successfully', function(done) {
         //uncomment below and update the code to test removeElementFromCollection
