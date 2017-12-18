@@ -211,6 +211,11 @@
      */
     "EMAIL_TEMPLATE_NOT_AVAILABLE": "ERR_EMAIL_TEMPLATE_NOT_AVAILABLE",
     /**
+     * value: "ERR_IMAGE_CONVERSION"
+     * @const
+     */
+    "IMAGE_CONVERSION": "ERR_IMAGE_CONVERSION",
+    /**
      * value: "ERR_EMAIL_PREPARATION_FAILED"
      * @const
      */
