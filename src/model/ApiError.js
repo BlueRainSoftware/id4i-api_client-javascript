@@ -141,6 +141,16 @@
      */
     "AUTHENTICATION_FAILED": "ERR_AUTHENTICATION_FAILED",
     /**
+     * value: "ERR_AUTHORIZATION_MISSING_PRIVILEGES"
+     * @const
+     */
+    "AUTHORIZATION_MISSING_PRIVILEGES": "ERR_AUTHORIZATION_MISSING_PRIVILEGES",
+    /**
+     * value: "ERR_AUTHORIZATION_FORBIDDEN"
+     * @const
+     */
+    "AUTHORIZATION_FORBIDDEN": "ERR_AUTHORIZATION_FORBIDDEN",
+    /**
      * value: "ERR_INPUT_VALIDATION_FAILED"
      * @const
      */
@@ -151,6 +161,11 @@
      */
     "FIELD_INPUT_VALIDATION_FAILED": "ERR_FIELD_INPUT_VALIDATION_FAILED",
     /**
+     * value: "ERR_INPUT_NOT_READABLE"
+     * @const
+     */
+    "INPUT_NOT_READABLE": "ERR_INPUT_NOT_READABLE",
+    /**
      * value: "ERR_GUID_CREATION"
      * @const
      */
@@ -160,6 +175,11 @@
      * @const
      */
     "INVALID_ID4N_OBJECT_TYPE": "ERR_INVALID_ID4N_OBJECT_TYPE",
+    /**
+     * value: "ERR_COLLECTION_UPDATE_DENIED"
+     * @const
+     */
+    "COLLECTION_UPDATE_DENIED": "ERR_COLLECTION_UPDATE_DENIED",
     /**
      * value: "ERR_ENTITY_NOT_FOUND"
      * @const
@@ -214,7 +234,12 @@
      * value: "ERR_EMAIL_PREPARATION_FAILED"
      * @const
      */
-    "EMAIL_PREPARATION_FAILED": "ERR_EMAIL_PREPARATION_FAILED"  };
+    "EMAIL_PREPARATION_FAILED": "ERR_EMAIL_PREPARATION_FAILED",
+    /**
+     * value: "ERR_IMAGE_CONVERSION"
+     * @const
+     */
+    "IMAGE_CONVERSION": "ERR_IMAGE_CONVERSION"  };
 
 
   return exports;
