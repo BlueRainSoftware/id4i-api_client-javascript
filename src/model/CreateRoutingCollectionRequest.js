@@ -44,16 +44,13 @@
    * Constructs a new <code>CreateRoutingCollectionRequest</code>.
    * @alias module:model/CreateRoutingCollectionRequest
    * @class
-   * @param label {String} 
-   * @param length {Number} 
-   * @param organizationId {Number} 
    */
-  var exports = function(label, length, organizationId) {
+  var exports = function() {
     var _this = this;
 
-    _this['label'] = label;
-    _this['length'] = length;
-    _this['organizationId'] = organizationId;
+
+
+
   };
 
   /**
