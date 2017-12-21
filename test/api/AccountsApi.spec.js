@@ -51,10 +51,30 @@
   }
 
   describe('AccountsApi', function() {
+    describe('completeRegistration', function() {
+      it('should call completeRegistration successfully', function(done) {
+        //uncomment below and update the code to test completeRegistration
+        //instance.completeRegistration(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('findUserByUsername', function() {
       it('should call findUserByUsername successfully', function(done) {
         //uncomment below and update the code to test findUserByUsername
         //instance.findUserByUsername(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('findUsers', function() {
+      it('should call findUsers successfully', function(done) {
+        //uncomment below and update the code to test findUsers
+        //instance.findUsers(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -95,6 +115,16 @@
       it('should call getUsersOfOrganization successfully', function(done) {
         //uncomment below and update the code to test getUsersOfOrganization
         //instance.getUsersOfOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('inviteUsers', function() {
+      it('should call inviteUsers successfully', function(done) {
+        //uncomment below and update the code to test inviteUsers
+        //instance.inviteUsers(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -171,6 +171,16 @@
         done();
       });
     });
+    describe('inviteUsers', function() {
+      it('should call inviteUsers successfully', function(done) {
+        //uncomment below and update the code to test inviteUsers
+        //instance.inviteUsers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeUserRoles', function() {
       it('should call removeUserRoles successfully', function(done) {
         //uncomment below and update the code to test removeUserRoles

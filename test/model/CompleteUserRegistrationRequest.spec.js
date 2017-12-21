@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.UserPresentation();
+    instance = new Id4iApi.CompleteUserRegistrationRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,28 @@
       object[property] = value;
   }
 
-  describe('UserPresentation', function() {
-    it('should create an instance of UserPresentation', function() {
-      // uncomment below and update the code to test UserPresentation
-      //var instane = new Id4iApi.UserPresentation();
-      //expect(instance).to.be.a(Id4iApi.UserPresentation);
+  describe('CompleteUserRegistrationRequest', function() {
+    it('should create an instance of CompleteUserRegistrationRequest', function() {
+      // uncomment below and update the code to test CompleteUserRegistrationRequest
+      //var instane = new Id4iApi.CompleteUserRegistrationRequest();
+      //expect(instance).to.be.a(Id4iApi.CompleteUserRegistrationRequest);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new Id4iApi.UserPresentation();
+    it('should have the property verificationToken (base name: "verificationToken")', function() {
+      // uncomment below and update the code to test the property verificationToken
+      //var instane = new Id4iApi.CompleteUserRegistrationRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Id4iApi.UserPresentation();
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
+      //var instane = new Id4iApi.CompleteUserRegistrationRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property password (base name: "password")', function() {
+      // uncomment below and update the code to test the property password
+      //var instane = new Id4iApi.CompleteUserRegistrationRequest();
       //expect(instance).to.be();
     });
 

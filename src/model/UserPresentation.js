@@ -50,7 +50,6 @@
 
 
 
-
   };
 
   /**
@@ -70,9 +69,6 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('postcode')) {
-        obj['postcode'] = ApiClient.convertToType(data['postcode'], 'String');
-      }
     }
     return obj;
   }
@@ -85,10 +81,6 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
-  /**
-   * @member {String} postcode
-   */
-  exports.prototype['postcode'] = undefined;
 
 
 

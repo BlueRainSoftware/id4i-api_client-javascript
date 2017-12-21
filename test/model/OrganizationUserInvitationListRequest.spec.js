@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.UserPresentation();
+    instance = new Id4iApi.OrganizationUserInvitationListRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,16 @@
       object[property] = value;
   }
 
-  describe('UserPresentation', function() {
-    it('should create an instance of UserPresentation', function() {
-      // uncomment below and update the code to test UserPresentation
-      //var instane = new Id4iApi.UserPresentation();
-      //expect(instance).to.be.a(Id4iApi.UserPresentation);
+  describe('OrganizationUserInvitationListRequest', function() {
+    it('should create an instance of OrganizationUserInvitationListRequest', function() {
+      // uncomment below and update the code to test OrganizationUserInvitationListRequest
+      //var instane = new Id4iApi.OrganizationUserInvitationListRequest();
+      //expect(instance).to.be.a(Id4iApi.OrganizationUserInvitationListRequest);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new Id4iApi.UserPresentation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Id4iApi.UserPresentation();
+    it('should have the property invitations (base name: "invitations")', function() {
+      // uncomment below and update the code to test the property invitations
+      //var instane = new Id4iApi.OrganizationUserInvitationListRequest();
       //expect(instance).to.be();
     });
 

@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.UserPresentation();
+    instance = new Id4iApi.OrganizationUserInvitation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,28 @@
       object[property] = value;
   }
 
-  describe('UserPresentation', function() {
-    it('should create an instance of UserPresentation', function() {
-      // uncomment below and update the code to test UserPresentation
-      //var instane = new Id4iApi.UserPresentation();
-      //expect(instance).to.be.a(Id4iApi.UserPresentation);
+  describe('OrganizationUserInvitation', function() {
+    it('should create an instance of OrganizationUserInvitation', function() {
+      // uncomment below and update the code to test OrganizationUserInvitation
+      //var instane = new Id4iApi.OrganizationUserInvitation();
+      //expect(instance).to.be.a(Id4iApi.OrganizationUserInvitation);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new Id4iApi.UserPresentation();
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new Id4iApi.OrganizationUserInvitation();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Id4iApi.UserPresentation();
+    it('should have the property userName (base name: "userName")', function() {
+      // uncomment below and update the code to test the property userName
+      //var instane = new Id4iApi.OrganizationUserInvitation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
+      //var instane = new Id4iApi.OrganizationUserInvitation();
       //expect(instance).to.be();
     });
 

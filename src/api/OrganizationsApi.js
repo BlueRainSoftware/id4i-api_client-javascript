@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/PaginatedGuidCollection', 'model/PaginatedOrganizationResponse', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/OrganizationUserInvitationListRequest', 'model/PaginatedGuidCollection', 'model/PaginatedOrganizationResponse', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedOrganizationResponse'), require('../model/PaginatedStringResponse'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/OrganizationUserInvitationListRequest'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedOrganizationResponse'), require('../model/PaginatedStringResponse'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedOrganizationResponse, root.Id4iApi.PaginatedStringResponse, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse);
+    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.OrganizationUserInvitationListRequest, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedOrganizationResponse, root.Id4iApi.PaginatedStringResponse, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse);
   }
-}(this, function(ApiClient, ApiError, ChangeRoleRequest, Organization, OrganizationAddress, PaginatedGuidCollection, PaginatedOrganizationResponse, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse) {
+}(this, function(ApiClient, ApiError, ChangeRoleRequest, Organization, OrganizationAddress, OrganizationUserInvitationListRequest, PaginatedGuidCollection, PaginatedOrganizationResponse, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse) {
   'use strict';
 
   /**
@@ -685,6 +685,63 @@
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/users', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the inviteUsers operation.
+     * @callback module:api/OrganizationsApi~inviteUsersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Invite Users
+     * @param {Number} organizationId organizationId
+     * @param {module:model/OrganizationUserInvitationListRequest} invitationList invitationList
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~inviteUsersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.inviteUsers = function(organizationId, invitationList, opts, callback) {
+      opts = opts || {};
+      var postBody = invitationList;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling inviteUsers");
+      }
+
+      // verify the required parameter 'invitationList' is set
+      if (invitationList === undefined || invitationList === null) {
+        throw new Error("Missing the required parameter 'invitationList' when calling inviteUsers");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/users/invite', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
