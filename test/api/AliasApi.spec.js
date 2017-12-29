@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.GUIDsApi();
+    instance = new Id4iApi.AliasApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,7 +50,7 @@
       object[property] = value;
   }
 
-  describe('GUIDsApi', function() {
+  describe('AliasApi', function() {
     describe('addGuidAlias', function() {
       it('should call addGuidAlias successfully', function(done) {
         //uncomment below and update the code to test addGuidAlias
@@ -65,46 +65,6 @@
       it('should call addGuidAlias1 successfully', function(done) {
         //uncomment below and update the code to test addGuidAlias1
         //instance.addGuidAlias1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createGuid', function() {
-      it('should call createGuid successfully', function(done) {
-        //uncomment below and update the code to test createGuid
-        //instance.createGuid(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getGuid', function() {
-      it('should call getGuid successfully', function(done) {
-        //uncomment below and update the code to test getGuid
-        //instance.getGuid(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getGuidsWithoutCollection', function() {
-      it('should call getGuidsWithoutCollection successfully', function(done) {
-        //uncomment below and update the code to test getGuidsWithoutCollection
-        //instance.getGuidsWithoutCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateGuid', function() {
-      it('should call updateGuid successfully', function(done) {
-        //uncomment below and update the code to test updateGuid
-        //instance.updateGuid(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

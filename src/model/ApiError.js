@@ -166,6 +166,11 @@
      */
     "INPUT_NOT_READABLE": "ERR_INPUT_NOT_READABLE",
     /**
+     * value: "ERR_INVALID_INPUT_PARAMETER"
+     * @const
+     */
+    "INVALID_INPUT_PARAMETER": "ERR_INVALID_INPUT_PARAMETER",
+    /**
      * value: "ERR_GUID_CREATION"
      * @const
      */
@@ -254,7 +259,12 @@
      * value: "ERR_IMAGE_CONVERSION"
      * @const
      */
-    "IMAGE_CONVERSION": "ERR_IMAGE_CONVERSION"  };
+    "IMAGE_CONVERSION": "ERR_IMAGE_CONVERSION",
+    /**
+     * value: "ERR_INVALID_ALIAS_TYPE"
+     * @const
+     */
+    "INVALID_ALIAS_TYPE": "ERR_INVALID_ALIAS_TYPE"  };
 
 
   return exports;

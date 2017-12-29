@@ -138,6 +138,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**updateUserRoles**](docs/AccountsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *Id4iApi.AccountsApi* | [**verifyPasswordReset**](docs/AccountsApi.md#verifyPasswordReset) | **PUT** /account/password | Verify password reset
 *Id4iApi.AccountsApi* | [**verifyUserRegistration**](docs/AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
+*Id4iApi.AliasApi* | [**addGuidAlias**](docs/AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+*Id4iApi.AliasApi* | [**addGuidAlias1**](docs/AliasApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *Id4iApi.ApiKeysApi* | [**createNewApiKey**](docs/ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
 *Id4iApi.ApiKeysApi* | [**deleteApiKey**](docs/ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
 *Id4iApi.ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
@@ -180,6 +182,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectionsApi* | [**updateLabelledCollection**](docs/CollectionsApi.md#updateLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
 *Id4iApi.CollectionsApi* | [**updateLogisticCollection**](docs/CollectionsApi.md#updateLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *Id4iApi.CollectionsApi* | [**updateRoutingCollection**](docs/CollectionsApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+*Id4iApi.GUIDsApi* | [**addGuidAlias**](docs/GUIDsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+*Id4iApi.GUIDsApi* | [**addGuidAlias1**](docs/GUIDsApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *Id4iApi.GUIDsApi* | [**createGuid**](docs/GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 *Id4iApi.GUIDsApi* | [**getGuid**](docs/GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *Id4iApi.GUIDsApi* | [**getGuidsWithoutCollection**](docs/GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
@@ -211,6 +215,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.RoutingApi* | [**getRoute**](docs/RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *Id4iApi.RoutingApi* | [**getRoutingFile**](docs/RoutingApi.md#getRoutingFile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *Id4iApi.RoutingApi* | [**updateRoutingFile**](docs/RoutingApi.md#updateRoutingFile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
+*Id4iApi.SearchApi* | [**searchByAlias**](docs/SearchApi.md#searchByAlias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 *Id4iApi.WhoIsApi* | [**resolveWhoIsEntry**](docs/WhoIsApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
@@ -231,6 +236,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.CreateLogisticCollectionRequest](docs/CreateLogisticCollectionRequest.md)
  - [Id4iApi.CreateRoutingCollectionRequest](docs/CreateRoutingCollectionRequest.md)
  - [Id4iApi.Guid](docs/Guid.md)
+ - [Id4iApi.GuidAlias](docs/GuidAlias.md)
  - [Id4iApi.GuidCollection](docs/GuidCollection.md)
  - [Id4iApi.Id4n](docs/Id4n.md)
  - [Id4iApi.ListOfId4ns](docs/ListOfId4ns.md)
