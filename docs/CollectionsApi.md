@@ -718,7 +718,7 @@ No authorization required
 
 <a name="deleteLogisticCollection"></a>
 # **deleteLogisticCollection**
-> ResponseEntity deleteLogisticCollection(id4n, opts)
+> Object deleteLogisticCollection(id4n, opts)
 
 Delete logistic collection
 
@@ -755,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1612,7 +1612,7 @@ No authorization required
 
 <a name="removeElementsFromLogisticCollection"></a>
 # **removeElementsFromLogisticCollection**
-> ApiError removeElementsFromLogisticCollection(collectionId4n, listofGuids, opts)
+> ApiError removeElementsFromLogisticCollection(collectionId4n, listOfGuids, opts)
 
 Remove elements from logistic collection
 
@@ -1624,7 +1624,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 
 var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
-var listofGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listofGuids
+var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -1638,7 +1638,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromLogisticCollection(collectionId4n, listofGuids, opts, callback);
+apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -1646,7 +1646,7 @@ apiInstance.removeElementsFromLogisticCollection(collectionId4n, listofGuids, op
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
- **listofGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listofGuids | 
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -1718,7 +1718,7 @@ No authorization required
 
 <a name="updateCollection"></a>
 # **updateCollection**
-> ResponseEntity updateCollection(id4n, request, opts)
+> Object updateCollection(id4n, request, opts)
 
 Alter collection
 
@@ -1758,7 +1758,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1771,7 +1771,7 @@ No authorization required
 
 <a name="updateLabelledCollection"></a>
 # **updateLabelledCollection**
-> ResponseEntity updateLabelledCollection(id4n, request, opts)
+> Object updateLabelledCollection(id4n, request, opts)
 
 Rename labelled collection
 
@@ -1811,7 +1811,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1824,7 +1824,7 @@ No authorization required
 
 <a name="updateLogisticCollection"></a>
 # **updateLogisticCollection**
-> ResponseEntity updateLogisticCollection(id4n, request, opts)
+> Object updateLogisticCollection(id4n, request, opts)
 
 Update logistic collection
 
@@ -1864,7 +1864,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1877,7 +1877,7 @@ No authorization required
 
 <a name="updateRoutingCollection"></a>
 # **updateRoutingCollection**
-> ResponseEntity updateRoutingCollection(id4n, request, opts)
+> Object updateRoutingCollection(id4n, request, opts)
 
 Update routing collection
 
@@ -1917,7 +1917,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 

@@ -263,7 +263,6 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
  - [Id4iApi.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [Id4iApi.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
- - [Id4iApi.ResponseEntity](docs/ResponseEntity.md)
  - [Id4iApi.Role](docs/Role.md)
  - [Id4iApi.RoleResponse](docs/RoleResponse.md)
  - [Id4iApi.Route](docs/Route.md)

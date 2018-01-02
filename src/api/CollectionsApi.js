@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/PaginatedGuidCollection', 'model/PaginatedGuidResponse', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/PaginatedGuidCollection', 'model/PaginatedGuidResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateLabelledCollectionRequest'), require('../model/CreateLogisticCollectionRequest'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedGuidResponse'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateLabelledCollectionRequest'), require('../model/CreateLogisticCollectionRequest'), require('../model/CreateRoutingCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedGuidResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.CollectionsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedGuidResponse, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.CollectionsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateLabelledCollectionRequest, root.Id4iApi.CreateLogisticCollectionRequest, root.Id4iApi.CreateRoutingCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedGuidResponse);
   }
-}(this, function(ApiClient, ApiError, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, PaginatedGuidCollection, PaginatedGuidResponse, ResponseEntity) {
+}(this, function(ApiClient, ApiError, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, GuidCollection, Id4n, ListOfId4ns, PaginatedGuidCollection, PaginatedGuidResponse) {
   'use strict';
 
   /**
@@ -764,7 +764,7 @@
      * Callback function to receive the result of the deleteLogisticCollection operation.
      * @callback module:api/CollectionsApi~deleteLogisticCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -775,7 +775,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link Object}
      */
     this.deleteLogisticCollection = function(id4n, opts, callback) {
       opts = opts || {};
@@ -802,7 +802,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/api/v1/collections/logistic/{id4n}', 'DELETE',
@@ -1703,25 +1703,25 @@
     /**
      * Remove elements from logistic collection
      * @param {String} collectionId4n collectionId4n
-     * @param {module:model/ListOfId4ns} listofGuids listofGuids
+     * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementsFromLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
      */
-    this.removeElementsFromLogisticCollection = function(collectionId4n, listofGuids, opts, callback) {
+    this.removeElementsFromLogisticCollection = function(collectionId4n, listOfGuids, opts, callback) {
       opts = opts || {};
-      var postBody = listofGuids;
+      var postBody = listOfGuids;
 
       // verify the required parameter 'collectionId4n' is set
       if (collectionId4n === undefined || collectionId4n === null) {
         throw new Error("Missing the required parameter 'collectionId4n' when calling removeElementsFromLogisticCollection");
       }
 
-      // verify the required parameter 'listofGuids' is set
-      if (listofGuids === undefined || listofGuids === null) {
-        throw new Error("Missing the required parameter 'listofGuids' when calling removeElementsFromLogisticCollection");
+      // verify the required parameter 'listOfGuids' is set
+      if (listOfGuids === undefined || listOfGuids === null) {
+        throw new Error("Missing the required parameter 'listOfGuids' when calling removeElementsFromLogisticCollection");
       }
 
 
@@ -1810,7 +1810,7 @@
      * Callback function to receive the result of the updateCollection operation.
      * @callback module:api/CollectionsApi~updateCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1822,7 +1822,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~updateCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link Object}
      */
     this.updateCollection = function(id4n, request, opts, callback) {
       opts = opts || {};
@@ -1854,7 +1854,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/api/v1/collections/{id4n}', 'PUT',
@@ -1867,7 +1867,7 @@
      * Callback function to receive the result of the updateLabelledCollection operation.
      * @callback module:api/CollectionsApi~updateLabelledCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1879,7 +1879,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~updateLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link Object}
      */
     this.updateLabelledCollection = function(id4n, request, opts, callback) {
       opts = opts || {};
@@ -1911,7 +1911,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/api/v1/collections/labelled/{id4n}', 'PUT',
@@ -1924,7 +1924,7 @@
      * Callback function to receive the result of the updateLogisticCollection operation.
      * @callback module:api/CollectionsApi~updateLogisticCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1936,7 +1936,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~updateLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link Object}
      */
     this.updateLogisticCollection = function(id4n, request, opts, callback) {
       opts = opts || {};
@@ -1968,7 +1968,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/api/v1/collections/logistic/{id4n}', 'PUT',
@@ -1981,7 +1981,7 @@
      * Callback function to receive the result of the updateRoutingCollection operation.
      * @callback module:api/CollectionsApi~updateRoutingCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1993,7 +1993,7 @@
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~updateRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * data is of type: {@link Object}
      */
     this.updateRoutingCollection = function(id4n, request, opts, callback) {
       opts = opts || {};
@@ -2025,7 +2025,7 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/api/v1/collections/routing/{id4n}', 'PUT',

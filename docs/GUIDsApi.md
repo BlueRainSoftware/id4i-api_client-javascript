@@ -283,7 +283,7 @@ No authorization required
 
 <a name="updateGuid"></a>
 # **updateGuid**
-> ResponseEntity updateGuid(id4n, request, opts)
+> Object updateGuid(id4n, request, opts)
 
 Change GUID information.
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
