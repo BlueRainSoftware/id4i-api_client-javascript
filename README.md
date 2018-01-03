@@ -140,11 +140,17 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**verifyUserRegistration**](docs/AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 *Id4iApi.AliasApi* | [**addGuidAlias**](docs/AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *Id4iApi.AliasApi* | [**addGuidAlias1**](docs/AliasApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+*Id4iApi.ApiKeysApi* | [**addApiKeyId4nPrivileges**](docs/ApiKeysApi.md#addApiKeyId4nPrivileges) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
+*Id4iApi.ApiKeysApi* | [**addApiKeyPrivilege**](docs/ApiKeysApi.md#addApiKeyPrivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
+*Id4iApi.ApiKeysApi* | [**addApiKeyPrivileges**](docs/ApiKeysApi.md#addApiKeyPrivileges) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
 *Id4iApi.ApiKeysApi* | [**createNewApiKey**](docs/ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
 *Id4iApi.ApiKeysApi* | [**deleteApiKey**](docs/ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
 *Id4iApi.ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
+*Id4iApi.ApiKeysApi* | [**listAllApiKeyPrivileges**](docs/ApiKeysApi.md#listAllApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List all privileges
 *Id4iApi.ApiKeysApi* | [**listAllApiKeysOfOrganization**](docs/ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find API key by organization
-*Id4iApi.ApiKeysApi* | [**listApiKeyPrivileges**](docs/ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+*Id4iApi.ApiKeysApi* | [**listApiKeyPrivileges**](docs/ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/{key}/privileges | List privileges
+*Id4iApi.ApiKeysApi* | [**listId4ns**](docs/ApiKeysApi.md#listId4ns) | **GET** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | ID4ns of a privilege
+*Id4iApi.ApiKeysApi* | [**removeApiKeyId4nPrivileges**](docs/ApiKeysApi.md#removeApiKeyId4nPrivileges) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *Id4iApi.ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 *Id4iApi.CollectionsApi* | [**addElementToCollection**](docs/CollectionsApi.md#addElementToCollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *Id4iApi.CollectionsApi* | [**addElementToLabelledCollection**](docs/CollectionsApi.md#addElementToLabelledCollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
@@ -222,12 +228,15 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Id4iApi.AccountCredentials](docs/AccountCredentials.md)
+ - [Id4iApi.AddApiKeyPrivilegeRequest](docs/AddApiKeyPrivilegeRequest.md)
  - [Id4iApi.ApiError](docs/ApiError.md)
  - [Id4iApi.ApiKeyChangeRequest](docs/ApiKeyChangeRequest.md)
  - [Id4iApi.ApiKeyCreationRequest](docs/ApiKeyCreationRequest.md)
  - [Id4iApi.ApiKeyPresentation](docs/ApiKeyPresentation.md)
+ - [Id4iApi.ApiKeyPrivilege](docs/ApiKeyPrivilege.md)
  - [Id4iApi.ApiKeyPrivilegeInfo](docs/ApiKeyPrivilegeInfo.md)
- - [Id4iApi.ApiKeyPrivilegeResponse](docs/ApiKeyPrivilegeResponse.md)
+ - [Id4iApi.ApiKeyPrivilegeInfoResponse](docs/ApiKeyPrivilegeInfoResponse.md)
+ - [Id4iApi.ApiKeyPrivilegePaginatedResponse](docs/ApiKeyPrivilegePaginatedResponse.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
  - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
  - [Id4iApi.CompleteUserRegistrationRequest](docs/CompleteUserRegistrationRequest.md)
@@ -239,6 +248,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.GuidAlias](docs/GuidAlias.md)
  - [Id4iApi.GuidCollection](docs/GuidCollection.md)
  - [Id4iApi.Id4n](docs/Id4n.md)
+ - [Id4iApi.Id4nPresentation](docs/Id4nPresentation.md)
+ - [Id4iApi.Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
  - [Id4iApi.ListOfId4ns](docs/ListOfId4ns.md)
  - [Id4iApi.Organization](docs/Organization.md)
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
@@ -249,9 +260,11 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
  - [Id4iApi.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
  - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
+ - [Id4iApi.PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
  - [Id4iApi.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
+ - [Id4iApi.PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
  - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
  - [Id4iApi.PaginatedResponseRole](docs/PaginatedResponseRole.md)
  - [Id4iApi.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
@@ -263,6 +276,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
  - [Id4iApi.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [Id4iApi.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
+ - [Id4iApi.RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
  - [Id4iApi.Role](docs/Role.md)
  - [Id4iApi.RoleResponse](docs/RoleResponse.md)
  - [Id4iApi.Route](docs/Route.md)

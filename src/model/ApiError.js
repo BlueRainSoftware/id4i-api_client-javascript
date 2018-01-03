@@ -161,6 +161,11 @@
      */
     "FIELD_INPUT_VALIDATION_FAILED": "ERR_FIELD_INPUT_VALIDATION_FAILED",
     /**
+     * value: "ERR_VALIDATION_CONSTRAINT_FAILED"
+     * @const
+     */
+    "VALIDATION_CONSTRAINT_FAILED": "ERR_VALIDATION_CONSTRAINT_FAILED",
+    /**
      * value: "ERR_INPUT_NOT_READABLE"
      * @const
      */

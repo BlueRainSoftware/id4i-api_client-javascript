@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ApiKeyChangeRequest', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyPrivilegeInfo', 'model/ApiKeyPrivilegeResponse', 'model/AppInfoPresentation', 'model/ChangeRoleRequest', 'model/CompleteUserRegistrationRequest', 'model/CreateGuidRequest', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/Guid', 'model/GuidAlias', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/Organization', 'model/OrganizationAddress', 'model/OrganizationUserInvitation', 'model/OrganizationUserInvitationListRequest', 'model/PaginatedApiKeyResponse', 'model/PaginatedGuidCollection', 'model/PaginatedGuidResponse', 'model/PaginatedOrganizationResponse', 'model/PaginatedResponseApiKeyPresentation', 'model/PaginatedResponseApiKeyPrivilegeInfo', 'model/PaginatedResponseGuid', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponseOrganization', 'model/PaginatedResponseRole', 'model/PaginatedResponseUserPresentation', 'model/PaginatedResponseUserRoles', 'model/PaginatedResponsestring', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/Role', 'model/RoleResponse', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/Timestamp', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles', 'model/WhoIsResponse', 'api/AccountsApi', 'api/AliasApi', 'api/ApiKeysApi', 'api/CollectionsApi', 'api/GUIDsApi', 'api/ImagesApi', 'api/MetaInformationApi', 'api/OrganizationsApi', 'api/PublicServicesApi', 'api/RoutingApi', 'api/SearchApi', 'api/WhoIsApi'], factory);
+    define(['ApiClient', 'model/AccountCredentials', 'model/AddApiKeyPrivilegeRequest', 'model/ApiError', 'model/ApiKeyChangeRequest', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyPrivilege', 'model/ApiKeyPrivilegeInfo', 'model/ApiKeyPrivilegeInfoResponse', 'model/ApiKeyPrivilegePaginatedResponse', 'model/AppInfoPresentation', 'model/ChangeRoleRequest', 'model/CompleteUserRegistrationRequest', 'model/CreateGuidRequest', 'model/CreateLabelledCollectionRequest', 'model/CreateLogisticCollectionRequest', 'model/CreateRoutingCollectionRequest', 'model/Guid', 'model/GuidAlias', 'model/GuidCollection', 'model/Id4n', 'model/Id4nPresentation', 'model/Id4nPresentationPaginatedResponse', 'model/ListOfId4ns', 'model/Organization', 'model/OrganizationAddress', 'model/OrganizationUserInvitation', 'model/OrganizationUserInvitationListRequest', 'model/PaginatedApiKeyResponse', 'model/PaginatedGuidCollection', 'model/PaginatedGuidResponse', 'model/PaginatedOrganizationResponse', 'model/PaginatedResponseApiKeyPresentation', 'model/PaginatedResponseApiKeyPrivilege', 'model/PaginatedResponseApiKeyPrivilegeInfo', 'model/PaginatedResponseGuid', 'model/PaginatedResponseGuidCollection', 'model/PaginatedResponseId4nPresentation', 'model/PaginatedResponseOrganization', 'model/PaginatedResponseRole', 'model/PaginatedResponseUserPresentation', 'model/PaginatedResponseUserRoles', 'model/PaginatedResponsestring', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/RemoveApiKeyPrivilegeRequest', 'model/Role', 'model/RoleResponse', 'model/Route', 'model/RoutingFile', 'model/RoutingFileRequest', 'model/RoutingOptions', 'model/SimpleMessageResponse', 'model/Timestamp', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse', 'model/UserRoles', 'model/WhoIsResponse', 'api/AccountsApi', 'api/AliasApi', 'api/ApiKeysApi', 'api/CollectionsApi', 'api/GUIDsApi', 'api/ImagesApi', 'api/MetaInformationApi', 'api/OrganizationsApi', 'api/PublicServicesApi', 'api/RoutingApi', 'api/SearchApi', 'api/WhoIsApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/ApiError'), require('./model/ApiKeyChangeRequest'), require('./model/ApiKeyCreationRequest'), require('./model/ApiKeyPresentation'), require('./model/ApiKeyPrivilegeInfo'), require('./model/ApiKeyPrivilegeResponse'), require('./model/AppInfoPresentation'), require('./model/ChangeRoleRequest'), require('./model/CompleteUserRegistrationRequest'), require('./model/CreateGuidRequest'), require('./model/CreateLabelledCollectionRequest'), require('./model/CreateLogisticCollectionRequest'), require('./model/CreateRoutingCollectionRequest'), require('./model/Guid'), require('./model/GuidAlias'), require('./model/GuidCollection'), require('./model/Id4n'), require('./model/ListOfId4ns'), require('./model/Organization'), require('./model/OrganizationAddress'), require('./model/OrganizationUserInvitation'), require('./model/OrganizationUserInvitationListRequest'), require('./model/PaginatedApiKeyResponse'), require('./model/PaginatedGuidCollection'), require('./model/PaginatedGuidResponse'), require('./model/PaginatedOrganizationResponse'), require('./model/PaginatedResponseApiKeyPresentation'), require('./model/PaginatedResponseApiKeyPrivilegeInfo'), require('./model/PaginatedResponseGuid'), require('./model/PaginatedResponseGuidCollection'), require('./model/PaginatedResponseOrganization'), require('./model/PaginatedResponseRole'), require('./model/PaginatedResponseUserPresentation'), require('./model/PaginatedResponseUserRoles'), require('./model/PaginatedResponsestring'), require('./model/PaginatedStringResponse'), require('./model/PaginatedUserPresentationResponse'), require('./model/PaginatedUserRolesResponse'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/Role'), require('./model/RoleResponse'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/Timestamp'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./model/UserRoles'), require('./model/WhoIsResponse'), require('./api/AccountsApi'), require('./api/AliasApi'), require('./api/ApiKeysApi'), require('./api/CollectionsApi'), require('./api/GUIDsApi'), require('./api/ImagesApi'), require('./api/MetaInformationApi'), require('./api/OrganizationsApi'), require('./api/PublicServicesApi'), require('./api/RoutingApi'), require('./api/SearchApi'), require('./api/WhoIsApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AccountCredentials'), require('./model/AddApiKeyPrivilegeRequest'), require('./model/ApiError'), require('./model/ApiKeyChangeRequest'), require('./model/ApiKeyCreationRequest'), require('./model/ApiKeyPresentation'), require('./model/ApiKeyPrivilege'), require('./model/ApiKeyPrivilegeInfo'), require('./model/ApiKeyPrivilegeInfoResponse'), require('./model/ApiKeyPrivilegePaginatedResponse'), require('./model/AppInfoPresentation'), require('./model/ChangeRoleRequest'), require('./model/CompleteUserRegistrationRequest'), require('./model/CreateGuidRequest'), require('./model/CreateLabelledCollectionRequest'), require('./model/CreateLogisticCollectionRequest'), require('./model/CreateRoutingCollectionRequest'), require('./model/Guid'), require('./model/GuidAlias'), require('./model/GuidCollection'), require('./model/Id4n'), require('./model/Id4nPresentation'), require('./model/Id4nPresentationPaginatedResponse'), require('./model/ListOfId4ns'), require('./model/Organization'), require('./model/OrganizationAddress'), require('./model/OrganizationUserInvitation'), require('./model/OrganizationUserInvitationListRequest'), require('./model/PaginatedApiKeyResponse'), require('./model/PaginatedGuidCollection'), require('./model/PaginatedGuidResponse'), require('./model/PaginatedOrganizationResponse'), require('./model/PaginatedResponseApiKeyPresentation'), require('./model/PaginatedResponseApiKeyPrivilege'), require('./model/PaginatedResponseApiKeyPrivilegeInfo'), require('./model/PaginatedResponseGuid'), require('./model/PaginatedResponseGuidCollection'), require('./model/PaginatedResponseId4nPresentation'), require('./model/PaginatedResponseOrganization'), require('./model/PaginatedResponseRole'), require('./model/PaginatedResponseUserPresentation'), require('./model/PaginatedResponseUserRoles'), require('./model/PaginatedResponsestring'), require('./model/PaginatedStringResponse'), require('./model/PaginatedUserPresentationResponse'), require('./model/PaginatedUserRolesResponse'), require('./model/PasswordResetRequest'), require('./model/PasswordResetVerificationRequest'), require('./model/RegistrationVerificationTokenPresentation'), require('./model/RemoveApiKeyPrivilegeRequest'), require('./model/Role'), require('./model/RoleResponse'), require('./model/Route'), require('./model/RoutingFile'), require('./model/RoutingFileRequest'), require('./model/RoutingOptions'), require('./model/SimpleMessageResponse'), require('./model/Timestamp'), require('./model/UserPresentation'), require('./model/UserRegistrationRequest'), require('./model/UserRegistrationResponse'), require('./model/UserRoles'), require('./model/WhoIsResponse'), require('./api/AccountsApi'), require('./api/AliasApi'), require('./api/ApiKeysApi'), require('./api/CollectionsApi'), require('./api/GUIDsApi'), require('./api/ImagesApi'), require('./api/MetaInformationApi'), require('./api/OrganizationsApi'), require('./api/PublicServicesApi'), require('./api/RoutingApi'), require('./api/SearchApi'), require('./api/WhoIsApi'));
   }
-}(function(ApiClient, AccountCredentials, ApiError, ApiKeyChangeRequest, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyPrivilegeInfo, ApiKeyPrivilegeResponse, AppInfoPresentation, ChangeRoleRequest, CompleteUserRegistrationRequest, CreateGuidRequest, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, Guid, GuidAlias, GuidCollection, Id4n, ListOfId4ns, Organization, OrganizationAddress, OrganizationUserInvitation, OrganizationUserInvitationListRequest, PaginatedApiKeyResponse, PaginatedGuidCollection, PaginatedGuidResponse, PaginatedOrganizationResponse, PaginatedResponseApiKeyPresentation, PaginatedResponseApiKeyPrivilegeInfo, PaginatedResponseGuid, PaginatedResponseGuidCollection, PaginatedResponseOrganization, PaginatedResponseRole, PaginatedResponseUserPresentation, PaginatedResponseUserRoles, PaginatedResponsestring, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, Role, RoleResponse, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, Timestamp, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles, WhoIsResponse, AccountsApi, AliasApi, ApiKeysApi, CollectionsApi, GUIDsApi, ImagesApi, MetaInformationApi, OrganizationsApi, PublicServicesApi, RoutingApi, SearchApi, WhoIsApi) {
+}(function(ApiClient, AccountCredentials, AddApiKeyPrivilegeRequest, ApiError, ApiKeyChangeRequest, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyPrivilege, ApiKeyPrivilegeInfo, ApiKeyPrivilegeInfoResponse, ApiKeyPrivilegePaginatedResponse, AppInfoPresentation, ChangeRoleRequest, CompleteUserRegistrationRequest, CreateGuidRequest, CreateLabelledCollectionRequest, CreateLogisticCollectionRequest, CreateRoutingCollectionRequest, Guid, GuidAlias, GuidCollection, Id4n, Id4nPresentation, Id4nPresentationPaginatedResponse, ListOfId4ns, Organization, OrganizationAddress, OrganizationUserInvitation, OrganizationUserInvitationListRequest, PaginatedApiKeyResponse, PaginatedGuidCollection, PaginatedGuidResponse, PaginatedOrganizationResponse, PaginatedResponseApiKeyPresentation, PaginatedResponseApiKeyPrivilege, PaginatedResponseApiKeyPrivilegeInfo, PaginatedResponseGuid, PaginatedResponseGuidCollection, PaginatedResponseId4nPresentation, PaginatedResponseOrganization, PaginatedResponseRole, PaginatedResponseUserPresentation, PaginatedResponseUserRoles, PaginatedResponsestring, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, RemoveApiKeyPrivilegeRequest, Role, RoleResponse, Route, RoutingFile, RoutingFileRequest, RoutingOptions, SimpleMessageResponse, Timestamp, UserPresentation, UserRegistrationRequest, UserRegistrationResponse, UserRoles, WhoIsResponse, AccountsApi, AliasApi, ApiKeysApi, CollectionsApi, GUIDsApi, ImagesApi, MetaInformationApi, OrganizationsApi, PublicServicesApi, RoutingApi, SearchApi, WhoIsApi) {
   'use strict';
 
   /**
@@ -68,6 +68,11 @@
      */
     AccountCredentials: AccountCredentials,
     /**
+     * The AddApiKeyPrivilegeRequest model constructor.
+     * @property {module:model/AddApiKeyPrivilegeRequest}
+     */
+    AddApiKeyPrivilegeRequest: AddApiKeyPrivilegeRequest,
+    /**
      * The ApiError model constructor.
      * @property {module:model/ApiError}
      */
@@ -88,15 +93,25 @@
      */
     ApiKeyPresentation: ApiKeyPresentation,
     /**
+     * The ApiKeyPrivilege model constructor.
+     * @property {module:model/ApiKeyPrivilege}
+     */
+    ApiKeyPrivilege: ApiKeyPrivilege,
+    /**
      * The ApiKeyPrivilegeInfo model constructor.
      * @property {module:model/ApiKeyPrivilegeInfo}
      */
     ApiKeyPrivilegeInfo: ApiKeyPrivilegeInfo,
     /**
-     * The ApiKeyPrivilegeResponse model constructor.
-     * @property {module:model/ApiKeyPrivilegeResponse}
+     * The ApiKeyPrivilegeInfoResponse model constructor.
+     * @property {module:model/ApiKeyPrivilegeInfoResponse}
      */
-    ApiKeyPrivilegeResponse: ApiKeyPrivilegeResponse,
+    ApiKeyPrivilegeInfoResponse: ApiKeyPrivilegeInfoResponse,
+    /**
+     * The ApiKeyPrivilegePaginatedResponse model constructor.
+     * @property {module:model/ApiKeyPrivilegePaginatedResponse}
+     */
+    ApiKeyPrivilegePaginatedResponse: ApiKeyPrivilegePaginatedResponse,
     /**
      * The AppInfoPresentation model constructor.
      * @property {module:model/AppInfoPresentation}
@@ -153,6 +168,16 @@
      */
     Id4n: Id4n,
     /**
+     * The Id4nPresentation model constructor.
+     * @property {module:model/Id4nPresentation}
+     */
+    Id4nPresentation: Id4nPresentation,
+    /**
+     * The Id4nPresentationPaginatedResponse model constructor.
+     * @property {module:model/Id4nPresentationPaginatedResponse}
+     */
+    Id4nPresentationPaginatedResponse: Id4nPresentationPaginatedResponse,
+    /**
      * The ListOfId4ns model constructor.
      * @property {module:model/ListOfId4ns}
      */
@@ -203,6 +228,11 @@
      */
     PaginatedResponseApiKeyPresentation: PaginatedResponseApiKeyPresentation,
     /**
+     * The PaginatedResponseApiKeyPrivilege model constructor.
+     * @property {module:model/PaginatedResponseApiKeyPrivilege}
+     */
+    PaginatedResponseApiKeyPrivilege: PaginatedResponseApiKeyPrivilege,
+    /**
      * The PaginatedResponseApiKeyPrivilegeInfo model constructor.
      * @property {module:model/PaginatedResponseApiKeyPrivilegeInfo}
      */
@@ -217,6 +247,11 @@
      * @property {module:model/PaginatedResponseGuidCollection}
      */
     PaginatedResponseGuidCollection: PaginatedResponseGuidCollection,
+    /**
+     * The PaginatedResponseId4nPresentation model constructor.
+     * @property {module:model/PaginatedResponseId4nPresentation}
+     */
+    PaginatedResponseId4nPresentation: PaginatedResponseId4nPresentation,
     /**
      * The PaginatedResponseOrganization model constructor.
      * @property {module:model/PaginatedResponseOrganization}
@@ -272,6 +307,11 @@
      * @property {module:model/RegistrationVerificationTokenPresentation}
      */
     RegistrationVerificationTokenPresentation: RegistrationVerificationTokenPresentation,
+    /**
+     * The RemoveApiKeyPrivilegeRequest model constructor.
+     * @property {module:model/RemoveApiKeyPrivilegeRequest}
+     */
+    RemoveApiKeyPrivilegeRequest: RemoveApiKeyPrivilegeRequest,
     /**
      * The Role model constructor.
      * @property {module:model/Role}

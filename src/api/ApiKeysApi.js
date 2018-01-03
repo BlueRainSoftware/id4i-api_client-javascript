@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/ApiKeyChangeRequest', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyPrivilegeResponse', 'model/PaginatedApiKeyResponse'], factory);
+    define(['ApiClient', 'model/AddApiKeyPrivilegeRequest', 'model/ApiError', 'model/ApiKeyChangeRequest', 'model/ApiKeyCreationRequest', 'model/ApiKeyPresentation', 'model/ApiKeyPrivilegeInfoResponse', 'model/ApiKeyPrivilegePaginatedResponse', 'model/Id4nPresentationPaginatedResponse', 'model/ListOfId4ns', 'model/PaginatedApiKeyResponse', 'model/RemoveApiKeyPrivilegeRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ApiKeyChangeRequest'), require('../model/ApiKeyCreationRequest'), require('../model/ApiKeyPresentation'), require('../model/ApiKeyPrivilegeResponse'), require('../model/PaginatedApiKeyResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/AddApiKeyPrivilegeRequest'), require('../model/ApiError'), require('../model/ApiKeyChangeRequest'), require('../model/ApiKeyCreationRequest'), require('../model/ApiKeyPresentation'), require('../model/ApiKeyPrivilegeInfoResponse'), require('../model/ApiKeyPrivilegePaginatedResponse'), require('../model/Id4nPresentationPaginatedResponse'), require('../model/ListOfId4ns'), require('../model/PaginatedApiKeyResponse'), require('../model/RemoveApiKeyPrivilegeRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.ApiKeysApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ApiKeyChangeRequest, root.Id4iApi.ApiKeyCreationRequest, root.Id4iApi.ApiKeyPresentation, root.Id4iApi.ApiKeyPrivilegeResponse, root.Id4iApi.PaginatedApiKeyResponse);
+    root.Id4iApi.ApiKeysApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AddApiKeyPrivilegeRequest, root.Id4iApi.ApiError, root.Id4iApi.ApiKeyChangeRequest, root.Id4iApi.ApiKeyCreationRequest, root.Id4iApi.ApiKeyPresentation, root.Id4iApi.ApiKeyPrivilegeInfoResponse, root.Id4iApi.ApiKeyPrivilegePaginatedResponse, root.Id4iApi.Id4nPresentationPaginatedResponse, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedApiKeyResponse, root.Id4iApi.RemoveApiKeyPrivilegeRequest);
   }
-}(this, function(ApiClient, ApiError, ApiKeyChangeRequest, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyPrivilegeResponse, PaginatedApiKeyResponse) {
+}(this, function(ApiClient, AddApiKeyPrivilegeRequest, ApiError, ApiKeyChangeRequest, ApiKeyCreationRequest, ApiKeyPresentation, ApiKeyPrivilegeInfoResponse, ApiKeyPrivilegePaginatedResponse, Id4nPresentationPaginatedResponse, ListOfId4ns, PaginatedApiKeyResponse, RemoveApiKeyPrivilegeRequest) {
   'use strict';
 
   /**
@@ -47,6 +47,184 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+    /**
+     * Callback function to receive the result of the addApiKeyId4nPrivileges operation.
+     * @callback module:api/ApiKeysApi~addApiKeyId4nPrivilegesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add ID4ns of a privilege
+     * @param {String} key key
+     * @param {String} privilege privilege
+     * @param {module:model/ListOfId4ns} id4ns id4ns
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/ApiKeysApi~addApiKeyId4nPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addApiKeyId4nPrivileges = function(key, privilege, id4ns, opts, callback) {
+      opts = opts || {};
+      var postBody = id4ns;
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling addApiKeyId4nPrivileges");
+      }
+
+      // verify the required parameter 'privilege' is set
+      if (privilege === undefined || privilege === null) {
+        throw new Error("Missing the required parameter 'privilege' when calling addApiKeyId4nPrivileges");
+      }
+
+      // verify the required parameter 'id4ns' is set
+      if (id4ns === undefined || id4ns === null) {
+        throw new Error("Missing the required parameter 'id4ns' when calling addApiKeyId4nPrivileges");
+      }
+
+
+      var pathParams = {
+        'key': key,
+        'privilege': privilege
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/apikeys/{key}/privileges/{privilege}/id4ns', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addApiKeyPrivilege operation.
+     * @callback module:api/ApiKeysApi~addApiKeyPrivilegeCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add privilege
+     * @param {String} key key
+     * @param {module:model/AddApiKeyPrivilegeRequest} addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/ApiKeysApi~addApiKeyPrivilegeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addApiKeyPrivilege = function(key, addApiKeyPrivilegeRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = addApiKeyPrivilegeRequest;
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling addApiKeyPrivilege");
+      }
+
+      // verify the required parameter 'addApiKeyPrivilegeRequest' is set
+      if (addApiKeyPrivilegeRequest === undefined || addApiKeyPrivilegeRequest === null) {
+        throw new Error("Missing the required parameter 'addApiKeyPrivilegeRequest' when calling addApiKeyPrivilege");
+      }
+
+
+      var pathParams = {
+        'key': key
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/apikeys/{key}/privileges', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addApiKeyPrivileges operation.
+     * @callback module:api/ApiKeysApi~addApiKeyPrivilegesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove privilege
+     * @param {String} key key
+     * @param {module:model/RemoveApiKeyPrivilegeRequest} removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/ApiKeysApi~addApiKeyPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addApiKeyPrivileges = function(key, removeApiKeyPrivilegeRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = removeApiKeyPrivilegeRequest;
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling addApiKeyPrivileges");
+      }
+
+      // verify the required parameter 'removeApiKeyPrivilegeRequest' is set
+      if (removeApiKeyPrivilegeRequest === undefined || removeApiKeyPrivilegeRequest === null) {
+        throw new Error("Missing the required parameter 'removeApiKeyPrivilegeRequest' when calling addApiKeyPrivileges");
+      }
+
+
+      var pathParams = {
+        'key': key
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/apikeys/{key}/privileges', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the createNewApiKey operation.
@@ -204,6 +382,57 @@
     }
 
     /**
+     * Callback function to receive the result of the listAllApiKeyPrivileges operation.
+     * @callback module:api/ApiKeysApi~listAllApiKeyPrivilegesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiKeyPrivilegeInfoResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List all privileges
+     * Listing all possible API key privileges.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Boolean} opts.id4nConcerning id4nConcerning
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/ApiKeysApi~listAllApiKeyPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiKeyPrivilegeInfoResponse}
+     */
+    this.listAllApiKeyPrivileges = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'id4nConcerning': opts['id4nConcerning'],
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiKeyPrivilegeInfoResponse;
+
+      return this.apiClient.callApi(
+        '/api/v1/apikeys/privileges', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the listAllApiKeysOfOrganization operation.
      * @callback module:api/ApiKeysApi~listAllApiKeysOfOrganizationCallback
      * @param {String} error Error message, if any.
@@ -263,31 +492,35 @@
      * Callback function to receive the result of the listApiKeyPrivileges operation.
      * @callback module:api/ApiKeysApi~listApiKeyPrivilegesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ApiKeyPrivilegeResponse} data The data returned by the service call.
+     * @param {module:model/ApiKeyPrivilegePaginatedResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * List API key privileges
-     * Listing API key privileges.
+     * List privileges
+     * @param {String} key key
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Boolean} opts.id4nConcerning id4nConcerning
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:api/ApiKeysApi~listApiKeyPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiKeyPrivilegeResponse}
+     * data is of type: {@link module:model/ApiKeyPrivilegePaginatedResponse}
      */
-    this.listApiKeyPrivileges = function(opts, callback) {
+    this.listApiKeyPrivileges = function(key, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling listApiKeyPrivileges");
+      }
+
 
       var pathParams = {
+        'key': key
       };
       var queryParams = {
-        'id4nConcerning': opts['id4nConcerning'],
         'offset': opts['offset'],
         'limit': opts['limit']
       };
@@ -301,10 +534,137 @@
       var authNames = [];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiKeyPrivilegeResponse;
+      var returnType = ApiKeyPrivilegePaginatedResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/apikeys/privileges', 'GET',
+        '/api/v1/apikeys/{key}/privileges', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listId4ns operation.
+     * @callback module:api/ApiKeysApi~listId4nsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Id4nPresentationPaginatedResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * ID4ns of a privilege
+     * Listing ID4ns of a id4n concerning privilege
+     * @param {String} key key
+     * @param {String} privilege privilege
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/ApiKeysApi~listId4nsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Id4nPresentationPaginatedResponse}
+     */
+    this.listId4ns = function(key, privilege, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling listId4ns");
+      }
+
+      // verify the required parameter 'privilege' is set
+      if (privilege === undefined || privilege === null) {
+        throw new Error("Missing the required parameter 'privilege' when calling listId4ns");
+      }
+
+
+      var pathParams = {
+        'key': key,
+        'privilege': privilege
+      };
+      var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = Id4nPresentationPaginatedResponse;
+
+      return this.apiClient.callApi(
+        '/api/v1/apikeys/{key}/privileges/{privilege}/id4ns', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeApiKeyId4nPrivileges operation.
+     * @callback module:api/ApiKeysApi~removeApiKeyId4nPrivilegesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove id4ns of a privilege
+     * @param {String} key key
+     * @param {String} privilege privilege
+     * @param {module:model/ListOfId4ns} id4ns id4ns
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/ApiKeysApi~removeApiKeyId4nPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.removeApiKeyId4nPrivileges = function(key, privilege, id4ns, opts, callback) {
+      opts = opts || {};
+      var postBody = id4ns;
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling removeApiKeyId4nPrivileges");
+      }
+
+      // verify the required parameter 'privilege' is set
+      if (privilege === undefined || privilege === null) {
+        throw new Error("Missing the required parameter 'privilege' when calling removeApiKeyId4nPrivileges");
+      }
+
+      // verify the required parameter 'id4ns' is set
+      if (id4ns === undefined || id4ns === null) {
+        throw new Error("Missing the required parameter 'id4ns' when calling removeApiKeyId4nPrivileges");
+      }
+
+
+      var pathParams = {
+        'key': key,
+        'privilege': privilege
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/apikeys/{key}/privileges/{privilege}/id4ns', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

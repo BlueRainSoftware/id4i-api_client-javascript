@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.ApiKeyPrivilegeResponse();
+    instance = new Id4iApi.RemoveApiKeyPrivilegeRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,34 +50,16 @@
       object[property] = value;
   }
 
-  describe('ApiKeyPrivilegeResponse', function() {
-    it('should create an instance of ApiKeyPrivilegeResponse', function() {
-      // uncomment below and update the code to test ApiKeyPrivilegeResponse
-      //var instane = new Id4iApi.ApiKeyPrivilegeResponse();
-      //expect(instance).to.be.a(Id4iApi.ApiKeyPrivilegeResponse);
+  describe('RemoveApiKeyPrivilegeRequest', function() {
+    it('should create an instance of RemoveApiKeyPrivilegeRequest', function() {
+      // uncomment below and update the code to test RemoveApiKeyPrivilegeRequest
+      //var instane = new Id4iApi.RemoveApiKeyPrivilegeRequest();
+      //expect(instance).to.be.a(Id4iApi.RemoveApiKeyPrivilegeRequest);
     });
 
-    it('should have the property elements (base name: "elements")', function() {
-      // uncomment below and update the code to test the property elements
-      //var instane = new Id4iApi.ApiKeyPrivilegeResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property limit (base name: "limit")', function() {
-      // uncomment below and update the code to test the property limit
-      //var instane = new Id4iApi.ApiKeyPrivilegeResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property offset (base name: "offset")', function() {
-      // uncomment below and update the code to test the property offset
-      //var instane = new Id4iApi.ApiKeyPrivilegeResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property total (base name: "total")', function() {
-      // uncomment below and update the code to test the property total
-      //var instane = new Id4iApi.ApiKeyPrivilegeResponse();
+    it('should have the property privilege (base name: "privilege")', function() {
+      // uncomment below and update the code to test the property privilege
+      //var instane = new Id4iApi.RemoveApiKeyPrivilegeRequest();
       //expect(instance).to.be();
     });
 
