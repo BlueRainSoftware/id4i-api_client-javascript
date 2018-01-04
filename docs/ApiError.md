@@ -79,6 +79,8 @@ Name | Type | Description | Notes
 
 * `INVALID_ALIAS_TYPE` (value: `"ERR_INVALID_ALIAS_TYPE"`)
 
+* `INVALID_URI_TEMPLATE_VARIABLE` (value: `"ERR_INVALID_URI_TEMPLATE_VARIABLE"`)
+
 
 
 

@@ -269,7 +269,12 @@
      * value: "ERR_INVALID_ALIAS_TYPE"
      * @const
      */
-    "INVALID_ALIAS_TYPE": "ERR_INVALID_ALIAS_TYPE"  };
+    "INVALID_ALIAS_TYPE": "ERR_INVALID_ALIAS_TYPE",
+    /**
+     * value: "ERR_INVALID_URI_TEMPLATE_VARIABLE"
+     * @const
+     */
+    "INVALID_URI_TEMPLATE_VARIABLE": "ERR_INVALID_URI_TEMPLATE_VARIABLE"  };
 
 
   return exports;
