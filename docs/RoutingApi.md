@@ -27,7 +27,9 @@ var type = "type_example"; // String | The type of route you want to have
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'privateRoutes': true, // Boolean | privateRoutes
+  'publicRoutes': true // Boolean | publicRoutes
 };
 
 var callback = function(error, data, response) {
@@ -48,6 +50,8 @@ Name | Type | Description  | Notes
  **type** | **String**| The type of route you want to have | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
+ **privateRoutes** | **Boolean**| privateRoutes | [optional] 
+ **publicRoutes** | **Boolean**| publicRoutes | [optional] 
 
 ### Return type
 

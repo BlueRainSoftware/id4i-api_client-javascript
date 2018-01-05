@@ -63,6 +63,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
      * @param {String} opts.acceptLanguage Requested language
+     * @param {Boolean} opts.privateRoutes privateRoutes
+     * @param {Boolean} opts.publicRoutes publicRoutes
      * @param {module:api/RoutingApi~getRouteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Route}
      */
@@ -86,6 +88,8 @@
         'type': type
       };
       var queryParams = {
+        'privateRoutes': opts['privateRoutes'],
+        'publicRoutes': opts['publicRoutes']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
