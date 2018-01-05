@@ -59,7 +59,7 @@
     /**
      * Add alias for GUIDs
      * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
-     * @param {String} id4n The GUID for which to add the alias
+     * @param {String} id4n The GUID to operate on
      * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {module:model/GuidAlias} alias The alias to add or update
      * @param {Object} opts Optional parameters
@@ -124,7 +124,7 @@
     /**
      * Remove aliases from GUIDs
      * Remove the alias of the given type
-     * @param {String} id4n The GUID for which to add the alias
+     * @param {String} id4n The GUID to operate on
      * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -269,6 +269,58 @@
 
       return this.apiClient.callApi(
         '/api/v1/guids/{id4n}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getGuidAliases operation.
+     * @callback module:api/GUIDsApi~getGuidAliasesCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {'String': 'String'}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get all aliases for the given GUID
+     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     * @param {String} id4n The GUID to operate on
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/GUIDsApi~getGuidAliasesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {'String': 'String'}>}
+     */
+    this.getGuidAliases = function(id4n, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling getGuidAliases");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/api/v1/guids/{id4n}/alias', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

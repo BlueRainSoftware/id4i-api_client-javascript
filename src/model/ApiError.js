@@ -271,6 +271,11 @@
      */
     "INVALID_ALIAS_TYPE": "ERR_INVALID_ALIAS_TYPE",
     /**
+     * value: "ERR_INVALID_URI_TEMPLATE"
+     * @const
+     */
+    "INVALID_URI_TEMPLATE": "ERR_INVALID_URI_TEMPLATE",
+    /**
      * value: "ERR_INVALID_URI_TEMPLATE_VARIABLE"
      * @const
      */

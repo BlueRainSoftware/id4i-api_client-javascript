@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/GuidAlias'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/GuidAlias', 'model/PaginatedResponseGuid'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/GuidAlias'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/GuidAlias'), require('../model/PaginatedResponseGuid'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.AliasApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.GuidAlias);
+    root.Id4iApi.AliasApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.GuidAlias, root.Id4iApi.PaginatedResponseGuid);
   }
-}(this, function(ApiClient, ApiError, GuidAlias) {
+}(this, function(ApiClient, ApiError, GuidAlias, PaginatedResponseGuid) {
   'use strict';
 
   /**
@@ -59,7 +59,7 @@
     /**
      * Add alias for GUIDs
      * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
-     * @param {String} id4n The GUID for which to add the alias
+     * @param {String} id4n The GUID to operate on
      * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {module:model/GuidAlias} alias The alias to add or update
      * @param {Object} opts Optional parameters
@@ -124,7 +124,7 @@
     /**
      * Remove aliases from GUIDs
      * Remove the alias of the given type
-     * @param {String} id4n The GUID for which to add the alias
+     * @param {String} id4n The GUID to operate on
      * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
@@ -167,6 +167,120 @@
 
       return this.apiClient.callApi(
         '/api/v1/guids/{id4n}/alias/{aliasType}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getGuidAliases operation.
+     * @callback module:api/AliasApi~getGuidAliasesCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {'String': 'String'}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get all aliases for the given GUID
+     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     * @param {String} id4n The GUID to operate on
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/AliasApi~getGuidAliasesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {'String': 'String'}>}
+     */
+    this.getGuidAliases = function(id4n, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling getGuidAliases");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/api/v1/guids/{id4n}/alias', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the searchByAlias operation.
+     * @callback module:api/AliasApi~searchByAliasCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedResponseGuid} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Search for GUIDs by alias
+     * @param {String} alias The alias to search for
+     * @param {module:model/String} aliasType Alias type type to search for
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/AliasApi~searchByAliasCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedResponseGuid}
+     */
+    this.searchByAlias = function(alias, aliasType, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'alias' is set
+      if (alias === undefined || alias === null) {
+        throw new Error("Missing the required parameter 'alias' when calling searchByAlias");
+      }
+
+      // verify the required parameter 'aliasType' is set
+      if (aliasType === undefined || aliasType === null) {
+        throw new Error("Missing the required parameter 'aliasType' when calling searchByAlias");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'alias': alias,
+        'aliasType': aliasType,
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = PaginatedResponseGuid;
+
+      return this.apiClient.callApi(
+        '/api/v1/search/guids', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

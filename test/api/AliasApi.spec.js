@@ -71,6 +71,26 @@
         done();
       });
     });
+    describe('getGuidAliases', function() {
+      it('should call getGuidAliases successfully', function(done) {
+        //uncomment below and update the code to test getGuidAliases
+        //instance.getGuidAliases(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('searchByAlias', function() {
+      it('should call searchByAlias successfully', function(done) {
+        //uncomment below and update the code to test searchByAlias
+        //instance.searchByAlias(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));
