@@ -50,7 +50,6 @@
 
 
 
-
   };
 
   /**
@@ -64,9 +63,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('username')) {
-        obj['username'] = ApiClient.convertToType(data['username'], 'String');
-      }
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
@@ -77,10 +73,6 @@
     return obj;
   }
 
-  /**
-   * @member {String} username
-   */
-  exports.prototype['username'] = undefined;
   /**
    * @member {String} password
    */
