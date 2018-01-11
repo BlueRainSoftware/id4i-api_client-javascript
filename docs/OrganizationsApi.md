@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+[**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
@@ -714,6 +715,57 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
+<a name="listCountries"></a>
+# **listCountries**
+> PaginatedCountryResponse listCountries(opts)
+
+List countries
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listCountries(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
+
+### Return type
+
+[**PaginatedCountryResponse**](PaginatedCountryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
 > ApiError removeUserRoles(organizationId, username, changeRoleRequest, opts)
@@ -825,7 +877,7 @@ No authorization required
 
 <a name="updateOrganizationAddress"></a>
 # **updateOrganizationAddress**
-> ApiError updateOrganizationAddress(organizationId, addressResource, opts)
+> OrganizationAddress updateOrganizationAddress(organizationId, addressResource, opts)
 
 Store address
 
@@ -865,7 +917,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+[**OrganizationAddress**](OrganizationAddress.md)
 
 ### Authorization
 
@@ -878,7 +930,7 @@ No authorization required
 
 <a name="updateOrganizationBillingAddress"></a>
 # **updateOrganizationBillingAddress**
-> ApiError updateOrganizationBillingAddress(organizationId, addressResource, opts)
+> OrganizationAddress updateOrganizationBillingAddress(organizationId, addressResource, opts)
 
 Store billing address
 
@@ -918,7 +970,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+[**OrganizationAddress**](OrganizationAddress.md)
 
 ### Authorization
 

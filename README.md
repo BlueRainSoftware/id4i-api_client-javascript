@@ -212,6 +212,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationsApi* | [**getUserRoles**](docs/OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *Id4iApi.OrganizationsApi* | [**getUsersOfOrganization**](docs/OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 *Id4iApi.OrganizationsApi* | [**inviteUsers**](docs/OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+*Id4iApi.OrganizationsApi* | [**listCountries**](docs/OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 *Id4iApi.OrganizationsApi* | [**removeUserRoles**](docs/OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *Id4iApi.OrganizationsApi* | [**updateOrganization**](docs/OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 *Id4iApi.OrganizationsApi* | [**updateOrganizationAddress**](docs/OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
@@ -242,6 +243,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
  - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
  - [Id4iApi.CompleteUserRegistrationRequest](docs/CompleteUserRegistrationRequest.md)
+ - [Id4iApi.Country](docs/Country.md)
  - [Id4iApi.CreateGuidRequest](docs/CreateGuidRequest.md)
  - [Id4iApi.CreateLabelledCollectionRequest](docs/CreateLabelledCollectionRequest.md)
  - [Id4iApi.CreateLogisticCollectionRequest](docs/CreateLogisticCollectionRequest.md)
@@ -258,12 +260,14 @@ Class | Method | HTTP request | Description
  - [Id4iApi.OrganizationUserInvitation](docs/OrganizationUserInvitation.md)
  - [Id4iApi.OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
  - [Id4iApi.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
+ - [Id4iApi.PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
  - [Id4iApi.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
  - [Id4iApi.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
  - [Id4iApi.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
  - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
+ - [Id4iApi.PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
  - [Id4iApi.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
  - [Id4iApi.PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)

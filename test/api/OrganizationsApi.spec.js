@@ -181,6 +181,16 @@
         done();
       });
     });
+    describe('listCountries', function() {
+      it('should call listCountries successfully', function(done) {
+        //uncomment below and update the code to test listCountries
+        //instance.listCountries(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeUserRoles', function() {
       it('should call removeUserRoles successfully', function(done) {
         //uncomment below and update the code to test removeUserRoles

@@ -49,8 +49,9 @@
    * @param street {String} 
    * @param postCode {String} 
    * @param city {String} 
+   * @param countryCode {String} The ISO 3166 two-letter country code
    */
-  var exports = function(firstname, lastname, street, postCode, city) {
+  var exports = function(firstname, lastname, street, postCode, city, countryCode) {
     var _this = this;
 
 
@@ -59,6 +60,8 @@
     _this['street'] = street;
     _this['postCode'] = postCode;
     _this['city'] = city;
+    _this['countryCode'] = countryCode;
+
 
   };
 
@@ -91,6 +94,12 @@
       if (data.hasOwnProperty('city')) {
         obj['city'] = ApiClient.convertToType(data['city'], 'String');
       }
+      if (data.hasOwnProperty('countryCode')) {
+        obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
+      }
+      if (data.hasOwnProperty('countryName')) {
+        obj['countryName'] = ApiClient.convertToType(data['countryName'], 'String');
+      }
       if (data.hasOwnProperty('telephone')) {
         obj['telephone'] = ApiClient.convertToType(data['telephone'], 'String');
       }
@@ -122,6 +131,16 @@
    * @member {String} city
    */
   exports.prototype['city'] = undefined;
+  /**
+   * The ISO 3166 two-letter country code
+   * @member {String} countryCode
+   */
+  exports.prototype['countryCode'] = undefined;
+  /**
+   * The country name
+   * @member {String} countryName
+   */
+  exports.prototype['countryName'] = undefined;
   /**
    * The telephone number e.g.
    * @member {String} telephone

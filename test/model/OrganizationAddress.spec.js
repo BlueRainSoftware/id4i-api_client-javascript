@@ -93,6 +93,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property countryCode (base name: "countryCode")', function() {
+      // uncomment below and update the code to test the property countryCode
+      //var instane = new Id4iApi.OrganizationAddress();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property countryName (base name: "countryName")', function() {
+      // uncomment below and update the code to test the property countryName
+      //var instane = new Id4iApi.OrganizationAddress();
+      //expect(instance).to.be();
+    });
+
     it('should have the property telephone (base name: "telephone")', function() {
       // uncomment below and update the code to test the property telephone
       //var instane = new Id4iApi.OrganizationAddress();
