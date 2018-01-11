@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**label** | **String** |  | [optional] 
-**length** | **Number** |  | [optional] 
-**organizationId** | **Number** |  | [optional] 
+**label** | **String** |  | 
+**length** | **Number** |  | 
+**organizationId** | **Number** |  | 
 
 
