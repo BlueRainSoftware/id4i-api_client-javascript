@@ -57,6 +57,12 @@
       //expect(instance).to.be.a(Id4iApi.ApiKeyPrivilegeInfo);
     });
 
+    it('should have the property helpText (base name: "helpText")', function() {
+      // uncomment below and update the code to test the property helpText
+      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id4nAssociated (base name: "id4nAssociated")', function() {
       // uncomment below and update the code to test the property id4nAssociated
       //var instane = new Id4iApi.ApiKeyPrivilegeInfo();

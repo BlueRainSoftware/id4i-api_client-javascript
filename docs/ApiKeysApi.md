@@ -4,9 +4,8 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addApiKeyId4nPrivileges**](ApiKeysApi.md#addApiKeyId4nPrivileges) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 [**addApiKeyPrivilege**](ApiKeysApi.md#addApiKeyPrivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
-[**addApiKeyPrivileges**](ApiKeysApi.md#addApiKeyPrivileges) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
+[**addApiKeyPrivilegeForId4ns**](ApiKeysApi.md#addApiKeyPrivilegeForId4ns) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 [**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
 [**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
 [**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
@@ -14,65 +13,10 @@ Method | HTTP request | Description
 [**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find API key by organization
 [**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/{key}/privileges | List privileges
 [**listId4ns**](ApiKeysApi.md#listId4ns) | **GET** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | ID4ns of a privilege
-[**removeApiKeyId4nPrivileges**](ApiKeysApi.md#removeApiKeyId4nPrivileges) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
+[**removeApiKeyPrivilege**](ApiKeysApi.md#removeApiKeyPrivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
+[**removeApiKeyPrivilegeForId4ns**](ApiKeysApi.md#removeApiKeyPrivilegeForId4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 [**updateApiKey**](ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 
-
-<a name="addApiKeyId4nPrivileges"></a>
-# **addApiKeyId4nPrivileges**
-> ApiError addApiKeyId4nPrivileges(key, privilege, id4ns, opts)
-
-Add ID4ns of a privilege
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.ApiKeysApi();
-
-var key = "key_example"; // String | key
-
-var privilege = "privilege_example"; // String | privilege
-
-var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addApiKeyId4nPrivileges(key, privilege, id4ns, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **String**| key | 
- **privilege** | **String**| privilege | 
- **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="addApiKeyPrivilege"></a>
 # **addApiKeyPrivilege**
@@ -127,11 +71,11 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="addApiKeyPrivileges"></a>
-# **addApiKeyPrivileges**
-> ApiError addApiKeyPrivileges(key, removeApiKeyPrivilegeRequest, opts)
+<a name="addApiKeyPrivilegeForId4ns"></a>
+# **addApiKeyPrivilegeForId4ns**
+> ApiError addApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts)
 
-Remove privilege
+Add ID4ns of a privilege
 
 ### Example
 ```javascript
@@ -141,7 +85,9 @@ var apiInstance = new Id4iApi.ApiKeysApi();
 
 var key = "key_example"; // String | key
 
-var removeApiKeyPrivilegeRequest = new Id4iApi.RemoveApiKeyPrivilegeRequest(); // RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
+var privilege = "privilege_example"; // String | privilege
+
+var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
 
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
@@ -155,7 +101,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addApiKeyPrivileges(key, removeApiKeyPrivilegeRequest, opts, callback);
+apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts, callback);
 ```
 
 ### Parameters
@@ -163,7 +109,8 @@ apiInstance.addApiKeyPrivileges(key, removeApiKeyPrivilegeRequest, opts, callbac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key | 
- **removeApiKeyPrivilegeRequest** | [**RemoveApiKeyPrivilegeRequest**](RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest | 
+ **privilege** | **String**| privilege | 
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
@@ -560,9 +507,62 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeApiKeyId4nPrivileges"></a>
-# **removeApiKeyId4nPrivileges**
-> ApiError removeApiKeyId4nPrivileges(key, privilege, id4ns, opts)
+<a name="removeApiKeyPrivilege"></a>
+# **removeApiKeyPrivilege**
+> ApiError removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, opts)
+
+Remove privilege
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var key = "key_example"; // String | key
+
+var removeApiKeyPrivilegeRequest = new Id4iApi.RemoveApiKeyPrivilegeRequest(); // RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| key | 
+ **removeApiKeyPrivilegeRequest** | [**RemoveApiKeyPrivilegeRequest**](RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="removeApiKeyPrivilegeForId4ns"></a>
+# **removeApiKeyPrivilegeForId4ns**
+> ApiError removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts)
 
 Remove id4ns of a privilege
 
@@ -590,7 +590,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeApiKeyId4nPrivileges(key, privilege, id4ns, opts, callback);
+apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts, callback);
 ```
 
 ### Parameters

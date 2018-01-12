@@ -51,16 +51,6 @@
   }
 
   describe('ApiKeysApi', function() {
-    describe('addApiKeyId4nPrivileges', function() {
-      it('should call addApiKeyId4nPrivileges successfully', function(done) {
-        //uncomment below and update the code to test addApiKeyId4nPrivileges
-        //instance.addApiKeyId4nPrivileges(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('addApiKeyPrivilege', function() {
       it('should call addApiKeyPrivilege successfully', function(done) {
         //uncomment below and update the code to test addApiKeyPrivilege
@@ -71,10 +61,10 @@
         done();
       });
     });
-    describe('addApiKeyPrivileges', function() {
-      it('should call addApiKeyPrivileges successfully', function(done) {
-        //uncomment below and update the code to test addApiKeyPrivileges
-        //instance.addApiKeyPrivileges(function(error) {
+    describe('addApiKeyPrivilegeForId4ns', function() {
+      it('should call addApiKeyPrivilegeForId4ns successfully', function(done) {
+        //uncomment below and update the code to test addApiKeyPrivilegeForId4ns
+        //instance.addApiKeyPrivilegeForId4ns(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -151,10 +141,20 @@
         done();
       });
     });
-    describe('removeApiKeyId4nPrivileges', function() {
-      it('should call removeApiKeyId4nPrivileges successfully', function(done) {
-        //uncomment below and update the code to test removeApiKeyId4nPrivileges
-        //instance.removeApiKeyId4nPrivileges(function(error) {
+    describe('removeApiKeyPrivilege', function() {
+      it('should call removeApiKeyPrivilege successfully', function(done) {
+        //uncomment below and update the code to test removeApiKeyPrivilege
+        //instance.removeApiKeyPrivilege(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeApiKeyPrivilegeForId4ns', function() {
+      it('should call removeApiKeyPrivilegeForId4ns successfully', function(done) {
+        //uncomment below and update the code to test removeApiKeyPrivilegeForId4ns
+        //instance.removeApiKeyPrivilegeForId4ns(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

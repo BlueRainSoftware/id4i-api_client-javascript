@@ -177,7 +177,7 @@ No authorization required
 
 <a name="searchByAlias"></a>
 # **searchByAlias**
-> PaginatedResponseGuid searchByAlias(alias, aliasType, opts)
+> PaginatedGuidResponse searchByAlias(alias, aliasType, opts)
 
 Search for GUIDs by alias
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
+[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
 
 ### Authorization
 

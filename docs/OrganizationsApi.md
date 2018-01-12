@@ -402,7 +402,8 @@ var opts = {
   'offset': 56, // Number | Start with the n-th element. 
   'limit': 56, // Number | The maximum count of returned elements.
   'type': "type_example", // String | Filter by this type
-  'label': "label_example" // String | Filter by this label
+  'label': "label_example", // String | Filter by this label
+  'labelPrefix': "labelPrefix_example" // String | Filter by this label prefix
 };
 
 var callback = function(error, data, response) {
@@ -426,6 +427,7 @@ Name | Type | Description  | Notes
  **limit** | **Number**| The maximum count of returned elements. | [optional] 
  **type** | **String**| Filter by this type | [optional] 
  **label** | **String**| Filter by this label | [optional] 
+ **labelPrefix** | **String**| Filter by this label prefix | [optional] 
 
 ### Return type
 

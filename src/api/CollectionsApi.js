@@ -1085,6 +1085,7 @@
      * @param {Number} opts.limit The maximum count of returned elements.
      * @param {module:model/String} opts.type Filter by this type
      * @param {String} opts.label Filter by this label
+     * @param {String} opts.labelPrefix Filter by this label prefix
      * @param {module:api/CollectionsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidCollection}
      */
@@ -1105,7 +1106,8 @@
         'offset': opts['offset'],
         'limit': opts['limit'],
         'type': opts['type'],
-        'label': opts['label']
+        'label': opts['label'],
+        'labelPrefix': opts['labelPrefix']
       };
       var headerParams = {
         'Authorization': opts['authorization'],
