@@ -93,7 +93,7 @@
       var returnType = ApiError;
 
       return this.apiClient.callApi(
-        '/account/completeRegistration', 'POST',
+        '/account/registration', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
