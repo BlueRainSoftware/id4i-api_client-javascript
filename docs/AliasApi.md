@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGuidAlias**](AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 [**addGuidAlias1**](AliasApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**getGuidAliasTypes**](AliasApi.md#getGuidAliasTypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
 [**getGuidAliases**](AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**searchByAlias**](AliasApi.md#searchByAlias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 
@@ -113,6 +114,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getGuidAliasTypes"></a>
+# **getGuidAliasTypes**
+> [&#39;String&#39;] getGuidAliasTypes(opts)
+
+List all supported alias types
+
+Retrieve this list to find out all alias types to use with alias search and change operations
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.AliasApi();
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getGuidAliasTypes(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+**[&#39;String&#39;]**
 
 ### Authorization
 

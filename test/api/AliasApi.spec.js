@@ -71,6 +71,16 @@
         done();
       });
     });
+    describe('getGuidAliasTypes', function() {
+      it('should call getGuidAliasTypes successfully', function(done) {
+        //uncomment below and update the code to test getGuidAliasTypes
+        //instance.getGuidAliasTypes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getGuidAliases', function() {
       it('should call getGuidAliases successfully', function(done) {
         //uncomment below and update the code to test getGuidAliases

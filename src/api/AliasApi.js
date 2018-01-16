@@ -173,6 +173,51 @@
     }
 
     /**
+     * Callback function to receive the result of the getGuidAliasTypes operation.
+     * @callback module:api/AliasApi~getGuidAliasTypesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<'String'>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List all supported alias types
+     * Retrieve this list to find out all alias types to use with alias search and change operations
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/AliasApi~getGuidAliasTypesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<'String'>}
+     */
+    this.getGuidAliasTypes = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ['String'];
+
+      return this.apiClient.callApi(
+        '/api/v1/search/guids/aliases/types', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getGuidAliases operation.
      * @callback module:api/AliasApi~getGuidAliasesCallback
      * @param {String} error Error message, if any.

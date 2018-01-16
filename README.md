@@ -140,6 +140,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**verifyUserRegistration**](docs/AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 *Id4iApi.AliasApi* | [**addGuidAlias**](docs/AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *Id4iApi.AliasApi* | [**addGuidAlias1**](docs/AliasApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+*Id4iApi.AliasApi* | [**getGuidAliasTypes**](docs/AliasApi.md#getGuidAliasTypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
 *Id4iApi.AliasApi* | [**getGuidAliases**](docs/AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 *Id4iApi.AliasApi* | [**searchByAlias**](docs/AliasApi.md#searchByAlias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 *Id4iApi.ApiKeysApi* | [**addApiKeyPrivilege**](docs/ApiKeysApi.md#addApiKeyPrivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
