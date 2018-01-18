@@ -57,12 +57,6 @@
       //expect(instance).to.be.a(Id4iApi.PasswordResetVerificationRequest);
     });
 
-    it('should have the property username (base name: "username")', function() {
-      // uncomment below and update the code to test the property username
-      //var instane = new Id4iApi.PasswordResetVerificationRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property password (base name: "password")', function() {
       // uncomment below and update the code to test the property password
       //var instane = new Id4iApi.PasswordResetVerificationRequest();

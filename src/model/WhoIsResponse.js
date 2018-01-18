@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -63,6 +64,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('aliases')) {
+        obj['aliases'] = ApiClient.convertToType(data['aliases'], {'String': 'String'});
+      }
       if (data.hasOwnProperty('organization')) {
         obj['organization'] = Organization.constructFromObject(data['organization']);
       }
@@ -73,6 +77,10 @@
     return obj;
   }
 
+  /**
+   * @member {Object.<String, String>} aliases
+   */
+  exports.prototype['aliases'] = undefined;
   /**
    * @member {module:model/Organization} organization
    */

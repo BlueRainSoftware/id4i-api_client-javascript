@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.ResponseEntity();
+    instance = new Id4iApi.CompleteUserRegistrationRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,28 @@
       object[property] = value;
   }
 
-  describe('ResponseEntity', function() {
-    it('should create an instance of ResponseEntity', function() {
-      // uncomment below and update the code to test ResponseEntity
-      //var instane = new Id4iApi.ResponseEntity();
-      //expect(instance).to.be.a(Id4iApi.ResponseEntity);
+  describe('CompleteUserRegistrationRequest', function() {
+    it('should create an instance of CompleteUserRegistrationRequest', function() {
+      // uncomment below and update the code to test CompleteUserRegistrationRequest
+      //var instane = new Id4iApi.CompleteUserRegistrationRequest();
+      //expect(instance).to.be.a(Id4iApi.CompleteUserRegistrationRequest);
     });
 
-    it('should have the property body (base name: "body")', function() {
-      // uncomment below and update the code to test the property body
-      //var instane = new Id4iApi.ResponseEntity();
+    it('should have the property verificationToken (base name: "verificationToken")', function() {
+      // uncomment below and update the code to test the property verificationToken
+      //var instane = new Id4iApi.CompleteUserRegistrationRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property statusCode (base name: "statusCode")', function() {
-      // uncomment below and update the code to test the property statusCode
-      //var instane = new Id4iApi.ResponseEntity();
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
+      //var instane = new Id4iApi.CompleteUserRegistrationRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property statusCodeValue (base name: "statusCodeValue")', function() {
-      // uncomment below and update the code to test the property statusCodeValue
-      //var instane = new Id4iApi.ResponseEntity();
+    it('should have the property password (base name: "password")', function() {
+      // uncomment below and update the code to test the property password
+      //var instane = new Id4iApi.CompleteUserRegistrationRequest();
       //expect(instance).to.be();
     });
 

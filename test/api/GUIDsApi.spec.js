@@ -51,6 +51,26 @@
   }
 
   describe('GUIDsApi', function() {
+    describe('addGuidAlias', function() {
+      it('should call addGuidAlias successfully', function(done) {
+        //uncomment below and update the code to test addGuidAlias
+        //instance.addGuidAlias(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('addGuidAlias1', function() {
+      it('should call addGuidAlias1 successfully', function(done) {
+        //uncomment below and update the code to test addGuidAlias1
+        //instance.addGuidAlias1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createGuid', function() {
       it('should call createGuid successfully', function(done) {
         //uncomment below and update the code to test createGuid
@@ -65,6 +85,16 @@
       it('should call getGuid successfully', function(done) {
         //uncomment below and update the code to test getGuid
         //instance.getGuid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getGuidAliases', function() {
+      it('should call getGuidAliases successfully', function(done) {
+        //uncomment below and update the code to test getGuidAliases
+        //instance.getGuidAliases(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

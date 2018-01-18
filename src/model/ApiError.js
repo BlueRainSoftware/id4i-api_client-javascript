@@ -161,10 +161,20 @@
      */
     "FIELD_INPUT_VALIDATION_FAILED": "ERR_FIELD_INPUT_VALIDATION_FAILED",
     /**
+     * value: "ERR_VALIDATION_CONSTRAINT_FAILED"
+     * @const
+     */
+    "VALIDATION_CONSTRAINT_FAILED": "ERR_VALIDATION_CONSTRAINT_FAILED",
+    /**
      * value: "ERR_INPUT_NOT_READABLE"
      * @const
      */
     "INPUT_NOT_READABLE": "ERR_INPUT_NOT_READABLE",
+    /**
+     * value: "ERR_INVALID_INPUT_PARAMETER"
+     * @const
+     */
+    "INVALID_INPUT_PARAMETER": "ERR_INVALID_INPUT_PARAMETER",
     /**
      * value: "ERR_GUID_CREATION"
      * @const
@@ -216,6 +226,21 @@
      */
     "ORGANIZATION_NOT_DELETABLE": "ERR_ORGANIZATION_NOT_DELETABLE",
     /**
+     * value: "ERR_USER_ALREADY_IN_ORGANIZATION"
+     * @const
+     */
+    "USER_ALREADY_IN_ORGANIZATION": "ERR_USER_ALREADY_IN_ORGANIZATION",
+    /**
+     * value: "ERR_USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE"
+     * @const
+     */
+    "USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE": "ERR_USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE",
+    /**
+     * value: "ERR_USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME"
+     * @const
+     */
+    "USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME": "ERR_USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME",
+    /**
      * value: "ERR_LANGUAGE_NOT_SUPPORTED"
      * @const
      */
@@ -239,7 +264,22 @@
      * value: "ERR_IMAGE_CONVERSION"
      * @const
      */
-    "IMAGE_CONVERSION": "ERR_IMAGE_CONVERSION"  };
+    "IMAGE_CONVERSION": "ERR_IMAGE_CONVERSION",
+    /**
+     * value: "ERR_INVALID_ALIAS_TYPE"
+     * @const
+     */
+    "INVALID_ALIAS_TYPE": "ERR_INVALID_ALIAS_TYPE",
+    /**
+     * value: "ERR_INVALID_URI_TEMPLATE"
+     * @const
+     */
+    "INVALID_URI_TEMPLATE": "ERR_INVALID_URI_TEMPLATE",
+    /**
+     * value: "ERR_INVALID_URI_TEMPLATE_VARIABLE"
+     * @const
+     */
+    "INVALID_URI_TEMPLATE_VARIABLE": "ERR_INVALID_URI_TEMPLATE_VARIABLE"  };
 
 
   return exports;

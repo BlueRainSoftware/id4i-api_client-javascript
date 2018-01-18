@@ -69,12 +69,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property postcode (base name: "postcode")', function() {
-      // uncomment below and update the code to test the property postcode
-      //var instane = new Id4iApi.UserPresentation();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

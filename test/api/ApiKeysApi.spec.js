@@ -51,6 +51,26 @@
   }
 
   describe('ApiKeysApi', function() {
+    describe('addApiKeyPrivilege', function() {
+      it('should call addApiKeyPrivilege successfully', function(done) {
+        //uncomment below and update the code to test addApiKeyPrivilege
+        //instance.addApiKeyPrivilege(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('addApiKeyPrivilegeForId4ns', function() {
+      it('should call addApiKeyPrivilegeForId4ns successfully', function(done) {
+        //uncomment below and update the code to test addApiKeyPrivilegeForId4ns
+        //instance.addApiKeyPrivilegeForId4ns(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createNewApiKey', function() {
       it('should call createNewApiKey successfully', function(done) {
         //uncomment below and update the code to test createNewApiKey
@@ -81,6 +101,16 @@
         done();
       });
     });
+    describe('listAllApiKeyPrivileges', function() {
+      it('should call listAllApiKeyPrivileges successfully', function(done) {
+        //uncomment below and update the code to test listAllApiKeyPrivileges
+        //instance.listAllApiKeyPrivileges(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listAllApiKeysOfOrganization', function() {
       it('should call listAllApiKeysOfOrganization successfully', function(done) {
         //uncomment below and update the code to test listAllApiKeysOfOrganization
@@ -95,6 +125,36 @@
       it('should call listApiKeyPrivileges successfully', function(done) {
         //uncomment below and update the code to test listApiKeyPrivileges
         //instance.listApiKeyPrivileges(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listId4ns', function() {
+      it('should call listId4ns successfully', function(done) {
+        //uncomment below and update the code to test listId4ns
+        //instance.listId4ns(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeApiKeyPrivilege', function() {
+      it('should call removeApiKeyPrivilege successfully', function(done) {
+        //uncomment below and update the code to test removeApiKeyPrivilege
+        //instance.removeApiKeyPrivilege(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeApiKeyPrivilegeForId4ns', function() {
+      it('should call removeApiKeyPrivilegeForId4ns successfully', function(done) {
+        //uncomment below and update the code to test removeApiKeyPrivilegeForId4ns
+        //instance.removeApiKeyPrivilegeForId4ns(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -50,6 +50,7 @@
   var exports = function(id4nAssociated, name) {
     var _this = this;
 
+
     _this['id4nAssociated'] = id4nAssociated;
     _this['name'] = name;
   };
@@ -65,6 +66,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('helpText')) {
+        obj['helpText'] = ApiClient.convertToType(data['helpText'], 'String');
+      }
       if (data.hasOwnProperty('id4nAssociated')) {
         obj['id4nAssociated'] = ApiClient.convertToType(data['id4nAssociated'], 'Boolean');
       }
@@ -75,6 +79,10 @@
     return obj;
   }
 
+  /**
+   * @member {String} helpText
+   */
+  exports.prototype['helpText'] = undefined;
   /**
    * @member {Boolean} id4nAssociated
    */

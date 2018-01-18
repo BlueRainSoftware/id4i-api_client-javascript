@@ -4,13 +4,128 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addApiKeyPrivilege**](ApiKeysApi.md#addApiKeyPrivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
+[**addApiKeyPrivilegeForId4ns**](ApiKeysApi.md#addApiKeyPrivilegeForId4ns) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
 [**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
 [**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
 [**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
+[**listAllApiKeyPrivileges**](ApiKeysApi.md#listAllApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List all privileges
 [**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find API key by organization
-[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/{key}/privileges | List privileges
+[**listId4ns**](ApiKeysApi.md#listId4ns) | **GET** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | ID4ns of a privilege
+[**removeApiKeyPrivilege**](ApiKeysApi.md#removeApiKeyPrivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
+[**removeApiKeyPrivilegeForId4ns**](ApiKeysApi.md#removeApiKeyPrivilegeForId4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 [**updateApiKey**](ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 
+
+<a name="addApiKeyPrivilege"></a>
+# **addApiKeyPrivilege**
+> ApiError addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, opts)
+
+Add privilege
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var key = "key_example"; // String | key
+
+var addApiKeyPrivilegeRequest = new Id4iApi.AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| key | 
+ **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="addApiKeyPrivilegeForId4ns"></a>
+# **addApiKeyPrivilegeForId4ns**
+> ApiError addApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts)
+
+Add ID4ns of a privilege
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var key = "key_example"; // String | key
+
+var privilege = "privilege_example"; // String | privilege
+
+var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| key | 
+ **privilege** | **String**| privilege | 
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="createNewApiKey"></a>
 # **createNewApiKey**
@@ -168,6 +283,61 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
+<a name="listAllApiKeyPrivileges"></a>
+# **listAllApiKeyPrivileges**
+> ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(opts)
+
+List all privileges
+
+Listing all possible API key privileges.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'id4nConcerning': true, // Boolean | id4nConcerning
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listAllApiKeyPrivileges(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+ **id4nConcerning** | **Boolean**| id4nConcerning | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
+
+### Return type
+
+[**ApiKeyPrivilegeInfoResponse**](ApiKeyPrivilegeInfoResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
 <a name="listAllApiKeysOfOrganization"></a>
 # **listAllApiKeysOfOrganization**
 > PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, opts)
@@ -226,11 +396,9 @@ No authorization required
 
 <a name="listApiKeyPrivileges"></a>
 # **listApiKeyPrivileges**
-> ApiKeyPrivilegeResponse listApiKeyPrivileges(opts)
+> ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(key, opts)
 
-List API key privileges
-
-Listing API key privileges.
+List privileges
 
 ### Example
 ```javascript
@@ -238,10 +406,11 @@ var Id4iApi = require('id4i_api');
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
+var key = "key_example"; // String | key
+
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'id4nConcerning': true, // Boolean | id4nConcerning
   'offset': 56, // Number | Start with the n-th element. 
   'limit': 56 // Number | The maximum count of returned elements.
 };
@@ -253,22 +422,190 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listApiKeyPrivileges(opts, callback);
+apiInstance.listApiKeyPrivileges(key, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **key** | **String**| key | 
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **id4nConcerning** | **Boolean**| id4nConcerning | [optional] 
  **offset** | **Number**| Start with the n-th element.  | [optional] 
  **limit** | **Number**| The maximum count of returned elements. | [optional] 
 
 ### Return type
 
-[**ApiKeyPrivilegeResponse**](ApiKeyPrivilegeResponse.md)
+[**ApiKeyPrivilegePaginatedResponse**](ApiKeyPrivilegePaginatedResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="listId4ns"></a>
+# **listId4ns**
+> Id4nPresentationPaginatedResponse listId4ns(key, privilege, opts)
+
+ID4ns of a privilege
+
+Listing ID4ns of a id4n concerning privilege
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var key = "key_example"; // String | key
+
+var privilege = "privilege_example"; // String | privilege
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'offset': 56, // Number | Start with the n-th element. 
+  'limit': 56 // Number | The maximum count of returned elements.
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listId4ns(key, privilege, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| key | 
+ **privilege** | **String**| privilege | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+ **offset** | **Number**| Start with the n-th element.  | [optional] 
+ **limit** | **Number**| The maximum count of returned elements. | [optional] 
+
+### Return type
+
+[**Id4nPresentationPaginatedResponse**](Id4nPresentationPaginatedResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="removeApiKeyPrivilege"></a>
+# **removeApiKeyPrivilege**
+> ApiError removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, opts)
+
+Remove privilege
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var key = "key_example"; // String | key
+
+var removeApiKeyPrivilegeRequest = new Id4iApi.RemoveApiKeyPrivilegeRequest(); // RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| key | 
+ **removeApiKeyPrivilegeRequest** | [**RemoveApiKeyPrivilegeRequest**](RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="removeApiKeyPrivilegeForId4ns"></a>
+# **removeApiKeyPrivilegeForId4ns**
+> ApiError removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts)
+
+Remove id4ns of a privilege
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.ApiKeysApi();
+
+var key = "key_example"; // String | key
+
+var privilege = "privilege_example"; // String | privilege
+
+var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| key | 
+ **privilege** | **String**| privilege | 
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
 
 ### Authorization
 

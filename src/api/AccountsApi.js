@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ChangeRoleRequest', 'model/PaginatedOrganizationResponse', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/RoleResponse', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse'], factory);
+    define(['ApiClient', 'model/AccountCredentials', 'model/ApiError', 'model/ChangeRoleRequest', 'model/CompleteUserRegistrationRequest', 'model/OrganizationUserInvitationListRequest', 'model/PaginatedOrganizationResponse', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PasswordResetRequest', 'model/PasswordResetVerificationRequest', 'model/RegistrationVerificationTokenPresentation', 'model/RoleResponse', 'model/SimpleMessageResponse', 'model/UserPresentation', 'model/UserRegistrationRequest', 'model/UserRegistrationResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AccountCredentials'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/PaginatedOrganizationResponse'), require('../model/PaginatedStringResponse'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/PasswordResetRequest'), require('../model/PasswordResetVerificationRequest'), require('../model/RegistrationVerificationTokenPresentation'), require('../model/RoleResponse'), require('../model/SimpleMessageResponse'), require('../model/UserPresentation'), require('../model/UserRegistrationRequest'), require('../model/UserRegistrationResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/AccountCredentials'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/CompleteUserRegistrationRequest'), require('../model/OrganizationUserInvitationListRequest'), require('../model/PaginatedOrganizationResponse'), require('../model/PaginatedStringResponse'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/PasswordResetRequest'), require('../model/PasswordResetVerificationRequest'), require('../model/RegistrationVerificationTokenPresentation'), require('../model/RoleResponse'), require('../model/SimpleMessageResponse'), require('../model/UserPresentation'), require('../model/UserRegistrationRequest'), require('../model/UserRegistrationResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.AccountsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AccountCredentials, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.PaginatedOrganizationResponse, root.Id4iApi.PaginatedStringResponse, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.PasswordResetRequest, root.Id4iApi.PasswordResetVerificationRequest, root.Id4iApi.RegistrationVerificationTokenPresentation, root.Id4iApi.RoleResponse, root.Id4iApi.SimpleMessageResponse, root.Id4iApi.UserPresentation, root.Id4iApi.UserRegistrationRequest, root.Id4iApi.UserRegistrationResponse);
+    root.Id4iApi.AccountsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AccountCredentials, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.CompleteUserRegistrationRequest, root.Id4iApi.OrganizationUserInvitationListRequest, root.Id4iApi.PaginatedOrganizationResponse, root.Id4iApi.PaginatedStringResponse, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.PasswordResetRequest, root.Id4iApi.PasswordResetVerificationRequest, root.Id4iApi.RegistrationVerificationTokenPresentation, root.Id4iApi.RoleResponse, root.Id4iApi.SimpleMessageResponse, root.Id4iApi.UserPresentation, root.Id4iApi.UserRegistrationRequest, root.Id4iApi.UserRegistrationResponse);
   }
-}(this, function(ApiClient, AccountCredentials, ApiError, ChangeRoleRequest, PaginatedOrganizationResponse, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, RoleResponse, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse) {
+}(this, function(ApiClient, AccountCredentials, ApiError, ChangeRoleRequest, CompleteUserRegistrationRequest, OrganizationUserInvitationListRequest, PaginatedOrganizationResponse, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PasswordResetRequest, PasswordResetVerificationRequest, RegistrationVerificationTokenPresentation, RoleResponse, SimpleMessageResponse, UserPresentation, UserRegistrationRequest, UserRegistrationResponse) {
   'use strict';
 
   /**
@@ -47,6 +47,121 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+    /**
+     * Callback function to receive the result of the addUserRoles operation.
+     * @callback module:api/AccountsApi~addUserRolesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add role(s) to user
+     * @param {Number} organizationId organizationId
+     * @param {String} username username
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/AccountsApi~addUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addUserRoles = function(organizationId, username, changeRoleRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = changeRoleRequest;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling addUserRoles");
+      }
+
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling addUserRoles");
+      }
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addUserRoles");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId,
+        'username': username
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/users/{username}/roles', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the completeRegistration operation.
+     * @callback module:api/AccountsApi~completeRegistrationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Complete registration
+     * Completing a registration e.g. for invited users. Finish registration with a username and a password.
+     * @param {module:model/CompleteUserRegistrationRequest} completeRegistration Contains the verification token, the username and the initial password.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/AccountsApi~completeRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.completeRegistration = function(completeRegistration, opts, callback) {
+      opts = opts || {};
+      var postBody = completeRegistration;
+
+      // verify the required parameter 'completeRegistration' is set
+      if (completeRegistration === undefined || completeRegistration === null) {
+        throw new Error("Missing the required parameter 'completeRegistration' when calling completeRegistration");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/account/registration', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the findUserByUsername operation.
@@ -94,6 +209,61 @@
 
       return this.apiClient.callApi(
         '/api/v1/users/{username}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the findUsers operation.
+     * @callback module:api/AccountsApi~findUsersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedUserPresentationResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Find users
+     * @param {String} usernamePrefix Find users starting with this prefix.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {Number} opts.offset Start with the n-th element. 
+     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {module:api/AccountsApi~findUsersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedUserPresentationResponse}
+     */
+    this.findUsers = function(usernamePrefix, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'usernamePrefix' is set
+      if (usernamePrefix === undefined || usernamePrefix === null) {
+        throw new Error("Missing the required parameter 'usernamePrefix' when calling findUsers");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'usernamePrefix': usernamePrefix,
+        'offset': opts['offset'],
+        'limit': opts['limit']
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = PaginatedUserPresentationResponse;
+
+      return this.apiClient.callApi(
+        '/api/v1/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,6 +488,63 @@
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/users', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the inviteUsers operation.
+     * @callback module:api/AccountsApi~inviteUsersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Invite Users
+     * @param {Number} organizationId organizationId
+     * @param {module:model/OrganizationUserInvitationListRequest} invitationList invitationList
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/AccountsApi~inviteUsersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.inviteUsers = function(organizationId, invitationList, opts, callback) {
+      opts = opts || {};
+      var postBody = invitationList;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling inviteUsers");
+      }
+
+      // verify the required parameter 'invitationList' is set
+      if (invitationList === undefined || invitationList === null) {
+        throw new Error("Missing the required parameter 'invitationList' when calling inviteUsers");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/users/invite', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -578,70 +805,6 @@
 
       return this.apiClient.callApi(
         '/account/password', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the updateUserRoles operation.
-     * @callback module:api/AccountsApi~updateUserRolesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add role(s) to user
-     * @param {Number} organizationId organizationId
-     * @param {String} username username
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/AccountsApi~updateUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.updateUserRoles = function(organizationId, username, changeRoleRequest, opts, callback) {
-      opts = opts || {};
-      var postBody = changeRoleRequest;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateUserRoles");
-      }
-
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling updateUserRoles");
-      }
-
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling updateUserRoles");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'username': username
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organizations/{organizationId}/users/{username}/roles', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

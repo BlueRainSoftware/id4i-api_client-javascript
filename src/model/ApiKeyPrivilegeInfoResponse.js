@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.ApiKeyPrivilegeResponse = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiKeyPrivilegeInfo);
+    root.Id4iApi.ApiKeyPrivilegeInfoResponse = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiKeyPrivilegeInfo);
   }
 }(this, function(ApiClient, ApiKeyPrivilegeInfo) {
   'use strict';
@@ -35,14 +35,14 @@
 
 
   /**
-   * The ApiKeyPrivilegeResponse model module.
-   * @module model/ApiKeyPrivilegeResponse
+   * The ApiKeyPrivilegeInfoResponse model module.
+   * @module model/ApiKeyPrivilegeInfoResponse
    * @version 0.0.1-alpha
    */
 
   /**
-   * Constructs a new <code>ApiKeyPrivilegeResponse</code>.
-   * @alias module:model/ApiKeyPrivilegeResponse
+   * Constructs a new <code>ApiKeyPrivilegeInfoResponse</code>.
+   * @alias module:model/ApiKeyPrivilegeInfoResponse
    * @class
    * @param limit {Number} 
    * @param offset {Number} 
@@ -57,11 +57,11 @@
   };
 
   /**
-   * Constructs a <code>ApiKeyPrivilegeResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ApiKeyPrivilegeInfoResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ApiKeyPrivilegeResponse} obj Optional instance to populate.
-   * @return {module:model/ApiKeyPrivilegeResponse} The populated <code>ApiKeyPrivilegeResponse</code> instance.
+   * @param {module:model/ApiKeyPrivilegeInfoResponse} obj Optional instance to populate.
+   * @return {module:model/ApiKeyPrivilegeInfoResponse} The populated <code>ApiKeyPrivilegeInfoResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
