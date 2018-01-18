@@ -51,6 +51,16 @@
   }
 
   describe('AccountsApi', function() {
+    describe('addUserRoles', function() {
+      it('should call addUserRoles successfully', function(done) {
+        //uncomment below and update the code to test addUserRoles
+        //instance.addUserRoles(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('completeRegistration', function() {
       it('should call completeRegistration successfully', function(done) {
         //uncomment below and update the code to test completeRegistration
@@ -175,16 +185,6 @@
       it('should call requestPasswordReset successfully', function(done) {
         //uncomment below and update the code to test requestPasswordReset
         //instance.requestPasswordReset(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateUserRoles', function() {
-      it('should call updateUserRoles successfully', function(done) {
-        //uncomment below and update the code to test updateUserRoles
-        //instance.updateUserRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

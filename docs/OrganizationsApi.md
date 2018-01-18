@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addUserRoles**](OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 [**deleteOrganizationBillingAddress**](OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
@@ -23,8 +24,63 @@ Method | HTTP request | Description
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 [**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
-[**updateUserRoles**](OrganizationsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 
+
+<a name="addUserRoles"></a>
+# **addUserRoles**
+> ApiError addUserRoles(organizationId, username, changeRoleRequest, opts)
+
+Add role(s) to user
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | organizationId
+
+var username = "username_example"; // String | username
+
+var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addUserRoles(organizationId, username, changeRoleRequest, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| organizationId | 
+ **username** | **String**| username | 
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="createOrganization"></a>
 # **createOrganization**
@@ -1036,61 +1092,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateUserRoles"></a>
-# **updateUserRoles**
-> ApiError updateUserRoles(organizationId, username, changeRoleRequest, opts)
-
-Add role(s) to user
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | organizationId
-
-var username = "username_example"; // String | username
-
-var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateUserRoles(organizationId, username, changeRoleRequest, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **username** | **String**| username | 
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 

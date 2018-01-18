@@ -49,6 +49,70 @@
 
 
     /**
+     * Callback function to receive the result of the addUserRoles operation.
+     * @callback module:api/AccountsApi~addUserRolesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiError} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add role(s) to user
+     * @param {Number} organizationId organizationId
+     * @param {String} username username
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/AccountsApi~addUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiError}
+     */
+    this.addUserRoles = function(organizationId, username, changeRoleRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = changeRoleRequest;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling addUserRoles");
+      }
+
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling addUserRoles");
+      }
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addUserRoles");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId,
+        'username': username
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = ApiError;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/users/{username}/roles', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the completeRegistration operation.
      * @callback module:api/AccountsApi~completeRegistrationCallback
      * @param {String} error Error message, if any.
@@ -741,70 +805,6 @@
 
       return this.apiClient.callApi(
         '/account/password', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the updateUserRoles operation.
-     * @callback module:api/AccountsApi~updateUserRolesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add role(s) to user
-     * @param {Number} organizationId organizationId
-     * @param {String} username username
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/AccountsApi~updateUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.updateUserRoles = function(organizationId, username, changeRoleRequest, opts, callback) {
-      opts = opts || {};
-      var postBody = changeRoleRequest;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateUserRoles");
-      }
-
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling updateUserRoles");
-      }
-
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling updateUserRoles");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'username': username
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organizations/{organizationId}/users/{username}/roles', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

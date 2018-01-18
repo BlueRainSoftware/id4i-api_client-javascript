@@ -51,6 +51,16 @@
   }
 
   describe('OrganizationsApi', function() {
+    describe('addUserRoles', function() {
+      it('should call addUserRoles successfully', function(done) {
+        //uncomment below and update the code to test addUserRoles
+        //instance.addUserRoles(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createOrganization', function() {
       it('should call createOrganization successfully', function(done) {
         //uncomment below and update the code to test createOrganization
@@ -235,16 +245,6 @@
       it('should call updateOrganizationLogo successfully', function(done) {
         //uncomment below and update the code to test updateOrganizationLogo
         //instance.updateOrganizationLogo(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateUserRoles', function() {
-      it('should call updateUserRoles successfully', function(done) {
-        //uncomment below and update the code to test updateUserRoles
-        //instance.updateUserRoles(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

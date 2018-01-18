@@ -98,7 +98,11 @@ var Id4iApi = require('id4i_api');
 
 var api = new Id4iApi.AccountsApi()
 
-var completeRegistration = new Id4iApi.CompleteUserRegistrationRequest(); // {CompleteUserRegistrationRequest} Contains the verification token, the username and the initial password.
+var organizationId = 789; // {Number} organizationId
+
+var username = "username_example"; // {String} username
+
+var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // {ChangeRoleRequest} changeRoleRequest
 
 var opts = { 
   'authorization': "authorization_example", // {String} Authorization JWT Bearer Token as returned from /login
@@ -112,7 +116,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.completeRegistration(completeRegistration, opts, callback);
+api.addUserRoles(organizationId, username, changeRoleRequest, opts, callback);
 
 ```
 
@@ -122,6 +126,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*Id4iApi.AccountsApi* | [**addUserRoles**](docs/AccountsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *Id4iApi.AccountsApi* | [**completeRegistration**](docs/AccountsApi.md#completeRegistration) | **PUT** /account/registration | Complete registration
 *Id4iApi.AccountsApi* | [**findUserByUsername**](docs/AccountsApi.md#findUserByUsername) | **GET** /api/v1/users/{username} | Find by username
 *Id4iApi.AccountsApi* | [**findUsers**](docs/AccountsApi.md#findUsers) | **GET** /api/v1/users | Find users
@@ -135,7 +140,6 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**registerUser**](docs/AccountsApi.md#registerUser) | **POST** /account/registration | Register user
 *Id4iApi.AccountsApi* | [**removeUserRoles**](docs/AccountsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *Id4iApi.AccountsApi* | [**requestPasswordReset**](docs/AccountsApi.md#requestPasswordReset) | **POST** /account/password | Request password reset
-*Id4iApi.AccountsApi* | [**updateUserRoles**](docs/AccountsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *Id4iApi.AccountsApi* | [**verifyPasswordReset**](docs/AccountsApi.md#verifyPasswordReset) | **PUT** /account/password | Verify password reset
 *Id4iApi.AccountsApi* | [**verifyUserRegistration**](docs/AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 *Id4iApi.AliasApi* | [**addGuidAlias**](docs/AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
@@ -200,6 +204,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.GUIDsApi* | [**updateGuid**](docs/GUIDsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
+*Id4iApi.OrganizationsApi* | [**addUserRoles**](docs/OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *Id4iApi.OrganizationsApi* | [**createOrganization**](docs/OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
 *Id4iApi.OrganizationsApi* | [**deleteOrganization**](docs/OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 *Id4iApi.OrganizationsApi* | [**deleteOrganizationBillingAddress**](docs/OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
@@ -219,7 +224,6 @@ Class | Method | HTTP request | Description
 *Id4iApi.OrganizationsApi* | [**updateOrganizationAddress**](docs/OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *Id4iApi.OrganizationsApi* | [**updateOrganizationBillingAddress**](docs/OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 *Id4iApi.OrganizationsApi* | [**updateOrganizationLogo**](docs/OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
-*Id4iApi.OrganizationsApi* | [**updateUserRoles**](docs/OrganizationsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *Id4iApi.PublicServicesApi* | [**go**](docs/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *Id4iApi.PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.PublicServicesApi* | [**resolveWhoIsEntry**](docs/PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
