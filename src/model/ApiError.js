@@ -196,6 +196,11 @@
      */
     "ENTITY_NOT_FOUND": "ERR_ENTITY_NOT_FOUND",
     /**
+     * value: "ERR_ENTITY_TOO_BIG"
+     * @const
+     */
+    "ENTITY_TOO_BIG": "ERR_ENTITY_TOO_BIG",
+    /**
      * value: "ERR_DUPLICATE"
      * @const
      */
