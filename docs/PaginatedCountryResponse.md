@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**[Country]**](Country.md) |  | [optional] 
+**elements** | [**[Country]**](Country.md) |  | 
 **limit** | **Number** |  | 
 **offset** | **Number** |  | 
 **total** | **Number** |  | [optional] 

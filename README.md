@@ -105,7 +105,7 @@ var username = "username_example"; // {String} username
 var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // {ChangeRoleRequest} changeRoleRequest
 
 var opts = { 
-  'authorization': "authorization_example", // {String} Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // {String} Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // {String} Requested language
 };
 
@@ -312,5 +312,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
- All endpoints do not require authorization.
+
+### Authorization
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 

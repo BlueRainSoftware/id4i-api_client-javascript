@@ -61,7 +61,7 @@
      * @param {Number} organization organization
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/MicrostorageApi~readCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InputStreamResource}
@@ -119,7 +119,7 @@
      * @param {Number} organization organization
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {String} opts.contentType Content-Type
      * @param {Number} opts.contentLength Content-Length
@@ -157,7 +157,7 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/xml', '*/*', 'application/json;charset=UTF-8'];
+      var contentTypes = ['*/*'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
       var returnType = Object;
 

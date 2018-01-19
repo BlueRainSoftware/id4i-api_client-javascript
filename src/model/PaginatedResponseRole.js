@@ -44,13 +44,14 @@
    * Constructs a new <code>PaginatedResponseRole</code>.
    * @alias module:model/PaginatedResponseRole
    * @class
+   * @param elements {Array.<module:model/Role>} 
    * @param limit {Number} 
    * @param offset {Number} 
    */
-  var exports = function(limit, offset) {
+  var exports = function(elements, limit, offset) {
     var _this = this;
 
-
+    _this['elements'] = elements;
     _this['limit'] = limit;
     _this['offset'] = offset;
 

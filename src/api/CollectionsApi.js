@@ -61,7 +61,7 @@
      * @param {String} id4n id4n
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~addElementToCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -119,7 +119,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~addElementToLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -177,7 +177,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {String} guid guid
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~addElementToLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -235,7 +235,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {String} guid guid
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~addElementToRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -293,7 +293,7 @@
      * @param {String} id4n id4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~addElementsToCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -350,7 +350,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~addElementsToLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -407,7 +407,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~addElementsToLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -464,7 +464,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~addElementsToRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -520,7 +520,7 @@
      * Create labelled collection
      * @param {module:model/CreateLabelledCollectionRequest} createInfo createInfo
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~createLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Id4n}
@@ -570,7 +570,7 @@
      * Create logistic collection
      * @param {module:model/CreateLogisticCollectionRequest} createInfo createInfo
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~createLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Id4n}
@@ -620,7 +620,7 @@
      * Create routing collecton
      * @param {module:model/CreateRoutingCollectionRequest} createInfo createInfo
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~createRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Id4n}
@@ -670,7 +670,7 @@
      * Delete collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -721,7 +721,7 @@
      * Delete labelled collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -772,7 +772,7 @@
      * Delete logistic collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -823,7 +823,7 @@
      * Delete routing collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~deleteRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -874,7 +874,7 @@
      * Find collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~findCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GuidCollection}
@@ -925,7 +925,7 @@
      * Find labelled collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~findLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GuidCollection}
@@ -976,7 +976,7 @@
      * Find logistic collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~findLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GuidCollection}
@@ -1027,7 +1027,7 @@
      * Find routing collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~findRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GuidCollection}
@@ -1079,7 +1079,7 @@
      * Retrieving all collections of an organization in a paginated manner.
      * @param {Number} organizationId organizationId
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -1140,7 +1140,7 @@
      * List contents of the collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -1195,7 +1195,7 @@
      * List contents of the collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -1250,7 +1250,7 @@
      * List contents of the collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -1305,7 +1305,7 @@
      * List contents of the collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -1361,7 +1361,7 @@
      * @param {String} id4n id4n
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementFromCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -1419,7 +1419,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {String} elementGuid elementGuid
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementFromLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -1477,7 +1477,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {String} guid guid
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementFromLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -1535,7 +1535,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {String} guid guid
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementFromRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -1593,7 +1593,7 @@
      * @param {String} id4n id4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementsFromCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -1650,7 +1650,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementsFromLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -1707,7 +1707,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementsFromLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -1764,7 +1764,7 @@
      * @param {String} collectionId4n collectionId4n
      * @param {module:model/ListOfId4ns} listOfGuids listOfGuids
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~removeElementsFromRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -1821,7 +1821,7 @@
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~updateCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -1878,7 +1878,7 @@
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~updateLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -1935,7 +1935,7 @@
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~updateLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -1992,7 +1992,7 @@
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/CollectionsApi~updateRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}

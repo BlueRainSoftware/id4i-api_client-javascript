@@ -44,12 +44,14 @@
    * Constructs a new <code>Country</code>.
    * @alias module:model/Country
    * @class
+   * @param code {String} 
+   * @param name {String} 
    */
-  var exports = function() {
+  var exports = function(code, name) {
     var _this = this;
 
-
-
+    _this['code'] = code;
+    _this['name'] = name;
   };
 
   /**

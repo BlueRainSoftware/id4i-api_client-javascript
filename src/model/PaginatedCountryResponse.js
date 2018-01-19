@@ -44,13 +44,14 @@
    * Constructs a new <code>PaginatedCountryResponse</code>.
    * @alias module:model/PaginatedCountryResponse
    * @class
+   * @param elements {Array.<module:model/Country>} 
    * @param limit {Number} 
    * @param offset {Number} 
    */
-  var exports = function(limit, offset) {
+  var exports = function(elements, limit, offset) {
     var _this = this;
 
-
+    _this['elements'] = elements;
     _this['limit'] = limit;
     _this['offset'] = offset;
 

@@ -60,7 +60,7 @@
      * Resolve owner of id4n
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/WhoIsApi~resolveWhoIsEntryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WhoIsResponse}

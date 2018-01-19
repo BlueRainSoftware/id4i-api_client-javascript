@@ -44,13 +44,14 @@
    * Constructs a new <code>PaginatedGuidResponse</code>.
    * @alias module:model/PaginatedGuidResponse
    * @class
+   * @param elements {Array.<module:model/Guid>} 
    * @param limit {Number} 
    * @param offset {Number} 
    */
-  var exports = function(limit, offset) {
+  var exports = function(elements, limit, offset) {
     var _this = this;
 
-
+    _this['elements'] = elements;
     _this['limit'] = limit;
     _this['offset'] = offset;
 

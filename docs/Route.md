@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **params** | **{String: String}** |  | 
 **priority** | **Number** |  | [optional] 
-**_public** | **Boolean** |  | [optional] 
+**_public** | **Boolean** |  | 
 **type** | **String** |  | 
 **validUntil** | **Number** |  | [optional] 
 

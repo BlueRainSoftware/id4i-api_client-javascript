@@ -61,7 +61,7 @@
      * @param {String} key key
      * @param {module:model/AddApiKeyPrivilegeRequest} addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApiKeysApi~addApiKeyPrivilegeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -119,7 +119,7 @@
      * @param {String} privilege privilege
      * @param {module:model/ListOfId4ns} id4ns id4ns
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApiKeysApi~addApiKeyPrivilegeForId4nsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -182,7 +182,7 @@
      * Creation of a new API key.
      * @param {module:model/ApiKeyCreationRequest} creationRequest API key to be created.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApiKeysApi~createNewApiKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKeyPresentation}
@@ -233,7 +233,7 @@
      * Deletion of an API key.
      * @param {String} key The API key to delete.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApiKeysApi~deleteApiKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -285,7 +285,7 @@
      * Showing the details of an API key.
      * @param {String} key The API key to show.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApiKeysApi~getApiKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKeyPresentation}
@@ -336,7 +336,7 @@
      * List all privileges
      * Listing all possible API key privileges.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Boolean} opts.id4nConcerning id4nConcerning
      * @param {Number} opts.offset Start with the n-th element. 
@@ -388,7 +388,7 @@
      * Finding all API key assigned to the specified organization in a paginated manner.
      * @param {Number} organizationId The id of the organization to search in.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -443,7 +443,7 @@
      * List privileges
      * @param {String} key key
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -500,7 +500,7 @@
      * @param {String} key key
      * @param {String} privilege privilege
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -562,7 +562,7 @@
      * @param {String} key key
      * @param {module:model/RemoveApiKeyPrivilegeRequest} removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApiKeysApi~removeApiKeyPrivilegeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -620,7 +620,7 @@
      * @param {String} privilege privilege
      * @param {module:model/ListOfId4ns} id4ns id4ns
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApiKeysApi~removeApiKeyPrivilegeForId4nsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -684,7 +684,7 @@
      * @param {String} key The API key to be updated.
      * @param {module:model/ApiKeyChangeRequest} apiKeyChange The new values to apply.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ApiKeysApi~updateApiKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}

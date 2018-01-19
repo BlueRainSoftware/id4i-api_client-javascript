@@ -44,13 +44,14 @@
    * Constructs a new <code>Id4nPresentationPaginatedResponse</code>.
    * @alias module:model/Id4nPresentationPaginatedResponse
    * @class
+   * @param elements {Array.<module:model/Id4nPresentation>} 
    * @param limit {Number} 
    * @param offset {Number} 
    */
-  var exports = function(limit, offset) {
+  var exports = function(elements, limit, offset) {
     var _this = this;
 
-
+    _this['elements'] = elements;
     _this['limit'] = limit;
     _this['offset'] = offset;
 

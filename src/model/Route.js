@@ -45,14 +45,15 @@
    * @alias module:model/Route
    * @class
    * @param params {Object.<String, String>} 
+   * @param _public {Boolean} 
    * @param type {String} 
    */
-  var exports = function(params, type) {
+  var exports = function(params, _public, type) {
     var _this = this;
 
     _this['params'] = params;
 
-
+    _this['public'] = _public;
     _this['type'] = type;
 
   };

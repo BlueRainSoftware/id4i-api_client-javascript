@@ -63,7 +63,7 @@
      * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {module:model/GuidAlias} alias The alias to add or update
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/GUIDsApi~addGuidAliasCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -127,7 +127,7 @@
      * @param {String} id4n The GUID to operate on
      * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/GUIDsApi~addGuidAlias1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiError}
@@ -185,7 +185,7 @@
      * Creating one or more GUIDs with a specified length.
      * @param {module:model/CreateGuidRequest} createGUIDInfo createGUIDInfo
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/GUIDsApi~createGuidCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ListOfId4ns}
@@ -235,7 +235,7 @@
      * Retrieve GUID information
      * @param {String} id4n The GUID number
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/GUIDsApi~getGuidCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Guid}
@@ -287,7 +287,7 @@
      * Looks up the alias for each alias type (group and single GUID) and returns all found ones
      * @param {String} id4n The GUID to operate on
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/GUIDsApi~getGuidAliasesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object.<String, {'String': 'String'}>}
@@ -338,7 +338,7 @@
      * Retrieve GUIDs not in any collection
      * @param {Number} organizationId Organization to search GUIDs for (required).
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {Number} opts.offset Start with the n-th element. 
      * @param {Number} opts.limit The maximum count of returned elements.
@@ -395,7 +395,7 @@
      * @param {String} id4n The GUID number
      * @param {module:model/Guid} request request
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/GUIDsApi~updateGuidCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}

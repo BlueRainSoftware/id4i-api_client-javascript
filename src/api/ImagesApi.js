@@ -60,7 +60,7 @@
      * Resolve image
      * @param {String} imageID The id of the image to be resolved.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token as returned from /login
+     * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
      * @param {module:api/ImagesApi~resolveImageUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}

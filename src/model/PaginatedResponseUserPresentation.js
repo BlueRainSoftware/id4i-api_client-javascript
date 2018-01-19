@@ -44,13 +44,14 @@
    * Constructs a new <code>PaginatedResponseUserPresentation</code>.
    * @alias module:model/PaginatedResponseUserPresentation
    * @class
+   * @param elements {Array.<module:model/UserPresentation>} 
    * @param limit {Number} 
    * @param offset {Number} 
    */
-  var exports = function(limit, offset) {
+  var exports = function(elements, limit, offset) {
     var _this = this;
 
-
+    _this['elements'] = elements;
     _this['limit'] = limit;
     _this['offset'] = offset;
 
