@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | **[String]** |  | [optional] 
+**elements** | **[String]** |  | 
 **limit** | **Number** |  | 
 **offset** | **Number** |  | 
 **total** | **Number** |  | [optional] 

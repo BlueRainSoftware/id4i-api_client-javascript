@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **commitTime** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **revision** | **String** |  | [optional] 
+**version** | **String** |  | [optional] 
 
 

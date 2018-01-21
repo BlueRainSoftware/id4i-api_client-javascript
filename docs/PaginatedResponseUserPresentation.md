@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**[UserPresentation]**](UserPresentation.md) |  | [optional] 
+**elements** | [**[UserPresentation]**](UserPresentation.md) |  | 
 **limit** | **Number** |  | 
 **offset** | **Number** |  | 
 **total** | **Number** |  | [optional] 

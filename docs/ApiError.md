@@ -49,6 +49,8 @@ Name | Type | Description | Notes
 
 * `ENTITY_NOT_FOUND` (value: `"ERR_ENTITY_NOT_FOUND"`)
 
+* `ENTITY_TOO_BIG` (value: `"ERR_ENTITY_TOO_BIG"`)
+
 * `DUPLICATE` (value: `"ERR_DUPLICATE"`)
 
 * `INTERNAL` (value: `"ERR_INTERNAL"`)

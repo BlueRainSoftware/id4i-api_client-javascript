@@ -26,7 +26,7 @@ var id4n = "id4n_example"; // String | id4n
 var type = "type_example"; // String | The type of route you want to have
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'privateRoutes': true, // Boolean | privateRoutes
   'publicRoutes': true // Boolean | publicRoutes
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **type** | **String**| The type of route you want to have | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **privateRoutes** | **Boolean**| privateRoutes | [optional] 
  **publicRoutes** | **Boolean**| publicRoutes | [optional] 
@@ -81,7 +81,7 @@ var apiInstance = new Id4iApi.RoutingApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'organizationId': 789 // Number | organizationId
 };
@@ -101,7 +101,7 @@ apiInstance.getRoutingFile(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **organizationId** | **Number**| organizationId | [optional] 
 
@@ -135,7 +135,7 @@ var rfr = new Id4iApi.RoutingFileRequest(); // RoutingFileRequest | rfr
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**[ApiKeyPrivilegeInfo]**](ApiKeyPrivilegeInfo.md) |  | [optional] 
+**elements** | [**[ApiKeyPrivilegeInfo]**](ApiKeyPrivilegeInfo.md) |  | 
 **limit** | **Number** |  | 
 **offset** | **Number** |  | 
 **total** | **Number** |  | [optional] 
