@@ -49,8 +49,8 @@
 
 
     /**
-     * Callback function to receive the result of the findCollection operation.
-     * @callback module:api/BillingApi~findCollectionCallback
+     * Callback function to receive the result of the getSumForOrganization operation.
+     * @callback module:api/BillingApi~getSumForOrganizationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ServiceCosts} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -62,16 +62,16 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/BillingApi~findCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/BillingApi~getSumForOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ServiceCosts}
      */
-    this.findCollection = function(organizationId, opts, callback) {
+    this.getSumForOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling findCollection");
+        throw new Error("Missing the required parameter 'organizationId' when calling getSumForOrganization");
       }
 
 

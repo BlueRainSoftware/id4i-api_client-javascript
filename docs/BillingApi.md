@@ -4,12 +4,12 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findCollection**](BillingApi.md#findCollection) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
+[**getSumForOrganization**](BillingApi.md#getSumForOrganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 
 
-<a name="findCollection"></a>
-# **findCollection**
-> ServiceCosts findCollection(organizationId, opts)
+<a name="getSumForOrganization"></a>
+# **getSumForOrganization**
+> ServiceCosts getSumForOrganization(organizationId, opts)
 
 Get billing amount of services for a given organization
 
@@ -33,7 +33,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findCollection(organizationId, opts, callback);
+apiInstance.getSumForOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters

@@ -51,10 +51,10 @@
   }
 
   describe('BillingApi', function() {
-    describe('findCollection', function() {
-      it('should call findCollection successfully', function(done) {
-        //uncomment below and update the code to test findCollection
-        //instance.findCollection(function(error) {
+    describe('getSumForOrganization', function() {
+      it('should call getSumForOrganization successfully', function(done) {
+        //uncomment below and update the code to test getSumForOrganization
+        //instance.getSumForOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
