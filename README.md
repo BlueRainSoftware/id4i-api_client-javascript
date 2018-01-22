@@ -159,6 +159,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.ApiKeysApi* | [**removeApiKeyPrivilege**](docs/ApiKeysApi.md#removeApiKeyPrivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
 *Id4iApi.ApiKeysApi* | [**removeApiKeyPrivilegeForId4ns**](docs/ApiKeysApi.md#removeApiKeyPrivilegeForId4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *Id4iApi.ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
+*Id4iApi.BillingApi* | [**findCollection**](docs/BillingApi.md#findCollection) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 *Id4iApi.CollectionsApi* | [**addElementToCollection**](docs/CollectionsApi.md#addElementToCollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
 *Id4iApi.CollectionsApi* | [**addElementToLabelledCollection**](docs/CollectionsApi.md#addElementToLabelledCollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
 *Id4iApi.CollectionsApi* | [**addElementToLogisticCollection**](docs/CollectionsApi.md#addElementToLogisticCollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
@@ -174,7 +175,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectionsApi* | [**deleteLabelledCollection**](docs/CollectionsApi.md#deleteLabelledCollection) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
 *Id4iApi.CollectionsApi* | [**deleteLogisticCollection**](docs/CollectionsApi.md#deleteLogisticCollection) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
 *Id4iApi.CollectionsApi* | [**deleteRoutingCollection**](docs/CollectionsApi.md#deleteRoutingCollection) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
-*Id4iApi.CollectionsApi* | [**findCollection**](docs/CollectionsApi.md#findCollection) | **GET** /api/v1/collections/{id4n} | Find collection
+*Id4iApi.CollectionsApi* | [**findCollection1**](docs/CollectionsApi.md#findCollection1) | **GET** /api/v1/collections/{id4n} | Find collection
 *Id4iApi.CollectionsApi* | [**findLabelledCollection**](docs/CollectionsApi.md#findLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
 *Id4iApi.CollectionsApi* | [**findLogisticCollection**](docs/CollectionsApi.md#findLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
 *Id4iApi.CollectionsApi* | [**findRoutingCollection**](docs/CollectionsApi.md#findRoutingCollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
@@ -299,6 +300,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.RoutingFile](docs/RoutingFile.md)
  - [Id4iApi.RoutingFileRequest](docs/RoutingFileRequest.md)
  - [Id4iApi.RoutingOptions](docs/RoutingOptions.md)
+ - [Id4iApi.ServiceCosts](docs/ServiceCosts.md)
  - [Id4iApi.SimpleMessageResponse](docs/SimpleMessageResponse.md)
  - [Id4iApi.Timestamp](docs/Timestamp.md)
  - [Id4iApi.URI](docs/URI.md)

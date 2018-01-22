@@ -201,10 +201,10 @@
         done();
       });
     });
-    describe('findCollection', function() {
-      it('should call findCollection successfully', function(done) {
-        //uncomment below and update the code to test findCollection
-        //instance.findCollection(function(error) {
+    describe('findCollection1', function() {
+      it('should call findCollection1 successfully', function(done) {
+        //uncomment below and update the code to test findCollection1
+        //instance.findCollection1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
