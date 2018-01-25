@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -67,6 +68,9 @@
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+      }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
@@ -81,6 +85,10 @@
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
+  /**
+   * @member {Number} id
+   */
+  exports.prototype['id'] = undefined;
   /**
    * @member {String} message
    */
