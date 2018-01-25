@@ -63,12 +63,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new Id4iApi.UserRegistrationResponse();
-      //expect(instance).to.be();
-    });
-
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
       //var instane = new Id4iApi.UserRegistrationResponse();
