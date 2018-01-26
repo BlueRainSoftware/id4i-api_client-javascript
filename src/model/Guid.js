@@ -44,13 +44,12 @@
    * Constructs a new <code>Guid</code>.
    * @alias module:model/Guid
    * @class
-   * @param id4n {String} 
    */
-  var exports = function(id4n) {
+  var exports = function() {
     var _this = this;
 
 
-    _this['id4n'] = id4n;
+
 
 
   };

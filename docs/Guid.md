@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdTimestamp** | **Number** |  | [optional] 
-**id4n** | **String** |  | 
+**id4n** | **String** |  | [optional] 
 **nextScanOwnership** | **Boolean** |  | [optional] 
 **ownerOrganizationId** | **Number** |  | [optional] 
 
