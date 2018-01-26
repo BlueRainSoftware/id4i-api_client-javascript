@@ -1809,6 +1809,237 @@
     }
 
     /**
+     * Callback function to receive the result of the setCollection operation.
+     * @callback module:api/CollectionsApi~setCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Set collection
+     * Update collection replacing all values but the ID
+     * @param {String} id4n id4n
+     * @param {module:model/GuidCollection} request request
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~setCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.setCollection = function(id4n, request, opts, callback) {
+      opts = opts || {};
+      var postBody = request;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling setCollection");
+      }
+
+      // verify the required parameter 'request' is set
+      if (request === undefined || request === null) {
+        throw new Error("Missing the required parameter 'request' when calling setCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/{id4n}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the setLabelledCollection operation.
+     * @callback module:api/CollectionsApi~setLabelledCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Set labelled collection values
+     * Update labelled collection replacing all values but the ID
+     * @param {String} id4n id4n
+     * @param {module:model/GuidCollection} request request
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~setLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.setLabelledCollection = function(id4n, request, opts, callback) {
+      opts = opts || {};
+      var postBody = request;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling setLabelledCollection");
+      }
+
+      // verify the required parameter 'request' is set
+      if (request === undefined || request === null) {
+        throw new Error("Missing the required parameter 'request' when calling setLabelledCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/labelled/{id4n}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the setLogisticCollection operation.
+     * @callback module:api/CollectionsApi~setLogisticCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Replace logistic collection
+     * Update logistic collection replacing all values but the ID
+     * @param {String} id4n id4n
+     * @param {module:model/GuidCollection} request request
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~setLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.setLogisticCollection = function(id4n, request, opts, callback) {
+      opts = opts || {};
+      var postBody = request;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling setLogisticCollection");
+      }
+
+      // verify the required parameter 'request' is set
+      if (request === undefined || request === null) {
+        throw new Error("Missing the required parameter 'request' when calling setLogisticCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/logistic/{id4n}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the setRoutingCollection operation.
+     * @callback module:api/CollectionsApi~setRoutingCollectionCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update routing collection
+     * @param {String} id4n id4n
+     * @param {module:model/GuidCollection} request request
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/CollectionsApi~setRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.setRoutingCollection = function(id4n, request, opts, callback) {
+      opts = opts || {};
+      var postBody = request;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling setRoutingCollection");
+      }
+
+      // verify the required parameter 'request' is set
+      if (request === undefined || request === null) {
+        throw new Error("Missing the required parameter 'request' when calling setRoutingCollection");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/api/v1/collections/routing/{id4n}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the updateCollection operation.
      * @callback module:api/CollectionsApi~updateCollectionCallback
      * @param {String} error Error message, if any.
@@ -1817,7 +2048,8 @@
      */
 
     /**
-     * Alter collection
+     * Update collection
+     * Update collection changing only the given values
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
@@ -1859,7 +2091,7 @@
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}', 'PUT',
+        '/api/v1/collections/{id4n}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1874,7 +2106,8 @@
      */
 
     /**
-     * Rename labelled collection
+     * Update labelled collection
+     * Update labelled collection updating only the given values
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
@@ -1916,7 +2149,7 @@
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/labelled/{id4n}', 'PUT',
+        '/api/v1/collections/labelled/{id4n}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1932,6 +2165,7 @@
 
     /**
      * Update logistic collection
+     * Update logistic collection updating only the given values
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
@@ -1973,7 +2207,7 @@
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/logistic/{id4n}', 'PUT',
+        '/api/v1/collections/logistic/{id4n}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1989,6 +2223,7 @@
 
     /**
      * Update routing collection
+     * Update routing collection updating only the given values
      * @param {String} id4n id4n
      * @param {module:model/GuidCollection} request request
      * @param {Object} opts Optional parameters
@@ -2030,7 +2265,7 @@
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/routing/{id4n}', 'PUT',
+        '/api/v1/collections/routing/{id4n}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
