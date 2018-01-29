@@ -51,46 +51,6 @@
   }
 
   describe('CollectionsApi', function() {
-    describe('addElementToCollection', function() {
-      it('should call addElementToCollection successfully', function(done) {
-        //uncomment below and update the code to test addElementToCollection
-        //instance.addElementToCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('addElementToLabelledCollection', function() {
-      it('should call addElementToLabelledCollection successfully', function(done) {
-        //uncomment below and update the code to test addElementToLabelledCollection
-        //instance.addElementToLabelledCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('addElementToLogisticCollection', function() {
-      it('should call addElementToLogisticCollection successfully', function(done) {
-        //uncomment below and update the code to test addElementToLogisticCollection
-        //instance.addElementToLogisticCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('addElementToRoutingCollection', function() {
-      it('should call addElementToRoutingCollection successfully', function(done) {
-        //uncomment below and update the code to test addElementToRoutingCollection
-        //instance.addElementToRoutingCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('addElementsToCollection', function() {
       it('should call addElementsToCollection successfully', function(done) {
         //uncomment below and update the code to test addElementsToCollection
@@ -285,46 +245,6 @@
       it('should call listElementsOfRoutingCollection successfully', function(done) {
         //uncomment below and update the code to test listElementsOfRoutingCollection
         //instance.listElementsOfRoutingCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('removeElementFromCollection', function() {
-      it('should call removeElementFromCollection successfully', function(done) {
-        //uncomment below and update the code to test removeElementFromCollection
-        //instance.removeElementFromCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('removeElementFromLabelledCollection', function() {
-      it('should call removeElementFromLabelledCollection successfully', function(done) {
-        //uncomment below and update the code to test removeElementFromLabelledCollection
-        //instance.removeElementFromLabelledCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('removeElementFromLogisticCollection', function() {
-      it('should call removeElementFromLogisticCollection successfully', function(done) {
-        //uncomment below and update the code to test removeElementFromLogisticCollection
-        //instance.removeElementFromLogisticCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('removeElementFromRoutingCollection', function() {
-      it('should call removeElementFromRoutingCollection successfully', function(done) {
-        //uncomment below and update the code to test removeElementFromRoutingCollection
-        //instance.removeElementFromRoutingCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
