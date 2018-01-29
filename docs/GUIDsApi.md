@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**getGuidAliases**](GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
+[**getId4n**](GUIDsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**setGuid**](GUIDsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 [**setGuid1**](GUIDsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
@@ -325,6 +326,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedResponseGuid**](PaginatedResponseGuid.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getId4n"></a>
+# **getId4n**
+> Id4nPresentation getId4n(id4n, opts)
+
+Retrieve ID4n information
+
+Retrieving basic information about an ID like the type and the creation time.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var id4n = "id4n_example"; // String | The ID to resolve to
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getId4n(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The ID to resolve to | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**Id4nPresentation**](Id4nPresentation.md)
 
 ### Authorization
 

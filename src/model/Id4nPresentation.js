@@ -44,13 +44,18 @@
    * Constructs a new <code>Id4nPresentation</code>.
    * @alias module:model/Id4nPresentation
    * @class
-   * @param id4n {String} 
+   * @param createdTimestamp {Number} A unix timestamp of when this ID has been created
+   * @param id4n {String} The ID
+   * @param type {module:model/Id4nPresentation.TypeEnum} The type of ID
    */
-  var exports = function(id4n) {
+  var exports = function(createdTimestamp, id4n, type) {
     var _this = this;
 
+    _this['createdTimestamp'] = createdTimestamp;
     _this['id4n'] = id4n;
 
+
+    _this['type'] = type;
   };
 
   /**
@@ -64,17 +69,32 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('createdTimestamp')) {
+        obj['createdTimestamp'] = ApiClient.convertToType(data['createdTimestamp'], 'Number');
+      }
       if (data.hasOwnProperty('id4n')) {
         obj['id4n'] = ApiClient.convertToType(data['id4n'], 'String');
       }
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
       }
+      if (data.hasOwnProperty('nextScanOwnership')) {
+        obj['nextScanOwnership'] = ApiClient.convertToType(data['nextScanOwnership'], 'Boolean');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
     }
     return obj;
   }
 
   /**
+   * A unix timestamp of when this ID has been created
+   * @member {Number} createdTimestamp
+   */
+  exports.prototype['createdTimestamp'] = undefined;
+  /**
+   * The ID
    * @member {String} id4n
    */
   exports.prototype['id4n'] = undefined;
@@ -82,7 +102,44 @@
    * @member {String} label
    */
   exports.prototype['label'] = undefined;
+  /**
+   * Indicates if next scan ownership is active or not. If privileges are missing or the type of object doesn't support NSO this value is null.
+   * @member {Boolean} nextScanOwnership
+   */
+  exports.prototype['nextScanOwnership'] = undefined;
+  /**
+   * The type of ID
+   * @member {module:model/Id4nPresentation.TypeEnum} type
+   */
+  exports.prototype['type'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>type</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.TypeEnum = {
+    /**
+     * value: "GUID"
+     * @const
+     */
+    "GUID": "GUID",
+    /**
+     * value: "ROUTING_COLLECTION"
+     * @const
+     */
+    "ROUTING_COLLECTION": "ROUTING_COLLECTION",
+    /**
+     * value: "LOGISTIC_COLLECTION"
+     * @const
+     */
+    "LOGISTIC_COLLECTION": "LOGISTIC_COLLECTION",
+    /**
+     * value: "LABELLED_COLLECTION"
+     * @const
+     */
+    "LABELLED_COLLECTION": "LABELLED_COLLECTION"  };
 
 
   return exports;

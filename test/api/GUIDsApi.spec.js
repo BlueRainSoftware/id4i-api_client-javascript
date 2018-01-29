@@ -111,6 +111,16 @@
         done();
       });
     });
+    describe('getId4n', function() {
+      it('should call getId4n successfully', function(done) {
+        //uncomment below and update the code to test getId4n
+        //instance.getId4n(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('setGuid', function() {
       it('should call setGuid successfully', function(done) {
         //uncomment below and update the code to test setGuid
