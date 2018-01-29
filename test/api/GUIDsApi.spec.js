@@ -111,10 +111,20 @@
         done();
       });
     });
-    describe('updateGuid', function() {
-      it('should call updateGuid successfully', function(done) {
-        //uncomment below and update the code to test updateGuid
-        //instance.updateGuid(function(error) {
+    describe('setGuid', function() {
+      it('should call setGuid successfully', function(done) {
+        //uncomment below and update the code to test setGuid
+        //instance.setGuid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('setGuid1', function() {
+      it('should call setGuid1 successfully', function(done) {
+        //uncomment below and update the code to test setGuid1
+        //instance.setGuid1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
