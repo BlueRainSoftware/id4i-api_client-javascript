@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.MicrostorageApi();
+    instance = new Id4iApi.DocumentUpdate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +50,31 @@
       object[property] = value;
   }
 
-  describe('MicrostorageApi', function() {
-    describe('read', function() {
-      it('should call read successfully', function(done) {
-        //uncomment below and update the code to test read
-        //instance.read(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('DocumentUpdate', function() {
+    it('should create an instance of DocumentUpdate', function() {
+      // uncomment below and update the code to test DocumentUpdate
+      //var instane = new Id4iApi.DocumentUpdate();
+      //expect(instance).to.be.a(Id4iApi.DocumentUpdate);
     });
-    describe('write', function() {
-      it('should call write successfully', function(done) {
-        //uncomment below and update the code to test write
-        //instance.write(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property filename (base name: "filename")', function() {
+      // uncomment below and update the code to test the property filename
+      //var instane = new Id4iApi.DocumentUpdate();
+      //expect(instance).to.be();
     });
+
+    it('should have the property publicVisibility (base name: "publicVisibility")', function() {
+      // uncomment below and update the code to test the property publicVisibility
+      //var instane = new Id4iApi.DocumentUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property visibleByOrganizationIds (base name: "visibleByOrganizationIds")', function() {
+      // uncomment below and update the code to test the property visibleByOrganizationIds
+      //var instane = new Id4iApi.DocumentUpdate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

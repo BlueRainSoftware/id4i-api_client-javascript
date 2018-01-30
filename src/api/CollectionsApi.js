@@ -849,8 +849,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset Start with the n-th element. 
-     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:model/String} opts.type Filter by this type
      * @param {String} opts.label Filter by this label
      * @param {String} opts.labelPrefix Filter by this label prefix
@@ -910,8 +910,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset Start with the n-th element. 
-     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/CollectionsApi~listElementsOfCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidResponse}
      */
@@ -965,8 +965,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset Start with the n-th element. 
-     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/CollectionsApi~listElementsOfLabelledCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidResponse}
      */
@@ -1020,8 +1020,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset Start with the n-th element. 
-     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/CollectionsApi~listElementsOfLogisticCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidResponse}
      */
@@ -1075,8 +1075,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset Start with the n-th element. 
-     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/CollectionsApi~listElementsOfRoutingCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidResponse}
      */

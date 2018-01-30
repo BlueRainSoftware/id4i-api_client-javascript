@@ -340,8 +340,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization JWT Bearer Token
      * @param {String} opts.acceptLanguage Requested language
-     * @param {Number} opts.offset Start with the n-th element. 
-     * @param {Number} opts.limit The maximum count of returned elements.
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/GUIDsApi~getGuidsWithoutCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponseGuid}
      */

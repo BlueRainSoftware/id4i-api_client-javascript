@@ -45,8 +45,8 @@
    * @alias module:model/ApiKeyPrivilegePaginatedResponse
    * @class
    * @param elements {Array.<module:model/ApiKeyPrivilege>} 
-   * @param limit {Number} 
-   * @param offset {Number} 
+   * @param limit {Number} The number of returned elements
+   * @param offset {Number} Starting with the n-th element
    */
   var exports = function(elements, limit, offset) {
     var _this = this;
@@ -89,14 +89,17 @@
    */
   exports.prototype['elements'] = undefined;
   /**
+   * The number of returned elements
    * @member {Number} limit
    */
   exports.prototype['limit'] = undefined;
   /**
+   * Starting with the n-th element
    * @member {Number} offset
    */
   exports.prototype['offset'] = undefined;
   /**
+   * The total number of elements
    * @member {Number} total
    */
   exports.prototype['total'] = undefined;

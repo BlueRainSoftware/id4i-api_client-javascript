@@ -284,7 +284,12 @@
      * value: "ERR_INVALID_URI_TEMPLATE_VARIABLE"
      * @const
      */
-    "INVALID_URI_TEMPLATE_VARIABLE": "ERR_INVALID_URI_TEMPLATE_VARIABLE"  };
+    "INVALID_URI_TEMPLATE_VARIABLE": "ERR_INVALID_URI_TEMPLATE_VARIABLE",
+    /**
+     * value: "ERR_MODULE_NOT_ACTIVE"
+     * @const
+     */
+    "MODULE_NOT_ACTIVE": "ERR_MODULE_NOT_ACTIVE"  };
 
 
   return exports;
