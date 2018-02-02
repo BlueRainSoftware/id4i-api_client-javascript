@@ -44,16 +44,22 @@
    * Constructs a new <code>ApiKeyPresentation</code>.
    * @alias module:model/ApiKeyPresentation
    * @class
+   * @param active {Boolean} Whether this API key is active
+   * @param createdAt {Number} The UTC unix timestamp of when this api key has been created
+   * @param createdBy {String} 
+   * @param key {String} The api key identifier
+   * @param label {String} The label / name of the api key
+   * @param organizationId {Number} The organization id this api key belongs to
    */
-  var exports = function() {
+  var exports = function(active, createdAt, createdBy, key, label, organizationId) {
     var _this = this;
 
-
-
-
-
-
-
+    _this['active'] = active;
+    _this['createdAt'] = createdAt;
+    _this['createdBy'] = createdBy;
+    _this['key'] = key;
+    _this['label'] = label;
+    _this['organizationId'] = organizationId;
   };
 
   /**
@@ -90,10 +96,12 @@
   }
 
   /**
+   * Whether this API key is active
    * @member {Boolean} active
    */
   exports.prototype['active'] = undefined;
   /**
+   * The UTC unix timestamp of when this api key has been created
    * @member {Number} createdAt
    */
   exports.prototype['createdAt'] = undefined;
@@ -102,14 +110,17 @@
    */
   exports.prototype['createdBy'] = undefined;
   /**
+   * The api key identifier
    * @member {String} key
    */
   exports.prototype['key'] = undefined;
   /**
+   * The label / name of the api key
    * @member {String} label
    */
   exports.prototype['label'] = undefined;
   /**
+   * The organization id this api key belongs to
    * @member {Number} organizationId
    */
   exports.prototype['organizationId'] = undefined;

@@ -82,10 +82,12 @@
   }
 
   /**
+   * The UTC unix timestamp of when this GUID has been created
    * @member {Number} createdTimestamp
    */
   exports.prototype['createdTimestamp'] = undefined;
   /**
+   * The ID
    * @member {String} id4n
    */
   exports.prototype['id4n'] = undefined;

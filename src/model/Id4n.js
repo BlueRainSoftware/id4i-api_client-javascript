@@ -70,6 +70,7 @@
   }
 
   /**
+   * The ID
    * @member {String} id4n
    */
   exports.prototype['id4n'] = undefined;

@@ -44,7 +44,7 @@
    * Constructs a new <code>Id4nPresentation</code>.
    * @alias module:model/Id4nPresentation
    * @class
-   * @param createdTimestamp {Number} A unix timestamp of when this ID has been created
+   * @param createdTimestamp {Number} The UTC unix timestamp of when this ID has been created
    * @param id4n {String} The ID
    * @param type {module:model/Id4nPresentation.TypeEnum} The type of ID
    */
@@ -89,7 +89,7 @@
   }
 
   /**
-   * A unix timestamp of when this ID has been created
+   * The UTC unix timestamp of when this ID has been created
    * @member {Number} createdTimestamp
    */
   exports.prototype['createdTimestamp'] = undefined;
