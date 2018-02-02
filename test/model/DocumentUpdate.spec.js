@@ -69,8 +69,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property visibleByOrganizationIds (base name: "visibleByOrganizationIds")', function() {
-      // uncomment below and update the code to test the property visibleByOrganizationIds
+    it('should have the property sharedWithOrganizationIds (base name: "sharedWithOrganizationIds")', function() {
+      // uncomment below and update the code to test the property sharedWithOrganizationIds
       //var instane = new Id4iApi.DocumentUpdate();
       //expect(instance).to.be();
     });

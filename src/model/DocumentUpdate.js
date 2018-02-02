@@ -70,8 +70,8 @@
       if (data.hasOwnProperty('publicVisibility')) {
         obj['publicVisibility'] = ApiClient.convertToType(data['publicVisibility'], 'Boolean');
       }
-      if (data.hasOwnProperty('visibleByOrganizationIds')) {
-        obj['visibleByOrganizationIds'] = ApiClient.convertToType(data['visibleByOrganizationIds'], ['Number']);
+      if (data.hasOwnProperty('sharedWithOrganizationIds')) {
+        obj['sharedWithOrganizationIds'] = ApiClient.convertToType(data['sharedWithOrganizationIds'], ['Number']);
       }
     }
     return obj;
@@ -88,9 +88,9 @@
   exports.prototype['publicVisibility'] = undefined;
   /**
    * Document is readable by these organizations
-   * @member {Array.<Number>} visibleByOrganizationIds
+   * @member {Array.<Number>} sharedWithOrganizationIds
    */
-  exports.prototype['visibleByOrganizationIds'] = undefined;
+  exports.prototype['sharedWithOrganizationIds'] = undefined;
 
 
 
