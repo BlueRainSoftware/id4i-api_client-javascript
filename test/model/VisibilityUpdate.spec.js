@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.DocumentUpdate();
+    instance = new Id4iApi.VisibilityUpdate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,22 @@
       object[property] = value;
   }
 
-  describe('DocumentUpdate', function() {
-    it('should create an instance of DocumentUpdate', function() {
-      // uncomment below and update the code to test DocumentUpdate
-      //var instane = new Id4iApi.DocumentUpdate();
-      //expect(instance).to.be.a(Id4iApi.DocumentUpdate);
+  describe('VisibilityUpdate', function() {
+    it('should create an instance of VisibilityUpdate', function() {
+      // uncomment below and update the code to test VisibilityUpdate
+      //var instane = new Id4iApi.VisibilityUpdate();
+      //expect(instance).to.be.a(Id4iApi.VisibilityUpdate);
     });
 
-    it('should have the property filename (base name: "filename")', function() {
-      // uncomment below and update the code to test the property filename
-      //var instane = new Id4iApi.DocumentUpdate();
+    it('should have the property _public (base name: "public")', function() {
+      // uncomment below and update the code to test the property _public
+      //var instane = new Id4iApi.VisibilityUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property visibility (base name: "visibility")', function() {
-      // uncomment below and update the code to test the property visibility
-      //var instane = new Id4iApi.DocumentUpdate();
+    it('should have the property sharedWithOrganizationIds (base name: "sharedWithOrganizationIds")', function() {
+      // uncomment below and update the code to test the property sharedWithOrganizationIds
+      //var instane = new Id4iApi.VisibilityUpdate();
       //expect(instance).to.be();
     });
 

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Visibility'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Visibility'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OwnedDocument = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.OwnedDocument = factory(root.Id4iApi.ApiClient, root.Id4iApi.Visibility);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Visibility) {
   'use strict';
 
 
@@ -47,7 +47,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
 
@@ -71,11 +70,8 @@
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
       }
-      if (data.hasOwnProperty('publicVisibility')) {
-        obj['publicVisibility'] = ApiClient.convertToType(data['publicVisibility'], 'Boolean');
-      }
-      if (data.hasOwnProperty('sharedWithOrganizationIds')) {
-        obj['sharedWithOrganizationIds'] = ApiClient.convertToType(data['sharedWithOrganizationIds'], ['Number']);
+      if (data.hasOwnProperty('visibility')) {
+        obj['visibility'] = Visibility.constructFromObject(data['visibility']);
       }
     }
     return obj;
@@ -91,15 +87,10 @@
    */
   exports.prototype['ownerOrganizationId'] = undefined;
   /**
-   * Document is publicly readable
-   * @member {Boolean} publicVisibility
+   * Visibility configuration
+   * @member {module:model/Visibility} visibility
    */
-  exports.prototype['publicVisibility'] = undefined;
-  /**
-   * Document is readable by these organizations
-   * @member {Array.<Number>} sharedWithOrganizationIds
-   */
-  exports.prototype['sharedWithOrganizationIds'] = undefined;
+  exports.prototype['visibility'] = undefined;
 
 
 

@@ -63,14 +63,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property publicVisibility (base name: "publicVisibility")', function() {
-      // uncomment below and update the code to test the property publicVisibility
-      //var instane = new Id4iApi.Document();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sharedWithOrganizationIds (base name: "sharedWithOrganizationIds")', function() {
-      // uncomment below and update the code to test the property sharedWithOrganizationIds
+    it('should have the property visibility (base name: "visibility")', function() {
+      // uncomment below and update the code to test the property visibility
       //var instane = new Id4iApi.Document();
       //expect(instance).to.be();
     });

@@ -349,6 +349,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [Id4iApi.UserRegistrationResponse](docs/UserRegistrationResponse.md)
  - [Id4iApi.UserRoles](docs/UserRoles.md)
+ - [Id4iApi.Visibility](docs/Visibility.md)
+ - [Id4iApi.VisibilityUpdate](docs/VisibilityUpdate.md)
  - [Id4iApi.WhoIsResponse](docs/WhoIsResponse.md)
 
 
