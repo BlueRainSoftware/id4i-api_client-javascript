@@ -211,6 +211,16 @@
         done();
       });
     });
+    describe('setOrganizationLogo', function() {
+      it('should call setOrganizationLogo successfully', function(done) {
+        //uncomment below and update the code to test setOrganizationLogo
+        //instance.setOrganizationLogo(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateOrganization', function() {
       it('should call updateOrganization successfully', function(done) {
         //uncomment below and update the code to test updateOrganization
@@ -235,16 +245,6 @@
       it('should call updateOrganizationBillingAddress successfully', function(done) {
         //uncomment below and update the code to test updateOrganizationBillingAddress
         //instance.updateOrganizationBillingAddress(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateOrganizationLogo', function() {
-      it('should call updateOrganizationLogo successfully', function(done) {
-        //uncomment below and update the code to test updateOrganizationLogo
-        //instance.updateOrganizationLogo(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

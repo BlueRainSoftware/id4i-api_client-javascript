@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/OrganizationUserInvitationListRequest', 'model/PaginatedCountryResponse', 'model/PaginatedGuidCollection', 'model/PaginatedOrganizationResponse', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/ChangeRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/OrganizationUserInvitationListRequest', 'model/PaginatedCountryResponse', 'model/PaginatedGuidCollection', 'model/PaginatedOrganizationResponse', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PublicImagePresentation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/OrganizationUserInvitationListRequest'), require('../model/PaginatedCountryResponse'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedOrganizationResponse'), require('../model/PaginatedStringResponse'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/OrganizationUserInvitationListRequest'), require('../model/PaginatedCountryResponse'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedOrganizationResponse'), require('../model/PaginatedStringResponse'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/PublicImagePresentation'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.OrganizationUserInvitationListRequest, root.Id4iApi.PaginatedCountryResponse, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedOrganizationResponse, root.Id4iApi.PaginatedStringResponse, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse);
+    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.OrganizationUserInvitationListRequest, root.Id4iApi.PaginatedCountryResponse, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedOrganizationResponse, root.Id4iApi.PaginatedStringResponse, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.PublicImagePresentation);
   }
-}(this, function(ApiClient, ApiError, ChangeRoleRequest, Organization, OrganizationAddress, OrganizationUserInvitationListRequest, PaginatedCountryResponse, PaginatedGuidCollection, PaginatedOrganizationResponse, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse) {
+}(this, function(ApiClient, ApiError, ChangeRoleRequest, Organization, OrganizationAddress, OrganizationUserInvitationListRequest, PaginatedCountryResponse, PaginatedGuidCollection, PaginatedOrganizationResponse, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PublicImagePresentation) {
   'use strict';
 
   /**
@@ -926,6 +926,65 @@
     }
 
     /**
+     * Callback function to receive the result of the setOrganizationLogo operation.
+     * @callback module:api/OrganizationsApi~setOrganizationLogoCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PublicImagePresentation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update organization logo
+     * Updating an organization logo using a multipart file upload.
+     * @param {Number} organizationId The id of the organization where the logo should be updated.
+     * @param {File} file An image containing the new logo.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.authorization Authorization JWT Bearer Token
+     * @param {String} opts.acceptLanguage Requested language
+     * @param {module:api/OrganizationsApi~setOrganizationLogoCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PublicImagePresentation}
+     */
+    this.setOrganizationLogo = function(organizationId, file, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling setOrganizationLogo");
+      }
+
+      // verify the required parameter 'file' is set
+      if (file === undefined || file === null) {
+        throw new Error("Missing the required parameter 'file' when calling setOrganizationLogo");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Authorization': opts['authorization'],
+        'Accept-Language': opts['acceptLanguage']
+      };
+      var formParams = {
+        'file': file
+      };
+
+      var authNames = [];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var returnType = PublicImagePresentation;
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/logo', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the updateOrganization operation.
      * @callback module:api/OrganizationsApi~updateOrganizationCallback
      * @param {String} error Error message, if any.
@@ -1091,65 +1150,6 @@
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/addresses/billing', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the updateOrganizationLogo operation.
-     * @callback module:api/OrganizationsApi~updateOrganizationLogoCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiError} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Update organization logo
-     * Updating an organization logo using a multipart file upload.
-     * @param {Number} organizationId The id of the organization where the logo should be updated.
-     * @param {File} file An image containing the new logo.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Authorization JWT Bearer Token
-     * @param {String} opts.acceptLanguage Requested language
-     * @param {module:api/OrganizationsApi~updateOrganizationLogoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiError}
-     */
-    this.updateOrganizationLogo = function(organizationId, file, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationLogo");
-      }
-
-      // verify the required parameter 'file' is set
-      if (file === undefined || file === null) {
-        throw new Error("Missing the required parameter 'file' when calling updateOrganizationLogo");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Authorization': opts['authorization'],
-        'Accept-Language': opts['acceptLanguage']
-      };
-      var formParams = {
-        'file': file
-      };
-
-      var authNames = [];
-      var contentTypes = ['multipart/form-data'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ApiError;
-
-      return this.apiClient.callApi(
-        '/api/v1/organizations/{organizationId}/logo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
