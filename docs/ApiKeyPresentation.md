@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active** | **Boolean** |  | [optional] 
-**createdAt** | **Date** |  | [optional] 
-**createdBy** | **String** |  | [optional] 
-**key** | **String** |  | [optional] 
-**label** | **String** |  | [optional] 
-**organizationId** | **Number** |  | [optional] 
+**active** | **Boolean** | Whether this API key is active | 
+**createdAt** | **Number** | The UTC unix timestamp of when this api key has been created | 
+**createdBy** | **String** |  | 
+**key** | **String** | The api key identifier | 
+**label** | **String** | The label / name of the api key | 
+**organizationId** | **Number** | The organization id this api key belongs to | 
 
 

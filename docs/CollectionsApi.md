@@ -1,47 +1,46 @@
 # Id4iApi.CollectionsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addElementsToCollectionUsingPUT**](CollectionsApi.md#addElementsToCollectionUsingPUT) | **PUT** /api/v1/collections/{id4n}/elements | Add elements to collection
-[**addElementsToLabelledCollectionUsingPUT**](CollectionsApi.md#addElementsToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
-[**addElementsToLogisticCollectionUsingPUT**](CollectionsApi.md#addElementsToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
-[**addElementsToRoutingCollectionUsingPUT**](CollectionsApi.md#addElementsToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
-[**addSingleElementToCollectionUsingPUT**](CollectionsApi.md#addSingleElementToCollectionUsingPUT) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
-[**addSingleElementToLabelledCollectionUsingPUT**](CollectionsApi.md#addSingleElementToLabelledCollectionUsingPUT) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
-[**addSingleElementToLogisticCollectionUsingPUT**](CollectionsApi.md#addSingleElementToLogisticCollectionUsingPUT) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
-[**addSingleElementToRoutingCollectionUsingPUT**](CollectionsApi.md#addSingleElementToRoutingCollectionUsingPUT) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Add element to routing collection
-[**createLabelledCollectionUsingPOST**](CollectionsApi.md#createLabelledCollectionUsingPOST) | **POST** /api/v1/collections/labelled | Create labelled collection
-[**createLogisticCollectionUsingPOST**](CollectionsApi.md#createLogisticCollectionUsingPOST) | **POST** /api/v1/collections/logistic | Create logistic collection
-[**createRoutingCollectionUsingPOST**](CollectionsApi.md#createRoutingCollectionUsingPOST) | **POST** /api/v1/collections/routing | Create routing collecton
+[**addElementsToCollection**](CollectionsApi.md#addElementsToCollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
+[**addElementsToLabelledCollection**](CollectionsApi.md#addElementsToLabelledCollection) | **POST** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
+[**addElementsToLogisticCollection**](CollectionsApi.md#addElementsToLogisticCollection) | **POST** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
+[**addElementsToRoutingCollection**](CollectionsApi.md#addElementsToRoutingCollection) | **POST** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
+[**createLabelledCollection**](CollectionsApi.md#createLabelledCollection) | **POST** /api/v1/collections/labelled | Create labelled collection
+[**createLogisticCollection**](CollectionsApi.md#createLogisticCollection) | **POST** /api/v1/collections/logistic | Create logistic collection
+[**createRoutingCollection**](CollectionsApi.md#createRoutingCollection) | **POST** /api/v1/collections/routing | Create routing collecton
 [**deleteCollection**](CollectionsApi.md#deleteCollection) | **DELETE** /api/v1/collections/{id4n} | Delete collection
 [**deleteLabelledCollection**](CollectionsApi.md#deleteLabelledCollection) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
 [**deleteLogisticCollection**](CollectionsApi.md#deleteLogisticCollection) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
-[**deleteRoutingCollectionUsingDELETE**](CollectionsApi.md#deleteRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
+[**deleteRoutingCollection**](CollectionsApi.md#deleteRoutingCollection) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
 [**findCollection**](CollectionsApi.md#findCollection) | **GET** /api/v1/collections/{id4n} | Find collection
 [**findLabelledCollection**](CollectionsApi.md#findLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
 [**findLogisticCollection**](CollectionsApi.md#findLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
 [**findRoutingCollection**](CollectionsApi.md#findRoutingCollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
-[**getAllCollectionsOfOrganization**](CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organization/{organizationId}/collections | Get collections of organization
-[**listContentsUsingGET**](CollectionsApi.md#listContentsUsingGET) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
-[**removeElementsFromCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
-[**removeElementsFromLabelledCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
-[**removeElementsFromLogisticCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
-[**removeElementsFromRoutingCollectionUsingDELETE**](CollectionsApi.md#removeElementsFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
-[**removeSingleElementFromCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromCollectionUsingDELETE) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
-[**removeSingleElementFromLabelledCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromLabelledCollectionUsingDELETE) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
-[**removeSingleElementFromLogisticCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromLogisticCollectionUsingDELETE) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
-[**removeSingleElementFromRoutingCollectionUsingDELETE**](CollectionsApi.md#removeSingleElementFromRoutingCollectionUsingDELETE) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Remove element from routing collection
-[**updateCollection**](CollectionsApi.md#updateCollection) | **PUT** /api/v1/collections/{id4n} | Alter collection
-[**updateLabelledCollection**](CollectionsApi.md#updateLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
-[**updateLogisticCollection**](CollectionsApi.md#updateLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
-[**updateRoutingCollection**](CollectionsApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**getAllCollectionsOfOrganization**](CollectionsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
+[**listElementsOfCollection**](CollectionsApi.md#listElementsOfCollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+[**listElementsOfLabelledCollection**](CollectionsApi.md#listElementsOfLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
+[**listElementsOfLogisticCollection**](CollectionsApi.md#listElementsOfLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
+[**listElementsOfRoutingCollection**](CollectionsApi.md#listElementsOfRoutingCollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
+[**removeElementsFromCollection**](CollectionsApi.md#removeElementsFromCollection) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
+[**removeElementsFromLabelledCollection**](CollectionsApi.md#removeElementsFromLabelledCollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
+[**removeElementsFromLogisticCollection**](CollectionsApi.md#removeElementsFromLogisticCollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
+[**removeElementsFromRoutingCollection**](CollectionsApi.md#removeElementsFromRoutingCollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
+[**setCollection**](CollectionsApi.md#setCollection) | **PUT** /api/v1/collections/{id4n} | Set collection
+[**setLabelledCollection**](CollectionsApi.md#setLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Set labelled collection values
+[**setLogisticCollection**](CollectionsApi.md#setLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Replace logistic collection
+[**setRoutingCollection**](CollectionsApi.md#setRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**updateCollection**](CollectionsApi.md#updateCollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
+[**updateLabelledCollection**](CollectionsApi.md#updateLabelledCollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
+[**updateLogisticCollection**](CollectionsApi.md#updateLogisticCollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
+[**updateRoutingCollection**](CollectionsApi.md#updateRoutingCollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 
 
-<a name="addElementsToCollectionUsingPUT"></a>
-# **addElementsToCollectionUsingPUT**
-> ApiError addElementsToCollectionUsingPUT(id4n, listOfGuids, opts)
+<a name="addElementsToCollection"></a>
+# **addElementsToCollection**
+> ApiError addElementsToCollection(id4n, listOfGuids, opts)
 
 Add elements to collection
 
@@ -56,7 +55,7 @@ var id4n = "id4n_example"; // String | id4n
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -67,7 +66,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToCollectionUsingPUT(id4n, listOfGuids, opts, callback);
+apiInstance.addElementsToCollection(id4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -76,7 +75,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -92,9 +91,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="addElementsToLabelledCollectionUsingPUT"></a>
-# **addElementsToLabelledCollectionUsingPUT**
-> ApiError addElementsToLabelledCollectionUsingPUT(collectionId4n, listOfGuids, opts)
+<a name="addElementsToLabelledCollection"></a>
+# **addElementsToLabelledCollection**
+> ApiError addElementsToLabelledCollection(collectionId4n, listOfGuids, opts)
 
 Add elements to labelled collection
 
@@ -109,7 +108,7 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -120,7 +119,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToLabelledCollectionUsingPUT(collectionId4n, listOfGuids, opts, callback);
+apiInstance.addElementsToLabelledCollection(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -129,7 +128,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -145,9 +144,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="addElementsToLogisticCollectionUsingPUT"></a>
-# **addElementsToLogisticCollectionUsingPUT**
-> ApiError addElementsToLogisticCollectionUsingPUT(collectionId4n, listOfGuids, opts)
+<a name="addElementsToLogisticCollection"></a>
+# **addElementsToLogisticCollection**
+> ApiError addElementsToLogisticCollection(collectionId4n, listOfGuids, opts)
 
 Add elements to logistic collection
 
@@ -162,7 +161,7 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -173,7 +172,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToLogisticCollectionUsingPUT(collectionId4n, listOfGuids, opts, callback);
+apiInstance.addElementsToLogisticCollection(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -182,7 +181,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -198,9 +197,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="addElementsToRoutingCollectionUsingPUT"></a>
-# **addElementsToRoutingCollectionUsingPUT**
-> ApiError addElementsToRoutingCollectionUsingPUT(collectionId4n, listOfGuids, opts)
+<a name="addElementsToRoutingCollection"></a>
+# **addElementsToRoutingCollection**
+> ApiError addElementsToRoutingCollection(collectionId4n, listOfGuids, opts)
 
 Add element to routing collection
 
@@ -215,7 +214,7 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -226,7 +225,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToRoutingCollectionUsingPUT(collectionId4n, listOfGuids, opts, callback);
+apiInstance.addElementsToRoutingCollection(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -235,7 +234,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -251,221 +250,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="addSingleElementToCollectionUsingPUT"></a>
-# **addSingleElementToCollectionUsingPUT**
-> ApiError addSingleElementToCollectionUsingPUT(id4n, elementGuid, opts)
-
-Add element to collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var id4n = "id4n_example"; // String | id4n
-
-var elementGuid = "elementGuid_example"; // String | elementGuid
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addSingleElementToCollectionUsingPUT(id4n, elementGuid, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n | 
- **elementGuid** | **String**| elementGuid | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addSingleElementToLabelledCollectionUsingPUT"></a>
-# **addSingleElementToLabelledCollectionUsingPUT**
-> ApiError addSingleElementToLabelledCollectionUsingPUT(collectionId4n, elementGuid, opts)
-
-Add element to labelled collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var collectionId4n = "collectionId4n_example"; // String | collectionId4n
-
-var elementGuid = "elementGuid_example"; // String | elementGuid
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addSingleElementToLabelledCollectionUsingPUT(collectionId4n, elementGuid, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n | 
- **elementGuid** | **String**| elementGuid | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addSingleElementToLogisticCollectionUsingPUT"></a>
-# **addSingleElementToLogisticCollectionUsingPUT**
-> ApiError addSingleElementToLogisticCollectionUsingPUT(collectionId4n, guid, opts)
-
-Add element to logistic collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var collectionId4n = "collectionId4n_example"; // String | collectionId4n
-
-var guid = "guid_example"; // String | guid
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addSingleElementToLogisticCollectionUsingPUT(collectionId4n, guid, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n | 
- **guid** | **String**| guid | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addSingleElementToRoutingCollectionUsingPUT"></a>
-# **addSingleElementToRoutingCollectionUsingPUT**
-> ApiError addSingleElementToRoutingCollectionUsingPUT(collectionId4n, guid, opts)
-
-Add element to routing collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var collectionId4n = "collectionId4n_example"; // String | collectionId4n
-
-var guid = "guid_example"; // String | guid
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addSingleElementToRoutingCollectionUsingPUT(collectionId4n, guid, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n | 
- **guid** | **String**| guid | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="createLabelledCollectionUsingPOST"></a>
-# **createLabelledCollectionUsingPOST**
-> Id4n createLabelledCollectionUsingPOST(createInfo, opts)
+<a name="createLabelledCollection"></a>
+# **createLabelledCollection**
+> Id4n createLabelledCollection(createInfo, opts)
 
 Create labelled collection
 
@@ -478,7 +265,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var createInfo = new Id4iApi.CreateLabelledCollectionRequest(); // CreateLabelledCollectionRequest | createInfo
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -489,7 +276,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createLabelledCollectionUsingPOST(createInfo, opts, callback);
+apiInstance.createLabelledCollection(createInfo, opts, callback);
 ```
 
 ### Parameters
@@ -497,7 +284,7 @@ apiInstance.createLabelledCollectionUsingPOST(createInfo, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLabelledCollectionRequest**](CreateLabelledCollectionRequest.md)| createInfo | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -513,9 +300,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="createLogisticCollectionUsingPOST"></a>
-# **createLogisticCollectionUsingPOST**
-> Id4n createLogisticCollectionUsingPOST(createInfo, opts)
+<a name="createLogisticCollection"></a>
+# **createLogisticCollection**
+> Id4n createLogisticCollection(createInfo, opts)
 
 Create logistic collection
 
@@ -528,7 +315,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var createInfo = new Id4iApi.CreateLogisticCollectionRequest(); // CreateLogisticCollectionRequest | createInfo
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -539,7 +326,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createLogisticCollectionUsingPOST(createInfo, opts, callback);
+apiInstance.createLogisticCollection(createInfo, opts, callback);
 ```
 
 ### Parameters
@@ -547,7 +334,7 @@ apiInstance.createLogisticCollectionUsingPOST(createInfo, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLogisticCollectionRequest**](CreateLogisticCollectionRequest.md)| createInfo | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -563,9 +350,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="createRoutingCollectionUsingPOST"></a>
-# **createRoutingCollectionUsingPOST**
-> Id4n createRoutingCollectionUsingPOST(createInfo, opts)
+<a name="createRoutingCollection"></a>
+# **createRoutingCollection**
+> Id4n createRoutingCollection(createInfo, opts)
 
 Create routing collecton
 
@@ -578,7 +365,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var createInfo = new Id4iApi.CreateRoutingCollectionRequest(); // CreateRoutingCollectionRequest | createInfo
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -589,7 +376,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createRoutingCollectionUsingPOST(createInfo, opts, callback);
+apiInstance.createRoutingCollection(createInfo, opts, callback);
 ```
 
 ### Parameters
@@ -597,7 +384,7 @@ apiInstance.createRoutingCollectionUsingPOST(createInfo, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateRoutingCollectionRequest**](CreateRoutingCollectionRequest.md)| createInfo | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -628,7 +415,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -647,7 +434,7 @@ apiInstance.deleteCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -678,7 +465,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -697,7 +484,7 @@ apiInstance.deleteLabelledCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -715,7 +502,7 @@ No authorization required
 
 <a name="deleteLogisticCollection"></a>
 # **deleteLogisticCollection**
-> ResponseEntity deleteLogisticCollection(id4n, opts)
+> Object deleteLogisticCollection(id4n, opts)
 
 Delete logistic collection
 
@@ -728,7 +515,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -747,12 +534,12 @@ apiInstance.deleteLogisticCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -763,9 +550,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="deleteRoutingCollectionUsingDELETE"></a>
-# **deleteRoutingCollectionUsingDELETE**
-> ApiError deleteRoutingCollectionUsingDELETE(id4n, opts)
+<a name="deleteRoutingCollection"></a>
+# **deleteRoutingCollection**
+> ApiError deleteRoutingCollection(id4n, opts)
 
 Delete routing collection
 
@@ -778,7 +565,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -789,7 +576,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteRoutingCollectionUsingDELETE(id4n, opts, callback);
+apiInstance.deleteRoutingCollection(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -797,7 +584,7 @@ apiInstance.deleteRoutingCollectionUsingDELETE(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -828,7 +615,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -847,7 +634,7 @@ apiInstance.findCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -878,7 +665,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -897,7 +684,7 @@ apiInstance.findLabelledCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -928,7 +715,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -947,7 +734,7 @@ apiInstance.findLogisticCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -978,7 +765,7 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -997,7 +784,7 @@ apiInstance.findRoutingCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -1030,12 +817,13 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var organizationId = 789; // Number | organizationId
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56, // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56, // Number | The maximum count of returned elements
   'type': "type_example", // String | Filter by this type
-  'label': "label_example" // String | Filter by this label
+  'label': "label_example", // String | Filter by this label
+  'labelPrefix': "labelPrefix_example" // String | Filter by this label prefix
 };
 
 var callback = function(error, data, response) {
@@ -1053,12 +841,13 @@ apiInstance.getAllCollectionsOfOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
  **type** | **String**| Filter by this type | [optional] 
  **label** | **String**| Filter by this label | [optional] 
+ **labelPrefix** | **String**| Filter by this label prefix | [optional] 
 
 ### Return type
 
@@ -1073,9 +862,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="listContentsUsingGET"></a>
-# **listContentsUsingGET**
-> PaginatedResponsestring listContentsUsingGET(id4n, opts)
+<a name="listElementsOfCollection"></a>
+# **listElementsOfCollection**
+> PaginatedGuidResponse listElementsOfCollection(id4n, opts)
 
 List contents of the collection
 
@@ -1088,10 +877,10 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -1101,7 +890,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listContentsUsingGET(id4n, opts, callback);
+apiInstance.listElementsOfCollection(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -1109,14 +898,14 @@ apiInstance.listContentsUsingGET(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
-[**PaginatedResponsestring**](PaginatedResponsestring.md)
+[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
 
 ### Authorization
 
@@ -1127,9 +916,171 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeElementsFromCollectionUsingDELETE"></a>
-# **removeElementsFromCollectionUsingDELETE**
-> ApiError removeElementsFromCollectionUsingDELETE(id4n, listOfGuids, opts)
+<a name="listElementsOfLabelledCollection"></a>
+# **listElementsOfLabelledCollection**
+> PaginatedGuidResponse listElementsOfLabelledCollection(id4n, opts)
+
+List contents of the collection
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listElementsOfLabelledCollection(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
+
+### Return type
+
+[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="listElementsOfLogisticCollection"></a>
+# **listElementsOfLogisticCollection**
+> PaginatedGuidResponse listElementsOfLogisticCollection(id4n, opts)
+
+List contents of the collection
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listElementsOfLogisticCollection(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
+
+### Return type
+
+[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="listElementsOfRoutingCollection"></a>
+# **listElementsOfRoutingCollection**
+> PaginatedGuidResponse listElementsOfRoutingCollection(id4n, opts)
+
+List contents of the collection
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listElementsOfRoutingCollection(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
+
+### Return type
+
+[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="removeElementsFromCollection"></a>
+# **removeElementsFromCollection**
+> ApiError removeElementsFromCollection(id4n, listOfGuids, opts)
 
 Remove elements from collection
 
@@ -1144,7 +1095,7 @@ var id4n = "id4n_example"; // String | id4n
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -1155,7 +1106,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromCollectionUsingDELETE(id4n, listOfGuids, opts, callback);
+apiInstance.removeElementsFromCollection(id4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -1164,7 +1115,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -1180,9 +1131,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeElementsFromLabelledCollectionUsingDELETE"></a>
-# **removeElementsFromLabelledCollectionUsingDELETE**
-> ApiError removeElementsFromLabelledCollectionUsingDELETE(collectionId4n, listOfGuids, opts)
+<a name="removeElementsFromLabelledCollection"></a>
+# **removeElementsFromLabelledCollection**
+> ApiError removeElementsFromLabelledCollection(collectionId4n, listOfGuids, opts)
 
 Remove elements from labelled collection
 
@@ -1197,7 +1148,7 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -1208,7 +1159,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromLabelledCollectionUsingDELETE(collectionId4n, listOfGuids, opts, callback);
+apiInstance.removeElementsFromLabelledCollection(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -1217,7 +1168,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -1233,9 +1184,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeElementsFromLogisticCollectionUsingDELETE"></a>
-# **removeElementsFromLogisticCollectionUsingDELETE**
-> ApiError removeElementsFromLogisticCollectionUsingDELETE(collectionId4n, listofGuids, opts)
+<a name="removeElementsFromLogisticCollection"></a>
+# **removeElementsFromLogisticCollection**
+> ApiError removeElementsFromLogisticCollection(collectionId4n, listOfGuids, opts)
 
 Remove elements from logistic collection
 
@@ -1247,10 +1198,10 @@ var apiInstance = new Id4iApi.CollectionsApi();
 
 var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
-var listofGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listofGuids
+var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -1261,7 +1212,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromLogisticCollectionUsingDELETE(collectionId4n, listofGuids, opts, callback);
+apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -1269,8 +1220,8 @@ apiInstance.removeElementsFromLogisticCollectionUsingDELETE(collectionId4n, list
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
- **listofGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listofGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -1286,9 +1237,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeElementsFromRoutingCollectionUsingDELETE"></a>
-# **removeElementsFromRoutingCollectionUsingDELETE**
-> ApiError removeElementsFromRoutingCollectionUsingDELETE(collectionId4n, listOfGuids, opts)
+<a name="removeElementsFromRoutingCollection"></a>
+# **removeElementsFromRoutingCollection**
+> ApiError removeElementsFromRoutingCollection(collectionId4n, listOfGuids, opts)
 
 Remove elements from routing collection
 
@@ -1303,7 +1254,7 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -1314,7 +1265,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromRoutingCollectionUsingDELETE(collectionId4n, listOfGuids, opts, callback);
+apiInstance.removeElementsFromRoutingCollection(collectionId4n, listOfGuids, opts, callback);
 ```
 
 ### Parameters
@@ -1323,7 +1274,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
@@ -1339,223 +1290,13 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="removeSingleElementFromCollectionUsingDELETE"></a>
-# **removeSingleElementFromCollectionUsingDELETE**
-> ApiError removeSingleElementFromCollectionUsingDELETE(id4n, elementGuid, opts)
+<a name="setCollection"></a>
+# **setCollection**
+> Object setCollection(id4n, request, opts)
 
-Remove element from collection
+Set collection
 
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var id4n = "id4n_example"; // String | id4n
-
-var elementGuid = "elementGuid_example"; // String | elementGuid
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.removeSingleElementFromCollectionUsingDELETE(id4n, elementGuid, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n | 
- **elementGuid** | **String**| elementGuid | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeSingleElementFromLabelledCollectionUsingDELETE"></a>
-# **removeSingleElementFromLabelledCollectionUsingDELETE**
-> ApiError removeSingleElementFromLabelledCollectionUsingDELETE(collectionId4n, elementGuid, opts)
-
-Remove element from labelled collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var collectionId4n = "collectionId4n_example"; // String | collectionId4n
-
-var elementGuid = "elementGuid_example"; // String | elementGuid
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.removeSingleElementFromLabelledCollectionUsingDELETE(collectionId4n, elementGuid, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n | 
- **elementGuid** | **String**| elementGuid | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeSingleElementFromLogisticCollectionUsingDELETE"></a>
-# **removeSingleElementFromLogisticCollectionUsingDELETE**
-> ApiError removeSingleElementFromLogisticCollectionUsingDELETE(collectionId4n, guid, opts)
-
-Remove element from logistic collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var collectionId4n = "collectionId4n_example"; // String | collectionId4n
-
-var guid = "guid_example"; // String | guid
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.removeSingleElementFromLogisticCollectionUsingDELETE(collectionId4n, guid, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n | 
- **guid** | **String**| guid | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeSingleElementFromRoutingCollectionUsingDELETE"></a>
-# **removeSingleElementFromRoutingCollectionUsingDELETE**
-> ApiError removeSingleElementFromRoutingCollectionUsingDELETE(collectionId4n, guid, opts)
-
-Remove element from routing collection
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.CollectionsApi();
-
-var collectionId4n = "collectionId4n_example"; // String | collectionId4n
-
-var guid = "guid_example"; // String | guid
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.removeSingleElementFromRoutingCollectionUsingDELETE(collectionId4n, guid, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n | 
- **guid** | **String**| guid | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateCollection"></a>
-# **updateCollection**
-> ResponseEntity updateCollection(id4n, request, opts)
-
-Alter collection
+Update collection replacing all values but the ID
 
 ### Example
 ```javascript
@@ -1568,7 +1309,225 @@ var id4n = "id4n_example"; // String | id4n
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setCollection(id4n, request, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setLabelledCollection"></a>
+# **setLabelledCollection**
+> Object setLabelledCollection(id4n, request, opts)
+
+Set labelled collection values
+
+Update labelled collection replacing all values but the ID
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var request = new Id4iApi.GuidCollection(); // GuidCollection | request
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setLabelledCollection(id4n, request, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setLogisticCollection"></a>
+# **setLogisticCollection**
+> Object setLogisticCollection(id4n, request, opts)
+
+Replace logistic collection
+
+Update logistic collection replacing all values but the ID
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var request = new Id4iApi.GuidCollection(); // GuidCollection | request
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setLogisticCollection(id4n, request, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setRoutingCollection"></a>
+# **setRoutingCollection**
+> Object setRoutingCollection(id4n, request, opts)
+
+Update routing collection
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var request = new Id4iApi.GuidCollection(); // GuidCollection | request
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setRoutingCollection(id4n, request, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="updateCollection"></a>
+# **updateCollection**
+> Object updateCollection(id4n, request, opts)
+
+Update collection
+
+Update collection changing only the given values
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.CollectionsApi();
+
+var id4n = "id4n_example"; // String | id4n
+
+var request = new Id4iApi.GuidCollection(); // GuidCollection | request
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -1588,12 +1547,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1606,9 +1565,11 @@ No authorization required
 
 <a name="updateLabelledCollection"></a>
 # **updateLabelledCollection**
-> ResponseEntity updateLabelledCollection(id4n, request, opts)
+> Object updateLabelledCollection(id4n, request, opts)
 
-Rename labelled collection
+Update labelled collection
+
+Update labelled collection updating only the given values
 
 ### Example
 ```javascript
@@ -1621,7 +1582,7 @@ var id4n = "id4n_example"; // String | id4n
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -1641,12 +1602,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1659,9 +1620,11 @@ No authorization required
 
 <a name="updateLogisticCollection"></a>
 # **updateLogisticCollection**
-> ResponseEntity updateLogisticCollection(id4n, request, opts)
+> Object updateLogisticCollection(id4n, request, opts)
 
 Update logistic collection
+
+Update logistic collection updating only the given values
 
 ### Example
 ```javascript
@@ -1674,7 +1637,7 @@ var id4n = "id4n_example"; // String | id4n
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -1694,12 +1657,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1712,9 +1675,11 @@ No authorization required
 
 <a name="updateRoutingCollection"></a>
 # **updateRoutingCollection**
-> ResponseEntity updateRoutingCollection(id4n, request, opts)
+> Object updateRoutingCollection(id4n, request, opts)
 
 Update routing collection
+
+Update routing collection updating only the given values
 
 ### Example
 ```javascript
@@ -1727,7 +1692,7 @@ var id4n = "id4n_example"; // String | id4n
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -1747,12 +1712,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 # Id4iApi.ImagesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,7 @@ var apiInstance = new Id4iApi.ImagesApi();
 var imageID = "imageID_example"; // String | The id of the image to be resolved.
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -41,7 +41,7 @@ apiInstance.resolveImageUsingGET(imageID, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageID** | **String**| The id of the image to be resolved. | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type

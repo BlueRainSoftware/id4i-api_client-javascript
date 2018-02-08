@@ -1,15 +1,136 @@
 # Id4iApi.GUIDsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUsingPOST1**](GUIDsApi.md#createUsingPOST1) | **POST** /api/v1/guids | Create GUID(s)
+[**addGuidAlias**](GUIDsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**addGuidAlias1**](GUIDsApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**createGuid**](GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+[**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+[**getGuidAliases**](GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+[**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
+[**getId4n**](GUIDsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**setGuid**](GUIDsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**setGuid1**](GUIDsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
-<a name="createUsingPOST1"></a>
-# **createUsingPOST1**
-> ListOfId4ns createUsingPOST1(createGUIDInfo, opts)
+<a name="addGuidAlias"></a>
+# **addGuidAlias**
+> ApiError addGuidAlias(id4n, aliasType, alias, opts)
+
+Add alias for GUIDs
+
+Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var id4n = "id4n_example"; // String | The GUID to operate on
+
+var aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+
+var alias = new Id4iApi.GuidAlias(); // GuidAlias | The alias to add or update
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addGuidAlias(id4n, aliasType, alias, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID to operate on | 
+ **aliasType** | **String**| Alias type, see the corresponding API model | 
+ **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="addGuidAlias1"></a>
+# **addGuidAlias1**
+> ApiError addGuidAlias1(id4n, aliasType, opts)
+
+Remove aliases from GUIDs
+
+Remove the alias of the given type
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var id4n = "id4n_example"; // String | The GUID to operate on
+
+var aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addGuidAlias1(id4n, aliasType, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID to operate on | 
+ **aliasType** | **String**| Alias type, see the corresponding API model | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="createGuid"></a>
+# **createGuid**
+> ListOfId4ns createGuid(createGUIDInfo, opts)
 
 Create GUID(s)
 
@@ -24,7 +145,7 @@ var apiInstance = new Id4iApi.GUIDsApi();
 var createGUIDInfo = new Id4iApi.CreateGuidRequest(); // CreateGuidRequest | createGUIDInfo
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -35,7 +156,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createUsingPOST1(createGUIDInfo, opts, callback);
+apiInstance.createGuid(createGUIDInfo, opts, callback);
 ```
 
 ### Parameters
@@ -43,12 +164,330 @@ apiInstance.createUsingPOST1(createGUIDInfo, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| createGUIDInfo | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
 [**ListOfId4ns**](ListOfId4ns.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getGuid"></a>
+# **getGuid**
+> Guid getGuid(id4n, opts)
+
+Retrieve GUID information
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var id4n = "id4n_example"; // String | The GUID number
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getGuid(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID number | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**Guid**](Guid.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getGuidAliases"></a>
+# **getGuidAliases**
+> {&#39;String&#39;: &#39;String&#39;} getGuidAliases(id4n, opts)
+
+Get all aliases for the given GUID
+
+Looks up the alias for each alias type (group and single GUID) and returns all found ones
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var id4n = "id4n_example"; // String | The GUID to operate on
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getGuidAliases(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID to operate on | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+**{&#39;String&#39;: &#39;String&#39;}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getGuidsWithoutCollection"></a>
+# **getGuidsWithoutCollection**
+> PaginatedResponseGuid getGuidsWithoutCollection(organizationId, opts)
+
+Retrieve GUIDs not in any collection
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var organizationId = 789; // Number | Organization to search GUIDs for (required).
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example", // String | Requested language
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getGuidsWithoutCollection(organizationId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| Organization to search GUIDs for (required). | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
+
+### Return type
+
+[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getId4n"></a>
+# **getId4n**
+> Id4nPresentation getId4n(id4n, opts)
+
+Retrieve ID4n information
+
+Retrieving basic information about an ID like the type and the creation time.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var id4n = "id4n_example"; // String | The ID to resolve to
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getId4n(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The ID to resolve to | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**Id4nPresentation**](Id4nPresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setGuid"></a>
+# **setGuid**
+> Object setGuid(id4n, request, opts)
+
+Change GUID information.
+
+Allows ownership transfer.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var id4n = "id4n_example"; // String | The GUID number
+
+var request = new Id4iApi.Guid(); // Guid | request
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setGuid(id4n, request, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID number | 
+ **request** | [**Guid**](Guid.md)| request | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setGuid1"></a>
+# **setGuid1**
+> Object setGuid1(id4n, request, opts)
+
+Change GUID information.
+
+Allows ownership transfer.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.GUIDsApi();
+
+var id4n = "id4n_example"; // String | The GUID number
+
+var request = new Id4iApi.Guid(); // Guid | request
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setGuid1(id4n, request, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID number | 
+ **request** | [**Guid**](Guid.md)| request | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

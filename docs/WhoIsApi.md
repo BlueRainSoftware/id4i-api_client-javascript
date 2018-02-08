@@ -1,15 +1,15 @@
 # Id4iApi.WhoIsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**resolveWhoIsEntryUsingGET**](WhoIsApi.md#resolveWhoIsEntryUsingGET) | **GET** /whois/{id4n} | Resolve owner of id4n
+[**resolveWhoIsEntry**](WhoIsApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
-<a name="resolveWhoIsEntryUsingGET"></a>
-# **resolveWhoIsEntryUsingGET**
-> WhoIsResponse resolveWhoIsEntryUsingGET(id4n, opts)
+<a name="resolveWhoIsEntry"></a>
+# **resolveWhoIsEntry**
+> WhoIsResponse resolveWhoIsEntry(id4n, opts)
 
 Resolve owner of id4n
 
@@ -22,7 +22,7 @@ var apiInstance = new Id4iApi.WhoIsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -33,7 +33,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.resolveWhoIsEntryUsingGET(id4n, opts, callback);
+apiInstance.resolveWhoIsEntry(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -41,7 +41,7 @@ apiInstance.resolveWhoIsEntryUsingGET(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type

@@ -3,9 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id4n** | **String** |  | [optional] 
+**createdTimestamp** | **Number** | The UTC unix timestamp of when this collection has been created | [optional] 
+**id4n** | **String** | The ID | [optional] 
 **label** | **String** |  | [optional] 
-**organizationId** | **Number** |  | [optional] 
+**nextScanOwnership** | **Boolean** |  | [optional] 
+**ownerOrganizationId** | **Number** |  | [optional] 
 **type** | **String** |  | [optional] 
 
 

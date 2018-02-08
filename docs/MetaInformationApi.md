@@ -1,19 +1,19 @@
 # Id4iApi.MetaInformationApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**applicationInfo**](MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about Id4i
+[**applicationInfo**](MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 
 
 <a name="applicationInfo"></a>
 # **applicationInfo**
 > AppInfoPresentation applicationInfo(opts)
 
-Retrieve version information about Id4i
+Retrieve version information about ID4i
 
-Retrieving version information about Id4i.
+Retrieving version information about ID4i.
 
 ### Example
 ```javascript
@@ -22,7 +22,7 @@ var Id4iApi = require('id4i_api');
 var apiInstance = new Id4iApi.MetaInformationApi();
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token as returned from /login
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example" // String | Requested language
 };
 
@@ -40,7 +40,7 @@ apiInstance.applicationInfo(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
