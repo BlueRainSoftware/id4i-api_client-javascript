@@ -85,6 +85,8 @@ Name | Type | Description | Notes
 
 * `INVALID_URI_TEMPLATE_VARIABLE` (value: `"ERR_INVALID_URI_TEMPLATE_VARIABLE"`)
 
+* `MODULE_NOT_ACTIVE` (value: `"ERR_MODULE_NOT_ACTIVE"`)
+
 
 
 

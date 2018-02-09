@@ -301,8 +301,8 @@ var opts = {
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'id4nConcerning': true, // Boolean | id4nConcerning
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -322,8 +322,8 @@ Name | Type | Description  | Notes
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **id4nConcerning** | **Boolean**| id4nConcerning | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -357,8 +357,8 @@ var organizationId = 789; // Number | The id of the organization to search in.
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -378,8 +378,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| The id of the organization to search in. | 
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -411,8 +411,8 @@ var key = "key_example"; // String | key
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -432,8 +432,8 @@ Name | Type | Description  | Notes
  **key** | **String**| key | 
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -469,8 +469,8 @@ var privilege = "privilege_example"; // String | privilege
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -491,8 +491,8 @@ Name | Type | Description  | Notes
  **privilege** | **String**| privilege | 
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 

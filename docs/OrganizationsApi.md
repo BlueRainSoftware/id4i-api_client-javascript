@@ -20,10 +20,10 @@ Method | HTTP request | Description
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**setOrganizationLogo**](OrganizationsApi.md#setOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
-[**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 
 
 <a name="addUserRoles"></a>
@@ -455,8 +455,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56, // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56, // Number | The maximum count of returned elements
   'type': "type_example", // String | Filter by this type
   'label': "label_example", // String | Filter by this label
   'labelPrefix': "labelPrefix_example" // String | Filter by this label prefix
@@ -479,8 +479,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
  **type** | **String**| Filter by this type | [optional] 
  **label** | **String**| Filter by this label | [optional] 
  **labelPrefix** | **String**| Filter by this label prefix | [optional] 
@@ -517,8 +517,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -538,8 +538,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -570,8 +570,8 @@ var opts = {
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'role': "role_example", // String | role
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -591,8 +591,8 @@ Name | Type | Description  | Notes
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
  **role** | **String**| role | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -626,8 +626,8 @@ var username = "username_example"; // String | username
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -648,8 +648,8 @@ Name | Type | Description  | Notes
  **username** | **String**| username | 
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -683,8 +683,8 @@ var organizationId = 789; // Number | organizationId
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -704,8 +704,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -788,8 +788,8 @@ var apiInstance = new Id4iApi.OrganizationsApi();
 var opts = { 
   'authorization': "authorization_example", // String | Authorization JWT Bearer Token
   'acceptLanguage': "acceptLanguage_example", // String | Requested language
-  'offset': 56, // Number | Start with the n-th element. 
-  'limit': 56 // Number | The maximum count of returned elements.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -808,8 +808,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **String**| Requested language | [optional] 
- **offset** | **Number**| Start with the n-th element.  | [optional] 
- **limit** | **Number**| The maximum count of returned elements. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -878,6 +878,61 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setOrganizationLogo"></a>
+# **setOrganizationLogo**
+> PublicImagePresentation setOrganizationLogo(organizationId, file, opts)
+
+Update organization logo
+
+Updating an organization logo using a multipart file upload.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = 789; // Number | The id of the organization where the logo should be updated.
+
+var file = "/path/to/file.txt"; // File | An image containing the new logo.
+
+var opts = { 
+  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
+  'acceptLanguage': "acceptLanguage_example" // String | Requested language
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setOrganizationLogo(organizationId, file, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| The id of the organization where the logo should be updated. | 
+ **file** | **File**| An image containing the new logo. | 
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **String**| Requested language | [optional] 
+
+### Return type
+
+[**PublicImagePresentation**](PublicImagePresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="updateOrganization"></a>
@@ -1037,60 +1092,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateOrganizationLogo"></a>
-# **updateOrganizationLogo**
-> ApiError updateOrganizationLogo(organizationId, file, opts)
-
-Update organization logo
-
-Updating an organization logo using a multipart file upload.
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-
-var apiInstance = new Id4iApi.OrganizationsApi();
-
-var organizationId = 789; // Number | The id of the organization where the logo should be updated.
-
-var file = "/path/to/file.txt"; // File | An image containing the new logo.
-
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateOrganizationLogo(organizationId, file, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization where the logo should be updated. | 
- **file** | **File**| An image containing the new logo. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 
