@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/Document', 'model/DocumentUpdate', 'model/InputStreamResource', 'model/PaginatedDocumentResponse', 'model/PaginatedOwnedDocumentResponse'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/Document', 'model/DocumentUpdate', 'model/InputStreamResource', 'model/PaginatedDocumentResponse', 'model/PaginatedOwnedDocumentResponse', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/Document'), require('../model/DocumentUpdate'), require('../model/InputStreamResource'), require('../model/PaginatedDocumentResponse'), require('../model/PaginatedOwnedDocumentResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/Document'), require('../model/DocumentUpdate'), require('../model/InputStreamResource'), require('../model/PaginatedDocumentResponse'), require('../model/PaginatedOwnedDocumentResponse'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.StorageApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.Document, root.Id4iApi.DocumentUpdate, root.Id4iApi.InputStreamResource, root.Id4iApi.PaginatedDocumentResponse, root.Id4iApi.PaginatedOwnedDocumentResponse);
+    root.Id4iApi.StorageApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.Document, root.Id4iApi.DocumentUpdate, root.Id4iApi.InputStreamResource, root.Id4iApi.PaginatedDocumentResponse, root.Id4iApi.PaginatedOwnedDocumentResponse, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, ApiError, Document, DocumentUpdate, InputStreamResource, PaginatedDocumentResponse, PaginatedOwnedDocumentResponse) {
+}(this, function(ApiClient, ApiError, Document, DocumentUpdate, InputStreamResource, PaginatedDocumentResponse, PaginatedOwnedDocumentResponse, ResponseEntity) {
   'use strict';
 
   /**
@@ -52,7 +52,7 @@
      * Callback function to receive the result of the createDocument operation.
      * @callback module:api/StorageApi~createDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {module:model/Document} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -65,7 +65,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.mimeType mimeType
      * @param {module:api/StorageApi~createDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link module:model/Document}
      */
     this.createDocument = function(id4n, organizationId, document, opts, callback) {
       opts = opts || {};
@@ -102,7 +102,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Object;
+      var returnType = Document;
 
       return this.apiClient.callApi(
         '/api/v1/collections/{id4n}/documents/{organizationId}', 'PUT',
@@ -115,7 +115,7 @@
      * Callback function to receive the result of the createDocument1 operation.
      * @callback module:api/StorageApi~createDocument1Callback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {module:model/Document} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -128,7 +128,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.mimeType mimeType
      * @param {module:api/StorageApi~createDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link module:model/Document}
      */
     this.createDocument1 = function(id4n, organizationId, document, opts, callback) {
       opts = opts || {};
@@ -165,7 +165,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Object;
+      var returnType = Document;
 
       return this.apiClient.callApi(
         '/api/v1/guids/{id4n}/documents/{organizationId}', 'PUT',
@@ -178,7 +178,7 @@
      * Callback function to receive the result of the deleteDocument operation.
      * @callback module:api/StorageApi~deleteDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -188,7 +188,7 @@
      * @param {String} id4n id4n
      * @param {String} fileName fileName
      * @param {module:api/StorageApi~deleteDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link module:model/ResponseEntity}
      */
     this.deleteDocument = function(organizationId, id4n, fileName, callback) {
       var postBody = null;
@@ -224,7 +224,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Object;
+      var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
         '/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}', 'DELETE',
@@ -237,7 +237,7 @@
      * Callback function to receive the result of the deleteDocument1 operation.
      * @callback module:api/StorageApi~deleteDocument1Callback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -247,7 +247,7 @@
      * @param {String} id4n id4n
      * @param {String} fileName fileName
      * @param {module:api/StorageApi~deleteDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link module:model/ResponseEntity}
      */
     this.deleteDocument1 = function(organizationId, id4n, fileName, callback) {
       var postBody = null;
@@ -283,7 +283,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Object;
+      var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
         '/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}', 'DELETE',
@@ -1566,7 +1566,7 @@
      * Callback function to receive the result of the writeDocument operation.
      * @callback module:api/StorageApi~writeDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1579,7 +1579,7 @@
      * @param {String} opts.contentType Content-Type
      * @param {Number} opts.contentLength Content-Length
      * @param {module:api/StorageApi~writeDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link module:model/ResponseEntity}
      */
     this.writeDocument = function(organizationId, id4n, fileName, opts, callback) {
       opts = opts || {};
@@ -1618,7 +1618,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['*/*'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Object;
+      var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
         '/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content', 'PUT',
@@ -1631,7 +1631,7 @@
      * Callback function to receive the result of the writeDocument1 operation.
      * @callback module:api/StorageApi~writeDocument1Callback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {module:model/ResponseEntity} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1644,7 +1644,7 @@
      * @param {String} opts.contentType Content-Type
      * @param {Number} opts.contentLength Content-Length
      * @param {module:api/StorageApi~writeDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link module:model/ResponseEntity}
      */
     this.writeDocument1 = function(organizationId, id4n, fileName, opts, callback) {
       opts = opts || {};
@@ -1683,7 +1683,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['*/*'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Object;
+      var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
         '/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content', 'PUT',

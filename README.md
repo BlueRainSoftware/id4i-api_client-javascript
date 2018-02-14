@@ -338,6 +338,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PublicImagePresentation](docs/PublicImagePresentation.md)
  - [Id4iApi.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
  - [Id4iApi.RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
+ - [Id4iApi.ResponseEntity](docs/ResponseEntity.md)
  - [Id4iApi.Role](docs/Role.md)
  - [Id4iApi.RoleResponse](docs/RoleResponse.md)
  - [Id4iApi.Route](docs/Route.md)

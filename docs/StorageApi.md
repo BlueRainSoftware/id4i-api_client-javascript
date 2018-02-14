@@ -36,7 +36,7 @@ Method | HTTP request | Description
 
 <a name="createDocument"></a>
 # **createDocument**
-> Object createDocument(id4n, organizationId, document, opts)
+> Document createDocument(id4n, organizationId, document, opts)
 
 Create an empty document for an id4n
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 <a name="createDocument1"></a>
 # **createDocument1**
-> Object createDocument1(id4n, organizationId, document, opts)
+> Document createDocument1(id4n, organizationId, document, opts)
 
 Create an empty document for an id4n
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> Object deleteDocument(organizationId, id4n, fileName)
+> ResponseEntity deleteDocument(organizationId, id4n, fileName)
 
 Delete a document
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDocument1"></a>
 # **deleteDocument1**
-> Object deleteDocument1(organizationId, id4n, fileName)
+> ResponseEntity deleteDocument1(organizationId, id4n, fileName)
 
 Delete a document
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -1568,7 +1568,7 @@ Name | Type | Description  | Notes
 
 <a name="writeDocument"></a>
 # **writeDocument**
-> Object writeDocument(organizationId, id4n, fileName, opts)
+> ResponseEntity writeDocument(organizationId, id4n, fileName, opts)
 
 Write document contents
 
@@ -1618,7 +1618,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -1631,7 +1631,7 @@ Name | Type | Description  | Notes
 
 <a name="writeDocument1"></a>
 # **writeDocument1**
-> Object writeDocument1(organizationId, id4n, fileName, opts)
+> ResponseEntity writeDocument1(organizationId, id4n, fileName, opts)
 
 Write document contents
 
@@ -1681,7 +1681,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
