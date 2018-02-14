@@ -40,13 +40,20 @@ Method | HTTP request | Description
 
 <a name="addElementsToCollection"></a>
 # **addElementsToCollection**
-> ApiError addElementsToCollection(id4n, listOfGuids, opts)
+> ApiError addElementsToCollection(id4n, listOfGuids)
 
 Add elements to collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -54,10 +61,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -66,7 +69,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToCollection(id4n, listOfGuids, opts, callback);
+apiInstance.addElementsToCollection(id4n, listOfGuids, callback);
 ```
 
 ### Parameters
@@ -75,8 +78,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -84,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -93,13 +94,20 @@ No authorization required
 
 <a name="addElementsToLabelledCollection"></a>
 # **addElementsToLabelledCollection**
-> ApiError addElementsToLabelledCollection(collectionId4n, listOfGuids, opts)
+> ApiError addElementsToLabelledCollection(collectionId4n, listOfGuids)
 
 Add elements to labelled collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -107,10 +115,6 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -119,7 +123,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToLabelledCollection(collectionId4n, listOfGuids, opts, callback);
+apiInstance.addElementsToLabelledCollection(collectionId4n, listOfGuids, callback);
 ```
 
 ### Parameters
@@ -128,8 +132,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -137,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -146,13 +148,20 @@ No authorization required
 
 <a name="addElementsToLogisticCollection"></a>
 # **addElementsToLogisticCollection**
-> ApiError addElementsToLogisticCollection(collectionId4n, listOfGuids, opts)
+> ApiError addElementsToLogisticCollection(collectionId4n, listOfGuids)
 
 Add elements to logistic collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -160,10 +169,6 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -172,7 +177,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToLogisticCollection(collectionId4n, listOfGuids, opts, callback);
+apiInstance.addElementsToLogisticCollection(collectionId4n, listOfGuids, callback);
 ```
 
 ### Parameters
@@ -181,8 +186,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -190,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -199,13 +202,20 @@ No authorization required
 
 <a name="addElementsToRoutingCollection"></a>
 # **addElementsToRoutingCollection**
-> ApiError addElementsToRoutingCollection(collectionId4n, listOfGuids, opts)
+> ApiError addElementsToRoutingCollection(collectionId4n, listOfGuids)
 
 Add element to routing collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -213,10 +223,6 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -225,7 +231,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addElementsToRoutingCollection(collectionId4n, listOfGuids, opts, callback);
+apiInstance.addElementsToRoutingCollection(collectionId4n, listOfGuids, callback);
 ```
 
 ### Parameters
@@ -234,8 +240,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -243,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -252,22 +256,25 @@ No authorization required
 
 <a name="createLabelledCollection"></a>
 # **createLabelledCollection**
-> Id4n createLabelledCollection(createInfo, opts)
+> Id4n createLabelledCollection(createInfo)
 
 Create labelled collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var createInfo = new Id4iApi.CreateLabelledCollectionRequest(); // CreateLabelledCollectionRequest | createInfo
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -276,7 +283,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createLabelledCollection(createInfo, opts, callback);
+apiInstance.createLabelledCollection(createInfo, callback);
 ```
 
 ### Parameters
@@ -284,8 +291,6 @@ apiInstance.createLabelledCollection(createInfo, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLabelledCollectionRequest**](CreateLabelledCollectionRequest.md)| createInfo | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -293,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -302,22 +307,25 @@ No authorization required
 
 <a name="createLogisticCollection"></a>
 # **createLogisticCollection**
-> Id4n createLogisticCollection(createInfo, opts)
+> Id4n createLogisticCollection(createInfo)
 
 Create logistic collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var createInfo = new Id4iApi.CreateLogisticCollectionRequest(); // CreateLogisticCollectionRequest | createInfo
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -326,7 +334,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createLogisticCollection(createInfo, opts, callback);
+apiInstance.createLogisticCollection(createInfo, callback);
 ```
 
 ### Parameters
@@ -334,8 +342,6 @@ apiInstance.createLogisticCollection(createInfo, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLogisticCollectionRequest**](CreateLogisticCollectionRequest.md)| createInfo | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -343,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -352,22 +358,25 @@ No authorization required
 
 <a name="createRoutingCollection"></a>
 # **createRoutingCollection**
-> Id4n createRoutingCollection(createInfo, opts)
+> Id4n createRoutingCollection(createInfo)
 
 Create routing collecton
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var createInfo = new Id4iApi.CreateRoutingCollectionRequest(); // CreateRoutingCollectionRequest | createInfo
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -376,7 +385,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createRoutingCollection(createInfo, opts, callback);
+apiInstance.createRoutingCollection(createInfo, callback);
 ```
 
 ### Parameters
@@ -384,8 +393,6 @@ apiInstance.createRoutingCollection(createInfo, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateRoutingCollectionRequest**](CreateRoutingCollectionRequest.md)| createInfo | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -393,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -402,22 +409,25 @@ No authorization required
 
 <a name="deleteCollection"></a>
 # **deleteCollection**
-> ApiError deleteCollection(id4n, opts)
+> ApiError deleteCollection(id4n)
 
 Delete collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -426,7 +436,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteCollection(id4n, opts, callback);
+apiInstance.deleteCollection(id4n, callback);
 ```
 
 ### Parameters
@@ -434,8 +444,6 @@ apiInstance.deleteCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -443,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -452,22 +460,25 @@ No authorization required
 
 <a name="deleteLabelledCollection"></a>
 # **deleteLabelledCollection**
-> ApiError deleteLabelledCollection(id4n, opts)
+> ApiError deleteLabelledCollection(id4n)
 
 Delete labelled collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -476,7 +487,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteLabelledCollection(id4n, opts, callback);
+apiInstance.deleteLabelledCollection(id4n, callback);
 ```
 
 ### Parameters
@@ -484,8 +495,6 @@ apiInstance.deleteLabelledCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -493,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -502,22 +511,25 @@ No authorization required
 
 <a name="deleteLogisticCollection"></a>
 # **deleteLogisticCollection**
-> Object deleteLogisticCollection(id4n, opts)
+> Object deleteLogisticCollection(id4n)
 
 Delete logistic collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -526,7 +538,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteLogisticCollection(id4n, opts, callback);
+apiInstance.deleteLogisticCollection(id4n, callback);
 ```
 
 ### Parameters
@@ -534,8 +546,6 @@ apiInstance.deleteLogisticCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -543,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -552,22 +562,25 @@ No authorization required
 
 <a name="deleteRoutingCollection"></a>
 # **deleteRoutingCollection**
-> ApiError deleteRoutingCollection(id4n, opts)
+> ApiError deleteRoutingCollection(id4n)
 
 Delete routing collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -576,7 +589,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteRoutingCollection(id4n, opts, callback);
+apiInstance.deleteRoutingCollection(id4n, callback);
 ```
 
 ### Parameters
@@ -584,8 +597,6 @@ apiInstance.deleteRoutingCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -593,7 +604,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -602,22 +613,25 @@ No authorization required
 
 <a name="findCollection"></a>
 # **findCollection**
-> GuidCollection findCollection(id4n, opts)
+> GuidCollection findCollection(id4n)
 
 Find collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -626,7 +640,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findCollection(id4n, opts, callback);
+apiInstance.findCollection(id4n, callback);
 ```
 
 ### Parameters
@@ -634,8 +648,6 @@ apiInstance.findCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -643,7 +655,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -652,22 +664,25 @@ No authorization required
 
 <a name="findLabelledCollection"></a>
 # **findLabelledCollection**
-> GuidCollection findLabelledCollection(id4n, opts)
+> GuidCollection findLabelledCollection(id4n)
 
 Find labelled collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -676,7 +691,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findLabelledCollection(id4n, opts, callback);
+apiInstance.findLabelledCollection(id4n, callback);
 ```
 
 ### Parameters
@@ -684,8 +699,6 @@ apiInstance.findLabelledCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -693,7 +706,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -702,22 +715,25 @@ No authorization required
 
 <a name="findLogisticCollection"></a>
 # **findLogisticCollection**
-> GuidCollection findLogisticCollection(id4n, opts)
+> GuidCollection findLogisticCollection(id4n)
 
 Find logistic collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -726,7 +742,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findLogisticCollection(id4n, opts, callback);
+apiInstance.findLogisticCollection(id4n, callback);
 ```
 
 ### Parameters
@@ -734,8 +750,6 @@ apiInstance.findLogisticCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -743,7 +757,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -752,22 +766,25 @@ No authorization required
 
 <a name="findRoutingCollection"></a>
 # **findRoutingCollection**
-> GuidCollection findRoutingCollection(id4n, opts)
+> GuidCollection findRoutingCollection(id4n)
 
 Find routing collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -776,7 +793,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findRoutingCollection(id4n, opts, callback);
+apiInstance.findRoutingCollection(id4n, callback);
 ```
 
 ### Parameters
@@ -784,8 +801,6 @@ apiInstance.findRoutingCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -793,7 +808,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -811,14 +826,19 @@ Retrieving all collections of an organization in a paginated manner.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var organizationId = 789; // Number | organizationId
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56, // Number | The maximum count of returned elements
   'type': "type_example", // String | Filter by this type
@@ -841,8 +861,6 @@ apiInstance.getAllCollectionsOfOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
  **type** | **String**| Filter by this type | [optional] 
@@ -855,7 +873,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -871,14 +889,19 @@ List contents of the collection
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -898,8 +921,6 @@ apiInstance.listElementsOfCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -909,7 +930,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -925,14 +946,19 @@ List contents of the collection
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -952,8 +978,6 @@ apiInstance.listElementsOfLabelledCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -963,7 +987,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -979,14 +1003,19 @@ List contents of the collection
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -1006,8 +1035,6 @@ apiInstance.listElementsOfLogisticCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -1017,7 +1044,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1033,14 +1060,19 @@ List contents of the collection
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -1060,8 +1092,6 @@ apiInstance.listElementsOfRoutingCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -1071,7 +1101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1080,13 +1110,20 @@ No authorization required
 
 <a name="removeElementsFromCollection"></a>
 # **removeElementsFromCollection**
-> ApiError removeElementsFromCollection(id4n, listOfGuids, opts)
+> ApiError removeElementsFromCollection(id4n, listOfGuids)
 
 Remove elements from collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1094,10 +1131,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1106,7 +1139,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromCollection(id4n, listOfGuids, opts, callback);
+apiInstance.removeElementsFromCollection(id4n, listOfGuids, callback);
 ```
 
 ### Parameters
@@ -1115,8 +1148,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1124,7 +1155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1133,13 +1164,20 @@ No authorization required
 
 <a name="removeElementsFromLabelledCollection"></a>
 # **removeElementsFromLabelledCollection**
-> ApiError removeElementsFromLabelledCollection(collectionId4n, listOfGuids, opts)
+> ApiError removeElementsFromLabelledCollection(collectionId4n, listOfGuids)
 
 Remove elements from labelled collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1147,10 +1185,6 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1159,7 +1193,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromLabelledCollection(collectionId4n, listOfGuids, opts, callback);
+apiInstance.removeElementsFromLabelledCollection(collectionId4n, listOfGuids, callback);
 ```
 
 ### Parameters
@@ -1168,8 +1202,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1177,7 +1209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1186,13 +1218,20 @@ No authorization required
 
 <a name="removeElementsFromLogisticCollection"></a>
 # **removeElementsFromLogisticCollection**
-> ApiError removeElementsFromLogisticCollection(collectionId4n, listOfGuids, opts)
+> ApiError removeElementsFromLogisticCollection(collectionId4n, listOfGuids)
 
 Remove elements from logistic collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1200,10 +1239,6 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1212,7 +1247,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids, opts, callback);
+apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids, callback);
 ```
 
 ### Parameters
@@ -1221,8 +1256,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1230,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1239,13 +1272,20 @@ No authorization required
 
 <a name="removeElementsFromRoutingCollection"></a>
 # **removeElementsFromRoutingCollection**
-> ApiError removeElementsFromRoutingCollection(collectionId4n, listOfGuids, opts)
+> ApiError removeElementsFromRoutingCollection(collectionId4n, listOfGuids)
 
 Remove elements from routing collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1253,10 +1293,6 @@ var collectionId4n = "collectionId4n_example"; // String | collectionId4n
 
 var listOfGuids = new Id4iApi.ListOfId4ns(); // ListOfId4ns | listOfGuids
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1265,7 +1301,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeElementsFromRoutingCollection(collectionId4n, listOfGuids, opts, callback);
+apiInstance.removeElementsFromRoutingCollection(collectionId4n, listOfGuids, callback);
 ```
 
 ### Parameters
@@ -1274,8 +1310,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1283,7 +1317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1292,7 +1326,7 @@ No authorization required
 
 <a name="setCollection"></a>
 # **setCollection**
-> Object setCollection(id4n, request, opts)
+> Object setCollection(id4n, request)
 
 Set collection
 
@@ -1301,6 +1335,13 @@ Update collection replacing all values but the ID
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1308,10 +1349,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1320,7 +1357,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.setCollection(id4n, request, opts, callback);
+apiInstance.setCollection(id4n, request, callback);
 ```
 
 ### Parameters
@@ -1329,8 +1366,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1338,7 +1373,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1347,7 +1382,7 @@ No authorization required
 
 <a name="setLabelledCollection"></a>
 # **setLabelledCollection**
-> Object setLabelledCollection(id4n, request, opts)
+> Object setLabelledCollection(id4n, request)
 
 Set labelled collection values
 
@@ -1356,6 +1391,13 @@ Update labelled collection replacing all values but the ID
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1363,10 +1405,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1375,7 +1413,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.setLabelledCollection(id4n, request, opts, callback);
+apiInstance.setLabelledCollection(id4n, request, callback);
 ```
 
 ### Parameters
@@ -1384,8 +1422,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1393,7 +1429,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1402,7 +1438,7 @@ No authorization required
 
 <a name="setLogisticCollection"></a>
 # **setLogisticCollection**
-> Object setLogisticCollection(id4n, request, opts)
+> Object setLogisticCollection(id4n, request)
 
 Replace logistic collection
 
@@ -1411,6 +1447,13 @@ Update logistic collection replacing all values but the ID
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1418,10 +1461,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1430,7 +1469,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.setLogisticCollection(id4n, request, opts, callback);
+apiInstance.setLogisticCollection(id4n, request, callback);
 ```
 
 ### Parameters
@@ -1439,8 +1478,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1448,7 +1485,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1457,13 +1494,20 @@ No authorization required
 
 <a name="setRoutingCollection"></a>
 # **setRoutingCollection**
-> Object setRoutingCollection(id4n, request, opts)
+> Object setRoutingCollection(id4n, request)
 
 Update routing collection
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1471,10 +1515,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1483,7 +1523,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.setRoutingCollection(id4n, request, opts, callback);
+apiInstance.setRoutingCollection(id4n, request, callback);
 ```
 
 ### Parameters
@@ -1492,8 +1532,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1501,7 +1539,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1510,7 +1548,7 @@ No authorization required
 
 <a name="updateCollection"></a>
 # **updateCollection**
-> Object updateCollection(id4n, request, opts)
+> Object updateCollection(id4n, request)
 
 Update collection
 
@@ -1519,6 +1557,13 @@ Update collection changing only the given values
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1526,10 +1571,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1538,7 +1579,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCollection(id4n, request, opts, callback);
+apiInstance.updateCollection(id4n, request, callback);
 ```
 
 ### Parameters
@@ -1547,8 +1588,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1556,7 +1595,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1565,7 +1604,7 @@ No authorization required
 
 <a name="updateLabelledCollection"></a>
 # **updateLabelledCollection**
-> Object updateLabelledCollection(id4n, request, opts)
+> Object updateLabelledCollection(id4n, request)
 
 Update labelled collection
 
@@ -1574,6 +1613,13 @@ Update labelled collection updating only the given values
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1581,10 +1627,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1593,7 +1635,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateLabelledCollection(id4n, request, opts, callback);
+apiInstance.updateLabelledCollection(id4n, request, callback);
 ```
 
 ### Parameters
@@ -1602,8 +1644,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1611,7 +1651,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1620,7 +1660,7 @@ No authorization required
 
 <a name="updateLogisticCollection"></a>
 # **updateLogisticCollection**
-> Object updateLogisticCollection(id4n, request, opts)
+> Object updateLogisticCollection(id4n, request)
 
 Update logistic collection
 
@@ -1629,6 +1669,13 @@ Update logistic collection updating only the given values
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1636,10 +1683,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1648,7 +1691,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateLogisticCollection(id4n, request, opts, callback);
+apiInstance.updateLogisticCollection(id4n, request, callback);
 ```
 
 ### Parameters
@@ -1657,8 +1700,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1666,7 +1707,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1675,7 +1716,7 @@ No authorization required
 
 <a name="updateRoutingCollection"></a>
 # **updateRoutingCollection**
-> Object updateRoutingCollection(id4n, request, opts)
+> Object updateRoutingCollection(id4n, request)
 
 Update routing collection
 
@@ -1684,6 +1725,13 @@ Update routing collection updating only the given values
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
@@ -1691,10 +1739,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var request = new Id4iApi.GuidCollection(); // GuidCollection | request
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1703,7 +1747,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateRoutingCollection(id4n, request, opts, callback);
+apiInstance.updateRoutingCollection(id4n, request, callback);
 ```
 
 ### Parameters
@@ -1712,8 +1756,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1721,7 +1763,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

@@ -45,6 +45,13 @@ The document is created empty, mime-type defaults to text/plain
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -55,8 +62,6 @@ var organizationId = 789; // Number | organizationId
 var document = new Id4iApi.Document(); // Document | document
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'mimeType': "mimeType_example" // String | mimeType
 };
 
@@ -77,8 +82,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n | 
  **organizationId** | **Number**| organizationId | 
  **document** | [**Document**](Document.md)| document | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **mimeType** | **String**| mimeType | [optional] 
 
 ### Return type
@@ -87,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -105,6 +108,13 @@ The document is created empty, mime-type defaults to text/plain
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -115,8 +125,6 @@ var organizationId = 789; // Number | organizationId
 var document = new Id4iApi.Document(); // Document | document
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'mimeType': "mimeType_example" // String | mimeType
 };
 
@@ -137,8 +145,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n | 
  **organizationId** | **Number**| organizationId | 
  **document** | [**Document**](Document.md)| document | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **mimeType** | **String**| mimeType | [optional] 
 
 ### Return type
@@ -147,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -156,13 +162,20 @@ No authorization required
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> Object deleteDocument(organizationId, id4n, fileName, opts)
+> Object deleteDocument(organizationId, id4n, fileName)
 
 Delete a document
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -172,10 +185,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -184,7 +193,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteDocument(organizationId, id4n, fileName, opts, callback);
+apiInstance.deleteDocument(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -194,8 +203,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -203,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -212,13 +219,20 @@ No authorization required
 
 <a name="deleteDocument1"></a>
 # **deleteDocument1**
-> Object deleteDocument1(organizationId, id4n, fileName, opts)
+> Object deleteDocument1(organizationId, id4n, fileName)
 
 Delete a document
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -228,10 +242,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -240,7 +250,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteDocument1(organizationId, id4n, fileName, opts, callback);
+apiInstance.deleteDocument1(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -250,8 +260,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -259,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -268,13 +276,20 @@ No authorization required
 
 <a name="getDocument"></a>
 # **getDocument**
-> Document getDocument(organizationId, id4n, fileName, opts)
+> Document getDocument(organizationId, id4n, fileName)
 
 Retrieve a document (meta-data only, no content)
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -284,10 +299,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -296,7 +307,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getDocument(organizationId, id4n, fileName, opts, callback);
+apiInstance.getDocument(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -306,8 +317,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -315,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -324,13 +333,20 @@ No authorization required
 
 <a name="getDocument1"></a>
 # **getDocument1**
-> Document getDocument1(organizationId, id4n, fileName, opts)
+> Document getDocument1(organizationId, id4n, fileName)
 
 Retrieve a document (meta-data only, no content)
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -340,10 +356,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -352,7 +364,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getDocument1(organizationId, id4n, fileName, opts, callback);
+apiInstance.getDocument1(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -362,8 +374,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -371,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -380,13 +390,20 @@ No authorization required
 
 <a name="getPublicDocument"></a>
 # **getPublicDocument**
-> Document getPublicDocument(organizationId, id4n, fileName, opts)
+> Document getPublicDocument(organizationId, id4n, fileName)
 
 Retrieve a document (meta-data only, no content)
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -396,10 +413,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -408,7 +421,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPublicDocument(organizationId, id4n, fileName, opts, callback);
+apiInstance.getPublicDocument(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -418,8 +431,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -427,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -436,13 +447,20 @@ No authorization required
 
 <a name="getPublicDocument1"></a>
 # **getPublicDocument1**
-> Document getPublicDocument1(organizationId, id4n, fileName, opts)
+> Document getPublicDocument1(organizationId, id4n, fileName)
 
 Retrieve a document (meta-data only, no content)
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -452,10 +470,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -464,7 +478,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPublicDocument1(organizationId, id4n, fileName, opts, callback);
+apiInstance.getPublicDocument1(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -474,8 +488,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -483,7 +495,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -501,14 +513,19 @@ Listing all documents of an id4n
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -528,8 +545,6 @@ apiInstance.listAllDocuments(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -539,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -557,14 +572,19 @@ Listing all documents of an id4n
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -584,8 +604,6 @@ apiInstance.listAllDocuments1(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -595,7 +613,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -613,14 +631,19 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'organizationId': 789, // Number | organizationId
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
@@ -641,8 +664,6 @@ apiInstance.listAllPublicDocuments(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **organizationId** | **Number**| organizationId | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -653,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -671,14 +692,19 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'organizationId': 789, // Number | organizationId
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
@@ -699,8 +725,6 @@ apiInstance.listAllPublicDocuments1(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **organizationId** | **Number**| organizationId | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -711,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -729,6 +753,13 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -737,8 +768,6 @@ var organizationId = 789; // Number | organizationId
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -759,8 +788,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -770,7 +797,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -788,6 +815,13 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -796,8 +830,6 @@ var organizationId = 789; // Number | organizationId
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -818,8 +850,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -829,7 +859,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -847,6 +877,13 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -855,8 +892,6 @@ var organizationId = 789; // Number | organizationId
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -877,8 +912,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -888,7 +921,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -906,6 +939,13 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -914,8 +954,6 @@ var organizationId = 789; // Number | organizationId
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -936,8 +974,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -947,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -956,13 +992,20 @@ No authorization required
 
 <a name="read"></a>
 # **read**
-> InputStreamResource read(organization, id4n, opts)
+> InputStreamResource read(organization, id4n)
 
 Read data from microstorage
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -970,10 +1013,6 @@ var organization = 789; // Number | organization
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -982,7 +1021,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.read(organization, id4n, opts, callback);
+apiInstance.read(organization, id4n, callback);
 ```
 
 ### Parameters
@@ -991,8 +1030,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Number**| organization | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1000,7 +1037,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1009,13 +1046,20 @@ No authorization required
 
 <a name="read1"></a>
 # **read1**
-> InputStreamResource read1(organization, id4n, opts)
+> InputStreamResource read1(organization, id4n)
 
 Read data from microstorage
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1023,10 +1067,6 @@ var organization = 789; // Number | organization
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1035,7 +1075,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.read1(organization, id4n, opts, callback);
+apiInstance.read1(organization, id4n, callback);
 ```
 
 ### Parameters
@@ -1044,8 +1084,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Number**| organization | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1053,7 +1091,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1062,13 +1100,20 @@ No authorization required
 
 <a name="readDocument"></a>
 # **readDocument**
-> InputStreamResource readDocument(organizationId, id4n, fileName, opts)
+> InputStreamResource readDocument(organizationId, id4n, fileName)
 
 Read document contents
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1078,10 +1123,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1090,7 +1131,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readDocument(organizationId, id4n, fileName, opts, callback);
+apiInstance.readDocument(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -1100,8 +1141,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1109,7 +1148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1118,13 +1157,20 @@ No authorization required
 
 <a name="readDocument1"></a>
 # **readDocument1**
-> InputStreamResource readDocument1(organizationId, id4n, fileName, opts)
+> InputStreamResource readDocument1(organizationId, id4n, fileName)
 
 Read document contents
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1134,10 +1180,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1146,7 +1188,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readDocument1(organizationId, id4n, fileName, opts, callback);
+apiInstance.readDocument1(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -1156,8 +1198,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1165,7 +1205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1174,13 +1214,20 @@ No authorization required
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> InputStreamResource readPublicDocument(organizationId, id4n, fileName, opts)
+> InputStreamResource readPublicDocument(organizationId, id4n, fileName)
 
 Read document contents
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1190,10 +1237,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1202,7 +1245,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readPublicDocument(organizationId, id4n, fileName, opts, callback);
+apiInstance.readPublicDocument(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -1212,8 +1255,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1221,7 +1262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1230,13 +1271,20 @@ No authorization required
 
 <a name="readPublicDocument1"></a>
 # **readPublicDocument1**
-> InputStreamResource readPublicDocument1(organizationId, id4n, fileName, opts)
+> InputStreamResource readPublicDocument1(organizationId, id4n, fileName)
 
 Read document contents
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1246,10 +1294,6 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1258,7 +1302,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readPublicDocument1(organizationId, id4n, fileName, opts, callback);
+apiInstance.readPublicDocument1(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -1268,8 +1312,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1277,7 +1319,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1286,13 +1328,20 @@ No authorization required
 
 <a name="updateDocument"></a>
 # **updateDocument**
-> Document updateDocument(organizationId, id4n, fileName, document, opts)
+> Document updateDocument(organizationId, id4n, fileName, document)
 
 Update a document
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1304,10 +1353,6 @@ var fileName = "fileName_example"; // String | fileName
 
 var document = new Id4iApi.DocumentUpdate(); // DocumentUpdate | document
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1316,7 +1361,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateDocument(organizationId, id4n, fileName, document, opts, callback);
+apiInstance.updateDocument(organizationId, id4n, fileName, document, callback);
 ```
 
 ### Parameters
@@ -1327,8 +1372,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
  **document** | [**DocumentUpdate**](DocumentUpdate.md)| document | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1336,7 +1379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1345,13 +1388,20 @@ No authorization required
 
 <a name="updateDocument1"></a>
 # **updateDocument1**
-> Document updateDocument1(organizationId, id4n, fileName, document, opts)
+> Document updateDocument1(organizationId, id4n, fileName, document)
 
 Update a document
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1363,10 +1413,6 @@ var fileName = "fileName_example"; // String | fileName
 
 var document = new Id4iApi.DocumentUpdate(); // DocumentUpdate | document
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1375,7 +1421,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateDocument1(organizationId, id4n, fileName, document, opts, callback);
+apiInstance.updateDocument1(organizationId, id4n, fileName, document, callback);
 ```
 
 ### Parameters
@@ -1386,8 +1432,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
  **document** | [**DocumentUpdate**](DocumentUpdate.md)| document | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1395,7 +1439,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1411,6 +1455,13 @@ Write data to microstorage
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1419,8 +1470,6 @@ var organization = 789; // Number | organization
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'contentType': "contentType_example", // String | Content-Type
   'contentLength': 789 // Number | Content-Length
 };
@@ -1441,8 +1490,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Number**| organization | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 
 
@@ -1452,7 +1499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1468,6 +1515,13 @@ Write data to microstorage
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1476,8 +1530,6 @@ var organization = 789; // Number | organization
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'contentType': "contentType_example", // String | Content-Type
   'contentLength': 789 // Number | Content-Length
 };
@@ -1498,8 +1550,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Number**| organization | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 
 
@@ -1509,7 +1559,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1525,6 +1575,13 @@ Write document contents
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1535,8 +1592,6 @@ var id4n = "id4n_example"; // String | id4n
 var fileName = "fileName_example"; // String | fileName
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'contentType': "contentType_example", // String | Content-Type
   'contentLength': 789 // Number | Content-Length
 };
@@ -1558,8 +1613,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 
 
@@ -1569,7 +1622,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1585,6 +1638,13 @@ Write document contents
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.StorageApi();
 
@@ -1595,8 +1655,6 @@ var id4n = "id4n_example"; // String | id4n
 var fileName = "fileName_example"; // String | fileName
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'contentType': "contentType_example", // String | Content-Type
   'contentLength': 789 // Number | Content-Length
 };
@@ -1618,8 +1676,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 
 
@@ -1629,7 +1685,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
