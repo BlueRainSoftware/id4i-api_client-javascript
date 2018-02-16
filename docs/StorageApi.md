@@ -4,39 +4,25 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId} | Create an empty document for an id4n
-[**createDocument1**](StorageApi.md#createDocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId} | Create an empty document for an id4n
-[**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Delete a document
-[**deleteDocument1**](StorageApi.md#deleteDocument1) | **DELETE** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Delete a document
-[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getDocument1**](StorageApi.md#getDocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getPublicDocument1**](StorageApi.md#getPublicDocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/collections/{id4n}/documents | List documents
-[**listAllDocuments1**](StorageApi.md#listAllDocuments1) | **GET** /api/v1/guids/{id4n}/documents | List documents
-[**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/collections/{id4n}/documents | List organization specific documents
-[**listAllPublicDocuments1**](StorageApi.md#listAllPublicDocuments1) | **GET** /api/v1/public/guids/{id4n}/documents | List organization specific documents
-[**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/collections/{id4n}/documents/{organizationId} | List organization specific documents
-[**listDocuments1**](StorageApi.md#listDocuments1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId} | List organization specific documents
-[**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId} | List organization specific documents
-[**listPublicDocuments1**](StorageApi.md#listPublicDocuments1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId} | List organization specific documents
-[**read**](StorageApi.md#read) | **GET** /api/v1/collections/{id4n}/micro/{organization} | Read data from microstorage
-[**read1**](StorageApi.md#read1) | **GET** /api/v1/guids/{id4n}/micro/{organization} | Read data from microstorage
-[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**readDocument1**](StorageApi.md#readDocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**readPublicDocument1**](StorageApi.md#readPublicDocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**updateDocument**](StorageApi.md#updateDocument) | **PATCH** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Update a document
-[**updateDocument1**](StorageApi.md#updateDocument1) | **PATCH** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Update a document
-[**write**](StorageApi.md#write) | **PUT** /api/v1/collections/{id4n}/micro/{organization} | Write data to microstorage
-[**write1**](StorageApi.md#write1) | **PUT** /api/v1/guids/{id4n}/micro/{organization} | Write data to microstorage
-[**writeDocument**](StorageApi.md#writeDocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
-[**writeDocument1**](StorageApi.md#writeDocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
+[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
+[**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
+[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/documents/{id4n} | List documents
+[**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+[**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
+[**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
+[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**updateDocument**](StorageApi.md#updateDocument) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**writeDocument**](StorageApi.md#writeDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Write document contents
+[**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
 
 <a name="createDocument"></a>
 # **createDocument**
-> Document createDocument(id4n, organizationId, document, opts)
+> Document createDocument(organizationId, id4n, document, opts)
 
 Create an empty document for an id4n
 
@@ -55,9 +41,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var id4n = "id4n_example"; // String | id4n
-
 var organizationId = 789; // Number | organizationId
+
+var id4n = "id4n_example"; // String | id4n
 
 var document = new Id4iApi.Document(); // Document | document
 
@@ -72,78 +58,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createDocument(id4n, organizationId, document, opts, callback);
+apiInstance.createDocument(organizationId, id4n, document, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n | 
  **organizationId** | **Number**| organizationId | 
- **document** | [**Document**](Document.md)| document | 
- **mimeType** | **String**| mimeType | [optional] 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="createDocument1"></a>
-# **createDocument1**
-> Document createDocument1(id4n, organizationId, document, opts)
-
-Create an empty document for an id4n
-
-The document is created empty, mime-type defaults to text/plain
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var id4n = "id4n_example"; // String | id4n
-
-var organizationId = 789; // Number | organizationId
-
-var document = new Id4iApi.Document(); // Document | document
-
-var opts = { 
-  'mimeType': "mimeType_example" // String | mimeType
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createDocument1(id4n, organizationId, document, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **organizationId** | **Number**| organizationId | 
  **document** | [**Document**](Document.md)| document | 
  **mimeType** | **String**| mimeType | [optional] 
 
@@ -194,63 +117,6 @@ var callback = function(error, data, response) {
   }
 };
 apiInstance.deleteDocument(organizationId, id4n, fileName, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
-
-### Return type
-
-[**ResponseEntity**](ResponseEntity.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="deleteDocument1"></a>
-# **deleteDocument1**
-> ResponseEntity deleteDocument1(organizationId, id4n, fileName)
-
-Delete a document
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var fileName = "fileName_example"; // String | fileName
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.deleteDocument1(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -331,63 +197,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="getDocument1"></a>
-# **getDocument1**
-> Document getDocument1(organizationId, id4n, fileName)
-
-Retrieve a document (meta-data only, no content)
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var fileName = "fileName_example"; // String | fileName
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getDocument1(organizationId, id4n, fileName, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
 <a name="getPublicDocument"></a>
 # **getPublicDocument**
 > Document getPublicDocument(organizationId, id4n, fileName)
@@ -422,63 +231,6 @@ var callback = function(error, data, response) {
   }
 };
 apiInstance.getPublicDocument(organizationId, id4n, fileName, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="getPublicDocument1"></a>
-# **getPublicDocument1**
-> Document getPublicDocument1(organizationId, id4n, fileName)
-
-Retrieve a document (meta-data only, no content)
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var fileName = "fileName_example"; // String | fileName
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getPublicDocument1(organizationId, id4n, fileName, callback);
 ```
 
 ### Parameters
@@ -561,65 +313,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="listAllDocuments1"></a>
-# **listAllDocuments1**
-> PaginatedOwnedDocumentResponse listAllDocuments1(id4n, opts)
-
-List documents
-
-Listing all documents of an id4n
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listAllDocuments1(id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n | 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
 > PaginatedOwnedDocumentResponse listAllPublicDocuments(id4n, opts)
@@ -657,67 +350,6 @@ var callback = function(error, data, response) {
   }
 };
 apiInstance.listAllPublicDocuments(id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n | 
- **organizationId** | **Number**| organizationId | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="listAllPublicDocuments1"></a>
-# **listAllPublicDocuments1**
-> PaginatedOwnedDocumentResponse listAllPublicDocuments1(id4n, opts)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'organizationId': 789, // Number | organizationId
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listAllPublicDocuments1(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -804,68 +436,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="listDocuments1"></a>
-# **listDocuments1**
-> PaginatedDocumentResponse listDocuments1(organizationId, id4n, opts)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listDocuments1(organizationId, id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
 <a name="listPublicDocuments"></a>
 # **listPublicDocuments**
 > PaginatedDocumentResponse listPublicDocuments(organizationId, id4n, opts)
@@ -928,179 +498,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="listPublicDocuments1"></a>
-# **listPublicDocuments1**
-> PaginatedDocumentResponse listPublicDocuments1(organizationId, id4n, opts)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listPublicDocuments1(organizationId, id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="read"></a>
-# **read**
-> InputStreamResource read(organization, id4n)
-
-Read data from microstorage
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organization = 789; // Number | organization
-
-var id4n = "id4n_example"; // String | id4n
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.read(organization, id4n, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **Number**| organization | 
- **id4n** | **String**| id4n | 
-
-### Return type
-
-[**InputStreamResource**](InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="read1"></a>
-# **read1**
-> InputStreamResource read1(organization, id4n)
-
-Read data from microstorage
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organization = 789; // Number | organization
-
-var id4n = "id4n_example"; // String | id4n
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.read1(organization, id4n, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **Number**| organization | 
- **id4n** | **String**| id4n | 
-
-### Return type
-
-[**InputStreamResource**](InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
 <a name="readDocument"></a>
 # **readDocument**
-> InputStreamResource readDocument(organizationId, id4n, fileName)
+> File readDocument(organizationId, id4n, fileName)
 
 Read document contents
 
@@ -1144,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InputStreamResource**](InputStreamResource.md)
+**File**
 
 ### Authorization
 
@@ -1155,11 +555,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="readDocument1"></a>
-# **readDocument1**
-> InputStreamResource readDocument1(organizationId, id4n, fileName)
+<a name="readFromMicrostorage"></a>
+# **readFromMicrostorage**
+> &#39;String&#39; readFromMicrostorage(organization, id4n)
 
-Read document contents
+Read data from microstorage
 
 ### Example
 ```javascript
@@ -1174,11 +574,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organization = 789; // Number | organization
 
 var id4n = "id4n_example"; // String | id4n
-
-var fileName = "fileName_example"; // String | fileName
 
 
 var callback = function(error, data, response) {
@@ -1188,20 +586,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readDocument1(organizationId, id4n, fileName, callback);
+apiInstance.readFromMicrostorage(organization, id4n, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organization** | **Number**| organization | 
  **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
 
 ### Return type
 
-[**InputStreamResource**](InputStreamResource.md)
+**&#39;String&#39;**
 
 ### Authorization
 
@@ -1214,7 +611,7 @@ Name | Type | Description  | Notes
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> InputStreamResource readPublicDocument(organizationId, id4n, fileName)
+> File readPublicDocument(organizationId, id4n, fileName)
 
 Read document contents
 
@@ -1258,64 +655,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InputStreamResource**](InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="readPublicDocument1"></a>
-# **readPublicDocument1**
-> InputStreamResource readPublicDocument1(organizationId, id4n, fileName)
-
-Read document contents
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var fileName = "fileName_example"; // String | fileName
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.readPublicDocument1(organizationId, id4n, fileName, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
-
-### Return type
-
-[**InputStreamResource**](InputStreamResource.md)
+**File**
 
 ### Authorization
 
@@ -1386,189 +726,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="updateDocument1"></a>
-# **updateDocument1**
-> Document updateDocument1(organizationId, id4n, fileName, document)
-
-Update a document
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var fileName = "fileName_example"; // String | fileName
-
-var document = new Id4iApi.DocumentUpdate(); // DocumentUpdate | document
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateDocument1(organizationId, id4n, fileName, document, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
- **document** | [**DocumentUpdate**](DocumentUpdate.md)| document | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="write"></a>
-# **write**
-> Object write(organization, id4n, opts)
-
-Write data to microstorage
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organization = 789; // Number | organization
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'contentType': "contentType_example", // String | Content-Type
-  'contentLength': 789 // Number | Content-Length
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.write(organization, id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **Number**| organization | 
- **id4n** | **String**| id4n | 
- **contentType** | **String**| Content-Type | [optional] 
- **contentLength** | **Number**| Content-Length | [optional] 
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="write1"></a>
-# **write1**
-> Object write1(organization, id4n, opts)
-
-Write data to microstorage
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organization = 789; // Number | organization
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'contentType': "contentType_example", // String | Content-Type
-  'contentLength': 789 // Number | Content-Length
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.write1(organization, id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **Number**| organization | 
- **id4n** | **String**| id4n | 
- **contentType** | **String**| Content-Type | [optional] 
- **contentLength** | **Number**| Content-Length | [optional] 
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
-
 <a name="writeDocument"></a>
 # **writeDocument**
-> ResponseEntity writeDocument(organizationId, id4n, fileName, opts)
+> ResponseEntity writeDocument(organizationId, id4n, fileName, body, opts)
 
 Write document contents
 
@@ -1591,6 +751,8 @@ var id4n = "id4n_example"; // String | id4n
 
 var fileName = "fileName_example"; // String | fileName
 
+var body = "/path/to/file"; // File | binary data
+
 var opts = { 
   'contentType': "contentType_example", // String | Content-Type
   'contentLength': 789 // Number | Content-Length
@@ -1603,7 +765,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.writeDocument(organizationId, id4n, fileName, opts, callback);
+apiInstance.writeDocument(organizationId, id4n, fileName, body, opts, callback);
 ```
 
 ### Parameters
@@ -1613,6 +775,7 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
+ **body** | [**File**](File.md)| binary data | 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 
 
@@ -1629,11 +792,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: */*
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="writeDocument1"></a>
-# **writeDocument1**
-> ResponseEntity writeDocument1(organizationId, id4n, fileName, opts)
+<a name="writeToMicrostorage"></a>
+# **writeToMicrostorage**
+> Object writeToMicrostorage(organization, id4n, body, opts)
 
-Write document contents
+Write data to microstorage
 
 ### Example
 ```javascript
@@ -1648,11 +811,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organization = 789; // Number | organization
 
 var id4n = "id4n_example"; // String | id4n
 
-var fileName = "fileName_example"; // String | fileName
+var body = "body_example"; // String | binary data
 
 var opts = { 
   'contentType': "contentType_example", // String | Content-Type
@@ -1666,22 +829,22 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.writeDocument1(organizationId, id4n, fileName, opts, callback);
+apiInstance.writeToMicrostorage(organization, id4n, body, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organization** | **Number**| organization | 
  **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
+ **body** | **String**| binary data | 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 

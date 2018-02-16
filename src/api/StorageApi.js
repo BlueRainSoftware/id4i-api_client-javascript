@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/Document', 'model/DocumentUpdate', 'model/InputStreamResource', 'model/PaginatedDocumentResponse', 'model/PaginatedOwnedDocumentResponse', 'model/ResponseEntity'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/Document', 'model/DocumentUpdate', 'model/PaginatedDocumentResponse', 'model/PaginatedOwnedDocumentResponse', 'model/ResponseEntity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/Document'), require('../model/DocumentUpdate'), require('../model/InputStreamResource'), require('../model/PaginatedDocumentResponse'), require('../model/PaginatedOwnedDocumentResponse'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/Document'), require('../model/DocumentUpdate'), require('../model/PaginatedDocumentResponse'), require('../model/PaginatedOwnedDocumentResponse'), require('../model/ResponseEntity'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.StorageApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.Document, root.Id4iApi.DocumentUpdate, root.Id4iApi.InputStreamResource, root.Id4iApi.PaginatedDocumentResponse, root.Id4iApi.PaginatedOwnedDocumentResponse, root.Id4iApi.ResponseEntity);
+    root.Id4iApi.StorageApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.Document, root.Id4iApi.DocumentUpdate, root.Id4iApi.PaginatedDocumentResponse, root.Id4iApi.PaginatedOwnedDocumentResponse, root.Id4iApi.ResponseEntity);
   }
-}(this, function(ApiClient, ApiError, Document, DocumentUpdate, InputStreamResource, PaginatedDocumentResponse, PaginatedOwnedDocumentResponse, ResponseEntity) {
+}(this, function(ApiClient, ApiError, Document, DocumentUpdate, PaginatedDocumentResponse, PaginatedOwnedDocumentResponse, ResponseEntity) {
   'use strict';
 
   /**
@@ -59,26 +59,26 @@
     /**
      * Create an empty document for an id4n
      * The document is created empty, mime-type defaults to text/plain
-     * @param {String} id4n id4n
      * @param {Number} organizationId organizationId
+     * @param {String} id4n id4n
      * @param {module:model/Document} document document
      * @param {Object} opts Optional parameters
      * @param {String} opts.mimeType mimeType
      * @param {module:api/StorageApi~createDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Document}
      */
-    this.createDocument = function(id4n, organizationId, document, opts, callback) {
+    this.createDocument = function(organizationId, id4n, document, opts, callback) {
       opts = opts || {};
       var postBody = document;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling createDocument");
-      }
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
         throw new Error("Missing the required parameter 'organizationId' when calling createDocument");
+      }
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling createDocument");
       }
 
       // verify the required parameter 'document' is set
@@ -88,8 +88,8 @@
 
 
       var pathParams = {
-        'id4n': id4n,
-        'organizationId': organizationId
+        'organizationId': organizationId,
+        'id4n': id4n
       };
       var queryParams = {
         'mimeType': opts['mimeType']
@@ -105,70 +105,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/documents/{organizationId}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the createDocument1 operation.
-     * @callback module:api/StorageApi~createDocument1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create an empty document for an id4n
-     * The document is created empty, mime-type defaults to text/plain
-     * @param {String} id4n id4n
-     * @param {Number} organizationId organizationId
-     * @param {module:model/Document} document document
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.mimeType mimeType
-     * @param {module:api/StorageApi~createDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
-     */
-    this.createDocument1 = function(id4n, organizationId, document, opts, callback) {
-      opts = opts || {};
-      var postBody = document;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling createDocument1");
-      }
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling createDocument1");
-      }
-
-      // verify the required parameter 'document' is set
-      if (document === undefined || document === null) {
-        throw new Error("Missing the required parameter 'document' when calling createDocument1");
-      }
-
-
-      var pathParams = {
-        'id4n': id4n,
-        'organizationId': organizationId
-      };
-      var queryParams = {
-        'mimeType': opts['mimeType']
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Document;
-
-      return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/documents/{organizationId}', 'PUT',
+        '/api/v1/documents/{id4n}/{organizationId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -227,66 +164,7 @@
       var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteDocument1 operation.
-     * @callback module:api/StorageApi~deleteDocument1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a document
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {String} fileName fileName
-     * @param {module:api/StorageApi~deleteDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
-     */
-    this.deleteDocument1 = function(organizationId, id4n, fileName, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling deleteDocument1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling deleteDocument1");
-      }
-
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling deleteDocument1");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n,
-        'fileName': fileName
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
-
-      return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}', 'DELETE',
+        '/api/v1/documents/{id4n}/{organizationId}/{fileName}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -345,66 +223,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getDocument1 operation.
-     * @callback module:api/StorageApi~getDocument1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve a document (meta-data only, no content)
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {String} fileName fileName
-     * @param {module:api/StorageApi~getDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
-     */
-    this.getDocument1 = function(organizationId, id4n, fileName, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getDocument1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling getDocument1");
-      }
-
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling getDocument1");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n,
-        'fileName': fileName
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Document;
-
-      return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}', 'GET',
+        '/api/v1/documents/{id4n}/{organizationId}/{fileName}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -463,66 +282,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getPublicDocument1 operation.
-     * @callback module:api/StorageApi~getPublicDocument1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve a document (meta-data only, no content)
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {String} fileName fileName
-     * @param {module:api/StorageApi~getPublicDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
-     */
-    this.getPublicDocument1 = function(organizationId, id4n, fileName, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getPublicDocument1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling getPublicDocument1");
-      }
-
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling getPublicDocument1");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n,
-        'fileName': fileName
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Document;
-
-      return this.apiClient.callApi(
-        '/api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}', 'GET',
+        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -574,59 +334,7 @@
       var returnType = PaginatedOwnedDocumentResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/documents', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the listAllDocuments1 operation.
-     * @callback module:api/StorageApi~listAllDocuments1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedOwnedDocumentResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * List documents
-     * Listing all documents of an id4n
-     * @param {String} id4n id4n
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
-     * @param {module:api/StorageApi~listAllDocuments1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedOwnedDocumentResponse}
-     */
-    this.listAllDocuments1 = function(id4n, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling listAllDocuments1");
-      }
-
-
-      var pathParams = {
-        'id4n': id4n
-      };
-      var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedOwnedDocumentResponse;
-
-      return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/documents', 'GET',
+        '/api/v1/documents/{id4n}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -680,61 +388,7 @@
       var returnType = PaginatedOwnedDocumentResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/public/collections/{id4n}/documents', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the listAllPublicDocuments1 operation.
-     * @callback module:api/StorageApi~listAllPublicDocuments1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedOwnedDocumentResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * List organization specific documents
-     * Listing documents of an id4n owned by a specified organization
-     * @param {String} id4n id4n
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.organizationId organizationId
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
-     * @param {module:api/StorageApi~listAllPublicDocuments1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedOwnedDocumentResponse}
-     */
-    this.listAllPublicDocuments1 = function(id4n, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling listAllPublicDocuments1");
-      }
-
-
-      var pathParams = {
-        'id4n': id4n
-      };
-      var queryParams = {
-        'organizationId': opts['organizationId'],
-        'offset': opts['offset'],
-        'limit': opts['limit']
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedOwnedDocumentResponse;
-
-      return this.apiClient.callApi(
-        '/api/v1/public/guids/{id4n}/documents', 'GET',
+        '/api/v1/public/documents/{id4n}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -793,66 +447,7 @@
       var returnType = PaginatedDocumentResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/documents/{organizationId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the listDocuments1 operation.
-     * @callback module:api/StorageApi~listDocuments1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedDocumentResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * List organization specific documents
-     * Listing documents of an id4n owned by a specified organization
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
-     * @param {module:api/StorageApi~listDocuments1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedDocumentResponse}
-     */
-    this.listDocuments1 = function(organizationId, id4n, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling listDocuments1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling listDocuments1");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n
-      };
-      var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedDocumentResponse;
-
-      return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/documents/{organizationId}', 'GET',
+        '/api/v1/documents/{id4n}/{organizationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -911,170 +506,7 @@
       var returnType = PaginatedDocumentResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/public/collections/{id4n}/documents/{organizationId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the listPublicDocuments1 operation.
-     * @callback module:api/StorageApi~listPublicDocuments1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedDocumentResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * List organization specific documents
-     * Listing documents of an id4n owned by a specified organization
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
-     * @param {module:api/StorageApi~listPublicDocuments1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedDocumentResponse}
-     */
-    this.listPublicDocuments1 = function(organizationId, id4n, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling listPublicDocuments1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling listPublicDocuments1");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n
-      };
-      var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = PaginatedDocumentResponse;
-
-      return this.apiClient.callApi(
-        '/api/v1/public/guids/{id4n}/documents/{organizationId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the read operation.
-     * @callback module:api/StorageApi~readCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InputStreamResource} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Read data from microstorage
-     * @param {Number} organization organization
-     * @param {String} id4n id4n
-     * @param {module:api/StorageApi~readCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InputStreamResource}
-     */
-    this.read = function(organization, id4n, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organization' is set
-      if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling read");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling read");
-      }
-
-
-      var pathParams = {
-        'organization': organization,
-        'id4n': id4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = InputStreamResource;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/micro/{organization}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the read1 operation.
-     * @callback module:api/StorageApi~read1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InputStreamResource} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Read data from microstorage
-     * @param {Number} organization organization
-     * @param {String} id4n id4n
-     * @param {module:api/StorageApi~read1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InputStreamResource}
-     */
-    this.read1 = function(organization, id4n, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organization' is set
-      if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling read1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling read1");
-      }
-
-
-      var pathParams = {
-        'organization': organization,
-        'id4n': id4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = InputStreamResource;
-
-      return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/micro/{organization}', 'GET',
+        '/api/v1/public/documents/{id4n}/{organizationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1084,7 +516,7 @@
      * Callback function to receive the result of the readDocument operation.
      * @callback module:api/StorageApi~readDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InputStreamResource} data The data returned by the service call.
+     * @param {File} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1094,7 +526,7 @@
      * @param {String} id4n id4n
      * @param {String} fileName fileName
      * @param {module:api/StorageApi~readDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InputStreamResource}
+     * data is of type: {@link File}
      */
     this.readDocument = function(organizationId, id4n, fileName, callback) {
       var postBody = null;
@@ -1130,54 +562,47 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = InputStreamResource;
+      var returnType = File;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content', 'GET',
+        '/api/v1/documents/{id4n}/{organizationId}/{fileName}/content', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the readDocument1 operation.
-     * @callback module:api/StorageApi~readDocument1Callback
+     * Callback function to receive the result of the readFromMicrostorage operation.
+     * @callback module:api/StorageApi~readFromMicrostorageCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InputStreamResource} data The data returned by the service call.
+     * @param {'String'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Read document contents
-     * @param {Number} organizationId organizationId
+     * Read data from microstorage
+     * @param {Number} organization organization
      * @param {String} id4n id4n
-     * @param {String} fileName fileName
-     * @param {module:api/StorageApi~readDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InputStreamResource}
+     * @param {module:api/StorageApi~readFromMicrostorageCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'String'}
      */
-    this.readDocument1 = function(organizationId, id4n, fileName, callback) {
+    this.readFromMicrostorage = function(organization, id4n, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling readDocument1");
+      // verify the required parameter 'organization' is set
+      if (organization === undefined || organization === null) {
+        throw new Error("Missing the required parameter 'organization' when calling readFromMicrostorage");
       }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling readDocument1");
-      }
-
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling readDocument1");
+        throw new Error("Missing the required parameter 'id4n' when calling readFromMicrostorage");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n,
-        'fileName': fileName
+        'organization': organization,
+        'id4n': id4n
       };
       var queryParams = {
       };
@@ -1189,10 +614,10 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = InputStreamResource;
+      var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content', 'GET',
+        '/api/v1/microstorage/{id4n}/{organization}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1202,7 +627,7 @@
      * Callback function to receive the result of the readPublicDocument operation.
      * @callback module:api/StorageApi~readPublicDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InputStreamResource} data The data returned by the service call.
+     * @param {File} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1212,7 +637,7 @@
      * @param {String} id4n id4n
      * @param {String} fileName fileName
      * @param {module:api/StorageApi~readPublicDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InputStreamResource}
+     * data is of type: {@link File}
      */
     this.readPublicDocument = function(organizationId, id4n, fileName, callback) {
       var postBody = null;
@@ -1248,69 +673,10 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = InputStreamResource;
+      var returnType = File;
 
       return this.apiClient.callApi(
-        '/api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the readPublicDocument1 operation.
-     * @callback module:api/StorageApi~readPublicDocument1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InputStreamResource} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Read document contents
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {String} fileName fileName
-     * @param {module:api/StorageApi~readPublicDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InputStreamResource}
-     */
-    this.readPublicDocument1 = function(organizationId, id4n, fileName, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling readPublicDocument1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling readPublicDocument1");
-      }
-
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling readPublicDocument1");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n,
-        'fileName': fileName
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = InputStreamResource;
-
-      return this.apiClient.callApi(
-        '/api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content', 'GET',
+        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1375,188 +741,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the updateDocument1 operation.
-     * @callback module:api/StorageApi~updateDocument1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Update a document
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {String} fileName fileName
-     * @param {module:model/DocumentUpdate} document document
-     * @param {module:api/StorageApi~updateDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
-     */
-    this.updateDocument1 = function(organizationId, id4n, fileName, document, callback) {
-      var postBody = document;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateDocument1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling updateDocument1");
-      }
-
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling updateDocument1");
-      }
-
-      // verify the required parameter 'document' is set
-      if (document === undefined || document === null) {
-        throw new Error("Missing the required parameter 'document' when calling updateDocument1");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n,
-        'fileName': fileName
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Document;
-
-      return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the write operation.
-     * @callback module:api/StorageApi~writeCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Write data to microstorage
-     * @param {Number} organization organization
-     * @param {String} id4n id4n
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.contentType Content-Type
-     * @param {Number} opts.contentLength Content-Length
-     * @param {module:api/StorageApi~writeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
-     */
-    this.write = function(organization, id4n, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organization' is set
-      if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling write");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling write");
-      }
-
-
-      var pathParams = {
-        'organization': organization,
-        'id4n': id4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Content-Type': opts['contentType'],
-        'Content-Length': opts['contentLength']
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['*/*'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/micro/{organization}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the write1 operation.
-     * @callback module:api/StorageApi~write1Callback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Write data to microstorage
-     * @param {Number} organization organization
-     * @param {String} id4n id4n
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.contentType Content-Type
-     * @param {Number} opts.contentLength Content-Length
-     * @param {module:api/StorageApi~write1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
-     */
-    this.write1 = function(organization, id4n, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'organization' is set
-      if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling write1");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling write1");
-      }
-
-
-      var pathParams = {
-        'organization': organization,
-        'id4n': id4n
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Content-Type': opts['contentType'],
-        'Content-Length': opts['contentLength']
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['*/*'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/micro/{organization}', 'PUT',
+        '/api/v1/documents/{id4n}/{organizationId}/{fileName}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1575,15 +760,16 @@
      * @param {Number} organizationId organizationId
      * @param {String} id4n id4n
      * @param {String} fileName fileName
+     * @param {File} body binary data
      * @param {Object} opts Optional parameters
      * @param {String} opts.contentType Content-Type
      * @param {Number} opts.contentLength Content-Length
      * @param {module:api/StorageApi~writeDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResponseEntity}
      */
-    this.writeDocument = function(organizationId, id4n, fileName, opts, callback) {
+    this.writeDocument = function(organizationId, id4n, fileName, body, opts, callback) {
       opts = opts || {};
-      var postBody = null;
+      var postBody = body;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -1600,6 +786,11 @@
         throw new Error("Missing the required parameter 'fileName' when calling writeDocument");
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling writeDocument");
+      }
+
 
       var pathParams = {
         'organizationId': organizationId,
@@ -1621,55 +812,54 @@
       var returnType = ResponseEntity;
 
       return this.apiClient.callApi(
-        '/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content', 'PUT',
+        '/api/v1/documents/{id4n}/{organizationId}/{fileName}/content', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the writeDocument1 operation.
-     * @callback module:api/StorageApi~writeDocument1Callback
+     * Callback function to receive the result of the writeToMicrostorage operation.
+     * @callback module:api/StorageApi~writeToMicrostorageCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Write document contents
-     * @param {Number} organizationId organizationId
+     * Write data to microstorage
+     * @param {Number} organization organization
      * @param {String} id4n id4n
-     * @param {String} fileName fileName
+     * @param {String} body binary data
      * @param {Object} opts Optional parameters
      * @param {String} opts.contentType Content-Type
      * @param {Number} opts.contentLength Content-Length
-     * @param {module:api/StorageApi~writeDocument1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
+     * @param {module:api/StorageApi~writeToMicrostorageCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
      */
-    this.writeDocument1 = function(organizationId, id4n, fileName, opts, callback) {
+    this.writeToMicrostorage = function(organization, id4n, body, opts, callback) {
       opts = opts || {};
-      var postBody = null;
+      var postBody = body;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling writeDocument1");
+      // verify the required parameter 'organization' is set
+      if (organization === undefined || organization === null) {
+        throw new Error("Missing the required parameter 'organization' when calling writeToMicrostorage");
       }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling writeDocument1");
+        throw new Error("Missing the required parameter 'id4n' when calling writeToMicrostorage");
       }
 
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling writeDocument1");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling writeToMicrostorage");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n,
-        'fileName': fileName
+        'organization': organization,
+        'id4n': id4n
       };
       var queryParams = {
       };
@@ -1683,10 +873,10 @@
       var authNames = ['Authorization'];
       var contentTypes = ['*/*'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content', 'PUT',
+        '/api/v1/microstorage/{id4n}/{organization}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
