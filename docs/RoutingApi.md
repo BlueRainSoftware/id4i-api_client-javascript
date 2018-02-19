@@ -18,6 +18,13 @@ Retrieve current route of a GUID (or ID4N)
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.RoutingApi();
 
@@ -26,8 +33,6 @@ var id4n = "id4n_example"; // String | id4n
 var type = "type_example"; // String | The type of route you want to have
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'privateRoutes': true, // Boolean | privateRoutes
   'publicRoutes': true // Boolean | publicRoutes
 };
@@ -48,8 +53,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **type** | **String**| The type of route you want to have | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **privateRoutes** | **Boolean**| privateRoutes | [optional] 
  **publicRoutes** | **Boolean**| publicRoutes | [optional] 
 
@@ -59,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -75,14 +78,19 @@ Retrieve routing file
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.RoutingApi();
 
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'organizationId': 789 // Number | organizationId
 };
 
@@ -101,8 +109,6 @@ apiInstance.getRoutingFile(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **organizationId** | **Number**| organizationId | [optional] 
 
 ### Return type
@@ -111,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -120,13 +126,20 @@ No authorization required
 
 <a name="updateRoutingFile"></a>
 # **updateRoutingFile**
-> ApiError updateRoutingFile(rfr, id4n, opts)
+> ApiError updateRoutingFile(rfr, id4n)
 
 Store routing file
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.RoutingApi();
 
@@ -134,10 +147,6 @@ var rfr = new Id4iApi.RoutingFileRequest(); // RoutingFileRequest | rfr
 
 var id4n = "id4n_example"; // String | id4n
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -146,7 +155,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateRoutingFile(rfr, id4n, opts, callback);
+apiInstance.updateRoutingFile(rfr, id4n, callback);
 ```
 
 ### Parameters
@@ -155,8 +164,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr | 
  **id4n** | **String**| id4n | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -164,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

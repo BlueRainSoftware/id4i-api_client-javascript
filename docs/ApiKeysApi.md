@@ -20,13 +20,20 @@ Method | HTTP request | Description
 
 <a name="addApiKeyPrivilege"></a>
 # **addApiKeyPrivilege**
-> ApiError addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, opts)
+> ApiError addApiKeyPrivilege(key, addApiKeyPrivilegeRequest)
 
 Add privilege
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
@@ -34,10 +41,6 @@ var key = "key_example"; // String | key
 
 var addApiKeyPrivilegeRequest = new Id4iApi.AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -46,7 +49,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, opts, callback);
+apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, callback);
 ```
 
 ### Parameters
@@ -55,8 +58,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key | 
  **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -64,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -73,13 +74,20 @@ No authorization required
 
 <a name="addApiKeyPrivilegeForId4ns"></a>
 # **addApiKeyPrivilegeForId4ns**
-> ApiError addApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts)
+> ApiError addApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Add ID4ns of a privilege
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
@@ -89,10 +97,6 @@ var privilege = "privilege_example"; // String | privilege
 
 var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -101,7 +105,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts, callback);
+apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, callback);
 ```
 
 ### Parameters
@@ -111,8 +115,6 @@ Name | Type | Description  | Notes
  **key** | **String**| key | 
  **privilege** | **String**| privilege | 
  **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -120,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -129,7 +131,7 @@ No authorization required
 
 <a name="createNewApiKey"></a>
 # **createNewApiKey**
-> ApiKeyPresentation createNewApiKey(creationRequest, opts)
+> ApiKeyPresentation createNewApiKey(creationRequest)
 
 Create API key
 
@@ -138,15 +140,18 @@ Creation of a new API key.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
 var creationRequest = new Id4iApi.ApiKeyCreationRequest(); // ApiKeyCreationRequest | API key to be created.
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -155,7 +160,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createNewApiKey(creationRequest, opts, callback);
+apiInstance.createNewApiKey(creationRequest, callback);
 ```
 
 ### Parameters
@@ -163,8 +168,6 @@ apiInstance.createNewApiKey(creationRequest, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **creationRequest** | [**ApiKeyCreationRequest**](ApiKeyCreationRequest.md)| API key to be created. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -172,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -181,7 +184,7 @@ No authorization required
 
 <a name="deleteApiKey"></a>
 # **deleteApiKey**
-> ApiError deleteApiKey(key, opts)
+> ApiError deleteApiKey(key)
 
 Delete API key
 
@@ -190,15 +193,18 @@ Deletion of an API key.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
 var key = "key_example"; // String | The API key to delete.
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -207,7 +213,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteApiKey(key, opts, callback);
+apiInstance.deleteApiKey(key, callback);
 ```
 
 ### Parameters
@@ -215,8 +221,6 @@ apiInstance.deleteApiKey(key, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to delete. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -224,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -233,7 +237,7 @@ No authorization required
 
 <a name="getApiKey"></a>
 # **getApiKey**
-> ApiKeyPresentation getApiKey(key, opts)
+> ApiKeyPresentation getApiKey(key)
 
 Show API key
 
@@ -242,15 +246,18 @@ Showing the details of an API key.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
 var key = "key_example"; // String | The API key to show.
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -259,7 +266,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getApiKey(key, opts, callback);
+apiInstance.getApiKey(key, callback);
 ```
 
 ### Parameters
@@ -267,8 +274,6 @@ apiInstance.getApiKey(key, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to show. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -276,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -294,12 +299,17 @@ Listing all possible API key privileges.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'id4nConcerning': true, // Boolean | id4nConcerning
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
@@ -319,8 +329,6 @@ apiInstance.listAllApiKeyPrivileges(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **id4nConcerning** | **Boolean**| id4nConcerning | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -331,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -349,14 +357,19 @@ Finding all API key assigned to the specified organization in a paginated manner
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
 var organizationId = 789; // Number | The id of the organization to search in.
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -376,8 +389,6 @@ apiInstance.listAllApiKeysOfOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The id of the organization to search in. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -387,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -403,14 +414,19 @@ List privileges
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
 var key = "key_example"; // String | key
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -430,8 +446,6 @@ apiInstance.listApiKeyPrivileges(key, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -441,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -459,6 +473,13 @@ Listing ID4ns of a id4n concerning privilege
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
@@ -467,8 +488,6 @@ var key = "key_example"; // String | key
 var privilege = "privilege_example"; // String | privilege
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -489,8 +508,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key | 
  **privilege** | **String**| privilege | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -500,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -509,13 +526,20 @@ No authorization required
 
 <a name="removeApiKeyPrivilege"></a>
 # **removeApiKeyPrivilege**
-> ApiError removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, opts)
+> ApiError removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest)
 
 Remove privilege
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
@@ -523,10 +547,6 @@ var key = "key_example"; // String | key
 
 var removeApiKeyPrivilegeRequest = new Id4iApi.RemoveApiKeyPrivilegeRequest(); // RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -535,7 +555,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, opts, callback);
+apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, callback);
 ```
 
 ### Parameters
@@ -544,8 +564,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key | 
  **removeApiKeyPrivilegeRequest** | [**RemoveApiKeyPrivilegeRequest**](RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -553,7 +571,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -562,13 +580,20 @@ No authorization required
 
 <a name="removeApiKeyPrivilegeForId4ns"></a>
 # **removeApiKeyPrivilegeForId4ns**
-> ApiError removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts)
+> ApiError removeApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Remove id4ns of a privilege
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
@@ -578,10 +603,6 @@ var privilege = "privilege_example"; // String | privilege
 
 var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -590,7 +611,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, opts, callback);
+apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, callback);
 ```
 
 ### Parameters
@@ -600,8 +621,6 @@ Name | Type | Description  | Notes
  **key** | **String**| key | 
  **privilege** | **String**| privilege | 
  **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -609,7 +628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -618,7 +637,7 @@ No authorization required
 
 <a name="updateApiKey"></a>
 # **updateApiKey**
-> ApiError updateApiKey(key, apiKeyChange, opts)
+> ApiError updateApiKey(key, apiKeyChange)
 
 Update API keys
 
@@ -627,6 +646,13 @@ API keys can be updated with new labels, and be activated and deactivated. The s
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
@@ -634,10 +660,6 @@ var key = "key_example"; // String | The API key to be updated.
 
 var apiKeyChange = new Id4iApi.ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -646,7 +668,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateApiKey(key, apiKeyChange, opts, callback);
+apiInstance.updateApiKey(key, apiKeyChange, callback);
 ```
 
 ### Parameters
@@ -655,8 +677,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to be updated. | 
  **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -664,7 +684,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

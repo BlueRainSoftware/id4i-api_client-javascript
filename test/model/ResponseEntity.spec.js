@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.AddApiKeyPrivilegeRequest();
+    instance = new Id4iApi.ResponseEntity();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,28 @@
       object[property] = value;
   }
 
-  describe('AddApiKeyPrivilegeRequest', function() {
-    it('should create an instance of AddApiKeyPrivilegeRequest', function() {
-      // uncomment below and update the code to test AddApiKeyPrivilegeRequest
-      //var instane = new Id4iApi.AddApiKeyPrivilegeRequest();
-      //expect(instance).to.be.a(Id4iApi.AddApiKeyPrivilegeRequest);
+  describe('ResponseEntity', function() {
+    it('should create an instance of ResponseEntity', function() {
+      // uncomment below and update the code to test ResponseEntity
+      //var instane = new Id4iApi.ResponseEntity();
+      //expect(instance).to.be.a(Id4iApi.ResponseEntity);
     });
 
-    it('should have the property privilege (base name: "privilege")', function() {
-      // uncomment below and update the code to test the property privilege
-      //var instane = new Id4iApi.AddApiKeyPrivilegeRequest();
+    it('should have the property body (base name: "body")', function() {
+      // uncomment below and update the code to test the property body
+      //var instane = new Id4iApi.ResponseEntity();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property statusCode (base name: "statusCode")', function() {
+      // uncomment below and update the code to test the property statusCode
+      //var instane = new Id4iApi.ResponseEntity();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property statusCodeValue (base name: "statusCodeValue")', function() {
+      // uncomment below and update the code to test the property statusCodeValue
+      //var instane = new Id4iApi.ResponseEntity();
       //expect(instance).to.be();
     });
 

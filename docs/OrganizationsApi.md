@@ -28,13 +28,20 @@ Method | HTTP request | Description
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
-> ApiError addUserRoles(organizationId, username, changeRoleRequest, opts)
+> ApiError addUserRoles(organizationId, username, changeRoleRequest)
 
 Add role(s) to user
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
@@ -44,10 +51,6 @@ var username = "username_example"; // String | username
 
 var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -56,7 +59,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addUserRoles(organizationId, username, changeRoleRequest, opts, callback);
+apiInstance.addUserRoles(organizationId, username, changeRoleRequest, callback);
 ```
 
 ### Parameters
@@ -66,8 +69,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **username** | **String**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -84,7 +85,7 @@ No authorization required
 
 <a name="createOrganization"></a>
 # **createOrganization**
-> Organization createOrganization(organization, opts)
+> Organization createOrganization(organization)
 
 Create organization
 
@@ -93,15 +94,18 @@ Creating a new organization.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organization = new Id4iApi.Organization(); // Organization | Organization to be created
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -110,7 +114,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createOrganization(organization, opts, callback);
+apiInstance.createOrganization(organization, callback);
 ```
 
 ### Parameters
@@ -118,8 +122,6 @@ apiInstance.createOrganization(organization, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | [**Organization**](Organization.md)| Organization to be created | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -127,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -136,22 +138,25 @@ No authorization required
 
 <a name="deleteOrganization"></a>
 # **deleteOrganization**
-> ApiError deleteOrganization(organizationId, opts)
+> ApiError deleteOrganization(organizationId)
 
 Delete organization
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | The id of the organization to be deleted.
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -160,7 +165,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteOrganization(organizationId, opts, callback);
+apiInstance.deleteOrganization(organizationId, callback);
 ```
 
 ### Parameters
@@ -168,8 +173,6 @@ apiInstance.deleteOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The id of the organization to be deleted. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -177,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -186,22 +189,25 @@ No authorization required
 
 <a name="deleteOrganizationBillingAddress"></a>
 # **deleteOrganizationBillingAddress**
-> ApiError deleteOrganizationBillingAddress(organizationId, opts)
+> ApiError deleteOrganizationBillingAddress(organizationId)
 
 Remove billing address
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | organizationId
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -210,7 +216,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteOrganizationBillingAddress(organizationId, opts, callback);
+apiInstance.deleteOrganizationBillingAddress(organizationId, callback);
 ```
 
 ### Parameters
@@ -218,8 +224,6 @@ apiInstance.deleteOrganizationBillingAddress(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -227,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -236,22 +240,25 @@ No authorization required
 
 <a name="deleteOrganizationLogo"></a>
 # **deleteOrganizationLogo**
-> ApiError deleteOrganizationLogo(organizationId, opts)
+> ApiError deleteOrganizationLogo(organizationId)
 
 Delete organization logo
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | The id of the organization where the logo should be deleted.
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -260,7 +267,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteOrganizationLogo(organizationId, opts, callback);
+apiInstance.deleteOrganizationLogo(organizationId, callback);
 ```
 
 ### Parameters
@@ -268,8 +275,6 @@ apiInstance.deleteOrganizationLogo(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The id of the organization where the logo should be deleted. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -277,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -286,7 +291,7 @@ No authorization required
 
 <a name="findOrganization"></a>
 # **findOrganization**
-> Organization findOrganization(organizationId, opts)
+> Organization findOrganization(organizationId)
 
 Find organization by id
 
@@ -295,15 +300,18 @@ Returns a single organization.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | The id of the organization to be retrieved.
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -312,7 +320,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findOrganization(organizationId, opts, callback);
+apiInstance.findOrganization(organizationId, callback);
 ```
 
 ### Parameters
@@ -320,8 +328,6 @@ apiInstance.findOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The id of the organization to be retrieved. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -329,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -338,22 +344,25 @@ No authorization required
 
 <a name="findOrganizationAddress"></a>
 # **findOrganizationAddress**
-> OrganizationAddress findOrganizationAddress(organizationId, opts)
+> OrganizationAddress findOrganizationAddress(organizationId)
 
 Retrieve address
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | organizationId
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -362,7 +371,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findOrganizationAddress(organizationId, opts, callback);
+apiInstance.findOrganizationAddress(organizationId, callback);
 ```
 
 ### Parameters
@@ -370,8 +379,6 @@ apiInstance.findOrganizationAddress(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -379,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -388,22 +395,25 @@ No authorization required
 
 <a name="findOrganizationBillingAddress"></a>
 # **findOrganizationBillingAddress**
-> OrganizationAddress findOrganizationBillingAddress(organizationId, opts)
+> OrganizationAddress findOrganizationBillingAddress(organizationId)
 
 Retrieve billing address
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | organizationId
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -412,7 +422,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findOrganizationBillingAddress(organizationId, opts, callback);
+apiInstance.findOrganizationBillingAddress(organizationId, callback);
 ```
 
 ### Parameters
@@ -420,8 +430,6 @@ apiInstance.findOrganizationBillingAddress(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -429,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -447,14 +455,19 @@ Retrieving all collections of an organization in a paginated manner.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | organizationId
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56, // Number | The maximum count of returned elements
   'type': "type_example", // String | Filter by this type
@@ -477,8 +490,6 @@ apiInstance.getAllCollectionsOfOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
  **type** | **String**| Filter by this type | [optional] 
@@ -491,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -509,14 +520,19 @@ Listing users and their roles in a paginated manner.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | organizationId
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -536,8 +552,6 @@ apiInstance.getAllOrganizationRoles(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -547,7 +561,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -563,12 +577,17 @@ Retrieve organizations of user
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'role': "role_example", // String | role
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
@@ -588,8 +607,6 @@ apiInstance.getOrganizationsOfUser(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **role** | **String**| role | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -600,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -616,6 +633,13 @@ Get user roles by username
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
@@ -624,8 +648,6 @@ var organizationId = 789; // Number | organizationId
 var username = "username_example"; // String | username
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -646,8 +668,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **username** | **String**| username | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -657,7 +677,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -675,14 +695,19 @@ Finding users in the specified organization in a paginated manner.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var organizationId = 789; // Number | organizationId
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -702,8 +727,6 @@ apiInstance.getUsersOfOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -713,7 +736,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -722,13 +745,20 @@ No authorization required
 
 <a name="inviteUsers"></a>
 # **inviteUsers**
-> ApiError inviteUsers(organizationId, invitationList, opts)
+> ApiError inviteUsers(organizationId, invitationList)
 
 Invite Users
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
@@ -736,10 +766,6 @@ var organizationId = 789; // Number | organizationId
 
 var invitationList = new Id4iApi.OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -748,7 +774,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.inviteUsers(organizationId, invitationList, opts, callback);
+apiInstance.inviteUsers(organizationId, invitationList, callback);
 ```
 
 ### Parameters
@@ -757,8 +783,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -766,7 +790,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -782,12 +806,17 @@ List countries
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
 var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example", // String | Requested language
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -806,8 +835,6 @@ apiInstance.listCountries(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -817,7 +844,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -826,13 +853,20 @@ No authorization required
 
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
-> ApiError removeUserRoles(organizationId, username, changeRoleRequest, opts)
+> ApiError removeUserRoles(organizationId, username, changeRoleRequest)
 
 Remove role(s) from user
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
@@ -842,10 +876,6 @@ var username = "username_example"; // String | username
 
 var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -854,7 +884,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, opts, callback);
+apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, callback);
 ```
 
 ### Parameters
@@ -864,8 +894,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Number**| organizationId | 
  **username** | **String**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -873,7 +901,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -882,7 +910,7 @@ No authorization required
 
 <a name="setOrganizationLogo"></a>
 # **setOrganizationLogo**
-> PublicImagePresentation setOrganizationLogo(organizationId, file, opts)
+> PublicImagePresentation setOrganizationLogo(organizationId, file)
 
 Update organization logo
 
@@ -891,6 +919,13 @@ Updating an organization logo using a multipart file upload.
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
@@ -898,10 +933,6 @@ var organizationId = 789; // Number | The id of the organization where the logo 
 
 var file = "/path/to/file.txt"; // File | An image containing the new logo.
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -910,7 +941,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.setOrganizationLogo(organizationId, file, opts, callback);
+apiInstance.setOrganizationLogo(organizationId, file, callback);
 ```
 
 ### Parameters
@@ -919,8 +950,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The id of the organization where the logo should be updated. | 
  **file** | **File**| An image containing the new logo. | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -928,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -937,13 +966,20 @@ No authorization required
 
 <a name="updateOrganization"></a>
 # **updateOrganization**
-> Organization updateOrganization(organizationId, organization, opts)
+> Organization updateOrganization(organizationId, organization)
 
 Update organization
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
@@ -951,10 +987,6 @@ var organizationId = 789; // Number | The id of the organization to be updated.
 
 var organization = new Id4iApi.Organization(); // Organization | Updated organization object
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -963,7 +995,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateOrganization(organizationId, organization, opts, callback);
+apiInstance.updateOrganization(organizationId, organization, callback);
 ```
 
 ### Parameters
@@ -972,8 +1004,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The id of the organization to be updated. | 
  **organization** | [**Organization**](Organization.md)| Updated organization object | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -981,7 +1011,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -990,13 +1020,20 @@ No authorization required
 
 <a name="updateOrganizationAddress"></a>
 # **updateOrganizationAddress**
-> OrganizationAddress updateOrganizationAddress(organizationId, addressResource, opts)
+> OrganizationAddress updateOrganizationAddress(organizationId, addressResource)
 
 Store address
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
@@ -1004,10 +1041,6 @@ var organizationId = 789; // Number | organizationId
 
 var addressResource = new Id4iApi.OrganizationAddress(); // OrganizationAddress | addressResource
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1016,7 +1049,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateOrganizationAddress(organizationId, addressResource, opts, callback);
+apiInstance.updateOrganizationAddress(organizationId, addressResource, callback);
 ```
 
 ### Parameters
@@ -1025,8 +1058,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1034,7 +1065,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1043,13 +1074,20 @@ No authorization required
 
 <a name="updateOrganizationBillingAddress"></a>
 # **updateOrganizationBillingAddress**
-> OrganizationAddress updateOrganizationBillingAddress(organizationId, addressResource, opts)
+> OrganizationAddress updateOrganizationBillingAddress(organizationId, addressResource)
 
 Store billing address
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
@@ -1057,10 +1095,6 @@ var organizationId = 789; // Number | organizationId
 
 var addressResource = new Id4iApi.OrganizationAddress(); // OrganizationAddress | addressResource
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1069,7 +1103,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, opts, callback);
+apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, callback);
 ```
 
 ### Parameters
@@ -1078,8 +1112,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| organizationId | 
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -1087,7 +1119,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

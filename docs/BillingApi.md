@@ -9,22 +9,25 @@ Method | HTTP request | Description
 
 <a name="getSumForOrganization"></a>
 # **getSumForOrganization**
-> ServiceCosts getSumForOrganization(organizationId, opts)
+> ServiceCosts getSumForOrganization(organizationId)
 
 Get billing amount of services for a given organization
 
 ### Example
 ```javascript
 var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
 
 var apiInstance = new Id4iApi.BillingApi();
 
 var organizationId = 789; // Number | The organization to compute the billing information for
 
-var opts = { 
-  'authorization': "authorization_example", // String | Authorization JWT Bearer Token
-  'acceptLanguage': "acceptLanguage_example" // String | Requested language
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -33,7 +36,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSumForOrganization(organizationId, opts, callback);
+apiInstance.getSumForOrganization(organizationId, callback);
 ```
 
 ### Parameters
@@ -41,8 +44,6 @@ apiInstance.getSumForOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The organization to compute the billing information for | 
- **authorization** | **String**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **String**| Requested language | [optional] 
 
 ### Return type
 
@@ -50,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
