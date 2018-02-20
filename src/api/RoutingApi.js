@@ -63,6 +63,7 @@
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.privateRoutes privateRoutes
      * @param {Boolean} opts.publicRoutes publicRoutes
+     * @param {Boolean} opts.interpolate interpolate
      * @param {module:api/RoutingApi~getRouteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Route}
      */
@@ -87,7 +88,8 @@
       };
       var queryParams = {
         'privateRoutes': opts['privateRoutes'],
-        'publicRoutes': opts['publicRoutes']
+        'publicRoutes': opts['publicRoutes'],
+        'interpolate': opts['interpolate']
       };
       var headerParams = {
       };
