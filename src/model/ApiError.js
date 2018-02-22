@@ -271,6 +271,11 @@
      */
     "IMAGE_CONVERSION": "ERR_IMAGE_CONVERSION",
     /**
+     * value: "ERR_UPLOAD_TOO_LARGE"
+     * @const
+     */
+    "UPLOAD_TOO_LARGE": "ERR_UPLOAD_TOO_LARGE",
+    /**
      * value: "ERR_INVALID_ALIAS_TYPE"
      * @const
      */

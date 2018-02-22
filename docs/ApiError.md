@@ -79,6 +79,8 @@ Name | Type | Description | Notes
 
 * `IMAGE_CONVERSION` (value: `"ERR_IMAGE_CONVERSION"`)
 
+* `UPLOAD_TOO_LARGE` (value: `"ERR_UPLOAD_TOO_LARGE"`)
+
 * `INVALID_ALIAS_TYPE` (value: `"ERR_INVALID_ALIAS_TYPE"`)
 
 * `INVALID_URI_TEMPLATE` (value: `"ERR_INVALID_URI_TEMPLATE"`)
