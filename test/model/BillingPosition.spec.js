@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.BillingApi();
+    instance = new Id4iApi.BillingPosition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +50,37 @@
       object[property] = value;
   }
 
-  describe('BillingApi', function() {
-    describe('getPositionsForOrganization', function() {
-      it('should call getPositionsForOrganization successfully', function(done) {
-        //uncomment below and update the code to test getPositionsForOrganization
-        //instance.getPositionsForOrganization(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('BillingPosition', function() {
+    it('should create an instance of BillingPosition', function() {
+      // uncomment below and update the code to test BillingPosition
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be.a(Id4iApi.BillingPosition);
     });
-    describe('getSumForOrganization', function() {
-      it('should call getSumForOrganization successfully', function(done) {
-        //uncomment below and update the code to test getSumForOrganization
-        //instance.getSumForOrganization(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property count (base name: "count")', function() {
+      // uncomment below and update the code to test the property count
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be();
     });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property service (base name: "service")', function() {
+      // uncomment below and update the code to test the property service
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sum (base name: "sum")', function() {
+      // uncomment below and update the code to test the property sum
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
