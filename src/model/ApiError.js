@@ -294,7 +294,32 @@
      * value: "ERR_MODULE_NOT_ACTIVE"
      * @const
      */
-    "MODULE_NOT_ACTIVE": "ERR_MODULE_NOT_ACTIVE"  };
+    "MODULE_NOT_ACTIVE": "ERR_MODULE_NOT_ACTIVE",
+    /**
+     * value: "ERR_INSECURE_PASSWORD_LENGTH"
+     * @const
+     */
+    "INSECURE_PASSWORD_LENGTH": "ERR_INSECURE_PASSWORD_LENGTH",
+    /**
+     * value: "ERR_INSECURE_PASSWORD_CHARACTER_CLASSES"
+     * @const
+     */
+    "INSECURE_PASSWORD_CHARACTER_CLASSES": "ERR_INSECURE_PASSWORD_CHARACTER_CLASSES",
+    /**
+     * value: "ERR_INSECURE_PASSWORD_PATTERN"
+     * @const
+     */
+    "INSECURE_PASSWORD_PATTERN": "ERR_INSECURE_PASSWORD_PATTERN",
+    /**
+     * value: "ERR_INSECURE_PASSWORD_SAME"
+     * @const
+     */
+    "INSECURE_PASSWORD_SAME": "ERR_INSECURE_PASSWORD_SAME",
+    /**
+     * value: "ERR_INSECURE_PASSWORD_COMMON"
+     * @const
+     */
+    "INSECURE_PASSWORD_COMMON": "ERR_INSECURE_PASSWORD_COMMON"  };
 
 
   return exports;
