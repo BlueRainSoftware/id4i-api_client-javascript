@@ -1,6 +1,6 @@
 {
   "name": "id4i_api",
-  "version": "0.2.2",
+  "version": "0.2.3-SNAPSHOT",
   "description": "HTTP_API_Documentation_for_ID4i",
   "license": "Unlicense",
   "main": "src/index.js",
