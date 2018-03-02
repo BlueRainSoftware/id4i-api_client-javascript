@@ -34,7 +34,8 @@ var type = "type_example"; // String | The type of route you want to have
 
 var opts = { 
   'privateRoutes': true, // Boolean | privateRoutes
-  'publicRoutes': true // Boolean | publicRoutes
+  'publicRoutes': true, // Boolean | publicRoutes
+  'interpolate': true // Boolean | interpolate
 };
 
 var callback = function(error, data, response) {
@@ -55,6 +56,7 @@ Name | Type | Description  | Notes
  **type** | **String**| The type of route you want to have | 
  **privateRoutes** | **Boolean**| privateRoutes | [optional] 
  **publicRoutes** | **Boolean**| publicRoutes | [optional] 
+ **interpolate** | **Boolean**| interpolate | [optional] 
 
 ### Return type
 

@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.CreateGuidRequest = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.BillingPosition = factory(root.Id4iApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,34 +35,35 @@
 
 
   /**
-   * The CreateGuidRequest model module.
-   * @module model/CreateGuidRequest
+   * The BillingPosition model module.
+   * @module model/BillingPosition
    * @version 0.2.2
    */
 
   /**
-   * Constructs a new <code>CreateGuidRequest</code>.
-   * GUID creation information
-   * @alias module:model/CreateGuidRequest
+   * Constructs a new <code>BillingPosition</code>.
+   * @alias module:model/BillingPosition
    * @class
-   * @param count {Number} The total number of GUIDs to create
-   * @param length {Number} The charactersequence length of the GUID
-   * @param organizationId {Number} The id of the organization where the generated GUIDs should be assigned.
+   * @param count {Number} 
+   * @param description {String} 
+   * @param service {String} 
+   * @param sum {Number} 
    */
-  var exports = function(count, length, organizationId) {
+  var exports = function(count, description, service, sum) {
     var _this = this;
 
     _this['count'] = count;
-    _this['length'] = length;
-    _this['organizationId'] = organizationId;
+    _this['description'] = description;
+    _this['service'] = service;
+    _this['sum'] = sum;
   };
 
   /**
-   * Constructs a <code>CreateGuidRequest</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>BillingPosition</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CreateGuidRequest} obj Optional instance to populate.
-   * @return {module:model/CreateGuidRequest} The populated <code>CreateGuidRequest</code> instance.
+   * @param {module:model/BillingPosition} obj Optional instance to populate.
+   * @return {module:model/BillingPosition} The populated <code>BillingPosition</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -71,31 +72,35 @@
       if (data.hasOwnProperty('count')) {
         obj['count'] = ApiClient.convertToType(data['count'], 'Number');
       }
-      if (data.hasOwnProperty('length')) {
-        obj['length'] = ApiClient.convertToType(data['length'], 'Number');
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
+      if (data.hasOwnProperty('service')) {
+        obj['service'] = ApiClient.convertToType(data['service'], 'String');
+      }
+      if (data.hasOwnProperty('sum')) {
+        obj['sum'] = ApiClient.convertToType(data['sum'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * The total number of GUIDs to create
    * @member {Number} count
    */
   exports.prototype['count'] = undefined;
   /**
-   * The charactersequence length of the GUID
-   * @member {Number} length
+   * @member {String} description
    */
-  exports.prototype['length'] = undefined;
+  exports.prototype['description'] = undefined;
   /**
-   * The id of the organization where the generated GUIDs should be assigned.
-   * @member {Number} organizationId
+   * @member {String} service
    */
-  exports.prototype['organizationId'] = undefined;
+  exports.prototype['service'] = undefined;
+  /**
+   * @member {Number} sum
+   */
+  exports.prototype['sum'] = undefined;
 
 
 

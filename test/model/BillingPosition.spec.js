@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.GuidAlias();
+    instance = new Id4iApi.BillingPosition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,34 @@
       object[property] = value;
   }
 
-  describe('GuidAlias', function() {
-    it('should create an instance of GuidAlias', function() {
-      // uncomment below and update the code to test GuidAlias
-      //var instane = new Id4iApi.GuidAlias();
-      //expect(instance).to.be.a(Id4iApi.GuidAlias);
+  describe('BillingPosition', function() {
+    it('should create an instance of BillingPosition', function() {
+      // uncomment below and update the code to test BillingPosition
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be.a(Id4iApi.BillingPosition);
     });
 
-    it('should have the property alias (base name: "alias")', function() {
-      // uncomment below and update the code to test the property alias
-      //var instane = new Id4iApi.GuidAlias();
+    it('should have the property count (base name: "count")', function() {
+      // uncomment below and update the code to test the property count
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property service (base name: "service")', function() {
+      // uncomment below and update the code to test the property service
+      //var instane = new Id4iApi.BillingPosition();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sum (base name: "sum")', function() {
+      // uncomment below and update the code to test the property sum
+      //var instane = new Id4iApi.BillingPosition();
       //expect(instance).to.be();
     });
 
