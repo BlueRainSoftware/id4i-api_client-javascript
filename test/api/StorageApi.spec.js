@@ -51,16 +51,6 @@
   }
 
   describe('StorageApi', function() {
-    describe('createDocument', function() {
-      it('should call createDocument successfully', function(done) {
-        //uncomment below and update the code to test createDocument
-        //instance.createDocument(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteDocument', function() {
       it('should call deleteDocument successfully', function(done) {
         //uncomment below and update the code to test deleteDocument
@@ -161,20 +151,10 @@
         done();
       });
     });
-    describe('updateDocument', function() {
-      it('should call updateDocument successfully', function(done) {
-        //uncomment below and update the code to test updateDocument
-        //instance.updateDocument(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('writeDocument', function() {
-      it('should call writeDocument successfully', function(done) {
-        //uncomment below and update the code to test writeDocument
-        //instance.writeDocument(function(error) {
+    describe('updateDocumentMetadata', function() {
+      it('should call updateDocumentMetadata successfully', function(done) {
+        //uncomment below and update the code to test updateDocumentMetadata
+        //instance.updateDocumentMetadata(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

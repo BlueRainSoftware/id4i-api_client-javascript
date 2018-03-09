@@ -49,69 +49,6 @@
 
 
     /**
-     * Callback function to receive the result of the createDocument operation.
-     * @callback module:api/StorageApi~createDocumentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create an empty document for an id4n
-     * The document is created empty, mime-type defaults to text/plain
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {module:model/Document} document document
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.mimeType mimeType
-     * @param {module:api/StorageApi~createDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
-     */
-    this.createDocument = function(organizationId, id4n, document, opts, callback) {
-      opts = opts || {};
-      var postBody = document;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling createDocument");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling createDocument");
-      }
-
-      // verify the required parameter 'document' is set
-      if (document === undefined || document === null) {
-        throw new Error("Missing the required parameter 'document' when calling createDocument");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n
-      };
-      var queryParams = {
-        'mimeType': opts['mimeType']
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = Document;
-
-      return this.apiClient.callApi(
-        '/api/v1/documents/{id4n}/{organizationId}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the deleteDocument operation.
      * @callback module:api/StorageApi~deleteDocumentCallback
      * @param {String} error Error message, if any.
@@ -223,7 +160,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/documents/{id4n}/{organizationId}/{fileName}', 'GET',
+        '/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -282,7 +219,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}', 'GET',
+        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -516,7 +453,7 @@
      * Callback function to receive the result of the readDocument operation.
      * @callback module:api/StorageApi~readDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {File} data The data returned by the service call.
+     * @param {'Blob'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -526,7 +463,7 @@
      * @param {String} id4n id4n
      * @param {String} fileName fileName
      * @param {module:api/StorageApi~readDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link File}
+     * data is of type: {@link 'Blob'}
      */
     this.readDocument = function(organizationId, id4n, fileName, callback) {
       var postBody = null;
@@ -562,10 +499,10 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = File;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
-        '/api/v1/documents/{id4n}/{organizationId}/{fileName}/content', 'GET',
+        '/api/v1/documents/{id4n}/{organizationId}/{fileName}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -575,7 +512,7 @@
      * Callback function to receive the result of the readFromMicrostorage operation.
      * @callback module:api/StorageApi~readFromMicrostorageCallback
      * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
+     * @param {'Blob'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -584,7 +521,7 @@
      * @param {Number} organization organization
      * @param {String} id4n id4n
      * @param {module:api/StorageApi~readFromMicrostorageCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * data is of type: {@link 'Blob'}
      */
     this.readFromMicrostorage = function(organization, id4n, callback) {
       var postBody = null;
@@ -614,7 +551,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = 'String';
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/api/v1/microstorage/{id4n}/{organization}', 'GET',
@@ -627,7 +564,7 @@
      * Callback function to receive the result of the readPublicDocument operation.
      * @callback module:api/StorageApi~readPublicDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {File} data The data returned by the service call.
+     * @param {'Blob'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -637,7 +574,7 @@
      * @param {String} id4n id4n
      * @param {String} fileName fileName
      * @param {module:api/StorageApi~readPublicDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link File}
+     * data is of type: {@link 'Blob'}
      */
     this.readPublicDocument = function(organizationId, id4n, fileName, callback) {
       var postBody = null;
@@ -673,18 +610,18 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = File;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
-        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content', 'GET',
+        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the updateDocument operation.
-     * @callback module:api/StorageApi~updateDocumentCallback
+     * Callback function to receive the result of the updateDocumentMetadata operation.
+     * @callback module:api/StorageApi~updateDocumentMetadataCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Document} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -696,30 +633,30 @@
      * @param {String} id4n id4n
      * @param {String} fileName fileName
      * @param {module:model/DocumentUpdate} document document
-     * @param {module:api/StorageApi~updateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/StorageApi~updateDocumentMetadataCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Document}
      */
-    this.updateDocument = function(organizationId, id4n, fileName, document, callback) {
+    this.updateDocumentMetadata = function(organizationId, id4n, fileName, document, callback) {
       var postBody = document;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateDocument");
+        throw new Error("Missing the required parameter 'organizationId' when calling updateDocumentMetadata");
       }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling updateDocument");
+        throw new Error("Missing the required parameter 'id4n' when calling updateDocumentMetadata");
       }
 
       // verify the required parameter 'fileName' is set
       if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling updateDocument");
+        throw new Error("Missing the required parameter 'fileName' when calling updateDocumentMetadata");
       }
 
       // verify the required parameter 'document' is set
       if (document === undefined || document === null) {
-        throw new Error("Missing the required parameter 'document' when calling updateDocument");
+        throw new Error("Missing the required parameter 'document' when calling updateDocumentMetadata");
       }
 
 
@@ -748,77 +685,6 @@
     }
 
     /**
-     * Callback function to receive the result of the writeDocument operation.
-     * @callback module:api/StorageApi~writeDocumentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Write document contents
-     * @param {Number} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {String} fileName fileName
-     * @param {File} body binary data
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.contentType Content-Type
-     * @param {Number} opts.contentLength Content-Length
-     * @param {module:api/StorageApi~writeDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResponseEntity}
-     */
-    this.writeDocument = function(organizationId, id4n, fileName, body, opts, callback) {
-      opts = opts || {};
-      var postBody = body;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling writeDocument");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling writeDocument");
-      }
-
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling writeDocument");
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling writeDocument");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n,
-        'fileName': fileName
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Content-Type': opts['contentType'],
-        'Content-Length': opts['contentLength']
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['*/*'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = ResponseEntity;
-
-      return this.apiClient.callApi(
-        '/api/v1/documents/{id4n}/{organizationId}/{fileName}/content', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the writeToMicrostorage operation.
      * @callback module:api/StorageApi~writeToMicrostorageCallback
      * @param {String} error Error message, if any.
@@ -830,7 +696,7 @@
      * Write data to microstorage
      * @param {Number} organization organization
      * @param {String} id4n id4n
-     * @param {String} body binary data
+     * @param {String} body 
      * @param {Object} opts Optional parameters
      * @param {String} opts.contentType Content-Type
      * @param {Number} opts.contentLength Content-Length

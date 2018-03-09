@@ -101,7 +101,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}', 'GET',
+        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -270,7 +270,7 @@
      * Callback function to receive the result of the readPublicDocument operation.
      * @callback module:api/PublicServicesApi~readPublicDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {File} data The data returned by the service call.
+     * @param {'Blob'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -280,7 +280,7 @@
      * @param {String} id4n id4n
      * @param {String} fileName fileName
      * @param {module:api/PublicServicesApi~readPublicDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link File}
+     * data is of type: {@link 'Blob'}
      */
     this.readPublicDocument = function(organizationId, id4n, fileName, callback) {
       var postBody = null;
@@ -316,10 +316,10 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
       var accepts = ['application/xml', 'application/json;charset=UTF-8'];
-      var returnType = File;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
-        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content', 'GET',
+        '/api/v1/public/documents/{id4n}/{organizationId}/{fileName}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
