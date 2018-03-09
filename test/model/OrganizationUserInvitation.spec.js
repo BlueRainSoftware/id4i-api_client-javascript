@@ -63,14 +63,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property userName (base name: "userName")', function() {
-      // uncomment below and update the code to test the property userName
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
       //var instane = new Id4iApi.OrganizationUserInvitation();
       //expect(instance).to.be();
     });
 
-    it('should have the property roles (base name: "roles")', function() {
-      // uncomment below and update the code to test the property roles
+    it('should have the property userName (base name: "userName")', function() {
+      // uncomment below and update the code to test the property userName
       //var instane = new Id4iApi.OrganizationUserInvitation();
       //expect(instance).to.be();
     });

@@ -44,11 +44,12 @@
    * Constructs a new <code>PasswordResetRequest</code>.
    * @alias module:model/PasswordResetRequest
    * @class
+   * @param username {String} 
    */
-  var exports = function() {
+  var exports = function(username) {
     var _this = this;
 
-
+    _this['username'] = username;
   };
 
   /**

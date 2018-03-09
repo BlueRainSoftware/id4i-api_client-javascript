@@ -63,14 +63,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property secret (base name: "secret")', function() {
-      // uncomment below and update the code to test the property secret
+    it('should have the property organizationId (base name: "organizationId")', function() {
+      // uncomment below and update the code to test the property organizationId
       //var instane = new Id4iApi.ApiKeyCreationRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
+    it('should have the property secret (base name: "secret")', function() {
+      // uncomment below and update the code to test the property secret
       //var instane = new Id4iApi.ApiKeyCreationRequest();
       //expect(instance).to.be();
     });

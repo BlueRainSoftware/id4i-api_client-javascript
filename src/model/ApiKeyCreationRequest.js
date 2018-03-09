@@ -45,15 +45,15 @@
    * @alias module:model/ApiKeyCreationRequest
    * @class
    * @param label {String} 
-   * @param secret {String} 
    * @param organizationId {Number} 
+   * @param secret {String} 
    */
-  var exports = function(label, secret, organizationId) {
+  var exports = function(label, organizationId, secret) {
     var _this = this;
 
     _this['label'] = label;
-    _this['secret'] = secret;
     _this['organizationId'] = organizationId;
+    _this['secret'] = secret;
   };
 
   /**
@@ -70,11 +70,11 @@
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
       }
-      if (data.hasOwnProperty('secret')) {
-        obj['secret'] = ApiClient.convertToType(data['secret'], 'String');
-      }
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
+      }
+      if (data.hasOwnProperty('secret')) {
+        obj['secret'] = ApiClient.convertToType(data['secret'], 'String');
       }
     }
     return obj;
@@ -85,13 +85,13 @@
    */
   exports.prototype['label'] = undefined;
   /**
-   * @member {String} secret
-   */
-  exports.prototype['secret'] = undefined;
-  /**
    * @member {Number} organizationId
    */
   exports.prototype['organizationId'] = undefined;
+  /**
+   * @member {String} secret
+   */
+  exports.prototype['secret'] = undefined;
 
 
 

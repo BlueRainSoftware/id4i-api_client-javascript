@@ -57,14 +57,14 @@
       //expect(instance).to.be.a(Id4iApi.RoutingFileRequest);
     });
 
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
+    it('should have the property organizationId (base name: "organizationId")', function() {
+      // uncomment below and update the code to test the property organizationId
       //var instane = new Id4iApi.RoutingFileRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
+    it('should have the property routing (base name: "routing")', function() {
+      // uncomment below and update the code to test the property routing
       //var instane = new Id4iApi.RoutingFileRequest();
       //expect(instance).to.be();
     });

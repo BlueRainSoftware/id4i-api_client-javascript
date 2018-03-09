@@ -49,8 +49,8 @@
   var exports = function(routing) {
     var _this = this;
 
-    _this['routing'] = routing;
 
+    _this['routing'] = routing;
   };
 
   /**
@@ -64,24 +64,24 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('routing')) {
-        obj['routing'] = RoutingFile.constructFromObject(data['routing']);
-      }
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
+      }
+      if (data.hasOwnProperty('routing')) {
+        obj['routing'] = RoutingFile.constructFromObject(data['routing']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/RoutingFile} routing
-   */
-  exports.prototype['routing'] = undefined;
-  /**
    * @member {Number} organizationId
    */
   exports.prototype['organizationId'] = undefined;
+  /**
+   * @member {module:model/RoutingFile} routing
+   */
+  exports.prototype['routing'] = undefined;
 
 
 
