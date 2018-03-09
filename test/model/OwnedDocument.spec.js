@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property mimeType (base name: "mimeType")', function() {
+      // uncomment below and update the code to test the property mimeType
+      //var instane = new Id4iApi.OwnedDocument();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ownerOrganizationId (base name: "ownerOrganizationId")', function() {
       // uncomment below and update the code to test the property ownerOrganizationId
       //var instane = new Id4iApi.OwnedDocument();

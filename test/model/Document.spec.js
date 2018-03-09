@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property mimeType (base name: "mimeType")', function() {
+      // uncomment below and update the code to test the property mimeType
+      //var instane = new Id4iApi.Document();
+      //expect(instance).to.be();
+    });
+
     it('should have the property visibility (base name: "visibility")', function() {
       // uncomment below and update the code to test the property visibility
       //var instane = new Id4iApi.Document();

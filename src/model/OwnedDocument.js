@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -67,6 +68,9 @@
       if (data.hasOwnProperty('filename')) {
         obj['filename'] = ApiClient.convertToType(data['filename'], 'String');
       }
+      if (data.hasOwnProperty('mimeType')) {
+        obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
+      }
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
       }
@@ -78,9 +82,15 @@
   }
 
   /**
+   * File Name
    * @member {String} filename
    */
   exports.prototype['filename'] = undefined;
+  /**
+   * Mime Type
+   * @member {String} mimeType
+   */
+  exports.prototype['mimeType'] = undefined;
   /**
    * The organization's id which owns the document
    * @member {Number} ownerOrganizationId

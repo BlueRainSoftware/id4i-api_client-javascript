@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -66,6 +67,9 @@
       if (data.hasOwnProperty('filename')) {
         obj['filename'] = ApiClient.convertToType(data['filename'], 'String');
       }
+      if (data.hasOwnProperty('mimeType')) {
+        obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
+      }
       if (data.hasOwnProperty('visibility')) {
         obj['visibility'] = VisibilityUpdate.constructFromObject(data['visibility']);
       }
@@ -74,9 +78,15 @@
   }
 
   /**
+   * File Name
    * @member {String} filename
    */
   exports.prototype['filename'] = undefined;
+  /**
+   * Mime Type
+   * @member {String} mimeType
+   */
+  exports.prototype['mimeType'] = undefined;
   /**
    * Visibility configuration
    * @member {module:model/VisibilityUpdate} visibility
