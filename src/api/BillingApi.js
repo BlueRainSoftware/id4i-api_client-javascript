@@ -59,10 +59,14 @@
     /**
      * Get billing positions for a given organization
      * @param {Number} organizationId The organization to compute the billing information for
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.fromDate Billing start date
+     * @param {Date} opts.toDate Billing end date
      * @param {module:api/BillingApi~getPositionsForOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/BillingPosition>}
      */
-    this.getPositionsForOrganization = function(organizationId, callback) {
+    this.getPositionsForOrganization = function(organizationId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
@@ -75,6 +79,8 @@
         'organizationId': organizationId
       };
       var queryParams = {
+        'fromDate': opts['fromDate'],
+        'toDate': opts['toDate']
       };
       var headerParams = {
       };
@@ -104,10 +110,14 @@
     /**
      * Get billing amount of services for a given organization
      * @param {Number} organizationId The organization to compute the billing information for
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.fromDate Billing start date
+     * @param {Date} opts.toDate Billing end date
      * @param {module:api/BillingApi~getSumForOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ServiceCosts}
      */
-    this.getSumForOrganization = function(organizationId, callback) {
+    this.getSumForOrganization = function(organizationId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
@@ -120,6 +130,8 @@
         'organizationId': organizationId
       };
       var queryParams = {
+        'fromDate': opts['fromDate'],
+        'toDate': opts['toDate']
       };
       var headerParams = {
       };
