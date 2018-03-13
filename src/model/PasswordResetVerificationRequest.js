@@ -44,12 +44,14 @@
    * Constructs a new <code>PasswordResetVerificationRequest</code>.
    * @alias module:model/PasswordResetVerificationRequest
    * @class
+   * @param password {String} 
+   * @param token {String} 
    */
-  var exports = function() {
+  var exports = function(password, token) {
     var _this = this;
 
-
-
+    _this['password'] = password;
+    _this['token'] = token;
   };
 
   /**
