@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getPositionsForOrganization"></a>
 # **getPositionsForOrganization**
-> [BillingPosition] getPositionsForOrganization(organizationId)
+> [BillingPosition] getPositionsForOrganization(organizationId, opts)
 
 Get billing positions for a given organization
 
@@ -29,6 +29,10 @@ var apiInstance = new Id4iApi.BillingApi();
 
 var organizationId = 789; // Number | The organization to compute the billing information for
 
+var opts = { 
+  'fromDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Billing start date
+  'toDate': new Date("2013-10-20T19:20:30+01:00") // Date | Billing end date
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -37,7 +41,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPositionsForOrganization(organizationId, callback);
+apiInstance.getPositionsForOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -45,6 +49,8 @@ apiInstance.getPositionsForOrganization(organizationId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The organization to compute the billing information for | 
+ **fromDate** | **Date**| Billing start date | [optional] 
+ **toDate** | **Date**| Billing end date | [optional] 
 
 ### Return type
 
@@ -56,12 +62,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getSumForOrganization"></a>
 # **getSumForOrganization**
-> ServiceCosts getSumForOrganization(organizationId)
+> ServiceCosts getSumForOrganization(organizationId, opts)
 
 Get billing amount of services for a given organization
 
@@ -80,6 +86,10 @@ var apiInstance = new Id4iApi.BillingApi();
 
 var organizationId = 789; // Number | The organization to compute the billing information for
 
+var opts = { 
+  'fromDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Billing start date
+  'toDate': new Date("2013-10-20T19:20:30+01:00") // Date | Billing end date
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -88,7 +98,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSumForOrganization(organizationId, callback);
+apiInstance.getSumForOrganization(organizationId, opts, callback);
 ```
 
 ### Parameters
@@ -96,6 +106,8 @@ apiInstance.getSumForOrganization(organizationId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Number**| The organization to compute the billing information for | 
+ **fromDate** | **Date**| Billing start date | [optional] 
+ **toDate** | **Date**| Billing end date | [optional] 
 
 ### Return type
 
@@ -107,6 +119,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 

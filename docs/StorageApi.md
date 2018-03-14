@@ -4,84 +4,19 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 [**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
-[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 [**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/documents/{id4n} | List documents
 [**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
 [**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
-[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
-[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
-[**updateDocument**](StorageApi.md#updateDocument) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
-[**writeDocument**](StorageApi.md#writeDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Write document contents
+[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
-
-<a name="createDocument"></a>
-# **createDocument**
-> Document createDocument(organizationId, id4n, document, opts)
-
-Create an empty document for an id4n
-
-The document is created empty, mime-type defaults to text/plain
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var document = new Id4iApi.Document(); // Document | document
-
-var opts = { 
-  'mimeType': "mimeType_example" // String | mimeType
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createDocument(organizationId, id4n, document, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **document** | [**Document**](Document.md)| document | 
- **mimeType** | **String**| mimeType | [optional] 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
@@ -137,8 +72,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getDocument"></a>
 # **getDocument**
@@ -194,8 +129,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getPublicDocument"></a>
 # **getPublicDocument**
@@ -251,8 +186,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllDocuments"></a>
 # **listAllDocuments**
@@ -310,8 +245,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
@@ -371,8 +306,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listDocuments"></a>
 # **listDocuments**
@@ -433,8 +368,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listPublicDocuments"></a>
 # **listPublicDocuments**
@@ -495,12 +430,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="readDocument"></a>
 # **readDocument**
-> File readDocument(organizationId, id4n, fileName)
+> &#39;Blob&#39; readDocument(organizationId, id4n, fileName)
 
 Read document contents
 
@@ -544,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -552,12 +487,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="readFromMicrostorage"></a>
 # **readFromMicrostorage**
-> &#39;String&#39; readFromMicrostorage(organization, id4n)
+> &#39;Blob&#39; readFromMicrostorage(organization, id4n)
 
 Read data from microstorage
 
@@ -598,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -606,12 +541,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> File readPublicDocument(organizationId, id4n, fileName)
+> &#39;Blob&#39; readPublicDocument(organizationId, id4n, fileName)
 
 Read document contents
 
@@ -655,7 +590,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -663,12 +598,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
-<a name="updateDocument"></a>
-# **updateDocument**
-> Document updateDocument(organizationId, id4n, fileName, document)
+<a name="updateDocumentMetadata"></a>
+# **updateDocumentMetadata**
+> Document updateDocumentMetadata(organizationId, id4n, fileName, document)
 
 Update a document
 
@@ -701,7 +636,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateDocument(organizationId, id4n, fileName, document, callback);
+apiInstance.updateDocumentMetadata(organizationId, id4n, fileName, document, callback);
 ```
 
 ### Parameters
@@ -723,74 +658,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="writeDocument"></a>
-# **writeDocument**
-> ResponseEntity writeDocument(organizationId, id4n, fileName, body, opts)
-
-Write document contents
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = 789; // Number | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var fileName = "fileName_example"; // String | fileName
-
-var body = "/path/to/file"; // File | binary data
-
-var opts = { 
-  'contentType': "contentType_example", // String | Content-Type
-  'contentLength': 789 // Number | Content-Length
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.writeDocument(organizationId, id4n, fileName, body, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
- **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
- **body** | [**File**](File.md)| binary data | 
- **contentType** | **String**| Content-Type | [optional] 
- **contentLength** | **Number**| Content-Length | [optional] 
-
-### Return type
-
-[**ResponseEntity**](ResponseEntity.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="writeToMicrostorage"></a>
 # **writeToMicrostorage**
@@ -815,7 +684,7 @@ var organization = 789; // Number | organization
 
 var id4n = "id4n_example"; // String | id4n
 
-var body = "body_example"; // String | binary data
+var body = "body_example"; // String | 
 
 var opts = { 
   'contentType': "contentType_example", // String | Content-Type
@@ -838,7 +707,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Number**| organization | 
  **id4n** | **String**| id4n | 
- **body** | **String**| binary data | 
+ **body** | **String**|  | 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 
 
@@ -853,5 +722,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json
 
