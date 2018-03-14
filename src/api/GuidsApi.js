@@ -97,8 +97,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = null;
 
       return this.apiClient.callApi(
@@ -144,8 +144,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = ListOfId4ns;
 
       return this.apiClient.callApi(
@@ -191,8 +191,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = Guid;
 
       return this.apiClient.callApi(
@@ -239,8 +239,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = {'String': 'String'};
 
       return this.apiClient.callApi(
@@ -292,8 +292,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = PaginatedResponseGuid;
 
       return this.apiClient.callApi(
@@ -340,8 +340,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = Id4nPresentation;
 
       return this.apiClient.callApi(
@@ -394,8 +394,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = null;
 
       return this.apiClient.callApi(
@@ -448,8 +448,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = Object;
 
       return this.apiClient.callApi(
@@ -502,8 +502,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = Object;
 
       return this.apiClient.callApi(

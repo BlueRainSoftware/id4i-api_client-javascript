@@ -67,8 +67,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="go"></a>
 # **go**
@@ -113,8 +113,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
@@ -174,8 +174,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listPublicDocuments"></a>
 # **listPublicDocuments**
@@ -236,8 +236,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
@@ -293,8 +293,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="resolveImageUsingGET"></a>
 # **resolveImageUsingGET**
@@ -344,8 +344,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="resolveWhoIsEntry"></a>
 # **resolveWhoIsEntry**
@@ -388,6 +388,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 

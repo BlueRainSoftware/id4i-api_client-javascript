@@ -90,8 +90,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = [BillingPosition];
 
       return this.apiClient.callApi(
@@ -143,8 +143,8 @@
       };
 
       var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json;charset=UTF-8'];
-      var accepts = ['application/xml', 'application/json;charset=UTF-8'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
       var returnType = ServiceCosts;
 
       return this.apiClient.callApi(

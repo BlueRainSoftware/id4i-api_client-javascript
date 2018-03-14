@@ -69,8 +69,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="addApiKeyPrivilegeForId4ns"></a>
 # **addApiKeyPrivilegeForId4ns**
@@ -126,8 +126,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="createNewApiKey"></a>
 # **createNewApiKey**
@@ -179,8 +179,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="deleteApiKey"></a>
 # **deleteApiKey**
@@ -232,8 +232,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getApiKey"></a>
 # **getApiKey**
@@ -285,8 +285,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllApiKeyPrivileges"></a>
 # **listAllApiKeyPrivileges**
@@ -343,8 +343,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllApiKeysOfOrganization"></a>
 # **listAllApiKeysOfOrganization**
@@ -402,8 +402,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listApiKeyPrivileges"></a>
 # **listApiKeyPrivileges**
@@ -459,8 +459,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listId4ns"></a>
 # **listId4ns**
@@ -521,8 +521,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="removeApiKeyPrivilege"></a>
 # **removeApiKeyPrivilege**
@@ -575,8 +575,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="removeApiKeyPrivilegeForId4ns"></a>
 # **removeApiKeyPrivilegeForId4ns**
@@ -632,8 +632,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="updateApiKey"></a>
 # **updateApiKey**
@@ -688,6 +688,6 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 

@@ -67,8 +67,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getGuidAliasTypes"></a>
 # **getGuidAliasTypes**
@@ -114,8 +114,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getGuidAliases"></a>
 # **getGuidAliases**
@@ -167,8 +167,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="removeGuidAlias"></a>
 # **removeGuidAlias**
@@ -223,8 +223,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="searchByAlias"></a>
 # **searchByAlias**
@@ -283,6 +283,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
