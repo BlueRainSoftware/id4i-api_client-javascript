@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addApiKeyPrivilege"></a>
 # **addApiKeyPrivilege**
-> ApiError addApiKeyPrivilege(key, addApiKeyPrivilegeRequest)
+> addApiKeyPrivilege(key, addApiKeyPrivilegeRequest)
 
 Add privilege
 
@@ -46,7 +46,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, callback);
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="addApiKeyPrivilegeForId4ns"></a>
 # **addApiKeyPrivilegeForId4ns**
-> ApiError addApiKeyPrivilegeForId4ns(key, privilege, id4ns)
+> addApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Add ID4ns of a privilege
 
@@ -102,7 +102,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, callback);
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteApiKey"></a>
 # **deleteApiKey**
-> ApiError deleteApiKey(key)
+> deleteApiKey(key)
 
 Delete API key
 
@@ -210,7 +210,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.deleteApiKey(key, callback);
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 <a name="removeApiKeyPrivilege"></a>
 # **removeApiKeyPrivilege**
-> ApiError removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest)
+> removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest)
 
 Remove privilege
 
@@ -552,7 +552,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, callback);
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 <a name="removeApiKeyPrivilegeForId4ns"></a>
 # **removeApiKeyPrivilegeForId4ns**
-> ApiError removeApiKeyPrivilegeForId4ns(key, privilege, id4ns)
+> removeApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Remove id4ns of a privilege
 
@@ -608,7 +608,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, callback);
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 
 <a name="updateApiKey"></a>
 # **updateApiKey**
-> ApiError updateApiKey(key, apiKeyChange)
+> updateApiKey(key, apiKeyChange)
 
 Update API keys
 
@@ -665,7 +665,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.updateApiKey(key, apiKeyChange, callback);
@@ -680,7 +680,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

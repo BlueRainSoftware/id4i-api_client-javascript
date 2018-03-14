@@ -40,7 +40,7 @@ Method | HTTP request | Description
 
 <a name="addElementsToCollection"></a>
 # **addElementsToCollection**
-> ApiError addElementsToCollection(id4n, listOfGuids)
+> addElementsToCollection(id4n, listOfGuids)
 
 Add elements to collection
 
@@ -66,7 +66,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addElementsToCollection(id4n, listOfGuids, callback);
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="addElementsToLabelledCollection"></a>
 # **addElementsToLabelledCollection**
-> ApiError addElementsToLabelledCollection(collectionId4n, listOfGuids)
+> addElementsToLabelledCollection(collectionId4n, listOfGuids)
 
 Add elements to labelled collection
 
@@ -120,7 +120,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addElementsToLabelledCollection(collectionId4n, listOfGuids, callback);
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 <a name="addElementsToLogisticCollection"></a>
 # **addElementsToLogisticCollection**
-> ApiError addElementsToLogisticCollection(collectionId4n, listOfGuids)
+> addElementsToLogisticCollection(collectionId4n, listOfGuids)
 
 Add elements to logistic collection
 
@@ -174,7 +174,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addElementsToLogisticCollection(collectionId4n, listOfGuids, callback);
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 <a name="addElementsToRoutingCollection"></a>
 # **addElementsToRoutingCollection**
-> ApiError addElementsToRoutingCollection(collectionId4n, listOfGuids)
+> addElementsToRoutingCollection(collectionId4n, listOfGuids)
 
 Add element to routing collection
 
@@ -228,7 +228,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addElementsToRoutingCollection(collectionId4n, listOfGuids, callback);
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCollection"></a>
 # **deleteCollection**
-> ApiError deleteCollection(id4n)
+> deleteCollection(id4n)
 
 Delete collection
 
@@ -433,7 +433,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.deleteCollection(id4n, callback);
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteLabelledCollection"></a>
 # **deleteLabelledCollection**
-> ApiError deleteLabelledCollection(id4n)
+> deleteLabelledCollection(id4n)
 
 Delete labelled collection
 
@@ -484,7 +484,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.deleteLabelledCollection(id4n, callback);
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteRoutingCollection"></a>
 # **deleteRoutingCollection**
-> ApiError deleteRoutingCollection(id4n)
+> deleteRoutingCollection(id4n)
 
 Delete routing collection
 
@@ -586,7 +586,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.deleteRoutingCollection(id4n, callback);
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -1110,7 +1110,7 @@ Name | Type | Description  | Notes
 
 <a name="removeElementsFromCollection"></a>
 # **removeElementsFromCollection**
-> ApiError removeElementsFromCollection(id4n, listOfGuids)
+> removeElementsFromCollection(id4n, listOfGuids)
 
 Remove elements from collection
 
@@ -1136,7 +1136,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.removeElementsFromCollection(id4n, listOfGuids, callback);
@@ -1151,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -1164,7 +1164,7 @@ Name | Type | Description  | Notes
 
 <a name="removeElementsFromLabelledCollection"></a>
 # **removeElementsFromLabelledCollection**
-> ApiError removeElementsFromLabelledCollection(collectionId4n, listOfGuids)
+> removeElementsFromLabelledCollection(collectionId4n, listOfGuids)
 
 Remove elements from labelled collection
 
@@ -1190,7 +1190,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.removeElementsFromLabelledCollection(collectionId4n, listOfGuids, callback);
@@ -1205,7 +1205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -1218,7 +1218,7 @@ Name | Type | Description  | Notes
 
 <a name="removeElementsFromLogisticCollection"></a>
 # **removeElementsFromLogisticCollection**
-> ApiError removeElementsFromLogisticCollection(collectionId4n, listOfGuids)
+> removeElementsFromLogisticCollection(collectionId4n, listOfGuids)
 
 Remove elements from logistic collection
 
@@ -1244,7 +1244,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids, callback);
@@ -1259,7 +1259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -1272,7 +1272,7 @@ Name | Type | Description  | Notes
 
 <a name="removeElementsFromRoutingCollection"></a>
 # **removeElementsFromRoutingCollection**
-> ApiError removeElementsFromRoutingCollection(collectionId4n, listOfGuids)
+> removeElementsFromRoutingCollection(collectionId4n, listOfGuids)
 
 Remove elements from routing collection
 
@@ -1298,7 +1298,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.removeElementsFromRoutingCollection(collectionId4n, listOfGuids, callback);
@@ -1313,7 +1313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

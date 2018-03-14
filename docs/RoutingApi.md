@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRoutingFile"></a>
 # **updateRoutingFile**
-> ApiError updateRoutingFile(rfr, id4n)
+> updateRoutingFile(rfr, id4n)
 
 Store routing file
 
@@ -154,7 +154,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.updateRoutingFile(rfr, id4n, callback);
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

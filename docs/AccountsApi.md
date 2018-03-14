@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
-> ApiError addUserRoles(organizationId, username, changeRoleRequest)
+> addUserRoles(organizationId, username, changeRoleRequest)
 
 Add role(s) to user
 
@@ -52,7 +52,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addUserRoles(organizationId, username, changeRoleRequest, callback);
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 <a name="completeRegistration"></a>
 # **completeRegistration**
-> ApiError completeRegistration(completeRegistration)
+> completeRegistration(completeRegistration)
 
 Complete registration
 
@@ -100,7 +100,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.completeRegistration(completeRegistration, callback);
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteUsers"></a>
 # **inviteUsers**
-> ApiError inviteUsers(organizationId, invitationList)
+> inviteUsers(organizationId, invitationList)
 
 Invite Users
 
@@ -495,7 +495,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.inviteUsers(organizationId, invitationList, callback);
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -673,7 +673,7 @@ No authorization required
 
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
-> ApiError removeUserRoles(organizationId, username, changeRoleRequest)
+> removeUserRoles(organizationId, username, changeRoleRequest)
 
 Remove role(s) from user
 
@@ -701,7 +701,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, callback);
@@ -717,7 +717,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -822,7 +822,7 @@ No authorization required
 
 <a name="verifyUserRegistration"></a>
 # **verifyUserRegistration**
-> ApiError verifyUserRegistration(token)
+> verifyUserRegistration(token)
 
 Verify registration
 
@@ -841,7 +841,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.verifyUserRegistration(token, callback);
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

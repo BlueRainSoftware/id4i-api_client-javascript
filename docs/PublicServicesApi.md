@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 <a name="go"></a>
 # **go**
-> ApiError go(guid)
+> go(guid)
 
 Forward
 
@@ -91,7 +91,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.go(guid, callback);
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

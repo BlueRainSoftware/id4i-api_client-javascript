@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
-> ApiError addUserRoles(organizationId, username, changeRoleRequest)
+> addUserRoles(organizationId, username, changeRoleRequest)
 
 Add role(s) to user
 
@@ -56,7 +56,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addUserRoles(organizationId, username, changeRoleRequest, callback);
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteOrganization"></a>
 # **deleteOrganization**
-> ApiError deleteOrganization(organizationId)
+> deleteOrganization(organizationId)
 
 Delete organization
 
@@ -162,7 +162,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.deleteOrganization(organizationId, callback);
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteOrganizationBillingAddress"></a>
 # **deleteOrganizationBillingAddress**
-> ApiError deleteOrganizationBillingAddress(organizationId)
+> deleteOrganizationBillingAddress(organizationId)
 
 Remove billing address
 
@@ -213,7 +213,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.deleteOrganizationBillingAddress(organizationId, callback);
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteOrganizationLogo"></a>
 # **deleteOrganizationLogo**
-> ApiError deleteOrganizationLogo(organizationId)
+> deleteOrganizationLogo(organizationId)
 
 Delete organization logo
 
@@ -264,7 +264,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.deleteOrganizationLogo(organizationId, callback);
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteUsers"></a>
 # **inviteUsers**
-> ApiError inviteUsers(organizationId, invitationList)
+> inviteUsers(organizationId, invitationList)
 
 Invite Users
 
@@ -771,7 +771,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.inviteUsers(organizationId, invitationList, callback);
@@ -786,7 +786,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -853,7 +853,7 @@ Name | Type | Description  | Notes
 
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
-> ApiError removeUserRoles(organizationId, username, changeRoleRequest)
+> removeUserRoles(organizationId, username, changeRoleRequest)
 
 Remove role(s) from user
 
@@ -881,7 +881,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, callback);
@@ -897,7 +897,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

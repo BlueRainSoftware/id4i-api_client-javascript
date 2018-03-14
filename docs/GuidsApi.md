@@ -1,23 +1,23 @@
-# Id4iApi.GUIDsApi
+# Id4iApi.GuidsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addGuidAlias**](GUIDsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-[**addGuidAlias1**](GUIDsApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**createGuid**](GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
-[**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-[**getGuidAliases**](GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
-[**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
-[**getId4n**](GUIDsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-[**setGuid**](GUIDsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**setGuid1**](GUIDsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+[**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+[**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+[**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
+[**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**setGuid**](GuidsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**setGuid1**](GuidsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addGuidAlias"></a>
 # **addGuidAlias**
-> ApiError addGuidAlias(id4n, aliasType, alias)
+> addGuidAlias(id4n, aliasType, alias)
 
 Add alias for GUIDs
 
@@ -34,7 +34,7 @@ Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-var apiInstance = new Id4iApi.GUIDsApi();
+var apiInstance = new Id4iApi.GuidsApi();
 
 var id4n = "id4n_example"; // String | The GUID to operate on
 
@@ -47,7 +47,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.addGuidAlias(id4n, aliasType, alias, callback);
@@ -63,63 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addGuidAlias1"></a>
-# **addGuidAlias1**
-> ApiError addGuidAlias1(id4n, aliasType)
-
-Remove aliases from GUIDs
-
-Remove the alias of the given type
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.GUIDsApi();
-
-var id4n = "id4n_example"; // String | The GUID to operate on
-
-var aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addGuidAlias1(id4n, aliasType, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID to operate on | 
- **aliasType** | **String**| Alias type, see the corresponding API model | 
-
-### Return type
-
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -149,7 +93,7 @@ Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-var apiInstance = new Id4iApi.GUIDsApi();
+var apiInstance = new Id4iApi.GuidsApi();
 
 var createGUIDInfo = new Id4iApi.CreateGuidRequest(); // CreateGuidRequest | createGUIDInfo
 
@@ -200,7 +144,7 @@ Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-var apiInstance = new Id4iApi.GUIDsApi();
+var apiInstance = new Id4iApi.GuidsApi();
 
 var id4n = "id4n_example"; // String | The GUID number
 
@@ -253,7 +197,7 @@ Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-var apiInstance = new Id4iApi.GUIDsApi();
+var apiInstance = new Id4iApi.GuidsApi();
 
 var id4n = "id4n_example"; // String | The GUID to operate on
 
@@ -304,7 +248,7 @@ Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-var apiInstance = new Id4iApi.GUIDsApi();
+var apiInstance = new Id4iApi.GuidsApi();
 
 var organizationId = 789; // Number | Organization to search GUIDs for (required).
 
@@ -363,7 +307,7 @@ Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-var apiInstance = new Id4iApi.GUIDsApi();
+var apiInstance = new Id4iApi.GuidsApi();
 
 var id4n = "id4n_example"; // String | The ID to resolve to
 
@@ -397,6 +341,62 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
+<a name="removeGuidAlias"></a>
+# **removeGuidAlias**
+> removeGuidAlias(id4n, aliasType)
+
+Remove aliases from GUIDs
+
+Remove the alias of the given type
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.GuidsApi();
+
+var id4n = "id4n_example"; // String | The GUID to operate on
+
+var aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.removeGuidAlias(id4n, aliasType, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID to operate on | 
+ **aliasType** | **String**| Alias type, see the corresponding API model | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
 <a name="setGuid"></a>
 # **setGuid**
 > Object setGuid(id4n, request)
@@ -416,7 +416,7 @@ Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-var apiInstance = new Id4iApi.GUIDsApi();
+var apiInstance = new Id4iApi.GuidsApi();
 
 var id4n = "id4n_example"; // String | The GUID number
 
@@ -472,7 +472,7 @@ Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-var apiInstance = new Id4iApi.GUIDsApi();
+var apiInstance = new Id4iApi.GuidsApi();
 
 var id4n = "id4n_example"; // String | The GUID number
 
