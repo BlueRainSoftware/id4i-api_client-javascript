@@ -54,58 +54,53 @@ Finally, switch to the directory you want to use your id4i_api from, and run:
 
 ```shell
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
-    ```
+```
 
-    You should now be able to `require('id4i_api')` in javascript files from the directory you ran the last
-    command above from.
+You should now be able to `require('id4i_api')` in javascript files from the directory you ran the last
+command above from.
 
-    #### git
-    #
-    If the library is hosted at a git repository, e.g.
-    https://github.com/GIT_USER_ID/GIT_REPO_ID
-    then install it via:
+#### git
 
-    ```shell
-    npm install GIT_USER_ID/GIT_REPO_ID --save
-    ```
+You can install the javascript client library directly from the repository
+```shell
+npm install https://github.com/BlueRainSoftware/id4i-api_client-javascript#master --save
+```
 
-    ### For browser
+### For browser
 
-    The library also works in the browser environment via npm and [browserify](http://browserify.org/). After following
-    the above steps with Node.js and installing browserify with `npm install -g browserify`,
-    perform the following (assuming *main.js* is your entry file, that's to say your javascript file where you actually
-    use this library):
+The library also works in the browser environment via npm and [browserify](http://browserify.org/). After following
+the above steps with Node.js and installing browserify with `npm install -g browserify`,
+perform the following (assuming *main.js* is your entry file, that's to say your javascript file where you actually
+use this library):
 
-    ```shell
-    browserify main.js > bundle.js
-    ```
+```shell
+browserify main.js > bundle.js
+```
 
-    Then include *bundle.js* in the HTML pages.
+Then include *bundle.js* in the HTML pages.
 
-    ### Webpack Configuration
+### Webpack Configuration
 
-    Using Webpack you may encounter the following error: "Module not found: Error:
-    Cannot resolve module", most certainly you should disable AMD loader. Add/merge
-    the following section to your webpack config:
+Using Webpack you may encounter the following error: "Module not found: Error:
+Cannot resolve module", most certainly you should disable AMD loader. Add/merge
+the following section to your webpack config:
 
-    ```javascript
-    module: {
-    rules: [
-    {
-    parser: {
-    amd: false
-    }
-    }
-    ]
-    }
-    ```
+```javascript
+module: {
+    rules: [ {
+        parser: {
+            amd: false
+        }
+    } ]
+}
+```
 
-    ## Getting Started
+## Getting Started
 
-    Please follow the [installation](#installation) instruction and execute the following JS code:
+Please follow the [installation](#installation) instruction and execute the following JS code:
 
-    ```javascript
-    var Id4iApi = require('id4i_api');
+```javascript
+var Id4iApi = require('id4i_api');
 
         var defaultClient = Id4iApi.ApiClient.instance;
     
