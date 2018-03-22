@@ -104,7 +104,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/documents/{id4n}/{organizationId}', 'POST',
+        '/api/v1/documents/{id4n}/{organizationId}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
