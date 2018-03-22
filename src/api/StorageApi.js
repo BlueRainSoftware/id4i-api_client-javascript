@@ -49,6 +49,68 @@
 
 
     /**
+     * Callback function to receive the result of the createDocument operation.
+     * @callback module:api/StorageApi~createDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Document} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create an empty document for an id4n
+     * The document is created empty, mime-type defaults to text/plain
+     * @param {Number} organizationId organizationId
+     * @param {String} id4n id4n
+     * @param {File} content content
+     * @param {module:api/StorageApi~createDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Document}
+     */
+    this.createDocument = function(organizationId, id4n, content, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling createDocument");
+      }
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling createDocument");
+      }
+
+      // verify the required parameter 'content' is set
+      if (content === undefined || content === null) {
+        throw new Error("Missing the required parameter 'content' when calling createDocument");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId,
+        'id4n': id4n
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+        'content': content
+      };
+
+      var authNames = ['Authorization'];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/xml', 'application/json'];
+      var returnType = Document;
+
+      return this.apiClient.callApi(
+        '/api/v1/documents/{id4n}/{organizationId}', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteDocument operation.
      * @callback module:api/StorageApi~deleteDocumentCallback
      * @param {String} error Error message, if any.
