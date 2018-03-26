@@ -762,7 +762,7 @@
       var returnType = Document;
 
       return this.apiClient.callApi(
-        '/api/v1/documents/{id4n}/{organizationId}/{fileName}', 'PATCH',
+        '/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -780,16 +780,16 @@
      * Write data to microstorage
      * @param {Number} organization organization
      * @param {String} id4n id4n
-     * @param {String} body 
      * @param {Object} opts Optional parameters
      * @param {String} opts.contentType Content-Type
      * @param {Number} opts.contentLength Content-Length
+     * @param {Blob} opts.body body
      * @param {module:api/StorageApi~writeToMicrostorageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.writeToMicrostorage = function(organization, id4n, body, opts, callback) {
+    this.writeToMicrostorage = function(organization, id4n, opts, callback) {
       opts = opts || {};
-      var postBody = body;
+      var postBody = opts['body'];
 
       // verify the required parameter 'organization' is set
       if (organization === undefined || organization === null) {
@@ -799,11 +799,6 @@
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
         throw new Error("Missing the required parameter 'id4n' when calling writeToMicrostorage");
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling writeToMicrostorage");
       }
 
 

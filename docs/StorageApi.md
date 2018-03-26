@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 [**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
 
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 <a name="writeToMicrostorage"></a>
 # **writeToMicrostorage**
-> Object writeToMicrostorage(organization, id4n, body, opts)
+> Object writeToMicrostorage(organization, id4n, opts)
 
 Write data to microstorage
 
@@ -744,11 +744,10 @@ var organization = 789; // Number | organization
 
 var id4n = "id4n_example"; // String | id4n
 
-var body = "body_example"; // String | 
-
 var opts = { 
   'contentType': "contentType_example", // String | Content-Type
-  'contentLength': 789 // Number | Content-Length
+  'contentLength': 789, // Number | Content-Length
+  'body': B // Blob | body
 };
 
 var callback = function(error, data, response) {
@@ -758,7 +757,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.writeToMicrostorage(organization, id4n, body, opts, callback);
+apiInstance.writeToMicrostorage(organization, id4n, opts, callback);
 ```
 
 ### Parameters
@@ -767,9 +766,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Number**| organization | 
  **id4n** | **String**| id4n | 
- **body** | **String**|  | 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 
+ **body** | **Blob**| body | [optional] 
 
 ### Return type
 
