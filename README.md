@@ -169,6 +169,7 @@ var Id4iApi = require('id4i_api');
 *Id4iApi.ApiKeysApi* | [**removeApiKeyPrivilege**](docs/ApiKeysApi.md#removeApiKeyPrivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
 *Id4iApi.ApiKeysApi* | [**removeApiKeyPrivilegeForId4ns**](docs/ApiKeysApi.md#removeApiKeyPrivilegeForId4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *Id4iApi.ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
+*Id4iApi.AuditingApi* | [**listOrganizationChangeLog**](docs/AuditingApi.md#listOrganizationChangeLog) | **GET** /api/v1/changelog/organization/{organizationId}/ | List change log entries of an organization
 *Id4iApi.BillingApi* | [**getPositionsForOrganization**](docs/BillingApi.md#getPositionsForOrganization) | **GET** /api/v1/billing/{organizationId}/positions | Get billing positions for a given organization
 *Id4iApi.BillingApi* | [**getSumForOrganization**](docs/BillingApi.md#getSumForOrganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 *Id4iApi.CollectionsApi* | [**addElementsToCollection**](docs/CollectionsApi.md#addElementsToCollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
@@ -274,6 +275,7 @@ var Id4iApi = require('id4i_api');
  - [Id4iApi.ApiKeyPrivilegePaginatedResponse](docs/ApiKeyPrivilegePaginatedResponse.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
  - [Id4iApi.BillingPosition](docs/BillingPosition.md)
+ - [Id4iApi.ChangeLogEntry](docs/ChangeLogEntry.md)
  - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
  - [Id4iApi.CompleteUserRegistrationRequest](docs/CompleteUserRegistrationRequest.md)
  - [Id4iApi.Country](docs/Country.md)
@@ -299,6 +301,7 @@ var Id4iApi = require('id4i_api');
  - [Id4iApi.OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
  - [Id4iApi.OwnedDocument](docs/OwnedDocument.md)
  - [Id4iApi.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
+ - [Id4iApi.PaginatedChangeLogEntryResponse](docs/PaginatedChangeLogEntryResponse.md)
  - [Id4iApi.PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
  - [Id4iApi.PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
  - [Id4iApi.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
@@ -308,6 +311,7 @@ var Id4iApi = require('id4i_api');
  - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
+ - [Id4iApi.PaginatedResponseChangeLogEntry](docs/PaginatedResponseChangeLogEntry.md)
  - [Id4iApi.PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
  - [Id4iApi.PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
  - [Id4iApi.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)

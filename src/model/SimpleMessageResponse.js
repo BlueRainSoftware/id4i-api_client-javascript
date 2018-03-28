@@ -44,11 +44,12 @@
    * Constructs a new <code>SimpleMessageResponse</code>.
    * @alias module:model/SimpleMessageResponse
    * @class
+   * @param message {String} 
    */
-  var exports = function() {
+  var exports = function(message) {
     var _this = this;
 
-
+    _this['message'] = message;
   };
 
   /**
