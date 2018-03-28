@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.Guid = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.TransferReceiveInfo = factory(root.Id4iApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,19 +35,21 @@
 
 
   /**
-   * The Guid model module.
-   * @module model/Guid
+   * The TransferReceiveInfo model module.
+   * @module model/TransferReceiveInfo
    * @version 0.3.3-SNAPSHOT
    */
 
   /**
-   * Constructs a new <code>Guid</code>.
-   * @alias module:model/Guid
+   * Constructs a new <code>TransferReceiveInfo</code>.
+   * @alias module:model/TransferReceiveInfo
    * @class
+   * @param holderOrganizationId {Number} The current holder of the object
    */
-  var exports = function() {
+  var exports = function(holderOrganizationId) {
     var _this = this;
 
+    _this['holderOrganizationId'] = holderOrganizationId;
 
 
 
@@ -55,52 +57,60 @@
   };
 
   /**
-   * Constructs a <code>Guid</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TransferReceiveInfo</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Guid} obj Optional instance to populate.
-   * @return {module:model/Guid} The populated <code>Guid</code> instance.
+   * @param {module:model/TransferReceiveInfo} obj Optional instance to populate.
+   * @return {module:model/TransferReceiveInfo} The populated <code>TransferReceiveInfo</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('createdTimestamp')) {
-        obj['createdTimestamp'] = ApiClient.convertToType(data['createdTimestamp'], 'Number');
-      }
       if (data.hasOwnProperty('holderOrganizationId')) {
         obj['holderOrganizationId'] = ApiClient.convertToType(data['holderOrganizationId'], 'Number');
       }
-      if (data.hasOwnProperty('id4n')) {
-        obj['id4n'] = ApiClient.convertToType(data['id4n'], 'String');
+      if (data.hasOwnProperty('keepOwnership')) {
+        obj['keepOwnership'] = ApiClient.convertToType(data['keepOwnership'], 'Boolean');
+      }
+      if (data.hasOwnProperty('nextScanOwnership')) {
+        obj['nextScanOwnership'] = ApiClient.convertToType(data['nextScanOwnership'], 'Boolean');
       }
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
+      }
+      if (data.hasOwnProperty('recipientOrganizationIds')) {
+        obj['recipientOrganizationIds'] = ApiClient.convertToType(data['recipientOrganizationIds'], ['Number']);
       }
     }
     return obj;
   }
 
   /**
-   * The UTC unix timestamp of when this GUID has been created
-   * @member {Number} createdTimestamp
-   */
-  exports.prototype['createdTimestamp'] = undefined;
-  /**
-   * Organization ID of the GUID holder
+   * The current holder of the object
    * @member {Number} holderOrganizationId
    */
   exports.prototype['holderOrganizationId'] = undefined;
   /**
-   * The ID
-   * @member {String} id4n
+   * Keep the public ownership while transferring the object
+   * @member {Boolean} keepOwnership
    */
-  exports.prototype['id4n'] = undefined;
+  exports.prototype['keepOwnership'] = undefined;
   /**
-   * Organization ID of the GUID owner
+   * Allow anyone which scans or knows the ID4N to obtain this object
+   * @member {Boolean} nextScanOwnership
+   */
+  exports.prototype['nextScanOwnership'] = undefined;
+  /**
+   * The current publicly visible owner of the object
    * @member {Number} ownerOrganizationId
    */
   exports.prototype['ownerOrganizationId'] = undefined;
+  /**
+   * Allow only these organizations to obtain this object
+   * @member {Array.<Number>} recipientOrganizationIds
+   */
+  exports.prototype['recipientOrganizationIds'] = undefined;
 
 
 

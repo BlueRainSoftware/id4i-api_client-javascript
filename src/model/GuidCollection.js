@@ -70,14 +70,14 @@
       if (data.hasOwnProperty('createdTimestamp')) {
         obj['createdTimestamp'] = ApiClient.convertToType(data['createdTimestamp'], 'Number');
       }
+      if (data.hasOwnProperty('holderOrganizationId')) {
+        obj['holderOrganizationId'] = ApiClient.convertToType(data['holderOrganizationId'], 'Number');
+      }
       if (data.hasOwnProperty('id4n')) {
         obj['id4n'] = ApiClient.convertToType(data['id4n'], 'String');
       }
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
-      }
-      if (data.hasOwnProperty('nextScanOwnership')) {
-        obj['nextScanOwnership'] = ApiClient.convertToType(data['nextScanOwnership'], 'Boolean');
       }
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
@@ -95,6 +95,11 @@
    */
   exports.prototype['createdTimestamp'] = undefined;
   /**
+   * The UTC unix timestamp of when this collection has been created
+   * @member {Number} holderOrganizationId
+   */
+  exports.prototype['holderOrganizationId'] = undefined;
+  /**
    * The ID
    * @member {String} id4n
    */
@@ -104,10 +109,7 @@
    */
   exports.prototype['label'] = undefined;
   /**
-   * @member {Boolean} nextScanOwnership
-   */
-  exports.prototype['nextScanOwnership'] = undefined;
-  /**
+   * The UTC unix timestamp of when this collection has been created
    * @member {Number} ownerOrganizationId
    */
   exports.prototype['ownerOrganizationId'] = undefined;

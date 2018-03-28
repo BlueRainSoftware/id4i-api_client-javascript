@@ -299,7 +299,12 @@
      * value: "ERR_INSECURE_PASSWORD"
      * @const
      */
-    "INSECURE_PASSWORD": "ERR_INSECURE_PASSWORD"  };
+    "INSECURE_PASSWORD": "ERR_INSECURE_PASSWORD",
+    /**
+     * value: "ERR_TRANSFER_DENIED"
+     * @const
+     */
+    "TRANSFER_DENIED": "ERR_TRANSFER_DENIED"  };
 
 
   return exports;

@@ -52,6 +52,7 @@
     var _this = this;
 
     _this['createdTimestamp'] = createdTimestamp;
+
     _this['id4n'] = id4n;
 
 
@@ -72,14 +73,17 @@
       if (data.hasOwnProperty('createdTimestamp')) {
         obj['createdTimestamp'] = ApiClient.convertToType(data['createdTimestamp'], 'Number');
       }
+      if (data.hasOwnProperty('holderOrganizationId')) {
+        obj['holderOrganizationId'] = ApiClient.convertToType(data['holderOrganizationId'], 'Number');
+      }
       if (data.hasOwnProperty('id4n')) {
         obj['id4n'] = ApiClient.convertToType(data['id4n'], 'String');
       }
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
       }
-      if (data.hasOwnProperty('nextScanOwnership')) {
-        obj['nextScanOwnership'] = ApiClient.convertToType(data['nextScanOwnership'], 'Boolean');
+      if (data.hasOwnProperty('ownerOrganizationId')) {
+        obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
       }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -94,6 +98,11 @@
    */
   exports.prototype['createdTimestamp'] = undefined;
   /**
+   * ${Id4nPresentation.Guid.holderOrganizationId}
+   * @member {Number} holderOrganizationId
+   */
+  exports.prototype['holderOrganizationId'] = undefined;
+  /**
    * The ID
    * @member {String} id4n
    */
@@ -103,10 +112,10 @@
    */
   exports.prototype['label'] = undefined;
   /**
-   * Indicates if next scan ownership is active or not. If privileges are missing or the type of object doesn't support NSO this value is null.
-   * @member {Boolean} nextScanOwnership
+   * ${Id4nPresentation.Guid.ownerOrganizationId}
+   * @member {Number} ownerOrganizationId
    */
-  exports.prototype['nextScanOwnership'] = undefined;
+  exports.prototype['ownerOrganizationId'] = undefined;
   /**
    * The type of ID
    * @member {module:model/Id4nPresentation.TypeEnum} type

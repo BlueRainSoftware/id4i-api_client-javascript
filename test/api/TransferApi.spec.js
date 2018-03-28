@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.Guid();
+    instance = new Id4iApi.TransferApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,47 @@
       object[property] = value;
   }
 
-  describe('Guid', function() {
-    it('should create an instance of Guid', function() {
-      // uncomment below and update the code to test Guid
-      //var instane = new Id4iApi.Guid();
-      //expect(instance).to.be.a(Id4iApi.Guid);
+  describe('TransferApi', function() {
+    describe('getReceiveInfo', function() {
+      it('should call getReceiveInfo successfully', function(done) {
+        //uncomment below and update the code to test getReceiveInfo
+        //instance.getReceiveInfo(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property createdTimestamp (base name: "createdTimestamp")', function() {
-      // uncomment below and update the code to test the property createdTimestamp
-      //var instane = new Id4iApi.Guid();
-      //expect(instance).to.be();
+    describe('getSendInfo', function() {
+      it('should call getSendInfo successfully', function(done) {
+        //uncomment below and update the code to test getSendInfo
+        //instance.getSendInfo(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property holderOrganizationId (base name: "holderOrganizationId")', function() {
-      // uncomment below and update the code to test the property holderOrganizationId
-      //var instane = new Id4iApi.Guid();
-      //expect(instance).to.be();
+    describe('prepare', function() {
+      it('should call prepare successfully', function(done) {
+        //uncomment below and update the code to test prepare
+        //instance.prepare(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property id4n (base name: "id4n")', function() {
-      // uncomment below and update the code to test the property id4n
-      //var instane = new Id4iApi.Guid();
-      //expect(instance).to.be();
+    describe('receive', function() {
+      it('should call receive successfully', function(done) {
+        //uncomment below and update the code to test receive
+        //instance.receive(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property ownerOrganizationId (base name: "ownerOrganizationId")', function() {
-      // uncomment below and update the code to test the property ownerOrganizationId
-      //var instane = new Id4iApi.Guid();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

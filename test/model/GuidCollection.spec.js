@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property holderOrganizationId (base name: "holderOrganizationId")', function() {
+      // uncomment below and update the code to test the property holderOrganizationId
+      //var instane = new Id4iApi.GuidCollection();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id4n (base name: "id4n")', function() {
       // uncomment below and update the code to test the property id4n
       //var instane = new Id4iApi.GuidCollection();
@@ -71,12 +77,6 @@
 
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
-      //var instane = new Id4iApi.GuidCollection();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property nextScanOwnership (base name: "nextScanOwnership")', function() {
-      // uncomment below and update the code to test the property nextScanOwnership
       //var instane = new Id4iApi.GuidCollection();
       //expect(instance).to.be();
     });

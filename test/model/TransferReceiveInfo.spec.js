@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.Id4nPresentation();
+    instance = new Id4iApi.TransferReceiveInfo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,46 +50,40 @@
       object[property] = value;
   }
 
-  describe('Id4nPresentation', function() {
-    it('should create an instance of Id4nPresentation', function() {
-      // uncomment below and update the code to test Id4nPresentation
-      //var instane = new Id4iApi.Id4nPresentation();
-      //expect(instance).to.be.a(Id4iApi.Id4nPresentation);
-    });
-
-    it('should have the property createdTimestamp (base name: "createdTimestamp")', function() {
-      // uncomment below and update the code to test the property createdTimestamp
-      //var instane = new Id4iApi.Id4nPresentation();
-      //expect(instance).to.be();
+  describe('TransferReceiveInfo', function() {
+    it('should create an instance of TransferReceiveInfo', function() {
+      // uncomment below and update the code to test TransferReceiveInfo
+      //var instane = new Id4iApi.TransferReceiveInfo();
+      //expect(instance).to.be.a(Id4iApi.TransferReceiveInfo);
     });
 
     it('should have the property holderOrganizationId (base name: "holderOrganizationId")', function() {
       // uncomment below and update the code to test the property holderOrganizationId
-      //var instane = new Id4iApi.Id4nPresentation();
+      //var instane = new Id4iApi.TransferReceiveInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property id4n (base name: "id4n")', function() {
-      // uncomment below and update the code to test the property id4n
-      //var instane = new Id4iApi.Id4nPresentation();
+    it('should have the property keepOwnership (base name: "keepOwnership")', function() {
+      // uncomment below and update the code to test the property keepOwnership
+      //var instane = new Id4iApi.TransferReceiveInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property label (base name: "label")', function() {
-      // uncomment below and update the code to test the property label
-      //var instane = new Id4iApi.Id4nPresentation();
+    it('should have the property nextScanOwnership (base name: "nextScanOwnership")', function() {
+      // uncomment below and update the code to test the property nextScanOwnership
+      //var instane = new Id4iApi.TransferReceiveInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property ownerOrganizationId (base name: "ownerOrganizationId")', function() {
       // uncomment below and update the code to test the property ownerOrganizationId
-      //var instane = new Id4iApi.Id4nPresentation();
+      //var instane = new Id4iApi.TransferReceiveInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new Id4iApi.Id4nPresentation();
+    it('should have the property recipientOrganizationIds (base name: "recipientOrganizationIds")', function() {
+      // uncomment below and update the code to test the property recipientOrganizationIds
+      //var instane = new Id4iApi.TransferReceiveInfo();
       //expect(instance).to.be();
     });
 

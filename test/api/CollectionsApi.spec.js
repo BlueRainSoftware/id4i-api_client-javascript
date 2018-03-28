@@ -291,46 +291,6 @@
         done();
       });
     });
-    describe('setCollection', function() {
-      it('should call setCollection successfully', function(done) {
-        //uncomment below and update the code to test setCollection
-        //instance.setCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('setLabelledCollection', function() {
-      it('should call setLabelledCollection successfully', function(done) {
-        //uncomment below and update the code to test setLabelledCollection
-        //instance.setLabelledCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('setLogisticCollection', function() {
-      it('should call setLogisticCollection successfully', function(done) {
-        //uncomment below and update the code to test setLogisticCollection
-        //instance.setLogisticCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('setRoutingCollection', function() {
-      it('should call setRoutingCollection successfully', function(done) {
-        //uncomment below and update the code to test setRoutingCollection
-        //instance.setRoutingCollection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateCollection', function() {
       it('should call updateCollection successfully', function(done) {
         //uncomment below and update the code to test updateCollection
