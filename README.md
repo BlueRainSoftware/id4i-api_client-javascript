@@ -14,8 +14,8 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.3.3-SNAPSHOT
-- Package version: 0.3.3-SNAPSHOT
+- API version: 0.4.0
+- Package version: 0.4.0
 - Build package: io.swagger.codegen.languages.JavascriptClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -130,12 +130,12 @@ var Id4iApi = require('id4i_api');
 
     ```
 
-    ## Documentation for API Endpoints
+## Documentation for API Endpoints
 
-    All URIs are relative to *https://backend.id4i.de*
+All URIs are relative to *https://backend.id4i.de*
 
-    Class | Method | HTTP request | Description
-    ------------ | ------------- | ------------- | -------------
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
 *Id4iApi.AccountsApi* | [**addUserRoles**](docs/AccountsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *Id4iApi.AccountsApi* | [**completeRegistration**](docs/AccountsApi.md#completeRegistration) | **PUT** /account/registration | Complete registration
 *Id4iApi.AccountsApi* | [**findUserByUsername**](docs/AccountsApi.md#findUserByUsername) | **GET** /api/v1/users/{username} | Find by username
@@ -232,13 +232,15 @@ var Id4iApi = require('id4i_api');
 *Id4iApi.OrganizationsApi* | [**updateOrganizationAddress**](docs/OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *Id4iApi.OrganizationsApi* | [**updateOrganizationBillingAddress**](docs/OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 *Id4iApi.PublicServicesApi* | [**getPublicDocument**](docs/PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+*Id4iApi.PublicServicesApi* | [**getWebRoutes**](docs/PublicServicesApi.md#getWebRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 *Id4iApi.PublicServicesApi* | [**go**](docs/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *Id4iApi.PublicServicesApi* | [**listAllPublicDocuments**](docs/PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 *Id4iApi.PublicServicesApi* | [**listPublicDocuments**](docs/PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
 *Id4iApi.PublicServicesApi* | [**readPublicDocument**](docs/PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *Id4iApi.PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.PublicServicesApi* | [**resolveWhoIsEntry**](docs/PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
-*Id4iApi.RoutingApi* | [**getRoute**](docs/RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
+*Id4iApi.RoutingApi* | [**getAllWebRoutes**](docs/RoutingApi.md#getAllWebRoutes) | **GET** /api/v1/routingfiles/{id4n}/routes | Retrieve all web routes
+*Id4iApi.RoutingApi* | [**getRoute**](docs/RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve current route of a GUID (or ID4N)
 *Id4iApi.RoutingApi* | [**getRoutingFile**](docs/RoutingApi.md#getRoutingFile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *Id4iApi.RoutingApi* | [**updateRoutingFile**](docs/RoutingApi.md#updateRoutingFile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
 *Id4iApi.StorageApi* | [**createDocument**](docs/StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
@@ -261,7 +263,7 @@ var Id4iApi = require('id4i_api');
 *Id4iApi.WhoIsApi* | [**resolveWhoIsEntry**](docs/WhoIsApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
-    ## Documentation for Models
+## Documentation for Models
 
  - [Id4iApi.AccountCredentials](docs/AccountCredentials.md)
  - [Id4iApi.AddApiKeyPrivilegeRequest](docs/AddApiKeyPrivilegeRequest.md)
@@ -354,7 +356,7 @@ var Id4iApi = require('id4i_api');
  - [Id4iApi.WhoIsResponse](docs/WhoIsResponse.md)
 
 
-    ## Documentation for Authorization
+## Documentation for Authorization
 
 
 ### Authorization
