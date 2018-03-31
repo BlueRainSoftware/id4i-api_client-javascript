@@ -14,8 +14,8 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.3.2
-- Package version: 0.3.2
+- API version: 0.4.0
+- Package version: 0.4.0
 - Build package: io.swagger.codegen.languages.JavascriptClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -54,58 +54,53 @@ Finally, switch to the directory you want to use your id4i_api from, and run:
 
 ```shell
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
-    ```
+```
 
-    You should now be able to `require('id4i_api')` in javascript files from the directory you ran the last
-    command above from.
+You should now be able to `require('id4i_api')` in javascript files from the directory you ran the last
+command above from.
 
-    #### git
-    #
-    If the library is hosted at a git repository, e.g.
-    https://github.com/GIT_USER_ID/GIT_REPO_ID
-    then install it via:
+#### git
 
-    ```shell
-    npm install GIT_USER_ID/GIT_REPO_ID --save
-    ```
+You can install the javascript client library directly from the repository
+```shell
+npm install https://github.com/BlueRainSoftware/id4i-api_client-javascript#master --save
+```
 
-    ### For browser
+### For browser
 
-    The library also works in the browser environment via npm and [browserify](http://browserify.org/). After following
-    the above steps with Node.js and installing browserify with `npm install -g browserify`,
-    perform the following (assuming *main.js* is your entry file, that's to say your javascript file where you actually
-    use this library):
+The library also works in the browser environment via npm and [browserify](http://browserify.org/). After following
+the above steps with Node.js and installing browserify with `npm install -g browserify`,
+perform the following (assuming *main.js* is your entry file, that's to say your javascript file where you actually
+use this library):
 
-    ```shell
-    browserify main.js > bundle.js
-    ```
+```shell
+browserify main.js > bundle.js
+```
 
-    Then include *bundle.js* in the HTML pages.
+Then include *bundle.js* in the HTML pages.
 
-    ### Webpack Configuration
+### Webpack Configuration
 
-    Using Webpack you may encounter the following error: "Module not found: Error:
-    Cannot resolve module", most certainly you should disable AMD loader. Add/merge
-    the following section to your webpack config:
+Using Webpack you may encounter the following error: "Module not found: Error:
+Cannot resolve module", most certainly you should disable AMD loader. Add/merge
+the following section to your webpack config:
 
-    ```javascript
-    module: {
-    rules: [
-    {
-    parser: {
-    amd: false
-    }
-    }
-    ]
-    }
-    ```
+```javascript
+module: {
+    rules: [ {
+        parser: {
+            amd: false
+        }
+    } ]
+}
+```
 
-    ## Getting Started
+## Getting Started
 
-    Please follow the [installation](#installation) instruction and execute the following JS code:
+Please follow the [installation](#installation) instruction and execute the following JS code:
 
-    ```javascript
-    var Id4iApi = require('id4i_api');
+```javascript
+var Id4iApi = require('id4i_api');
 
         var defaultClient = Id4iApi.ApiClient.instance;
     
@@ -135,12 +130,12 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 
     ```
 
-    ## Documentation for API Endpoints
+## Documentation for API Endpoints
 
-    All URIs are relative to *https://backend.id4i.de*
+All URIs are relative to *https://backend.id4i.de*
 
-    Class | Method | HTTP request | Description
-    ------------ | ------------- | ------------- | -------------
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
 *Id4iApi.AccountsApi* | [**addUserRoles**](docs/AccountsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *Id4iApi.AccountsApi* | [**completeRegistration**](docs/AccountsApi.md#completeRegistration) | **PUT** /account/registration | Complete registration
 *Id4iApi.AccountsApi* | [**findUserByUsername**](docs/AccountsApi.md#findUserByUsername) | **GET** /api/v1/users/{username} | Find by username
@@ -174,6 +169,7 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 *Id4iApi.ApiKeysApi* | [**removeApiKeyPrivilege**](docs/ApiKeysApi.md#removeApiKeyPrivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
 *Id4iApi.ApiKeysApi* | [**removeApiKeyPrivilegeForId4ns**](docs/ApiKeysApi.md#removeApiKeyPrivilegeForId4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *Id4iApi.ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
+*Id4iApi.AuditingApi* | [**listOrganizationChangeLog**](docs/AuditingApi.md#listOrganizationChangeLog) | **GET** /api/v1/changelog/organization/{organizationId}/ | List change log entries of an organization
 *Id4iApi.BillingApi* | [**getPositionsForOrganization**](docs/BillingApi.md#getPositionsForOrganization) | **GET** /api/v1/billing/{organizationId}/positions | Get billing positions for a given organization
 *Id4iApi.BillingApi* | [**getSumForOrganization**](docs/BillingApi.md#getSumForOrganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 *Id4iApi.CollectionsApi* | [**addElementsToCollection**](docs/CollectionsApi.md#addElementsToCollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
@@ -200,10 +196,6 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 *Id4iApi.CollectionsApi* | [**removeElementsFromLabelledCollection**](docs/CollectionsApi.md#removeElementsFromLabelledCollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
 *Id4iApi.CollectionsApi* | [**removeElementsFromLogisticCollection**](docs/CollectionsApi.md#removeElementsFromLogisticCollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
 *Id4iApi.CollectionsApi* | [**removeElementsFromRoutingCollection**](docs/CollectionsApi.md#removeElementsFromRoutingCollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
-*Id4iApi.CollectionsApi* | [**setCollection**](docs/CollectionsApi.md#setCollection) | **PUT** /api/v1/collections/{id4n} | Set collection
-*Id4iApi.CollectionsApi* | [**setLabelledCollection**](docs/CollectionsApi.md#setLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Set labelled collection values
-*Id4iApi.CollectionsApi* | [**setLogisticCollection**](docs/CollectionsApi.md#setLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Replace logistic collection
-*Id4iApi.CollectionsApi* | [**setRoutingCollection**](docs/CollectionsApi.md#setRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 *Id4iApi.CollectionsApi* | [**updateCollection**](docs/CollectionsApi.md#updateCollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
 *Id4iApi.CollectionsApi* | [**updateLabelledCollection**](docs/CollectionsApi.md#updateLabelledCollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
 *Id4iApi.CollectionsApi* | [**updateLogisticCollection**](docs/CollectionsApi.md#updateLogisticCollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
@@ -215,8 +207,8 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 *Id4iApi.GuidsApi* | [**getGuidsWithoutCollection**](docs/GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *Id4iApi.GuidsApi* | [**getId4n**](docs/GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 *Id4iApi.GuidsApi* | [**removeGuidAlias**](docs/GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-*Id4iApi.GuidsApi* | [**setGuid**](docs/GuidsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-*Id4iApi.GuidsApi* | [**setGuid1**](docs/GuidsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*Id4iApi.GuidsApi* | [**updateGuid**](docs/GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+*Id4iApi.GuidsApi* | [**updateGuid1**](docs/GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *Id4iApi.OrganizationsApi* | [**addUserRoles**](docs/OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -240,15 +232,18 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 *Id4iApi.OrganizationsApi* | [**updateOrganizationAddress**](docs/OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *Id4iApi.OrganizationsApi* | [**updateOrganizationBillingAddress**](docs/OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 *Id4iApi.PublicServicesApi* | [**getPublicDocument**](docs/PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+*Id4iApi.PublicServicesApi* | [**getWebRoutes**](docs/PublicServicesApi.md#getWebRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 *Id4iApi.PublicServicesApi* | [**go**](docs/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *Id4iApi.PublicServicesApi* | [**listAllPublicDocuments**](docs/PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 *Id4iApi.PublicServicesApi* | [**listPublicDocuments**](docs/PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
 *Id4iApi.PublicServicesApi* | [**readPublicDocument**](docs/PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *Id4iApi.PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.PublicServicesApi* | [**resolveWhoIsEntry**](docs/PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
-*Id4iApi.RoutingApi* | [**getRoute**](docs/RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
+*Id4iApi.RoutingApi* | [**getAllWebRoutes**](docs/RoutingApi.md#getAllWebRoutes) | **GET** /api/v1/routingfiles/{id4n}/routes | Retrieve all web routes
+*Id4iApi.RoutingApi* | [**getRoute**](docs/RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve current route of a GUID (or ID4N)
 *Id4iApi.RoutingApi* | [**getRoutingFile**](docs/RoutingApi.md#getRoutingFile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *Id4iApi.RoutingApi* | [**updateRoutingFile**](docs/RoutingApi.md#updateRoutingFile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
+*Id4iApi.StorageApi* | [**createDocument**](docs/StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 *Id4iApi.StorageApi* | [**deleteDocument**](docs/StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 *Id4iApi.StorageApi* | [**getDocument**](docs/StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 *Id4iApi.StorageApi* | [**getPublicDocument**](docs/StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
@@ -259,12 +254,16 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 *Id4iApi.StorageApi* | [**readDocument**](docs/StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *Id4iApi.StorageApi* | [**readFromMicrostorage**](docs/StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 *Id4iApi.StorageApi* | [**readPublicDocument**](docs/StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-*Id4iApi.StorageApi* | [**updateDocumentMetadata**](docs/StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+*Id4iApi.StorageApi* | [**updateDocumentMetadata**](docs/StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *Id4iApi.StorageApi* | [**writeToMicrostorage**](docs/StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
+*Id4iApi.TransferApi* | [**getReceiveInfo**](docs/TransferApi.md#getReceiveInfo) | **GET** /api/v1/transfers/{id4n}/receiveInfo | Show transfer information
+*Id4iApi.TransferApi* | [**getSendInfo**](docs/TransferApi.md#getSendInfo) | **GET** /api/v1/transfers/{id4n}/sendInfo | Show transfer preparation information
+*Id4iApi.TransferApi* | [**prepare**](docs/TransferApi.md#prepare) | **PUT** /api/v1/transfers/{id4n}/sendInfo | Prepare an object for transfer
+*Id4iApi.TransferApi* | [**receive**](docs/TransferApi.md#receive) | **PUT** /api/v1/transfers/{id4n}/receiveInfo | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership
 *Id4iApi.WhoIsApi* | [**resolveWhoIsEntry**](docs/WhoIsApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
-    ## Documentation for Models
+## Documentation for Models
 
  - [Id4iApi.AccountCredentials](docs/AccountCredentials.md)
  - [Id4iApi.AddApiKeyPrivilegeRequest](docs/AddApiKeyPrivilegeRequest.md)
@@ -278,6 +277,7 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
  - [Id4iApi.ApiKeyPrivilegePaginatedResponse](docs/ApiKeyPrivilegePaginatedResponse.md)
  - [Id4iApi.AppInfoPresentation](docs/AppInfoPresentation.md)
  - [Id4iApi.BillingPosition](docs/BillingPosition.md)
+ - [Id4iApi.ChangeLogEntry](docs/ChangeLogEntry.md)
  - [Id4iApi.ChangeRoleRequest](docs/ChangeRoleRequest.md)
  - [Id4iApi.CompleteUserRegistrationRequest](docs/CompleteUserRegistrationRequest.md)
  - [Id4iApi.Country](docs/Country.md)
@@ -303,6 +303,7 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
  - [Id4iApi.OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
  - [Id4iApi.OwnedDocument](docs/OwnedDocument.md)
  - [Id4iApi.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
+ - [Id4iApi.PaginatedChangeLogEntryResponse](docs/PaginatedChangeLogEntryResponse.md)
  - [Id4iApi.PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
  - [Id4iApi.PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
  - [Id4iApi.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
@@ -312,6 +313,7 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
  - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
  - [Id4iApi.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
+ - [Id4iApi.PaginatedResponseChangeLogEntry](docs/PaginatedResponseChangeLogEntry.md)
  - [Id4iApi.PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
  - [Id4iApi.PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
  - [Id4iApi.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
@@ -341,6 +343,8 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
  - [Id4iApi.ServiceCosts](docs/ServiceCosts.md)
  - [Id4iApi.SimpleMessageResponse](docs/SimpleMessageResponse.md)
  - [Id4iApi.Timestamp](docs/Timestamp.md)
+ - [Id4iApi.TransferReceiveInfo](docs/TransferReceiveInfo.md)
+ - [Id4iApi.TransferSendInfo](docs/TransferSendInfo.md)
  - [Id4iApi.URI](docs/URI.md)
  - [Id4iApi.URL](docs/URL.md)
  - [Id4iApi.UserPresentation](docs/UserPresentation.md)
@@ -352,7 +356,7 @@ npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
  - [Id4iApi.WhoIsResponse](docs/WhoIsResponse.md)
 
 
-    ## Documentation for Authorization
+## Documentation for Authorization
 
 
 ### Authorization

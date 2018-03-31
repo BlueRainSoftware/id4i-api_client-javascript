@@ -91,6 +91,8 @@ Name | Type | Description | Notes
 
 * `INSECURE_PASSWORD` (value: `"ERR_INSECURE_PASSWORD"`)
 
+* `TRANSFER_DENIED` (value: `"ERR_TRANSFER_DENIED"`)
+
 
 
 

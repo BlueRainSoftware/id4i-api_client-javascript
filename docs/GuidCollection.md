@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdTimestamp** | **Number** | The UTC unix timestamp of when this collection has been created | [optional] 
+**holderOrganizationId** | **Number** | The UTC unix timestamp of when this collection has been created | [optional] 
 **id4n** | **String** | The ID | [optional] 
 **label** | **String** |  | [optional] 
-**nextScanOwnership** | **Boolean** |  | [optional] 
-**ownerOrganizationId** | **Number** |  | [optional] 
+**ownerOrganizationId** | **Number** | The UTC unix timestamp of when this collection has been created | [optional] 
 **type** | **String** |  | [optional] 
 
 
