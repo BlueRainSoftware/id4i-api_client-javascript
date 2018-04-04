@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdTimestamp** | **Number** | The UTC unix timestamp of when this collection has been created | [optional] 
-**holderOrganizationId** | **Number** | The UTC unix timestamp of when this collection has been created | [optional] 
+**holderOrganizationId** | **Number** | Organization ID of the GUID holder | [optional] 
 **id4n** | **String** | The ID | [optional] 
 **label** | **String** |  | [optional] 
-**ownerOrganizationId** | **Number** | The UTC unix timestamp of when this collection has been created | [optional] 
+**ownerOrganizationId** | **Number** | Organization ID of the GUID owner | [optional] 
 **type** | **String** |  | [optional] 
 
 

@@ -95,7 +95,7 @@
    */
   exports.prototype['createdTimestamp'] = undefined;
   /**
-   * The UTC unix timestamp of when this collection has been created
+   * Organization ID of the GUID holder
    * @member {Number} holderOrganizationId
    */
   exports.prototype['holderOrganizationId'] = undefined;
@@ -109,7 +109,7 @@
    */
   exports.prototype['label'] = undefined;
   /**
-   * The UTC unix timestamp of when this collection has been created
+   * Organization ID of the GUID owner
    * @member {Number} ownerOrganizationId
    */
   exports.prototype['ownerOrganizationId'] = undefined;
