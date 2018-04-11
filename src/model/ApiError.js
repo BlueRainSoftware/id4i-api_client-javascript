@@ -44,14 +44,16 @@
    * Constructs a new <code>ApiError</code>.
    * @alias module:model/ApiError
    * @class
+   * @param code {module:model/ApiError.CodeEnum} 
+   * @param errorList {Array.<module:model/ApiError>} 
+   * @param message {String} 
    */
-  var exports = function() {
+  var exports = function(code, errorList, message) {
     var _this = this;
 
-
-
-
-
+    _this['code'] = code;
+    _this['errorList'] = errorList;
+    _this['message'] = message;
   };
 
   /**
@@ -68,9 +70,6 @@
       if (data.hasOwnProperty('code')) {
         obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
-      if (data.hasOwnProperty('errorId')) {
-        obj['errorId'] = ApiClient.convertToType(data['errorId'], 'String');
-      }
       if (data.hasOwnProperty('errorList')) {
         obj['errorList'] = ApiClient.convertToType(data['errorList'], [ApiError]);
       }
@@ -85,10 +84,6 @@
    * @member {module:model/ApiError.CodeEnum} code
    */
   exports.prototype['code'] = undefined;
-  /**
-   * @member {String} errorId
-   */
-  exports.prototype['errorId'] = undefined;
   /**
    * @member {Array.<module:model/ApiError>} errorList
    */
