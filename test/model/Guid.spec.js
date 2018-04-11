@@ -81,6 +81,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property physicalState (base name: "physicalState")', function() {
+      // uncomment below and update the code to test the property physicalState
+      //var instane = new Id4iApi.Guid();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

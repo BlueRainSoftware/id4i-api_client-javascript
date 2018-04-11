@@ -93,6 +93,8 @@ Name | Type | Description | Notes
 
 * `TRANSFER_DENIED` (value: `"ERR_TRANSFER_DENIED"`)
 
+* `INVALID_PHYSICAL_STATE` (value: `"ERR_INVALID_PHYSICAL_STATE"`)
+
 
 
 

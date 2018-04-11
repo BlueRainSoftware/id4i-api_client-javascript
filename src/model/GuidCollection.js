@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -82,6 +83,9 @@
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
       }
+      if (data.hasOwnProperty('physicalState')) {
+        obj['physicalState'] = ApiClient.convertToType(data['physicalState'], 'String');
+      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
@@ -95,7 +99,7 @@
    */
   exports.prototype['createdTimestamp'] = undefined;
   /**
-   * Organization ID of the GUID holder
+   * Organization ID of the holder of the collection
    * @member {Number} holderOrganizationId
    */
   exports.prototype['holderOrganizationId'] = undefined;
@@ -109,15 +113,42 @@
    */
   exports.prototype['label'] = undefined;
   /**
-   * Organization ID of the GUID owner
+   * Organization ID of the collection owner
    * @member {Number} ownerOrganizationId
    */
   exports.prototype['ownerOrganizationId'] = undefined;
+  /**
+   * Physical attachment state of the collection
+   * @member {module:model/GuidCollection.PhysicalStateEnum} physicalState
+   */
+  exports.prototype['physicalState'] = undefined;
   /**
    * @member {module:model/GuidCollection.TypeEnum} type
    */
   exports.prototype['type'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>physicalState</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.PhysicalStateEnum = {
+    /**
+     * value: "UNATTACHED"
+     * @const
+     */
+    "UNATTACHED": "UNATTACHED",
+    /**
+     * value: "ATTACHED"
+     * @const
+     */
+    "ATTACHED": "ATTACHED",
+    /**
+     * value: "DETACHED"
+     * @const
+     */
+    "DETACHED": "DETACHED"  };
 
   /**
    * Allowed values for the <code>type</code> property.

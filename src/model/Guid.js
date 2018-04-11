@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -77,6 +78,9 @@
       if (data.hasOwnProperty('ownerOrganizationId')) {
         obj['ownerOrganizationId'] = ApiClient.convertToType(data['ownerOrganizationId'], 'Number');
       }
+      if (data.hasOwnProperty('physicalState')) {
+        obj['physicalState'] = ApiClient.convertToType(data['physicalState'], 'String');
+      }
     }
     return obj;
   }
@@ -101,7 +105,34 @@
    * @member {Number} ownerOrganizationId
    */
   exports.prototype['ownerOrganizationId'] = undefined;
+  /**
+   * Physical attachment state of the GUID
+   * @member {module:model/Guid.PhysicalStateEnum} physicalState
+   */
+  exports.prototype['physicalState'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>physicalState</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.PhysicalStateEnum = {
+    /**
+     * value: "UNATTACHED"
+     * @const
+     */
+    "UNATTACHED": "UNATTACHED",
+    /**
+     * value: "ATTACHED"
+     * @const
+     */
+    "ATTACHED": "ATTACHED",
+    /**
+     * value: "DETACHED"
+     * @const
+     */
+    "DETACHED": "DETACHED"  };
 
 
   return exports;

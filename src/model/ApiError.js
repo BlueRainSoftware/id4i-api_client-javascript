@@ -304,7 +304,12 @@
      * value: "ERR_TRANSFER_DENIED"
      * @const
      */
-    "TRANSFER_DENIED": "ERR_TRANSFER_DENIED"  };
+    "TRANSFER_DENIED": "ERR_TRANSFER_DENIED",
+    /**
+     * value: "ERR_INVALID_PHYSICAL_STATE"
+     * @const
+     */
+    "INVALID_PHYSICAL_STATE": "ERR_INVALID_PHYSICAL_STATE"  };
 
 
   return exports;
