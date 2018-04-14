@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **String** |  | 
-**organizationId** | **Number** |  | 
 **secret** | **String** |  | 
+**organizationId** | **Number** |  | 
 
 

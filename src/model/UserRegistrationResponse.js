@@ -44,12 +44,13 @@
    * Constructs a new <code>UserRegistrationResponse</code>.
    * @alias module:model/UserRegistrationResponse
    * @class
+   * @param id {Number} 
    */
-  var exports = function() {
+  var exports = function(id) {
     var _this = this;
 
 
-
+    _this['id'] = id;
 
 
   };

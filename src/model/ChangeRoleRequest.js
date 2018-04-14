@@ -44,12 +44,11 @@
    * Constructs a new <code>ChangeRoleRequest</code>.
    * @alias module:model/ChangeRoleRequest
    * @class
-   * @param roles {Array.<String>} 
    */
-  var exports = function(roles) {
+  var exports = function() {
     var _this = this;
 
-    _this['roles'] = roles;
+
   };
 
   /**

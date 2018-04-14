@@ -57,8 +57,8 @@
       //expect(instance).to.be.a(Id4iApi.CompleteUserRegistrationRequest);
     });
 
-    it('should have the property password (base name: "password")', function() {
-      // uncomment below and update the code to test the property password
+    it('should have the property verificationToken (base name: "verificationToken")', function() {
+      // uncomment below and update the code to test the property verificationToken
       //var instane = new Id4iApi.CompleteUserRegistrationRequest();
       //expect(instance).to.be();
     });
@@ -69,8 +69,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property verificationToken (base name: "verificationToken")', function() {
-      // uncomment below and update the code to test the property verificationToken
+    it('should have the property password (base name: "password")', function() {
+      // uncomment below and update the code to test the property password
       //var instane = new Id4iApi.CompleteUserRegistrationRequest();
       //expect(instance).to.be();
     });

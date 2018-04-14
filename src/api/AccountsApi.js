@@ -210,27 +210,22 @@
 
     /**
      * Find users
-     * @param {String} usernamePrefix Find users starting with this prefix.
      * @param {Object} opts Optional parameters
+     * @param {String} opts.usernamePrefix 
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/AccountsApi~findUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserPresentationResponse}
      */
-    this.findUsers = function(usernamePrefix, opts, callback) {
+    this.findUsers = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'usernamePrefix' is set
-      if (usernamePrefix === undefined || usernamePrefix === null) {
-        throw new Error("Missing the required parameter 'usernamePrefix' when calling findUsers");
-      }
 
 
       var pathParams = {
       };
       var queryParams = {
-        'usernamePrefix': usernamePrefix,
+        'usernamePrefix': opts['usernamePrefix'],
         'offset': opts['offset'],
         'limit': opts['limit'],
       };

@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 <a name="findUsers"></a>
 # **findUsers**
-> PaginatedUserPresentationResponse findUsers(usernamePrefix, opts)
+> PaginatedUserPresentationResponse findUsers(opts)
 
 Find users
 
@@ -195,9 +195,8 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var usernamePrefix = "usernamePrefix_example"; // String | Find users starting with this prefix.
-
 var opts = { 
+  'usernamePrefix': "usernamePrefix_example", // String | 
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -209,14 +208,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findUsers(usernamePrefix, opts, callback);
+apiInstance.findUsers(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usernamePrefix** | **String**| Find users starting with this prefix. | 
+ **usernamePrefix** | **String**|  | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 

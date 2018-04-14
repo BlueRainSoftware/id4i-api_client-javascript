@@ -50,8 +50,8 @@
     var _this = this;
 
 
-    _this['roles'] = roles;
 
+    _this['roles'] = roles;
   };
 
   /**
@@ -68,11 +68,11 @@
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
-      if (data.hasOwnProperty('roles')) {
-        obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
-      }
       if (data.hasOwnProperty('userName')) {
         obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      }
+      if (data.hasOwnProperty('roles')) {
+        obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
       }
     }
     return obj;
@@ -83,13 +83,13 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * @member {Array.<String>} roles
-   */
-  exports.prototype['roles'] = undefined;
-  /**
    * @member {String} userName
    */
   exports.prototype['userName'] = undefined;
+  /**
+   * @member {Array.<String>} roles
+   */
+  exports.prototype['roles'] = undefined;
 
 
 

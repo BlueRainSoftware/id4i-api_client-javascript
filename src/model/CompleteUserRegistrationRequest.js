@@ -44,16 +44,16 @@
    * Constructs a new <code>CompleteUserRegistrationRequest</code>.
    * @alias module:model/CompleteUserRegistrationRequest
    * @class
-   * @param password {String} 
-   * @param username {String} 
    * @param verificationToken {String} 
+   * @param username {String} 
+   * @param password {String} 
    */
-  var exports = function(password, username, verificationToken) {
+  var exports = function(verificationToken, username, password) {
     var _this = this;
 
-    _this['password'] = password;
-    _this['username'] = username;
     _this['verificationToken'] = verificationToken;
+    _this['username'] = username;
+    _this['password'] = password;
   };
 
   /**
@@ -67,31 +67,31 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      if (data.hasOwnProperty('verificationToken')) {
+        obj['verificationToken'] = ApiClient.convertToType(data['verificationToken'], 'String');
       }
       if (data.hasOwnProperty('username')) {
         obj['username'] = ApiClient.convertToType(data['username'], 'String');
       }
-      if (data.hasOwnProperty('verificationToken')) {
-        obj['verificationToken'] = ApiClient.convertToType(data['verificationToken'], 'String');
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} password
+   * @member {String} verificationToken
    */
-  exports.prototype['password'] = undefined;
+  exports.prototype['verificationToken'] = undefined;
   /**
    * @member {String} username
    */
   exports.prototype['username'] = undefined;
   /**
-   * @member {String} verificationToken
+   * @member {String} password
    */
-  exports.prototype['verificationToken'] = undefined;
+  exports.prototype['password'] = undefined;
 
 
 
