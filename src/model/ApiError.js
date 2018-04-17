@@ -146,6 +146,11 @@
      */
     "AUTHORIZATION_FORBIDDEN": "ERR_AUTHORIZATION_FORBIDDEN",
     /**
+     * value: "ERR_AUTHORIZATION_REQUIRE_USER"
+     * @const
+     */
+    "AUTHORIZATION_REQUIRE_USER": "ERR_AUTHORIZATION_REQUIRE_USER",
+    /**
      * value: "ERR_INPUT_VALIDATION_FAILED"
      * @const
      */
