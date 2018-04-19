@@ -155,7 +155,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/history', 'POST',
+        '/api/v1/history/{id4n}', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -454,7 +454,7 @@
       var returnType = PaginatedHistoryItemResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/history', 'GET',
+        '/api/v1/history/{id4n}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -517,7 +517,7 @@
       var returnType = PaginatedHistoryItemResponse;
 
       return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/history/{organizationId}', 'GET',
+        '/api/v1/history/{id4n}/{organizationId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -746,7 +746,7 @@
       var returnType = HistoryItem;
 
       return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility', 'PUT',
+        '/api/v1/history/{id4n}/{organizationId}/{sequence}/visibility', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
