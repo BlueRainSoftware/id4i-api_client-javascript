@@ -51,6 +51,7 @@
     var _this = this;
 
 
+
     _this['id4nAssociated'] = id4nAssociated;
     _this['name'] = name;
   };
@@ -66,6 +67,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('allowsBillableOperations')) {
+        obj['allowsBillableOperations'] = ApiClient.convertToType(data['allowsBillableOperations'], 'Boolean');
+      }
       if (data.hasOwnProperty('helpText')) {
         obj['helpText'] = ApiClient.convertToType(data['helpText'], 'String');
       }
@@ -79,6 +83,10 @@
     return obj;
   }
 
+  /**
+   * @member {Boolean} allowsBillableOperations
+   */
+  exports.prototype['allowsBillableOperations'] = undefined;
   /**
    * @member {String} helpText
    */

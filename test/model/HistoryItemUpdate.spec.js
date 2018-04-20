@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.ApiKeyPrivilegeInfo();
+    instance = new Id4iApi.HistoryItemUpdate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,34 +50,22 @@
       object[property] = value;
   }
 
-  describe('ApiKeyPrivilegeInfo', function() {
-    it('should create an instance of ApiKeyPrivilegeInfo', function() {
-      // uncomment below and update the code to test ApiKeyPrivilegeInfo
-      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
-      //expect(instance).to.be.a(Id4iApi.ApiKeyPrivilegeInfo);
+  describe('HistoryItemUpdate', function() {
+    it('should create an instance of HistoryItemUpdate', function() {
+      // uncomment below and update the code to test HistoryItemUpdate
+      //var instane = new Id4iApi.HistoryItemUpdate();
+      //expect(instance).to.be.a(Id4iApi.HistoryItemUpdate);
     });
 
-    it('should have the property allowsBillableOperations (base name: "allowsBillableOperations")', function() {
-      // uncomment below and update the code to test the property allowsBillableOperations
-      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
+    it('should have the property organizationId (base name: "organizationId")', function() {
+      // uncomment below and update the code to test the property organizationId
+      //var instane = new Id4iApi.HistoryItemUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property helpText (base name: "helpText")', function() {
-      // uncomment below and update the code to test the property helpText
-      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id4nAssociated (base name: "id4nAssociated")', function() {
-      // uncomment below and update the code to test the property id4nAssociated
-      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Id4iApi.ApiKeyPrivilegeInfo();
+    it('should have the property visibility (base name: "visibility")', function() {
+      // uncomment below and update the code to test the property visibility
+      //var instane = new Id4iApi.HistoryItemUpdate();
       //expect(instance).to.be();
     });
 

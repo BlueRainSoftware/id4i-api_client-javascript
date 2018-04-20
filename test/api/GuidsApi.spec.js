@@ -61,16 +61,6 @@
         done();
       });
     });
-    describe('addHistoryItem', function() {
-      it('should call addHistoryItem successfully', function(done) {
-        //uncomment below and update the code to test addHistoryItem
-        //instance.addHistoryItem(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createGuid', function() {
       it('should call createGuid successfully', function(done) {
         //uncomment below and update the code to test createGuid
@@ -121,26 +111,6 @@
         done();
       });
     });
-    describe('listHistory', function() {
-      it('should call listHistory successfully', function(done) {
-        //uncomment below and update the code to test listHistory
-        //instance.listHistory(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listHistoryOfOrganization', function() {
-      it('should call listHistoryOfOrganization successfully', function(done) {
-        //uncomment below and update the code to test listHistoryOfOrganization
-        //instance.listHistoryOfOrganization(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('removeGuidAlias', function() {
       it('should call removeGuidAlias successfully', function(done) {
         //uncomment below and update the code to test removeGuidAlias
@@ -155,16 +125,6 @@
       it('should call updateGuid successfully', function(done) {
         //uncomment below and update the code to test updateGuid
         //instance.updateGuid(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateHistoryItemVisibility', function() {
-      it('should call updateHistoryItemVisibility successfully', function(done) {
-        //uncomment below and update the code to test updateHistoryItemVisibility
-        //instance.updateHistoryItemVisibility(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
