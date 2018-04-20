@@ -161,16 +161,6 @@
         done();
       });
     });
-    describe('updateGuid1', function() {
-      it('should call updateGuid1 successfully', function(done) {
-        //uncomment below and update the code to test updateGuid1
-        //instance.updateGuid1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateHistoryItemVisibility', function() {
       it('should call updateHistoryItemVisibility successfully', function(done) {
         //uncomment below and update the code to test updateHistoryItemVisibility

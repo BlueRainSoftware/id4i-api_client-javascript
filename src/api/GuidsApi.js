@@ -625,60 +625,6 @@
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/api/v1/guids/{id4n}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the updateGuid1 operation.
-     * @callback module:api/GuidsApi~updateGuid1Callback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Change GUID information.
-     * Allows ownership transfer.
-     * @param {String} id4n The GUID number
-     * @param {module:model/Guid} request request
-     * @param {module:api/GuidsApi~updateGuid1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
-     */
-    this.updateGuid1 = function(id4n, request, callback) {
-      var postBody = request;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling updateGuid1");
-      }
-
-      // verify the required parameter 'request' is set
-      if (request === undefined || request === null) {
-        throw new Error("Missing the required parameter 'request' when calling updateGuid1");
-      }
-
-
-      var pathParams = {
-        'id4n': id4n
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json'];
-      var accepts = ['application/xml', 'application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
         '/api/v1/guids/{id4n}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
