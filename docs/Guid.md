@@ -7,5 +7,19 @@ Name | Type | Description | Notes
 **holderOrganizationId** | **Number** | Organization ID of the GUID holder | [optional] 
 **id4n** | **String** | The ID | [optional] 
 **ownerOrganizationId** | **Number** | Organization ID of the GUID owner | [optional] 
+**physicalState** | **String** | Physical attachment state of the GUID | [optional] 
+
+
+<a name="PhysicalStateEnum"></a>
+## Enum: PhysicalStateEnum
+
+
+* `UNATTACHED` (value: `"UNATTACHED"`)
+
+* `ATTACHED` (value: `"ATTACHED"`)
+
+* `DETACHED` (value: `"DETACHED"`)
+
+
 
 

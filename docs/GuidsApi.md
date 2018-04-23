@@ -11,8 +11,7 @@ Method | HTTP request | Description
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**updateGuid**](GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**updateGuid1**](GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addGuidAlias"></a>
@@ -431,62 +430,6 @@ var callback = function(error, data, response) {
   }
 };
 apiInstance.updateGuid(id4n, request, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID number | 
- **request** | [**Guid**](Guid.md)| request | 
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="updateGuid1"></a>
-# **updateGuid1**
-> Object updateGuid1(id4n, request)
-
-Change GUID information.
-
-Allows ownership transfer.
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.GuidsApi();
-
-var id4n = "id4n_example"; // String | The GUID number
-
-var request = new Id4iApi.Guid(); // Guid | request
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateGuid1(id4n, request, callback);
 ```
 
 ### Parameters

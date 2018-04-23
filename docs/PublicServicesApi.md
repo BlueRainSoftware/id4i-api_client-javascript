@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+[**listPublicHistory**](PublicServicesApi.md#listPublicHistory) | **GET** /api/v1/public/history/{id4n} | Shows the public history of the given GUID
+[**readOrganizationInfo**](PublicServicesApi.md#readOrganizationInfo) | **GET** /api/v1/public/organizations/{organizationId} | Read public organization information
 [**readPublicDocument**](PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**resolveImageUsingGET**](PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 [**resolveWhoIsEntry**](PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
@@ -281,6 +283,116 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="listPublicHistory"></a>
+# **listPublicHistory**
+> PaginatedHistoryItemResponse listPublicHistory(id4n, opts)
+
+Shows the public history of the given GUID
+
+Only contains public history items
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.PublicServicesApi();
+
+var id4n = "id4n_example"; // String | GUID to retrieve the history for
+
+var opts = { 
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listPublicHistory(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| GUID to retrieve the history for | 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
+
+### Return type
+
+[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="readOrganizationInfo"></a>
+# **readOrganizationInfo**
+> Organization readOrganizationInfo(organizationId)
+
+Read public organization information
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.PublicServicesApi();
+
+var organizationId = 789; // Number | Organization ID
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.readOrganizationInfo(organizationId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Number**| Organization ID | 
+
+### Return type
+
+[**Organization**](Organization.md)
 
 ### Authorization
 

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getUserRoles**](AccountsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](AccountsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**inviteUsers**](AccountsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+[**isContractRequired**](AccountsApi.md#isContractRequired) | **GET** /account/contractRequired | Tells you whether your company needs to have a contract with BlueRain to be able to sign up
 [**listAllRoles**](AccountsApi.md#listAllRoles) | **GET** /api/v1/roles | List roles
 [**login**](AccountsApi.md#login) | **POST** /login | 
 [**registerUser**](AccountsApi.md#registerUser) | **POST** /account/registration | Register user
@@ -178,7 +179,7 @@ Name | Type | Description  | Notes
 
 <a name="findUsers"></a>
 # **findUsers**
-> PaginatedUserPresentationResponse findUsers(usernamePrefix, opts)
+> PaginatedUserPresentationResponse findUsers(opts)
 
 Find users
 
@@ -195,9 +196,8 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var usernamePrefix = "usernamePrefix_example"; // String | Find users starting with this prefix.
-
 var opts = { 
+  'usernamePrefix': "usernamePrefix_example", // String | 
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -209,14 +209,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findUsers(usernamePrefix, opts, callback);
+apiInstance.findUsers(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usernamePrefix** | **String**| Find users starting with this prefix. | 
+ **usernamePrefix** | **String**|  | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -515,6 +515,46 @@ null (empty response body)
 ### Authorization
 
 [Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="isContractRequired"></a>
+# **isContractRequired**
+> &#39;Boolean&#39; isContractRequired()
+
+Tells you whether your company needs to have a contract with BlueRain to be able to sign up
+
+On production systems, users must confirm that their organization has a valid contract for ID4i usage. It is not required on test and sandbox systems. 
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+
+var apiInstance = new Id4iApi.AccountsApi();
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.isContractRequired(callback);
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**&#39;Boolean&#39;**
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

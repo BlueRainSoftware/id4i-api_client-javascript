@@ -3,10 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** |  | [optional] 
-**errorId** | **String** |  | [optional] 
-**errorList** | [**[ApiError]**](ApiError.md) |  | [optional] 
-**message** | **String** |  | [optional] 
+**code** | **String** |  | 
+**errorList** | [**[ApiError]**](ApiError.md) |  | 
+**message** | **String** |  | 
 
 
 <a name="CodeEnum"></a>
@@ -30,6 +29,8 @@ Name | Type | Description | Notes
 * `AUTHORIZATION_MISSING_PRIVILEGES` (value: `"ERR_AUTHORIZATION_MISSING_PRIVILEGES"`)
 
 * `AUTHORIZATION_FORBIDDEN` (value: `"ERR_AUTHORIZATION_FORBIDDEN"`)
+
+* `AUTHORIZATION_REQUIRE_USER` (value: `"ERR_AUTHORIZATION_REQUIRE_USER"`)
 
 * `INPUT_VALIDATION_FAILED` (value: `"ERR_INPUT_VALIDATION_FAILED"`)
 
@@ -92,6 +93,8 @@ Name | Type | Description | Notes
 * `INSECURE_PASSWORD` (value: `"ERR_INSECURE_PASSWORD"`)
 
 * `TRANSFER_DENIED` (value: `"ERR_TRANSFER_DENIED"`)
+
+* `INVALID_PHYSICAL_STATE` (value: `"ERR_INVALID_PHYSICAL_STATE"`)
 
 
 

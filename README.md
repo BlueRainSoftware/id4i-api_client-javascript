@@ -14,8 +14,8 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.4.0
-- Package version: 0.4.0
+- API version: 0.5.1
+- Package version: 0.5.1
 - Build package: io.swagger.codegen.languages.JavascriptClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -128,7 +128,7 @@ var Id4iApi = require('id4i_api');
         };
         api.addUserRoles(organizationId, username, changeRoleRequest, callback);
 
-    ```
+```
 
 ## Documentation for API Endpoints
 
@@ -145,6 +145,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.AccountsApi* | [**getUserRoles**](docs/AccountsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *Id4iApi.AccountsApi* | [**getUsersOfOrganization**](docs/AccountsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 *Id4iApi.AccountsApi* | [**inviteUsers**](docs/AccountsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+*Id4iApi.AccountsApi* | [**isContractRequired**](docs/AccountsApi.md#isContractRequired) | **GET** /account/contractRequired | Tells you whether your company needs to have a contract with BlueRain to be able to sign up
 *Id4iApi.AccountsApi* | [**listAllRoles**](docs/AccountsApi.md#listAllRoles) | **GET** /api/v1/roles | List roles
 *Id4iApi.AccountsApi* | [**login**](docs/AccountsApi.md#login) | **POST** /login | 
 *Id4iApi.AccountsApi* | [**registerUser**](docs/AccountsApi.md#registerUser) | **POST** /account/registration | Register user
@@ -207,8 +208,13 @@ Class | Method | HTTP request | Description
 *Id4iApi.GuidsApi* | [**getGuidsWithoutCollection**](docs/GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *Id4iApi.GuidsApi* | [**getId4n**](docs/GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 *Id4iApi.GuidsApi* | [**removeGuidAlias**](docs/GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-*Id4iApi.GuidsApi* | [**updateGuid**](docs/GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-*Id4iApi.GuidsApi* | [**updateGuid1**](docs/GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*Id4iApi.GuidsApi* | [**updateGuid**](docs/GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*Id4iApi.HistoryApi* | [**addItem**](docs/HistoryApi.md#addItem) | **POST** /api/v1/history/{id4n} | Add history item
+*Id4iApi.HistoryApi* | [**list**](docs/HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
+*Id4iApi.HistoryApi* | [**listAll**](docs/HistoryApi.md#listAll) | **GET** /api/v1/history/{id4n} | List history
+*Id4iApi.HistoryApi* | [**retrieveItem**](docs/HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+*Id4iApi.HistoryApi* | [**updateItem**](docs/HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
+*Id4iApi.HistoryApi* | [**updateItemVisibility**](docs/HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *Id4iApi.OrganizationsApi* | [**addUserRoles**](docs/OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -236,6 +242,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.PublicServicesApi* | [**go**](docs/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *Id4iApi.PublicServicesApi* | [**listAllPublicDocuments**](docs/PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 *Id4iApi.PublicServicesApi* | [**listPublicDocuments**](docs/PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+*Id4iApi.PublicServicesApi* | [**listPublicHistory**](docs/PublicServicesApi.md#listPublicHistory) | **GET** /api/v1/public/history/{id4n} | Shows the public history of the given GUID
+*Id4iApi.PublicServicesApi* | [**readOrganizationInfo**](docs/PublicServicesApi.md#readOrganizationInfo) | **GET** /api/v1/public/organizations/{organizationId} | Read public organization information
 *Id4iApi.PublicServicesApi* | [**readPublicDocument**](docs/PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *Id4iApi.PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *Id4iApi.PublicServicesApi* | [**resolveWhoIsEntry**](docs/PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
@@ -291,6 +299,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.Guid](docs/Guid.md)
  - [Id4iApi.GuidAlias](docs/GuidAlias.md)
  - [Id4iApi.GuidCollection](docs/GuidCollection.md)
+ - [Id4iApi.HistoryItem](docs/HistoryItem.md)
+ - [Id4iApi.HistoryItemUpdate](docs/HistoryItemUpdate.md)
  - [Id4iApi.Id4n](docs/Id4n.md)
  - [Id4iApi.Id4nPresentation](docs/Id4nPresentation.md)
  - [Id4iApi.Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
@@ -308,6 +318,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
  - [Id4iApi.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
  - [Id4iApi.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
+ - [Id4iApi.PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
  - [Id4iApi.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
  - [Id4iApi.PaginatedOwnedDocumentResponse](docs/PaginatedOwnedDocumentResponse.md)
  - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
@@ -318,6 +329,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
  - [Id4iApi.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
  - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
+ - [Id4iApi.PaginatedResponseHistoryItem](docs/PaginatedResponseHistoryItem.md)
  - [Id4iApi.PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
  - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
  - [Id4iApi.PaginatedResponseOwnedDocument](docs/PaginatedResponseOwnedDocument.md)
