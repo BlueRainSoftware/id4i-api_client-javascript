@@ -246,6 +246,11 @@
      */
     "USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME": "ERR_USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME",
     /**
+     * value: "ERR_USER_DEACTIVATED"
+     * @const
+     */
+    "USER_DEACTIVATED": "ERR_USER_DEACTIVATED",
+    /**
      * value: "ERR_LANGUAGE_NOT_SUPPORTED"
      * @const
      */
