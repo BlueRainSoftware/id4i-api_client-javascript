@@ -211,8 +211,8 @@
      */
 
     /**
-     * Get all aliases for the given GUID
-     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     * Get all aliases for the given GUID.
+     * Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
      * @param {String} id4n The GUID to operate on
      * @param {module:api/GuidsApi~getGuidAliasesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object.<String, {'String': 'String'}>}
