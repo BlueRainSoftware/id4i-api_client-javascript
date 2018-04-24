@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.CreateLabelledCollectionRequest = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.CreateCollectionRequest = factory(root.Id4iApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,33 +35,34 @@
 
 
   /**
-   * The CreateLabelledCollectionRequest model module.
-   * @module model/CreateLabelledCollectionRequest
+   * The CreateCollectionRequest model module.
+   * @module model/CreateCollectionRequest
    * @version 0.5.1
    */
 
   /**
-   * Constructs a new <code>CreateLabelledCollectionRequest</code>.
-   * @alias module:model/CreateLabelledCollectionRequest
+   * Constructs a new <code>CreateCollectionRequest</code>.
+   * @alias module:model/CreateCollectionRequest
    * @class
-   * @param label {String} 
    * @param length {Number} 
    * @param organizationId {Number} 
+   * @param type {module:model/CreateCollectionRequest.TypeEnum} 
    */
-  var exports = function(label, length, organizationId) {
+  var exports = function(length, organizationId, type) {
     var _this = this;
 
-    _this['label'] = label;
+
     _this['length'] = length;
     _this['organizationId'] = organizationId;
+    _this['type'] = type;
   };
 
   /**
-   * Constructs a <code>CreateLabelledCollectionRequest</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CreateCollectionRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CreateLabelledCollectionRequest} obj Optional instance to populate.
-   * @return {module:model/CreateLabelledCollectionRequest} The populated <code>CreateLabelledCollectionRequest</code> instance.
+   * @param {module:model/CreateCollectionRequest} obj Optional instance to populate.
+   * @return {module:model/CreateCollectionRequest} The populated <code>CreateCollectionRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -75,6 +76,9 @@
       }
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'Number');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
     }
     return obj;
@@ -92,7 +96,33 @@
    * @member {Number} organizationId
    */
   exports.prototype['organizationId'] = undefined;
+  /**
+   * @member {module:model/CreateCollectionRequest.TypeEnum} type
+   */
+  exports.prototype['type'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>type</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.TypeEnum = {
+    /**
+     * value: "ROUTING_COLLECTION"
+     * @const
+     */
+    "ROUTING_COLLECTION": "ROUTING_COLLECTION",
+    /**
+     * value: "LOGISTIC_COLLECTION"
+     * @const
+     */
+    "LOGISTIC_COLLECTION": "LOGISTIC_COLLECTION",
+    /**
+     * value: "LABELLED_COLLECTION"
+     * @const
+     */
+    "LABELLED_COLLECTION": "LABELLED_COLLECTION"  };
 
 
   return exports;

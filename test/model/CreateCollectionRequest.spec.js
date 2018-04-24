@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.CreateLabelledCollectionRequest();
+    instance = new Id4iApi.CreateCollectionRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,34 @@
       object[property] = value;
   }
 
-  describe('CreateLabelledCollectionRequest', function() {
-    it('should create an instance of CreateLabelledCollectionRequest', function() {
-      // uncomment below and update the code to test CreateLabelledCollectionRequest
-      //var instane = new Id4iApi.CreateLabelledCollectionRequest();
-      //expect(instance).to.be.a(Id4iApi.CreateLabelledCollectionRequest);
+  describe('CreateCollectionRequest', function() {
+    it('should create an instance of CreateCollectionRequest', function() {
+      // uncomment below and update the code to test CreateCollectionRequest
+      //var instane = new Id4iApi.CreateCollectionRequest();
+      //expect(instance).to.be.a(Id4iApi.CreateCollectionRequest);
     });
 
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
-      //var instane = new Id4iApi.CreateLabelledCollectionRequest();
+      //var instane = new Id4iApi.CreateCollectionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property length (base name: "length")', function() {
       // uncomment below and update the code to test the property length
-      //var instane = new Id4iApi.CreateLabelledCollectionRequest();
+      //var instane = new Id4iApi.CreateCollectionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property organizationId (base name: "organizationId")', function() {
       // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.CreateLabelledCollectionRequest();
+      //var instane = new Id4iApi.CreateCollectionRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new Id4iApi.CreateCollectionRequest();
       //expect(instance).to.be();
     });
 
