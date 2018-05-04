@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdTimestamp** | **Number** | The UTC unix timestamp of when this collection has been created | [optional] 
-**holderOrganizationId** | **Number** | Organization ID of the holder of the collection | [optional] 
+**holderOrganizationId** | **String** | Organization namespace of the holder of the collection | [optional] 
 **id4n** | **String** | The ID | [optional] 
 **label** | **String** |  | [optional] 
-**ownerOrganizationId** | **Number** | Organization ID of the collection owner | [optional] 
+**ownerOrganizationId** | **String** | Organization namespace of the collection owner | [optional] 
 **physicalState** | **String** | Physical attachment state of the collection | [optional] 
 **type** | **String** |  | [optional] 
 

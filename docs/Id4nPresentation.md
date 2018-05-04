@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdTimestamp** | **Number** | The UTC unix timestamp of when this ID has been created | 
-**holderOrganizationId** | **Number** | ${Id4nPresentation.Guid.holderOrganizationId} | [optional] 
+**holderOrganizationId** | **String** | ${Id4nPresentation.Guid.holderOrganizationId} | [optional] 
 **id4n** | **String** | The ID | 
 **label** | **String** |  | [optional] 
-**ownerOrganizationId** | **Number** | ${Id4nPresentation.Guid.ownerOrganizationId} | [optional] 
+**ownerOrganizationId** | **String** | ${Id4nPresentation.Guid.ownerOrganizationId} | [optional] 
 **type** | **String** | The type of ID | 
 
 

@@ -147,7 +147,7 @@ var apiInstance = new Id4iApi.RoutingApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'organizationId': 789 // Number | organizationId
+  'organizationId': "organizationId_example" // String | organizationId
 };
 
 var callback = function(error, data, response) {
@@ -165,7 +165,7 @@ apiInstance.getRoutingFile(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **organizationId** | **Number**| organizationId | [optional] 
+ **organizationId** | **String**| organizationId | [optional] 
 
 ### Return type
 

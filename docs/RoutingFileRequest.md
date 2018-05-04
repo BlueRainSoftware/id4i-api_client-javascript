@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **routing** | [**RoutingFile**](RoutingFile.md) |  | 
-**organizationId** | **Number** |  | [optional] 
+**organizationId** | **String** |  | [optional] 
 
 

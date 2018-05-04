@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllApiKeysOfOrganization"></a>
 # **listAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, opts)
+> PaginatedApiKeyResponse listAllApiKeysOfOrganization(opts)
 
 Find API key by organization
 
@@ -367,9 +367,8 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
-var organizationId = 789; // Number | The id of the organization to search in.
-
 var opts = { 
+  'organizationId': "organizationId_example", // String | The namespace of the organization to search in.
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -381,14 +380,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listAllApiKeysOfOrganization(organizationId, opts, callback);
+apiInstance.listAllApiKeysOfOrganization(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization to search in. | 
+ **organizationId** | **String**| The namespace of the organization to search in. | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 

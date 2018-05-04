@@ -42,7 +42,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var username = "username_example"; // String | username
 
@@ -63,7 +63,7 @@ apiInstance.addUserRoles(organizationId, username, changeRoleRequest, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 
@@ -254,7 +254,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var opts = { 
   'offset': 56, // Number | Start with the n-th element
@@ -275,7 +275,7 @@ apiInstance.getAllOrganizationRoles(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -367,7 +367,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var username = "username_example"; // String | username
 
@@ -390,7 +390,7 @@ apiInstance.getUserRoles(organizationId, username, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -429,7 +429,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var opts = { 
   'offset': 56, // Number | Start with the n-th element
@@ -450,7 +450,7 @@ apiInstance.getUsersOfOrganization(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -486,7 +486,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization where users should be invited
 
 var invitationList = new Id4iApi.OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 
@@ -505,7 +505,7 @@ apiInstance.inviteUsers(organizationId, invitationList, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization where users should be invited | 
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
 
 ### Return type
@@ -730,7 +730,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var username = "username_example"; // String | username
 
@@ -751,7 +751,7 @@ apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, callbac
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 

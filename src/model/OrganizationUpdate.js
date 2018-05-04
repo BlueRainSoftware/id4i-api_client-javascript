@@ -17,32 +17,33 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/UserPresentation'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./UserPresentation'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.UserRoles = factory(root.Id4iApi.ApiClient, root.Id4iApi.UserPresentation);
+    root.Id4iApi.OrganizationUpdate = factory(root.Id4iApi.ApiClient);
   }
-}(this, function(ApiClient, UserPresentation) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The UserRoles model module.
-   * @module model/UserRoles
+   * The OrganizationUpdate model module.
+   * @module model/OrganizationUpdate
    * @version 0.6.0
    */
 
   /**
-   * Constructs a new <code>UserRoles</code>.
-   * @alias module:model/UserRoles
+   * Constructs a new <code>OrganizationUpdate</code>.
+   * An organization
+   * @alias module:model/OrganizationUpdate
    * @class
    */
   var exports = function() {
@@ -53,34 +54,36 @@
   };
 
   /**
-   * Constructs a <code>UserRoles</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>OrganizationUpdate</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/UserRoles} obj Optional instance to populate.
-   * @return {module:model/UserRoles} The populated <code>UserRoles</code> instance.
+   * @param {module:model/OrganizationUpdate} obj Optional instance to populate.
+   * @return {module:model/OrganizationUpdate} The populated <code>OrganizationUpdate</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('roles')) {
-        obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('user')) {
-        obj['user'] = UserPresentation.constructFromObject(data['user']);
+      if (data.hasOwnProperty('namespace')) {
+        obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<String>} roles
+   * The name of the organization
+   * @member {String} name
    */
-  exports.prototype['roles'] = undefined;
+  exports.prototype['name'] = undefined;
   /**
-   * @member {module:model/UserPresentation} user
+   * The namespace of the organization
+   * @member {String} namespace
    */
-  exports.prototype['user'] = undefined;
+  exports.prototype['namespace'] = undefined;
 
 
 

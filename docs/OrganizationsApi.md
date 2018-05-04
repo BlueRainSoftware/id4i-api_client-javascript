@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 [**deleteOrganizationBillingAddress**](OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
 [**deleteOrganizationLogo**](OrganizationsApi.md#deleteOrganizationLogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
-[**findOrganization**](OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+[**findOrganization**](OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id/namespace
 [**findOrganizationAddress**](OrganizationsApi.md#findOrganizationAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
 [**findOrganizationBillingAddress**](OrganizationsApi.md#findOrganizationBillingAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 [**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
@@ -45,7 +45,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var username = "username_example"; // String | username
 
@@ -66,7 +66,7 @@ apiInstance.addUserRoles(organizationId, username, changeRoleRequest, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 
@@ -155,7 +155,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | The id of the organization to be deleted.
+var organizationId = "organizationId_example"; // String | The namespace of the organization to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -172,7 +172,7 @@ apiInstance.deleteOrganization(organizationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization to be deleted. | 
+ **organizationId** | **String**| The namespace of the organization to be deleted. | 
 
 ### Return type
 
@@ -206,7 +206,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -223,7 +223,7 @@ apiInstance.deleteOrganizationBillingAddress(organizationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -257,7 +257,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | The id of the organization where the logo should be deleted.
+var organizationId = "organizationId_example"; // String | The namespace of the organization where the logo should be deleted.
 
 
 var callback = function(error, data, response) {
@@ -274,7 +274,7 @@ apiInstance.deleteOrganizationLogo(organizationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization where the logo should be deleted. | 
+ **organizationId** | **String**| The namespace of the organization where the logo should be deleted. | 
 
 ### Return type
 
@@ -293,7 +293,7 @@ null (empty response body)
 # **findOrganization**
 > Organization findOrganization(organizationId)
 
-Find organization by id
+Find organization by id/namespace
 
 Returns a single organization.
 
@@ -310,7 +310,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | The id of the organization to be retrieved.
+var organizationId = "organizationId_example"; // String | The namespace of the organization to be retrieved.
 
 
 var callback = function(error, data, response) {
@@ -327,7 +327,7 @@ apiInstance.findOrganization(organizationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization to be retrieved. | 
+ **organizationId** | **String**| The namespace of the organization to be retrieved. | 
 
 ### Return type
 
@@ -361,7 +361,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -378,7 +378,7 @@ apiInstance.findOrganizationAddress(organizationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -412,7 +412,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -429,7 +429,7 @@ apiInstance.findOrganizationBillingAddress(organizationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -465,7 +465,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var opts = { 
   'offset': 56, // Number | Start with the n-th element
@@ -489,7 +489,7 @@ apiInstance.getAllCollectionsOfOrganization(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
  **type** | **String**| Filter by this type | [optional] 
@@ -530,7 +530,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var opts = { 
   'offset': 56, // Number | Start with the n-th element
@@ -551,7 +551,7 @@ apiInstance.getAllOrganizationRoles(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -643,7 +643,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var username = "username_example"; // String | username
 
@@ -666,7 +666,7 @@ apiInstance.getUserRoles(organizationId, username, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -705,7 +705,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var opts = { 
   'offset': 56, // Number | Start with the n-th element
@@ -726,7 +726,7 @@ apiInstance.getUsersOfOrganization(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -762,7 +762,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization where users should be invited
 
 var invitationList = new Id4iApi.OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 
@@ -781,7 +781,7 @@ apiInstance.inviteUsers(organizationId, invitationList, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization where users should be invited | 
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
 
 ### Return type
@@ -870,7 +870,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var username = "username_example"; // String | username
 
@@ -891,7 +891,7 @@ apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, callbac
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 
@@ -929,7 +929,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | The id of the organization where the logo should be updated.
+var organizationId = "organizationId_example"; // String | The namespace of the organization where the logo should be updated.
 
 var file = "/path/to/file.txt"; // File | An image containing the new logo.
 
@@ -948,7 +948,7 @@ apiInstance.setOrganizationLogo(organizationId, file, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization where the logo should be updated. | 
+ **organizationId** | **String**| The namespace of the organization where the logo should be updated. | 
  **file** | **File**| An image containing the new logo. | 
 
 ### Return type
@@ -966,7 +966,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganization"></a>
 # **updateOrganization**
-> Organization updateOrganization(organizationId, organization)
+> Organization updateOrganization(organizationId, organizationUpdate)
 
 Update organization
 
@@ -983,9 +983,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | The id of the organization to be updated.
+var organizationId = "organizationId_example"; // String | The namespace of the organization to be updated.
 
-var organization = new Id4iApi.Organization(); // Organization | Updated organization object
+var organizationUpdate = new Id4iApi.OrganizationUpdate(); // OrganizationUpdate | Updated organization object
 
 
 var callback = function(error, data, response) {
@@ -995,15 +995,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateOrganization(organizationId, organization, callback);
+apiInstance.updateOrganization(organizationId, organizationUpdate, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The id of the organization to be updated. | 
- **organization** | [**Organization**](Organization.md)| Updated organization object | 
+ **organizationId** | **String**| The namespace of the organization to be updated. | 
+ **organizationUpdate** | [**OrganizationUpdate**](OrganizationUpdate.md)| Updated organization object | 
 
 ### Return type
 
@@ -1037,7 +1037,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var addressResource = new Id4iApi.OrganizationAddress(); // OrganizationAddress | addressResource
 
@@ -1056,7 +1056,7 @@ apiInstance.updateOrganizationAddress(organizationId, addressResource, callback)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
 
 ### Return type
@@ -1091,7 +1091,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.OrganizationsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var addressResource = new Id4iApi.OrganizationAddress(); // OrganizationAddress | addressResource
 
@@ -1110,7 +1110,7 @@ apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, ca
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
 
 ### Return type

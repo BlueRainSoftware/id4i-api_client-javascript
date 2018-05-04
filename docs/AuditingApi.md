@@ -28,7 +28,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AuditingApi();
 
-var organizationId = 789; // Number | Organization-ID of change log entries to be listed
+var organizationId = "organizationId_example"; // String | The namespace identifying the organization whose change log entries are to be listed
 
 var opts = { 
   'messageMimeType': "text/mustache", // String | The Mime-type for the message format that should be returned. e.g. 'text/plain' or 'text/mustache' 
@@ -52,7 +52,7 @@ apiInstance.listOrganizationChangeLog(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| Organization-ID of change log entries to be listed | 
+ **organizationId** | **String**| The namespace identifying the organization whose change log entries are to be listed | 
  **messageMimeType** | **String**| The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  | [optional] [default to text/mustache]
  **fromDate** | **Date**| From date time as UTC Date-Time format | [optional] 
  **toDate** | **Date**| To date time as UTC Date-Time format | [optional] 
