@@ -27,7 +27,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.BillingApi();
 
-var organizationId = 789; // Number | The organization to compute the billing information for
+var organizationId = "organizationId_example"; // String | The organization to compute the billing information for
 
 var opts = { 
   'fromDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Billing start date
@@ -48,7 +48,7 @@ apiInstance.getPositionsForOrganization(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The organization to compute the billing information for | 
+ **organizationId** | **String**| The organization to compute the billing information for | 
  **fromDate** | **Date**| Billing start date | [optional] 
  **toDate** | **Date**| Billing end date | [optional] 
 
@@ -84,7 +84,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.BillingApi();
 
-var organizationId = 789; // Number | The organization to compute the billing information for
+var organizationId = "organizationId_example"; // String | The organization to compute the billing information for
 
 var opts = { 
   'fromDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Billing start date
@@ -105,7 +105,7 @@ apiInstance.getSumForOrganization(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| The organization to compute the billing information for | 
+ **organizationId** | **String**| The organization to compute the billing information for | 
  **fromDate** | **Date**| Billing start date | [optional] 
  **toDate** | **Date**| Billing end date | [optional] 
 

@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.UserRegistrationRequest();
+    instance = new Id4iApi.OrganizationUpdate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,22 @@
       object[property] = value;
   }
 
-  describe('UserRegistrationRequest', function() {
-    it('should create an instance of UserRegistrationRequest', function() {
-      // uncomment below and update the code to test UserRegistrationRequest
-      //var instane = new Id4iApi.UserRegistrationRequest();
-      //expect(instance).to.be.a(Id4iApi.UserRegistrationRequest);
+  describe('OrganizationUpdate', function() {
+    it('should create an instance of OrganizationUpdate', function() {
+      // uncomment below and update the code to test OrganizationUpdate
+      //var instane = new Id4iApi.OrganizationUpdate();
+      //expect(instance).to.be.a(Id4iApi.OrganizationUpdate);
     });
 
-    it('should have the property username (base name: "username")', function() {
-      // uncomment below and update the code to test the property username
-      //var instane = new Id4iApi.UserRegistrationRequest();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new Id4iApi.OrganizationUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property password (base name: "password")', function() {
-      // uncomment below and update the code to test the property password
-      //var instane = new Id4iApi.UserRegistrationRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instane = new Id4iApi.UserRegistrationRequest();
+    it('should have the property namespace (base name: "namespace")', function() {
+      // uncomment below and update the code to test the property namespace
+      //var instane = new Id4iApi.OrganizationUpdate();
       //expect(instance).to.be();
     });
 

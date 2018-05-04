@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organizationId** | **Number** | Originator of the history item | 
+**organizationId** | **String** | Originator of the history item | 
 **sequenceId** | **Number** | Forms the primary key of the history item together with the GUID and the organizationId | [optional] 
 **timestamp** | **Number** | History item timestamp | [optional] 
 **type** | **String** | Type of the history item | 

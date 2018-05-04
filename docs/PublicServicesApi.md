@@ -35,7 +35,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.PublicServicesApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -56,7 +56,7 @@ apiInstance.getPublicDocument(organizationId, id4n, fileName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
 
@@ -194,7 +194,7 @@ var apiInstance = new Id4iApi.PublicServicesApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'organizationId': 789, // Number | organizationId
+  'organizationId': "organizationId_example", // String | organizationId
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -214,7 +214,7 @@ apiInstance.listAllPublicDocuments(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **organizationId** | **Number**| organizationId | [optional] 
+ **organizationId** | **String**| organizationId | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -252,7 +252,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.PublicServicesApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -275,7 +275,7 @@ apiInstance.listPublicDocuments(organizationId, id4n, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -371,7 +371,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.PublicServicesApi();
 
-var organizationId = 789; // Number | Organization ID
+var organizationId = "organizationId_example"; // String | Organization ID
 
 
 var callback = function(error, data, response) {
@@ -388,7 +388,7 @@ apiInstance.readOrganizationInfo(organizationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| Organization ID | 
+ **organizationId** | **String**| Organization ID | 
 
 ### Return type
 
@@ -422,7 +422,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.PublicServicesApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -443,7 +443,7 @@ apiInstance.readPublicDocument(organizationId, id4n, fileName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
 

@@ -242,7 +242,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.CollectionsApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var opts = { 
   'offset': 56, // Number | Start with the n-th element
@@ -266,7 +266,7 @@ apiInstance.getAllCollectionsOfOrganization(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| The namespace of the organization | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
  **type** | **String**| Filter by this type | [optional] 

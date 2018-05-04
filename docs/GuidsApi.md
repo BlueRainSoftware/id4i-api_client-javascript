@@ -94,7 +94,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.GuidsApi();
 
-var createGUIDInfo = new Id4iApi.CreateGuidRequest(); // CreateGuidRequest | createGUIDInfo
+var createGUIDInfo = new Id4iApi.CreateGuidRequest(); // CreateGuidRequest | GUID creation model
 
 
 var callback = function(error, data, response) {
@@ -111,7 +111,7 @@ apiInstance.createGuid(createGUIDInfo, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| createGUIDInfo | 
+ **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| GUID creation model | 
 
 ### Return type
 
@@ -249,7 +249,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.GuidsApi();
 
-var organizationId = 789; // Number | Organization to search GUIDs for (required).
+var organizationId = "organizationId_example"; // String | The namespace of the organization to search GUIDs for
 
 var opts = { 
   'offset': 56, // Number | Start with the n-th element
@@ -270,7 +270,7 @@ apiInstance.getGuidsWithoutCollection(organizationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| Organization to search GUIDs for (required). | 
+ **organizationId** | **String**| The namespace of the organization to search GUIDs for | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 

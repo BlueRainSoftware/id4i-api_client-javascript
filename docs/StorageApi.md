@@ -40,7 +40,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -61,7 +61,7 @@ apiInstance.createDocument(organizationId, id4n, content, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **content** | **File**| content | 
 
@@ -97,7 +97,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -118,7 +118,7 @@ apiInstance.deleteDocument(organizationId, id4n, fileName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
 
@@ -154,7 +154,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -175,7 +175,7 @@ apiInstance.getDocument(organizationId, id4n, fileName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
 
@@ -211,7 +211,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -232,7 +232,7 @@ apiInstance.getPublicDocument(organizationId, id4n, fileName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
 
@@ -332,7 +332,7 @@ var apiInstance = new Id4iApi.StorageApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'organizationId': 789, // Number | organizationId
+  'organizationId': "organizationId_example", // String | organizationId
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -352,7 +352,7 @@ apiInstance.listAllPublicDocuments(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **organizationId** | **Number**| organizationId | [optional] 
+ **organizationId** | **String**| organizationId | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -390,7 +390,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -413,7 +413,7 @@ apiInstance.listDocuments(organizationId, id4n, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -452,7 +452,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -475,7 +475,7 @@ apiInstance.listPublicDocuments(organizationId, id4n, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -512,7 +512,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -533,7 +533,7 @@ apiInstance.readDocument(organizationId, id4n, fileName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
 
@@ -569,7 +569,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organization = 789; // Number | organization
+var organization = "organization_example"; // String | organization
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -588,7 +588,7 @@ apiInstance.readFromMicrostorage(organization, id4n, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **Number**| organization | 
+ **organization** | **String**| organization | 
  **id4n** | **String**| id4n | 
 
 ### Return type
@@ -623,7 +623,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -644,7 +644,7 @@ apiInstance.readPublicDocument(organizationId, id4n, fileName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
 
@@ -680,7 +680,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -703,7 +703,7 @@ apiInstance.updateDocumentMetadata(organizationId, id4n, fileName, document, cal
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
  **document** | [**DocumentUpdate**](DocumentUpdate.md)| document | 
@@ -740,7 +740,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organization = 789; // Number | organization
+var organization = "organization_example"; // String | organization
 
 var id4n = "id4n_example"; // String | id4n
 
@@ -764,7 +764,7 @@ apiInstance.writeToMicrostorage(organization, id4n, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **Number**| organization | 
+ **organization** | **String**| organization | 
  **id4n** | **String**| id4n | 
  **contentType** | **String**| Content-Type | [optional] 
  **contentLength** | **Number**| Content-Length | [optional] 

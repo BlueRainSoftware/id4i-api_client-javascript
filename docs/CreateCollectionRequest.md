@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **String** |  | [optional] 
+**organizationId** | **String** |  | 
 **length** | **Number** |  | 
-**organizationId** | **Number** |  | 
 **type** | **String** |  | 
 
 

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**addItem**](HistoryApi.md#addItem) | **POST** /api/v1/history/{id4n} | Add history item
 [**list**](HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**listAll**](HistoryApi.md#listAll) | **GET** /api/v1/history/{id4n} | List history
-[**retrieveItem**](HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+[**retrieveItem**](HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 [**updateItem**](HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 [**updateItemVisibility**](HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 
@@ -74,7 +74,7 @@ null (empty response body)
 
 List history
 
-Lists the history of a GUID
+Lists the history of a GUID of the specified organization
 
 ### Example
 ```javascript
@@ -91,7 +91,7 @@ var apiInstance = new Id4iApi.HistoryApi();
 
 var id4n = "id4n_example"; // String | GUID to retrieve the history for
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var opts = { 
   'includePrivate': true, // Boolean | Also return private history entries
@@ -114,7 +114,7 @@ apiInstance.list(id4n, organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for | 
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
@@ -197,9 +197,7 @@ Name | Type | Description  | Notes
 # **retrieveItem**
 > PaginatedHistoryItemResponse retrieveItem(id4n, organizationId, sequenceId)
 
-List history
-
-Lists the history of a GUID
+Get history item
 
 ### Example
 ```javascript
@@ -216,7 +214,7 @@ var apiInstance = new Id4iApi.HistoryApi();
 
 var id4n = "id4n_example"; // String | GUID to retrieve the history for
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var sequenceId = 56; // Number | sequenceId
 
@@ -236,7 +234,7 @@ apiInstance.retrieveItem(id4n, organizationId, sequenceId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for | 
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **sequenceId** | **Number**| sequenceId | 
 
 ### Return type
@@ -273,7 +271,7 @@ var apiInstance = new Id4iApi.HistoryApi();
 
 var id4n = "id4n_example"; // String | GUID to retrieve the history for
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var sequenceId = 56; // Number | sequenceId
 
@@ -295,7 +293,7 @@ apiInstance.updateItem(id4n, organizationId, sequenceId, update, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for | 
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **sequenceId** | **Number**| sequenceId | 
  **update** | [**HistoryItemUpdate**](HistoryItemUpdate.md)| update | 
 
@@ -333,7 +331,7 @@ var apiInstance = new Id4iApi.HistoryApi();
 
 var id4n = "id4n_example"; // String | GUID to retrieve the history for
 
-var organizationId = 789; // Number | organizationId
+var organizationId = "organizationId_example"; // String | organizationId
 
 var sequenceId = 56; // Number | sequenceId
 
@@ -355,7 +353,7 @@ apiInstance.updateItemVisibility(id4n, organizationId, sequenceId, visibility, c
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for | 
- **organizationId** | **Number**| organizationId | 
+ **organizationId** | **String**| organizationId | 
  **sequenceId** | **Number**| sequenceId | 
  **visibility** | [**Visibility**](Visibility.md)| History item visibility restrictions | 
 
