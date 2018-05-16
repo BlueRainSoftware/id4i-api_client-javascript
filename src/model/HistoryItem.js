@@ -172,6 +172,11 @@
      */
     "REPROCESSING_STARTED": "REPROCESSING_STARTED",
     /**
+     * value: "REPROCESSING_CANCELLED"
+     * @const
+     */
+    "REPROCESSING_CANCELLED": "REPROCESSING_CANCELLED",
+    /**
      * value: "REPROCESSING_FINISHED"
      * @const
      */
@@ -187,10 +192,30 @@
      */
     "MAINTENANCE_STARTED": "MAINTENANCE_STARTED",
     /**
+     * value: "MAINTENANCE_CANCELLED"
+     * @const
+     */
+    "MAINTENANCE_CANCELLED": "MAINTENANCE_CANCELLED",
+    /**
      * value: "MAINTENANCE_FINISHED"
      * @const
      */
-    "MAINTENANCE_FINISHED": "MAINTENANCE_FINISHED"  };
+    "MAINTENANCE_FINISHED": "MAINTENANCE_FINISHED",
+    /**
+     * value: "PRODUCTION_STEP_STARTED"
+     * @const
+     */
+    "PRODUCTION_STEP_STARTED": "PRODUCTION_STEP_STARTED",
+    /**
+     * value: "PRODUCTION_STEP_CANCELLED"
+     * @const
+     */
+    "PRODUCTION_STEP_CANCELLED": "PRODUCTION_STEP_CANCELLED",
+    /**
+     * value: "PRODUCTION_STEP_FINISHED"
+     * @const
+     */
+    "PRODUCTION_STEP_FINISHED": "PRODUCTION_STEP_FINISHED"  };
 
 
   return exports;
