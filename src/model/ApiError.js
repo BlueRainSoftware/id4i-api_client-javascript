@@ -306,11 +306,6 @@
      */
     "NAMESPACE_ALREADY_EXISTS": "ERR_NAMESPACE_ALREADY_EXISTS",
     /**
-     * value: "ERR_MODULE_NOT_ACTIVE"
-     * @const
-     */
-    "MODULE_NOT_ACTIVE": "ERR_MODULE_NOT_ACTIVE",
-    /**
      * value: "ERR_INSECURE_PASSWORD"
      * @const
      */
