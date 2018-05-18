@@ -151,6 +151,16 @@
         done();
       });
     });
+    describe('getOrganizationPrivileges', function() {
+      it('should call getOrganizationPrivileges successfully', function(done) {
+        //uncomment below and update the code to test getOrganizationPrivileges
+        //instance.getOrganizationPrivileges(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getOrganizationsOfUser', function() {
       it('should call getOrganizationsOfUser successfully', function(done) {
         //uncomment below and update the code to test getOrganizationsOfUser

@@ -549,6 +549,54 @@
     }
 
     /**
+     * Callback function to receive the result of the getOrganizationPrivileges operation.
+     * @callback module:api/OrganizationsApi~getOrganizationPrivilegesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<'String'>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List my privileges
+     * Listing all privileges of the current user/APIKey of the specified organization.
+     * @param {String} organizationId The namespace of the organization
+     * @param {module:api/OrganizationsApi~getOrganizationPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<'String'>}
+     */
+    this.getOrganizationPrivileges = function(organizationId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling getOrganizationPrivileges");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Authorization'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
+      var returnType = ['String'];
+
+      return this.apiClient.callApi(
+        '/api/v1/organizations/{organizationId}/privileges', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getOrganizationsOfUser operation.
      * @callback module:api/OrganizationsApi~getOrganizationsOfUserCallback
      * @param {String} error Error message, if any.
