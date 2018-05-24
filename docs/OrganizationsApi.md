@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**findOrganizationBillingAddress**](OrganizationsApi.md#findOrganizationBillingAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 [**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 [**getAllOrganizationRoles**](OrganizationsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
+[**getOrganizationPrivileges**](OrganizationsApi.md#getOrganizationPrivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 [**getOrganizationsOfUser**](OrganizationsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
@@ -558,6 +559,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedUserRolesResponse**](PaginatedUserRolesResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="getOrganizationPrivileges"></a>
+# **getOrganizationPrivileges**
+> [&#39;String&#39;] getOrganizationPrivileges(organizationId)
+
+List my privileges
+
+Listing all privileges of the current user/APIKey of the specified organization.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.OrganizationsApi();
+
+var organizationId = "organizationId_example"; // String | The namespace of the organization
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getOrganizationPrivileges(organizationId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| The namespace of the organization | 
+
+### Return type
+
+**[&#39;String&#39;]**
 
 ### Authorization
 
