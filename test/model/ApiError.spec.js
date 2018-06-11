@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property errorId (base name: "errorId")', function() {
+      // uncomment below and update the code to test the property errorId
+      //var instane = new Id4iApi.ApiError();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -47,13 +47,15 @@
    * @param code {module:model/ApiError.CodeEnum} 
    * @param errorList {Array.<module:model/ApiError>} 
    * @param message {String} 
+   * @param errorId {String} 
    */
-  var exports = function(code, errorList, message) {
+  var exports = function(code, errorList, message, errorId) {
     var _this = this;
 
     _this['code'] = code;
     _this['errorList'] = errorList;
     _this['message'] = message;
+    _this['errorId'] = errorId;
   };
 
   /**
@@ -76,6 +78,9 @@
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
+      if (data.hasOwnProperty('errorId')) {
+        obj['errorId'] = ApiClient.convertToType(data['errorId'], 'String');
+      }
     }
     return obj;
   }
@@ -92,6 +97,10 @@
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
+  /**
+   * @member {String} errorId
+   */
+  exports.prototype['errorId'] = undefined;
 
 
   /**

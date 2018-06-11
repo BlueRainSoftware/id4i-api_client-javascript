@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **code** | **String** |  | 
 **errorList** | [**[ApiError]**](ApiError.md) |  | 
 **message** | **String** |  | 
+**errorId** | **String** |  | 
 
 
 <a name="CodeEnum"></a>
