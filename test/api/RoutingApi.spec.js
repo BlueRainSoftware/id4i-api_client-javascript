@@ -51,10 +51,10 @@
   }
 
   describe('RoutingApi', function() {
-    describe('getAllWebRoutes', function() {
-      it('should call getAllWebRoutes successfully', function(done) {
-        //uncomment below and update the code to test getAllWebRoutes
-        //instance.getAllWebRoutes(function(error) {
+    describe('getAllRoutes', function() {
+      it('should call getAllRoutes successfully', function(done) {
+        //uncomment below and update the code to test getAllRoutes
+        //instance.getAllRoutes(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

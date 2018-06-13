@@ -61,10 +61,10 @@
         done();
       });
     });
-    describe('getWebRoutes', function() {
-      it('should call getWebRoutes successfully', function(done) {
-        //uncomment below and update the code to test getWebRoutes
-        //instance.getWebRoutes(function(error) {
+    describe('getRoutes', function() {
+      it('should call getRoutes successfully', function(done) {
+        //uncomment below and update the code to test getRoutes
+        //instance.getRoutes(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

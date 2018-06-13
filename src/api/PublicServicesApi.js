@@ -110,8 +110,8 @@
     }
 
     /**
-     * Callback function to receive the result of the getWebRoutes operation.
-     * @callback module:api/PublicServicesApi~getWebRoutesCallback
+     * Callback function to receive the result of the getRoutes operation.
+     * @callback module:api/PublicServicesApi~getRoutesCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/Route>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -120,15 +120,24 @@
     /**
      * Retrieve all public routes for a GUID
      * @param {String} id4n id4n
-     * @param {module:api/PublicServicesApi~getWebRoutesCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} type type
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.interpolate interpolate (default to true)
+     * @param {module:api/PublicServicesApi~getRoutesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Route>}
      */
-    this.getWebRoutes = function(id4n, callback) {
+    this.getRoutes = function(id4n, type, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling getWebRoutes");
+        throw new Error("Missing the required parameter 'id4n' when calling getRoutes");
+      }
+
+      // verify the required parameter 'type' is set
+      if (type === undefined || type === null) {
+        throw new Error("Missing the required parameter 'type' when calling getRoutes");
       }
 
 
@@ -136,6 +145,8 @@
         'id4n': id4n
       };
       var queryParams = {
+        'type': type,
+        'interpolate': opts['interpolate'],
       };
       var collectionQueryParams = {
       };

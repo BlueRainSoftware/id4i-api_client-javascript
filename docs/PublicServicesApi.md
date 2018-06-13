@@ -5,7 +5,7 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-[**getWebRoutes**](PublicServicesApi.md#getWebRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
+[**getRoutes**](PublicServicesApi.md#getRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
@@ -73,9 +73,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
-<a name="getWebRoutes"></a>
-# **getWebRoutes**
-> [Route] getWebRoutes(id4n)
+<a name="getRoutes"></a>
+# **getRoutes**
+> [Route] getRoutes(id4n, type, opts)
 
 Retrieve all public routes for a GUID
 
@@ -94,6 +94,11 @@ var apiInstance = new Id4iApi.PublicServicesApi();
 
 var id4n = "id4n_example"; // String | id4n
 
+var type = "web"; // String | type
+
+var opts = { 
+  'interpolate': true // Boolean | interpolate
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -102,7 +107,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getWebRoutes(id4n, callback);
+apiInstance.getRoutes(id4n, type, opts, callback);
 ```
 
 ### Parameters
@@ -110,6 +115,8 @@ apiInstance.getWebRoutes(id4n, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
+ **type** | **String**| type | [default to web]
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 
