@@ -195,6 +195,11 @@
      */
     "INVALID_ID4N_OBJECT_TYPE": "ERR_INVALID_ID4N_OBJECT_TYPE",
     /**
+     * value: "ERR_MISSING_BILLING_INFORMATION"
+     * @const
+     */
+    "MISSING_BILLING_INFORMATION": "ERR_MISSING_BILLING_INFORMATION",
+    /**
      * value: "ERR_COLLECTION_UPDATE_DENIED"
      * @const
      */
