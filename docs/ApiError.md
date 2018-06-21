@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **code** | **String** |  | 
 **errorList** | [**[ApiError]**](ApiError.md) |  | 
 **message** | **String** |  | 
+**errorId** | **String** |  | 
 
 
 <a name="CodeEnum"></a>
@@ -45,6 +46,8 @@ Name | Type | Description | Notes
 * `GUID_CREATION` (value: `"ERR_GUID_CREATION"`)
 
 * `INVALID_ID4N_OBJECT_TYPE` (value: `"ERR_INVALID_ID4N_OBJECT_TYPE"`)
+
+* `MISSING_BILLING_INFORMATION` (value: `"ERR_MISSING_BILLING_INFORMATION"`)
 
 * `COLLECTION_UPDATE_DENIED` (value: `"ERR_COLLECTION_UPDATE_DENIED"`)
 
@@ -99,6 +102,8 @@ Name | Type | Description | Notes
 * `TRANSFER_DENIED` (value: `"ERR_TRANSFER_DENIED"`)
 
 * `INVALID_PHYSICAL_STATE` (value: `"ERR_INVALID_PHYSICAL_STATE"`)
+
+* `INVALID_HISTORY_PROPERTY_NAMESPACE` (value: `"ERR_INVALID_HISTORY_PROPERTY_NAMESPACE"`)
 
 
 

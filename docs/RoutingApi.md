@@ -4,19 +4,17 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAllWebRoutes**](RoutingApi.md#getAllWebRoutes) | **GET** /api/v1/routingfiles/{id4n}/routes | Retrieve all web routes
-[**getRoute**](RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve current route of a GUID (or ID4N)
+[**getAllRoutes**](RoutingApi.md#getAllRoutes) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve all routes of a GUID (or ID4N)
+[**getRoute**](RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 [**getRoutingFile**](RoutingApi.md#getRoutingFile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 [**updateRoutingFile**](RoutingApi.md#updateRoutingFile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
 
 
-<a name="getAllWebRoutes"></a>
-# **getAllWebRoutes**
-> [Route] getAllWebRoutes(id4n)
+<a name="getAllRoutes"></a>
+# **getAllRoutes**
+> [Route] getAllRoutes(id4n, type, opts)
 
-Retrieve all web routes
-
-Retrieves public and private web routes and interpolates them
+Retrieve all routes of a GUID (or ID4N)
 
 ### Example
 ```javascript
@@ -33,6 +31,12 @@ var apiInstance = new Id4iApi.RoutingApi();
 
 var id4n = "id4n_example"; // String | id4n
 
+var type = "type_example"; // String | The type of route you want to have
+
+var opts = { 
+  'organizationId': "organizationId_example", // String | organizationId
+  'interpolate': true // Boolean | interpolate
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -41,7 +45,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllWebRoutes(id4n, callback);
+apiInstance.getAllRoutes(id4n, type, opts, callback);
 ```
 
 ### Parameters
@@ -49,6 +53,9 @@ apiInstance.getAllWebRoutes(id4n, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
+ **type** | **String**| The type of route you want to have | 
+ **organizationId** | **String**| organizationId | [optional] 
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 
@@ -108,9 +115,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **type** | **String**| The type of route you want to have | 
- **privateRoutes** | **Boolean**| privateRoutes | [optional] 
- **publicRoutes** | **Boolean**| publicRoutes | [optional] 
- **interpolate** | **Boolean**| interpolate | [optional] 
+ **privateRoutes** | **Boolean**| privateRoutes | [optional] [default to true]
+ **publicRoutes** | **Boolean**| publicRoutes | [optional] [default to true]
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 
