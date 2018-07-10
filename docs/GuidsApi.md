@@ -4,13 +4,13 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 [**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 [**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-[**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
+[**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-[**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 [**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
@@ -18,9 +18,9 @@ Method | HTTP request | Description
 # **addGuidAlias**
 > addGuidAlias(id4n, aliasType, alias)
 
-Add alias for GUIDs
+Add alias for GUID or Collection
 
-Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
+Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
 
 ### Example
 ```javascript
@@ -35,7 +35,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.GuidsApi();
 
-var id4n = "id4n_example"; // String | The GUID to operate on
+var id4n = "id4n_example"; // String | The GUID or Collection to operate on
 
 var aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 
@@ -56,7 +56,7 @@ apiInstance.addGuidAlias(id4n, aliasType, alias, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID to operate on | 
+ **id4n** | **String**| The GUID or Collection to operate on | 
  **aliasType** | **String**| Alias type, see the corresponding API model | 
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
 
@@ -181,9 +181,9 @@ Name | Type | Description  | Notes
 # **getGuidAliases**
 > {&#39;String&#39;: &#39;String&#39;} getGuidAliases(id4n)
 
-Get all aliases for the given GUID.
+Get all aliases for the given GUID or Collection.
 
-Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
+Looks up the alias for each alias type (group and single) and returns a map of all aliases found.
 
 ### Example
 ```javascript
@@ -198,7 +198,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.GuidsApi();
 
-var id4n = "id4n_example"; // String | The GUID to operate on
+var id4n = "id4n_example"; // String | The GUID or Collection to operate on
 
 
 var callback = function(error, data, response) {
@@ -215,7 +215,7 @@ apiInstance.getGuidAliases(id4n, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID to operate on | 
+ **id4n** | **String**| The GUID or Collection to operate on | 
 
 ### Return type
 
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 # **removeGuidAlias**
 > removeGuidAlias(id4n, aliasType)
 
-Remove aliases from GUIDs
+Remove aliases from GUID or Collection
 
 Remove the alias of the given type
 
@@ -361,7 +361,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.GuidsApi();
 
-var id4n = "id4n_example"; // String | The GUID to operate on
+var id4n = "id4n_example"; // String | The GUID or Collection to operate on
 
 var aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 
@@ -380,7 +380,7 @@ apiInstance.removeGuidAlias(id4n, aliasType, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID to operate on | 
+ **id4n** | **String**| The GUID or Collection to operate on | 
  **aliasType** | **String**| Alias type, see the corresponding API model | 
 
 ### Return type
