@@ -141,16 +141,6 @@
         done();
       });
     });
-    describe('isContractRequired', function() {
-      it('should call isContractRequired successfully', function(done) {
-        //uncomment below and update the code to test isContractRequired
-        //instance.isContractRequired(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('listAllRoles', function() {
       it('should call listAllRoles successfully', function(done) {
         //uncomment below and update the code to test listAllRoles

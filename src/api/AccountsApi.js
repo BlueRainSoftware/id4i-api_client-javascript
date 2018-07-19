@@ -517,47 +517,6 @@
     }
 
     /**
-     * Callback function to receive the result of the isContractRequired operation.
-     * @callback module:api/AccountsApi~isContractRequiredCallback
-     * @param {String} error Error message, if any.
-     * @param {'Boolean'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Tells you whether your company needs to have a contract with BlueRain to be able to sign up
-     * On production systems, users must confirm that their organization has a valid contract for ID4i usage. It is not required on test and sandbox systems. 
-     * @param {module:api/AccountsApi~isContractRequiredCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'Boolean'}
-     */
-    this.isContractRequired = function(callback) {
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/xml', 'application/json'];
-      var accepts = ['application/xml', 'application/json'];
-      var returnType = 'Boolean';
-
-      return this.apiClient.callApi(
-        '/account/contractRequired', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the listAllRoles operation.
      * @callback module:api/AccountsApi~listAllRolesCallback
      * @param {String} error Error message, if any.
