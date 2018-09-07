@@ -98,7 +98,7 @@
    */
   exports.prototype['createdTimestamp'] = undefined;
   /**
-   * ${Id4nPresentation.Guid.holderOrganizationId}
+   * Organization namespace of the holder of the ID
    * @member {String} holderOrganizationId
    */
   exports.prototype['holderOrganizationId'] = undefined;
@@ -112,7 +112,7 @@
    */
   exports.prototype['label'] = undefined;
   /**
-   * ${Id4nPresentation.Guid.ownerOrganizationId}
+   * Organization namespace of the ID owner
    * @member {String} ownerOrganizationId
    */
   exports.prototype['ownerOrganizationId'] = undefined;
