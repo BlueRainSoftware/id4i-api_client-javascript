@@ -4,14 +4,13 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 [**getRoutes**](PublicServicesApi.md#getRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
-[**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
-[**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+[**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 [**listPublicHistory**](PublicServicesApi.md#listPublicHistory) | **GET** /api/v1/public/history/{id4n} | Shows the public history of the given GUID
 [**readOrganizationInfo**](PublicServicesApi.md#readOrganizationInfo) | **GET** /api/v1/public/organizations/{organizationId} | Read public organization information
-[**readPublicDocument**](PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+[**readPublicDocument**](PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 [**resolveImageUsingGET**](PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 [**resolveWhoIsEntry**](PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
@@ -20,7 +19,7 @@ Method | HTTP request | Description
 # **getPublicDocument**
 > Document getPublicDocument(organizationId, id4n, fileName)
 
-Retrieve a document (meta-data only, no content)
+Retrieve a public document (meta-data only, no content)
 
 ### Example
 ```javascript
@@ -179,11 +178,11 @@ No authorization required
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
-> PaginatedOwnedDocumentResponse listAllPublicDocuments(id4n, opts)
+> PaginatedDocumentResponse listAllPublicDocuments(id4n, opts)
 
-List organization specific documents
+List public documents
 
-Listing documents of an id4n owned by a specified organization
+Listing all public documents of an id4n
 
 ### Example
 ```javascript
@@ -202,6 +201,7 @@ var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
   'organizationId': "organizationId_example", // String | organizationId
+  'owner': "owner_example", // String | Filter by owner organization
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -222,68 +222,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **organizationId** | **String**| organizationId | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="listPublicDocuments"></a>
-# **listPublicDocuments**
-> PaginatedDocumentResponse listPublicDocuments(organizationId, id4n, opts)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.PublicServicesApi();
-
-var organizationId = "organizationId_example"; // String | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listPublicDocuments(organizationId, id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
+ **owner** | **String**| Filter by owner organization | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -414,7 +353,7 @@ Name | Type | Description  | Notes
 # **readPublicDocument**
 > &#39;Blob&#39; readPublicDocument(organizationId, id4n, fileName)
 
-Read document contents
+Read public document contents
 
 ### Example
 ```javascript
