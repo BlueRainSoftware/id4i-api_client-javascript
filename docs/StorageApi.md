@@ -7,14 +7,13 @@ Method | HTTP request | Description
 [**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 [**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 [**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 [**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/documents/{id4n} | List documents
-[**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+[**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 [**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
-[**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
 [**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
-[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 [**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
@@ -196,7 +195,7 @@ Name | Type | Description  | Notes
 # **getPublicDocument**
 > Document getPublicDocument(organizationId, id4n, fileName)
 
-Retrieve a document (meta-data only, no content)
+Retrieve a public document (meta-data only, no content)
 
 ### Example
 ```javascript
@@ -251,7 +250,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllDocuments"></a>
 # **listAllDocuments**
-> PaginatedOwnedDocumentResponse listAllDocuments(id4n, opts)
+> PaginatedDocumentResponse listAllDocuments(id4n, opts)
 
 List documents
 
@@ -273,6 +272,7 @@ var apiInstance = new Id4iApi.StorageApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
+  'owner': "owner_example", // String | Filter by owner organization
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -292,12 +292,13 @@ apiInstance.listAllDocuments(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
+ **owner** | **String**| Filter by owner organization | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
+[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
 
 ### Authorization
 
@@ -310,11 +311,11 @@ Name | Type | Description  | Notes
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
-> PaginatedOwnedDocumentResponse listAllPublicDocuments(id4n, opts)
+> PaginatedDocumentResponse listAllPublicDocuments(id4n, opts)
 
-List organization specific documents
+List public documents
 
-Listing documents of an id4n owned by a specified organization
+Listing all public documents of an id4n
 
 ### Example
 ```javascript
@@ -333,6 +334,7 @@ var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
   'organizationId': "organizationId_example", // String | organizationId
+  'owner': "owner_example", // String | Filter by owner organization
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -353,12 +355,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **organizationId** | **String**| organizationId | [optional] 
+ **owner** | **String**| Filter by owner organization | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
+[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
 
 ### Authorization
 
@@ -375,7 +378,7 @@ Name | Type | Description  | Notes
 
 List organization specific documents
 
-Listing documents of an id4n owned by a specified organization
+Listing documents of an id4n seen by a specified organization
 
 ### Example
 ```javascript
@@ -395,6 +398,7 @@ var organizationId = "organizationId_example"; // String | organizationId
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
+  'owner': "owner_example", // String | Filter by owner organization
   'offset': 56, // Number | Start with the n-th element
   'limit': 56 // Number | The maximum count of returned elements
 };
@@ -415,68 +419,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="listPublicDocuments"></a>
-# **listPublicDocuments**
-> PaginatedDocumentResponse listPublicDocuments(organizationId, id4n, opts)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```javascript
-var Id4iApi = require('id4i_api');
-var defaultClient = Id4iApi.ApiClient.instance;
-
-// Configure API key authorization: Authorization
-var Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-var apiInstance = new Id4iApi.StorageApi();
-
-var organizationId = "organizationId_example"; // String | organizationId
-
-var id4n = "id4n_example"; // String | id4n
-
-var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listPublicDocuments(organizationId, id4n, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
+ **owner** | **String**| Filter by owner organization | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
 
@@ -608,7 +551,7 @@ Name | Type | Description  | Notes
 # **readPublicDocument**
 > &#39;Blob&#39; readPublicDocument(organizationId, id4n, fileName)
 
-Read document contents
+Read public document contents
 
 ### Example
 ```javascript
