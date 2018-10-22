@@ -61,20 +61,20 @@
         done();
       });
     });
-    describe('list', function() {
-      it('should call list successfully', function(done) {
-        //uncomment below and update the code to test list
-        //instance.list(function(error) {
+    describe('filteredList', function() {
+      it('should call filteredList successfully', function(done) {
+        //uncomment below and update the code to test filteredList
+        //instance.filteredList(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listAll', function() {
-      it('should call listAll successfully', function(done) {
-        //uncomment below and update the code to test listAll
-        //instance.listAll(function(error) {
+    describe('list', function() {
+      it('should call list successfully', function(done) {
+        //uncomment below and update the code to test list
+        //instance.list(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

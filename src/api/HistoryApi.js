@@ -102,6 +102,78 @@
     }
 
     /**
+     * Callback function to receive the result of the filteredList operation.
+     * @callback module:api/HistoryApi~filteredListCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedHistoryItemResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List history
+     * Lists the history of a GUID
+     * @param {String} id4n GUID to retrieve the history for
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.includePrivate Also return private history entries (default to true)
+     * @param {String} opts.organization Show only entries created by one of the given organizations. This parameter can be used multiple times.
+     * @param {Array.<module:model/String>} opts.type Show only entries matching one of the given history item types. This parameter can be used multiple times.
+     * @param {Array.<String>} opts.qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times.
+     * @param {Date} opts.fromDate From date time as UTC Date-Time format
+     * @param {Date} opts.toDate To date time as UTC Date-Time format
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
+     * @param {module:api/HistoryApi~filteredListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedHistoryItemResponse}
+     */
+    this.filteredList = function(id4n, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling filteredList");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+        'includePrivate': opts['includePrivate'],
+        'organization': opts['organization'],
+        'fromDate': opts['fromDate'],
+        'toDate': opts['toDate'],
+        'offset': opts['offset'],
+        'limit': opts['limit'],
+      };
+      var collectionQueryParams = {
+        'type': {
+          value: opts['type'],
+          collectionFormat: 'multi'
+        },
+        'qualifier': {
+          value: opts['qualifier'],
+          collectionFormat: 'multi'
+        },
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Authorization'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
+      var returnType = PaginatedHistoryItemResponse;
+
+      return this.apiClient.callApi(
+        '/api/v1/history/{id4n}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the list operation.
      * @callback module:api/HistoryApi~listCallback
      * @param {String} error Error message, if any.
@@ -110,8 +182,8 @@
      */
 
     /**
-     * List history
-     * Lists the history of a GUID of the specified organization
+     * DEPRECATED - List history
+     * DEPRECATED - please use filteredList with organization parameter to achieve the same functionality
      * @param {String} id4n GUID to retrieve the history for
      * @param {String} organizationId organizationId
      * @param {Object} opts Optional parameters
@@ -159,62 +231,6 @@
 
       return this.apiClient.callApi(
         '/api/v1/history/{id4n}/{organizationId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the listAll operation.
-     * @callback module:api/HistoryApi~listAllCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedHistoryItemResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * List history
-     * Lists the history of a GUID
-     * @param {String} id4n GUID to retrieve the history for
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.includePrivate Also return private history entries (default to true)
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
-     * @param {module:api/HistoryApi~listAllCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedHistoryItemResponse}
-     */
-    this.listAll = function(id4n, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling listAll");
-      }
-
-
-      var pathParams = {
-        'id4n': id4n
-      };
-      var queryParams = {
-        'includePrivate': opts['includePrivate'],
-        'offset': opts['offset'],
-        'limit': opts['limit'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Authorization'];
-      var contentTypes = ['application/xml', 'application/json'];
-      var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedHistoryItemResponse;
-
-      return this.apiClient.callApi(
-        '/api/v1/history/{id4n}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
