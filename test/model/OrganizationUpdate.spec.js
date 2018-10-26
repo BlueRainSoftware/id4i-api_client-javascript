@@ -63,12 +63,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property namespace (base name: "namespace")', function() {
-      // uncomment below and update the code to test the property namespace
-      //var instane = new Id4iApi.OrganizationUpdate();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

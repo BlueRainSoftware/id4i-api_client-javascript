@@ -50,7 +50,6 @@
     var _this = this;
 
 
-
   };
 
   /**
@@ -67,9 +66,6 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('namespace')) {
-        obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
-      }
     }
     return obj;
   }
@@ -79,11 +75,6 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
-  /**
-   * The namespace of the organization
-   * @member {String} namespace
-   */
-  exports.prototype['namespace'] = undefined;
 
 
 
