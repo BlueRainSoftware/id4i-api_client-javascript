@@ -71,6 +71,16 @@
         done();
       });
     });
+    describe('getCollections', function() {
+      it('should call getCollections successfully', function(done) {
+        //uncomment below and update the code to test getCollections
+        //instance.getCollections(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getGuid', function() {
       it('should call getGuid successfully', function(done) {
         //uncomment below and update the code to test getGuid
