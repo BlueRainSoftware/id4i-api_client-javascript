@@ -1,6 +1,6 @@
 {
 "name": "id4i_api",
-"version": "0.9.1",
+"version": "0.9.3",
 "description": "ID4i_HTTP_API - altered",
 "license": "MIT",
 "main": "src/index.js",
@@ -11,7 +11,7 @@
 "fs": false
 },
 "dependencies": {
-"superagent": "3.5.2"
+"superagent": "3.7.0"
 },
 "devDependencies": {
 "mocha": "~2.3.4",

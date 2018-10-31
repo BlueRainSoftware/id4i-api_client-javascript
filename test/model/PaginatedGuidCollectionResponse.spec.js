@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.HistoryItemUpdate();
+    instance = new Id4iApi.PaginatedGuidCollectionResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,34 @@
       object[property] = value;
   }
 
-  describe('HistoryItemUpdate', function() {
-    it('should create an instance of HistoryItemUpdate', function() {
-      // uncomment below and update the code to test HistoryItemUpdate
-      //var instane = new Id4iApi.HistoryItemUpdate();
-      //expect(instance).to.be.a(Id4iApi.HistoryItemUpdate);
+  describe('PaginatedGuidCollectionResponse', function() {
+    it('should create an instance of PaginatedGuidCollectionResponse', function() {
+      // uncomment below and update the code to test PaginatedGuidCollectionResponse
+      //var instane = new Id4iApi.PaginatedGuidCollectionResponse();
+      //expect(instance).to.be.a(Id4iApi.PaginatedGuidCollectionResponse);
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new Id4iApi.HistoryItemUpdate();
+    it('should have the property elements (base name: "elements")', function() {
+      // uncomment below and update the code to test the property elements
+      //var instane = new Id4iApi.PaginatedGuidCollectionResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property visibility (base name: "visibility")', function() {
-      // uncomment below and update the code to test the property visibility
-      //var instane = new Id4iApi.HistoryItemUpdate();
+    it('should have the property limit (base name: "limit")', function() {
+      // uncomment below and update the code to test the property limit
+      //var instane = new Id4iApi.PaginatedGuidCollectionResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property offset (base name: "offset")', function() {
+      // uncomment below and update the code to test the property offset
+      //var instane = new Id4iApi.PaginatedGuidCollectionResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property total (base name: "total")', function() {
+      // uncomment below and update the code to test the property total
+      //var instane = new Id4iApi.PaginatedGuidCollectionResponse();
       //expect(instance).to.be();
     });
 
