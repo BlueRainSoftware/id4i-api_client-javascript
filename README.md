@@ -14,8 +14,8 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.1
-- Package version: 0.9.1
+- API version: 0.9.3
+- Package version: 0.9.3
 - Build package: io.swagger.codegen.languages.JavascriptClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -182,6 +182,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.CollectionsApi* | [**updateCollection**](docs/CollectionsApi.md#updateCollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
 *Id4iApi.GuidsApi* | [**addGuidAlias**](docs/GuidsApi.md#addGuidAlias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 *Id4iApi.GuidsApi* | [**createGuid**](docs/GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+*Id4iApi.GuidsApi* | [**getCollections**](docs/GuidsApi.md#getCollections) | **GET** /api/v1/id4ns/{id4n}/collections | Retrieve collections of an ID
 *Id4iApi.GuidsApi* | [**getGuid**](docs/GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *Id4iApi.GuidsApi* | [**getGuidAliases**](docs/GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 *Id4iApi.GuidsApi* | [**getGuidsWithoutCollection**](docs/GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
@@ -189,8 +190,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.GuidsApi* | [**removeGuidAlias**](docs/GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 *Id4iApi.GuidsApi* | [**updateGuid**](docs/GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *Id4iApi.HistoryApi* | [**addItem**](docs/HistoryApi.md#addItem) | **POST** /api/v1/history/{id4n} | Add history item
-*Id4iApi.HistoryApi* | [**list**](docs/HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
-*Id4iApi.HistoryApi* | [**listAll**](docs/HistoryApi.md#listAll) | **GET** /api/v1/history/{id4n} | List history
+*Id4iApi.HistoryApi* | [**filteredList**](docs/HistoryApi.md#filteredList) | **GET** /api/v1/history/{id4n} | List history
+*Id4iApi.HistoryApi* | [**list**](docs/HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | DEPRECATED - List history
 *Id4iApi.HistoryApi* | [**retrieveItem**](docs/HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 *Id4iApi.HistoryApi* | [**updateItem**](docs/HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *Id4iApi.HistoryApi* | [**updateItemVisibility**](docs/HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
@@ -297,6 +298,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
  - [Id4iApi.PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
  - [Id4iApi.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
+ - [Id4iApi.PaginatedGuidCollectionResponse](docs/PaginatedGuidCollectionResponse.md)
  - [Id4iApi.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
  - [Id4iApi.PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
  - [Id4iApi.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)

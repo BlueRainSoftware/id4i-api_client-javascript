@@ -17,34 +17,34 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Document'], factory);
+    define(['ApiClient', 'model/GuidCollection'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Document'));
+    module.exports = factory(require('../ApiClient'), require('./GuidCollection'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.PaginatedResponseDocument = factory(root.Id4iApi.ApiClient, root.Id4iApi.Document);
+    root.Id4iApi.PaginatedGuidCollectionResponse = factory(root.Id4iApi.ApiClient, root.Id4iApi.GuidCollection);
   }
-}(this, function(ApiClient, Document) {
+}(this, function(ApiClient, GuidCollection) {
   'use strict';
 
 
 
 
   /**
-   * The PaginatedResponseDocument model module.
-   * @module model/PaginatedResponseDocument
+   * The PaginatedGuidCollectionResponse model module.
+   * @module model/PaginatedGuidCollectionResponse
    * @version 0.9.3
    */
 
   /**
-   * Constructs a new <code>PaginatedResponseDocument</code>.
-   * @alias module:model/PaginatedResponseDocument
+   * Constructs a new <code>PaginatedGuidCollectionResponse</code>.
+   * @alias module:model/PaginatedGuidCollectionResponse
    * @class
-   * @param elements {Array.<module:model/Document>} 
+   * @param elements {Array.<module:model/GuidCollection>} 
    * @param limit {Number} The number of returned elements
    * @param offset {Number} Starting with the n-th element
    */
@@ -58,18 +58,18 @@
   };
 
   /**
-   * Constructs a <code>PaginatedResponseDocument</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PaginatedGuidCollectionResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/PaginatedResponseDocument} obj Optional instance to populate.
-   * @return {module:model/PaginatedResponseDocument} The populated <code>PaginatedResponseDocument</code> instance.
+   * @param {module:model/PaginatedGuidCollectionResponse} obj Optional instance to populate.
+   * @return {module:model/PaginatedGuidCollectionResponse} The populated <code>PaginatedGuidCollectionResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('elements')) {
-        obj['elements'] = ApiClient.convertToType(data['elements'], [Document]);
+        obj['elements'] = ApiClient.convertToType(data['elements'], [GuidCollection]);
       }
       if (data.hasOwnProperty('limit')) {
         obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
@@ -85,7 +85,7 @@
   }
 
   /**
-   * @member {Array.<module:model/Document>} elements
+   * @member {Array.<module:model/GuidCollection>} elements
    */
   exports.prototype['elements'] = undefined;
   /**
