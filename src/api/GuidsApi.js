@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateGuidRequest', 'model/Guid', 'model/GuidAlias', 'model/Id4nPresentation', 'model/ListOfId4ns', 'model/PaginatedGuidCollectionResponse', 'model/PaginatedResponseGuid'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateGuidRequest', 'model/Guid', 'model/GuidAlias', 'model/Id4nPresentation', 'model/ListOfId4ns', 'model/PaginatedGuidCollectionResponse', 'model/PaginatedResponseOfGuid'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateGuidRequest'), require('../model/Guid'), require('../model/GuidAlias'), require('../model/Id4nPresentation'), require('../model/ListOfId4ns'), require('../model/PaginatedGuidCollectionResponse'), require('../model/PaginatedResponseGuid'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateGuidRequest'), require('../model/Guid'), require('../model/GuidAlias'), require('../model/Id4nPresentation'), require('../model/ListOfId4ns'), require('../model/PaginatedGuidCollectionResponse'), require('../model/PaginatedResponseOfGuid'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.GuidsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateGuidRequest, root.Id4iApi.Guid, root.Id4iApi.GuidAlias, root.Id4iApi.Id4nPresentation, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedGuidCollectionResponse, root.Id4iApi.PaginatedResponseGuid);
+    root.Id4iApi.GuidsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateGuidRequest, root.Id4iApi.Guid, root.Id4iApi.GuidAlias, root.Id4iApi.Id4nPresentation, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedGuidCollectionResponse, root.Id4iApi.PaginatedResponseOfGuid);
   }
-}(this, function(ApiClient, ApiError, CreateGuidRequest, Guid, GuidAlias, Id4nPresentation, ListOfId4ns, PaginatedGuidCollectionResponse, PaginatedResponseGuid) {
+}(this, function(ApiClient, ApiError, CreateGuidRequest, Guid, GuidAlias, Id4nPresentation, ListOfId4ns, PaginatedGuidCollectionResponse, PaginatedResponseOfGuid) {
   'use strict';
 
   /**
@@ -310,7 +310,7 @@
      * Callback function to receive the result of the getGuidsWithoutCollection operation.
      * @callback module:api/GuidsApi~getGuidsWithoutCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedResponseGuid} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfGuid} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -321,7 +321,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/GuidsApi~getGuidsWithoutCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedResponseGuid}
+     * data is of type: {@link module:model/PaginatedResponseOfGuid}
      */
     this.getGuidsWithoutCollection = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -350,7 +350,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedResponseGuid;
+      var returnType = PaginatedResponseOfGuid;
 
       return this.apiClient.callApi(
         '/api/v1/guids/withoutCollection', 'GET',
