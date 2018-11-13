@@ -252,11 +252,11 @@
      * Retrieving all collections of an organization in a paginated manner.
      * @param {String} organizationId The namespace of the organization
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
-     * @param {module:model/String} opts.type Filter by this type
      * @param {String} opts.label Filter by this label
      * @param {String} opts.labelPrefix Filter by this label prefix
+     * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {module:model/String} opts.type Filter by this type
      * @param {module:api/CollectionsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidCollection}
      */
@@ -274,11 +274,11 @@
         'organizationId': organizationId
       };
       var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit'],
-        'type': opts['type'],
         'label': opts['label'],
         'labelPrefix': opts['labelPrefix'],
+        'limit': opts['limit'],
+        'offset': opts['offset'],
+        'type': opts['type'],
       };
       var collectionQueryParams = {
       };
@@ -311,8 +311,8 @@
      * List contents of the collection
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/CollectionsApi~listElementsOfCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidResponse}
      */
@@ -330,8 +330,8 @@
         'id4n': id4n
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };

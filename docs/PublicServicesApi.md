@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="getPublicDocument"></a>
 # **getPublicDocument**
-> Document getPublicDocument(organizationId, id4n, fileName)
+> Document getPublicDocument(fileName, id4n, organizationId)
 
 Retrieve a public document (meta-data only, no content)
 
@@ -34,11 +34,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.PublicServicesApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
+var fileName = "fileName_example"; // String | fileName
 
 var id4n = "id4n_example"; // String | id4n
 
-var fileName = "fileName_example"; // String | fileName
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -48,16 +48,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPublicDocument(organizationId, id4n, fileName, callback);
+apiInstance.getPublicDocument(fileName, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -200,10 +200,10 @@ var apiInstance = new Id4iApi.PublicServicesApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0, // Number | Start with the n-th element
   'organizationId': "organizationId_example", // String | organizationId
-  'owner': "owner_example", // String | Filter by owner organization
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'owner': "owner_example" // String | Filter by owner organization
 };
 
 var callback = function(error, data, response) {
@@ -221,10 +221,10 @@ apiInstance.listAllPublicDocuments(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
  **organizationId** | **String**| organizationId | [optional] 
  **owner** | **String**| Filter by owner organization | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -263,8 +263,8 @@ var apiInstance = new Id4iApi.PublicServicesApi();
 var id4n = "id4n_example"; // String | GUID to retrieve the history for
 
 var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0 // Number | Start with the n-th element
 };
 
 var callback = function(error, data, response) {
@@ -282,8 +282,8 @@ apiInstance.listPublicHistory(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for | 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
 
 ### Return type
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> &#39;Blob&#39; readPublicDocument(organizationId, id4n, fileName)
+> &#39;Blob&#39; readPublicDocument(fileName, id4n, organizationId)
 
 Read public document contents
 
@@ -368,11 +368,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.PublicServicesApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
+var fileName = "fileName_example"; // String | fileName
 
 var id4n = "id4n_example"; // String | id4n
 
-var fileName = "fileName_example"; // String | fileName
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -382,16 +382,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readPublicDocument(organizationId, id4n, fileName, callback);
+apiInstance.readPublicDocument(fileName, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 

@@ -30,8 +30,8 @@ var apiInstance = new Id4iApi.BillingApi();
 var organizationId = "organizationId_example"; // String | The organization to compute the billing information for
 
 var opts = { 
-  'fromDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Billing start date
-  'toDate': new Date("2013-10-20T19:20:30+01:00") // Date | Billing end date
+  'fromDate': new Date("\"2018-06-05\""), // Date | Billing start date
+  'toDate': new Date("\"2018-06-06\"") // Date | Billing end date
 };
 
 var callback = function(error, data, response) {
@@ -87,8 +87,8 @@ var apiInstance = new Id4iApi.BillingApi();
 var organizationId = "organizationId_example"; // String | The organization to compute the billing information for
 
 var opts = { 
-  'fromDate': new Date("2013-10-20T19:20:30+01:00"), // Date | Billing start date
-  'toDate': new Date("2013-10-20T19:20:30+01:00") // Date | Billing end date
+  'fromDate': new Date("\"2018-06-05\""), // Date | Billing start date
+  'toDate': new Date("\"2018-06-06\"") // Date | Billing end date
 };
 
 var callback = function(error, data, response) {

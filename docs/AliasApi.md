@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="addGuidAlias"></a>
 # **addGuidAlias**
-> addGuidAlias(id4n, aliasType, alias)
+> addGuidAlias(alias, aliasType, id4n)
 
 Add alias for GUID or Collection
 
@@ -32,11 +32,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AliasApi();
 
-var id4n = "id4n_example"; // String | The GUID or Collection to operate on
+var alias = new Id4iApi.GuidAlias(); // GuidAlias | The alias to add or update
 
 var aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 
-var alias = new Id4iApi.GuidAlias(); // GuidAlias | The alias to add or update
+var id4n = "id4n_example"; // String | The GUID or Collection to operate on
 
 
 var callback = function(error, data, response) {
@@ -46,16 +46,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.addGuidAlias(id4n, aliasType, alias, callback);
+apiInstance.addGuidAlias(alias, aliasType, id4n, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID or Collection to operate on | 
- **aliasType** | **String**| Alias type, see the corresponding API model | 
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
+ **aliasType** | **String**| Alias type, see the corresponding API model | 
+ **id4n** | **String**| The GUID or Collection to operate on | 
 
 ### Return type
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 <a name="removeGuidAlias"></a>
 # **removeGuidAlias**
-> removeGuidAlias(id4n, aliasType)
+> removeGuidAlias(aliasType, id4n)
 
 Remove aliases from GUID or Collection
 
@@ -191,9 +191,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AliasApi();
 
-var id4n = "id4n_example"; // String | The GUID or Collection to operate on
-
 var aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+
+var id4n = "id4n_example"; // String | The GUID or Collection to operate on
 
 
 var callback = function(error, data, response) {
@@ -203,15 +203,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeGuidAlias(id4n, aliasType, callback);
+apiInstance.removeGuidAlias(aliasType, id4n, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID or Collection to operate on | 
  **aliasType** | **String**| Alias type, see the corresponding API model | 
+ **id4n** | **String**| The GUID or Collection to operate on | 
 
 ### Return type
 
@@ -250,8 +250,8 @@ var alias = "alias_example"; // String | The alias to search for
 var aliasType = "aliasType_example"; // String | Alias type type to search for
 
 var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0 // Number | Start with the n-th element
 };
 
 var callback = function(error, data, response) {
@@ -270,8 +270,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alias** | **String**| The alias to search for | 
  **aliasType** | **String**| Alias type type to search for | 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
 
 ### Return type
 

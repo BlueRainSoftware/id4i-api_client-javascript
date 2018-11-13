@@ -58,13 +58,18 @@
 
     /**
      * Add role(s) to user
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {String} organizationId The namespace of the organization
      * @param {String} username username
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {module:api/AccountsApi~addUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.addUserRoles = function(organizationId, username, changeRoleRequest, callback) {
+    this.addUserRoles = function(changeRoleRequest, organizationId, username, callback) {
       var postBody = changeRoleRequest;
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addUserRoles");
+      }
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -74,11 +79,6 @@
       // verify the required parameter 'username' is set
       if (username === undefined || username === null) {
         throw new Error("Missing the required parameter 'username' when calling addUserRoles");
-      }
-
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addUserRoles");
       }
 
 
@@ -210,24 +210,29 @@
 
     /**
      * Find users
+     * @param {String} usernamePrefix Find users starting with this prefix.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.usernamePrefix 
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/AccountsApi~findUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserPresentationResponse}
      */
-    this.findUsers = function(opts, callback) {
+    this.findUsers = function(usernamePrefix, opts, callback) {
       opts = opts || {};
       var postBody = null;
+
+      // verify the required parameter 'usernamePrefix' is set
+      if (usernamePrefix === undefined || usernamePrefix === null) {
+        throw new Error("Missing the required parameter 'usernamePrefix' when calling findUsers");
+      }
 
 
       var pathParams = {
       };
       var queryParams = {
-        'usernamePrefix': opts['usernamePrefix'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'usernamePrefix': usernamePrefix,
       };
       var collectionQueryParams = {
       };
@@ -261,8 +266,8 @@
      * Listing users and their roles in a paginated manner.
      * @param {String} organizationId organizationId
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/AccountsApi~getAllOrganizationRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserRolesResponse}
      */
@@ -280,8 +285,8 @@
         'organizationId': organizationId
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -313,9 +318,9 @@
     /**
      * Retrieve organizations of user
      * @param {Object} opts Optional parameters
-     * @param {String} opts.role role
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {String} opts.role role
      * @param {module:api/AccountsApi~getOrganizationsOfUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedOrganizationResponse}
      */
@@ -327,9 +332,9 @@
       var pathParams = {
       };
       var queryParams = {
-        'role': opts['role'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'role': opts['role'],
       };
       var collectionQueryParams = {
       };
@@ -363,8 +368,8 @@
      * @param {String} organizationId The namespace of the organization
      * @param {String} username username
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/AccountsApi~getUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedStringResponse}
      */
@@ -388,8 +393,8 @@
         'username': username
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -423,8 +428,8 @@
      * Finding users in the specified organization in a paginated manner.
      * @param {String} organizationId organizationId
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/AccountsApi~getUsersOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserPresentationResponse}
      */
@@ -442,8 +447,8 @@
         'organizationId': organizationId
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -474,21 +479,21 @@
 
     /**
      * Invite Users
-     * @param {String} organizationId The namespace of the organization where users should be invited
      * @param {module:model/OrganizationUserInvitationListRequest} invitationList invitationList
+     * @param {String} organizationId The namespace of the organization where users should be invited
      * @param {module:api/AccountsApi~inviteUsersCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.inviteUsers = function(organizationId, invitationList, callback) {
+    this.inviteUsers = function(invitationList, organizationId, callback) {
       var postBody = invitationList;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling inviteUsers");
-      }
 
       // verify the required parameter 'invitationList' is set
       if (invitationList === undefined || invitationList === null) {
         throw new Error("Missing the required parameter 'invitationList' when calling inviteUsers");
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling inviteUsers");
       }
 
 
@@ -528,9 +533,9 @@
      * List roles
      * Listing of roles.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.privilege If specified the roles will be filtered containing that privilege.
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {String} opts.privilege If specified the roles will be filtered containing that privilege.
      * @param {module:api/AccountsApi~listAllRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RoleResponse}
      */
@@ -542,9 +547,9 @@
       var pathParams = {
       };
       var queryParams = {
-        'privilege': opts['privilege'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'privilege': opts['privilege'],
       };
       var collectionQueryParams = {
       };
@@ -667,13 +672,18 @@
 
     /**
      * Remove role(s) from user
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {String} organizationId The namespace of the organization
      * @param {String} username username
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {module:api/AccountsApi~removeUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeUserRoles = function(organizationId, username, changeRoleRequest, callback) {
+    this.removeUserRoles = function(changeRoleRequest, organizationId, username, callback) {
       var postBody = changeRoleRequest;
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeUserRoles");
+      }
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -683,11 +693,6 @@
       // verify the required parameter 'username' is set
       if (username === undefined || username === null) {
         throw new Error("Missing the required parameter 'username' when calling removeUserRoles");
-      }
-
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeUserRoles");
       }
 
 

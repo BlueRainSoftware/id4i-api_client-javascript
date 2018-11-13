@@ -61,8 +61,8 @@
      * @param {String} id4n id4n
      * @param {String} type The type of route you want to have
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId organizationId
      * @param {Boolean} opts.interpolate interpolate (default to true)
+     * @param {String} opts.organizationId organizationId
      * @param {module:api/RoutingApi~getAllRoutesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Route>}
      */
@@ -86,8 +86,8 @@
         'type': type
       };
       var queryParams = {
-        'organizationId': opts['organizationId'],
         'interpolate': opts['interpolate'],
+        'organizationId': opts['organizationId'],
       };
       var collectionQueryParams = {
       };
@@ -121,9 +121,9 @@
      * @param {String} id4n id4n
      * @param {String} type The type of route you want to have
      * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.interpolate interpolate (default to true)
      * @param {Boolean} opts.privateRoutes privateRoutes (default to true)
      * @param {Boolean} opts.publicRoutes publicRoutes (default to true)
-     * @param {Boolean} opts.interpolate interpolate (default to true)
      * @param {module:api/RoutingApi~getRouteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Route}
      */
@@ -147,9 +147,9 @@
         'type': type
       };
       var queryParams = {
+        'interpolate': opts['interpolate'],
         'privateRoutes': opts['privateRoutes'],
         'publicRoutes': opts['publicRoutes'],
-        'interpolate': opts['interpolate'],
       };
       var collectionQueryParams = {
       };
@@ -231,21 +231,21 @@
 
     /**
      * Store routing file
-     * @param {module:model/RoutingFileRequest} rfr rfr
      * @param {String} id4n id4n
+     * @param {module:model/RoutingFileRequest} rfr rfr
      * @param {module:api/RoutingApi~updateRoutingFileCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateRoutingFile = function(rfr, id4n, callback) {
+    this.updateRoutingFile = function(id4n, rfr, callback) {
       var postBody = rfr;
-
-      // verify the required parameter 'rfr' is set
-      if (rfr === undefined || rfr === null) {
-        throw new Error("Missing the required parameter 'rfr' when calling updateRoutingFile");
-      }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
         throw new Error("Missing the required parameter 'id4n' when calling updateRoutingFile");
+      }
+
+      // verify the required parameter 'rfr' is set
+      if (rfr === undefined || rfr === null) {
+        throw new Error("Missing the required parameter 'rfr' when calling updateRoutingFile");
       }
 
 

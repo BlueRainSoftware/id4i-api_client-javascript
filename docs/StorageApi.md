@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="createDocument"></a>
 # **createDocument**
-> Document createDocument(organizationId, id4n, content)
+> Document createDocument(content, id4n, organizationId)
 
 Create an empty document for an id4n
 
@@ -39,11 +39,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
+var content = "/path/to/file.txt"; // File | content
 
 var id4n = "id4n_example"; // String | id4n
 
-var content = "/path/to/file.txt"; // File | content
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -53,16 +53,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createDocument(organizationId, id4n, content, callback);
+apiInstance.createDocument(content, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
  **content** | **File**| content | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> deleteDocument(organizationId, id4n, fileName)
+> deleteDocument(fileName, id4n, organizationId)
 
 Delete a document
 
@@ -96,11 +96,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
+var fileName = "fileName_example"; // String | fileName
 
 var id4n = "id4n_example"; // String | id4n
 
-var fileName = "fileName_example"; // String | fileName
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -110,16 +110,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteDocument(organizationId, id4n, fileName, callback);
+apiInstance.deleteDocument(fileName, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -136,7 +136,7 @@ null (empty response body)
 
 <a name="getDocument"></a>
 # **getDocument**
-> Document getDocument(organizationId, id4n, fileName)
+> Document getDocument(fileName, id4n, organizationId)
 
 Retrieve a document (meta-data only, no content)
 
@@ -153,11 +153,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
+var fileName = "fileName_example"; // String | fileName
 
 var id4n = "id4n_example"; // String | id4n
 
-var fileName = "fileName_example"; // String | fileName
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -167,16 +167,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getDocument(organizationId, id4n, fileName, callback);
+apiInstance.getDocument(fileName, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 <a name="getPublicDocument"></a>
 # **getPublicDocument**
-> Document getPublicDocument(organizationId, id4n, fileName)
+> Document getPublicDocument(fileName, id4n, organizationId)
 
 Retrieve a public document (meta-data only, no content)
 
@@ -210,11 +210,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
+var fileName = "fileName_example"; // String | fileName
 
 var id4n = "id4n_example"; // String | id4n
 
-var fileName = "fileName_example"; // String | fileName
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -224,16 +224,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPublicDocument(organizationId, id4n, fileName, callback);
+apiInstance.getPublicDocument(fileName, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -272,9 +272,9 @@ var apiInstance = new Id4iApi.StorageApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'owner': "owner_example", // String | Filter by owner organization
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0, // Number | Start with the n-th element
+  'owner': "owner_example" // String | Filter by owner organization
 };
 
 var callback = function(error, data, response) {
@@ -292,9 +292,9 @@ apiInstance.listAllDocuments(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **owner** | **String**| Filter by owner organization | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **owner** | **String**| Filter by owner organization | [optional] 
 
 ### Return type
 
@@ -333,10 +333,10 @@ var apiInstance = new Id4iApi.StorageApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0, // Number | Start with the n-th element
   'organizationId': "organizationId_example", // String | organizationId
-  'owner': "owner_example", // String | Filter by owner organization
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'owner': "owner_example" // String | Filter by owner organization
 };
 
 var callback = function(error, data, response) {
@@ -354,10 +354,10 @@ apiInstance.listAllPublicDocuments(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
  **organizationId** | **String**| organizationId | [optional] 
  **owner** | **String**| Filter by owner organization | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 <a name="listDocuments"></a>
 # **listDocuments**
-> PaginatedDocumentResponse listDocuments(organizationId, id4n, opts)
+> PaginatedDocumentResponse listDocuments(id4n, organizationId, opts)
 
 List organization specific documents
 
@@ -393,14 +393,14 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
-
 var id4n = "id4n_example"; // String | id4n
 
+var organizationId = "organizationId_example"; // String | organizationId
+
 var opts = { 
-  'owner': "owner_example", // String | Filter by owner organization
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0, // Number | Start with the n-th element
+  'owner': "owner_example" // String | Filter by owner organization
 };
 
 var callback = function(error, data, response) {
@@ -410,18 +410,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.listDocuments(organizationId, id4n, opts, callback);
+apiInstance.listDocuments(id4n, organizationId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
  **id4n** | **String**| id4n | 
- **owner** | **String**| Filter by owner organization | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
+ **organizationId** | **String**| organizationId | 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **owner** | **String**| Filter by owner organization | [optional] 
 
 ### Return type
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 <a name="readDocument"></a>
 # **readDocument**
-> &#39;Blob&#39; readDocument(organizationId, id4n, fileName)
+> &#39;Blob&#39; readDocument(fileName, id4n, organizationId)
 
 Read document contents
 
@@ -455,11 +455,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
+var fileName = "fileName_example"; // String | fileName
 
 var id4n = "id4n_example"; // String | id4n
 
-var fileName = "fileName_example"; // String | fileName
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -469,16 +469,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readDocument(organizationId, id4n, fileName, callback);
+apiInstance.readDocument(fileName, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 
 <a name="readFromMicrostorage"></a>
 # **readFromMicrostorage**
-> &#39;Blob&#39; readFromMicrostorage(organization, id4n)
+> &#39;Blob&#39; readFromMicrostorage(id4n, organization)
 
 Read data from microstorage
 
@@ -512,9 +512,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organization = "organization_example"; // String | organization
-
 var id4n = "id4n_example"; // String | id4n
+
+var organization = "organization_example"; // String | organization
 
 
 var callback = function(error, data, response) {
@@ -524,15 +524,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readFromMicrostorage(organization, id4n, callback);
+apiInstance.readFromMicrostorage(id4n, organization, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**| organization | 
  **id4n** | **String**| id4n | 
+ **organization** | **String**| organization | 
 
 ### Return type
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> &#39;Blob&#39; readPublicDocument(organizationId, id4n, fileName)
+> &#39;Blob&#39; readPublicDocument(fileName, id4n, organizationId)
 
 Read public document contents
 
@@ -566,11 +566,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
+var fileName = "fileName_example"; // String | fileName
 
 var id4n = "id4n_example"; // String | id4n
 
-var fileName = "fileName_example"; // String | fileName
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -580,16 +580,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.readPublicDocument(organizationId, id4n, fileName, callback);
+apiInstance.readPublicDocument(fileName, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
  **fileName** | **String**| fileName | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 <a name="updateDocumentMetadata"></a>
 # **updateDocumentMetadata**
-> Document updateDocumentMetadata(organizationId, id4n, fileName, document)
+> Document updateDocumentMetadata(document, fileName, id4n, organizationId)
 
 Update a document
 
@@ -623,13 +623,13 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organizationId = "organizationId_example"; // String | organizationId
-
-var id4n = "id4n_example"; // String | id4n
+var document = new Id4iApi.DocumentUpdate(); // DocumentUpdate | document
 
 var fileName = "fileName_example"; // String | fileName
 
-var document = new Id4iApi.DocumentUpdate(); // DocumentUpdate | document
+var id4n = "id4n_example"; // String | id4n
+
+var organizationId = "organizationId_example"; // String | organizationId
 
 
 var callback = function(error, data, response) {
@@ -639,17 +639,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateDocumentMetadata(organizationId, id4n, fileName, document, callback);
+apiInstance.updateDocumentMetadata(document, fileName, id4n, organizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId | 
- **id4n** | **String**| id4n | 
- **fileName** | **String**| fileName | 
  **document** | [**DocumentUpdate**](DocumentUpdate.md)| document | 
+ **fileName** | **String**| fileName | 
+ **id4n** | **String**| id4n | 
+ **organizationId** | **String**| organizationId | 
 
 ### Return type
 
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 <a name="writeToMicrostorage"></a>
 # **writeToMicrostorage**
-> Object writeToMicrostorage(organization, id4n, opts)
+> Object writeToMicrostorage(id4n, organization, opts)
 
 Write data to microstorage
 
@@ -683,13 +683,13 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.StorageApi();
 
-var organization = "organization_example"; // String | organization
-
 var id4n = "id4n_example"; // String | id4n
 
+var organization = "organization_example"; // String | organization
+
 var opts = { 
-  'contentType': "contentType_example", // String | Content-Type
   'contentLength': 789, // Number | Content-Length
+  'contentType': "contentType_example", // String | Content-Type
   'body': B // Blob | body
 };
 
@@ -700,17 +700,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.writeToMicrostorage(organization, id4n, opts, callback);
+apiInstance.writeToMicrostorage(id4n, organization, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**| organization | 
  **id4n** | **String**| id4n | 
- **contentType** | **String**| Content-Type | [optional] 
+ **organization** | **String**| organization | 
  **contentLength** | **Number**| Content-Length | [optional] 
+ **contentType** | **String**| Content-Type | [optional] 
  **body** | **Blob**| body | [optional] 
 
 ### Return type

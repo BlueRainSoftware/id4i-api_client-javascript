@@ -44,19 +44,16 @@
    * Constructs a new <code>Id4nPresentation</code>.
    * @alias module:model/Id4nPresentation
    * @class
-   * @param createdTimestamp {Number} The UTC unix timestamp of when this ID has been created
-   * @param id4n {String} The ID
-   * @param type {module:model/Id4nPresentation.TypeEnum} The type of ID
    */
-  var exports = function(createdTimestamp, id4n, type) {
+  var exports = function() {
     var _this = this;
 
-    _this['createdTimestamp'] = createdTimestamp;
-
-    _this['id4n'] = id4n;
 
 
-    _this['type'] = type;
+
+
+
+
   };
 
   /**

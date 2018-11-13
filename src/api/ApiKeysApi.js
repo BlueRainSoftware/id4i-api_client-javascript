@@ -58,21 +58,21 @@
 
     /**
      * Add privilege
-     * @param {String} key key
      * @param {module:model/AddApiKeyPrivilegeRequest} addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest
+     * @param {String} key key
      * @param {module:api/ApiKeysApi~addApiKeyPrivilegeCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.addApiKeyPrivilege = function(key, addApiKeyPrivilegeRequest, callback) {
+    this.addApiKeyPrivilege = function(addApiKeyPrivilegeRequest, key, callback) {
       var postBody = addApiKeyPrivilegeRequest;
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling addApiKeyPrivilege");
-      }
 
       // verify the required parameter 'addApiKeyPrivilegeRequest' is set
       if (addApiKeyPrivilegeRequest === undefined || addApiKeyPrivilegeRequest === null) {
         throw new Error("Missing the required parameter 'addApiKeyPrivilegeRequest' when calling addApiKeyPrivilege");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling addApiKeyPrivilege");
       }
 
 
@@ -110,13 +110,18 @@
 
     /**
      * Add ID4ns of a privilege
+     * @param {module:model/ListOfId4ns} id4ns id4ns
      * @param {String} key key
      * @param {String} privilege privilege
-     * @param {module:model/ListOfId4ns} id4ns id4ns
      * @param {module:api/ApiKeysApi~addApiKeyPrivilegeForId4nsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.addApiKeyPrivilegeForId4ns = function(key, privilege, id4ns, callback) {
+    this.addApiKeyPrivilegeForId4ns = function(id4ns, key, privilege, callback) {
       var postBody = id4ns;
+
+      // verify the required parameter 'id4ns' is set
+      if (id4ns === undefined || id4ns === null) {
+        throw new Error("Missing the required parameter 'id4ns' when calling addApiKeyPrivilegeForId4ns");
+      }
 
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
@@ -126,11 +131,6 @@
       // verify the required parameter 'privilege' is set
       if (privilege === undefined || privilege === null) {
         throw new Error("Missing the required parameter 'privilege' when calling addApiKeyPrivilegeForId4ns");
-      }
-
-      // verify the required parameter 'id4ns' is set
-      if (id4ns === undefined || id4ns === null) {
-        throw new Error("Missing the required parameter 'id4ns' when calling addApiKeyPrivilegeForId4ns");
       }
 
 
@@ -314,8 +314,8 @@
      * Listing all possible API key privileges.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.id4nConcerning id4nConcerning
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/ApiKeysApi~listAllApiKeyPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKeyPrivilegeInfoResponse}
      */
@@ -328,8 +328,8 @@
       };
       var queryParams = {
         'id4nConcerning': opts['id4nConcerning'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -362,9 +362,9 @@
      * Find API key by organization
      * Finding all API key assigned to the specified organization in a paginated manner.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId The namespace of the organization to search in.
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {String} opts.organizationId The namespace of the organization to search in.
      * @param {module:api/ApiKeysApi~listAllApiKeysOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedApiKeyResponse}
      */
@@ -376,9 +376,9 @@
       var pathParams = {
       };
       var queryParams = {
-        'organizationId': opts['organizationId'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'organizationId': opts['organizationId'],
       };
       var collectionQueryParams = {
       };
@@ -411,8 +411,8 @@
      * List privileges
      * @param {String} key key
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/ApiKeysApi~listApiKeyPrivilegesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKeyPrivilegePaginatedResponse}
      */
@@ -430,8 +430,8 @@
         'key': key
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -466,8 +466,8 @@
      * @param {String} key key
      * @param {String} privilege privilege
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/ApiKeysApi~listId4nsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Id4nPresentationPaginatedResponse}
      */
@@ -491,8 +491,8 @@
         'privilege': privilege
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -575,13 +575,18 @@
 
     /**
      * Remove id4ns of a privilege
+     * @param {module:model/ListOfId4ns} id4ns id4ns
      * @param {String} key key
      * @param {String} privilege privilege
-     * @param {module:model/ListOfId4ns} id4ns id4ns
      * @param {module:api/ApiKeysApi~removeApiKeyPrivilegeForId4nsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeApiKeyPrivilegeForId4ns = function(key, privilege, id4ns, callback) {
+    this.removeApiKeyPrivilegeForId4ns = function(id4ns, key, privilege, callback) {
       var postBody = id4ns;
+
+      // verify the required parameter 'id4ns' is set
+      if (id4ns === undefined || id4ns === null) {
+        throw new Error("Missing the required parameter 'id4ns' when calling removeApiKeyPrivilegeForId4ns");
+      }
 
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
@@ -591,11 +596,6 @@
       // verify the required parameter 'privilege' is set
       if (privilege === undefined || privilege === null) {
         throw new Error("Missing the required parameter 'privilege' when calling removeApiKeyPrivilegeForId4ns");
-      }
-
-      // verify the required parameter 'id4ns' is set
-      if (id4ns === undefined || id4ns === null) {
-        throw new Error("Missing the required parameter 'id4ns' when calling removeApiKeyPrivilegeForId4ns");
       }
 
 
@@ -635,21 +635,21 @@
     /**
      * Update API keys
      * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
-     * @param {String} key The API key to be updated.
      * @param {module:model/ApiKeyChangeRequest} apiKeyChange The new values to apply.
+     * @param {String} key The API key to be updated.
      * @param {module:api/ApiKeysApi~updateApiKeyCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateApiKey = function(key, apiKeyChange, callback) {
+    this.updateApiKey = function(apiKeyChange, key, callback) {
       var postBody = apiKeyChange;
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling updateApiKey");
-      }
 
       // verify the required parameter 'apiKeyChange' is set
       if (apiKeyChange === undefined || apiKeyChange === null) {
         throw new Error("Missing the required parameter 'apiKeyChange' when calling updateApiKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling updateApiKey");
       }
 
 

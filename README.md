@@ -112,11 +112,11 @@ var Id4iApi = require('id4i_api');
 
     var api = new Id4iApi.AccountsApi()
     
+            var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // {ChangeRoleRequest} changeRoleRequest
+    
             var organizationId = "organizationId_example"; // {String} The namespace of the organization
     
             var username = "username_example"; // {String} username
-    
-            var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // {ChangeRoleRequest} changeRoleRequest
     
 
         var callback = function(error, data, response) {
@@ -126,7 +126,7 @@ var Id4iApi = require('id4i_api');
     console.log('API called successfully.');
         }
         };
-        api.addUserRoles(organizationId, username, changeRoleRequest, callback);
+        api.addUserRoles(changeRoleRequest, organizationId, username, callback);
 
 ```
 

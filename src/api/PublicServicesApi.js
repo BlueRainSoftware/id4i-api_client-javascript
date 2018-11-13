@@ -58,18 +58,18 @@
 
     /**
      * Retrieve a public document (meta-data only, no content)
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
      * @param {String} fileName fileName
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/PublicServicesApi~getPublicDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Document}
      */
-    this.getPublicDocument = function(organizationId, id4n, fileName, callback) {
+    this.getPublicDocument = function(fileName, id4n, organizationId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getPublicDocument");
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw new Error("Missing the required parameter 'fileName' when calling getPublicDocument");
       }
 
       // verify the required parameter 'id4n' is set
@@ -77,16 +77,16 @@
         throw new Error("Missing the required parameter 'id4n' when calling getPublicDocument");
       }
 
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling getPublicDocument");
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling getPublicDocument");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
+        'fileName': fileName,
         'id4n': id4n,
-        'fileName': fileName
+        'organizationId': organizationId
       };
       var queryParams = {
       };
@@ -145,8 +145,8 @@
         'id4n': id4n
       };
       var queryParams = {
-        'type': type,
         'interpolate': opts['interpolate'],
+        'type': type,
       };
       var collectionQueryParams = {
       };
@@ -227,10 +227,10 @@
      * Listing all public documents of an id4n
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
+     * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {String} opts.organizationId organizationId
      * @param {String} opts.owner Filter by owner organization
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/PublicServicesApi~listAllPublicDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedDocumentResponse}
      */
@@ -248,10 +248,10 @@
         'id4n': id4n
       };
       var queryParams = {
+        'limit': opts['limit'],
+        'offset': opts['offset'],
         'organizationId': opts['organizationId'],
         'owner': opts['owner'],
-        'offset': opts['offset'],
-        'limit': opts['limit'],
       };
       var collectionQueryParams = {
       };
@@ -285,8 +285,8 @@
      * Only contains public history items
      * @param {String} id4n GUID to retrieve the history for
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/PublicServicesApi~listPublicHistoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedHistoryItemResponse}
      */
@@ -304,8 +304,8 @@
         'id4n': id4n
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -383,18 +383,18 @@
 
     /**
      * Read public document contents
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
      * @param {String} fileName fileName
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/PublicServicesApi~readPublicDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.readPublicDocument = function(organizationId, id4n, fileName, callback) {
+    this.readPublicDocument = function(fileName, id4n, organizationId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling readPublicDocument");
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw new Error("Missing the required parameter 'fileName' when calling readPublicDocument");
       }
 
       // verify the required parameter 'id4n' is set
@@ -402,16 +402,16 @@
         throw new Error("Missing the required parameter 'id4n' when calling readPublicDocument");
       }
 
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling readPublicDocument");
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling readPublicDocument");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
+        'fileName': fileName,
         'id4n': id4n,
-        'fileName': fileName
+        'organizationId': organizationId
       };
       var queryParams = {
       };

@@ -111,13 +111,18 @@
 
     /**
      * Add role(s) to user
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {String} organizationId The namespace of the organization
      * @param {String} username username
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {module:api/OrganizationsApi~addUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.addUserRoles = function(organizationId, username, changeRoleRequest, callback) {
+    this.addUserRoles = function(changeRoleRequest, organizationId, username, callback) {
       var postBody = changeRoleRequest;
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addUserRoles");
+      }
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -127,11 +132,6 @@
       // verify the required parameter 'username' is set
       if (username === undefined || username === null) {
         throw new Error("Missing the required parameter 'username' when calling addUserRoles");
-      }
-
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling addUserRoles");
       }
 
 
@@ -500,11 +500,11 @@
      * Retrieving all collections of an organization in a paginated manner.
      * @param {String} organizationId The namespace of the organization
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
-     * @param {module:model/String} opts.type Filter by this type
      * @param {String} opts.label Filter by this label
      * @param {String} opts.labelPrefix Filter by this label prefix
+     * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {module:model/String} opts.type Filter by this type
      * @param {module:api/OrganizationsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidCollection}
      */
@@ -522,11 +522,11 @@
         'organizationId': organizationId
       };
       var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit'],
-        'type': opts['type'],
         'label': opts['label'],
         'labelPrefix': opts['labelPrefix'],
+        'limit': opts['limit'],
+        'offset': opts['offset'],
+        'type': opts['type'],
       };
       var collectionQueryParams = {
       };
@@ -560,8 +560,8 @@
      * Listing users and their roles in a paginated manner.
      * @param {String} organizationId organizationId
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/OrganizationsApi~getAllOrganizationRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserRolesResponse}
      */
@@ -579,8 +579,8 @@
         'organizationId': organizationId
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -660,9 +660,9 @@
     /**
      * Retrieve organizations of user
      * @param {Object} opts Optional parameters
-     * @param {String} opts.role role
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {String} opts.role role
      * @param {module:api/OrganizationsApi~getOrganizationsOfUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedOrganizationResponse}
      */
@@ -674,9 +674,9 @@
       var pathParams = {
       };
       var queryParams = {
-        'role': opts['role'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'role': opts['role'],
       };
       var collectionQueryParams = {
       };
@@ -710,8 +710,8 @@
      * Listing partners in a paginated manner.
      * @param {String} organizationId The namespace of the organization to query partner organizations
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/OrganizationsApi~getPartnerOrganizationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponseOfPartnerOrganization}
      */
@@ -729,8 +729,8 @@
         'organizationId': organizationId
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -764,8 +764,8 @@
      * @param {String} organizationId The namespace of the organization
      * @param {String} username username
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/OrganizationsApi~getUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedStringResponse}
      */
@@ -789,8 +789,8 @@
         'username': username
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -824,8 +824,8 @@
      * Finding users in the specified organization in a paginated manner.
      * @param {String} organizationId organizationId
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/OrganizationsApi~getUsersOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUserPresentationResponse}
      */
@@ -843,8 +843,8 @@
         'organizationId': organizationId
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -875,21 +875,21 @@
 
     /**
      * Invite Users
-     * @param {String} organizationId The namespace of the organization where users should be invited
      * @param {module:model/OrganizationUserInvitationListRequest} invitationList invitationList
+     * @param {String} organizationId The namespace of the organization where users should be invited
      * @param {module:api/OrganizationsApi~inviteUsersCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.inviteUsers = function(organizationId, invitationList, callback) {
+    this.inviteUsers = function(invitationList, organizationId, callback) {
       var postBody = invitationList;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling inviteUsers");
-      }
 
       // verify the required parameter 'invitationList' is set
       if (invitationList === undefined || invitationList === null) {
         throw new Error("Missing the required parameter 'invitationList' when calling inviteUsers");
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling inviteUsers");
       }
 
 
@@ -928,8 +928,8 @@
     /**
      * List countries
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/OrganizationsApi~listCountriesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCountryResponse}
      */
@@ -941,8 +941,8 @@
       var pathParams = {
       };
       var queryParams = {
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
       };
       var collectionQueryParams = {
       };
@@ -1026,13 +1026,18 @@
 
     /**
      * Remove role(s) from user
+     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {String} organizationId The namespace of the organization
      * @param {String} username username
-     * @param {module:model/ChangeRoleRequest} changeRoleRequest changeRoleRequest
      * @param {module:api/OrganizationsApi~removeUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeUserRoles = function(organizationId, username, changeRoleRequest, callback) {
+    this.removeUserRoles = function(changeRoleRequest, organizationId, username, callback) {
       var postBody = changeRoleRequest;
+
+      // verify the required parameter 'changeRoleRequest' is set
+      if (changeRoleRequest === undefined || changeRoleRequest === null) {
+        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeUserRoles");
+      }
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -1042,11 +1047,6 @@
       // verify the required parameter 'username' is set
       if (username === undefined || username === null) {
         throw new Error("Missing the required parameter 'username' when calling removeUserRoles");
-      }
-
-      // verify the required parameter 'changeRoleRequest' is set
-      if (changeRoleRequest === undefined || changeRoleRequest === null) {
-        throw new Error("Missing the required parameter 'changeRoleRequest' when calling removeUserRoles");
       }
 
 
@@ -1086,22 +1086,22 @@
     /**
      * Update organization logo
      * Updating an organization logo using a multipart file upload.
-     * @param {String} organizationId The namespace of the organization where the logo should be updated.
      * @param {File} file An image containing the new logo.
+     * @param {String} organizationId The namespace of the organization where the logo should be updated.
      * @param {module:api/OrganizationsApi~setOrganizationLogoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PublicImagePresentation}
      */
-    this.setOrganizationLogo = function(organizationId, file, callback) {
+    this.setOrganizationLogo = function(file, organizationId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling setOrganizationLogo");
-      }
 
       // verify the required parameter 'file' is set
       if (file === undefined || file === null) {
         throw new Error("Missing the required parameter 'file' when calling setOrganizationLogo");
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling setOrganizationLogo");
       }
 
 
@@ -1193,22 +1193,22 @@
 
     /**
      * Store address
-     * @param {String} organizationId organizationId
      * @param {module:model/OrganizationAddress} addressResource addressResource
+     * @param {String} organizationId organizationId
      * @param {module:api/OrganizationsApi~updateOrganizationAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrganizationAddress}
      */
-    this.updateOrganizationAddress = function(organizationId, addressResource, callback) {
+    this.updateOrganizationAddress = function(addressResource, organizationId, callback) {
       var postBody = addressResource;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationAddress");
-      }
 
       // verify the required parameter 'addressResource' is set
       if (addressResource === undefined || addressResource === null) {
         throw new Error("Missing the required parameter 'addressResource' when calling updateOrganizationAddress");
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationAddress");
       }
 
 
@@ -1246,22 +1246,22 @@
 
     /**
      * Store billing address
-     * @param {String} organizationId organizationId
      * @param {module:model/OrganizationAddress} addressResource addressResource
+     * @param {String} organizationId organizationId
      * @param {module:api/OrganizationsApi~updateOrganizationBillingAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrganizationAddress}
      */
-    this.updateOrganizationBillingAddress = function(organizationId, addressResource, callback) {
+    this.updateOrganizationBillingAddress = function(addressResource, organizationId, callback) {
       var postBody = addressResource;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationBillingAddress");
-      }
 
       // verify the required parameter 'addressResource' is set
       if (addressResource === undefined || addressResource === null) {
         throw new Error("Missing the required parameter 'addressResource' when calling updateOrganizationBillingAddress");
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling updateOrganizationBillingAddress");
       }
 
 

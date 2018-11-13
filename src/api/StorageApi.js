@@ -59,18 +59,18 @@
     /**
      * Create an empty document for an id4n
      * The document is created empty, mime-type defaults to text/plain
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
      * @param {File} content content
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/StorageApi~createDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Document}
      */
-    this.createDocument = function(organizationId, id4n, content, callback) {
+    this.createDocument = function(content, id4n, organizationId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling createDocument");
+      // verify the required parameter 'content' is set
+      if (content === undefined || content === null) {
+        throw new Error("Missing the required parameter 'content' when calling createDocument");
       }
 
       // verify the required parameter 'id4n' is set
@@ -78,15 +78,15 @@
         throw new Error("Missing the required parameter 'id4n' when calling createDocument");
       }
 
-      // verify the required parameter 'content' is set
-      if (content === undefined || content === null) {
-        throw new Error("Missing the required parameter 'content' when calling createDocument");
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling createDocument");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n
+        'id4n': id4n,
+        'organizationId': organizationId
       };
       var queryParams = {
       };
@@ -120,17 +120,17 @@
 
     /**
      * Delete a document
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
      * @param {String} fileName fileName
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/StorageApi~deleteDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteDocument = function(organizationId, id4n, fileName, callback) {
+    this.deleteDocument = function(fileName, id4n, organizationId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling deleteDocument");
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw new Error("Missing the required parameter 'fileName' when calling deleteDocument");
       }
 
       // verify the required parameter 'id4n' is set
@@ -138,16 +138,16 @@
         throw new Error("Missing the required parameter 'id4n' when calling deleteDocument");
       }
 
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling deleteDocument");
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling deleteDocument");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
+        'fileName': fileName,
         'id4n': id4n,
-        'fileName': fileName
+        'organizationId': organizationId
       };
       var queryParams = {
       };
@@ -180,18 +180,18 @@
 
     /**
      * Retrieve a document (meta-data only, no content)
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
      * @param {String} fileName fileName
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/StorageApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Document}
      */
-    this.getDocument = function(organizationId, id4n, fileName, callback) {
+    this.getDocument = function(fileName, id4n, organizationId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getDocument");
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw new Error("Missing the required parameter 'fileName' when calling getDocument");
       }
 
       // verify the required parameter 'id4n' is set
@@ -199,16 +199,16 @@
         throw new Error("Missing the required parameter 'id4n' when calling getDocument");
       }
 
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling getDocument");
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling getDocument");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
+        'fileName': fileName,
         'id4n': id4n,
-        'fileName': fileName
+        'organizationId': organizationId
       };
       var queryParams = {
       };
@@ -241,18 +241,18 @@
 
     /**
      * Retrieve a public document (meta-data only, no content)
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
      * @param {String} fileName fileName
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/StorageApi~getPublicDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Document}
      */
-    this.getPublicDocument = function(organizationId, id4n, fileName, callback) {
+    this.getPublicDocument = function(fileName, id4n, organizationId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getPublicDocument");
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw new Error("Missing the required parameter 'fileName' when calling getPublicDocument");
       }
 
       // verify the required parameter 'id4n' is set
@@ -260,16 +260,16 @@
         throw new Error("Missing the required parameter 'id4n' when calling getPublicDocument");
       }
 
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling getPublicDocument");
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling getPublicDocument");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
+        'fileName': fileName,
         'id4n': id4n,
-        'fileName': fileName
+        'organizationId': organizationId
       };
       var queryParams = {
       };
@@ -305,9 +305,9 @@
      * Listing all documents of an id4n
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
-     * @param {String} opts.owner Filter by owner organization
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {String} opts.owner Filter by owner organization
      * @param {module:api/StorageApi~listAllDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedDocumentResponse}
      */
@@ -325,9 +325,9 @@
         'id4n': id4n
       };
       var queryParams = {
-        'owner': opts['owner'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'owner': opts['owner'],
       };
       var collectionQueryParams = {
       };
@@ -361,10 +361,10 @@
      * Listing all public documents of an id4n
      * @param {String} id4n id4n
      * @param {Object} opts Optional parameters
+     * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {String} opts.organizationId organizationId
      * @param {String} opts.owner Filter by owner organization
-     * @param {Number} opts.offset Start with the n-th element
-     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/StorageApi~listAllPublicDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedDocumentResponse}
      */
@@ -382,10 +382,10 @@
         'id4n': id4n
       };
       var queryParams = {
+        'limit': opts['limit'],
+        'offset': opts['offset'],
         'organizationId': opts['organizationId'],
         'owner': opts['owner'],
-        'offset': opts['offset'],
-        'limit': opts['limit'],
       };
       var collectionQueryParams = {
       };
@@ -417,38 +417,38 @@
     /**
      * List organization specific documents
      * Listing documents of an id4n seen by a specified organization
-     * @param {String} organizationId organizationId
      * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {Object} opts Optional parameters
-     * @param {String} opts.owner Filter by owner organization
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {String} opts.owner Filter by owner organization
      * @param {module:api/StorageApi~listDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedDocumentResponse}
      */
-    this.listDocuments = function(organizationId, id4n, opts, callback) {
+    this.listDocuments = function(id4n, organizationId, opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling listDocuments");
-      }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
         throw new Error("Missing the required parameter 'id4n' when calling listDocuments");
       }
 
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling listDocuments");
+      }
+
 
       var pathParams = {
-        'organizationId': organizationId,
-        'id4n': id4n
+        'id4n': id4n,
+        'organizationId': organizationId
       };
       var queryParams = {
-        'owner': opts['owner'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'owner': opts['owner'],
       };
       var collectionQueryParams = {
       };
@@ -479,18 +479,18 @@
 
     /**
      * Read document contents
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
      * @param {String} fileName fileName
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/StorageApi~readDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.readDocument = function(organizationId, id4n, fileName, callback) {
+    this.readDocument = function(fileName, id4n, organizationId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling readDocument");
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw new Error("Missing the required parameter 'fileName' when calling readDocument");
       }
 
       // verify the required parameter 'id4n' is set
@@ -498,16 +498,16 @@
         throw new Error("Missing the required parameter 'id4n' when calling readDocument");
       }
 
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling readDocument");
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling readDocument");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
+        'fileName': fileName,
         'id4n': id4n,
-        'fileName': fileName
+        'organizationId': organizationId
       };
       var queryParams = {
       };
@@ -540,28 +540,28 @@
 
     /**
      * Read data from microstorage
-     * @param {String} organization organization
      * @param {String} id4n id4n
+     * @param {String} organization organization
      * @param {module:api/StorageApi~readFromMicrostorageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.readFromMicrostorage = function(organization, id4n, callback) {
+    this.readFromMicrostorage = function(id4n, organization, callback) {
       var postBody = null;
-
-      // verify the required parameter 'organization' is set
-      if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling readFromMicrostorage");
-      }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
         throw new Error("Missing the required parameter 'id4n' when calling readFromMicrostorage");
       }
 
+      // verify the required parameter 'organization' is set
+      if (organization === undefined || organization === null) {
+        throw new Error("Missing the required parameter 'organization' when calling readFromMicrostorage");
+      }
+
 
       var pathParams = {
-        'organization': organization,
-        'id4n': id4n
+        'id4n': id4n,
+        'organization': organization
       };
       var queryParams = {
       };
@@ -594,18 +594,18 @@
 
     /**
      * Read public document contents
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
      * @param {String} fileName fileName
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/StorageApi~readPublicDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.readPublicDocument = function(organizationId, id4n, fileName, callback) {
+    this.readPublicDocument = function(fileName, id4n, organizationId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling readPublicDocument");
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw new Error("Missing the required parameter 'fileName' when calling readPublicDocument");
       }
 
       // verify the required parameter 'id4n' is set
@@ -613,16 +613,16 @@
         throw new Error("Missing the required parameter 'id4n' when calling readPublicDocument");
       }
 
-      // verify the required parameter 'fileName' is set
-      if (fileName === undefined || fileName === null) {
-        throw new Error("Missing the required parameter 'fileName' when calling readPublicDocument");
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling readPublicDocument");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
+        'fileName': fileName,
         'id4n': id4n,
-        'fileName': fileName
+        'organizationId': organizationId
       };
       var queryParams = {
       };
@@ -655,24 +655,19 @@
 
     /**
      * Update a document
-     * @param {String} organizationId organizationId
-     * @param {String} id4n id4n
-     * @param {String} fileName fileName
      * @param {module:model/DocumentUpdate} document document
+     * @param {String} fileName fileName
+     * @param {String} id4n id4n
+     * @param {String} organizationId organizationId
      * @param {module:api/StorageApi~updateDocumentMetadataCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Document}
      */
-    this.updateDocumentMetadata = function(organizationId, id4n, fileName, document, callback) {
+    this.updateDocumentMetadata = function(document, fileName, id4n, organizationId, callback) {
       var postBody = document;
 
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling updateDocumentMetadata");
-      }
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling updateDocumentMetadata");
+      // verify the required parameter 'document' is set
+      if (document === undefined || document === null) {
+        throw new Error("Missing the required parameter 'document' when calling updateDocumentMetadata");
       }
 
       // verify the required parameter 'fileName' is set
@@ -680,16 +675,21 @@
         throw new Error("Missing the required parameter 'fileName' when calling updateDocumentMetadata");
       }
 
-      // verify the required parameter 'document' is set
-      if (document === undefined || document === null) {
-        throw new Error("Missing the required parameter 'document' when calling updateDocumentMetadata");
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling updateDocumentMetadata");
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling updateDocumentMetadata");
       }
 
 
       var pathParams = {
-        'organizationId': organizationId,
+        'fileName': fileName,
         'id4n': id4n,
-        'fileName': fileName
+        'organizationId': organizationId
       };
       var queryParams = {
       };
@@ -722,41 +722,41 @@
 
     /**
      * Write data to microstorage
-     * @param {String} organization organization
      * @param {String} id4n id4n
+     * @param {String} organization organization
      * @param {Object} opts Optional parameters
-     * @param {String} opts.contentType Content-Type
      * @param {Number} opts.contentLength Content-Length
+     * @param {String} opts.contentType Content-Type
      * @param {Blob} opts.body body
      * @param {module:api/StorageApi~writeToMicrostorageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.writeToMicrostorage = function(organization, id4n, opts, callback) {
+    this.writeToMicrostorage = function(id4n, organization, opts, callback) {
       opts = opts || {};
       var postBody = opts['body'];
-
-      // verify the required parameter 'organization' is set
-      if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling writeToMicrostorage");
-      }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
         throw new Error("Missing the required parameter 'id4n' when calling writeToMicrostorage");
       }
 
+      // verify the required parameter 'organization' is set
+      if (organization === undefined || organization === null) {
+        throw new Error("Missing the required parameter 'organization' when calling writeToMicrostorage");
+      }
+
 
       var pathParams = {
-        'organization': organization,
-        'id4n': id4n
+        'id4n': id4n,
+        'organization': organization
       };
       var queryParams = {
       };
       var collectionQueryParams = {
       };
       var headerParams = {
-        'Content-Type': opts['contentType'],
-        'Content-Length': opts['contentLength']
+        'Content-Length': opts['contentLength'],
+        'Content-Type': opts['contentType']
       };
       var formParams = {
       };

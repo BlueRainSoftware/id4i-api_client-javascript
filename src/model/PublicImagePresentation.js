@@ -44,12 +44,11 @@
    * Constructs a new <code>PublicImagePresentation</code>.
    * @alias module:model/PublicImagePresentation
    * @class
-   * @param uri {String} The uri/url of the image
    */
-  var exports = function(uri) {
+  var exports = function() {
     var _this = this;
 
-    _this['uri'] = uri;
+
   };
 
   /**

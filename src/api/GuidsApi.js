@@ -59,17 +59,17 @@
     /**
      * Add alias for GUID or Collection
      * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
-     * @param {String} id4n The GUID or Collection to operate on
-     * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {module:model/GuidAlias} alias The alias to add or update
+     * @param {module:model/String} aliasType Alias type, see the corresponding API model
+     * @param {String} id4n The GUID or Collection to operate on
      * @param {module:api/GuidsApi~addGuidAliasCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.addGuidAlias = function(id4n, aliasType, alias, callback) {
+    this.addGuidAlias = function(alias, aliasType, id4n, callback) {
       var postBody = alias;
 
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling addGuidAlias");
+      // verify the required parameter 'alias' is set
+      if (alias === undefined || alias === null) {
+        throw new Error("Missing the required parameter 'alias' when calling addGuidAlias");
       }
 
       // verify the required parameter 'aliasType' is set
@@ -77,15 +77,15 @@
         throw new Error("Missing the required parameter 'aliasType' when calling addGuidAlias");
       }
 
-      // verify the required parameter 'alias' is set
-      if (alias === undefined || alias === null) {
-        throw new Error("Missing the required parameter 'alias' when calling addGuidAlias");
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling addGuidAlias");
       }
 
 
       var pathParams = {
-        'id4n': id4n,
-        'aliasType': aliasType
+        'aliasType': aliasType,
+        'id4n': id4n
       };
       var queryParams = {
       };
@@ -168,9 +168,9 @@
      * Retrieving all owned or holding collections the specified id4n is assigned to.
      * @param {String} id4n The ID which the collections should contain
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId The organization holding the collections.
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {String} opts.organizationId The organization holding the collections.
      * @param {module:api/GuidsApi~getCollectionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidCollectionResponse}
      */
@@ -188,9 +188,9 @@
         'id4n': id4n
       };
       var queryParams = {
-        'organizationId': opts['organizationId'],
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'organizationId': opts['organizationId'],
       };
       var collectionQueryParams = {
       };
@@ -318,8 +318,8 @@
      * Retrieve GUIDs not in any collection
      * @param {String} organizationId The namespace of the organization to search GUIDs for
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
+     * @param {Number} opts.offset Start with the n-th element
      * @param {module:api/GuidsApi~getGuidsWithoutCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponseOfGuid}
      */
@@ -336,9 +336,9 @@
       var pathParams = {
       };
       var queryParams = {
-        'organizationId': organizationId,
-        'offset': opts['offset'],
         'limit': opts['limit'],
+        'offset': opts['offset'],
+        'organizationId': organizationId,
       };
       var collectionQueryParams = {
       };
@@ -418,27 +418,27 @@
     /**
      * Remove aliases from GUID or Collection
      * Remove the alias of the given type
-     * @param {String} id4n The GUID or Collection to operate on
      * @param {module:model/String} aliasType Alias type, see the corresponding API model
+     * @param {String} id4n The GUID or Collection to operate on
      * @param {module:api/GuidsApi~removeGuidAliasCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeGuidAlias = function(id4n, aliasType, callback) {
+    this.removeGuidAlias = function(aliasType, id4n, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling removeGuidAlias");
-      }
 
       // verify the required parameter 'aliasType' is set
       if (aliasType === undefined || aliasType === null) {
         throw new Error("Missing the required parameter 'aliasType' when calling removeGuidAlias");
       }
 
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling removeGuidAlias");
+      }
+
 
       var pathParams = {
-        'id4n': id4n,
-        'aliasType': aliasType
+        'aliasType': aliasType,
+        'id4n': id4n
       };
       var queryParams = {
       };

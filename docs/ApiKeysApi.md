@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addApiKeyPrivilege"></a>
 # **addApiKeyPrivilege**
-> addApiKeyPrivilege(key, addApiKeyPrivilegeRequest)
+> addApiKeyPrivilege(addApiKeyPrivilegeRequest, key)
 
 Add privilege
 
@@ -37,9 +37,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
-var key = "key_example"; // String | key
-
 var addApiKeyPrivilegeRequest = new Id4iApi.AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
+
+var key = "key_example"; // String | key
 
 
 var callback = function(error, data, response) {
@@ -49,15 +49,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, callback);
+apiInstance.addApiKeyPrivilege(addApiKeyPrivilegeRequest, key, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| key | 
  **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest | 
+ **key** | **String**| key | 
 
 ### Return type
 
@@ -74,7 +74,7 @@ null (empty response body)
 
 <a name="addApiKeyPrivilegeForId4ns"></a>
 # **addApiKeyPrivilegeForId4ns**
-> addApiKeyPrivilegeForId4ns(key, privilege, id4ns)
+> addApiKeyPrivilegeForId4ns(id4ns, key, privilege)
 
 Add ID4ns of a privilege
 
@@ -91,11 +91,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
+var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
+
 var key = "key_example"; // String | key
 
 var privilege = "privilege_example"; // String | privilege
-
-var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
 
 
 var callback = function(error, data, response) {
@@ -105,16 +105,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, callback);
+apiInstance.addApiKeyPrivilegeForId4ns(id4ns, key, privilege, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
  **key** | **String**| key | 
  **privilege** | **String**| privilege | 
- **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
 
 ### Return type
 
@@ -311,8 +311,8 @@ var apiInstance = new Id4iApi.ApiKeysApi();
 
 var opts = { 
   'id4nConcerning': true, // Boolean | id4nConcerning
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0 // Number | Start with the n-th element
 };
 
 var callback = function(error, data, response) {
@@ -330,8 +330,8 @@ apiInstance.listAllApiKeyPrivileges(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4nConcerning** | **Boolean**| id4nConcerning | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
 
 ### Return type
 
@@ -368,9 +368,9 @@ Authorization.apiKey = 'YOUR API KEY';
 var apiInstance = new Id4iApi.ApiKeysApi();
 
 var opts = { 
-  'organizationId': "organizationId_example", // String | The namespace of the organization to search in.
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0, // Number | Start with the n-th element
+  'organizationId': "organizationId_example" // String | The namespace of the organization to search in.
 };
 
 var callback = function(error, data, response) {
@@ -387,9 +387,9 @@ apiInstance.listAllApiKeysOfOrganization(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| The namespace of the organization to search in. | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **organizationId** | **String**| The namespace of the organization to search in. | [optional] 
 
 ### Return type
 
@@ -426,8 +426,8 @@ var apiInstance = new Id4iApi.ApiKeysApi();
 var key = "key_example"; // String | key
 
 var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0 // Number | Start with the n-th element
 };
 
 var callback = function(error, data, response) {
@@ -445,8 +445,8 @@ apiInstance.listApiKeyPrivileges(key, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key | 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
 
 ### Return type
 
@@ -487,8 +487,8 @@ var key = "key_example"; // String | key
 var privilege = "privilege_example"; // String | privilege
 
 var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0 // Number | Start with the n-th element
 };
 
 var callback = function(error, data, response) {
@@ -507,8 +507,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key | 
  **privilege** | **String**| privilege | 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
 
 ### Return type
 
@@ -579,7 +579,7 @@ null (empty response body)
 
 <a name="removeApiKeyPrivilegeForId4ns"></a>
 # **removeApiKeyPrivilegeForId4ns**
-> removeApiKeyPrivilegeForId4ns(key, privilege, id4ns)
+> removeApiKeyPrivilegeForId4ns(id4ns, key, privilege)
 
 Remove id4ns of a privilege
 
@@ -596,11 +596,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
+var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
+
 var key = "key_example"; // String | key
 
 var privilege = "privilege_example"; // String | privilege
-
-var id4ns = new Id4iApi.ListOfId4ns(); // ListOfId4ns | id4ns
 
 
 var callback = function(error, data, response) {
@@ -610,16 +610,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, callback);
+apiInstance.removeApiKeyPrivilegeForId4ns(id4ns, key, privilege, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
  **key** | **String**| key | 
  **privilege** | **String**| privilege | 
- **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
 
 ### Return type
 
@@ -636,7 +636,7 @@ null (empty response body)
 
 <a name="updateApiKey"></a>
 # **updateApiKey**
-> updateApiKey(key, apiKeyChange)
+> updateApiKey(apiKeyChange, key)
 
 Update API keys
 
@@ -655,9 +655,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.ApiKeysApi();
 
-var key = "key_example"; // String | The API key to be updated.
-
 var apiKeyChange = new Id4iApi.ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
+
+var key = "key_example"; // String | The API key to be updated.
 
 
 var callback = function(error, data, response) {
@@ -667,15 +667,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateApiKey(key, apiKeyChange, callback);
+apiInstance.updateApiKey(apiKeyChange, key, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The API key to be updated. | 
  **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. | 
+ **key** | **String**| The API key to be updated. | 
 
 ### Return type
 

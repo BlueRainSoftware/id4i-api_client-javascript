@@ -245,11 +245,11 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56, // Number | The maximum count of returned elements
-  'type': "type_example", // String | Filter by this type
   'label': "label_example", // String | Filter by this label
-  'labelPrefix': "labelPrefix_example" // String | Filter by this label prefix
+  'labelPrefix': "labelPrefix_example", // String | Filter by this label prefix
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0, // Number | Start with the n-th element
+  'type': "type_example" // String | Filter by this type
 };
 
 var callback = function(error, data, response) {
@@ -267,11 +267,11 @@ apiInstance.getAllCollectionsOfOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The namespace of the organization | 
- **offset** | **Number**| Start with the n-th element | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
- **type** | **String**| Filter by this type | [optional] 
  **label** | **String**| Filter by this label | [optional] 
  **labelPrefix** | **String**| Filter by this label prefix | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **type** | **String**| Filter by this type | [optional] 
 
 ### Return type
 
@@ -308,8 +308,8 @@ var apiInstance = new Id4iApi.CollectionsApi();
 var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
-  'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 100, // Number | The maximum count of returned elements
+  'offset': 0 // Number | Start with the n-th element
 };
 
 var callback = function(error, data, response) {
@@ -327,8 +327,8 @@ apiInstance.listElementsOfCollection(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
 
 ### Return type
 
