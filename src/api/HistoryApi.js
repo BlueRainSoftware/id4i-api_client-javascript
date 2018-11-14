@@ -59,21 +59,21 @@
     /**
      * Add history item
      * Add a new history item
-     * @param {module:model/HistoryItem} historyItem The history item to publish
      * @param {String} id4n GUID to retrieve the history for
+     * @param {module:model/HistoryItem} historyItem The history item to publish
      * @param {module:api/HistoryApi~addItemCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.addItem = function(historyItem, id4n, callback) {
+    this.addItem = function(id4n, historyItem, callback) {
       var postBody = historyItem;
-
-      // verify the required parameter 'historyItem' is set
-      if (historyItem === undefined || historyItem === null) {
-        throw new Error("Missing the required parameter 'historyItem' when calling addItem");
-      }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
         throw new Error("Missing the required parameter 'id4n' when calling addItem");
+      }
+
+      // verify the required parameter 'historyItem' is set
+      if (historyItem === undefined || historyItem === null) {
+        throw new Error("Missing the required parameter 'historyItem' when calling addItem");
       }
 
 
@@ -114,14 +114,14 @@
      * Lists the history of a GUID
      * @param {String} id4n GUID to retrieve the history for
      * @param {Object} opts Optional parameters
-     * @param {Date} opts.fromDate From date time as UTC Date-Time format
      * @param {Boolean} opts.includePrivate Also return private history entries (default to true)
-     * @param {Number} opts.limit The maximum count of returned elements
-     * @param {Number} opts.offset Start with the n-th element
      * @param {String} opts.organization Show only entries created by one of the given organizations. This parameter can be used multiple times.
-     * @param {Array.<String>} opts.qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times.
-     * @param {Date} opts.toDate To date time as UTC Date-Time format
      * @param {Array.<module:model/String>} opts.type Show only entries matching one of the given history item types. This parameter can be used multiple times.
+     * @param {Array.<String>} opts.qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times.
+     * @param {Date} opts.fromDate From date time as UTC Date-Time format
+     * @param {Date} opts.toDate To date time as UTC Date-Time format
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/HistoryApi~filteredListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedHistoryItemResponse}
      */
@@ -139,20 +139,20 @@
         'id4n': id4n
       };
       var queryParams = {
-        'fromDate': opts['fromDate'],
         'includePrivate': opts['includePrivate'],
-        'limit': opts['limit'],
-        'offset': opts['offset'],
         'organization': opts['organization'],
+        'fromDate': opts['fromDate'],
         'toDate': opts['toDate'],
+        'offset': opts['offset'],
+        'limit': opts['limit'],
       };
       var collectionQueryParams = {
-        'qualifier': {
-          value: opts['qualifier'],
-          collectionFormat: 'multi'
-        },
         'type': {
           value: opts['type'],
+          collectionFormat: 'multi'
+        },
+        'qualifier': {
+          value: opts['qualifier'],
           collectionFormat: 'multi'
         },
       };
@@ -188,8 +188,8 @@
      * @param {String} organizationId organizationId
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.includePrivate Also return private history entries (default to true)
-     * @param {Number} opts.limit The maximum count of returned elements
      * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/HistoryApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedHistoryItemResponse}
      */
@@ -214,8 +214,8 @@
       };
       var queryParams = {
         'includePrivate': opts['includePrivate'],
-        'limit': opts['limit'],
         'offset': opts['offset'],
+        'limit': opts['limit'],
       };
       var collectionQueryParams = {
       };

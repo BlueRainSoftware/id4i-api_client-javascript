@@ -61,11 +61,11 @@
      * Listing change log entries of the specified organization id.
      * @param {String} organizationId The namespace identifying the organization whose change log entries are to be listed
      * @param {Object} opts Optional parameters
-     * @param {Date} opts.fromDate From date time as UTC Date-Time format
-     * @param {Number} opts.limit The maximum count of returned elements
      * @param {String} opts.messageMimeType The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (default to text/mustache)
-     * @param {Number} opts.offset Start with the n-th element
+     * @param {Date} opts.fromDate From date time as UTC Date-Time format
      * @param {Date} opts.toDate To date time as UTC Date-Time format
+     * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/AuditingApi~listOrganizationChangeLogCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedChangeLogEntryResponse}
      */
@@ -83,11 +83,11 @@
         'organizationId': organizationId
       };
       var queryParams = {
-        'fromDate': opts['fromDate'],
-        'limit': opts['limit'],
         'messageMimeType': opts['messageMimeType'],
-        'offset': opts['offset'],
+        'fromDate': opts['fromDate'],
         'toDate': opts['toDate'],
+        'offset': opts['offset'],
+        'limit': opts['limit'],
       };
       var collectionQueryParams = {
       };

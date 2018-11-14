@@ -34,8 +34,8 @@ var id4n = "id4n_example"; // String | id4n
 var type = "type_example"; // String | The type of route you want to have
 
 var opts = { 
-  'interpolate': true, // Boolean | interpolate
-  'organizationId': "organizationId_example" // String | organizationId
+  'organizationId': "organizationId_example", // String | organizationId
+  'interpolate': true // Boolean | interpolate
 };
 
 var callback = function(error, data, response) {
@@ -54,8 +54,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **type** | **String**| The type of route you want to have | 
- **interpolate** | **Boolean**| interpolate | [optional] [default to true]
  **organizationId** | **String**| organizationId | [optional] 
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 
@@ -94,9 +94,9 @@ var id4n = "id4n_example"; // String | id4n
 var type = "type_example"; // String | The type of route you want to have
 
 var opts = { 
-  'interpolate': true, // Boolean | interpolate
   'privateRoutes': true, // Boolean | privateRoutes
-  'publicRoutes': true // Boolean | publicRoutes
+  'publicRoutes': true, // Boolean | publicRoutes
+  'interpolate': true // Boolean | interpolate
 };
 
 var callback = function(error, data, response) {
@@ -115,9 +115,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n | 
  **type** | **String**| The type of route you want to have | 
- **interpolate** | **Boolean**| interpolate | [optional] [default to true]
  **privateRoutes** | **Boolean**| privateRoutes | [optional] [default to true]
  **publicRoutes** | **Boolean**| publicRoutes | [optional] [default to true]
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRoutingFile"></a>
 # **updateRoutingFile**
-> updateRoutingFile(id4n, rfr)
+> updateRoutingFile(rfr, id4n)
 
 Store routing file
 
@@ -206,9 +206,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.RoutingApi();
 
-var id4n = "id4n_example"; // String | id4n
-
 var rfr = new Id4iApi.RoutingFileRequest(); // RoutingFileRequest | rfr
+
+var id4n = "id4n_example"; // String | id4n
 
 
 var callback = function(error, data, response) {
@@ -218,15 +218,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.updateRoutingFile(id4n, rfr, callback);
+apiInstance.updateRoutingFile(rfr, id4n, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n | 
  **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr | 
+ **id4n** | **String**| id4n | 
 
 ### Return type
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="addItem"></a>
 # **addItem**
-> addItem(historyItem, id4n)
+> addItem(id4n, historyItem)
 
 Add history item
 
@@ -33,9 +33,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.HistoryApi();
 
-var historyItem = new Id4iApi.HistoryItem(); // HistoryItem | The history item to publish
-
 var id4n = "id4n_example"; // String | GUID to retrieve the history for
+
+var historyItem = new Id4iApi.HistoryItem(); // HistoryItem | The history item to publish
 
 
 var callback = function(error, data, response) {
@@ -45,15 +45,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.addItem(historyItem, id4n, callback);
+apiInstance.addItem(id4n, historyItem, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **historyItem** | [**HistoryItem**](HistoryItem.md)| The history item to publish | 
  **id4n** | **String**| GUID to retrieve the history for | 
+ **historyItem** | [**HistoryItem**](HistoryItem.md)| The history item to publish | 
 
 ### Return type
 
@@ -92,14 +92,14 @@ var apiInstance = new Id4iApi.HistoryApi();
 var id4n = "id4n_example"; // String | GUID to retrieve the history for
 
 var opts = { 
-  'fromDate': new Date("\"2018-05-10T10:05:10.690Z\""), // Date | From date time as UTC Date-Time format
   'includePrivate': true, // Boolean | Also return private history entries
-  'limit': 100, // Number | The maximum count of returned elements
-  'offset': 0, // Number | Start with the n-th element
   'organization': "organization_example", // String | Show only entries created by one of the given organizations. This parameter can be used multiple times.
+  'type': ["type_example"], // [String] | Show only entries matching one of the given history item types. This parameter can be used multiple times.
   'qualifier': ["qualifier_example"], // [String] | Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times.
-  'toDate': new Date("\"2018-05-11T01:01:01.690Z\""), // Date | To date time as UTC Date-Time format
-  'type': ["type_example"] // [String] | Show only entries matching one of the given history item types. This parameter can be used multiple times.
+  'fromDate': new Date("2013-10-20T19:20:30+01:00"), // Date | From date time as UTC Date-Time format
+  'toDate': new Date("2013-10-20T19:20:30+01:00"), // Date | To date time as UTC Date-Time format
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -117,14 +117,14 @@ apiInstance.filteredList(id4n, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for | 
- **fromDate** | **Date**| From date time as UTC Date-Time format | [optional] 
  **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
- **limit** | **Number**| The maximum count of returned elements | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **organization** | **String**| Show only entries created by one of the given organizations. This parameter can be used multiple times. | [optional] 
- **qualifier** | [**[String]**](String.md)| Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. | [optional] 
- **toDate** | **Date**| To date time as UTC Date-Time format | [optional] 
  **type** | [**[String]**](String.md)| Show only entries matching one of the given history item types. This parameter can be used multiple times. | [optional] 
+ **qualifier** | [**[String]**](String.md)| Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. | [optional] 
+ **fromDate** | **Date**| From date time as UTC Date-Time format | [optional] 
+ **toDate** | **Date**| To date time as UTC Date-Time format | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -166,8 +166,8 @@ var organizationId = "organizationId_example"; // String | organizationId
 
 var opts = { 
   'includePrivate': true, // Boolean | Also return private history entries
-  'limit': 100, // Number | The maximum count of returned elements
-  'offset': 0 // Number | Start with the n-th element
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -187,8 +187,8 @@ Name | Type | Description  | Notes
  **id4n** | **String**| GUID to retrieve the history for | 
  **organizationId** | **String**| organizationId | 
  **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
- **limit** | **Number**| The maximum count of returned elements | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 

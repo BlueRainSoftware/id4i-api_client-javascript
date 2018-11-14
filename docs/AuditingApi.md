@@ -31,11 +31,11 @@ var apiInstance = new Id4iApi.AuditingApi();
 var organizationId = "organizationId_example"; // String | The namespace identifying the organization whose change log entries are to be listed
 
 var opts = { 
-  'fromDate': new Date("\"2018-05-10T10:05:10.690Z\""), // Date | From date time as UTC Date-Time format
-  'limit': 100, // Number | The maximum count of returned elements
   'messageMimeType': "text/mustache", // String | The Mime-type for the message format that should be returned. e.g. 'text/plain' or 'text/mustache' 
-  'offset': 0, // Number | Start with the n-th element
-  'toDate': new Date("\"2018-05-11T01:01:01.690Z\"") // Date | To date time as UTC Date-Time format
+  'fromDate': new Date("2013-10-20T19:20:30+01:00"), // Date | From date time as UTC Date-Time format
+  'toDate': new Date("2013-10-20T19:20:30+01:00"), // Date | To date time as UTC Date-Time format
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -53,11 +53,11 @@ apiInstance.listOrganizationChangeLog(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The namespace identifying the organization whose change log entries are to be listed | 
- **fromDate** | **Date**| From date time as UTC Date-Time format | [optional] 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
  **messageMimeType** | **String**| The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  | [optional] [default to text/mustache]
- **offset** | **Number**| Start with the n-th element | [optional] 
+ **fromDate** | **Date**| From date time as UTC Date-Time format | [optional] 
  **toDate** | **Date**| To date time as UTC Date-Time format | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 

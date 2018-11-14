@@ -59,17 +59,17 @@
     /**
      * Add alias for GUID or Collection
      * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
-     * @param {module:model/GuidAlias} alias The alias to add or update
-     * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {String} id4n The GUID or Collection to operate on
+     * @param {module:model/String} aliasType Alias type, see the corresponding API model
+     * @param {module:model/GuidAlias} alias The alias to add or update
      * @param {module:api/AliasApi~addGuidAliasCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.addGuidAlias = function(alias, aliasType, id4n, callback) {
+    this.addGuidAlias = function(id4n, aliasType, alias, callback) {
       var postBody = alias;
 
-      // verify the required parameter 'alias' is set
-      if (alias === undefined || alias === null) {
-        throw new Error("Missing the required parameter 'alias' when calling addGuidAlias");
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling addGuidAlias");
       }
 
       // verify the required parameter 'aliasType' is set
@@ -77,15 +77,15 @@
         throw new Error("Missing the required parameter 'aliasType' when calling addGuidAlias");
       }
 
-      // verify the required parameter 'id4n' is set
-      if (id4n === undefined || id4n === null) {
-        throw new Error("Missing the required parameter 'id4n' when calling addGuidAlias");
+      // verify the required parameter 'alias' is set
+      if (alias === undefined || alias === null) {
+        throw new Error("Missing the required parameter 'alias' when calling addGuidAlias");
       }
 
 
       var pathParams = {
-        'aliasType': aliasType,
-        'id4n': id4n
+        'id4n': id4n,
+        'aliasType': aliasType
       };
       var queryParams = {
       };
@@ -208,27 +208,27 @@
     /**
      * Remove aliases from GUID or Collection
      * Remove the alias of the given type
-     * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {String} id4n The GUID or Collection to operate on
+     * @param {module:model/String} aliasType Alias type, see the corresponding API model
      * @param {module:api/AliasApi~removeGuidAliasCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeGuidAlias = function(aliasType, id4n, callback) {
+    this.removeGuidAlias = function(id4n, aliasType, callback) {
       var postBody = null;
-
-      // verify the required parameter 'aliasType' is set
-      if (aliasType === undefined || aliasType === null) {
-        throw new Error("Missing the required parameter 'aliasType' when calling removeGuidAlias");
-      }
 
       // verify the required parameter 'id4n' is set
       if (id4n === undefined || id4n === null) {
         throw new Error("Missing the required parameter 'id4n' when calling removeGuidAlias");
       }
 
+      // verify the required parameter 'aliasType' is set
+      if (aliasType === undefined || aliasType === null) {
+        throw new Error("Missing the required parameter 'aliasType' when calling removeGuidAlias");
+      }
+
 
       var pathParams = {
-        'aliasType': aliasType,
-        'id4n': id4n
+        'id4n': id4n,
+        'aliasType': aliasType
       };
       var queryParams = {
       };
@@ -264,8 +264,8 @@
      * @param {String} alias The alias to search for
      * @param {module:model/String} aliasType Alias type type to search for
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit The maximum count of returned elements
      * @param {Number} opts.offset Start with the n-th element
+     * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/AliasApi~searchByAliasCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedGuidResponse}
      */
@@ -289,8 +289,8 @@
       var queryParams = {
         'alias': alias,
         'aliasType': aliasType,
-        'limit': opts['limit'],
         'offset': opts['offset'],
+        'limit': opts['limit'],
       };
       var collectionQueryParams = {
       };

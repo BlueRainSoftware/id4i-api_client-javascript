@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
-> addUserRoles(changeRoleRequest, organizationId, username)
+> addUserRoles(organizationId, username, changeRoleRequest)
 
 Add role(s) to user
 
@@ -41,11 +41,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-
 var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var username = "username_example"; // String | username
+
+var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
 
 var callback = function(error, data, response) {
@@ -55,16 +55,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.addUserRoles(changeRoleRequest, organizationId, username, callback);
+apiInstance.addUserRoles(organizationId, username, changeRoleRequest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 
 ### Return type
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 <a name="findUsers"></a>
 # **findUsers**
-> PaginatedUserPresentationResponse findUsers(usernamePrefix, opts)
+> PaginatedUserPresentationResponse findUsers(opts)
 
 Find users
 
@@ -195,11 +195,10 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var usernamePrefix = "\"a.v\""; // String | Find users starting with this prefix.
-
 var opts = { 
-  'limit': 100, // Number | The maximum count of returned elements
-  'offset': 0 // Number | Start with the n-th element
+  'usernamePrefix': "usernamePrefix_example", // String | 
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -209,16 +208,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findUsers(usernamePrefix, opts, callback);
+apiInstance.findUsers(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usernamePrefix** | **String**| Find users starting with this prefix. | 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **usernamePrefix** | **String**|  | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -257,8 +256,8 @@ var apiInstance = new Id4iApi.AccountsApi();
 var organizationId = "organizationId_example"; // String | organizationId
 
 var opts = { 
-  'limit': 100, // Number | The maximum count of returned elements
-  'offset': 0 // Number | Start with the n-th element
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -276,8 +275,8 @@ apiInstance.getAllOrganizationRoles(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| organizationId | 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -312,9 +311,9 @@ Authorization.apiKey = 'YOUR API KEY';
 var apiInstance = new Id4iApi.AccountsApi();
 
 var opts = { 
-  'limit': 100, // Number | The maximum count of returned elements
-  'offset': 0, // Number | Start with the n-th element
-  'role': "role_example" // String | role
+  'role': "role_example", // String | role
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -331,9 +330,9 @@ apiInstance.getOrganizationsOfUser(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **Number**| The maximum count of returned elements | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **role** | **String**| role | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -372,8 +371,8 @@ var organizationId = "organizationId_example"; // String | The namespace of the 
 var username = "username_example"; // String | username
 
 var opts = { 
-  'limit': 100, // Number | The maximum count of returned elements
-  'offset': 0 // Number | Start with the n-th element
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -392,8 +391,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -432,8 +431,8 @@ var apiInstance = new Id4iApi.AccountsApi();
 var organizationId = "organizationId_example"; // String | organizationId
 
 var opts = { 
-  'limit': 100, // Number | The maximum count of returned elements
-  'offset': 0 // Number | Start with the n-th element
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -451,8 +450,8 @@ apiInstance.getUsersOfOrganization(organizationId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| organizationId | 
- **limit** | **Number**| The maximum count of returned elements | [optional] 
  **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -469,7 +468,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteUsers"></a>
 # **inviteUsers**
-> inviteUsers(invitationList, organizationId)
+> inviteUsers(organizationId, invitationList)
 
 Invite Users
 
@@ -486,9 +485,9 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var invitationList = new Id4iApi.OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
-
 var organizationId = "organizationId_example"; // String | The namespace of the organization where users should be invited
+
+var invitationList = new Id4iApi.OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 
 
 var callback = function(error, data, response) {
@@ -498,15 +497,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.inviteUsers(invitationList, organizationId, callback);
+apiInstance.inviteUsers(organizationId, invitationList, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
  **organizationId** | **String**| The namespace of the organization where users should be invited | 
+ **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
 
 ### Return type
 
@@ -543,9 +542,9 @@ Authorization.apiKey = 'YOUR API KEY';
 var apiInstance = new Id4iApi.AccountsApi();
 
 var opts = { 
-  'limit': 100, // Number | The maximum count of returned elements
-  'offset': 0, // Number | Start with the n-th element
-  'privilege': "privilege_example" // String | If specified the roles will be filtered containing that privilege.
+  'privilege': "privilege_example", // String | If specified the roles will be filtered containing that privilege.
+  'offset': 56, // Number | Start with the n-th element
+  'limit': 56 // Number | The maximum count of returned elements
 };
 
 var callback = function(error, data, response) {
@@ -562,9 +561,9 @@ apiInstance.listAllRoles(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **Number**| The maximum count of returned elements | [optional] 
- **offset** | **Number**| Start with the n-th element | [optional] 
  **privilege** | **String**| If specified the roles will be filtered containing that privilege. | [optional] 
+ **offset** | **Number**| Start with the n-th element | [optional] 
+ **limit** | **Number**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -673,7 +672,7 @@ No authorization required
 
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
-> removeUserRoles(changeRoleRequest, organizationId, username)
+> removeUserRoles(organizationId, username, changeRoleRequest)
 
 Remove role(s) from user
 
@@ -690,11 +689,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 var apiInstance = new Id4iApi.AccountsApi();
 
-var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-
 var organizationId = "organizationId_example"; // String | The namespace of the organization
 
 var username = "username_example"; // String | username
+
+var changeRoleRequest = new Id4iApi.ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
 
 var callback = function(error, data, response) {
@@ -704,16 +703,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeUserRoles(changeRoleRequest, organizationId, username, callback);
+apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
  **organizationId** | **String**| The namespace of the organization | 
  **username** | **String**| username | 
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 
 ### Return type
 
