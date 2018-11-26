@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 <a name="getPartnerOrganizations"></a>
 # **getPartnerOrganizations**
-> PaginatedResponseOfPartnerOrganization getPartnerOrganizations(organizationId, opts)
+> PaginatedResponsePartnerOrganization getPartnerOrganizations(organizationId, opts)
 
 Get partners of an organization
 
@@ -785,7 +785,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseOfPartnerOrganization**](PaginatedResponseOfPartnerOrganization.md)
+[**PaginatedResponsePartnerOrganization**](PaginatedResponsePartnerOrganization.md)
 
 ### Authorization
 

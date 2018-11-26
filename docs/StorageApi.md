@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> deleteDocument(organizationId, id4n, fileName)
+> ResponseEntity deleteDocument(organizationId, id4n, fileName)
 
 Delete a document
 
@@ -107,7 +107,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.deleteDocument(organizationId, id4n, fileName, callback);
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
