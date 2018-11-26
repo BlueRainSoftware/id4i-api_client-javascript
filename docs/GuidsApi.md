@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 <a name="getGuidsWithoutCollection"></a>
 # **getGuidsWithoutCollection**
-> PaginatedResponseGuid getGuidsWithoutCollection(organizationId, opts)
+> PaginatedResponseOfGuid getGuidsWithoutCollection(organizationId, opts)
 
 Retrieve GUIDs not in any collection
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 

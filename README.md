@@ -14,8 +14,8 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.3
-- Package version: 0.9.3
+- API version: 0.9.5-SNAPSHOT
+- Package version: 0.9.5-SNAPSHOT
 - Build package: io.swagger.codegen.languages.JavascriptClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -246,7 +246,6 @@ Class | Method | HTTP request | Description
 *Id4iApi.StorageApi* | [**readPublicDocument**](docs/StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 *Id4iApi.StorageApi* | [**updateDocumentMetadata**](docs/StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *Id4iApi.StorageApi* | [**writeToMicrostorage**](docs/StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
-*Id4iApi.TransferApi* | [**getReceiveInfo**](docs/TransferApi.md#getReceiveInfo) | **GET** /api/v1/transfers/{id4n}/receiveInfo | Show transfer information
 *Id4iApi.TransferApi* | [**getSendInfo**](docs/TransferApi.md#getSendInfo) | **GET** /api/v1/transfers/{id4n}/sendInfo | Show transfer preparation information
 *Id4iApi.TransferApi* | [**prepare**](docs/TransferApi.md#prepare) | **PUT** /api/v1/transfers/{id4n}/sendInfo | Prepare an object for transfer
 *Id4iApi.TransferApi* | [**receive**](docs/TransferApi.md#receive) | **PUT** /api/v1/transfers/{id4n}/receiveInfo | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership
@@ -276,7 +275,6 @@ Class | Method | HTTP request | Description
  - [Id4iApi.CreateGuidRequest](docs/CreateGuidRequest.md)
  - [Id4iApi.Document](docs/Document.md)
  - [Id4iApi.DocumentUpdate](docs/DocumentUpdate.md)
- - [Id4iApi.File](docs/File.md)
  - [Id4iApi.Guid](docs/Guid.md)
  - [Id4iApi.GuidAlias](docs/GuidAlias.md)
  - [Id4iApi.GuidCollection](docs/GuidCollection.md)
@@ -285,8 +283,6 @@ Class | Method | HTTP request | Description
  - [Id4iApi.Id4n](docs/Id4n.md)
  - [Id4iApi.Id4nPresentation](docs/Id4nPresentation.md)
  - [Id4iApi.Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
- - [Id4iApi.InputStream](docs/InputStream.md)
- - [Id4iApi.InputStreamResource](docs/InputStreamResource.md)
  - [Id4iApi.ListOfId4ns](docs/ListOfId4ns.md)
  - [Id4iApi.Organization](docs/Organization.md)
  - [Id4iApi.OrganizationAddress](docs/OrganizationAddress.md)
@@ -302,22 +298,22 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
  - [Id4iApi.PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
  - [Id4iApi.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
- - [Id4iApi.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
- - [Id4iApi.PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
- - [Id4iApi.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
- - [Id4iApi.PaginatedResponseChangeLogEntry](docs/PaginatedResponseChangeLogEntry.md)
- - [Id4iApi.PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
- - [Id4iApi.PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
- - [Id4iApi.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
- - [Id4iApi.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
- - [Id4iApi.PaginatedResponseHistoryItem](docs/PaginatedResponseHistoryItem.md)
- - [Id4iApi.PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
- - [Id4iApi.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
- - [Id4iApi.PaginatedResponsePartnerOrganization](docs/PaginatedResponsePartnerOrganization.md)
- - [Id4iApi.PaginatedResponseRole](docs/PaginatedResponseRole.md)
- - [Id4iApi.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
- - [Id4iApi.PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
- - [Id4iApi.PaginatedResponsestring](docs/PaginatedResponsestring.md)
+ - [Id4iApi.PaginatedResponseOfApiKeyPresentation](docs/PaginatedResponseOfApiKeyPresentation.md)
+ - [Id4iApi.PaginatedResponseOfApiKeyPrivilege](docs/PaginatedResponseOfApiKeyPrivilege.md)
+ - [Id4iApi.PaginatedResponseOfApiKeyPrivilegeInfo](docs/PaginatedResponseOfApiKeyPrivilegeInfo.md)
+ - [Id4iApi.PaginatedResponseOfChangeLogEntry](docs/PaginatedResponseOfChangeLogEntry.md)
+ - [Id4iApi.PaginatedResponseOfCountry](docs/PaginatedResponseOfCountry.md)
+ - [Id4iApi.PaginatedResponseOfDocument](docs/PaginatedResponseOfDocument.md)
+ - [Id4iApi.PaginatedResponseOfGuid](docs/PaginatedResponseOfGuid.md)
+ - [Id4iApi.PaginatedResponseOfGuidCollection](docs/PaginatedResponseOfGuidCollection.md)
+ - [Id4iApi.PaginatedResponseOfHistoryItem](docs/PaginatedResponseOfHistoryItem.md)
+ - [Id4iApi.PaginatedResponseOfId4nPresentation](docs/PaginatedResponseOfId4nPresentation.md)
+ - [Id4iApi.PaginatedResponseOfOrganization](docs/PaginatedResponseOfOrganization.md)
+ - [Id4iApi.PaginatedResponseOfPartnerOrganization](docs/PaginatedResponseOfPartnerOrganization.md)
+ - [Id4iApi.PaginatedResponseOfRole](docs/PaginatedResponseOfRole.md)
+ - [Id4iApi.PaginatedResponseOfUserPresentation](docs/PaginatedResponseOfUserPresentation.md)
+ - [Id4iApi.PaginatedResponseOfUserRoles](docs/PaginatedResponseOfUserRoles.md)
+ - [Id4iApi.PaginatedResponseOfstring](docs/PaginatedResponseOfstring.md)
  - [Id4iApi.PaginatedStringResponse](docs/PaginatedStringResponse.md)
  - [Id4iApi.PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
  - [Id4iApi.PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
@@ -328,7 +324,6 @@ Class | Method | HTTP request | Description
  - [Id4iApi.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
  - [Id4iApi.RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
  - [Id4iApi.RemovePartnerRequest](docs/RemovePartnerRequest.md)
- - [Id4iApi.ResponseEntity](docs/ResponseEntity.md)
  - [Id4iApi.Role](docs/Role.md)
  - [Id4iApi.RoleResponse](docs/RoleResponse.md)
  - [Id4iApi.Route](docs/Route.md)
@@ -337,11 +332,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.RoutingOptions](docs/RoutingOptions.md)
  - [Id4iApi.ServiceCosts](docs/ServiceCosts.md)
  - [Id4iApi.SimpleMessageResponse](docs/SimpleMessageResponse.md)
- - [Id4iApi.Timestamp](docs/Timestamp.md)
  - [Id4iApi.TransferReceiveInfo](docs/TransferReceiveInfo.md)
  - [Id4iApi.TransferSendInfo](docs/TransferSendInfo.md)
- - [Id4iApi.URI](docs/URI.md)
- - [Id4iApi.URL](docs/URL.md)
  - [Id4iApi.UserPresentation](docs/UserPresentation.md)
  - [Id4iApi.UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [Id4iApi.UserRegistrationResponse](docs/UserRegistrationResponse.md)
