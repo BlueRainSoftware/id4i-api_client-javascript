@@ -1,6 +1,6 @@
 {
 "name": "id4i_api",
-"version": "0.9.5-SNAPSHOT",
+"version": "0.9.5",
 "description": "ID4i_HTTP_API - altered",
 "license": "MIT",
 "main": "src/index.js",
