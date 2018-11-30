@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/PaginatedGuidCollection', 'model/PaginatedGuidResponse'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateCollectionRequest', 'model/GuidCollection', 'model/Id4n', 'model/ListOfId4ns', 'model/PaginatedResponseOfGuid', 'model/PaginatedResponseOfGuidCollection'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedGuidResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateCollectionRequest'), require('../model/GuidCollection'), require('../model/Id4n'), require('../model/ListOfId4ns'), require('../model/PaginatedResponseOfGuid'), require('../model/PaginatedResponseOfGuidCollection'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.CollectionsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedGuidResponse);
+    root.Id4iApi.CollectionsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateCollectionRequest, root.Id4iApi.GuidCollection, root.Id4iApi.Id4n, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedResponseOfGuid, root.Id4iApi.PaginatedResponseOfGuidCollection);
   }
-}(this, function(ApiClient, ApiError, CreateCollectionRequest, GuidCollection, Id4n, ListOfId4ns, PaginatedGuidCollection, PaginatedGuidResponse) {
+}(this, function(ApiClient, ApiError, CreateCollectionRequest, GuidCollection, Id4n, ListOfId4ns, PaginatedResponseOfGuid, PaginatedResponseOfGuidCollection) {
   'use strict';
 
   /**
@@ -243,7 +243,7 @@
      * Callback function to receive the result of the getAllCollectionsOfOrganization operation.
      * @callback module:api/CollectionsApi~getAllCollectionsOfOrganizationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedGuidCollection} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfGuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -258,7 +258,7 @@
      * @param {String} opts.label Filter by this label
      * @param {String} opts.labelPrefix Filter by this label prefix
      * @param {module:api/CollectionsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedGuidCollection}
+     * data is of type: {@link module:model/PaginatedResponseOfGuidCollection}
      */
     this.getAllCollectionsOfOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -290,7 +290,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedGuidCollection;
+      var returnType = PaginatedResponseOfGuidCollection;
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/collections', 'GET',
@@ -303,7 +303,7 @@
      * Callback function to receive the result of the listElementsOfCollection operation.
      * @callback module:api/CollectionsApi~listElementsOfCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedGuidResponse} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfGuid} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -314,7 +314,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/CollectionsApi~listElementsOfCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedGuidResponse}
+     * data is of type: {@link module:model/PaginatedResponseOfGuid}
      */
     this.listElementsOfCollection = function(id4n, opts, callback) {
       opts = opts || {};
@@ -343,7 +343,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedGuidResponse;
+      var returnType = PaginatedResponseOfGuid;
 
       return this.apiClient.callApi(
         '/api/v1/collections/{id4n}/elements', 'GET',

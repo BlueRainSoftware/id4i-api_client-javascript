@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllApiKeyPrivileges"></a>
 # **listAllApiKeyPrivileges**
-> ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(opts)
+> PaginatedResponseOfApiKeyPrivilegeInfo listAllApiKeyPrivileges(opts)
 
 List all privileges
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyPrivilegeInfoResponse**](ApiKeyPrivilegeInfoResponse.md)
+[**PaginatedResponseOfApiKeyPrivilegeInfo**](PaginatedResponseOfApiKeyPrivilegeInfo.md)
 
 ### Authorization
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllApiKeysOfOrganization"></a>
 # **listAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse listAllApiKeysOfOrganization(opts)
+> PaginatedResponseOfApiKeyPresentation listAllApiKeysOfOrganization(opts)
 
 Find API key by organization
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedApiKeyResponse**](PaginatedApiKeyResponse.md)
+[**PaginatedResponseOfApiKeyPresentation**](PaginatedResponseOfApiKeyPresentation.md)
 
 ### Authorization
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 <a name="listApiKeyPrivileges"></a>
 # **listApiKeyPrivileges**
-> ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(key, opts)
+> PaginatedResponseOfApiKeyPrivilege listApiKeyPrivileges(key, opts)
 
 List privileges
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyPrivilegePaginatedResponse**](ApiKeyPrivilegePaginatedResponse.md)
+[**PaginatedResponseOfApiKeyPrivilege**](PaginatedResponseOfApiKeyPrivilege.md)
 
 ### Authorization
 
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 <a name="listId4ns"></a>
 # **listId4ns**
-> Id4nPresentationPaginatedResponse listId4ns(key, privilege, opts)
+> PaginatedResponseOfId4nPresentation listId4ns(key, privilege, opts)
 
 ID4ns of a privilege
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Id4nPresentationPaginatedResponse**](Id4nPresentationPaginatedResponse.md)
+[**PaginatedResponseOfId4nPresentation**](PaginatedResponseOfId4nPresentation.md)
 
 ### Authorization
 

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddPartnerRequest', 'model/ApiError', 'model/ChangeRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/OrganizationUpdate', 'model/OrganizationUserInvitationListRequest', 'model/PaginatedCountryResponse', 'model/PaginatedGuidCollection', 'model/PaginatedOrganizationResponse', 'model/PaginatedResponseOfPartnerOrganization', 'model/PaginatedStringResponse', 'model/PaginatedUserPresentationResponse', 'model/PaginatedUserRolesResponse', 'model/PublicImagePresentation', 'model/RemovePartnerRequest'], factory);
+    define(['ApiClient', 'model/AddPartnerRequest', 'model/ApiError', 'model/ChangeRoleRequest', 'model/Organization', 'model/OrganizationAddress', 'model/OrganizationUpdate', 'model/OrganizationUserInvitationListRequest', 'model/PaginatedResponseOfCountry', 'model/PaginatedResponseOfGuidCollection', 'model/PaginatedResponseOfOrganization', 'model/PaginatedResponseOfPartnerOrganization', 'model/PaginatedResponseOfUserPresentation', 'model/PaginatedResponseOfUserRoles', 'model/PaginatedResponseOfstring', 'model/PublicImagePresentation', 'model/RemovePartnerRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AddPartnerRequest'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/OrganizationUpdate'), require('../model/OrganizationUserInvitationListRequest'), require('../model/PaginatedCountryResponse'), require('../model/PaginatedGuidCollection'), require('../model/PaginatedOrganizationResponse'), require('../model/PaginatedResponseOfPartnerOrganization'), require('../model/PaginatedStringResponse'), require('../model/PaginatedUserPresentationResponse'), require('../model/PaginatedUserRolesResponse'), require('../model/PublicImagePresentation'), require('../model/RemovePartnerRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/AddPartnerRequest'), require('../model/ApiError'), require('../model/ChangeRoleRequest'), require('../model/Organization'), require('../model/OrganizationAddress'), require('../model/OrganizationUpdate'), require('../model/OrganizationUserInvitationListRequest'), require('../model/PaginatedResponseOfCountry'), require('../model/PaginatedResponseOfGuidCollection'), require('../model/PaginatedResponseOfOrganization'), require('../model/PaginatedResponseOfPartnerOrganization'), require('../model/PaginatedResponseOfUserPresentation'), require('../model/PaginatedResponseOfUserRoles'), require('../model/PaginatedResponseOfstring'), require('../model/PublicImagePresentation'), require('../model/RemovePartnerRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AddPartnerRequest, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.OrganizationUpdate, root.Id4iApi.OrganizationUserInvitationListRequest, root.Id4iApi.PaginatedCountryResponse, root.Id4iApi.PaginatedGuidCollection, root.Id4iApi.PaginatedOrganizationResponse, root.Id4iApi.PaginatedResponseOfPartnerOrganization, root.Id4iApi.PaginatedStringResponse, root.Id4iApi.PaginatedUserPresentationResponse, root.Id4iApi.PaginatedUserRolesResponse, root.Id4iApi.PublicImagePresentation, root.Id4iApi.RemovePartnerRequest);
+    root.Id4iApi.OrganizationsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.AddPartnerRequest, root.Id4iApi.ApiError, root.Id4iApi.ChangeRoleRequest, root.Id4iApi.Organization, root.Id4iApi.OrganizationAddress, root.Id4iApi.OrganizationUpdate, root.Id4iApi.OrganizationUserInvitationListRequest, root.Id4iApi.PaginatedResponseOfCountry, root.Id4iApi.PaginatedResponseOfGuidCollection, root.Id4iApi.PaginatedResponseOfOrganization, root.Id4iApi.PaginatedResponseOfPartnerOrganization, root.Id4iApi.PaginatedResponseOfUserPresentation, root.Id4iApi.PaginatedResponseOfUserRoles, root.Id4iApi.PaginatedResponseOfstring, root.Id4iApi.PublicImagePresentation, root.Id4iApi.RemovePartnerRequest);
   }
-}(this, function(ApiClient, AddPartnerRequest, ApiError, ChangeRoleRequest, Organization, OrganizationAddress, OrganizationUpdate, OrganizationUserInvitationListRequest, PaginatedCountryResponse, PaginatedGuidCollection, PaginatedOrganizationResponse, PaginatedResponseOfPartnerOrganization, PaginatedStringResponse, PaginatedUserPresentationResponse, PaginatedUserRolesResponse, PublicImagePresentation, RemovePartnerRequest) {
+}(this, function(ApiClient, AddPartnerRequest, ApiError, ChangeRoleRequest, Organization, OrganizationAddress, OrganizationUpdate, OrganizationUserInvitationListRequest, PaginatedResponseOfCountry, PaginatedResponseOfGuidCollection, PaginatedResponseOfOrganization, PaginatedResponseOfPartnerOrganization, PaginatedResponseOfUserPresentation, PaginatedResponseOfUserRoles, PaginatedResponseOfstring, PublicImagePresentation, RemovePartnerRequest) {
   'use strict';
 
   /**
@@ -491,7 +491,7 @@
      * Callback function to receive the result of the getAllCollectionsOfOrganization operation.
      * @callback module:api/OrganizationsApi~getAllCollectionsOfOrganizationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedGuidCollection} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfGuidCollection} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -506,7 +506,7 @@
      * @param {String} opts.label Filter by this label
      * @param {String} opts.labelPrefix Filter by this label prefix
      * @param {module:api/OrganizationsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedGuidCollection}
+     * data is of type: {@link module:model/PaginatedResponseOfGuidCollection}
      */
     this.getAllCollectionsOfOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -538,7 +538,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedGuidCollection;
+      var returnType = PaginatedResponseOfGuidCollection;
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/collections', 'GET',
@@ -551,7 +551,7 @@
      * Callback function to receive the result of the getAllOrganizationRoles operation.
      * @callback module:api/OrganizationsApi~getAllOrganizationRolesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedUserRolesResponse} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfUserRoles} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -563,7 +563,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/OrganizationsApi~getAllOrganizationRolesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedUserRolesResponse}
+     * data is of type: {@link module:model/PaginatedResponseOfUserRoles}
      */
     this.getAllOrganizationRoles = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -592,7 +592,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedUserRolesResponse;
+      var returnType = PaginatedResponseOfUserRoles;
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/roles', 'GET',
@@ -653,7 +653,7 @@
      * Callback function to receive the result of the getOrganizationsOfUser operation.
      * @callback module:api/OrganizationsApi~getOrganizationsOfUserCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedOrganizationResponse} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfOrganization} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -664,7 +664,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/OrganizationsApi~getOrganizationsOfUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedOrganizationResponse}
+     * data is of type: {@link module:model/PaginatedResponseOfOrganization}
      */
     this.getOrganizationsOfUser = function(opts, callback) {
       opts = opts || {};
@@ -688,7 +688,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedOrganizationResponse;
+      var returnType = PaginatedResponseOfOrganization;
 
       return this.apiClient.callApi(
         '/api/v1/user/organizations', 'GET',
@@ -755,7 +755,7 @@
      * Callback function to receive the result of the getUserRoles operation.
      * @callback module:api/OrganizationsApi~getUserRolesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedStringResponse} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfstring} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -767,7 +767,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/OrganizationsApi~getUserRolesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedStringResponse}
+     * data is of type: {@link module:model/PaginatedResponseOfstring}
      */
     this.getUserRoles = function(organizationId, username, opts, callback) {
       opts = opts || {};
@@ -802,7 +802,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedStringResponse;
+      var returnType = PaginatedResponseOfstring;
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/users/{username}/roles', 'GET',
@@ -815,7 +815,7 @@
      * Callback function to receive the result of the getUsersOfOrganization operation.
      * @callback module:api/OrganizationsApi~getUsersOfOrganizationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedUserPresentationResponse} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfUserPresentation} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -827,7 +827,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/OrganizationsApi~getUsersOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedUserPresentationResponse}
+     * data is of type: {@link module:model/PaginatedResponseOfUserPresentation}
      */
     this.getUsersOfOrganization = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -856,7 +856,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedUserPresentationResponse;
+      var returnType = PaginatedResponseOfUserPresentation;
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/users', 'GET',
@@ -921,7 +921,7 @@
      * Callback function to receive the result of the listCountries operation.
      * @callback module:api/OrganizationsApi~listCountriesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedCountryResponse} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfCountry} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -931,7 +931,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/OrganizationsApi~listCountriesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedCountryResponse}
+     * data is of type: {@link module:model/PaginatedResponseOfCountry}
      */
     this.listCountries = function(opts, callback) {
       opts = opts || {};
@@ -954,7 +954,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedCountryResponse;
+      var returnType = PaginatedResponseOfCountry;
 
       return this.apiClient.callApi(
         '/api/v1/countries', 'GET',

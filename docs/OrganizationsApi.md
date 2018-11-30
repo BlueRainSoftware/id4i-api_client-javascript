@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
+> PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
 
 Get collections of organization
 
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollection**](PaginatedGuidCollection.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -571,7 +571,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllOrganizationRoles"></a>
 # **getAllOrganizationRoles**
-> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, opts)
+> PaginatedResponseOfUserRoles getAllOrganizationRoles(organizationId, opts)
 
 List users and their roles
 
@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserRolesResponse**](PaginatedUserRolesResponse.md)
+[**PaginatedResponseOfUserRoles**](PaginatedResponseOfUserRoles.md)
 
 ### Authorization
 
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
-> PaginatedOrganizationResponse getOrganizationsOfUser(opts)
+> PaginatedResponseOfOrganization getOrganizationsOfUser(opts)
 
 Retrieve organizations of user
 
@@ -726,7 +726,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedOrganizationResponse**](PaginatedOrganizationResponse.md)
+[**PaginatedResponseOfOrganization**](PaginatedResponseOfOrganization.md)
 
 ### Authorization
 
@@ -798,7 +798,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> PaginatedStringResponse getUserRoles(organizationId, username, opts)
+> PaginatedResponseOfstring getUserRoles(organizationId, username, opts)
 
 Get user roles by username
 
@@ -845,7 +845,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedStringResponse**](PaginatedStringResponse.md)
+[**PaginatedResponseOfstring**](PaginatedResponseOfstring.md)
 
 ### Authorization
 
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsersOfOrganization"></a>
 # **getUsersOfOrganization**
-> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, opts)
+> PaginatedResponseOfUserPresentation getUsersOfOrganization(organizationId, opts)
 
 Find users in organization
 
@@ -904,7 +904,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+[**PaginatedResponseOfUserPresentation**](PaginatedResponseOfUserPresentation.md)
 
 ### Authorization
 
@@ -971,7 +971,7 @@ null (empty response body)
 
 <a name="listCountries"></a>
 # **listCountries**
-> PaginatedCountryResponse listCountries(opts)
+> PaginatedResponseOfCountry listCountries(opts)
 
 List countries
 
@@ -1012,7 +1012,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedCountryResponse**](PaginatedCountryResponse.md)
+[**PaginatedResponseOfCountry**](PaginatedResponseOfCountry.md)
 
 ### Authorization
 

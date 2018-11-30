@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/HistoryItem', 'model/HistoryItemUpdate', 'model/PaginatedHistoryItemResponse', 'model/Visibility'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/HistoryItem', 'model/HistoryItemUpdate', 'model/PaginatedResponseOfHistoryItem', 'model/Visibility'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/HistoryItem'), require('../model/HistoryItemUpdate'), require('../model/PaginatedHistoryItemResponse'), require('../model/Visibility'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/HistoryItem'), require('../model/HistoryItemUpdate'), require('../model/PaginatedResponseOfHistoryItem'), require('../model/Visibility'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.HistoryApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.HistoryItem, root.Id4iApi.HistoryItemUpdate, root.Id4iApi.PaginatedHistoryItemResponse, root.Id4iApi.Visibility);
+    root.Id4iApi.HistoryApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.HistoryItem, root.Id4iApi.HistoryItemUpdate, root.Id4iApi.PaginatedResponseOfHistoryItem, root.Id4iApi.Visibility);
   }
-}(this, function(ApiClient, ApiError, HistoryItem, HistoryItemUpdate, PaginatedHistoryItemResponse, Visibility) {
+}(this, function(ApiClient, ApiError, HistoryItem, HistoryItemUpdate, PaginatedResponseOfHistoryItem, Visibility) {
   'use strict';
 
   /**
@@ -105,7 +105,7 @@
      * Callback function to receive the result of the filteredList operation.
      * @callback module:api/HistoryApi~filteredListCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedHistoryItemResponse} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfHistoryItem} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -123,7 +123,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/HistoryApi~filteredListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedHistoryItemResponse}
+     * data is of type: {@link module:model/PaginatedResponseOfHistoryItem}
      */
     this.filteredList = function(id4n, opts, callback) {
       opts = opts || {};
@@ -164,7 +164,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedHistoryItemResponse;
+      var returnType = PaginatedResponseOfHistoryItem;
 
       return this.apiClient.callApi(
         '/api/v1/history/{id4n}', 'GET',
@@ -177,7 +177,7 @@
      * Callback function to receive the result of the list operation.
      * @callback module:api/HistoryApi~listCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedHistoryItemResponse} data The data returned by the service call.
+     * @param {module:model/PaginatedResponseOfHistoryItem} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -191,7 +191,7 @@
      * @param {Number} opts.offset Start with the n-th element
      * @param {Number} opts.limit The maximum count of returned elements
      * @param {module:api/HistoryApi~listCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedHistoryItemResponse}
+     * data is of type: {@link module:model/PaginatedResponseOfHistoryItem}
      */
     this.list = function(id4n, organizationId, opts, callback) {
       opts = opts || {};
@@ -227,7 +227,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedHistoryItemResponse;
+      var returnType = PaginatedResponseOfHistoryItem;
 
       return this.apiClient.callApi(
         '/api/v1/history/{id4n}/{organizationId}', 'GET',
@@ -240,7 +240,7 @@
      * Callback function to receive the result of the retrieveItem operation.
      * @callback module:api/HistoryApi~retrieveItemCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedHistoryItemResponse} data The data returned by the service call.
+     * @param {module:model/HistoryItem} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -250,7 +250,7 @@
      * @param {String} organizationId organizationId
      * @param {Number} sequenceId sequenceId
      * @param {module:api/HistoryApi~retrieveItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedHistoryItemResponse}
+     * data is of type: {@link module:model/HistoryItem}
      */
     this.retrieveItem = function(id4n, organizationId, sequenceId, callback) {
       var postBody = null;
@@ -288,7 +288,7 @@
       var authNames = ['Authorization'];
       var contentTypes = ['application/xml', 'application/json'];
       var accepts = ['application/xml', 'application/json'];
-      var returnType = PaginatedHistoryItemResponse;
+      var returnType = HistoryItem;
 
       return this.apiClient.callApi(
         '/api/v1/history/{id4n}/{organizationId}/{sequenceId}', 'GET',
