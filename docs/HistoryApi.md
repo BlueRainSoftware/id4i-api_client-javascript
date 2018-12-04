@@ -70,7 +70,7 @@ null (empty response body)
 
 <a name="filteredList"></a>
 # **filteredList**
-> PaginatedHistoryItemResponse filteredList(id4n, opts)
+> PaginatedResponseOfHistoryItem filteredList(id4n, opts)
 
 List history
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 <a name="list"></a>
 # **list**
-> PaginatedHistoryItemResponse list(id4n, organizationId, opts)
+> PaginatedResponseOfHistoryItem list(id4n, organizationId, opts)
 
 DEPRECATED - List history
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 <a name="retrieveItem"></a>
 # **retrieveItem**
-> PaginatedHistoryItemResponse retrieveItem(id4n, organizationId, sequenceId)
+> HistoryItem retrieveItem(id4n, organizationId, sequenceId)
 
 Get history item
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**HistoryItem**](HistoryItem.md)
 
 ### Authorization
 

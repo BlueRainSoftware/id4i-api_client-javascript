@@ -228,7 +228,7 @@ null (empty response body)
 
 <a name="searchByAlias"></a>
 # **searchByAlias**
-> PaginatedGuidResponse searchByAlias(alias, aliasType, opts)
+> PaginatedResponseOfGuid searchByAlias(alias, aliasType, opts)
 
 Search for GUIDs by alias
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 

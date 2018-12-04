@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 <a name="getCollections"></a>
 # **getCollections**
-> PaginatedGuidCollectionResponse getCollections(id4n, opts)
+> PaginatedResponseOfGuidCollection getCollections(id4n, opts)
 
 Retrieve collections of an ID
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollectionResponse**](PaginatedGuidCollectionResponse.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 <a name="getGuidsWithoutCollection"></a>
 # **getGuidsWithoutCollection**
-> PaginatedResponseGuid getGuidsWithoutCollection(organizationId, opts)
+> PaginatedResponseOfGuid getGuidsWithoutCollection(organizationId, opts)
 
 Retrieve GUIDs not in any collection
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 
