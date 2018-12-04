@@ -69,6 +69,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property ownerOrganizationId (base name: "ownerOrganizationId")', function() {
+      // uncomment below and update the code to test the property ownerOrganizationId
+      //var instane = new Id4iApi.HistoryItem();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sequenceId (base name: "sequenceId")', function() {
       // uncomment below and update the code to test the property sequenceId
       //var instane = new Id4iApi.HistoryItem();
