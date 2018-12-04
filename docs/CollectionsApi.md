@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
+> PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization(organizationId, opts)
 
 Get collections of organization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollection**](PaginatedGuidCollection.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 <a name="listElementsOfCollection"></a>
 # **listElementsOfCollection**
-> PaginatedGuidResponse listElementsOfCollection(id4n, opts)
+> PaginatedResponseOfGuid listElementsOfCollection(id4n, opts)
 
 List contents of the collection
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 

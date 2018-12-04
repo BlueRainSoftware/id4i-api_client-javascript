@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listOrganizationChangeLog"></a>
 # **listOrganizationChangeLog**
-> PaginatedChangeLogEntryResponse listOrganizationChangeLog(organizationId, opts)
+> PaginatedResponseOfChangeLogEntry listOrganizationChangeLog(organizationId, opts)
 
 List change log entries of an organization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedChangeLogEntryResponse**](PaginatedChangeLogEntryResponse.md)
+[**PaginatedResponseOfChangeLogEntry**](PaginatedResponseOfChangeLogEntry.md)
 
 ### Authorization
 
