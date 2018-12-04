@@ -178,7 +178,7 @@ No authorization required
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
-> PaginatedDocumentResponse listAllPublicDocuments(id4n, opts)
+> PaginatedResponseOfDocument listAllPublicDocuments(id4n, opts)
 
 List public documents
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 <a name="listPublicHistory"></a>
 # **listPublicHistory**
-> PaginatedHistoryItemResponse listPublicHistory(id4n, opts)
+> PaginatedResponseOfHistoryItem listPublicHistory(id4n, opts)
 
 Shows the public history of the given GUID
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 

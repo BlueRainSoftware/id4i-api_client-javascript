@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> ResponseEntity deleteDocument(organizationId, id4n, fileName)
+> deleteDocument(organizationId, id4n, fileName)
 
 Delete a document
 
@@ -107,7 +107,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.deleteDocument(organizationId, id4n, fileName, callback);
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+null (empty response body)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllDocuments"></a>
 # **listAllDocuments**
-> PaginatedDocumentResponse listAllDocuments(id4n, opts)
+> PaginatedResponseOfDocument listAllDocuments(id4n, opts)
 
 List documents
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
-> PaginatedDocumentResponse listAllPublicDocuments(id4n, opts)
+> PaginatedResponseOfDocument listAllPublicDocuments(id4n, opts)
 
 List public documents
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 <a name="listDocuments"></a>
 # **listDocuments**
-> PaginatedDocumentResponse listDocuments(organizationId, id4n, opts)
+> PaginatedResponseOfDocument listDocuments(organizationId, id4n, opts)
 
 List organization specific documents
 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
