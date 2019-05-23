@@ -196,6 +196,8 @@ Class | Method | HTTP request | Description
 *Id4iApi.HistoryApi* | [**updateItem**](docs/HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *Id4iApi.HistoryApi* | [**updateItemVisibility**](docs/HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
+*Id4iApi.MessagingApi* | [**getDefaultQueue**](docs/MessagingApi.md#getDefaultQueue) | **GET** /api/v1/organizations/{organizationId}/messaging | 
+*Id4iApi.MessagingApi* | [**patchDefaultQueue**](docs/MessagingApi.md#patchDefaultQueue) | **PATCH** /api/v1/organizations/{organizationId}/messaging | 
 *Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *Id4iApi.OrganizationsApi* | [**addPartnerOrganization**](docs/OrganizationsApi.md#addPartnerOrganization) | **PUT** /api/v1/organizations/{organizationId}/partner | Add partner
 *Id4iApi.OrganizationsApi* | [**addUserRoles**](docs/OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -306,6 +308,8 @@ Class | Method | HTTP request | Description
  - [Id4iApi.PasswordResetRequest](docs/PasswordResetRequest.md)
  - [Id4iApi.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [Id4iApi.PublicImagePresentation](docs/PublicImagePresentation.md)
+ - [Id4iApi.QueuePresentation](docs/QueuePresentation.md)
+ - [Id4iApi.QueueUpdateRequest](docs/QueueUpdateRequest.md)
  - [Id4iApi.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
  - [Id4iApi.RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
  - [Id4iApi.RemovePartnerRequest](docs/RemovePartnerRequest.md)
