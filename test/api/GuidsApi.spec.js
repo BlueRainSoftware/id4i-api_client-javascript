@@ -121,6 +121,16 @@
         done();
       });
     });
+    describe('importGS1Codes', function() {
+      it('should call importGS1Codes successfully', function(done) {
+        //uncomment below and update the code to test importGS1Codes
+        //instance.importGS1Codes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeGuidAlias', function() {
       it('should call removeGuidAlias successfully', function(done) {
         //uncomment below and update the code to test removeGuidAlias

@@ -348,7 +348,32 @@
      * value: "ERR_ORGA_CANNOT_BE_OWN_PARTNER"
      * @const
      */
-    "ORGA_CANNOT_BE_OWN_PARTNER": "ERR_ORGA_CANNOT_BE_OWN_PARTNER"  };
+    "ORGA_CANNOT_BE_OWN_PARTNER": "ERR_ORGA_CANNOT_BE_OWN_PARTNER",
+    /**
+     * value: "ERR_INVALID_GS1_CODE"
+     * @const
+     */
+    "INVALID_GS1_CODE": "ERR_INVALID_GS1_CODE",
+    /**
+     * value: "ERR_INVALID_GS1_CHAR_IN_CODE"
+     * @const
+     */
+    "INVALID_GS1_CHAR_IN_CODE": "ERR_INVALID_GS1_CHAR_IN_CODE",
+    /**
+     * value: "ERR_INVALID_GS1_CODE_NOT_UNIQUE"
+     * @const
+     */
+    "INVALID_GS1_CODE_NOT_UNIQUE": "ERR_INVALID_GS1_CODE_NOT_UNIQUE",
+    /**
+     * value: "ERR_INVALID_GS1_GTIN"
+     * @const
+     */
+    "INVALID_GS1_GTIN": "ERR_INVALID_GS1_GTIN",
+    /**
+     * value: "ERR_GS1_CODE_CURRENTLY_UNSUPPORTED"
+     * @const
+     */
+    "GS1_CODE_CURRENTLY_UNSUPPORTED": "ERR_GS1_CODE_CURRENTLY_UNSUPPORTED"  };
 
 
   return exports;

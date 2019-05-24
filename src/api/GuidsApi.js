@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiError', 'model/CreateGuidRequest', 'model/Guid', 'model/GuidAlias', 'model/Id4nPresentation', 'model/ListOfId4ns', 'model/PaginatedResponseOfGuid', 'model/PaginatedResponseOfGuidCollection'], factory);
+    define(['ApiClient', 'model/ApiError', 'model/CreateGuidRequest', 'model/Guid', 'model/GuidAlias', 'model/Id4nPresentation', 'model/ImportGS1CodesRequest', 'model/ListOfId4ns', 'model/PaginatedResponseOfGuid', 'model/PaginatedResponseOfGuidCollection'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateGuidRequest'), require('../model/Guid'), require('../model/GuidAlias'), require('../model/Id4nPresentation'), require('../model/ListOfId4ns'), require('../model/PaginatedResponseOfGuid'), require('../model/PaginatedResponseOfGuidCollection'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiError'), require('../model/CreateGuidRequest'), require('../model/Guid'), require('../model/GuidAlias'), require('../model/Id4nPresentation'), require('../model/ImportGS1CodesRequest'), require('../model/ListOfId4ns'), require('../model/PaginatedResponseOfGuid'), require('../model/PaginatedResponseOfGuidCollection'));
   } else {
     // Browser globals (root is window)
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.GuidsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateGuidRequest, root.Id4iApi.Guid, root.Id4iApi.GuidAlias, root.Id4iApi.Id4nPresentation, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedResponseOfGuid, root.Id4iApi.PaginatedResponseOfGuidCollection);
+    root.Id4iApi.GuidsApi = factory(root.Id4iApi.ApiClient, root.Id4iApi.ApiError, root.Id4iApi.CreateGuidRequest, root.Id4iApi.Guid, root.Id4iApi.GuidAlias, root.Id4iApi.Id4nPresentation, root.Id4iApi.ImportGS1CodesRequest, root.Id4iApi.ListOfId4ns, root.Id4iApi.PaginatedResponseOfGuid, root.Id4iApi.PaginatedResponseOfGuidCollection);
   }
-}(this, function(ApiClient, ApiError, CreateGuidRequest, Guid, GuidAlias, Id4nPresentation, ListOfId4ns, PaginatedResponseOfGuid, PaginatedResponseOfGuidCollection) {
+}(this, function(ApiClient, ApiError, CreateGuidRequest, Guid, GuidAlias, Id4nPresentation, ImportGS1CodesRequest, ListOfId4ns, PaginatedResponseOfGuid, PaginatedResponseOfGuidCollection) {
   'use strict';
 
   /**
@@ -402,6 +402,52 @@
 
       return this.apiClient.callApi(
         '/api/v1/id4ns/{id4n}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the importGS1Codes operation.
+     * @callback module:api/GuidsApi~importGS1CodesCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Import GS1/MAPP codes
+     * Importing GS1/MAPP codes that contain unique components.
+     * @param {module:model/ImportGS1CodesRequest} importGS1CodesRequest The information how the MAPP codes should be imported and the list of MAPP codes
+     * @param {module:api/GuidsApi~importGS1CodesCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.importGS1Codes = function(importGS1CodesRequest, callback) {
+      var postBody = importGS1CodesRequest;
+
+      // verify the required parameter 'importGS1CodesRequest' is set
+      if (importGS1CodesRequest === undefined || importGS1CodesRequest === null) {
+        throw new Error("Missing the required parameter 'importGS1CodesRequest' when calling importGS1Codes");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Authorization'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/api/v1/import/gs1', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
