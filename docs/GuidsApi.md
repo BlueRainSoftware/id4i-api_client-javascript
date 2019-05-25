@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**importGS1Codes**](GuidsApi.md#importGS1Codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 [**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
@@ -392,6 +393,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Id4nPresentation**](Id4nPresentation.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="importGS1Codes"></a>
+# **importGS1Codes**
+> importGS1Codes(importGS1CodesRequest)
+
+Import GS1/MAPP codes
+
+Importing GS1/MAPP codes that contain unique components.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.GuidsApi();
+
+var importGS1CodesRequest = new Id4iApi.ImportGS1CodesRequest(); // ImportGS1CodesRequest | The information how the MAPP codes should be imported and the list of MAPP codes
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.importGS1Codes(importGS1CodesRequest, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importGS1CodesRequest** | [**ImportGS1CodesRequest**](ImportGS1CodesRequest.md)| The information how the MAPP codes should be imported and the list of MAPP codes | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
