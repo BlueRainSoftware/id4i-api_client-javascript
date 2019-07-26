@@ -185,6 +185,11 @@
      */
     "RECEIVED": "RECEIVED",
     /**
+     * value: "DELIVERY_REFUSED"
+     * @const
+     */
+    "DELIVERY_REFUSED": "DELIVERY_REFUSED",
+    /**
      * value: "REPROCESSING_STARTED"
      * @const
      */
