@@ -121,6 +121,16 @@
         done();
       });
     });
+    describe('putDocument', function() {
+      it('should call putDocument successfully', function(done) {
+        //uncomment below and update the code to test putDocument
+        //instance.putDocument(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('readDocument', function() {
       it('should call readDocument successfully', function(done) {
         //uncomment below and update the code to test readDocument
