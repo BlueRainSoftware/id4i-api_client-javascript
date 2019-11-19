@@ -193,6 +193,66 @@
     }
 
     /**
+     * Callback function to receive the result of the deleteProperties operation.
+     * @callback module:api/CollectionsApi~deletePropertiesCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete ID4n properties
+     * Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+     * @param {String} id4n The id4n
+     * @param {String} organizationId The organization namespace to work on while deleting the properties.
+     * @param {Array.<module:model/String>} properties A set of property keys to delete.
+     * @param {module:api/CollectionsApi~deletePropertiesCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteProperties = function(id4n, organizationId, properties, callback) {
+      var postBody = properties;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling deleteProperties");
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling deleteProperties");
+      }
+
+      // verify the required parameter 'properties' is set
+      if (properties === undefined || properties === null) {
+        throw new Error("Missing the required parameter 'properties' when calling deleteProperties");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+        'organizationId': organizationId,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Authorization'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/api/v1/id4ns/{id4n}/properties', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the findCollection operation.
      * @callback module:api/CollectionsApi~findCollectionCallback
      * @param {String} error Error message, if any.
@@ -249,7 +309,7 @@
 
     /**
      * Get collections of organization
-     * Retrieving all collections of an organization in a paginated manner.
+     * Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. &#x60;com.yourcompany.orderId.eq&#x3D;1234&#x60;  
      * @param {String} organizationId The namespace of the organization
      * @param {Object} opts Optional parameters
      * @param {Number} opts.offset Start with the n-th element
@@ -294,6 +354,58 @@
 
       return this.apiClient.callApi(
         '/api/v1/organizations/{organizationId}/collections', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getProperties operation.
+     * @callback module:api/CollectionsApi~getPropertiesCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {'String': 'String'}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve ID4n properties
+     * List all properties of an id4n.
+     * @param {String} id4n The id4n
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.organizationId The organization namespace.
+     * @param {module:api/CollectionsApi~getPropertiesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {'String': 'String'}>}
+     */
+    this.getProperties = function(id4n, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling getProperties");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+        'organizationId': opts['organizationId'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Authorization'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/api/v1/id4ns/{id4n}/properties', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -347,6 +459,66 @@
 
       return this.apiClient.callApi(
         '/api/v1/collections/{id4n}/elements', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the patchProperties operation.
+     * @callback module:api/CollectionsApi~patchPropertiesCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Patch ID4n properties
+     * Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+     * @param {String} id4n The id4n
+     * @param {String} organizationId The organization namespace to work on while patching the properties.
+     * @param {Object} properties The properties to update.
+     * @param {module:api/CollectionsApi~patchPropertiesCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.patchProperties = function(id4n, organizationId, properties, callback) {
+      var postBody = properties;
+
+      // verify the required parameter 'id4n' is set
+      if (id4n === undefined || id4n === null) {
+        throw new Error("Missing the required parameter 'id4n' when calling patchProperties");
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling patchProperties");
+      }
+
+      // verify the required parameter 'properties' is set
+      if (properties === undefined || properties === null) {
+        throw new Error("Missing the required parameter 'properties' when calling patchProperties");
+      }
+
+
+      var pathParams = {
+        'id4n': id4n
+      };
+      var queryParams = {
+        'organizationId': organizationId,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Authorization'];
+      var contentTypes = ['application/xml', 'application/json'];
+      var accepts = ['application/xml', 'application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/api/v1/id4ns/{id4n}/properties', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

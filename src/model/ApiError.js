@@ -315,6 +315,11 @@
      */
     "INVALID_NAMESPACE": "ERR_INVALID_NAMESPACE",
     /**
+     * value: "ERR_INVALID_PROPERTY_KEY"
+     * @const
+     */
+    "INVALID_PROPERTY_KEY": "ERR_INVALID_PROPERTY_KEY",
+    /**
      * value: "ERR_NAMESPACE_ALREADY_EXISTS"
      * @const
      */

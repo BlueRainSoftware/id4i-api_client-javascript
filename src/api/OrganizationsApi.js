@@ -497,7 +497,7 @@
 
     /**
      * Get collections of organization
-     * Retrieving all collections of an organization in a paginated manner.
+     * Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. &#x60;com.yourcompany.orderId.eq&#x3D;1234&#x60;  
      * @param {String} organizationId The namespace of the organization
      * @param {Object} opts Optional parameters
      * @param {Number} opts.offset Start with the n-th element

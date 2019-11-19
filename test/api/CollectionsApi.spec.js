@@ -81,6 +81,16 @@
         done();
       });
     });
+    describe('deleteProperties', function() {
+      it('should call deleteProperties successfully', function(done) {
+        //uncomment below and update the code to test deleteProperties
+        //instance.deleteProperties(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('findCollection', function() {
       it('should call findCollection successfully', function(done) {
         //uncomment below and update the code to test findCollection
@@ -101,10 +111,30 @@
         done();
       });
     });
+    describe('getProperties', function() {
+      it('should call getProperties successfully', function(done) {
+        //uncomment below and update the code to test getProperties
+        //instance.getProperties(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listElementsOfCollection', function() {
       it('should call listElementsOfCollection successfully', function(done) {
         //uncomment below and update the code to test listElementsOfCollection
         //instance.listElementsOfCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('patchProperties', function() {
+      it('should call patchProperties successfully', function(done) {
+        //uncomment below and update the code to test patchProperties
+        //instance.patchProperties(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
