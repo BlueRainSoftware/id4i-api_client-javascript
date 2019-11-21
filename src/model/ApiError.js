@@ -320,6 +320,11 @@
      */
     "INVALID_PROPERTY_KEY": "ERR_INVALID_PROPERTY_KEY",
     /**
+     * value: "ERR_INVALID_FILTER"
+     * @const
+     */
+    "INVALID_FILTER": "ERR_INVALID_FILTER",
+    /**
      * value: "ERR_NAMESPACE_ALREADY_EXISTS"
      * @const
      */

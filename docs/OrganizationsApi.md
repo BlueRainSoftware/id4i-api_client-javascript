@@ -532,7 +532,8 @@ var opts = {
   'limit': 56, // Number | The maximum count of returned elements
   'type': "type_example", // String | Filter by this type
   'label': "label_example", // String | Filter by this label
-  'labelPrefix': "labelPrefix_example" // String | Filter by this label prefix
+  'labelPrefix': "labelPrefix_example", // String | Filter by this label prefix
+  'property': ["property_example"] // [String] | List of i4dn property filter. e.g. \"com.myorga.state:IN:waiting|processing\" or \"com.myorga.orderId:EQ:SAP001\"
 };
 
 var callback = function(error, data, response) {
@@ -555,6 +556,7 @@ Name | Type | Description  | Notes
  **type** | **String**| Filter by this type | [optional] 
  **label** | **String**| Filter by this label | [optional] 
  **labelPrefix** | **String**| Filter by this label prefix | [optional] 
+ **property** | [**[String]**](String.md)| List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; | [optional] 
 
 ### Return type
 
