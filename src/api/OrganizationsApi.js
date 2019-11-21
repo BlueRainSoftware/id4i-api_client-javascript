@@ -505,6 +505,7 @@
      * @param {module:model/String} opts.type Filter by this type
      * @param {String} opts.label Filter by this label
      * @param {String} opts.labelPrefix Filter by this label prefix
+     * @param {Array.<String>} opts.property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot;
      * @param {module:api/OrganizationsApi~getAllCollectionsOfOrganizationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedResponseOfGuidCollection}
      */
@@ -529,6 +530,10 @@
         'labelPrefix': opts['labelPrefix'],
       };
       var collectionQueryParams = {
+        'property': {
+          value: opts['property'],
+          collectionFormat: 'multi'
+        },
       };
       var headerParams = {
       };
