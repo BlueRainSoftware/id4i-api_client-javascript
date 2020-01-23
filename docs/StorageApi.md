@@ -4,13 +4,14 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an document for an id4n
+[**createDocument**](StorageApi.md#createDocument) | **POST** /api/v1/documents/{id4n}/{organizationId} | Create an document for an id4n
 [**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 [**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 [**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 [**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/documents/{id4n} | List documents
 [**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 [**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
+[**putDocument**](StorageApi.md#putDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Put an document for an id4n
 [**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 [**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
@@ -434,6 +435,65 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="putDocument"></a>
+# **putDocument**
+> Document putDocument(organizationId, id4n, content)
+
+Put an document for an id4n
+
+Creating or overwriting an existing document 
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.StorageApi();
+
+var organizationId = "organizationId_example"; // String | organizationId
+
+var id4n = "id4n_example"; // String | id4n
+
+var content = "/path/to/file.txt"; // File | content
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.putDocument(organizationId, id4n, content, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| organizationId | 
+ **id4n** | **String**| id4n | 
+ **content** | **File**| content | 
+
+### Return type
+
+[**Document**](Document.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json
 
 <a name="readDocument"></a>

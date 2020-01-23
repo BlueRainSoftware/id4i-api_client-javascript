@@ -6,12 +6,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 [**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+[**deleteProperties**](GuidsApi.md#deleteProperties) | **DELETE** /api/v1/id4ns/{id4n}/properties | Delete ID4n properties
 [**getCollections**](GuidsApi.md#getCollections) | **GET** /api/v1/id4ns/{id4n}/collections | Retrieve collections of an ID
 [**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**getProperties**](GuidsApi.md#getProperties) | **GET** /api/v1/id4ns/{id4n}/properties | Retrieve ID4n properties
 [**importGS1Codes**](GuidsApi.md#importGS1Codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
+[**patchProperties**](GuidsApi.md#patchProperties) | **PATCH** /api/v1/id4ns/{id4n}/properties | Patch ID4n properties
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 [**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
@@ -118,6 +121,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListOfId4ns**](ListOfId4ns.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="deleteProperties"></a>
+# **deleteProperties**
+> deleteProperties(id4n, organizationId, properties)
+
+Delete ID4n properties
+
+Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.GuidsApi();
+
+var id4n = "id4n_example"; // String | The id4n
+
+var organizationId = "organizationId_example"; // String | The organization namespace to work on while deleting the properties.
+
+var properties = [new Id4iApi.[String]()]; // [String] | A set of property keys to delete.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteProperties(id4n, organizationId, properties, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The id4n | 
+ **organizationId** | **String**| The organization namespace to work on while deleting the properties. | 
+ **properties** | **[String]**| A set of property keys to delete. | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -403,6 +465,63 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
+<a name="getProperties"></a>
+# **getProperties**
+> {&#39;String&#39;: &#39;String&#39;} getProperties(id4n, opts)
+
+Retrieve ID4n properties
+
+List all properties of an id4n.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.GuidsApi();
+
+var id4n = "id4n_example"; // String | The id4n
+
+var opts = { 
+  'organizationId': "organizationId_example" // String | The organization namespace.
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getProperties(id4n, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The id4n | 
+ **organizationId** | **String**| The organization namespace. | [optional] 
+
+### Return type
+
+**{&#39;String&#39;: &#39;String&#39;}**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
 <a name="importGS1Codes"></a>
 # **importGS1Codes**
 > importGS1Codes(importGS1CodesRequest)
@@ -442,6 +561,65 @@ apiInstance.importGS1Codes(importGS1CodesRequest, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **importGS1CodesRequest** | [**ImportGS1CodesRequest**](ImportGS1CodesRequest.md)| The information how the MAPP codes should be imported and the list of MAPP codes | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="patchProperties"></a>
+# **patchProperties**
+> patchProperties(id4n, organizationId, properties)
+
+Patch ID4n properties
+
+Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+
+### Example
+```javascript
+var Id4iApi = require('id4i_api');
+var defaultClient = Id4iApi.ApiClient.instance;
+
+// Configure API key authorization: Authorization
+var Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+var apiInstance = new Id4iApi.GuidsApi();
+
+var id4n = "id4n_example"; // String | The id4n
+
+var organizationId = "organizationId_example"; // String | The organization namespace to work on while patching the properties.
+
+var properties = null; // Object | The properties to update.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.patchProperties(id4n, organizationId, properties, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The id4n | 
+ **organizationId** | **String**| The organization namespace to work on while patching the properties. | 
+ **properties** | **Object**| The properties to update. | 
 
 ### Return type
 
