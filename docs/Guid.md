@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id4n** | **String** | The ID | [optional] 
 **ownerOrganizationId** | **String** | Organization namespace of the GUID owner | [optional] 
 **physicalState** | **String** | Physical attachment state of the GUID | [optional] 
+**properties** | **{String: String}** | The properties of the organization | [optional] 
 
 
 <a name="PhysicalStateEnum"></a>

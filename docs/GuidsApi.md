@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 <a name="getGuid"></a>
 # **getGuid**
-> Guid getGuid(id4n)
+> Guid getGuid(id4n, opts)
 
 Retrieve GUID information
 
@@ -272,6 +272,9 @@ var apiInstance = new Id4iApi.GuidsApi();
 
 var id4n = "id4n_example"; // String | The GUID number
 
+var opts = { 
+  'organizationId': "organizationId_example" // String | The organization namespace to resolve.
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -280,7 +283,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getGuid(id4n, callback);
+apiInstance.getGuid(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -288,6 +291,7 @@ apiInstance.getGuid(id4n, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID number | 
+ **organizationId** | **String**| The organization namespace to resolve. | [optional] 
 
 ### Return type
 
@@ -414,7 +418,7 @@ Name | Type | Description  | Notes
 
 <a name="getId4n"></a>
 # **getId4n**
-> Id4nPresentation getId4n(id4n)
+> Id4nPresentation getId4n(id4n, opts)
 
 Retrieve ID4n information
 
@@ -435,6 +439,9 @@ var apiInstance = new Id4iApi.GuidsApi();
 
 var id4n = "id4n_example"; // String | The ID to resolve to
 
+var opts = { 
+  'organizationId': "organizationId_example" // String | The organization namespace to resolve.
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -443,7 +450,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getId4n(id4n, callback);
+apiInstance.getId4n(id4n, opts, callback);
 ```
 
 ### Parameters
@@ -451,6 +458,7 @@ apiInstance.getId4n(id4n, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The ID to resolve to | 
+ **organizationId** | **String**| The organization namespace to resolve. | [optional] 
 
 ### Return type
 

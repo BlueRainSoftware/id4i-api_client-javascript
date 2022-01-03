@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Id4iApi.ListOfId4ns();
+    instance = new Id4iApi.SendCustomMessage();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,22 @@
       object[property] = value;
   }
 
-  describe('ListOfId4ns', function() {
-    it('should create an instance of ListOfId4ns', function() {
-      // uncomment below and update the code to test ListOfId4ns
-      //var instane = new Id4iApi.ListOfId4ns();
-      //expect(instance).to.be.a(Id4iApi.ListOfId4ns);
+  describe('SendCustomMessage', function() {
+    it('should create an instance of SendCustomMessage', function() {
+      // uncomment below and update the code to test SendCustomMessage
+      //var instane = new Id4iApi.SendCustomMessage();
+      //expect(instance).to.be.a(Id4iApi.SendCustomMessage);
     });
 
-    it('should have the property id4ns (base name: "id4ns")', function() {
-      // uncomment below and update the code to test the property id4ns
-      //var instane = new Id4iApi.ListOfId4ns();
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
+      //var instane = new Id4iApi.SendCustomMessage();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new Id4iApi.SendCustomMessage();
       //expect(instance).to.be();
     });
 

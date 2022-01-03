@@ -430,7 +430,8 @@ var id4n = "id4n_example"; // String | id4n
 
 var opts = { 
   'offset': 56, // Number | Start with the n-th element
-  'limit': 56 // Number | The maximum count of returned elements
+  'limit': 56, // Number | The maximum count of returned elements
+  'organizationId': "organizationId_example" // String | The organization namespace.
 };
 
 var callback = function(error, data, response) {
@@ -450,6 +451,7 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n | 
  **offset** | **Number**| Start with the n-th element | [optional] 
  **limit** | **Number**| The maximum count of returned elements | [optional] 
+ **organizationId** | **String**| The organization namespace. | [optional] 
 
 ### Return type
 

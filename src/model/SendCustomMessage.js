@@ -26,7 +26,7 @@
     if (!root.Id4iApi) {
       root.Id4iApi = {};
     }
-    root.Id4iApi.OrganizationUpdate = factory(root.Id4iApi.ApiClient);
+    root.Id4iApi.SendCustomMessage = factory(root.Id4iApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,34 +35,39 @@
 
 
   /**
-   * The OrganizationUpdate model module.
-   * @module model/OrganizationUpdate
+   * The SendCustomMessage model module.
+   * @module model/SendCustomMessage
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>OrganizationUpdate</code>.
-   * An organization
-   * @alias module:model/OrganizationUpdate
+   * Constructs a new <code>SendCustomMessage</code>.
+   * @alias module:model/SendCustomMessage
    * @class
+   * @param data {Object.<String, String>} Custom data in a map. You may use JSON content
+   * @param name {String} The name of the message (organisation specific)
    */
-  var exports = function() {
+  var exports = function(data, name) {
     var _this = this;
 
-
+    _this['data'] = data;
+    _this['name'] = name;
   };
 
   /**
-   * Constructs a <code>OrganizationUpdate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>SendCustomMessage</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/OrganizationUpdate} obj Optional instance to populate.
-   * @return {module:model/OrganizationUpdate} The populated <code>OrganizationUpdate</code> instance.
+   * @param {module:model/SendCustomMessage} obj Optional instance to populate.
+   * @return {module:model/SendCustomMessage} The populated <code>SendCustomMessage</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = ApiClient.convertToType(data['data'], {'String': 'String'});
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
@@ -71,7 +76,12 @@
   }
 
   /**
-   * The name of the organization
+   * Custom data in a map. You may use JSON content
+   * @member {Object.<String, String>} data
+   */
+  exports.prototype['data'] = undefined;
+  /**
+   * The name of the message (organisation specific)
    * @member {String} name
    */
   exports.prototype['name'] = undefined;

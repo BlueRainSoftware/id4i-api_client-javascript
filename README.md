@@ -14,8 +14,8 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.7
-- Package version: 0.9.7
+- API version: 1.0.0
+- Package version: 1.0.0
 - Build package: io.swagger.codegen.languages.JavascriptClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -203,6 +203,7 @@ Class | Method | HTTP request | Description
 *Id4iApi.HistoryApi* | [**updateItem**](docs/HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *Id4iApi.HistoryApi* | [**updateItemVisibility**](docs/HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *Id4iApi.ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
+*Id4iApi.MessagingApi* | [**enqueueCustomMessage**](docs/MessagingApi.md#enqueueCustomMessage) | **POST** /api/v1/organizations/{organizationId}/messaging/enqueueCustomMessage | Enqueue a custom message
 *Id4iApi.MessagingApi* | [**getDefaultQueue**](docs/MessagingApi.md#getDefaultQueue) | **GET** /api/v1/organizations/{organizationId}/messaging | 
 *Id4iApi.MessagingApi* | [**patchDefaultQueue**](docs/MessagingApi.md#patchDefaultQueue) | **PATCH** /api/v1/organizations/{organizationId}/messaging | 
 *Id4iApi.MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
@@ -328,6 +329,7 @@ Class | Method | HTTP request | Description
  - [Id4iApi.RoutingFile](docs/RoutingFile.md)
  - [Id4iApi.RoutingFileRequest](docs/RoutingFileRequest.md)
  - [Id4iApi.RoutingOptions](docs/RoutingOptions.md)
+ - [Id4iApi.SendCustomMessage](docs/SendCustomMessage.md)
  - [Id4iApi.ServiceCosts](docs/ServiceCosts.md)
  - [Id4iApi.SimpleMessageResponse](docs/SimpleMessageResponse.md)
  - [Id4iApi.TransferReceiveInfo](docs/TransferReceiveInfo.md)

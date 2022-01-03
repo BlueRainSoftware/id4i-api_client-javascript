@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id4n** | **String** | The ID | [optional] 
 **label** | **String** |  | [optional] 
 **ownerOrganizationId** | **String** | Organization namespace of the ID owner | [optional] 
+**properties** | **{String: String}** | The properties of the organization | [optional] 
 **type** | **String** | The type of ID | [optional] 
 
 
